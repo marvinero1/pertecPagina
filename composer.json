@@ -28,7 +28,8 @@
         "laravel/socialite": "^5.4",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
-        "laravelcollective/html": "^6.1.0"
+        "laravelcollective/html": "^6.1.0",
+        "laraveles/spanish": "^1.5"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",

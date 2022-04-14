@@ -49,19 +49,7 @@
 
                         <div class="clearfix"></div>
 
-                        <div class="separator">
-                            <span><?php echo e(__('views.auth.login.message_0')); ?></span>
-                            <div>
-                                <a href="<?php echo e(route('social.redirect', ['facebook'])); ?>" class="btn btn-success btn-facebook">
-                                    <i class="fa fa-facebook"></i>
-                                    Facebook
-                                </a>
-                                <a href="<?php echo e(route('social.redirect', ['twitter'])); ?>" class="btn btn-success btn-twitter">
-                                    <i class="fa fa-twitter"></i>
-                                    Twitter
-                                </a>
-                            </div>
-                        </div>
+                        
 
                         <?php if(config('auth.users.registration')): ?>
                             <div class="separator">

@@ -36,5 +36,5 @@ return array(
     '3c6c8a4bbdec798f4f115812264bb1b1' => $vendorDir . '/labs64/netlicensingclient-php/netlicensing.php',
     'f18cc91337d49233e5754e93f3ed9ec3' => $vendorDir . '/laravelcollective/html/src/helpers.php',
     '320163ac6b93aebe3dc25b60a0533d56' => $vendorDir . '/spatie/laravel-ignition/src/helpers.php',
-    '1b804b46429ef0c3526b62f05ac2f43a' => $baseDir . '/app/helpers.php',
+    '166ae0552a9fa1e8cc916473446d3d57' => $baseDir . '/app/helpers.php',
 );

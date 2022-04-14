@@ -98,6 +98,13 @@
       'Html' => 'Collective\\Html\\HtmlFacade',
     ),
   ),
+  'laraveles/spanish' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laraveles\\Spanish\\SpanishServiceProvider',
+    ),
+  ),
   'nesbot/carbon' => 
   array (
     'providers' => 

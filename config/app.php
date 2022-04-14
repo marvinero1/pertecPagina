@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'es'),
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'es'),
 
     /*
     |--------------------------------------------------------------------------
@@ -181,7 +181,8 @@ return [
         \App\Providers\ToJsServiceProvider::class,
         \App\Providers\MetaServiceProvider::class,
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
-        \App\Providers\ProtectionProvider::class
+        \App\Providers\ProtectionProvider::class,
+        Laraveles\Spanish\SpanishServiceProvider::class,
 
     ],
 

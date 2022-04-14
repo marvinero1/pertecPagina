@@ -37,7 +37,7 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         '3c6c8a4bbdec798f4f115812264bb1b1' => __DIR__ . '/..' . '/labs64/netlicensingclient-php/netlicensing.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
-        '1b804b46429ef0c3526b62f05ac2f43a' => __DIR__ . '/../..' . '/app/helpers.php',
+        '166ae0552a9fa1e8cc916473446d3d57' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -125,6 +125,7 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
             'League\\Flysystem\\' => 17,
             'League\\Config\\' => 14,
             'League\\CommonMark\\' => 18,
+            'Laraveles\\Spanish\\' => 18,
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Socialite\\' => 18,
@@ -421,6 +422,10 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
         ),
+        'Laraveles\\Spanish\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laraveles/spanish/src',
+        ),
         'Laravel\\Ui\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/ui/src',
@@ -668,6 +673,7 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'App\\Models\\Auth\\User\\Traits\\Relations\\UserRelations' => __DIR__ . '/../..' . '/app/Models/Auth/User/Traits/Relations/UserRelations.php',
         'App\\Models\\Auth\\User\\Traits\\Scopes\\UserScopes' => __DIR__ . '/../..' . '/app/Models/Auth/User/Traits/Scopes/UserScopes.php',
         'App\\Models\\Auth\\User\\User' => __DIR__ . '/../..' . '/app/Models/Auth/User/User.php',
+        'App\\Models\\Producto' => __DIR__ . '/../..' . '/app/Models/Producto.php',
         'App\\Models\\Protection\\ProtectionShopToken' => __DIR__ . '/../..' . '/app/Models/Protection/ProtectionShopToken.php',
         'App\\Models\\Protection\\ProtectionValidation' => __DIR__ . '/../..' . '/app/Models/Protection/ProtectionValidation.php',
         'App\\Notifications\\Auth\\ConfirmEmail' => __DIR__ . '/../..' . '/app/Notifications/Auth/ConfirmEmail.php',
@@ -2830,6 +2836,8 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
         'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
         'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
+        'Laraveles\\Spanish\\Commands\\InstallLang' => __DIR__ . '/..' . '/laraveles/spanish/src/Commands/InstallLang.php',
+        'Laraveles\\Spanish\\SpanishServiceProvider' => __DIR__ . '/..' . '/laraveles/spanish/src/SpanishServiceProvider.php',
         'League\\CommonMark\\CommonMarkConverter' => __DIR__ . '/..' . '/league/commonmark/src/CommonMarkConverter.php',
         'League\\CommonMark\\ConverterInterface' => __DIR__ . '/..' . '/league/commonmark/src/ConverterInterface.php',
         'League\\CommonMark\\Delimiter\\Delimiter' => __DIR__ . '/..' . '/league/commonmark/src/Delimiter/Delimiter.php',

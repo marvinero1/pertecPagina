@@ -2,24 +2,23 @@
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
             <a href="{{ route('admin.dashboard') }}" class="site_title">
-                <span>{{ config('app.name') }}</span>
+                <img src="/assets/images/icon.png" alt="Logo" width="50px;" height="50px;">
+                <span>Pertec S.R.L ©</span>
             </a>
-        </div>
+        </div><br><br><br>
 
-        <div class="clearfix"></div>
+        <div class="clearfix"></div><br>
 
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
-                <img src="{{ auth()->user()->avatar }}" alt="..." class="img-circle profile_img">
+                <img src="{{ auth()->user()->avatar }}" alt="perfil" class="img-circle profile_img">
             </div>
             <div class="profile_info">
                 <h2>{{ auth()->user()->name }}</h2>
             </div>
-        </div>
+        </div><br/>
         <!-- /menu profile quick info -->
-
-        <br/>
 
         <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -38,11 +37,18 @@
                 <h3>{{ __('views.backend.section.navigation.sub_header_1') }}</h3>
                 <ul class="nav side-menu">
                     <li>
+                        <a href="{{ route('admin.producto.index') }}">
+                            <i class="fa fa-cubes" aria-hidden="true"></i>
+                            {{ __('views.backend.section.navigation.menu_1_4') }}
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.users') }}">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_1') }}
                         </a>
-                    </li><li>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.users.restore') }}">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_3') }}
@@ -81,7 +87,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="menu_section">
+            {{-- <div class="menu_section">
                 <h3>{{ __('views.backend.section.navigation.sub_header_3') }}</h3>
                 <ul class="nav side-menu">
                   <li>
@@ -91,7 +97,7 @@
                       <a href="https://www.labs64.com/guidechimp/" target="_blank" title="Interactive Guided Product Tours"><i class="fa fa-external-link" aria-hidden="true"></i>GuideChimp</a>
                   </li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
         <!-- /sidebar menu -->
     </div>

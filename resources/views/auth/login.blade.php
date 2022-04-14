@@ -46,7 +46,7 @@
 
                         <div class="clearfix"></div>
 
-                        <div class="separator">
+                        {{-- <div class="separator">
                             <span>{{ __('views.auth.login.message_0') }}</span>
                             <div>
                                 <a href="{{ route('social.redirect', ['facebook']) }}" class="btn btn-success btn-facebook">
@@ -58,7 +58,7 @@
                                     Twitter
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
 
                         @if(config('auth.users.registration'))
                             <div class="separator">

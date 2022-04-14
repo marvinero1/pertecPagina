@@ -1,13 +1,13 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => 'labs64/laravel-boilerplate',
+    'reference' => 'c83806bf90248e37607548d665c3d7e3db7b2323',
+    'name' => 'labs64/pertec',
   ),
   'versions' => 
   array (
@@ -508,15 +508,6 @@
       ),
       'reference' => '91792a166dd02aaaeb7928417bb49d808b0c58ea',
     ),
-    'labs64/laravel-boilerplate' => 
-    array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
-    ),
     'labs64/netlicensingclient-php' => 
     array (
       'pretty_version' => '2.4.0',
@@ -525,6 +516,15 @@
       array (
       ),
       'reference' => '169e13e71e8a43993b06a344ada1fb3e486ff8ea',
+    ),
+    'labs64/pertec' => 
+    array (
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c83806bf90248e37607548d665c3d7e3db7b2323',
     ),
     'laravel/framework' => 
     array (
@@ -579,6 +579,15 @@
       array (
       ),
       'reference' => '78c3cb516ac9e6d3d76cad9191f81d217302dea6',
+    ),
+    'laraveles/spanish' => 
+    array (
+      'pretty_version' => '1.5.0',
+      'version' => '1.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2224e3db7ec399952523b0769a7677de0b6afd8b',
     ),
     'league/commonmark' => 
     array (

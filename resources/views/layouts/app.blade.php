@@ -19,10 +19,9 @@
 
         {{--Head--}}
         @yield('head')
-
     </head>
+    
     <body class="@yield('body_class')">
-
         {{--Page--}}
         @yield('page')
 
