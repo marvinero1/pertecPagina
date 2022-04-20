@@ -1,14 +1,13 @@
-<div class="col-md-3 left_col">
+<div class="col-md-3 left_col pt-2">
     <div class="left_col scroll-view">
-        <div class="navbar nav_title" style="border: 0;">
+        <div class="navbar nav_title" style="border: 0;padding-top: 5px;">
             <a href="{{ route('admin.dashboard') }}" class="site_title">
-                <img src="/assets/images/icon.png" alt="Logo" width="50px;" height="50px;">
+                <img src="{{url('/assets/images/icon.png')}}" alt="Logo" width="50px;" height="50px;">
                 <span>Pertec S.R.L ©</span>
             </a>
         </div><br><br><br>
 
         <div class="clearfix"></div><br>
-
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
@@ -44,6 +43,12 @@
                     </li>
                     <li>
                         <a href="{{ route('admin.users') }}">
+                            <i class="fa fa-address-card" aria-hidden="true"></i>
+                            {{ __('views.backend.section.navigation.menu_1_5') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.users') }}">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_1') }}
                         </a>
@@ -62,9 +67,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="menu_section">
+            {{-- <div class="menu_section">
                 <h3>{{ __('views.backend.section.navigation.sub_header_2') }}</h3>
-
                 <ul class="nav side-menu">
                     <li>
                         <a>
@@ -86,7 +90,7 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
             {{-- <div class="menu_section">
                 <h3>{{ __('views.backend.section.navigation.sub_header_3') }}</h3>
                 <ul class="nav side-menu">

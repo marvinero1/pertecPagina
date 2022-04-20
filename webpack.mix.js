@@ -66,7 +66,7 @@ mix.scripts([
     'node_modules/guidechimp/dist/guidechimp.min.js',
     'node_modules/guidechimp/dist/plugins/multiPage.js',
     'resources/assets/admin/js/admin.js',
-], 'public/assets/admin/js/admin.js').version();
+], 'public/assets/admin/js/admin.js').version(); 
 
 mix.styles([
     'node_modules/bootstrap/dist/css/bootstrap.css',

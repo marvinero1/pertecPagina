@@ -43,4 +43,5 @@
     <?php echo e(Html::script(mix('assets/admin/js/admin.js'))); ?>
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pertecPagina\resources\views/admin/layouts/admin.blade.php ENDPATH**/ ?>

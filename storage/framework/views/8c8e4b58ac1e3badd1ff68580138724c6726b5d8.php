@@ -1,14 +1,13 @@
-<div class="col-md-3 left_col">
+<div class="col-md-3 left_col pt-2">
     <div class="left_col scroll-view">
-        <div class="navbar nav_title" style="border: 0;">
+        <div class="navbar nav_title" style="border: 0;padding-top: 5px;">
             <a href="<?php echo e(route('admin.dashboard')); ?>" class="site_title">
-                <img src="/assets/images/icon.png" alt="Logo" width="50px;" height="50px;">
+                <img src="<?php echo e(url('/assets/images/icon.png')); ?>" alt="Logo" width="50px;" height="50px;">
                 <span>Pertec S.R.L ©</span>
             </a>
         </div><br><br><br>
 
         <div class="clearfix"></div><br>
-
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
@@ -46,6 +45,13 @@
                     </li>
                     <li>
                         <a href="<?php echo e(route('admin.users')); ?>">
+                            <i class="fa fa-address-card" aria-hidden="true"></i>
+                            <?php echo e(__('views.backend.section.navigation.menu_1_5')); ?>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('admin.users')); ?>">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <?php echo e(__('views.backend.section.navigation.menu_1_1')); ?>
 
@@ -67,34 +73,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="menu_section">
-                <h3><?php echo e(__('views.backend.section.navigation.sub_header_2')); ?></h3>
-
-                <ul class="nav side-menu">
-                    <li>
-                        <a>
-                            <i class="fa fa-list"></i>
-                            <?php echo e(__('views.backend.section.navigation.menu_2_1')); ?>
-
-                            <span class="fa fa-chevron-down"></span>
-                        </a>
-                        <ul class="nav child_menu">
-                            <li>
-                                <a href="<?php echo e(route('log-viewer::dashboard')); ?>">
-                                    <?php echo e(__('views.backend.section.navigation.menu_2_2')); ?>
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo e(route('log-viewer::logs.list')); ?>">
-                                    <?php echo e(__('views.backend.section.navigation.menu_2_3')); ?>
-
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            
             
         </div>
         <!-- /sidebar menu -->

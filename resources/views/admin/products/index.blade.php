@@ -1,26 +1,36 @@
 @extends('admin.layouts.admin')
 
-@section('title', __('views.admin.products.index.title'))
-
 @section('content')
     <!-- page content -->
-    <div class="">
-        <div class="page-title">
-        {{-- <div class="title_left">
-            <h3>Tables <small>Some examples to get you started</small></h3>
-        </div> --}}
+    <div class="container">
+        <div class="row">
 
-        <div class="title_right">
-            <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Buscar por nombre">
-                <span class="input-group-btn">
-                <button class="btn btn-default" type="button"><i class="fa fa-search"></i> Go!</button>
-                </span>
+        <div class="title_left">
+            <h3>{{ __('views.admin.products.index.title') }} </h3>
+        </div><br>
+        <div class="row">
+            <div class="col-xs-6">
+                <div>
+                    <a href="{{ route('admin.producto.create') }}" type="button btn btn-primary" style="color: black">
+                    <i class="fa fa-cubes" aria-hidden="true"></i> Crear Productos</a>
+                </div>
             </div>
+
+            <div class="col-xs-6">
+                <div class="title_right">
+                    <div class="form-group pull-right top_search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Buscar por nombre">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i> Go!</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
+          </div>       
         </div>
-        </div>
+
 
         <div class="clearfix"></div>
 

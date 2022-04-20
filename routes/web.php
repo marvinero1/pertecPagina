@@ -11,10 +11,10 @@
 |
 */
 
-
 /**
  * Auth routes
  */
+
 Route::group(['namespace' => 'Auth'], function () {
 
     // Authentication Routes...
@@ -67,7 +67,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('dashboard/registration-chart', 'DashboardController@getRegistrationChartData')->name('dashboard.registration.chart');
     Route::resource('producto', ProductoController::class);
 });
-
 
 Route::get('/', 'HomeController@index');
 
