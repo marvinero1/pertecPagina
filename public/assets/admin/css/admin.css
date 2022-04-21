@@ -10175,6 +10175,8 @@ button.close {
 
 html , body{
  height:100%;
+ background: rgb(255,254,4);
+ background: linear-gradient(36deg, rgba(255,254,4,0.6460959383753502) 0%, rgba(40,50,161,1) 36%);
 }
 .full-width {
  width:100%;
@@ -10311,8 +10313,8 @@ html , body{
     padding: 0 0 4px 0
 }
 .left_col {
-    background: rgb(255,254,4);
-    background: linear-gradient(36deg, rgba(255,254,4,0.6460959383753502) 0%, rgba(40,50,161,1) 55%);
+    background: transparent;
+    
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
@@ -10661,7 +10663,9 @@ body .container.body .right_col {
 }
 body {
     color: #73879C;
-    background: #2832A1;
+    /* background: #2832A1; */
+    background: rgb(255,254,4);
+background: linear-gradient(36deg, rgba(255,254,4,0.8673844537815126) 4%, rgba(40,50,161,0.9822303921568627) 26%);
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;

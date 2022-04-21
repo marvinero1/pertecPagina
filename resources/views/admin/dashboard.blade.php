@@ -11,7 +11,7 @@
         <div>
             <img src="{{ url('assets/images/icon.png') }}" alt="logo" width="250px;" height="250px;" style="display: block;margin: auto;">
         </div>
-    </div><br><hr><br>
+    </div><br><br><hr><br>
     <!-- top tiles -->
     <div class="row tile_count">
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
@@ -154,9 +154,10 @@
 @endsection
 <style>
      .font {
+        color: #2832A1;
         font-size: 50px;
         text-align: center;
         padding: 30px;
-        text-shadow: 7px 4px 5px rosybrown;
+        text-shadow: 7px 4px 5px #fffe04;
     }
 </style>

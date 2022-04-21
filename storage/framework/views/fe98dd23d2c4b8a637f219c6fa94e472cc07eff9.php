@@ -5,31 +5,35 @@
     <div class="container">
         <div class="row">
 
-        <div class="title_left">
+        <div class="title_left" style="text-align: center;">
             <h3><?php echo e(__('views.admin.products.index.title')); ?> </h3>
         </div><br>
-        <div class="row">
+        <div class="row"><br>
             <div class="col-xs-6">
                 <div>
                     <a href="<?php echo e(route('admin.producto.create')); ?>" type="button btn btn-primary" style="color: black">
-                    <i class="fa fa-cubes" aria-hidden="true"></i> Crear Productos</a>
+                    <button class="btn btn-primary"> <i class="fa fa-cubes" aria-hidden="true"></i> Crear Productos</button></a>
                 </div>
             </div>
 
             <div class="col-xs-6">
                 <div class="title_right">
-                    <div class="form-group pull-right top_search">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Buscar por nombre">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i> Go!</button>
-                            </span>
+                    <form style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
+                        <div class="form-group pull-right top_search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Buscar por nombre" name="buscarpor" 
+                                style="border: 1px #2832A1 solid;">
+                                    <span class="input-group-btn" >
+                                    <button class="btn btn-default" type="button" style="border: 1px #2832A1 solid;">
+                                    <i class="fa fa-search"></i> Buscar</button>
+                                </span>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
           </div>       
-        </div>
+        </div><br>
 
 
         <div class="clearfix"></div>
