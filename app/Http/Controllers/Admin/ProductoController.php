@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use File;
+use Image;
+use Session;
 
 class ProductoController extends Controller
 {
@@ -14,7 +17,13 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
-        return view('admin.products.index');
+        
+        $nombre_producto = $request->get('buscarpor');
+        $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->paginate(10);
+        //dd($producto);
+        
+        return view('admin.products.index', ['producto' => $producto]);
+        
     }
 
     /**
@@ -22,9 +31,8 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(){
+        return view('admin.products.create');
     }
 
     /**
@@ -33,9 +41,51 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+        $imagen = null;
+               
+        $requestData = $request->all();
+                
+        if(request()->has('imagen')){
+            $imagesUploaded = request()->file('imagen');
+            $imageName = time() . '.' . $imagesUploaded->getClientOriginalExtension();
+            $imagenpath = public_path('/images/productos/');
+            $imagesUploaded->move($imagenpath, $imageName);
+
+            Producto::create([
+                'nombre_producto' => $request->nombre_producto,
+                'denominacion' => $request->denominacion,
+                'categoria' => $request->categoria,
+                'inox' => $request->inox,
+                'imagen' => '/images/productos/' .$imageName,
+                'material' => $request->material,
+                'acabado' => $request->acabado,
+                'rosca' => $request->rosca,
+                'resistencia' => $request->resistencia,
+                'tratamiento' => $request->tratamiento,
+                'sae' => $request->sae,
+                'zb' => $request->zb,
+                'zam' => $request->zam,
+            ]);
+        }else{
+            Producto::create([
+                'nombre_producto' => $request->nombre_producto,
+                'denominacion' => $request->denominacion,
+                'categoria' => $request->categoria,
+                'inox' => $request->inox,
+                'material' => $request->material,
+                'acabado' => $request->acabado,
+                'rosca' => $request->rosca,
+                'resistencia' => $request->resistencia,
+                'tratamiento' => $request->tratamiento,
+                'sae' => $request->sae,
+                'zb' => $request->zb,
+                'zam' => $request->zam,
+            ]);
+        }
+
+        Session::flash('message','Producto Creado Exisitosamente!');
+        return back()->withInput();
     }
 
     /**

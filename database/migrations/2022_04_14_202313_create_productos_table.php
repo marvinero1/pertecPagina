@@ -14,7 +14,21 @@ return new class extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('nombre_producto');
+            $table->string('denominacion');
+            $table->string('categoria');
+            $table->string('inox');
+            $table->string('imagen');
+            $table->string('material')->nullable();
+            $table->string('acabado')->nullable();
+            $table->string('rosca')->nullable();
+            $table->string('resistencia')->nullable();
+            $table->string('tratamiento')->nullable();
+            $table->string('sae')->nullable();
+            $table->string('zb')->nullable();
+            $table->string('zam')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

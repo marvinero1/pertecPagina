@@ -1,9 +1,10 @@
-@extends('admin.layouts.admin')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 <div>
-    <form action="{{route('admin.producto.store')}}" method="POST" enctype="multipart/form-data">
-        {{ csrf_field() }}
+    <form action="<?php echo e(route('admin.producto.store')); ?>" method="POST" enctype="multipart/form-data">
+        <?php echo e(csrf_field()); ?>
+
         <div class="row" style="border: outset;">
             <div class="col-md-12 col-sm-12  form-group">
                 <p><strong>Los campos (*) son obligatorios</strong></p>
@@ -133,7 +134,7 @@
         </div>
 
         <div class="footer" style="padding: 15px 15px 5px 5px; float: right;">
-            <a type="button" class="btn btn-warning float-right" href="{{url('/admin/producto')}}" style="color: black">
+            <a type="button" class="btn btn-warning float-right" href="<?php echo e(url('/admin/producto')); ?>" style="color: black">
                 <i class="fa fas fa-arrow-left"></i> Cerrar</a>
             <button type="submit" class="btn btn-primary float-right mr-2"><i class="fa fas fa-save"></i>
                 Guardar</button>
@@ -156,4 +157,5 @@
         cursor: pointer;
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pertecPagina\resources\views/admin/products/create.blade.php ENDPATH**/ ?>
