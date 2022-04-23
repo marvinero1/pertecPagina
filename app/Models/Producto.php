@@ -25,6 +25,7 @@ class Producto extends Model
                         'categoria',
                         'inox',
                         'imagen',
+                        'imagen_matriz',
                         'material',
                         'acabado',
                         'rosca',

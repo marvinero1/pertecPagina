@@ -6,6 +6,7 @@ use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use File;
+use DB;
 use Image;
 use Session;
 
@@ -17,13 +18,17 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
-        
         $nombre_producto = $request->get('buscarpor');
         $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->paginate(10);
-        //dd($producto);
         
         return view('admin.products.index', ['producto' => $producto]);
+    }
+
+    public function productosPromocion(Request $request){
+        $nombre_producto = $request->get('buscarpor');
+        $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->where('promocion', 'si')->latest()->paginate(10);
         
+        return view('admin.products.promocion', ['producto' => $producto]);
     }
 
     /**
@@ -42,50 +47,42 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        $imagen = null;
-               
-        $requestData = $request->all();
-                
-        if(request()->has('imagen')){
-            $imagesUploaded = request()->file('imagen');
-            $imageName = time() . '.' . $imagesUploaded->getClientOriginalExtension();
-            $imagenpath = public_path('/images/productos/');
-            $imagesUploaded->move($imagenpath, $imageName);
+        $mensaje = "Producto Guardada Correctamente";
+        $mensajeError = "Producto No Guardada Correctamente";
 
-            Producto::create([
-                'nombre_producto' => $request->nombre_producto,
-                'denominacion' => $request->denominacion,
-                'categoria' => $request->categoria,
-                'inox' => $request->inox,
-                'imagen' => '/images/productos/' .$imageName,
-                'material' => $request->material,
-                'acabado' => $request->acabado,
-                'rosca' => $request->rosca,
-                'resistencia' => $request->resistencia,
-                'tratamiento' => $request->tratamiento,
-                'sae' => $request->sae,
-                'zb' => $request->zb,
-                'zam' => $request->zam,
-            ]);
+        DB::beginTransaction();
+        $requestData = $request->all();
+
+        if($request->imagen){
+            $data = $request->imagen;
+            $file = file_get_contents($request->imagen);
+            $info = $data->getClientOriginalExtension();
+            $extension = explode('images/productos', mime_content_type('images/productos'))[0];
+            $image = Image::make($file);
+            $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
+            $path  = 'images/productos';
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
+            }
+            $img = $path.'/'.$fileName;
+            if($image->save($img)){
+                $requestData['imagen'] = $img;
+                $mensaje = "Producto Registrado correctamente";
+            }else{
+                $mensaje = "Error al guardar la imagen";
+            }
+        }
+
+        $producto = Producto::create($requestData);
+
+        if($producto){
+            DB::commit();
         }else{
-            Producto::create([
-                'nombre_producto' => $request->nombre_producto,
-                'denominacion' => $request->denominacion,
-                'categoria' => $request->categoria,
-                'inox' => $request->inox,
-                'material' => $request->material,
-                'acabado' => $request->acabado,
-                'rosca' => $request->rosca,
-                'resistencia' => $request->resistencia,
-                'tratamiento' => $request->tratamiento,
-                'sae' => $request->sae,
-                'zb' => $request->zb,
-                'zam' => $request->zam,
-            ]);
+            DB::rollback();
         }
 
         Session::flash('message','Producto Creado Exisitosamente!');
-        return back()->withInput();
+        return redirect()->route('admin.producto.index');
     }
 
     /**
@@ -94,11 +91,10 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto)
-    {
-        //
+    public function show($id){
+        $producto = Producto::findOrFail($id);
+        return view('admin.products.show', ['producto' => $producto]); 
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -122,14 +118,77 @@ class ProductoController extends Controller
         //
     }
 
+    public function productoPromocion(Request $request, $id){
+        $producto = Producto::findOrFail($id);
+        $promocion = $request->get('promocion');
+
+        $producto->promocion = $promocion;
+        $producto->update(); 
+
+        Session::flash('promocion','Producto Agregado a Promocion Exisitosamente!');
+        return redirect()->route('admin.producto.index');
+    }
+
+    public function  productoMatriz(Request $request, $id){
+     
+        $producto = Producto::findOrFail($id);
+        $mensaje = 'Matriz Creada Exitosamente!!!';
+
+        $requestData = $request->all();
+        // dd($requestData);
+        
+        if(is_null($request->imagen_matriz)){
+            unset($requestData['imagen_matriz']);
+        }
+
+        $mensaje = "Matriz Creada correctamente :3";
+        if($request->imagen_matriz){
+            $data = $request->imagen_matriz;
+            $file = file_get_contents($request->imagen_matriz);
+            $info = $data->getClientOriginalExtension();
+            $extension = explode('images/productos/matrices', mime_content_type('images/productos/matrices'))[0];
+            $image = Image::make($file);
+            $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
+            $path  = 'images/productos/matrices';
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
+            }
+            $img = $path.'/'.$fileName;
+            if($image->save($img)) {
+                $archivo_antiguo = $producto->imagen_matriz;
+                $requestData['imagen_matriz'] = $img;
+               
+                $mensaje = "Matriz Creada correctamente :3";
+                if ($archivo_antiguo != '' && !File::delete($archivo_antiguo)) {
+                    $mensaje = "Matriz Creada. error al eliminar la imagen";
+                }
+            }else{
+                $mensaje = "Error al guardar la imagen";
+            }
+        }
+        //dd($requestData);
+
+        if($producto->update($requestData)){
+            DB::commit();
+        }else{
+            DB::rollback();
+        }
+
+        Session::flash('message','Matriz Creada Exisitosamente!');
+        return back()->withInput();
+    }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
-    {
-        //
+    public function destroy($id){
+        $producto = Producto::findOrFail($id);
+        $producto->delete();
+
+        Session::flash('danger','Producto Eliminado Exitosamente!');
+        return back()->withInput();
     }
 }

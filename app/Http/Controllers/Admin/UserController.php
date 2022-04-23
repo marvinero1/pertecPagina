@@ -37,6 +37,12 @@ class UserController extends Controller
         return view('admin.users.index', ['users' => User::with('roles')->sortable(['email' => 'asc'])->paginate()]);
     }
 
+    public function getUsers(){
+        $user = User::all();
+        return response()->json($user, 200);
+        // return view('admin.users.index', ['users' => User::with('roles')->sortable(['email' => 'asc'])->paginate()]);
+    }
+
     /**
      * Restore Users
      *

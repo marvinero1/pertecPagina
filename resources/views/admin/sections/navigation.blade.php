@@ -35,11 +35,22 @@
             <div class="menu_section">
                 <h3>{{ __('views.backend.section.navigation.sub_header_1') }}</h3>
                 <ul class="nav side-menu">
-                    <li>
-                        <a href="{{ route('admin.producto.index') }}">
-                            <i class="fa fa-cubes" aria-hidden="true"></i>
-                            {{ __('views.backend.section.navigation.menu_1_4') }}
-                        </a>
+                   
+                    <li><a><i class="fa fa-cubes"></i> Productos <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('admin.producto.index') }}">
+                                <i class="fa fa-cubes" aria-hidden="true"></i>
+                                {{ __('views.backend.section.navigation.menu_1_4') }}
+                            </a></li>
+                            <li><a href="{{ route('admin.productosPromocion') }}">
+                                <i class="fa fa-cubes" aria-hidden="true"></i>
+                                {{ __('views.backend.section.navigation.menu_1_6') }}
+                            </a></li>
+                            <li><a href="{{ route('admin.producto.index') }}">
+                                <i class="fa fa-cubes" aria-hidden="true"></i>
+                                {{ __('views.backend.section.navigation.menu_1_7') }}
+                            </a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="{{ route('admin.users') }}">

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('categoria');
             $table->string('inox');
             $table->string('imagen');
+            $table->string('imagen_matriz')->nullable();
             $table->string('material')->nullable();
             $table->string('acabado')->nullable();
             $table->string('rosca')->nullable();
@@ -28,6 +29,8 @@ return new class extends Migration
             $table->string('sae')->nullable();
             $table->string('zb')->nullable();
             $table->string('zam')->nullable();
+            $table->string('promocion')->nullable();
+            $table->string('novedad')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

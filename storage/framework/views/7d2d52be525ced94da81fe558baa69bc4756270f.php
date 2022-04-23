@@ -5,7 +5,7 @@
     <form action="<?php echo e(route('admin.producto.store')); ?>" method="POST" enctype="multipart/form-data">
         <?php echo e(csrf_field()); ?>
 
-        <div class="row" style="border: outset;">
+        <div class="row" style="border: outset;"><br>
             <div class="col-md-12 col-sm-12  form-group">
                 <p><strong>Los campos (*) son obligatorios</strong></p>
             </div>
@@ -69,11 +69,13 @@
                         <strong>Imagen</strong>
                     </label>
                     <p><strong>Sugerencia:</strong> Para una mejor visualizacion se recomienda
-                        resolucion a partir de<strong> 1024 × 768 pixels</strong></p>
+                        resolucion a partir de<strong> 1280 x720 pixels</strong></p>
                     <input id="file-upload" type="file" name="imagen">
                 </div>
             </div>
-        </div><br>
+
+            
+        </div><br><br>
 
         <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
             <div class="col-md-4 col-sm-12  form-group">
@@ -106,7 +108,7 @@
 
         <div class="col-md-12 col-sm-12">
             <div class="col-md-4 col-sm-12 form-group">
-                <label for="sae">SAE</label>
+                <label for="sae">Norma SAE</label>
                 <select id="sae" name="sae" class="form-control">
                     <option>Elige</option>
                     <option value="si">SI</option>
@@ -115,7 +117,7 @@
             </div>
 
             <div class="col-md-4 col-sm-12  form-group">
-                <label for="zb">ZB</label>
+                <label for="zb">Zincado Blanco</label>
                 <select id="zb" name="zb" class="form-control">
                     <option>Elige</option>
                     <option value="si">SI</option>
@@ -124,7 +126,7 @@
             </div>
 
             <div class="col-md-4 col-sm-12  form-group">
-                <label for="zam">ZAM</label>
+                <label for="zam">Zincado Amarillo</label>
                 <select id="zam" name="zam" class="form-control" required>
                     <option>Elige</option>
                     <option value="si">SI</option>
