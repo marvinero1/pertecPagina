@@ -1,7 +1,7 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-<div class="row container"><br><br>
+<div class="row container"><br>
     @if (Session::has('novedad'))
     <div class="alert alert-success">{{ Session::get('novedad') }}
     </div>
@@ -12,13 +12,11 @@
                 <div class="card-img"><br>
                     <div class="cat">
                         <img src="/{{ $producto->imagen }}" class="img-responsive imgprod" alt="{{ $producto->nombre_producto }}">
-                    </div><br>
-                    
+                    </div>                    
                     <div class="card-caption">
                         <span class="h2">{{ $producto->nombre_producto }}</span>
                         {{-- <p>Gluten free</p> --}}
                     </div>
-                   
                 </div>
                 <div class="card-body">
                     {{-- <div class="lead">Denominacion: {{ $producto->denominacion }}</div> --}}

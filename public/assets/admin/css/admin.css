@@ -10374,7 +10374,7 @@ html , body{
 }
 .nav-sm .nav.child_menu li.active,
 .nav-sm .nav.side-menu li.active-sm {
-    border-right: 5px solid #1ABB9C
+    border-right: 5px solid #FFFE04
 }
 .nav-sm ul.nav.child_menu ul,
 .nav-sm .nav.side-menu li.active-sm ul ul {
@@ -10666,7 +10666,7 @@ body .container.body .right_col {
 }
 body {
     color: #73879C;
-    background: #FFFE04;
+    background: #ededed;
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -10963,7 +10963,7 @@ a:focus {
 }
 .nav.side-menu>li.current-page,
 .nav.side-menu>li.active {
-    border-right: 5px solid #1ABB9C
+    border-right: 5px solid #FFFE04
 }
 .nav li.current-page {
     background: rgba(255, 255, 255, 0.05)
@@ -11085,7 +11085,7 @@ a:focus {
     padding: 4px 6px
 }
 footer {
-    background: #FFFE04;
+    background: #ededed;
     padding: 15px 20px;
     display: block
 }
@@ -11876,7 +11876,7 @@ span.right {
 }
 @media (min-width: 992px) {
     footer {
-        margin-left: 230px
+        margin-left: 0px !important
     }
 }
 @media (min-width: 992px) {

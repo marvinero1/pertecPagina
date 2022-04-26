@@ -19,7 +19,7 @@
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Teléfono *</label>
-                    <input type="text" class="form-control" name="telefono" placeholder="Teléfono" required>
+                    <input type="number" class="form-control" name="telefono" placeholder="Teléfono" required>
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">

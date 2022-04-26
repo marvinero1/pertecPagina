@@ -1,7 +1,7 @@
 
 
 <?php $__env->startSection('content'); ?>
-<div class="row container"><br><br>
+<div class="row container"><br>
     <?php if(Session::has('novedad')): ?>
     <div class="alert alert-success"><?php echo e(Session::get('novedad')); ?>
 
@@ -13,13 +13,11 @@
                 <div class="card-img"><br>
                     <div class="cat">
                         <img src="/<?php echo e($producto->imagen); ?>" class="img-responsive imgprod" alt="<?php echo e($producto->nombre_producto); ?>">
-                    </div><br>
-                    
+                    </div>                    
                     <div class="card-caption">
                         <span class="h2"><?php echo e($producto->nombre_producto); ?></span>
                         
                     </div>
-                   
                 </div>
                 <div class="card-body">
                     
