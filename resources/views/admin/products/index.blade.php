@@ -22,12 +22,17 @@
         <div class="alert alert-warning">{{ Session::get('promocion') }}
         </div>
         @endif
+
+        @if (Session::has('novedad'))
+        <div class="alert alert-success">{{ Session::get('novedad') }}
+        </div>
+        @endif
         <div class="row"><br>
             <div class="col-xs-5">
                 <div>
                     <a href="{{ route('admin.producto.create') }}" type="button btn btn-primary" style="color: black">
                         <button class="btn btn-primary"> <i class="fa fa-cubes" aria-hidden="true"></i> Crear
-                            Productos</button></a>
+                            Producto</button></a>
                 </div>
             </div>
             <div class="col-xs-7">
@@ -71,7 +76,7 @@
                     </ul>
                     <div class="clearfix"></div>
                 </div>
-                <div class="x_content">
+                <div class="x_content table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
@@ -143,7 +148,6 @@
                             @endforeach
                         </tbody>
                     </table>
-
                 </div>
                 <div style="text-align: center;">
                     {{ $producto->links() }}

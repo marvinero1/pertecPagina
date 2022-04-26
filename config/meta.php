@@ -25,14 +25,14 @@ return [
             'site_name' => env('META_OG_SITE_NAME', config('app.name')),
         ],
 
-        'twitter' => [
-            'title' => env('META_TWITTER_TITLE', config('app.name')),
-            'image' => env('META_TWITTER_IMAGE'),
-            'description' => env('META_TWITTER_DESCRIPTION'),
-            'card' => env('META_TWITTER_CARD'), // Available Settings: "summary", "summary_large_image", "app""
-            'site' => env('META_TWITTER_SITE'),
-            'creator' => env('META_TWITTER_CREATOR'),
-        ],
+        // 'twitter' => [
+        //     'title' => env('META_TWITTER_TITLE', config('app.name')),
+        //     'image' => env('META_TWITTER_IMAGE'),
+        //     'description' => env('META_TWITTER_DESCRIPTION'),
+        //     'card' => env('META_TWITTER_CARD'), // Available Settings: "summary", "summary_large_image", "app""
+        //     'site' => env('META_TWITTER_SITE'),
+        //     'creator' => env('META_TWITTER_CREATOR'),
+        // ],
 
         'dc' => [
             'title' => env('META_DC_TITLE', config('app.name')),

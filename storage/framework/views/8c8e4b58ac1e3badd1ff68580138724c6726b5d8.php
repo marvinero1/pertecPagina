@@ -36,6 +36,8 @@
             <div class="menu_section">
                 <h3><?php echo e(__('views.backend.section.navigation.sub_header_1')); ?></h3>
                 <ul class="nav side-menu">
+                    
+                    
                    
                     <li><a><i class="fa fa-cubes"></i> Productos <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
@@ -45,19 +47,36 @@
 
                             </a></li>
                             <li><a href="<?php echo e(route('admin.productosPromocion')); ?>">
-                                <i class="fa fa-cubes" aria-hidden="true"></i>
+                                <i class="fa fa-bullhorn" aria-hidden="true"></i>
                                 <?php echo e(__('views.backend.section.navigation.menu_1_6')); ?>
 
                             </a></li>
-                            <li><a href="<?php echo e(route('admin.producto.index')); ?>">
-                                <i class="fa fa-cubes" aria-hidden="true"></i>
+                            <li><a href="<?php echo e(route('admin.productosNovedad')); ?>">
+                                <i class="fa fa-diamond" aria-hidden="true"></i>
                                 <?php echo e(__('views.backend.section.navigation.menu_1_7')); ?>
 
                             </a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="<?php echo e(route('admin.users')); ?>">
+                            <i class="fa fa-ticket" aria-hidden="true"></i>
+                            <?php echo e(__('views.backend.section.navigation.menu_1_11')); ?>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo e(route('admin.tienda.index')); ?>">
+                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                            <?php echo e(__('views.backend.section.navigation.menu_1_10')); ?>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo e(route('admin.vendedor.index')); ?>">
                             <i class="fa fa-address-card" aria-hidden="true"></i>
                             <?php echo e(__('views.backend.section.navigation.menu_1_5')); ?>
 
@@ -70,20 +89,7 @@
 
                         </a>
                     </li>
-                    <li>
-                        <a href="<?php echo e(route('admin.users.restore')); ?>">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                            <?php echo e(__('views.backend.section.navigation.menu_1_3')); ?>
-
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo e(route('admin.permissions')); ?>">
-                            <i class="fa fa-key" aria-hidden="true"></i>
-                            <?php echo e(__('views.backend.section.navigation.menu_1_2')); ?>
-
-                        </a>
-                    </li>
+                    
                 </ul>
             </div>
             

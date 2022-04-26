@@ -1,7 +1,7 @@
 <?php $__env->startSection('title', __('views.admin.users.index.title')); ?>
 
 <?php $__env->startSection('content'); ?>
-    <div class="row">
+    <div class="row table-responsive">
         <table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
                width="100%">
             <thead>

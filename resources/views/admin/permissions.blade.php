@@ -69,7 +69,7 @@
             </tbody>
         </table>
         <div class="pull-right">
-            Powered by <a href="https://www.pertec.com.bo" target="_blank"/>PERTEC S.R.L © ®™</a>
+            Creado para <a href="https://www.pertec.com.bo" target="_blank"/>PERTEC S.R.L © ®™</a>
         </div>
         <div class="pull-right">
             {{ $users->links() }}

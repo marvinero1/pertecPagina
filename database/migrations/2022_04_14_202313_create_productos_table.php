@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre_producto');
-            $table->string('denominacion');
-            $table->string('categoria');
-            $table->string('inox');
-            $table->string('imagen');
+            $table->string('nombre_producto')->nullable();
+            $table->string('denominacion')->nullable();
+            $table->string('categoria')->nullable();
+            $table->string('inox')->nullable();
+            $table->string('imagen')->nullable();
             $table->string('imagen_matriz')->nullable();
             $table->string('material')->nullable();
             $table->string('acabado')->nullable();

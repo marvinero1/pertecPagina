@@ -66,12 +66,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('dashboard/log-chart', 'DashboardController@getLogChartData')->name('dashboard.log.chart');
     Route::get('dashboard/registration-chart', 'DashboardController@getRegistrationChartData')->name('dashboard.registration.chart');
 
-
-
+    // Administrable
     Route::get('productosPromocion', 'ProductoController@productosPromocion')->name('productosPromocion');
+    Route::get('productosNovedad', 'ProductoController@productosNovedad')->name('productosNovedad');
     Route::put('productoPromocion/{id}/','ProductoController@productoPromocion')->name('productos.productoPromocion');
+    Route::put('productoNovedad/{id}/','ProductoController@productoNovedad')->name('productos.productoNovedad');
     Route::put('productoMatriz/{id}/','ProductoController@productoMatriz')->name('productos.productoMatriz');
+
     Route::resource('producto', ProductoController::class);
+    Route::resource('tienda', TiendaController::class);
+    Route::resource('vendedor', VendedorController::class);
+
 });
 
 Route::get('/', 'HomeController@index');

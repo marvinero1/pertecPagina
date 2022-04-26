@@ -6,6 +6,7 @@
         {{ csrf_field() }}
         <div class="row" style="border: outset;"><br>
             <div class="col-md-12 col-sm-12  form-group">
+                <h3><strong>Crear Producto</strong></h3>
                 <p><strong>Los campos (*) son obligatorios</strong></p>
             </div>
 

@@ -9,7 +9,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         {{--Title and Meta--}}
-        @meta
+        <title>{{ config('app.name') }}</title>
 
         {{--Common App Styles--}}
         {{ Html::style(mix('assets/app/css/app.css')) }}

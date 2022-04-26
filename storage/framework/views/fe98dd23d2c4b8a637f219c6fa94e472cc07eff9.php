@@ -25,12 +25,18 @@
 
         </div>
         <?php endif; ?>
+
+        <?php if(Session::has('novedad')): ?>
+        <div class="alert alert-success"><?php echo e(Session::get('novedad')); ?>
+
+        </div>
+        <?php endif; ?>
         <div class="row"><br>
             <div class="col-xs-5">
                 <div>
                     <a href="<?php echo e(route('admin.producto.create')); ?>" type="button btn btn-primary" style="color: black">
                         <button class="btn btn-primary"> <i class="fa fa-cubes" aria-hidden="true"></i> Crear
-                            Productos</button></a>
+                            Producto</button></a>
                 </div>
             </div>
             <div class="col-xs-7">
@@ -74,7 +80,7 @@
                     </ul>
                     <div class="clearfix"></div>
                 </div>
-                <div class="x_content">
+                <div class="x_content table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
@@ -148,7 +154,6 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </tbody>
                     </table>
-
                 </div>
                 <div style="text-align: center;">
                     <?php echo e($producto->links()); ?>

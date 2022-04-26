@@ -2,10 +2,10 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="row container"><br><br>
-    <?php if(Session::has('message')): ?>
-        <div class="alert alert-info"><?php echo e(Session::get('message')); ?>
+    <?php if(Session::has('novedad')): ?>
+    <div class="alert alert-success"><?php echo e(Session::get('novedad')); ?>
 
-        </div>
+    </div>
     <?php endif; ?>
     <div class="col">
         <div class="col-md-4" >
@@ -43,9 +43,11 @@
                 <div class="col-md-12">
                     <a href="<?php echo e(route('admin.producto.index')); ?>" style="color: black">
                         <button class="btn btn-warning"> <i class="fa fa-close" aria-hidden="true"></i> Atras</button></a>
-
-                        <button type="button" style="float: right;" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal<?php echo e($producto->id); ?>">
-                            <i class="fa fa-diamond" aria-hidden="true"></i> Novedad</button>
+                        <?php if($producto->novedad !='si'): ?>
+                            <button type="button" style="float: right;" class="btn btn-success btn-md" data-toggle="modal" 
+                             data-target="#myModalNovedad<?php echo e($producto->id); ?>">
+                        <i class="fa fa-diamond" aria-hidden="true"></i> Novedad</button>
+                        <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -105,9 +107,50 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <div class="container">
+            <div class="modal fade" id="myModalNovedad<?php echo e($producto->id); ?>" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" style="text-align: center;">Añadir Producto a
+                                Novedad</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form
+                                action="<?php echo e(route( 'admin.productos.productoNovedad', $producto->id )); ?>"
+                                method="POST" style="margin-block-end:-1em !important;">
+                                <?php echo e(csrf_field()); ?>
+
+                                <?php echo e(method_field('PUT')); ?>
+
+                                <input type="hidden" name="novedad" value="si">
+                                <h5 style="text-align: center;">
+                                    <?php echo e(strtoupper($producto->nombre_producto)); ?></h5><br>
+                                <div class="row" style="display: block;">
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success"
+                                            style="width: 100% !important; ">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            &nbsp; Añadir</button>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <style>
+    td{
+        line-height: inherit !important;
+    }
     .card-price{ border-color: #999; background-color: #ededed; margin-bottom: 24px; }
     .card-price > .card-heading,
     .card-price > .card-footer{ color: #73879C; background-color: #fdfdfd; }
@@ -118,7 +161,6 @@
     .card-price > .card-right{ padding-left: 4px; }
     .card-price .card-caption { color: #73879C; text-align: center; text-transform: uppercase; }
     .card-price p:last-child{ margin-bottom: 0; }
-
     .card-price .price{ 
     text-align: center; 
     color: #337ab7; 

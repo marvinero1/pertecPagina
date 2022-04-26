@@ -59,7 +59,7 @@
                 <div class="x_content container">
                     <div class=" row">
                         <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-3 col-md-3">
                             <div class="thumbnail">
                                 <div class="container-hover">
                                     <div class="cat">
@@ -113,7 +113,7 @@
                                                     <?php echo e(strtoupper($productos->nombre_producto)); ?></h5><br>
                                                 <div class="row" style="display: block;">
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-warning"
+                                                        <button type="submit" class="btn btn-danger"
                                                             style="width: 100% !important; ">
                                                             <i class="fa fa-close" aria-hidden="true"></i>
                                                             &nbsp; Quitar</button>

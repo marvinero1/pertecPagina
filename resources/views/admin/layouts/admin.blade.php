@@ -12,7 +12,7 @@
 
             @yield('left-sidebar')
 
-            <div class="right_col" role="main">
+            <div class="right_col" role="main" >
                 <div class="page-title">
                     <div class="title_left">
                         <h1 class="h3">@yield('title')</h1>

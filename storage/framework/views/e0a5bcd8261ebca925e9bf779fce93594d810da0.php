@@ -9,7 +9,7 @@
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
         
-        <?php print app('meta')->render(); ?>
+        <title><?php echo e(config('app.name')); ?></title>
 
         
         <?php echo e(Html::style(mix('assets/app/css/app.css'))); ?>

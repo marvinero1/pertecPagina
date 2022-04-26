@@ -35,6 +35,19 @@
             <div class="menu_section">
                 <h3>{{ __('views.backend.section.navigation.sub_header_1') }}</h3>
                 <ul class="nav side-menu">
+                    
+                    {{-- <li><a><i class="fa fa-credit-card-alt"></i> Deposito Boucher <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('admin.producto.index') }}">
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                                {{ __('views.backend.section.navigation.menu_1_8') }}
+                            </a></li>
+                            <li><a href="{{ route('admin.productosPromocion') }}">
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                                {{ __('views.backend.section.navigation.menu_1_9') }}
+                            </a></li>
+                        </ul>
+                    </li> --}}
                    
                     <li><a><i class="fa fa-cubes"></i> Productos <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
@@ -43,17 +56,32 @@
                                 {{ __('views.backend.section.navigation.menu_1_4') }}
                             </a></li>
                             <li><a href="{{ route('admin.productosPromocion') }}">
-                                <i class="fa fa-cubes" aria-hidden="true"></i>
+                                <i class="fa fa-bullhorn" aria-hidden="true"></i>
                                 {{ __('views.backend.section.navigation.menu_1_6') }}
                             </a></li>
-                            <li><a href="{{ route('admin.producto.index') }}">
-                                <i class="fa fa-cubes" aria-hidden="true"></i>
+                            <li><a href="{{ route('admin.productosNovedad') }}">
+                                <i class="fa fa-diamond" aria-hidden="true"></i>
                                 {{ __('views.backend.section.navigation.menu_1_7') }}
                             </a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="{{ route('admin.users') }}">
+                            <i class="fa fa-ticket" aria-hidden="true"></i>
+                            {{ __('views.backend.section.navigation.menu_1_11') }}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('admin.tienda.index') }}">
+                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                            {{ __('views.backend.section.navigation.menu_1_10') }}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('admin.vendedor.index') }}">
                             <i class="fa fa-address-card" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_5') }}
                         </a>
@@ -64,7 +92,7 @@
                             {{ __('views.backend.section.navigation.menu_1_1') }}
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('admin.users.restore') }}">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_3') }}
@@ -75,7 +103,7 @@
                             <i class="fa fa-key" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_2') }}
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             {{-- <div class="menu_section">

@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\UserController;
-
+use App\Http\Controllers\Admin\ProductoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,4 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('getUsers',[UserController::class, 'getUsers']);
+Route::get('getUsers', [UserController::class, 'getUsers']);
+Route::get('getProducts', [ProductoController::class, 'getProducts']);
+Route::get('getProductsId/{id}', [ProductoController::class, 'getProductsId']);

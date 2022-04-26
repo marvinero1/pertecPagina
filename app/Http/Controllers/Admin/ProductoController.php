@@ -31,6 +31,25 @@ class ProductoController extends Controller
         return view('admin.products.promocion', ['producto' => $producto]);
     }
 
+    public function productosNovedad(Request $request){
+        $nombre_producto = $request->get('buscarpor');
+        $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->where('novedad', 'si')->latest()->paginate(10);
+        
+        return view('admin.products.novedad', ['producto' => $producto]);
+    }
+
+    public function getProducts(){
+        $producto = Producto::all();
+        return response()->json($producto, 200);
+        // return view('admin.users.index', ['users' => User::with('roles')->sortable(['email' => 'asc'])->paginate()]);
+    }
+
+
+    public function getProductsId($id){
+        $producto = Producto::findOrFail($id);
+        return response()->json($producto, 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -129,13 +148,23 @@ class ProductoController extends Controller
         return redirect()->route('admin.producto.index');
     }
 
+    public function productoNovedad(Request $request, $id){
+        $producto = Producto::findOrFail($id);
+        $novedad = $request->get('novedad');
+
+        $producto->novedad = $novedad;
+        $producto->update(); 
+
+        Session::flash('novedad','Producto Agregado a Novedad Exisitosamente!');
+        return back()->withInput();
+    }
+
     public function  productoMatriz(Request $request, $id){
      
         $producto = Producto::findOrFail($id);
         $mensaje = 'Matriz Creada Exitosamente!!!';
 
         $requestData = $request->all();
-        // dd($requestData);
         
         if(is_null($request->imagen_matriz)){
             unset($requestData['imagen_matriz']);
@@ -166,7 +195,6 @@ class ProductoController extends Controller
                 $mensaje = "Error al guardar la imagen";
             }
         }
-        //dd($requestData);
 
         if($producto->update($requestData)){
             DB::commit();
