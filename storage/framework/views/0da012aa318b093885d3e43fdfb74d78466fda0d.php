@@ -71,7 +71,7 @@
         </div><br>
 
         <div class="footer" style="padding: 15px 15px 5px 5px; float: right;">
-            <a type="button" class="btn btn-warning float-right" href="<?php echo e(url('/admin/tienda')); ?>" style="color: black">
+            <a type="button" class="btn btn-warning float-right" href="<?php echo e(url('/admin/vendedor')); ?>" style="color: black">
                 <i class="fa fas fa-arrow-left"></i> Cerrar</a>
             <button type="submit" class="btn btn-primary float-right mr-2"><i class="fa fas fa-save"></i>
                 Guardar</button>

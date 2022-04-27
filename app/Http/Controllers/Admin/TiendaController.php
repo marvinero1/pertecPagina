@@ -74,7 +74,7 @@ class TiendaController extends Controller{
         }
 
         Session::flash('message','Tienda Creado Exisitosamente!');
-        return redirect()->route('admin.tiends.index');
+        return redirect()->route('admin.tienda.index');
     }
 
     /**

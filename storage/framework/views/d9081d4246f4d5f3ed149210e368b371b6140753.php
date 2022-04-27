@@ -18,6 +18,12 @@
 
         </div>
         <?php endif; ?>
+
+        <?php if(Session::has('edit')): ?>
+        <div class="alert alert-success"><?php echo e(Session::get('edit')); ?>
+
+        </div>
+        <?php endif; ?>
         
         <div class="row"><br>
             <div class="col-xs-5">
@@ -104,7 +110,7 @@
                                         accept-charset="UTF-8" style="display:inline">
                                         <?php echo csrf_field(); ?>
                                         <?php echo method_field('DELETE'); ?>
-                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Image"
+                                        <button type="submit" class="btn btn-danger" title="Delete Image"
                                             onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
                                                 class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
                                     </form>
@@ -130,14 +136,13 @@
 <div id='preview'><div id='close'></div><div id='content'></div></div>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
-
 $(document).ready(function(){
     // Funcion que se ejecuta al hacer click sobre una imagen
     $("#listimages img").click(function(){
         // Posicionamos las capas
         $('#background').css('height',$(document).height());
-        $('#preview').css('top',(($(window).height()/2) - ($('#preview').height()/2) + $(document).scrollTop()));
-        $('#preview').css('left', ($(document).width()/2) - ($('#preview').width()/2));
+        // $('#preview').css('top',(($(window).height()/2) - ($('#preview').height()/2) + $(document).scrollTop()));
+        // $('#preview').css('left', ($(document).width()/2) - ($('#preview').width()/2));
         // Cargamos la imagen en la capa grande
         $('#content').html("<img src='"+$(this).attr("src")+"'>");
         // Mostramos las capas
@@ -161,6 +166,10 @@ $(document).ready(function(){
     th,td,h4,.modal-header {
         text-align: center;
     }
+    .imgprod{
+        width: 136px !important;
+        height: 110px !important; 
+    }
     /*Estilo para el listado de imagenes*/
     #listimages img {width:200px;height:130px;}
 
@@ -180,14 +189,12 @@ $(document).ready(function(){
 
     /*Estilo para la capa que contendra la imagen grande y la cruz de cerrar*/
     #preview {
-        display: none;
+        /* display: none; */
         margin: auto;
-        left: 150px !important;
+        /* left: 150px !important; */
         position: absolute;
-        width: 500px;
-        height: 500px;
-        border: 1px solid #D8D7D8;
-        background-color: #FFF;
+        left: auto !important;
+        top: 220px;
         box-shadow: 1px 1px 5px #DDD;
         z-index: 2;
     }
@@ -198,6 +205,9 @@ $(document).ready(function(){
         height:100%;
     }
 
+    #content img{
+        width: 500px !important;
+    }   
     /*Estilo para el boton cerrar*/
     #close {
         position: absolute;

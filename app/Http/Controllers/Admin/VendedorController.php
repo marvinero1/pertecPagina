@@ -74,7 +74,7 @@ class VendedorController extends Controller
         }
 
         Session::flash('message','Vendedor Creado Exisitosamente!');
-        return redirect()->route('admin.vendedors.index');
+        return redirect()->route('admin.vendedor.index');
     }
 
     /**
@@ -83,9 +83,9 @@ class VendedorController extends Controller
      * @param  \App\Models\Vendedor  $vendedor
      * @return \Illuminate\Http\Response
      */
-    public function show(Vendedor $vendedor)
-    {
-        //
+    public function show($id){
+        $vendedor = Vendedor::findOrFail($id);
+        return view('admin.vendedors.show', ['vendedor' => $vendedor]);
     }
 
     /**
@@ -94,9 +94,9 @@ class VendedorController extends Controller
      * @param  \App\Models\Vendedor  $vendedor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vendedor $vendedor)
-    {
-        //
+    public function edit($id){
+        $vendedor = Vendedor::findOrFail($id);
+        return view('admin.vendedors.edit', ['vendedor' => $vendedor]);
     }
 
     /**
@@ -106,9 +106,51 @@ class VendedorController extends Controller
      * @param  \App\Models\Vendedor  $vendedor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vendedor $vendedor)
-    {
-        //
+    public function update(Request $request, $id){
+
+        $vendedor = Vendedor::find($id);
+        $mensaje = 'Vendedor Editado Exitosamente!!!';
+
+        DB::beginTransaction();
+        $requestData = $request->all();
+
+        if($request->imagen == ''){
+            unset($requestData['imagen']);
+        }
+
+        $mensaje = "Vendedor Actualizado correctamente :3";
+        if($request->imagen){
+            $data = $request->imagen;
+            $file = file_get_contents($request->imagen);
+            $info = $data->getClientOriginalExtension(); 
+            $extension = explode('images/vendedors', mime_content_type('images/vendedors'))[0];
+            $image = Image::make($file);
+            $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info; 
+            $path  = 'images/vendedors';
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
+            }
+            $img = $path.'/'.$fileName; 
+            if($image->save($img)) {
+                $archivo_antiguo = $vendedor->imagen;
+                $requestData['imagen'] = $img;
+                $mensaje = "Vendedor Actualizado correctamente :3";
+                if ($archivo_antiguo != '' && !File::delete($archivo_antiguo)) {
+                    $mensaje = "Vendedor Actualizado. error al eliminar la imagen";
+                }
+            }else{
+                $mensaje = "Error al guardar la imagen";
+            }
+        }
+
+        if($vendedor->update($requestData)){
+            DB::commit();
+        }else{
+            DB::rollback();
+        }
+
+        Session::flash('edit',$mensaje);
+             return redirect()->route('admin.vendedor.index');
     }
 
     /**

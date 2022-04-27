@@ -4,9 +4,9 @@
 
     </div>
     <div class="description m-b-md">
-        Sample users:<br/>
-        Admin user: admin.laravel@labs64.com / password: admin<br/>
-        Demo user: demo.laravel@labs64.com / password: demo
+        Usuario:<br/>
+        Admin user: admin.laravel@pertec.com.bo / password: admin<br/>
+        
     </div>
 <?php $__env->stopSection(); ?>
 

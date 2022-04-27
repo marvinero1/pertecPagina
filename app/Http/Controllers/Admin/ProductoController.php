@@ -19,7 +19,7 @@ class ProductoController extends Controller
      */
     public function index(Request $request){
         $nombre_producto = $request->get('buscarpor');
-        $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->paginate(10);
+        $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->orderBy('nombre_producto')->paginate(10);
         
         return view('admin.products.index', ['producto' => $producto]);
     }

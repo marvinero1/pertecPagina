@@ -130,8 +130,8 @@ $(document).ready(function(){
     $("#listimages img").click(function(){
         // Posicionamos las capas
         $('#background').css('height',$(document).height());
-        $('#preview').css('top',(($(window).height()/2) - ($('#preview').height()/2) + $(document).scrollTop()));
-        $('#preview').css('left', ($(document).width()/2) - ($('#preview').width()/2));
+        // $('#preview').css('top',(($(window).height()/2) - ($('#preview').height()/2) + $(document).scrollTop()));
+        // $('#preview').css('left', ($(document).width()/2) - ($('#preview').width()/2));
         // Cargamos la imagen en la capa grande
         $('#content').html("<img src='"+$(this).attr("src")+"'>");
         // Mostramos las capas
@@ -174,14 +174,12 @@ $(document).ready(function(){
 
     /*Estilo para la capa que contendra la imagen grande y la cruz de cerrar*/
     #preview {
-        display: none;
+        /* display: none; */
         margin: auto;
-        left: 150px !important;
+        /* left: 150px !important; */
         position: absolute;
-        width: 500px;
-        height: 500px;
-        border: 1px solid #D8D7D8;
-        background-color: #FFF;
+        left: auto !important;
+        top: 220px;
         box-shadow: 1px 1px 5px #DDD;
         z-index: 2;
     }
@@ -191,6 +189,9 @@ $(document).ready(function(){
         width:100%;
         height:100%;
     }
+    #content img{
+        width: 500px !important;
+    }  
 
     /*Estilo para el boton cerrar*/
     #close {
@@ -200,7 +201,7 @@ $(document).ready(function(){
         height:16px;
         right:2px;
         top:2px;
-        background:url('close.png');
+        background:url('/images/system/close.png');
     }
 
     .url {text-align:center;margin-top:20px;}

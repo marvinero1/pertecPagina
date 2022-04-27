@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('whatsapp');
             $table->string('ciudad');
             $table->string('correo_electronico');
-            $table->string('imagen');
+            $table->string('imagen')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

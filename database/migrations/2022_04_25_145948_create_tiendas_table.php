@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('correo_electronico');
             $table->string('encargado');
             $table->string('imagen');
-            $table->string('latitud', 3, 12);
-            $table->string('longitud', 3, 12);
+            $table->longText('latitud');
+            $table->longText('longitud');
             
             $table->softDeletes();
             $table->timestamps();

@@ -1,4 +1,4 @@
-<div class="pull-right">
+<div class="pull-right" style="color: #FFFE04 !important;">
     &copy; <?php echo e(date('Y')); ?> <?php echo e(config('app.name')); ?>. <?php echo e(__('views.backend.section.footer.copyright')); ?>
 
 </div>
