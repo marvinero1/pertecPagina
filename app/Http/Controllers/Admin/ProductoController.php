@@ -39,11 +39,23 @@ class ProductoController extends Controller
     }
 
     public function getProducts(){
+        // $producto = Producto::all();
         $producto = Producto::all();
+
         return response()->json($producto, 200);
-        // return view('admin.users.index', ['users' => User::with('roles')->sortable(['email' => 'asc'])->paginate()]);
     }
 
+    public function getProductsLessSales(){
+        $productoLessSales = Producto::where('productos.denominacion', '=', "nccopa")->get();
+
+        return response()->json($productoLessSales, 200);
+    }
+
+    public function getProductsStagnat(){
+        $productoStagna = Producto::where('productos.denominacion', '=', "chipb")->get();
+
+        return response()->json($productoStagna, 200);
+    }
 
     public function getProductsId($id){
         $producto = Producto::findOrFail($id);

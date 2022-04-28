@@ -99,7 +99,8 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show(User $user)
-    {
+    {   
+        dd($user->encid);
         return view('admin.users.show', ['user' => $user]);
     }
 

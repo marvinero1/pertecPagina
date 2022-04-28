@@ -12,6 +12,8 @@ use App\Models\Auth\User\Traits\Scopes\UserScopes;
 use App\Models\Auth\User\Traits\Relations\UserRelations;
 use Kyslik\ColumnSortable\Sortable;
 
+
+
 /**
  * App\Models\Auth\User\User
  *
@@ -61,6 +63,8 @@ class User extends Authenticatable
         Sortable,
         Protectable;
 
+    protected $appends = ['encid'];
+    
     public $sortable = ['name', 'email', 'created_at', 'updated_at'];
 
     /**

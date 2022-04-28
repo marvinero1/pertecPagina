@@ -57,7 +57,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('users', 'UserController@index')->name('users');
     Route::get('users/restore', 'UserController@restore')->name('users.restore');
     Route::get('users/{id}/restore', 'UserController@restoreUser')->name('users.restore-user');
-    Route::get('users/{user}', 'UserController@show')->name('users.show');
+    // Route::get('users/{user}', 'UserController@show')->name('users.show');
+    Route::get('users/{id}', function ($id) {
+        // Only executed if {id} is numeric...
+        echo $id;
+    })->name('users.show');
+
     Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
     Route::put('users/{user}', 'UserController@update')->name('users.update');
     Route::any('users/{id}/destroy', 'UserController@destroy')->name('users.destroy');
