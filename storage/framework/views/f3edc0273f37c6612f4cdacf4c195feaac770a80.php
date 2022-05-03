@@ -40,7 +40,7 @@
                     <td><?php echo e($user->updated_at); ?></td>
                     <td><?php echo e($user->last_login); ?></td>
                     <td>
-                        <a class="btn btn-xs btn-primary" href="<?php echo e(route('admin.users.show',  [$user->id])); ?>" data-toggle="tooltip" data-placement="top" data-title="<?php echo e(__('views.admin.users.index.show')); ?>">
+                        <a class="btn btn-xs btn-primary" href="<?php echo e(route('admin.users.show',  [$hash->encodeHex($user->id)])); ?>" data-toggle="tooltip" data-placement="top" data-title="<?php echo e(__('views.admin.users.index.show')); ?>">
                             <i class="fa fa-eye"></i>
                         </a>
                         <a class="btn btn-xs btn-info" href="<?php echo e(route('admin.users.edit', [$user->id])); ?>" data-toggle="tooltip" data-placement="top" data-title="<?php echo e(__('views.admin.users.index.edit')); ?>">

@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Auth\User\User;
+use App\Models\Producto;
+use App\Models\Tienda;
+use App\Models\Vendedor;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -28,8 +31,26 @@ class RouteServiceProvider extends ServiceProvider
         Route::pattern('id', '[0-9]+');
         parent::boot();
 
+        // Route::bind('user', function ($value, $route) {
+        //     return $this->getModel(\app\Models\Auth\User\User::class, $value);
+        // });
+       
+        // Route::bind('producto', function ($value, $route) {
+        //     return $this->getModel(App\Models\Producto::class, $value);
+        // });
+
+        // Route::bind('tienda', function ($value, $route) {
+        //     return $this->getModel(Tienda::class, $value);
+        // });
+
+        // Route::bind('vendedor', function ($value, $route) {
+        //     return $this->getModel(Vendedor::class, $value);
+        // });
+
         $this->binds();
     }
+
+   
 
     /**
      * Define the routes for the application.
@@ -86,5 +107,12 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('user_by_email', function ($email) {
             return User::whereEmail($email)->firstOrFail();
         });
+    }
+
+    private function getModel($model, $routeKey){
+        $id = \Hashids::connection($model)->decode($routeKey)[0] ?? null;
+        $modelInstance = resolve($model);
+
+        return  $modelInstance->findOrFail($id);
     }
 }

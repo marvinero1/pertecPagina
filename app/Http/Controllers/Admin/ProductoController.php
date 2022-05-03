@@ -90,8 +90,9 @@ class ProductoController extends Controller
         //     'nombre_producto' => 'required|max:255',
         //     'denominacion' => 'required|max:255',
         // ]);
-
-        dd($requestData);
+        
+        $requestData= $request->all();
+        // dd($requestData);
 
         if($request->imagen){
             $data = $request->imagen;

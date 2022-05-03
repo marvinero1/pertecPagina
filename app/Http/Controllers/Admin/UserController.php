@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Access\User\EloquentUserRepository;
 use Validator;
-
+use Hashids\Hashids;
+use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {   
     /**
@@ -32,9 +33,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-        return view('admin.users.index', ['users' => User::with('roles')->sortable(['email' => 'asc'])->paginate()]);
+    public function index(Request $request){
+        $hash=new Hashids();
+        $users = User::with('roles')->orderByDesc('email', 'asc')->paginate();
+        // $users = DB::table('users')->with('roles')->orderByDesc('id')->paginate(10);
+        //return view('admin.users.index', ['users' => User::with('roles')->sortable(['email' => 'asc'])->paginate()]);
+        return view('admin.users.index', compact('users','hash'));
     }
 
     public function getUsers(){
@@ -98,17 +102,8 @@ class UserController extends Controller
      * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(User $user){  
-        
-        $user=User::findOrFail($id);
-
-        $user->fill([
-            'id' => Crypt::encryptString($request->id),
-        ])->save();
-
-        dd($user);
-        
-        return view('admin.users.show', ['user' => $user]);
+    public function show($id){  
+      echo "HOLA LOLA";
     }
 
     /**

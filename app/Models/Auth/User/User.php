@@ -11,6 +11,7 @@ use App\Models\Auth\User\Traits\Ables\Rolable;
 use App\Models\Auth\User\Traits\Scopes\UserScopes;
 use App\Models\Auth\User\Traits\Relations\UserRelations;
 use Kyslik\ColumnSortable\Sortable;
+use App\Http\Traits\Hashidable;
 
 /**
  * App\Models\Auth\User\User
@@ -59,9 +60,10 @@ class User extends Authenticatable
         Notifiable,
         SoftDeletes,
         Sortable,
+        Hashidable,
         Protectable;
 
-    protected $appends = ['encid'];
+    protected $appends = ['hashed_id'];
     
     public $sortable = ['name', 'email', 'created_at', 'updated_at'];
 
@@ -92,4 +94,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $dates = ['deleted_at', 'last_login'];
+
+    public function getHashedIdAttribute($value){
+        return \Hashids::connection(get_called_class())->encode($this->getKey());
+    }
 }

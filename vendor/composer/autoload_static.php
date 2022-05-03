@@ -691,6 +691,7 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Traits\\Hashidable' => __DIR__ . '/../..' . '/app/Http/Traits/Hashidable.php',
         'App\\Listeners\\Auth\\LogVerifiedUser' => __DIR__ . '/../..' . '/app/Listeners/Auth/LogVerifiedUser.php',
         'App\\Listeners\\Auth\\LoginListener' => __DIR__ . '/../..' . '/app/Listeners/Auth/LoginListener.php',
         'App\\Listeners\\Auth\\LogoutListener' => __DIR__ . '/../..' . '/app/Listeners/Auth/LogoutListener.php',

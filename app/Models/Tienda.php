@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Traits\Hashidable;
 
 class Tienda extends Model
 {
-    use HasFactory;
+    use HasFactory, Hashidable;
     protected $auditTimestamps = true;
     protected $auditStrict = true;
     protected $auditThreshold = 100;

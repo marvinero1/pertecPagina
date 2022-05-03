@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Http\Traits\Hashidable;
 class Vendedor extends Model
 {
-    use HasFactory;
+    use HasFactory, Hashidable;
 
     protected $auditTimestamps = true;
     protected $auditStrict = true;

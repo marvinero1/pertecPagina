@@ -11,6 +11,8 @@
 |
 */
 
+use Hashids\Hashids;
+
 /**
  * Auth routes
  */
@@ -58,9 +60,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('users/restore', 'UserController@restore')->name('users.restore');
     Route::get('users/{id}/restore', 'UserController@restoreUser')->name('users.restore-user');
     // Route::get('users/{user}', 'UserController@show')->name('users.show');
-    Route::get('users/{id}', function ($id){
-        
-    })->name('users.show');
+    Route::get('users/{id}', 'UserController@show')->name('users.show');
 
     Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
     Route::put('users/{user}', 'UserController@update')->name('users.update');

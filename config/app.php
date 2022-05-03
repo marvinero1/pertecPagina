@@ -169,6 +169,7 @@ return [
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         AlbertCht\InvisibleReCaptcha\InvisibleReCaptchaServiceProvider::class,
+        vinkla\hashids\HashidsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -183,7 +184,6 @@ return [
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
         \App\Providers\ProtectionProvider::class,
         Laraveles\Spanish\SpanishServiceProvider::class,
-        vinkla\hashids\HashidsServiceProvider::class,
     ],
 
     /*

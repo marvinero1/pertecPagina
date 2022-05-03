@@ -49,6 +49,25 @@ return [
             // 'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
         ],
 
-    ],
+        
+        app\Models\Auth\User\User::class => [
+            'salt' => \app\Models\Auth\User\User::class.'7623e9b0009feff8e024a689d6ef59ce', 
+            'length' => 5,
+        ],
 
+        app\Models\Producto::class => [
+            'salt' => \app\Models\Producto::class.'7623e9b0009feff8e024a689d6ef59ce',
+            'length' => 2,
+        ],
+
+        app\Models\Tienda::class => [
+            'salt' => \app\Models\Tienda::class.'7623e9b0009feff8e024a689d6ef59ce',
+            'length' => 2,
+        ],
+
+        app\Models\Vendedor::class => [
+            'salt' => \app\Models\Vendedor::class.'7623e9b0009feff8e024a689d6ef59ce',
+            'length' => 2,
+        ],
+    ],
 ];
