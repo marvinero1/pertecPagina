@@ -94,7 +94,7 @@
                                 <td scope="row">{{ $productos->denominacion }}</td>
                                 <td scope="row">{{ $productos->categoria }}</td>
                                 <td scope="row" style="text-align:center;">
-                                    <a href="{{ route('admin.producto.show', $productos->id ) }}" style="color: black">
+                                    <a href="{{ route('admin.producto.show', urlencode($productos->id) ) }}" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>
                                     @if($productos->promocion !='si')

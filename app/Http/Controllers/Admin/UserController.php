@@ -98,9 +98,16 @@ class UserController extends Controller
      * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(User $user)
-    {   
-        dd($user->encid);
+    public function show(User $user){  
+        
+        $user=User::findOrFail($id);
+
+        $user->fill([
+            'id' => Crypt::encryptString($request->id),
+        ])->save();
+
+        dd($user);
+        
         return view('admin.users.show', ['user' => $user]);
     }
 

@@ -12,8 +12,6 @@ use App\Models\Auth\User\Traits\Scopes\UserScopes;
 use App\Models\Auth\User\Traits\Relations\UserRelations;
 use Kyslik\ColumnSortable\Sortable;
 
-
-
 /**
  * App\Models\Auth\User\User
  *
@@ -80,7 +78,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = ['name', 'email', 'password', 'active', 'confirmation_code', 'confirmed'];
-
+    
     /**
      * The attributes that should be hidden for arrays.
      *

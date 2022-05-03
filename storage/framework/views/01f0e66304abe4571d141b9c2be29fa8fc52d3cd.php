@@ -51,7 +51,9 @@
     </div>
     <!-- /top tiles -->
 
-   
+    <script type='text/javascript'>
+        document.oncontextmenu = function(){return false}
+    </script>
     
 <?php $__env->stopSection(); ?>
 
@@ -59,6 +61,9 @@
     <?php echo \Illuminate\View\Factory::parentPlaceholder('scripts'); ?>
     <?php echo e(Html::script(mix('assets/admin/js/dashboard.js'))); ?>
 
+    <script type='text/javascript'>
+        document.oncontextmenu = function(){return false}
+    </script>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('styles'); ?>
@@ -75,5 +80,4 @@
         text-shadow: 7px 4px 5px #fffe04;
     }
 </style>
-
 <?php echo $__env->make('admin.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pertecPagina\resources\views/admin/dashboard.blade.php ENDPATH**/ ?>

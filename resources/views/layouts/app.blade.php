@@ -10,7 +10,9 @@
 
         {{--Title and Meta--}}
         <title>{{ config('app.name') }}</title>
-
+        <script type='text/javascript'>
+            document.oncontextmenu = function(){return false}
+        </script>
         {{--Common App Styles--}}
         {{ Html::style(mix('assets/app/css/app.css')) }}
 
@@ -18,7 +20,7 @@
         @yield('styles')
 
         {{--Head--}}
-        @yield('head')
+        @yield('head')       
     </head>
     
     <body class="@yield('body_class')">
@@ -33,5 +35,8 @@
 
         {{--Scripts--}}
         @yield('scripts')
+        <script type='text/javascript'>
+            document.oncontextmenu = function(){return false}
+        </script>
     </body>
 </html>

@@ -10,7 +10,9 @@
 
         
         <title><?php echo e(config('app.name')); ?></title>
-
+        <script type='text/javascript'>
+            document.oncontextmenu = function(){return false}
+        </script>
         
         <?php echo e(Html::style(mix('assets/app/css/app.css'))); ?>
 
@@ -19,7 +21,7 @@
         <?php echo $__env->yieldContent('styles'); ?>
 
         
-        <?php echo $__env->yieldContent('head'); ?>
+        <?php echo $__env->yieldContent('head'); ?>       
     </head>
     
     <body class="<?php echo $__env->yieldContent('body_class'); ?>">
@@ -35,6 +37,9 @@
 
         
         <?php echo $__env->yieldContent('scripts'); ?>
+        <script type='text/javascript'>
+            document.oncontextmenu = function(){return false}
+        </script>
     </body>
 </html>
 <?php /**PATH C:\laragon\www\pertecPagina\resources\views/layouts/app.blade.php ENDPATH**/ ?>

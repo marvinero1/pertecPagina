@@ -83,6 +83,15 @@ class ProductoController extends Controller
 
         DB::beginTransaction();
         $requestData = $request->all();
+        $id = $request->id;
+
+        // $requestData = $request->validate([
+        //     'id' => 'max:255',
+        //     'nombre_producto' => 'required|max:255',
+        //     'denominacion' => 'required|max:255',
+        // ]);
+
+        dd($requestData);
 
         if($request->imagen){
             $data = $request->imagen;

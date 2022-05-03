@@ -26,7 +26,9 @@
                 </div>
                 <?php echo $__env->yieldContent('content'); ?>
             </div>
-
+            <script type='text/javascript'>
+                document.oncontextmenu = function(){return false}
+            </script>
             <footer>
                 <?php echo $__env->make('admin.sections.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </footer>

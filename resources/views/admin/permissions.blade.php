@@ -32,29 +32,28 @@
                             @if($user->protectionValidation)
                                 <table class="table table-striped table-bordered dt-responsive nowrap">
                                     <thead>
-                                    <tr>
-                                        <th>{{ __('views.membership.table_header_3') }}</th>
-                                        <th>{{ __('views.membership.table_header_4') }}</th>
-                                        <th>{{ __('views.membership.table_header_5') }}</th>
-                                    </tr>
+                                        <tr>
+                                            <th>{{ __('views.membership.table_header_3') }}</th>
+                                            <th>{{ __('views.membership.table_header_4') }}</th>
+                                            <th>{{ __('views.membership.table_header_5') }}</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-
-                                    @foreach($user->protectionValidation->validation_result as $result)
-                                        <tr>
-                                            <td style="width: 30%">{{ $result['productModuleNumber'] }}</td>
-                                            <td style="width: 10%">
-                                                @if($result['valid'])
-                                                    <span class="label label-primary">{{ __('views.membership.valid') }}</span>
-                                                @else
-                                                    <span class="label label-danger">{{ __('views.membership.not_valid') }}</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                {{ isset($result['expires'])?$result['expires']:''  }}
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                        @foreach($user->protectionValidation->validation_result as $result)
+                                            <tr>
+                                                <td style="width: 30%">{{ $result['productModuleNumber'] }}</td>
+                                                <td style="width: 10%">
+                                                    @if($result['valid'])
+                                                        <span class="label label-primary">{{ __('views.membership.valid') }}</span>
+                                                    @else
+                                                        <span class="label label-danger">{{ __('views.membership.not_valid') }}</span>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    {{ isset($result['expires'])?$result['expires']:''  }}
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             @else

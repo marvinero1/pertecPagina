@@ -27,7 +27,9 @@
                 </div>
                 @yield('content')
             </div>
-
+            <script type='text/javascript'>
+                document.oncontextmenu = function(){return false}
+            </script>
             <footer>
                 @include('admin.sections.footer')
             </footer>

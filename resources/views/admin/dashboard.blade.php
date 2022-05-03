@@ -53,7 +53,9 @@
     </div>
     <!-- /top tiles -->
 
-   
+    <script type='text/javascript'>
+        document.oncontextmenu = function(){return false}
+    </script>
     {{-- <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
             <div id="registration_usage" class="x_panel tile fixed_height_320 overflow_hidden">
@@ -145,6 +147,9 @@
 @section('scripts')
     @parent
     {{ Html::script(mix('assets/admin/js/dashboard.js')) }}
+    <script type='text/javascript'>
+        document.oncontextmenu = function(){return false}
+    </script>
 @endsection
 
 @section('styles')

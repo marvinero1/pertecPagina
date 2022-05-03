@@ -24,6 +24,12 @@ class TiendaController extends Controller{
         return view('admin.tiends.index', ['tienda' => $tienda]);
     }
 
+    public function getStores(){
+        $tienda = Tienda::all();
+
+        return response()->json($tienda, 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

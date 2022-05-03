@@ -98,7 +98,7 @@
                                 <td scope="row"><?php echo e($productos->denominacion); ?></td>
                                 <td scope="row"><?php echo e($productos->categoria); ?></td>
                                 <td scope="row" style="text-align:center;">
-                                    <a href="<?php echo e(route('admin.producto.show', $productos->id )); ?>" style="color: black">
+                                    <a href="<?php echo e(route('admin.producto.show', urlencode($productos->id) )); ?>" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>
                                     <?php if($productos->promocion !='si'): ?>
