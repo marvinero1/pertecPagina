@@ -58,9 +58,9 @@
                                     </tbody>
                                 </table>
                             @else
-                                <div class="line_30 h4">
-                                    Not validated
-                                </div>
+                            <div class="line_30 h4">
+                                Not validated
+                            </div>
                             @endif
                         @endif
                     </td>

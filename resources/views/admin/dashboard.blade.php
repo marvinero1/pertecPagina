@@ -3,7 +3,6 @@
 @section('content')
     <!-- page content -->
     <div class="row " style="padding-top: 55px;">
-
         <div>
             <h1 class="font" style="text-align: center;">{{ __('views.admin.dashboard.title2') }}</h1>        
         </div>
