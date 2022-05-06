@@ -1,0 +1,17 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// styles page
+@import '../assets/css/external.css';
+@import '../assets/css/bootstrap.min.css';
+@import '../assets/css/style.css';
+
+@import '../assets/revolution/css/settings.css';
+@import '../assets/revolution/css/layers.css';
+@import '../assets/revolution/css/navigation.css';
