@@ -7,11 +7,11 @@
             <div class="card card-price">
                 <div class="card-img"><br>
                     <div class="cat">
-                        <img src="/<?php echo e($tienda->imagen); ?>" class="img-responsive imgprod card-img-top" alt="<?php echo e($tienda->nombre_tienda); ?>">
+                        <img src="/<?php echo e($imagen); ?>" class="img-responsive imgprod card-img-top" alt="<?php echo e($nombre_tienda); ?>">
                     </div><br>
                     
                     <div class="card-caption"><br>
-                        <span class="h2"><?php echo e($tienda->nombre_tienda); ?></span>
+                        <span class="h2"><?php echo e($nombre_tienda); ?></span>
                         
                     </div>
                    
@@ -22,14 +22,14 @@
                         
                     </ul> 
                     <table class="table">
-                        <tr><th>Denominacion Tienda</th><th style="text-align: center;"><?php echo e($tienda->nombre_tienda); ?></th></tr>
-                        <tr><td>Telefono</td><td class="price"><?php echo e($tienda->telefono); ?></td></tr>
-                        <tr><td>Celular</td><td class="price"><?php echo e($tienda->celular); ?></td></tr>
-                        <tr><td>Whatsapp</td><td class="price"><?php echo e($tienda->whatsapp); ?></td></tr>
-                        <tr><td>Direccion</td><td class="price"><?php echo e($tienda->direccion); ?></td></tr>
-                        <tr><td>Ciudad</td><td class="price"><?php echo e($tienda->ciudad); ?></td></tr>
-                        <tr><td>E-mail</td><td class="price"><?php echo e($tienda->correo_electronico); ?></td></tr>
-                        <tr><td>Encargado</td><td class="price"><?php echo e($tienda->encargado); ?></td></tr>
+                        <tr><th>Denominacion Tienda</th><th style="text-align: center;"><?php echo e($nombre_tienda); ?></th></tr>
+                        <tr><td>Telefono</td><td class="price"><?php echo e($telefono); ?></td></tr>
+                        <tr><td>Celular</td><td class="price"><?php echo e($celular); ?></td></tr>
+                        <tr><td>Whatsapp</td><td class="price"><?php echo e($whatsapp); ?></td></tr>
+                        <tr><td>Direccion</td><td class="price"><?php echo e($direccion); ?></td></tr>
+                        <tr><td>Ciudad</td><td class="price"><?php echo e($ciudad); ?></td></tr>
+                        <tr><td>E-mail</td><td class="price"><?php echo e($correo_electronico); ?></td></tr>
+                        <tr><td>Encargado</td><td class="price"><?php echo e($encargado); ?></td></tr>
                     </table>
                 </div>
                 <div class="col-md-12">
@@ -42,12 +42,12 @@
             <div class="card card-price">
                 <div class="card-img"><br>
                     <div class="card-caption">
-                        <span class="h2"><?php echo e($tienda->nombre_tienda); ?></span>
+                        <span class="h2"><?php echo e($nombre_tienda); ?></span>
                     </div>
                     <div class="cat" style="text-align: center;"><br>
                         <div class="col">
                             <div class="row">
-                                <div id="lat"><?php echo e($tienda->latitud); ?></div> , <div id="long"><?php echo e($tienda->longitud); ?></div>
+                                <div id="lat"><?php echo e($latitud); ?></div> , <div id="long"><?php echo e($longitud); ?></div>
                             </div>
                         </div>
                     </div>

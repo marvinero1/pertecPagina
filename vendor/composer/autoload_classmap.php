@@ -67,6 +67,8 @@ return array(
     'App\\Models\\Auth\\User\\Traits\\Relations\\UserRelations' => $baseDir . '/app/Models/Auth/User/Traits/Relations/UserRelations.php',
     'App\\Models\\Auth\\User\\Traits\\Scopes\\UserScopes' => $baseDir . '/app/Models/Auth/User/Traits/Scopes/UserScopes.php',
     'App\\Models\\Auth\\User\\User' => $baseDir . '/app/Models/Auth/User/User.php',
+    'App\\Models\\Boucher' => $baseDir . '/app/Models/Boucher.php',
+    'App\\Models\\Pedido' => $baseDir . '/app/Models/Pedido.php',
     'App\\Models\\Producto' => $baseDir . '/app/Models/Producto.php',
     'App\\Models\\Protection\\ProtectionShopToken' => $baseDir . '/app/Models/Protection/ProtectionShopToken.php',
     'App\\Models\\Protection\\ProtectionValidation' => $baseDir . '/app/Models/Protection/ProtectionValidation.php',

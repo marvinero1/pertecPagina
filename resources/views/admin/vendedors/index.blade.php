@@ -95,7 +95,7 @@
                                 <td scope="row">{{ $vendedors->celular }}</td>
                                 <td scope="row">{{ $vendedors->whatsapp }}</td>
                                 <td scope="row" style="text-align:center;">
-                                    <a href="{{ route('admin.vendedor.show', $vendedors->id ) }}" style="color: black">
+                                    <a href="{{ route('admin.vendedor.show', $hash->encode($vendedors->id)) }}" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>   
                                     <a href="{{ route('admin.vendedor.edit', $vendedors->id ) }}" style="color: black">

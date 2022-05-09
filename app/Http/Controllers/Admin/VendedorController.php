@@ -6,6 +6,7 @@ use App\Models\Vendedor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Hashids\Hashids;
 use File;
 use DB;
 use Image;
@@ -19,10 +20,11 @@ class VendedorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
+        $hash=new Hashids();
         $nombre_vendedor = $request->get('buscarpor');
         $vendedor = Vendedor::where('nombre_vendedor','like',"%$nombre_vendedor%")->latest()->paginate(10);
 
-        return view('admin.vendedors.index', ['vendedor' => $vendedor]);
+        return view('admin.vendedors.index', ['vendedor' => $vendedor, 'hash'=>$hash]);
     }
 
     /**
@@ -103,8 +105,27 @@ class VendedorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id){
-        $vendedor = Vendedor::findOrFail($id);
-        return view('admin.vendedors.show', ['vendedor' => $vendedor]);
+        $hash = new Hashids();
+        $hash_id = $hash->decode($id);
+
+        $vendedor = Vendedor::all();
+        $vendedors = $vendedor->find($hash_id);
+
+        foreach($vendedors as $vendedorss){
+            $id= $vendedorss->id;
+            $nombre_vendedor = $vendedorss->nombre_vendedor;
+            $apellido = $vendedorss->apellido;
+            $celular = $vendedorss->celular;
+            $whatsapp = $vendedorss->whatsapp;
+            $ciudad = $vendedorss->ciudad;
+            $correo_electronico = $vendedorss->correo_electronico;
+            $imagen = $vendedorss->imagen;
+            $created_at = $vendedorss->created_at;
+            $updated_at = $vendedorss->updated_at;
+        }
+
+        return view('admin.vendedors.show', compact('nombre_vendedor','apellido','celular','whatsapp','ciudad','correo_electronico',
+        'imagen','created_at','updated_at'));
     }
 
     /**

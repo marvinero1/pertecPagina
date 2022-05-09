@@ -16,8 +16,8 @@
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
             <span class="count_top"><i class="fa fa-cubes "></i> {{ __('views.admin.dashboard.count_2') }}</span>
             <div>
-                <span class="count green">{{  $counts['users'] - $counts['users_inactive'] }}</span>
-                {{-- <span class="count">/</span> --}}
+                <span class="count green">{{  $counts['products']  }}</span>
+                {{-- <span class="count">/</span> --}} 
                 {{-- <span class="count red">{{ $counts['users_inactive'] }}</span> --}}
             </div>
         </div>
@@ -28,7 +28,7 @@
 
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
             <span class="count_top"><i class="fa fa-address-book-o"></i> {{ __('views.admin.dashboard.count_4') }}</span>
-            <div class="count green">{{ $counts['users'] }}</div>
+            <div class="count green">{{ $counts['vendedors'] }}</div>
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">

@@ -114,8 +114,29 @@ class TiendaController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function show($id){
-        $tienda = Tienda::findOrFail($id);
-        return view('admin.tiends.show', ['tienda' => $tienda]);
+        $hash = new Hashids();
+        $hash_id = $hash->decode($id);
+
+        $tienda = Tienda::all();
+        $tiendas = $tienda->find($hash_id);
+
+        foreach($tiendas as $tiendass){
+            $id= $tiendass->id;
+            $nombre_tienda = $tiendass->nombre_tienda;
+            $telefono = $tiendass->telefono;
+            $celular = $tiendass->celular;
+            $whatsapp = $tiendass->whatsapp;
+            $direccion = $tiendass->direccion;
+            $ciudad = $tiendass->ciudad;
+            $correo_electronico = $tiendass->correo_electronico;
+            $encargado = $tiendass->encargado;
+            $imagen = $tiendass->imagen;
+            $latitud = $tiendass->latitud;
+            $longitud = $tiendass->longitud;
+        }
+
+        return view('admin.tiends.show', compact('nombre_tienda','telefono','celular','whatsapp','direccion','ciudad',
+        'correo_electronico','encargado','imagen','latitud','longitud'));
     }
 
     /**

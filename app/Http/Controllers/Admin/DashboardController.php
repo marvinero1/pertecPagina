@@ -31,6 +31,8 @@ class DashboardController extends Controller
     {
         $counts = [
             'users' => \DB::table('users')->count(),
+            'products' => \DB::table('productos')->count(),
+            'vendedors' => \DB::table('vendedors')->count(),
             'users_unconfirmed' => \DB::table('users')->where('confirmed', false)->count(),
             'users_inactive' => \DB::table('users')->where('active', false)->count(),
             'protected_pages' => 0,
@@ -88,9 +90,7 @@ class DashboardController extends Controller
         return response($data);
     }
 
-    public function getRegistrationChartData()
-    {
-
+    public function getRegistrationChartData(){
         $data = [
             'registration_form' => User::whereDoesntHave('providers')->count(),
             'google' => User::whereHas('providers', function ($query) {

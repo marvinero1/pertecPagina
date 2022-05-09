@@ -2,8 +2,8 @@
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;padding-top: 5px;">
             <a href="{{ route('admin.dashboard') }}" class="site_title">
-                <img src="{{url('/assets/images/icon2.png')}}" alt="Logo" width="45px;" height="45px;">
-                <span>Pertec S.R.L ©</span>
+                <img src="{{url('/assets/images/icon.png')}}" alt="Logo" width="45px;" height="45px;">
+                <span> Pertec S.R.L &copy;</span>
             </a>
         </div><br><br><br>
 
@@ -19,7 +19,6 @@
         </div><br/>
         <!-- /menu profile quick info -->
 
-        <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
                 <h3>{{ __('views.backend.section.navigation.sub_header_0') }}</h3>
@@ -35,20 +34,24 @@
             <div class="menu_section">
                 <h3>{{ __('views.backend.section.navigation.sub_header_1') }}</h3>
                 <ul class="nav side-menu">
-                    
-                    {{-- <li><a><i class="fa fa-credit-card-alt"></i> Deposito Boucher <span class="fa fa-chevron-down"></span></a>
+
+                    <li><a><i class="fa fa-inbox"></i> Boucheres <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{ route('admin.producto.index') }}">
-                                <i class="fa fa-money" aria-hidden="true"></i>
-                                {{ __('views.backend.section.navigation.menu_1_8') }}
-                            </a></li>
-                            <li><a href="{{ route('admin.productosPromocion') }}">
-                                <i class="fa fa-money" aria-hidden="true"></i>
-                                {{ __('views.backend.section.navigation.menu_1_9') }}
-                            </a></li>
+                            <li>
+                                <a href="{{ route('admin.boucher.index') }}">
+                                    <i class="fa fa-inbox" aria-hidden="true"></i>
+                                    {{ __('views.admin.bouchers_pendients.index.title') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.boucherConfirmado') }}">
+                                    <i class="fa fa-inbox" aria-hidden="true"></i>
+                                    {{ __('views.admin.bouchers_confirmado.index.title') }}
+                                </a>
+                            </li>
                         </ul>
-                    </li> --}}
-                   
+                    </li>
+           
                     <li><a><i class="fa fa-cubes"></i> Productos <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{ route('admin.producto.index') }}">
@@ -67,19 +70,17 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('admin.users') }}">
-                            <i class="fa fa-ticket" aria-hidden="true"></i>
+                        <a href="{{ route('admin.pedido.index') }}">
+                            <i class="fa fa-list" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_11') }}
                         </a>
                     </li>
-
                     <li>
                         <a href="{{ route('admin.tienda.index') }}">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_10') }}
                         </a>
                     </li>
-
                     <li>
                         <a href="{{ route('admin.vendedor.index') }}">
                             <i class="fa fa-address-card" aria-hidden="true"></i>
@@ -92,56 +93,24 @@
                             {{ __('views.backend.section.navigation.menu_1_1') }}
                         </a>
                     </li>
-                    {{-- <li>
-                        <a href="{{ route('admin.users.restore') }}">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                            {{ __('views.backend.section.navigation.menu_1_3') }}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('admin.permissions') }}">
-                            <i class="fa fa-key" aria-hidden="true"></i>
-                            {{ __('views.backend.section.navigation.menu_1_2') }}
-                        </a>
-                    </li> --}}
                 </ul>
             </div>
-            {{-- <div class="menu_section">
-                <h3>{{ __('views.backend.section.navigation.sub_header_2') }}</h3>
-                <ul class="nav side-menu">
-                    <li>
-                        <a>
-                            <i class="fa fa-list"></i>
-                            {{ __('views.backend.section.navigation.menu_2_1') }}
-                            <span class="fa fa-chevron-down"></span>
-                        </a>
-                        <ul class="nav child_menu">
-                            <li>
-                                <a href="{{ route('log-viewer::dashboard') }}">
-                                    {{ __('views.backend.section.navigation.menu_2_2') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('log-viewer::logs.list') }}">
-                                    {{ __('views.backend.section.navigation.menu_2_3') }}
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div> --}}
-            {{-- <div class="menu_section">
+
+           <div class="menu_section">
                 <h3>{{ __('views.backend.section.navigation.sub_header_3') }}</h3>
                 <ul class="nav side-menu">
-                  <li>
-                      <a href="http://l64.cc/nlaff/VXZPYHCTC" target="_blank" title="Online Software License Management"><i class="fa fa-external-link" aria-hidden="true"></i>Labs64 NetLicensing</a>
-                  </li>
-                  <li>
-                      <a href="https://www.labs64.com/guidechimp/" target="_blank" title="Interactive Guided Product Tours"><i class="fa fa-external-link" aria-hidden="true"></i>GuideChimp</a>
-                  </li>
+                    <li>
+                        <a href="https://pertec.com.bo" target="_blank" title="Sitio Web Pertec S.R.L"><i class="fa fa-external-link" aria-hidden="true"></i>Sitio Web Pertec S.R.L</a>
+                    </li>
+                    <hr style="border-top: 1px solid transparent !important;">
+                    <li>
+                        <a href="{{ route('logout') }}">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            {{ __('views.backend.section.header.menu_0') }}
+                        </a>
+                    </li>
                 </ul>
-            </div> --}}
+            </div> 
         </div>
-        <!-- /sidebar menu -->
     </div>
 </div>

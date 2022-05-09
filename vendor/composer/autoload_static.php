@@ -708,6 +708,8 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'App\\Models\\Auth\\User\\Traits\\Relations\\UserRelations' => __DIR__ . '/../..' . '/app/Models/Auth/User/Traits/Relations/UserRelations.php',
         'App\\Models\\Auth\\User\\Traits\\Scopes\\UserScopes' => __DIR__ . '/../..' . '/app/Models/Auth/User/Traits/Scopes/UserScopes.php',
         'App\\Models\\Auth\\User\\User' => __DIR__ . '/../..' . '/app/Models/Auth/User/User.php',
+        'App\\Models\\Boucher' => __DIR__ . '/../..' . '/app/Models/Boucher.php',
+        'App\\Models\\Pedido' => __DIR__ . '/../..' . '/app/Models/Pedido.php',
         'App\\Models\\Producto' => __DIR__ . '/../..' . '/app/Models/Producto.php',
         'App\\Models\\Protection\\ProtectionShopToken' => __DIR__ . '/../..' . '/app/Models/Protection/ProtectionShopToken.php',
         'App\\Models\\Protection\\ProtectionValidation' => __DIR__ . '/../..' . '/app/Models/Protection/ProtectionValidation.php',
