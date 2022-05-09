@@ -62,9 +62,9 @@ class User extends Authenticatable
         Sortable,
         Hashidable,
         Protectable;
+        
+    protected $appends = ['id'];
 
-    protected $appends = ['hashed_id'];
-    
     public $sortable = ['name', 'email', 'created_at', 'updated_at'];
 
     /**

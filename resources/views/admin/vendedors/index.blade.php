@@ -36,7 +36,7 @@
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Buscar por Nombre" name="buscarpor"
+                                <input type="text" class="form-control" placeholder="Buscar Por Nombre Vendedor" name="buscarpor"
                                     style="border: 1px #2832A1 solid;">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" style="border: 1px #2832A1 solid;">
@@ -99,7 +99,7 @@
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>   
                                     <a href="{{ route('admin.vendedor.edit', $vendedors->id ) }}" style="color: black">
-                                        <button class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
                                             Editar</button>
                                     </a>                                     
 

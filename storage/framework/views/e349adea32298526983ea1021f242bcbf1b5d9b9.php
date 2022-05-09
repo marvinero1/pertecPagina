@@ -33,7 +33,7 @@
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Buscar por codigo" name="buscarpor"
+                                <input type="text" class="form-control" placeholder="Buscar Por Codigo/Nombre" name="buscarpor"
                                     style="border: 1px #2832A1 solid;">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" style="border: 1px #2832A1 solid;">
@@ -93,9 +93,13 @@
                                 </td>
 
                                 <td scope="row" style="text-align:center;">
-                                    <a href="<?php echo e(route('admin.tienda.show', $tiends->id )); ?>" style="color: black">
+                                    <a href="<?php echo e(route('admin.tienda.show', $hash->encode($tiends->id) )); ?>" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            Ver</button></a>                                      
+                                            Ver</button></a>  
+
+                                    <a href="<?php echo e(route('admin.tienda.edit', $tiends->id )); ?>" style="color: black">
+                                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                            Editar</button></a>                                    
 
                                     <form action="<?php echo e(route('admin.tienda.destroy', $tiends->id )); ?>" method="POST"
                                         accept-charset="UTF-8" style="display:inline">

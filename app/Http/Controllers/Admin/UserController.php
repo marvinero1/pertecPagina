@@ -52,8 +52,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function restore(Request $request)
-    {
+    public function restore(Request $request){
         return view('admin.users.restore', ['users' => User::onlyTrashed()->with('roles')->sortable(['email' => 'asc'])->paginate()]);
     }
 
@@ -102,8 +101,14 @@ class UserController extends Controller
      * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id){  
-      echo "HOLA LOLA";
+    public function show(User $user, $id){  
+        $hash = new Hashids();
+        $hash_id = $hash->decode($id);
+
+        $users = User::all();
+        $user = $users->find($hash_id);
+        
+        return view('admin.users.show', ['user' => $user]);
     }
 
     /**
@@ -173,12 +178,10 @@ class UserController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id){
         $status = $this->repository->destroy($id);
 
-        if($status)
-        {
+        if($status){
             return redirect()->route('admin.users')->withFlashSuccess('User Deleted Successfully!');
         }
 

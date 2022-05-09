@@ -2,6 +2,16 @@
 
 @section('content')
 <div>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div><br/>
+    @endif
+    
     <form action="{{route('admin.tienda.store')}}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="row" style="border: outset;">
@@ -58,12 +68,12 @@
             <div class="col-md-12 col-sm-12" style="padding-block-end: 15px;">
                 <div class="col-md-6 col-sm-12  form-group">
                     <label for="latitud">Latitud *</label>
-                    <input type="text" class="form-control" name="latitud" placeholder="Latitud" required>
+                    <input type="text" class="form-control" name="latitud" placeholder="Latitud">
                 </div>
 
                 <div class="col-md-6 col-sm-12  form-group">
                     <label for="longitud">Longitud *</label>
-                    <input type="text" class="form-control" name="longitud" placeholder="Longitud" required>
+                    <input type="text" class="form-control" name="longitud" placeholder="Longitud">
                 </div>
             </div>
 
@@ -72,12 +82,12 @@
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">E-mail *</label>
-                    <input type="email" class="form-control" name="correo_electronico" placeholder="E-mail" required>
+                    <input type="email" class="form-control" name="correo_electronico" placeholder="E-mail">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="cargo">Encargado *</label>
-                    <input type="text" class="form-control" name="encargado" placeholder="Encargado" required>
+                    <input type="text" class="form-control" name="encargado" placeholder="Encargado">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">

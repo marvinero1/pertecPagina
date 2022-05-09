@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Hashids\Hashids;
 use File;
 use DB;
 use Image;
@@ -18,10 +20,11 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
+        $hash=new Hashids();
         $nombre_producto = $request->get('buscarpor');
         $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->orderBy('nombre_producto')->paginate(10);
         
-        return view('admin.products.index', ['producto' => $producto]);
+        return view('admin.products.index', ['producto' => $producto, 'hash' => $hash]);
     }
 
     public function productosPromocion(Request $request){
@@ -78,49 +81,63 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        $mensaje = "Producto Guardada Correctamente";
-        $mensajeError = "Producto No Guardada Correctamente";
+        
+        $requestData = $request->all();
+        
+        $validator = Validator::make($requestData, [
+            'nombre_producto' => 'required|max:191',
+            'denominacion' => 'required|max:191',
+            'categoria' => 'required|max:191',
+            'inox' => 'required|max:191',
+            'imagen' => 'required|max:10500',
+            'imagen_matriz' => 'nullable',
+            'material' => 'nullable',
+            'acabado' => 'nullable',
+            'rosca' => 'nullable',
+            'resistencia' => 'nullable',
+            'tratamiento' => 'nullable',
+            'sae' => 'nullable',
+            'zb' => 'nullable',
+            'zam' => 'nullable',
+            'promocion' => 'nullable',
+            'novedad' => 'nullable'
+        ]);
 
         DB::beginTransaction();
-        $requestData = $request->all();
-        $id = $request->id;
 
-        // $requestData = $request->validate([
-        //     'id' => 'max:255',
-        //     'nombre_producto' => 'required|max:255',
-        //     'denominacion' => 'required|max:255',
-        // ]);
-        
-        $requestData= $request->all();
-        // dd($requestData);
-
-        if($request->imagen){
-            $data = $request->imagen;
-            $file = file_get_contents($request->imagen);
-            $info = $data->getClientOriginalExtension();
-            $extension = explode('images/productos', mime_content_type('images/productos'))[0];
-            $image = Image::make($file);
-            $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
-            $path  = 'images/productos';
-            if (!file_exists($path)) {
-                mkdir($path, 0777, true);
-            }
-            $img = $path.'/'.$fileName;
-            if($image->save($img)){
-                $requestData['imagen'] = $img;
-                $mensaje = "Producto Registrado correctamente";
-            }else{
-                $mensaje = "Error al guardar la imagen";
-            }
-        }
-
-        $producto = Producto::create($requestData);
-
-        if($producto){
-            DB::commit();
+        if ($validator->fails()) {
+            return redirect('admin/producto/create')
+                        ->withErrors($validator)
+                        ->withInput();
         }else{
-            DB::rollback();
-        }
+            if($request->imagen){
+                $data = $request->imagen;
+                $file = file_get_contents($request->imagen);
+                $info = $data->getClientOriginalExtension();
+                $extension = explode('images/productos', mime_content_type('images/productos'))[0];
+                $image = Image::make($file);
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
+                $path  = 'images/productos';
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                }
+                $img = $path.'/'.$fileName;
+                if($image->save($img)){
+                    $requestData['imagen'] = $img;
+                    $mensaje = "Producto Registrado correctamente";
+                }else{
+                    $mensaje = "Error al guardar la imagen";
+                }
+            }
+
+            $producto = Producto::create($requestData);
+
+            if($producto){
+                DB::commit();
+            }else{
+                DB::rollback();
+            }
+        }       
 
         Session::flash('message','Producto Creado Exisitosamente!');
         return redirect()->route('admin.producto.index');
@@ -133,8 +150,34 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id){
-        $producto = Producto::findOrFail($id);
-        return view('admin.products.show', ['producto' => $producto]); 
+        $hash = new Hashids();
+        $hash_id = $hash->decode($id);
+
+        $producto = Producto::all();
+        $productos = $producto->find($hash_id);
+
+        foreach($productos as $productoss){
+            $id= $productoss->id;
+            $nombre_producto = $productoss->nombre_producto;
+            $denominacion = $productoss->denominacion;
+            $categoria = $productoss->categoria;
+            $inox = $productoss->inox;
+            $imagen = $productoss->imagen;
+            $imagen_matriz = $productoss->imagen_matriz;
+            $material = $productoss->material;
+            $acabado = $productoss->acabado;
+            $rosca = $productoss->rosca;
+            $resistencia = $productoss->resistencia;
+            $tratamiento = $productoss->tratamiento;
+            $sae = $productoss->sae;
+            $zb = $productoss->zb;
+            $zam = $productoss->zam;
+            $promocion = $productoss->promocion;
+            $novedad = $productoss->novedad;
+        }
+
+        return view('admin.products.show', compact('nombre_producto','denominacion','categoria','inox','imagen','imagen_matriz',
+        'material','acabado','rosca','resistencia','tratamiento','sae','zb','zam','promocion','novedad','id')); 
     }
     /**
      * Show the form for editing the specified resource.
@@ -142,9 +185,9 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
-    {
-        //
+    public function edit($id){
+        $producto = Producto::findOrFail($id);
+        return view('admin.products.edit', compact('producto'));
     }
 
     /**
@@ -154,9 +197,72 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
-    {
-        //
+    public function update(Request $request, $id){
+        $producto = Producto::find($id);
+        $requestData = $request->all();
+
+        $validator = Validator::make($requestData, [
+            'nombre_producto' => 'required|max:191',
+            'denominacion' => 'required|max:191',
+            'categoria' => 'required|max:191',
+            'inox' => 'required|max:191',
+            'imagen' => 'nullable',
+            'imagen_matriz' => 'nullable',
+            'material' => 'nullable',
+            'acabado' => 'nullable',
+            'rosca' => 'nullable',
+            'resistencia' => 'nullable',
+            'tratamiento' => 'nullable',
+            'sae' => 'nullable',
+            'zb' => 'nullable',
+            'zam' => 'nullable',
+            'promocion' => 'nullable',
+            'novedad' => 'nullable'
+        ]);
+
+        if ($validator->fails()){
+            return redirect('admin/producto/'.$id.'/edit')
+                        ->withErrors($validator)
+                        ->withInput();
+        }else{
+            if($request->imagen == ''){
+                unset($requestData['imagen']);
+            }
+    
+            $mensaje = "Producto Actualizado correctamente :3";
+            if($request->imagen){
+                $data = $request->imagen;
+                $file = file_get_contents($request->imagen);
+                $info = $data->getClientOriginalExtension(); 
+                $extension = explode('images/productos', mime_content_type('images/productos'))[0];
+                $image = Image::make($file);
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info; 
+                $path  = 'images/productos';
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                }
+                $img = $path.'/'.$fileName; 
+                if($image->save($img)) {
+                    $archivo_antiguo = $producto->imagen;
+                    $requestData['imagen'] = $img;
+                    $mensaje = "Producto Actualizado correctamente :3";
+                    if ($archivo_antiguo != '' && !File::delete($archivo_antiguo)) {
+                        $mensaje = "Producto Actualizado. error al eliminar la imagen";
+                    }
+                }else{
+                    $mensaje = "Error al guardar la imagen";
+                }
+            }
+    
+            if($producto->update($requestData)){
+                DB::commit();
+            }else{
+                DB::rollback();
+            }
+        }
+
+        Session::flash('message',$mensaje);
+        return redirect()->route('admin.producto.index');
     }
 
     public function productoPromocion(Request $request, $id){

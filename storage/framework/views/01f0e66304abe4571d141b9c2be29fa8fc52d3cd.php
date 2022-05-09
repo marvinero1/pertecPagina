@@ -6,7 +6,7 @@
         </div>
 
         <div>
-            <img src="<?php echo e(url('assets/images/icon.png')); ?>" alt="logo" width="250px;" height="250px;" style="display: block;margin: auto;">
+            <img src="<?php echo e(url('assets/images/icon.png')); ?>" alt="logo" width="275px;" height="275px;" style="display: block;margin: auto;">
         </div>
     </div><br><br><hr><br>
     <!-- top tiles -->

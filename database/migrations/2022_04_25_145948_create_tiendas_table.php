@@ -21,11 +21,11 @@ return new class extends Migration
             $table->string('whatsapp');
             $table->string('direccion');
             $table->string('ciudad');
-            $table->string('correo_electronico');
-            $table->string('encargado');
-            $table->string('imagen');
-            $table->longText('latitud');
-            $table->longText('longitud');
+            $table->string('correo_electronico')->nullable();
+            $table->string('encargado')->nullable();
+            $table->string('imagen')->nullable();
+            $table->longText('latitud')->nullable();
+            $table->longText('longitud')->nullable();
             
             $table->softDeletes();
             $table->timestamps();

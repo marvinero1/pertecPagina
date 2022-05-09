@@ -70,30 +70,30 @@
 </div>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXolVNo_nkRhEqs9BV_oJDY6Dz1OUQCUU&callback=initMap&v=weekly" defer></script>
-<script>
-    function initMap() {
-        var lat1 = document.getElementById("lat").innerHTML;
-        var long1 = document.getElementById("long").innerHTML;
+    <script>
+        function initMap() {
+            var lat1 = document.getElementById("lat").innerHTML;
+            var long1 = document.getElementById("long").innerHTML;
 
-        lat11 = parseFloat(lat1);
-        long11 = parseFloat(long1);
-        console.log(lat11, long11);
+            lat11 = parseFloat(lat1);
+            long11 = parseFloat(long1);
+            console.log(lat11, long11);
 
-        // The location of Uluru
-        const uluru = { lat: lat11, lng: long11};
-        // The map, centered at Uluru
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 14,
-            center: uluru,
-        });
-        // The marker, positioned at Uluru
-        const marker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-        });
-        }
-    window.initMap = initMap;
-</script>
+            // The location of Uluru
+            const uluru = { lat: lat11, lng: long11};
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: uluru,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+            }
+        window.initMap = initMap;
+    </script>
 <style>
     td{
         line-height: inherit !important;

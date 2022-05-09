@@ -41,7 +41,7 @@
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Buscar por nombre" name="buscarpor"
+                                <input type="text" class="form-control" placeholder="Buscar por Nombre Producto" name="buscarpor"
                                     style="border: 1px #2832A1 solid;">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" style="border: 1px #2832A1 solid;">
@@ -94,9 +94,13 @@
                                 <td scope="row">{{ $productos->denominacion }}</td>
                                 <td scope="row">{{ $productos->categoria }}</td>
                                 <td scope="row" style="text-align:center;">
-                                    <a href="{{ route('admin.producto.show', urlencode($productos->id) ) }}" style="color: black">
+                                    <a href="{{ route('admin.producto.show', $hash->encode($productos->id) ) }}" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>
+                                    
+                                    <a href="{{ route('admin.producto.edit', $productos->id ) }}" style="color: black">
+                                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                            Editar</button></a>
                                     @if($productos->promocion !='si')
                                         <button type="button" class="btn btn-warning btn-sm" data-toggle="modal"
                                         data-target="#myModal{{$productos->id}}">

@@ -42,7 +42,7 @@
                     <td>{{ $user->updated_at }}</td>
                     <td>{{ $user->last_login }}</td>
                     <td>
-                        <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show',  [$hash->encodeHex($user->id)]) }}" data-toggle="tooltip" data-placement="top" data-title="{{ __('views.admin.users.index.show') }}">
+                        <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show',  [$hash->encode($user->id)]) }}" data-toggle="tooltip" data-placement="top" data-title="{{ __('views.admin.users.index.show') }}">
                             <i class="fa fa-eye"></i>
                         </a>
                         <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', [$user->id]) }}" data-toggle="tooltip" data-placement="top" data-title="{{ __('views.admin.users.index.edit') }}">

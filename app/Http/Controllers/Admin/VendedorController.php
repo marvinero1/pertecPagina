@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Vendedor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use File;
 use DB;
 use Image;
@@ -40,37 +41,55 @@ class VendedorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        $mensaje = "Vendedor Guardada Correctamente";
+        $mensaje = "Vendedor Guardado Correctamente";
+
+        $requestData = $request->all();
+        
+        $validator = Validator::make($requestData, [
+            'nombre_vendedor' => 'required|max:191',
+            'apellido' => 'required|max:191',
+            'celular' => 'required|max:191',
+            'imagen' => 'required',
+            'whatsapp' => 'nullable',
+            'ciudad' => 'nullable',
+            'correo_electronico' => 'nullable',
+            'imagen' => 'nullable'
+        ]);
 
         DB::beginTransaction();
-        $requestData = $request->all();
-
-        if($request->imagen){
-            $data = $request->imagen;
-            $file = file_get_contents($request->imagen);
-            $info = $data->getClientOriginalExtension();
-            $extension = explode('images/vendedors', mime_content_type('images/vendedors'))[0];
-            $image = Image::make($file);
-            $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
-            $path  = 'images/vendedors';
-            if (!file_exists($path)) {
-                mkdir($path, 0777, true);
-            }
-            $img = $path.'/'.$fileName;
-            if($image->save($img)){
-                $requestData['imagen'] = $img;
-                $mensaje = "Tienda Registrado correctamente";
-            }else{
-                $mensaje = "Error al guardar la imagen";
-            }
-        }
-
-        $vendedor = Vendedor::create($requestData);
-
-        if($vendedor){
-            DB::commit();
+       
+        if ($validator->fails()) {
+            return redirect('admin/vendedor/create')
+                        ->withErrors($validator)
+                        ->withInput();
         }else{
-            DB::rollback();
+            if($request->imagen){
+                $data = $request->imagen;
+                $file = file_get_contents($request->imagen);
+                $info = $data->getClientOriginalExtension();
+                $extension = explode('images/vendedors', mime_content_type('images/vendedors'))[0];
+                $image = Image::make($file);
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
+                $path  = 'images/vendedors';
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                }
+                $img = $path.'/'.$fileName;
+                if($image->save($img)){
+                    $requestData['imagen'] = $img;
+                    $mensaje = "Tienda Registrado correctamente";
+                }else{
+                    $mensaje = "Error al guardar la imagen";
+                }
+            }
+    
+            $vendedor = Vendedor::create($requestData);
+    
+            if($vendedor){
+                DB::commit();
+            }else{
+                DB::rollback();
+            }
         }
 
         Session::flash('message','Vendedor Creado Exisitosamente!');
@@ -107,50 +126,67 @@ class VendedorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id){
-
         $vendedor = Vendedor::find($id);
         $mensaje = 'Vendedor Editado Exitosamente!!!';
 
-        DB::beginTransaction();
         $requestData = $request->all();
 
-        if($request->imagen == ''){
-            unset($requestData['imagen']);
-        }
+        $validator = Validator::make($requestData, [
+            'nombre_vendedor' => 'required|max:191',
+            'apellido' => 'required|max:191',
+            'celular' => 'required|max:191',
+            'imagen' => 'required',
+            'whatsapp' => 'nullable',
+            'ciudad' => 'nullable',
+            'correo_electronico' => 'nullable',
+            'imagen' => 'nullable'
+        ]);
 
-        $mensaje = "Vendedor Actualizado correctamente :3";
-        if($request->imagen){
-            $data = $request->imagen;
-            $file = file_get_contents($request->imagen);
-            $info = $data->getClientOriginalExtension(); 
-            $extension = explode('images/vendedors', mime_content_type('images/vendedors'))[0];
-            $image = Image::make($file);
-            $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info; 
-            $path  = 'images/vendedors';
-            if (!file_exists($path)) {
-                mkdir($path, 0777, true);
-            }
-            $img = $path.'/'.$fileName; 
-            if($image->save($img)) {
-                $archivo_antiguo = $vendedor->imagen;
-                $requestData['imagen'] = $img;
-                $mensaje = "Vendedor Actualizado correctamente :3";
-                if ($archivo_antiguo != '' && !File::delete($archivo_antiguo)) {
-                    $mensaje = "Vendedor Actualizado. error al eliminar la imagen";
-                }
-            }else{
-                $mensaje = "Error al guardar la imagen";
-            }
-        }
+        DB::beginTransaction();
 
-        if($vendedor->update($requestData)){
-            DB::commit();
+        if ($validator->fails()){
+            return redirect('admin/vendedor/'.$id.'/edit')
+                        ->withErrors($validator)
+                        ->withInput();
         }else{
-            DB::rollback();
-        }
+            if($request->imagen == ''){
+                unset($requestData['imagen']);
+            }
+    
+            $mensaje = "Vendedor Actualizado correctamente :3";
+            if($request->imagen){
+                $data = $request->imagen;
+                $file = file_get_contents($request->imagen);
+                $info = $data->getClientOriginalExtension(); 
+                $extension = explode('images/vendedors', mime_content_type('images/vendedors'))[0];
+                $image = Image::make($file);
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info; 
+                $path  = 'images/vendedors';
+                if (!file_exists($path)){
+                    mkdir($path, 0777, true);
+                }
+                $img = $path.'/'.$fileName; 
+                if($image->save($img)) {
+                    $archivo_antiguo = $vendedor->imagen;
+                    $requestData['imagen'] = $img;
+                    $mensaje = "Vendedor Actualizado correctamente :3";
+                    if ($archivo_antiguo != '' && !File::delete($archivo_antiguo)) {
+                        $mensaje = "Vendedor Actualizado. error al eliminar la imagen";
+                    }
+                }else{
+                    $mensaje = "Error al guardar la imagen";
+                }
+            }
+    
+            if($vendedor->update($requestData)){
+                DB::commit();
+            }else{
+                DB::rollback();
+            }
+        }       
 
         Session::flash('edit',$mensaje);
-             return redirect()->route('admin.vendedor.index');
+        return redirect()->route('admin.vendedor.index');
     }
 
     /**

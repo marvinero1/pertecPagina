@@ -2,6 +2,16 @@
 
 <?php $__env->startSection('content'); ?>
 <div>
+    <?php if($errors->any()): ?>
+        <div class="alert alert-danger">
+            <ul>
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <li><?php echo e($error); ?></li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </ul>
+        </div><br/>
+    <?php endif; ?>
+    
     <form action="<?php echo e(route('admin.tienda.store')); ?>" method="POST" enctype="multipart/form-data">
         <?php echo e(csrf_field()); ?>
 
@@ -59,12 +69,12 @@
             <div class="col-md-12 col-sm-12" style="padding-block-end: 15px;">
                 <div class="col-md-6 col-sm-12  form-group">
                     <label for="latitud">Latitud *</label>
-                    <input type="text" class="form-control" name="latitud" placeholder="Latitud" required>
+                    <input type="text" class="form-control" name="latitud" placeholder="Latitud">
                 </div>
 
                 <div class="col-md-6 col-sm-12  form-group">
                     <label for="longitud">Longitud *</label>
-                    <input type="text" class="form-control" name="longitud" placeholder="Longitud" required>
+                    <input type="text" class="form-control" name="longitud" placeholder="Longitud">
                 </div>
             </div>
 
@@ -73,12 +83,12 @@
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">E-mail *</label>
-                    <input type="email" class="form-control" name="correo_electronico" placeholder="E-mail" required>
+                    <input type="email" class="form-control" name="correo_electronico" placeholder="E-mail">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="cargo">Encargado *</label>
-                    <input type="text" class="form-control" name="encargado" placeholder="Encargado" required>
+                    <input type="text" class="form-control" name="encargado" placeholder="Encargado">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">

@@ -11,10 +11,10 @@
             <div class="card card-price">
                 <div class="card-img"><br>
                     <div class="cat">
-                        <img src="/{{ $producto->imagen }}" class="img-responsive imgprod" alt="{{ $producto->nombre_producto }}">
+                        <img src="/{{ $imagen }}" class="img-responsive imgprod" alt="{{ $nombre_producto }}">
                     </div>                    
                     <div class="card-caption">
-                        <span class="h2">{{ $producto->nombre_producto }}</span>
+                        <span class="h2">{{ $nombre_producto }}</span>
                         {{-- <p>Gluten free</p> --}}
                     </div>
                 </div>
@@ -27,24 +27,24 @@
                     </ul> 
                     <table class="table">
                         <tr><th>Caracteristicas</th><th style="text-align: center;">Detalle</th></tr>
-                        <tr><td>Denominación</td><td class="price">{{ $producto->denominacion }}</td></tr>
-                        <tr><td>Categoria</td><td class="price">{{ $producto->categoria }}</td></tr>
-                        <tr><td>Material</td><td class="price">{{ $producto->material }}</td></tr>
-                        <tr><td>Acabado</td><td class="price">{{ $producto->acabado }}</td></tr>
-                        <tr><td>Rosca</td><td class="price">{{ $producto->rosca }}</td></tr>
-                        <tr><td>Resistencia</td><td class="price">{{ $producto->resistencia }}</td></tr>
-                        <tr><td>Tratamiento</td><td class="price">{{ $producto->tratamiento }}</td></tr>
-                        <tr><td>SAE</td><td class="price">{{ $producto->sae }}</td></tr>
-                        <tr><td>ZB</td><td class="price">{{ $producto->zb }}</td></tr>
-                        <tr><td>ZAM</td><td class="price">{{ $producto->zam }}</td></tr>
+                        <tr><td>Denominación</td><td class="price">{{ $denominacion }}</td></tr>
+                        <tr><td>Categoria</td><td class="price">{{ $categoria }}</td></tr>
+                        <tr><td>Material</td><td class="price">{{ $material }}</td></tr>
+                        <tr><td>Acabado</td><td class="price">{{ $acabado }}</td></tr>
+                        <tr><td>Rosca</td><td class="price">{{ $rosca }}</td></tr>
+                        <tr><td>Resistencia</td><td class="price">{{ $resistencia }}</td></tr>
+                        <tr><td>Tratamiento</td><td class="price">{{ $tratamiento }}</td></tr>
+                        <tr><td>SAE</td><td class="price">{{ $sae }}</td></tr>
+                        <tr><td>ZB</td><td class="price">{{ $zb }}</td></tr>
+                        <tr><td>ZAM</td><td class="price">{{ $zam }}</td></tr>
                     </table>
                 </div>
                 <div class="col-md-12">
                     <a href="{{ route('admin.producto.index') }}" style="color: black">
                         <button class="btn btn-warning"> <i class="fa fa-close" aria-hidden="true"></i> Atras</button></a>
-                        @if($producto->novedad !='si')
+                        @if($novedad !='si')
                             <button type="button" style="float: right;" class="btn btn-success btn-md" data-toggle="modal" 
-                             data-target="#myModalNovedad{{ $producto->id }}">
+                             data-target="#myModalNovedad{{ $id }}">
                         <i class="fa fa-diamond" aria-hidden="true"></i> Novedad</button>
                         @endif
                 </div>
@@ -55,16 +55,16 @@
                 <div class="card-img"><br>
                     <h2 style="text-align: center;">MATRIZ</h2>
                     <div class="cat" style="text-align: center;">
-                        @if(!is_null($producto->imagen_matriz))
-                            <img src="/{{ $producto->imagen_matriz }}" class="img-responsive imgprod" alt="{{ $producto->nombre_producto }}">
+                        @if(!is_null($imagen_matriz))
+                            <img src="/{{ $imagen_matriz }}" class="img-responsive imgprod" alt="{{ $nombre_producto }}">
                         @else
-                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal{{ $producto->id }}">
+                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal{{ $id }}">
                             <i class="fa fa-th" aria-hidden="true"></i> Agregar Matriz</button>
                         @endif
                     </div><br>
                     
                     <div class="card-caption">
-                        <span class="h2">{{ $producto->nombre_producto }}</span>
+                        <span class="h2">{{ $nombre_producto }}</span>
                     </div>
                 </div>
                 <div class="card-body">
@@ -76,7 +76,7 @@
                 </div><br>
             </div>
         </div>
-        <div class="modal fade" id="myModal{{ $producto->id }}" role="dialog">
+        <div class="modal fade" id="myModal{{ $id }}" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -85,7 +85,7 @@
                     <h4 class="modal-title">Agregar Matriz</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="{{route( 'admin.productos.productoMatriz', $producto->id )}}" method="POST"
+                        <form action="{{route( 'admin.productos.productoMatriz', $id )}}" method="POST"
                             style="margin-block-end:-1em !important;" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
@@ -113,7 +113,7 @@
 
 
         <div class="container">
-            <div class="modal fade" id="myModalNovedad{{$producto->id}}" role="dialog">
+            <div class="modal fade" id="myModalNovedad{{$id}}" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -124,13 +124,13 @@
                         </div>
                         <div class="modal-body">
                             <form
-                                action="{{route( 'admin.productos.productoNovedad', $producto->id )}}"
+                                action="{{route( 'admin.productos.productoNovedad', $id )}}"
                                 method="POST" style="margin-block-end:-1em !important;">
                                 {{ csrf_field() }}
                                 {{ method_field('PUT') }}
                                 <input type="hidden" name="novedad" value="si">
                                 <h5 style="text-align: center;">
-                                    {{ strtoupper($producto->nombre_producto) }}</h5><br>
+                                    {{ strtoupper($nombre_producto) }}</h5><br>
                                 <div class="row" style="display: block;">
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-success"

@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Tienda;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use File;
+use Illuminate\Support\Facades\Validator;
+use Hashids\Hashids;
 use DB;
+use File;
 use Image;
 use Session;
 
@@ -18,10 +20,11 @@ class TiendaController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
+        $hash=new Hashids();
         $nombre_tienda = $request->get('buscarpor');
         $tienda = Tienda::where('nombre_tienda','like',"%$nombre_tienda%")->latest()->paginate(10);
 
-        return view('admin.tiends.index', ['tienda' => $tienda]);
+        return view('admin.tiends.index', ['tienda' => $tienda, 'hash' => $hash]);
     }
 
     public function getStores(){
@@ -48,36 +51,57 @@ class TiendaController extends Controller{
     public function store(Request $request){
         $mensaje = "Tienda Guardada Correctamente";
 
-        DB::beginTransaction();
         $requestData = $request->all();
+        
+        $validator = Validator::make($requestData, [
+            'nombre_tienda' => 'required|max:191',
+            'telefono' => 'required|max:191',
+            'celular' => 'required|max:191',
+            'imagen' => 'required',
+            'whatsapp' => 'nullable',
+            'direccion' => 'nullable',
+            'ciudad' => 'nullable',
+            'correo_electronico' => 'nullable',
+            'encargado' => 'nullable',
+            'latitud' => 'nullable',
+            'longitud' => 'nullable'
+        ]);
 
-        if($request->imagen){
-            $data = $request->imagen;
-            $file = file_get_contents($request->imagen);
-            $info = $data->getClientOriginalExtension();
-            $extension = explode('images/tiendas', mime_content_type('images/tiendas'))[0];
-            $image = Image::make($file);
-            $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
-            $path  = 'images/tiendas';
-            if (!file_exists($path)) {
-                mkdir($path, 0777, true);
-            }
-            $img = $path.'/'.$fileName;
-            if($image->save($img)){
-                $requestData['imagen'] = $img;
-                $mensaje = "Tienda Registrado correctamente";
-            }else{
-                $mensaje = "Error al guardar la imagen";
-            }
-        }
-
-        $tienda = Tienda::create($requestData);
-
-        if($tienda){
-            DB::commit();
+        DB::beginTransaction();
+        
+        if ($validator->fails()) {
+            return redirect('admin/tiends/create')
+                        ->withErrors($validator)
+                        ->withInput();
         }else{
-            DB::rollback();
-        }
+            if($request->imagen){
+                $data = $request->imagen;
+                $file = file_get_contents($request->imagen);
+                $info = $data->getClientOriginalExtension();
+                $extension = explode('images/tiendas', mime_content_type('images/tiendas'))[0];
+                $image = Image::make($file);
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
+                $path  = 'images/tiendas';
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                }
+                $img = $path.'/'.$fileName;
+                if($image->save($img)){
+                    $requestData['imagen'] = $img;
+                    $mensaje = "Tienda Registrado correctamente";
+                }else{
+                    $mensaje = "Error al guardar la imagen";
+                }
+            }
+    
+            $tienda = Tienda::create($requestData);
+    
+            if($tienda){
+                DB::commit();
+            }else{
+                DB::rollback();
+            }
+        }      
 
         Session::flash('message','Tienda Creado Exisitosamente!');
         return redirect()->route('admin.tienda.index');
@@ -100,9 +124,9 @@ class TiendaController extends Controller{
      * @param  \App\Models\Tienda  $tienda
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tienda $tienda)
-    {
-        //
+    public function edit($id){
+        $tienda = Tienda::findOrFail($id);
+        return view('admin.tiends.edit', compact('tienda'));
     }
 
     /**
@@ -112,9 +136,67 @@ class TiendaController extends Controller{
      * @param  \App\Models\Tienda  $tienda
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tienda $tienda)
-    {
-        //
+    public function update(Request $request, $id){
+        $tienda = Tienda::find($id);
+        $requestData = $request->all();
+
+        $validator = Validator::make($requestData, [
+            'nombre_tienda' => 'required|max:191',
+            'telefono' => 'required|max:191',
+            'celular' => 'required|max:191',
+            'imagen' => 'nullable',
+            'whatsapp' => 'nullable',
+            'direccion' => 'nullable',
+            'ciudad' => 'nullable',
+            'correo_electronico' => 'nullable',
+            'encargado' => 'nullable',
+            'latitud' => 'nullable',
+            'longitud' => 'nullable'
+        ]);
+
+        if ($validator->fails()){
+            return redirect('admin/tienda/'.$id.'/edit')
+                        ->withErrors($validator)
+                        ->withInput();
+        }else{
+            if($request->imagen == ''){
+                unset($requestData['imagen']);
+            }
+    
+            $mensaje = "Tienda Actualizado correctamente :3";
+            if($request->imagen){
+                $data = $request->imagen;
+                $file = file_get_contents($request->imagen);
+                $info = $data->getClientOriginalExtension(); 
+                $extension = explode('images/tiendas', mime_content_type('images/tiendas'))[0];
+                $image = Image::make($file);
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info; 
+                $path  = 'images/tiendas';
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                }
+                $img = $path.'/'.$fileName; 
+                if($image->save($img)) {
+                    $archivo_antiguo = $tienda->imagen;
+                    $requestData['imagen'] = $img;
+                    $mensaje = "Tienda Actualizado correctamente :3";
+                    if ($archivo_antiguo != '' && !File::delete($archivo_antiguo)) {
+                        $mensaje = "Tienda Actualizado. error al eliminar la imagen";
+                    }
+                }else{
+                    $mensaje = "Error al guardar la imagen";
+                }
+            }
+    
+            if($tienda->update($requestData)){
+                DB::commit();
+            }else{
+                DB::rollback();
+            }
+        }
+
+        Session::flash('message',$mensaje);
+        return redirect()->route('admin.tienda.index');
     }
 
     /**

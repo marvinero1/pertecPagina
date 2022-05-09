@@ -2,7 +2,7 @@
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;padding-top: 5px;">
             <a href="<?php echo e(route('admin.dashboard')); ?>" class="site_title">
-                <img src="<?php echo e(url('/assets/images/icon.png')); ?>" alt="Logo" width="50px;" height="50px;">
+                <img src="<?php echo e(url('/assets/images/icon2.png')); ?>" alt="Logo" width="45px;" height="45px;">
                 <span>Pertec S.R.L ©</span>
             </a>
         </div><br><br><br>
