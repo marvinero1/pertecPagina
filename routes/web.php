@@ -10,9 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-use Hashids\Hashids;
-
 /**
  * Auth routes
  */
@@ -56,19 +53,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
     //Users
-    Route::get('users', 'UserController@index')->name('users');
-    Route::get('users/restore', 'UserController@restore')->name('users.restore');
-    Route::get('users/{id}/restore', 'UserController@restoreUser')->name('users.restore-user');
-    // Route::get('users/{user}', 'UserController@show')->name('users.show');
-    Route::get('users/{id}', 'UserController@show')->name('users.show');
+    Route::get('users', 'UserController@index')->name('users')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::get('users/restore', 'UserController@restore')->name('users.restore')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::get('users/{id}/restore', 'UserController@restoreUser')->name('users.restore-user')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::get('users/{id}', 'UserController@show')->name('users.show')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
 
-    Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
-    Route::put('users/{user}', 'UserController@update')->name('users.update');
-    Route::any('users/{id}/destroy', 'UserController@destroy')->name('users.destroy');
-    Route::get('permissions', 'PermissionController@index')->name('permissions');
-    Route::get('permissions/{user}/repeat', 'PermissionController@repeat')->name('permissions.repeat');
-    Route::get('dashboard/log-chart', 'DashboardController@getLogChartData')->name('dashboard.log.chart');
-    Route::get('dashboard/registration-chart', 'DashboardController@getRegistrationChartData')->name('dashboard.registration.chart');
+    Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::put('users/{user}', 'UserController@update')->name('users.update')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::any('users/{id}/destroy', 'UserController@destroy')->name('users.destroy')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::get('permissions', 'PermissionController@index')->name('permissions')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::get('permissions/{user}/repeat', 'PermissionController@repeat')->name('permissions.repeat')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::get('dashboard/log-chart', 'DashboardController@getLogChartData')->name('dashboard.log.chart')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::get('dashboard/registration-chart', 'DashboardController@getRegistrationChartData')->name('dashboard.registration.chart')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     
     // Administrable
     Route::get('productosPromocion', 'ProductoController@productosPromocion')->name('productosPromocion')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
