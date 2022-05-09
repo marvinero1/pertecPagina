@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ba81439615268514e133fd2b605ad4d4704a7828',
+        'reference' => 'f5ec3dec4791dc0b21b6240a2c237029e62ff177',
         'name' => 'labs64/pertec',
         'dev' => true,
     ),
@@ -523,7 +523,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ba81439615268514e133fd2b605ad4d4704a7828',
+            'reference' => 'f5ec3dec4791dc0b21b6240a2c237029e62ff177',
             'dev_requirement' => false,
         ),
         'laravel/framework' => array(
@@ -551,6 +551,15 @@
             'install_path' => __DIR__ . '/../laravel/socialite',
             'aliases' => array(),
             'reference' => '68afb03259b82d898c68196cbcacd48596a9dd72',
+            'dev_requirement' => false,
+        ),
+        'laravel/telescope' => array(
+            'pretty_version' => 'v4.9.0',
+            'version' => '4.9.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/telescope',
+            'aliases' => array(),
+            'reference' => 'd0cf8d6a54a1831dbe189a1f194e8271a4a5435a',
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(

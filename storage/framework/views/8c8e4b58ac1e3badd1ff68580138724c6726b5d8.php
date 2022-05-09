@@ -35,6 +35,13 @@
             <div class="menu_section">
                 <h3><?php echo e(__('views.backend.section.navigation.sub_header_1')); ?></h3>
                 <ul class="nav side-menu">
+                    <li>
+                        <a href="<?php echo e(route('admin.carusel.index')); ?>">
+                            <i class="fa fa-picture-o" aria-hidden="true"></i>
+                            <?php echo e(__('views.backend.section.navigation.menu_1_13')); ?>
+
+                        </a>
+                    </li>
 
                     <li><a><i class="fa fa-inbox"></i> Boucheres <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">

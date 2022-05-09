@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductoController;
 use App\Http\Controllers\Admin\TiendaController;
+use App\Http\Controllers\Admin\CaruselController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,3 +28,4 @@ Route::get('getStores', [TiendaController::class, 'getStores']);
 Route::get('getProductsLessSales', [ProductoController::class, 'getProductsLessSales']);
 Route::get('getProductsStagnat', [ProductoController::class, 'getProductsStagnat']);
 Route::get('getProductsId/{id}', [ProductoController::class, 'getProductsId']);
+Route::get('getCaruselImage', [CaruselController::class, 'getCaruselImage']);

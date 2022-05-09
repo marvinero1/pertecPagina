@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

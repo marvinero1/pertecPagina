@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bouchers', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
