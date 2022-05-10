@@ -9,15 +9,15 @@
         </div><br>
 
         <?php if(Session::has('message')): ?>
-        <div class="alert alert-info"><?php echo e(Session::get('message')); ?>
+            <div class="alert alert-info"><?php echo e(Session::get('message')); ?>
 
-        </div>
+            </div>
         <?php endif; ?>
 
         <?php if(Session::has('danger')): ?>
-        <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?>
+            <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?>
 
-        </div>
+            </div>
         <?php endif; ?>
         <div class="row"><br>
             <div class="col-xs-5">

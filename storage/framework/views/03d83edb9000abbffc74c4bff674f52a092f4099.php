@@ -106,9 +106,6 @@
             </div>
         </div>
 
-
-
-
         <div class="container">
             <div class="modal fade" id="myModalNovedad<?php echo e($id); ?>" role="dialog">
                 <div class="modal-dialog">
