@@ -27,6 +27,12 @@ class VendedorController extends Controller
         return view('admin.vendedors.index', ['vendedor' => $vendedor, 'hash'=>$hash]);
     }
 
+    public function getSalesman(){
+        $vendedor = Vendedor::all();
+        
+        return response()->json($vendedor, 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -6,13 +6,12 @@ use App\Models\Carusel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use File;
 use DB;
 use Image;
 use Session;
 
-class CaruselController extends Controller
-{
+class CaruselController extends Controller{
+    
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +23,6 @@ class CaruselController extends Controller
     }
 
     public function getCaruselImage(){
-        // $producto = Producto::all();
         $carusel = Carusel::all();
         return response()->json($carusel, 200);
     }
@@ -54,7 +52,6 @@ class CaruselController extends Controller
             'imagen' => 'required|mimes:jpeg,png,tif|max:10000',
             'imagen_icono' => 'required|mimes:jpeg,png,tif|max:1000',
         ]);
-
      
         DB::beginTransaction();
 

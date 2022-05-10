@@ -41,6 +41,18 @@ class ProductoController extends Controller
         return view('admin.products.novedad', ['producto' => $producto]);
     }
 
+    public function getProductsPromotion(){
+        $producto = Producto::where('promocion', 'si')->get();
+        
+        return response()->json($producto, 200);
+    }
+
+    public function getProductsNovelty(){
+        $producto = Producto::where('novedad', 'si')->get();
+        
+        return response()->json($producto, 200);
+    }
+
     public function getProducts(){
         // $producto = Producto::all();
         $producto = Producto::all();

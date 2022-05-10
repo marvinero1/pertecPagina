@@ -78,6 +78,7 @@
                         <thead>
                             <tr>
                                 <th>Imagen</th>
+                                <th>Ciudad</th>
                                 <th>Nombre y Apellidos </th>
                                 <th>Celular</th>
                                 <th>Whatsapp</th>
@@ -91,6 +92,7 @@
                                 <td scope="row" id='listimages'> <img src="/{{ $vendedors->imagen }}" class="img-responsive imgprod" id='listimages'
                                     alt="{{ $vendedors->nombre_tienda }}" style="display: block;margin: auto;">
                                 </td>
+                                <td scope="row">{{ strtoupper($vendedors->ciudad) }}</td>
                                 <td scope="row">{{ strtoupper($vendedors->nombre_vendedor) }}, {{ strtoupper($vendedors->apellido) }}</td>
                                 <td scope="row">{{ $vendedors->celular }}</td>
                                 <td scope="row">{{ $vendedors->whatsapp }}</td>

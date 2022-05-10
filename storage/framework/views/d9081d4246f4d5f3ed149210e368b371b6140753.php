@@ -81,6 +81,7 @@
                         <thead>
                             <tr>
                                 <th>Imagen</th>
+                                <th>Ciudad</th>
                                 <th>Nombre y Apellidos </th>
                                 <th>Celular</th>
                                 <th>Whatsapp</th>
@@ -94,6 +95,7 @@
                                 <td scope="row" id='listimages'> <img src="/<?php echo e($vendedors->imagen); ?>" class="img-responsive imgprod" id='listimages'
                                     alt="<?php echo e($vendedors->nombre_tienda); ?>" style="display: block;margin: auto;">
                                 </td>
+                                <td scope="row"><?php echo e(strtoupper($vendedors->ciudad)); ?></td>
                                 <td scope="row"><?php echo e(strtoupper($vendedors->nombre_vendedor)); ?>, <?php echo e(strtoupper($vendedors->apellido)); ?></td>
                                 <td scope="row"><?php echo e($vendedors->celular); ?></td>
                                 <td scope="row"><?php echo e($vendedors->whatsapp); ?></td>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductoController;
 use App\Http\Controllers\Admin\TiendaController;
 use App\Http\Controllers\Admin\CaruselController;
+use App\Http\Controllers\Admin\VendedorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('getUsers', [UserController::class, 'getUsers']);
 Route::get('getProducts', [ProductoController::class, 'getProducts']);
 Route::get('getStores', [TiendaController::class, 'getStores']);
-
 Route::get('getProductsLessSales', [ProductoController::class, 'getProductsLessSales']);
 Route::get('getProductsStagnat', [ProductoController::class, 'getProductsStagnat']);
+Route::get('getProductsPromotion', [ProductoController::class, 'getProductsPromotion']);
+Route::get('getProductsNovelty', [ProductoController::class, 'getProductsNovelty']);
 Route::get('getProductsId/{id}', [ProductoController::class, 'getProductsId']);
 Route::get('getCaruselImage', [CaruselController::class, 'getCaruselImage']);
+Route::get('getSalesman', [VendedorController::class, 'getSalesman']);
