@@ -87,17 +87,17 @@
 									<a href="/fullProdNoved"> Novedades</a>
 								</li>
 								<li>
-									<a href="/#"> Pedidos</a>
+									<a href="/pedidos"> Pedidos</a>
 								</li>
 							</ul>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4">
 							<ul class="list-unstyled text-capitalize">
 								<li>
-									<a href="#"> Depósitos Bancarios</a>
+									<a href="/depositos"> Depósitos Bancarios</a>
 								</li>
 								<li>
-									<a href="#"> Contáctanos</a>
+									<a href="/contacto"> Contáctanos</a>
 								</li>
 							</ul>
 						</div>
@@ -190,9 +190,16 @@
 	============================================= -->
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center">
-				<p class="text-capitalize">© 2022 - 2022 Pertec S.R.L. all rights reserved</p>
+			<div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center" style="color: white; font-size: larger;">
+                <label>© </label>
+                <label id="yearcopy">  </label>
+                <label class="text-capitalize"> Pertec S.R.L. all rights reserved</label>
 			</div>
 		</div>
 	</div>
 </footer>
+
+<script>
+    var y = new Date().getFullYear();
+    document.getElementById("yearcopy").innerHTML = y;
+</script>

@@ -9850,7 +9850,6 @@ footer hr {
 	border-radius:50px;
 	text-align:center;
     font-size:30px;
-	box-shadow: 2px 2px 3px #999;
     z-index:100;
 }
 .btn_Whats_float:hover {
@@ -9899,7 +9898,7 @@ footer hr {
     background-color:#fff;
 }
 .btn_Inf_float_my-float{
-	margin-top:16px;
+	margin-top:11px;
 }
 .btn-modif-white{
     background-color: transparent !important;
@@ -9944,3 +9943,15 @@ footer hr {
       margin-left: 71px;
     }
   }
+  @media(min-width: 992px){
+    .col-md-offset-6 {
+        left: -25%;
+      }
+  }
+  @media(min-width: 768px) and (max-width: 991px){
+    .col-md-offset-6 {
+        left: 25%;
+      }
+  }
+
+

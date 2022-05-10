@@ -47,15 +47,15 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#">Pedidos</a>
+							<a href="/pedidos">Pedidos</a>
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#">Depósitos Bancarios</a>
+							<a href="/depositos">Depósitos Bancarios</a>
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown pull-left">
-							<a href="#">Contáctatos</a>
+							<a href="/contacto">Contáctatos</a>
 						</li>
 						<!-- li end -->
 					</ul>

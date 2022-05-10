@@ -114,7 +114,11 @@
                 <!-- .sidebar end -->
                 <div class="row">
                     <div class="product-img product-feature-img mb-50">
-                        <img src=" http://192.168.31.242:5000/{{ $b['imagen_matriz'] }}" alt="matriz" />
+                        @if(is_null($b['imagen_matriz']))
+                            <img src="../assets/images/matrizVacia.jpg" alt="matriz" />
+                        @else
+                            <img src=" http://192.168.31.242:5000/{{ $b['imagen_matriz'] }}" alt="matriz" />
+                        @endif
                     </div>
                 </div>
                 <div class="row">

@@ -56,7 +56,7 @@
             </a>
     </div>
     <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" class="btn_Whats_float" target="_blank">
-        <i class="fa fa-whatsapp btn_Inf_float_my-float"></i>
+        <i class="fa fa-whatsapp btn_Inf_float_my-float" style="margin-top: 14px;"></i>
     </a>
 
     <script type='text/javascript'>

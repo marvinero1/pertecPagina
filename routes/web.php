@@ -37,4 +37,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/fullProducts', [App\Http\Controllers\HomeController::class, 'getAllProductos'])->name('allProducts');
     Route::get('/fullProdPromo', [App\Http\Controllers\HomeController::class, 'getAllProdsPromo'])->name('allProdPromo');
     Route::get('/fullProdNoved', [App\Http\Controllers\HomeController::class, 'getAllProdsNovedad'])->name('allProdNoved');
+
+    Route::get('/contacto', function () {return view('pages.contactos');});
+    Route::get('/pedidos', function () {return view('pages.estadoPedidos');});
+    Route::get('/depositos', function () {return view('pages.depositoBancario');});
+    Route::get('/facturas', function () {return view('pages.verFacturas');});
 });

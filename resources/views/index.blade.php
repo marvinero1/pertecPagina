@@ -11,140 +11,60 @@
     <div class="rev_slider_wrapper">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
-
-                <!-- slide 1 -->
-                <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
+                @foreach ($b1 as $bcarousel)
+                    <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="1000"
                     style="background-color: rgba(34, 34, 34, 0.3);">
                     <!-- MAIN IMAGE -->
-                    <img src="assets/images/sliders/p1.jpg" alt="Background" width="1920" height="1280">
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                        data-whitespace="nowrap" data-width="['80','70','70','100']"
-                        data-height="['80','70','70','100']" data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-lineheight="['80','100','100','100']"
-                        style="font-family: raleway; text-align:center">
-                        <img src="assets/images/sliders/icons/png-transparent-screw-black-hex-screw-nut-bolt-tool-screwdriver-text-black-and-white-thumbnail-removebg-preview.png"
-                            alt="hook" />
-                    </div>
+                        <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen'] }}" alt="Background" width="1920" height="1280">
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
+                            data-whitespace="nowrap" data-width="['80','70','70','100']"
+                            data-height="['80','70','70','100']" data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on" data-lineheight="['80','100','100','100']"
+                            style="font-family: raleway; text-align:center">
+                            <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen_icono'] }}"
+                                alt="hook" />
+                        </div>
 
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                        data-lineheight="['100','45','25','25']" data-fontweight="['700','500','600','300']"
-                        data-color="#ffc527" style="font-family: montserrat; ">
-                        PERTEC S.R.L.
-                    </div>
+                        <!-- LAYER NR. 2 -->
+                        <h1 class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
+                            data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
+                            data-lineheight="['100','45','25','25']" data-fontweight="['700','500','600','300']"
+                            data-color="#ffc527" style="font-family: montserrat; ">
+                            {{ $bcarousel['titulo'] }}
+                        </h1>
 
-                    <!-- LAYER NR. 3 -->
-                    <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['25','17','17','17']"
-                        data-lineheight="['50','26','25','25']" data-fontweight="['700','500','500','500']"
-                        data-color="#fff" style="font-family: raleway; text-align:center">
-                        © 2022 - 2022 Pertec SA. All Rights Reserved
-                    </div>
-                </li>
-
-                <!-- slide 2 -->
-                <li data-transition="fadefrombottom" data-slotamount="default" data-easein="Power4.easeInOut"
-                    data-easeout="Power4.easeInOut" data-masterspeed="2000">
-                    <img src="assets/images/sliders/16.png" alt="" width="1920" height="1280">
-                    <div class="tp-caption" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                        data-width="['80','70','70','100']" data-height="['80','70','70','100']"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power3.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-start="1000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['17','17','15','15']"
-                        data-lineheight="['80','100','100','100']" style="font-family: raleway; text-align:center">
-                        <img src="assets/images/sliders/icons/png-transparent-nut-bolt-black-silhouette-hexagon-hole-removebg-preview.png"
-                            alt="brush" />
-                    </div>
-
-                    <div class="tp-caption text-uppercase color-theme texto-borde" data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                        data-transform_idle="o:1;"
-                        data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="2000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                        data-lineheight="['100','45','25','25']" data-fontweight="['700','500','600','300']"
-                        data-color="#ffc527" style="font-family: montserrat; ">
-                        Maestros en Pernos
-                    </div>
-
-                    <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-                        data-transform_in="x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['25','17','17','17']"
-                        data-lineheight="['26','26','25','25']" data-fontweight="['700','500','500','500']"
-                        data-color="#fff" style="font-family: raleway; text-align:center">
-                        Calidad Garantizada
-                    </div>
-                </li>
-
-                <li data-index='rs-367' data-transition='scaledownfromtop' data-slotamount='default'
-                    data-easein='default' data-easeout='default' data-masterspeed='default'>
-                    <img src="assets/images/sliders/12.png" alt="" width="1920" height="1280">
-                    <div class="tp-caption" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                        data-width="['80','70','70','100']" data-height="['80','70','70','100']"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:-30px;rX:70deg;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="1000"
-                        data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                        data-lineheight="['80','100','100','100']" style="font-family: raleway; text-align:center">
-                        <img src="assets/images/sliders/icons/png-transparent-screw-bolt-computer-icons-nut-screw-cdr-white-technic-removebg-preview.png"
-                            alt="shovel" />
-                    </div>
-
-                    <div class="tp-caption text-uppercase color-theme texto-borde" data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="0" data-whitespace="nowrap"
-                        data-width="['auto','auto','auto','auto']" data-height="['auto','auto','auto','auto']"
-                        data-transform_idle="o:1;"
-                        data-transform_in="x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="1500" data-splitin="chars"
-                        data-splitout="none" data-responsive_offset="on" data-elementdelay="0.05"
-                        data-fontsize="['75','17','15','15']" data-lineheight="['100','45','25','25']"
-                        data-fontweight="['700','500','600','300']" data-color="#ffc527"
-                        style="font-family: montserrat; ">
-                        Nosotros Innovamos
-                    </div>
-
-                    <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-                        data-transform_in="x:-50px;skX:100px;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="2500"
-                        data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                        data-fontsize="['25','17','17','17']" data-lineheight="['26','26','25','25']"
-                        data-fontweight="['700','500','500','500']" data-color="#fff"
-                        style="font-family: raleway ;text-align:center">
-                        Materiales de Sujeción
-                    </div>
-                </li>
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
+                            data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on" data-fontsize="['25','17','17','17']"
+                            data-lineheight="['50','26','25','25']" data-fontweight="['700','500','500','500']"
+                            data-color="#fff" style="font-family: raleway; text-align:center">
+                            {{ $bcarousel['sub_titulo'] }}
+                        </div>
+                    </li>
+                @endforeach
             </ul>
         </div>
         <!-- END REVOLUTION SLIDER -->
 
         <!-- Widget Bottom -->
-        <div class="container widget-bottom widgets-contact hidden-xs">
+        <div class="rev_slider_wrapper widget-bottom widgets-contact hidden-xs" style="background-color: rgba(0,0,0,0.6) !important;">
             <div class="row">
                 <ul class="list-inline">
 
@@ -181,49 +101,6 @@
                             <p class="text-capitalize font-heading text-white">No. 4581 Arocagua</p>
                         </div>
                     </li>
-                    <!-- .widget end -->
-                    <!-- <li class="col-sm-4 col-md-3 widget">
-                        <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#model-quote"
-                            id="modelquote">Request A Quote</a>
-
-                        <div class="modal fade model-quote" id="model-quote" tabindex="-1" role="dialog"
-                            aria-labelledby="modelquote">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <div class="model-icon">
-                                            <i class="lnr lnr-apartment"></i>
-                                        </div>
-                                        <div class="model-divider">
-                                            <div class="model-title">
-                                                <p>Don’t Hesitate To ask</p>
-                                                <h6>rquest a quote</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="pop-quote-form" action="assets/php/sendpopquote.php" method="post">
-                                            <input type="text" class="form-control" name="quote-name" id="name"
-                                                placeholder="Your Name" required />
-                                            <input type="email" class="form-control" name="quote-email" id="email"
-                                                placeholder="Email" required />
-                                            <input type="text" class="form-control" name="quote-telephone"
-                                                id="telephone" placeholder="Telephone" required />
-                                            <textarea class="form-control" name="quote-message" id="quote"
-                                                placeholder="Quote Details" rows="2" required></textarea>
-                                            <button type="submit" class="btn btn-primary btn-black btn-block">Submit
-                                                Inquiry</button>
-                                            <div id="pop-quote-result" class="mt-xs">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -235,7 +112,7 @@
 
 <!-- acerca de nosotros -->
 
-<section id="shotcode-1" class="shotcode-1 about-home-2 text-center-xs text-center-sm"  style="background-color: white;">
+<section id="shotcode-1" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -254,26 +131,35 @@
             </div>
             <!-- .col-md-12 end -->
             <div class="col-xs-12 col-sm-12 col-md-6">
-                <h3 class="color-heading mb-md" style="text-align: justify;">Desarrollamos oportunidades mutuas de servicio y beneficio con nuestros
+                <h3 class="color-heading mb-md" style="text-align: justify;">Desarrollamos oportunidades mutuas de
+                    servicio y beneficio con nuestros
                     proveedores, mediante el cumplimiento de estrictas normas de calidad.</h3>
-                <p style="text-align: justify;">Somos una empresa dedicada a satisfacer todas las necesidades de Elementos de Sujeción de los sectores
-                    de construcción, industria, agroindustria, minería, metalmecánica y del parque automotriz en general, a través de la importación y
+                <p style="text-align: justify;">Somos una empresa dedicada a satisfacer todas las necesidades de
+                    Elementos de Sujeción de los sectores
+                    de construcción, industria, agroindustria, minería, metalmecánica y del parque automotriz en
+                    general, a través de la importación y
                     comercialización directa.</p>
-                    <ul style="text-align: justify;" class="list-unstyled">
-                        <li>
-                            <p><i class="fa fa-check ml-xs"></i> Nuestra vocación de servicio es el motor que impulsa y dirige nuestras acciones.</p>
-                        </li>
-                        <li>
-                            <p><i class="fa fa-check ml-xs"></i> Brindamos un excelente servicio a los clientes externos e internos, en procura de
+                <ul style="text-align: justify;" class="list-unstyled">
+                    <li>
+                        <p><i class="fa fa-check ml-xs"></i> Nuestra vocación de servicio es el motor que impulsa y
+                            dirige nuestras acciones.</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-check ml-xs"></i> Brindamos un excelente servicio a los clientes externos e
+                            internos, en procura de
                             maximizar la satisfacción de sus necesidades y deseos.</p>
-                        </li>
-                        <li>
-                            <p><i class="fa fa-check ml-xs"></i> Somos personas comprometidas con nuestra Empresa y trabajamos en equipo.</p>
-                        </li>
-                    </ul>
-                <p style="text-align: justify;">Importamos desde Europa, el Asia, Norte y Sudamérica el 97 % de los productos que comercializamos.
-                    Nuestros proveedores, son todas empresas líderes del rubro con certificaciones ISO 9000, QS 9000, etc., que manufacturan sus productos
-                    cumpliendo las más estrictas normas de calidad y exportan más de la mitad de su producción a Norteamérica, Europa y Japón. </p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-check ml-xs"></i> Somos personas comprometidas con nuestra Empresa y
+                            trabajamos en equipo.</p>
+                    </li>
+                </ul>
+                <p style="text-align: justify;">Importamos desde Europa, el Asia, Norte y Sudamérica el 97 % de los
+                    productos que comercializamos.
+                    Nuestros proveedores, son todas empresas líderes del rubro con certificaciones ISO 9000, QS 9000,
+                    etc., que manufacturan sus productos
+                    cumpliendo las más estrictas normas de calidad y exportan más de la mitad de su producción a
+                    Norteamérica, Europa y Japón. </p>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6">
@@ -628,8 +514,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
-                    <a class="btn btn-secondary btn-block" style="width: auto;"
-                        href="/fullProducts">Ver más<i class="fa fa-plus ml-xs"></i>
+                    <a class="btn btn-secondary btn-block" style="width: auto;" href="/fullProducts">Ver más<i
+                            class="fa fa-plus ml-xs"></i>
                     </a>
                 </div>
             </div>
@@ -642,27 +528,132 @@
 
 
 <!-- Productos Promocion -->
-<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6" style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
+<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+    style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 hidden-xs hidden-sm">
+                <i class="fa fa-star-o" aria-hidden="true"
+                    style="font-size: 14rem; position: absolute; left: -75%; top: 20px;"></i>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+
+                <p class="text-capitalize mb-0 color-black">Conoce nuestras actuales promociones</p>
+                <h2 class="mb-xs color-black">¡ Productos</h2>
+                <h2 class="mb-xs color-black">en Promoción !</h2>
+                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdPromo">Ver Promociones</a>
+            </div>
+            <!-- .col-md-8 end -->
+            <div class="col-md-4 hidden-xs hidden-sm">
+                <div class="cta-img" style="top: -95px;">
+                    <img src="assets/images/call/Mi proyecto.png" alt="call to action" />
+                </div>
+            </div>
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container end -->
+</section>
+<!-- #cta-6 end -->
+<div class="clearfix mb-150">
+</div>
+
+
+
+<!-- Productos Novedosos -->
+<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+    style="background-color:#5cb85c; border-width: 3px; border-style: solid;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 hidden-xs hidden-sm">
+                <div class="cta-img" style="top: -115px; padding-right: 110px;">
+                    <img src="assets/images/call/5.png" alt="call to action" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <p class="text-capitalize mb-0 color-black">Conoce nuestras novedades</p>
+                <h2 class="mb-xs color-black">¡ Productos</h2>
+                <h2 class="mb-xs color-black">en novedad !</h2>
+                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdNoved">Ver Novedades</a>
+                <i class="fa fa-diamond hidden-xs hidden-sm" aria-hidden="true"
+                    style="font-size: 14rem; position: absolute; top: 40px; right: -25px;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- #cta-6 end -->
+<div class="clearfix mb-150">
+</div>
+
+
+
+{{-- nustros clientes --}}
+
+<section id="clients" class="shortcode-9">
 	<div class="container">
 		<div class="row">
-            <div class="col-md-1 hidden-xs hidden-sm">
-                <i class="fa fa-star-o" aria-hidden="true" style="font-size: 14rem; position: absolute; left: -75%; top: 20px;"></i>
-            </div>
-			<div class="col-xs-12 col-sm-12 col-md-7">
-
-				<p class="text-capitalize mb-0 color-black">Conoce nuestras actuales promociones</p>
-				<h2 class="mb-xs color-black">¡ Productos</h2>
-                <h2 class="mb-xs color-black">en Promoción !</h2>
-				<a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdPromo">Ver Promociones</a>
-			</div>
-			<!-- .col-md-8 end -->
-			<div class="col-md-4 hidden-xs hidden-sm">
-				<div class="cta-img" style="top: -95px;">
-					<img src="assets/images/call/Mi proyecto.png" alt="call to action"/>
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="heading heading-2 text-center">
+					<div class="heading-bg">
+						<p class="mb-0">Maestros en Pernos</p>
+						<h2>Nuestros Clientes</h2>
+					</div>
 				</div>
+				<!-- .heading end -->
 			</div>
+			<!-- .col-md-12 end -->
 		</div>
 		<!-- .row end -->
+		<div class="row">
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/1.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/2.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/3.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/4.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/5.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand last">
+					<img class="img-responsive center-block" src="assets/images/clients/6.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
+		</div>
+		<!-- .row End -->
 	</div>
 	<!-- .container end -->
 </section>
@@ -672,28 +663,103 @@
 
 
 
-<!-- Productos Novedosos -->
-<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6" style="background-color:#5cb85c; border-width: 3px; border-style: solid;">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-5 hidden-xs hidden-sm">
-				<div class="cta-img" style="top: -115px; padding-right: 110px;">
-					<img src="assets/images/call/5.png" alt="call to action"/>
-				</div>
-			</div>
-            <div class="col-xs-12 col-sm-12 col-md-7">
-				<p class="text-capitalize mb-0 color-black">Conoce nuestras novedades</p>
-				<h2 class="mb-xs color-black">¡ Productos</h2>
-                <h2 class="mb-xs color-black">en novedad !</h2>
-				<a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdNoved">Ver Novedades</a>
-                <i class="fa fa-diamond hidden-xs hidden-sm" aria-hidden="true" style="font-size: 14rem; position: absolute; top: 40px; right: -25px;"></i>
-			</div>
-		</div>
-	</div>
+
+{{-- pedidos section --}}
+
+<section id="service-2" class="service service-2 bg-gray pb-0">
+    <div class="container-fluid bg-theme">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row" style="background-color: #FFFE04;">
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('assets/images/services/full/1.jpg');"></div>
+                    <!-- .col-md-6 end -->
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table; border-width: 3px; border-style: solid;">
+                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center; background-color: #FFFE04">
+                            <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
+                                verifique el estado de sus pedidos
+                            </p>
+                            <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/pedidos">Ver Mis Pedidos <i class="fa fa-plus ml-xs"></i></a>
+                        </div>
+                    </div>
+                    <!-- .col-md-6 end -->
+                </div>
+                <!-- .row end -->
+            </div>
+            <!-- .col-md-12 -->
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container-fluid end -->
 </section>
-<!-- #cta-6 end -->
-<div class="clearfix mb-150">
+<div class="cleafix mb-150">
 </div>
+
+
+
+
+
+{{-- depositos bancarios --}}
+
+<section id="service-2" class="service service-2 bg-gray pb-0">
+    <div class="container-fluid bg-theme">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row" style="background-color: #FFFE04;">
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table; border-width: 3px; border-style: solid;">
+                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center;">
+                            <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
+                                Ahora contamos con registro de depósitos bancarios
+                            </p>
+                            <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/depositos">Registrar Mi Depósito <i class="fa fa-plus ml-xs"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('assets/images/services/full/1.jpg');"></div>
+                </div>
+                <!-- .row end -->
+            </div>
+            <!-- .col-md-12 -->
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container-fluid end -->
+</section>
+<div class="cleafix mb-150">
+</div>
+
+
+
+
+{{-- facturas --}}
+
+<section id="service-8" class="service service-2 service-8 bg-gray pb-0">
+	<div class="container-fluid bg-theme">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12" style="background-image: url('assets/images/services/full/1.jpg'); background-size: cover;">
+				<div class="row" >
+                    <div class="col-md-6 col-md-offset-6 col-content" style="text-align: center; background-color: #FFFE04; border-width: 3px; border-style: solid;">
+                        <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color: #0a192f; margin-bottom: 50px; line-height: 165%;">
+                            Consulte inmediatamente sus facturas
+                        </p>
+                        <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/facturas">Ver mis facturas <i class="fa fa-plus ml-xs"></i></a>
+                    </div>
+				</div>
+				<!-- .row end -->
+			</div>
+			<!-- .col-md-12 -->
+		</div>
+		<!-- .row end -->
+	</div>
+	<!-- .container-fluid end -->
+</section>
+<div class="cleafix mb-150">
+</div>
+
+
+
+
+
 
 <!-- call center -->
 <section id="shortcode-3" class="shortcode-3 section-img">
@@ -744,10 +810,48 @@
 <div class="clearfix mb-150">
 </div>
 
-{{-- prueba carrusel productos --}}
 
 
 
+
+{{-- contactanos --}}
+
+
+<section id="cta-1" class="cta pb-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="cta-1 bg-theme">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-1 hidden-xs">
+							<div class="cta-img">
+								<img src="assets/images/call/cta-1.png" alt="cta">
+							</div>
+						</div>
+						<!-- .col-md-2 end -->
+						<div class="col-xs-12 col-sm-12 col-md-7 cta-devider text-center-xs">
+							<div class="cta-desc">
+								<p>Tienes alguna pregunta !</p>
+								<h5>No dude en contactarnos en cualquier momento.</h5>
+							</div>
+						</div>
+						<!-- .col-md-7 end -->
+						<div class="col-xs-12 col-sm-12 col-md-2 pull-right pull-none-xs">
+							<div class="cta-action">
+								<a class="btn btn-secondary" href="/contacto">Contáctanos</a>
+							</div>
+						</div>
+						<!-- .col-md-2 end -->
+					</div>
+				</div>
+				<!-- .cta-1 end -->
+			</div>
+			<!-- .col-md-12 end -->
+		</div>
+		<!-- .row end -->
+	</div>
+	<!-- .container end -->
+</section>
 
 
 
