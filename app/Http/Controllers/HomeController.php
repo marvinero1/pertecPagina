@@ -27,10 +27,11 @@ class HomeController extends Controller
     }
     public function getHomeProductos(){
         $a = file_get_contents('http://192.168.31.242:5000/api/getProducts');
-        // $a1 = file_get_contents('http://192.168.31.242:5000/api/getProductsLessSales');
+        $a1 = file_get_contents('http://192.168.31.242:5000/api/getCaruselImage');
         // $a2 = file_get_contents('http://192.168.31.242:5000/api/getProductsStagnat');
 
         $b = json_decode($a,"true");
+        $b1 = json_decode($a1,"true");
         $bMasVendidos = [];
         $bMenosVendidos = [];
         foreach($b as $bproduct){
@@ -48,7 +49,7 @@ class HomeController extends Controller
         // $b2 = json_decode($a2,"true");
 
 
-        return view('index', compact('bMasVendidos','bMenosVendidos'));
+        return view('index', compact('bMasVendidos','bMenosVendidos','b1'));
         // return view('index', compact('b'));
     }
 
@@ -63,6 +64,7 @@ class HomeController extends Controller
 
     public function getTiendas($id){
         $a = file_get_contents('http://192.168.31.242:5000/api/getStores');
+        $s = file_get_contents('http://192.168.31.242:5000/api/getSalesman');
         $b1=[];
         if($id==1){ // la paz
             $b1[0]="Marco Mamani";
@@ -78,8 +80,9 @@ class HomeController extends Controller
             $b1[2]="Santa Cruz";
         }
         $b = json_decode($a,"true");
+        $v = json_decode($s,"true");
         // return $b;
-        return view('pages.tiendas', compact('b','b1'));
+        return view('pages.tiendas', compact('b','b1','v'));
     }
 
     public function getAllProductos(){
@@ -88,13 +91,13 @@ class HomeController extends Controller
         return view('pages.fullProductos', compact('b'));
     }
     public function getAllProdsPromo(){
-        $a = file_get_contents('http://192.168.31.242:5000/api/getProducts'); // cambiar por API promo
+        $a = file_get_contents('http://192.168.31.242:5000/api/getProductsPromotion'); // cambiar por API promo
         $b = json_decode($a,"true");
         return view('pages.prodPromo', compact('b'));
     }
 
     public function getAllProdsNovedad(){
-        $a = file_get_contents('http://192.168.31.242:5000/api/getProducts'); // cambiar por API novedad
+        $a = file_get_contents('http://192.168.31.242:5000/api/getProductsNovelty'); // cambiar por API novedad
         $b = json_decode($a,"true");
         return view('pages.prodNovedad', compact('b'));
     }

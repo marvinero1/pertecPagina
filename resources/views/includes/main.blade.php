@@ -14,6 +14,7 @@
 	<!-- Fonts
 	============================================= -->
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:100,200,300,400,500,600,700,800%7CDroid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="https://allfont.es/allfont.css?fonts=franklin-gothic-demi" rel="stylesheet" type="text/css" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
 
@@ -27,7 +28,7 @@
 
 	<!-- Document Title
 	    ============================================= -->
-	<title>PERTEC | Maestros en Pernos</title>
+	<title>PERTEC S.R.L © | Maestros en Pernos</title>
 </head>
 
 <body>
@@ -48,7 +49,7 @@
 	@include('includes.footer')
 
     <div>
-            <a href="https://www.google.com.bo/maps/place/PERTEC+SRL/@-17.3803765,-66.1164195,18z/data=!4m5!3m4!1s0x93e377f4433a65e9:0x51df7da68cbca0a7!8m2!3d-17.3801617!4d-66.1161765?hl=es" class="btn_Face_float" target="_blank">
+            <a href="#" class="btn_Face_float" target="_blank">
                 <i class="fa fa-facebook btn_Inf_float_my-float"></i>
             </a>
             <a href="https://www.google.com.bo/maps/place/PERTEC+SRL/@-17.3803765,-66.1164195,18z/data=!4m5!3m4!1s0x93e377f4433a65e9:0x51df7da68cbca0a7!8m2!3d-17.3801617!4d-66.1161765?hl=es" class="btn_Map_float" target="_blank">
@@ -56,7 +57,8 @@
             </a>
     </div>
     <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" class="btn_Whats_float" target="_blank">
-        <i class="fa fa-whatsapp btn_Inf_float_my-float" style="margin-top: 14px;"></i>
+        <i class="fa fa-whatsapp btn_Inf_float_my-float" style="margin-top: 2px; font-size: 1.5rem;"></i>
+        <label style="position: relative; top: -4px; font-weight: 1 !important;">Ayuda</label>
     </a>
 
     <script type='text/javascript'>

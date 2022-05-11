@@ -48,6 +48,8 @@
 /*------------------------------------*\
 #GLOBAL STYLES
 \*------------------------------------*/
+@import url(https://allfont.es/allfont.css?fonts=franklin-gothic-demi);
+@import url(https://allfont.es/allfont.css?fonts=franklin-gothic-book);
 
 html {
 	font-size: 14px;
@@ -72,7 +74,7 @@ text-shadow:none;
 }
 
 ::selection {
-	background-color: #ffc527;
+	background-color: #FBD800;
 	color: #fff;
 	text-shadow: none;
 }
@@ -83,22 +85,25 @@ a {
 	-ms-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
-	color: #ffc527;
+	color: #FBD800;
 }
+a {
+    text-decoration: none !important;
+  }
 
 a:hover {
-	color: #f3b200;
+	color: #093070 !important;
 	text-decoration: none;
 }
 
 a:focus {
-	color: #f3b200;
+	color: #FBD800;
 	outline: none;
 	text-decoration: none;
 }
 
 a:active {
-	color: #f3b200;
+	color: #FBD800;
 	outline: none;
 	text-decoration: none;
 }
@@ -935,7 +940,7 @@ section {
 #BACKGROUNDS
 \*------------------------------------*/
 .bg-theme {
-	background-color: #ffc527 !important
+	background-color: #FFFE04 !important
 }
 
 .bg-gray {
@@ -1253,7 +1258,7 @@ section {
 	font-family: fontawesome;
 	font-size: 10px;
 	color: #fff;
-	background-color: #ffc527;
+	background-color: #FBD800;
 	text-align: center;
 	width: 30px;
 	height: 30px;
@@ -1265,7 +1270,7 @@ section {
 
 .accordion .panel-heading .accordion-toggle.collapsed:after {
 	content: "\f067";    /* symbol for "collapsed" panels */
-	color: #ffc527;
+	color: #FBD800;
 	background-color: transparent;
 }
 
@@ -1387,10 +1392,9 @@ transform: scale(1.0);
 }
 
 .navbar-nav li a {
-	font-size: 13px;
-	font-family: 'Montserrat', sans-serif;
+	font-size: 1.2rem;
+	font-family: 'Franklin Gothic Demi';
 	text-transform: uppercase;
-	font-weight: 700;
 }
 
 .navbar-nav >li >a {
@@ -1469,7 +1473,7 @@ transform: scale(1.0);
 }
 
 .module-search .search-icon i {
-	font-size: 14px;
+	font-size: 1.2rem;
 	color: #fff;
 	border-left: 1px solid #fff;
 	padding-left: 30px;
@@ -1490,10 +1494,11 @@ transform: scale(1.0);
 }
 
 .module-search .search-box .search-form .btn {
-	background-color: #ffc527;
+	background-color: #093070;
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
+    border: #093070;
 	color: #fff
 }
 
@@ -1804,20 +1809,20 @@ transform: scale(1.0);
 }
 
 .header-3 .navbar-fixed-top.affix {
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: transparent;
 }
 
 .header-3 .navbar-fixed-top.affix,
 .header-3 .navbar-fixed-top.affix .navbar-nav > li,
 .header-3 .navbar-fixed-top.affix .navbar-header {
-	height: 70px;
+	height: 94px;
 }
 
 .header-3 .navbar-fixed-top.affix .navbar-header,
 .header-3 .navbar-fixed-top.affix .navbar-nav > li > a,
 .header-3 .navbar-fixed-top.affix .module-cart .cart-icon,
 .header-3 .navbar-fixed-top.affix .module-search .search-icon {
-	line-height: 70px;
+	line-height: 90px;
 }
 
 /* header #3-2*/
@@ -1826,12 +1831,12 @@ transform: scale(1.0);
 }
 
 .header-3.style-2 {
-	height: 70px;
+	height: 0px;
 }
 
 .header-3.style-2 .navbar-fixed-top {
 	padding-top: 25px;
-	height: 70px;
+	height: 95px;
 }
 
 .header-3.style-2 .navbar-fixed-top.affix {
@@ -2566,7 +2571,7 @@ ul.mega-menu {
 .header-3 .navbar-fixed-top.affix .navbar-nav > li > a,
 .header-3 .navbar-fixed-top.affix .module-cart .cart-icon,
 .header-3 .navbar-fixed-top.affix .module-search .search-icon {
-	line-height: 43px;
+	line-height: 90px;
 }
 
 .header-3 .navbar-fixed-top.affix,
@@ -3382,15 +3387,16 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 .heading h2 {
 	font-size: 35px;
 	text-transform: uppercase;
-	font-weight: 700;
+    font-family: 'Franklin Gothic Demi';
 	line-height: 1;
 	margin-bottom: 0;
 	padding-bottom: 19px;
+    color: #093070;
 }
 
 .heading h2:after {
 	content: ".";
-	color: #ffc527;
+	color: #FBD800;
 	font-size: 35px;
 	display: inline-block;
 }
@@ -3401,9 +3407,9 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 
 .heading p:first-child {
 	font-size: 14px;
-	text-transform: capitalize;
-	color: #5a5a5a;
+	color: #5a5a5a73;
 	font-weight: 500;
+    font-family: 'Franklin Gothic Book';
 	line-height: 1;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -3427,7 +3433,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	content: "";
 	width: 70px;
 	height: 96px;
-	border: 2px solid #ffc527;
+	border: 2px solid #FBD800;
 	position: absolute;
 	display: block;
 	left: 50%;
@@ -3974,9 +3980,6 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
-.rev_slider h1 {
-	font-size: 17px !important
-}
 
 .rev_slider .arrow {
 	display: none
@@ -4032,9 +4035,6 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
-.rev_slider h1 {
-	font-size: 17px !important
-}
 
 .rev_slider .arrow {
 	display: none
@@ -8261,10 +8261,6 @@ margin-bottom: 0
 	height: 100%;
 	opacity: 0;
 	background-color: rgba(255, 197, 39, 0.75);
-	background-image: linear-gradient(to top, #ffc527 0%, transparent 49%, transparent 82%, transparent 100%);
-	background-image: -webkit-linear-gradient(to top, #ffc527 0%, transparent 49%, transparent 82%, transparent 100%);
-	background-image: -moz-linear-gradient(to top, #ffc527 0%, transparent 49%, transparent 82%, transparent 100%);
-	background-image: -o-linear-gradient(to top, #ffc527 0%, transparent 49%, transparent 82%, transparent 100%);
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
@@ -9191,7 +9187,7 @@ input[aria-invalid="true"] {
 #FOOTER-SECTION
 \*------------------------------------*/
 footer {
-	background-color: #1f1f1f;
+	background-color: #093070;
 	padding-top: 0;
 	padding-bottom: 0;
 }
@@ -9203,7 +9199,7 @@ footer hr {
 }
 
 .widgets-contact {
-	background-color: #161616;
+	background-color: #FFFFFF;
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
@@ -9841,15 +9837,16 @@ footer hr {
 }
 .btn_Whats_float{
 	position:fixed;
-	width:60px;
-	height:60px;
+	width:73px;
+	height:26px;
 	bottom:40px;
 	right:40px;
 	background-color:#0d8925;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
-    font-size:30px;
+    font-size:1rem;
+    font-family: 'Franklin Gothic Demi';
     z-index:100;
 }
 .btn_Whats_float:hover {
@@ -9947,6 +9944,9 @@ footer hr {
     .col-md-offset-6 {
         left: -25%;
       }
+    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse {
+        padding-right: 5%;
+    }
   }
   @media(min-width: 768px) and (max-width: 991px){
     .col-md-offset-6 {
@@ -9954,4 +9954,10 @@ footer hr {
       }
   }
 
+  .header-3 .navbar-fixed-top.affix-scrooll {
+    background-color: #093070c2;
+}
+.yellow-color b{
+    color: #FBD800;
+}
 

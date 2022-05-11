@@ -27,7 +27,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/errorPage404', function () {return view('pages.errorPage404');});
-
+// Route::get('logout', [App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'getHomeProductos'])->name('productosHome');
     Route::get('produc/{id}', [App\Http\Controllers\HomeController::class, 'oneProduct'])->name('oneProduc');

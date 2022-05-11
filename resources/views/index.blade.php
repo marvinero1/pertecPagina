@@ -3,6 +3,7 @@
 @section('content')
 
 
+
 <!-- carrusel -->
 
 <section id="hero" class="hero hero-4">
@@ -19,20 +20,22 @@
                         <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen'] }}" alt="Background" width="1920" height="1280">
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                            data-whitespace="nowrap" data-width="['80','70','70','100']"
-                            data-height="['80','70','70','100']" data-transform_idle="o:1;"
+                            data-whitespace="nowrap" data-width="['150','70','70','100']"
+                            data-height="['150','70','70','100']" data-transform_idle="o:1;"
                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" data-lineheight="['80','100','100','100']"
-                            style="font-family: raleway; text-align:center">
+                            data-splitout="none" data-responsive_offset="on"
+                            style="font-family: raleway; text-align:center;  min-height: 110px !important; min-width: 110px !important;
+                            max-height: 110px !important; max-width: 120px !important;">
                             <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen_icono'] }}"
-                                alt="hook" />
+                                alt="hook"/>
                         </div>
 
+
                         <!-- LAYER NR. 2 -->
-                        <h1 class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
+                        <h1 class="tp-caption text-uppercase" data-x="center" data-hoffset="0" data-y="center"
                             data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
                             data-transform_idle="o:1;"
                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
@@ -40,71 +43,30 @@
                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                            data-lineheight="['100','45','25','25']" data-fontweight="['700','500','600','300']"
-                            data-color="#ffc527" style="font-family: montserrat; ">
+                            data-lineheight="['100','45','25','25']"
+                            data-color="#ffc527" style="font-family:  Franklin Gothic Demi; ">
                             {{ $bcarousel['titulo'] }}
                         </h1>
 
                         <!-- LAYER NR. 3 -->
-                        <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
+                        <div class="tp-caption text-uppercase" data-x="center" data-hoffset="0" data-y="center"
                             data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" data-fontsize="['25','17','17','17']"
-                            data-lineheight="['50','26','25','25']" data-fontweight="['700','500','500','500']"
-                            data-color="#fff" style="font-family: raleway; text-align:center">
+                            data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
+                            data-lineheight="['50','26','25','25']"
+                            data-color="#fff" style="font-family:  Franklin Gothic Demi;">
                             {{ $bcarousel['sub_titulo'] }}
                         </div>
                     </li>
                 @endforeach
             </ul>
         </div>
-        <!-- END REVOLUTION SLIDER -->
-
-        <!-- Widget Bottom -->
-        <div class="rev_slider_wrapper widget-bottom widgets-contact hidden-xs" style="background-color: rgba(0,0,0,0.6) !important;">
-            <div class="row">
-                <ul class="list-inline">
-
-                    <li class="col-sm-4 col-md-3 col-md-offset-3 widget">
-                        <div class="widget-contact-icon pull-left">
-                            <i class="lnr lnr-envelope"></i>
-                        </div>
-                        <div class="widget-contact-info">
-                            <p class="text-capitalize">Nuestro Correo</p>
-                            <p class="font-heading text-white">servicio.cliente@pertec.com.bo</p>
-                        </div>
-                    </li>
-                    <!-- .widget end -->
-
-
-                    <li class="col-sm-4 col-md-3 widget">
-                        <div class="widget-contact-icon pull-left">
-                            <i class="lnr lnr-phone"></i>
-                        </div>
-                        <div class="widget-contact-info">
-                            <p class="text-capitalize">Llámanos</p>
-                            <p class="text-capitalize font-heading text-white">(4) 4111632</p>
-                        </div>
-                    </li>
-                    <!-- .widget end -->
-
-
-                    <li class="col-sm-4 col-md-3 widget">
-                        <div class="widget-contact-icon pull-left">
-                            <i class="lnr lnr-map-marker"></i>
-                        </div>
-                        <div class="widget-contact-info">
-                            <p class="text-capitalize">Encuéntranos</p>
-                            <p class="text-capitalize font-heading text-white">No. 4581 Arocagua</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- .container end -->
+    </div>
+    <div style="width:100%; height: 800px; position: relative; margin-top: -800px;
+        background: rgba(9, 48, 112, 0.2) !important; background: linear-gradient(183deg, rgba(9,48,112,1) 0%, rgba(255,255,255,1) 100%);">
     </div>
     <!-- END OF SLIDER WRAPPER -->
 </section>
@@ -114,13 +76,13 @@
 
 <section id="shotcode-1" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
     <div class="container">
-        <div class="row">
+        <div class="row slide">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="heading heading-4">
                             <div class="heading-bg heading-right">
-                                <p class="mb-0">Maestros en Pernos</p>
+                                <p class="mb-0">¿Quiénes somos?</p>
                                 <h2>Nuestra Historia</h2>
                             </div>
                         </div>
@@ -131,9 +93,8 @@
             </div>
             <!-- .col-md-12 end -->
             <div class="col-xs-12 col-sm-12 col-md-6">
-                <h3 class="color-heading mb-md" style="text-align: justify;">Desarrollamos oportunidades mutuas de
-                    servicio y beneficio con nuestros
-                    proveedores, mediante el cumplimiento de estrictas normas de calidad.</h3>
+                <p style="text-align: justify;">Desarrollamos oportunidades mutuas de servicio y beneficio con
+                    nuestros proveedores, mediante el cumplimiento de estrictas normas de calidad.</p>
                 <p style="text-align: justify;">Somos una empresa dedicada a satisfacer todas las necesidades de
                     Elementos de Sujeción de los sectores
                     de construcción, industria, agroindustria, minería, metalmecánica y del parque automotriz en
@@ -141,16 +102,16 @@
                     comercialización directa.</p>
                 <ul style="text-align: justify;" class="list-unstyled">
                     <li>
-                        <p><i class="fa fa-check ml-xs"></i> Nuestra vocación de servicio es el motor que impulsa y
+                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Nuestra vocación de servicio es el motor que impulsa y
                             dirige nuestras acciones.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs"></i> Brindamos un excelente servicio a los clientes externos e
+                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Brindamos un excelente servicio a los clientes externos e
                             internos, en procura de
                             maximizar la satisfacción de sus necesidades y deseos.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs"></i> Somos personas comprometidas con nuestra Empresa y
+                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Somos personas comprometidas con nuestra Empresa y
                             trabajamos en equipo.</p>
                     </li>
                 </ul>
@@ -162,7 +123,7 @@
                     Norteamérica, Europa y Japón. </p>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="col-xs-12 col-sm-12 col-md-6 ">
                 <div class="panel-group accordion" id="accordion02" role="tablist" aria-multiselectable="true">
 
                     <!-- Panel 01 -->
@@ -219,7 +180,7 @@
                         </div>
                         <div id="collapse02-3" class="panel-collapse collapse" role="tabpanel"
                             aria-labelledby="headingThree">
-                            <div class="panel-body" style="text-align: justify;">
+                            <div class="panel-body yellow-color" style="text-align: justify;">
                                 <p><b>1.</b> Nuestra vocación de servicio es el motor que impulsa y dirige nuestras
                                     acciones, para mantener nuestro liderazgo, destacarnos y crecer en el mercado.</p>
                                 <p><b>2.</b> Hacemos que la calidad sea nuestra forma de vida.</p>
@@ -252,7 +213,7 @@
 
 
 <section>
-    <div class="container">
+    <div class="container tdn">
         <div class="row">
 
 
@@ -421,7 +382,7 @@
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
                                     <div class="product-img">
                                         <img src='http://192.168.31.242:5000/{{ $mv["imagen"] }}' alt="product"
-                                            style="height:200px;">
+                                            style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block"
@@ -459,7 +420,7 @@
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
                                     <div class="product-img">
                                         <img src='http://192.168.31.242:5000/{{ $menV["imagen"] }}' alt="product"
-                                            style="height:200px;">
+                                            style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block"
@@ -526,7 +487,7 @@
 </section>
 
 
-
+{{--
 <!-- Productos Promocion -->
 <section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
     style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
@@ -556,7 +517,71 @@
 </section>
 <!-- #cta-6 end -->
 <div class="clearfix mb-150">
+</div> --}}
+
+
+<!-- Productos Promocion -->
+<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+    style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 hidden-xs hidden-sm" style="text-align: left;">
+                <i class="fa fa-star-o" aria-hidden="true"
+                    style="font-size: 14rem; margin-left: -80px;"></i>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <p class="text-capitalize mb-0 color-black">Conoce nuestras actuales promociones</p>
+                <h2 class="mb-xs color-black">¡ Productos</h2>
+                <h2 class="mb-xs color-black">en Promoción !</h2>
+                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdPromo">Ver Promociones</a>
+            </div>
+            <!-- .col-md-8 end -->
+            <div class="col-md-4 hidden-xs hidden-sm" style="text-align: left;">
+                <div class="cta-img" style="top: -95px;">
+                    <img src="assets/images/call/Mi proyecto.png" alt="call to action" />
+                </div>
+            </div>
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container end -->
+</section>
+<!-- #cta-6 end -->
+<div class="clearfix mb-150">
 </div>
+
+
+{{--
+<!-- Productos Novedosos -->
+<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+    style="background-color:#5cb85c; border-width: 3px; border-style: solid;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 hidden-xs hidden-sm" style="text-align: right;">
+                <div class="cta-img" style="top: -115px;">
+                    <img src="assets/images/call/5.png" alt="call to action" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <p class="text-capitalize mb-0 color-black">Conoce nuestras novedades</p>
+                <h2 class="mb-xs color-black">¡ Productos</h2>
+                <h2 class="mb-xs color-black">en novedad !</h2>
+                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdNoved">Ver Novedades</a>
+            </div>
+            <div class="col-md-2 hidden-xs hidden-sm" style="text-align: right;">
+                <div class="cta-img" style="top: -115px;">
+                    <i class="fa fa-diamond hidden-xs hidden-sm" aria-hidden="true"
+                    style="font-size: 14rem; "></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- #cta-6 end -->
+<div class="clearfix mb-150">
+</div> --}}
+
+
 
 
 
@@ -584,9 +609,6 @@
 <!-- #cta-6 end -->
 <div class="clearfix mb-150">
 </div>
-
-
-
 {{-- nustros clientes --}}
 
 <section id="clients" class="shortcode-9">
@@ -710,7 +732,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table; border-width: 3px; border-style: solid;">
                         <div class="row" style="display: table-cell; vertical-align: middle; text-align: center;">
                             <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
-                                Ahora contamos con registro de depósitos bancarios
+                                Ahora contamos con registro de Bouchers
                             </p>
                             <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/depositos">Registrar Mi Depósito <i class="fa fa-plus ml-xs"></i></a>
                         </div>
@@ -733,7 +755,7 @@
 
 {{-- facturas --}}
 
-<section id="service-8" class="service service-2 service-8 bg-gray pb-0">
+{{-- <section id="service-8" class="service service-2 service-8 bg-gray pb-0">
 	<div class="container-fluid bg-theme">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12" style="background-image: url('assets/images/services/full/1.jpg'); background-size: cover;">
@@ -754,7 +776,7 @@
 	<!-- .container-fluid end -->
 </section>
 <div class="cleafix mb-150">
-</div>
+</div> --}}
 
 
 
@@ -807,52 +829,40 @@
     </div>
     <!-- .container end -->
 </section>
-<div class="clearfix mb-150">
-</div>
 
 
 
 
 
-{{-- contactanos --}}
 
+<style type="text/css">
+    .slide {
+      animation-duration: 4s;
+      animation-name: slidein;
+    }
 
-<section id="cta-1" class="cta pb-0">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="cta-1 bg-theme">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-1 hidden-xs">
-							<div class="cta-img">
-								<img src="assets/images/call/cta-1.png" alt="cta">
-							</div>
-						</div>
-						<!-- .col-md-2 end -->
-						<div class="col-xs-12 col-sm-12 col-md-7 cta-devider text-center-xs">
-							<div class="cta-desc">
-								<p>Tienes alguna pregunta !</p>
-								<h5>No dude en contactarnos en cualquier momento.</h5>
-							</div>
-						</div>
-						<!-- .col-md-7 end -->
-						<div class="col-xs-12 col-sm-12 col-md-2 pull-right pull-none-xs">
-							<div class="cta-action">
-								<a class="btn btn-secondary" href="/contacto">Contáctanos</a>
-							</div>
-						</div>
-						<!-- .col-md-2 end -->
-					</div>
-				</div>
-				<!-- .cta-1 end -->
-			</div>
-			<!-- .col-md-12 end -->
-		</div>
-		<!-- .row end -->
-	</div>
-	<!-- .container end -->
-</section>
+    .tdn{
+        animation-duration: 3s;
+        animation-name: tdn;
+    }
 
+@keyframes slidein {
+    from{
+        margin-left: 100%;
+        }
 
+        to{
+            margin-left: 0%;
+        }
+    }
+    @keyframes tdn{
+    from{
+        margin-top: 100%;
+        }
 
+        to{
+            margin-top: 0%;
+        }
+    }
+</style>
 @endsection

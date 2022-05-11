@@ -1,15 +1,7 @@
-
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXolVNo_nkRhEqs9BV_oJDY6Dz1OUQCUU&callback=initMap&v=weekly" defer></script>
-
-
-<!-- Modal -->
 <div class="modal fade-scale" id="myModal{{ $btiendas["id"] }}" tabindex="-1" role="dialog"
 aria-labelledby="myModalLabel">
 
-<div class="modal-dialog full-screen" role="document">
-    <!-- para poner tamaño de modal por bootstrap (modal-lg o modal-sm)-->
+<div class="modal-dialog full-screen" role="document" onload="initMap()">
     <div class="modal-content">
         <div class="modal-header">
             <h4 class="modal-title">Ubicación de la Tienda</h4>
@@ -18,14 +10,14 @@ aria-labelledby="myModalLabel">
         </div>
 
         <div class="modal-body">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card card-price">
                     <div class="card-img"><br>
-                        <div class="card-caption">
-                            <span class="h2">{{ $btiendas["nombre_tienda"] }}</span>
+                        <div class="card-caption" style="text-align: center;">
+                            <span class="h2">Tienda: {{ $btiendas["nombre_tienda"] }}</span>
                         </div>
 
-                        <div class="cat" style="text-align: center;"><br>
+                        <div class="cat" style="text-align: center; visibility: hidden;">
                             <div class="col">
                                 <div class="row">
                                     <div id="lat">{{ $btiendas["latitud"] }}</div> , <div id="long">
@@ -38,17 +30,15 @@ aria-labelledby="myModalLabel">
                     </div>
                     <div class="card-body">
                         <div id="map"></div>
-                        {{-- <ul class="details">
-                <li>A stitch in time saves nine.</li>
-                <li>All good things come to those who wait.</li>
-                <li>There's a pony in that pile.</li>
-            </ul>  --}}
                     </div><br>
                 </div>
             </div>
         </div>
 
 
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXolVNo_nkRhEqs9BV_oJDY6Dz1OUQCUU&callback=initMap&v=weekly" defer></script>
 
         <script>
             function initMap() {
@@ -57,7 +47,6 @@ aria-labelledby="myModalLabel">
 
                 lat11 = parseFloat(lat1);
                 long11 = parseFloat(long1);
-                console.log(lat11, long11);
 
                 // The location of Uluru
                 const uluru = {
@@ -78,8 +67,16 @@ aria-labelledby="myModalLabel">
             window.initMap = initMap;
 
         </script>
+        <style>
+            #map {
+                    height: 530px;
+                    / The height is 400 pixels /
+                    width: 100%;
+                    / The width is the width of the web page /
+                    }
+        </style>
         <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
         </div>
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->

@@ -34,8 +34,8 @@
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="heading heading-4">
 					<div class="heading-bg heading-right">
-						<p class="mb-0">We Wanna Hear From You !</p>
-						<h2>Contact Us</h2>
+						<p class="mb-0">Maestros en Pernos</p>
+						<h2>Contáctanos</h2>
 					</div>
 				</div>
 				<!-- .heading end -->
@@ -43,14 +43,14 @@
 			<!-- .col-md-12 end -->
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-4 widgets-contact mb-60-xs">
+					<div class="col-xs-12 col-sm-12 col-md-5 widgets-contact mb-60-xs">
 						<div class="widget">
 							<div class="widget-contact-icon pull-left">
 								<i class="lnr lnr-map"></i>
 							</div>
 							<div class="widget-contact-info">
-								<p class="text-capitalize">visit us</p>
-								<p class="text-capitalize font-heading">tanta , alGharbia, egypt.</p>
+								<p class="text-capitalize">Visítanos</p>
+                                <p class="text-capitalize font-heading">Cbba. calle Innominada #4581 (Arocagua)</p>
 							</div>
 						</div>
 						<!-- .widget end -->
@@ -61,8 +61,8 @@
 								<i class="lnr lnr-envelope"></i>
 							</div>
 							<div class="widget-contact-info">
-								<p class="text-capitalize ">email us</p>
-								<p class="text-capitalize font-heading">7oroof@7oroof.com</p>
+								<p class="text-capitalize ">Escríbenos</p>
+								<p class="font-heading">servcliente@pertec.com.bo</p>
 							</div>
 						</div>
 						<!-- .widget end -->
@@ -73,19 +73,20 @@
 								<i class="lnr lnr-phone"></i>
 							</div>
 							<div class="widget-contact-info">
-								<p class="text-capitalize">call us</p>
-								<p class="text-capitalize font-heading">002 01065370701</p>
+								<p class="text-capitalize">Llámanos</p>
+								<p class="text-capitalize font-heading">72221033 - 72221033</p>
 							</div>
 						</div>
 						<!-- .widget end -->
 					</div>
 					<!-- .col-md-4 end -->
-					<div class="col-xs-12 col-sm-12 col-md-8">
+					<div class="col-xs-12 col-sm-12 col-md-7">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 pr-0 pl-0">
-                                    <div id="googleMap" style="width:100%;height:240px;">
-                                    </div>
+                                    <div class="card-body">
+                                        <div id="map"></div>
+                                    </div><br>
                                 </div>
                             </div>
                         </div>
@@ -116,18 +117,41 @@
 	</div>
 </section> --}}
 <!-- .google-maps end -->
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<script type="text/javascript" src="assets/js/jquery.gmap.min.js"></script>
-<script type="text/javascript">
-	$('#googleMap').gMap({
-		address: "121 King St,Melbourne, Australia",
-		zoom: 15,
-		markers:[
-			{
-				address: "Melbourne, Australia",
-				maptype:'ROADMAP',
-			}
-		]
-	});
-</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXolVNo_nkRhEqs9BV_oJDY6Dz1OUQCUU&callback=initMap&v=weekly" defer></script>
+
+        <script>
+            function initMap() {
+                var lat1 = -17.38012174009731;
+                var long1 = -66.11619546366377;
+                lat11 = parseFloat(lat1);
+                long11 = parseFloat(long1);
+
+                // The location of Uluru
+                const uluru = {
+                    lat: lat11,
+                    lng: long11
+                };
+                // The map, centered at Uluru
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 14,
+                    center: uluru,
+                });
+                // The marker, positioned at Uluru
+                const marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map,
+                });
+            }
+            window.initMap = initMap;
+
+        </script>
+        <style>
+            #map {
+                    height: 400px;
+                    / The height is 400 pixels /
+                    width: 100%;
+                    / The width is the width of the web page /
+                    }
+        </style>
 @endsection

@@ -95,12 +95,26 @@
                     </p>
                 </div>
                 <div class="product-item">
-                    <div class="product-cart">
-                        <button class="btn btn-secondary btn-block" style="width: auto;" data-toggle="modal"
-                            data-target="#myModal{{ $btiendas["id"] }}">
-                            Ver ubicación<i class="fa fa-map-marker ml-xs"></i>
-                        </button>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="product-cart">
+                                <button class="btn btn-secondary btn-block" style="width: auto;" data-toggle="modal"
+                                    data-target="#myModal{{ $btiendas["id"] }}">
+                                    Ver ubicación<i class="fa fa-map-marker ml-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                        {{-- <br><br><br><br>
+                        <div class="col-md-6">
+                            <div class="product-cart">
+                                <button class="btn btn-secondary btn-block" style="width: auto;" data-toggle="modal"
+                                    data-target="#myModal{{ $btiendas["id"] }}">
+                                    Vendedor
+                                </button>
+                            </div>
+                        </div> --}}
                     </div>
+
 
                 </div>
                 <!-- .entry-content end -->
@@ -121,7 +135,49 @@
 </section>
 
 
+<section >
+	<div class="container">
+		<div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="heading heading-4">
+                            <div class="heading-bg heading-right">
+                                <p class="mb-0">Maestros en Pernos</p>
+                                <h2>Nuestros Vendedores en {{ $b1[2] }}</h2>
+                            </div>
+                        </div>
+                        <!-- .heading end -->
+                    </div>
 
-
-
+                </div>
+            </div>
+            @foreach ($v as $vend)
+                @if($vend["ciudad"] == $b1[2])
+                    <div class="col-xs-12 col-sm-6 col-md-4 service-block" style="text-align: center;">
+                        <div class="service-img">
+                            <img src="http://192.168.31.242:5000/{{ $vend['imagen'] }}" alt="vendedor" width="280" height="230"/>
+                        </div><br>
+                        <div class="service-content">
+                            <div class="service-desc">
+                                <h5>{{ $vend['nombre_vendedor'] }} {{ $vend['apellido'] }}</h5>
+                                <p>Celular: {{ $vend['celular'] }}</p>
+                                <p>Whatsapp: {{ $vend['whatsapp'] }}</p>
+                                <p>Correo: {{ $vend['correo_electronico'] }}</p>
+                            </div>
+                        </div>
+                    </div><br>
+                @endif
+            @endforeach
+        </div>
+		<!-- .row end -->
+	</div>
+	<!-- .container end -->
+</section>
+<style>
+    .responsive {
+      width: 100%;
+      height: auto;
+    }
+</style>
 @endsection
