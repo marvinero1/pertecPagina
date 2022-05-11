@@ -1,6 +1,7 @@
 
 
 <?php $__env->startSection('content'); ?>
+   
 <!-- page content -->
 <div class="container">
     <div class="row">
@@ -150,7 +151,76 @@
     </div>
 </div>
 <!-- /page content -->
+<input type="checkbox" id="cerrar">
+<label for="cerrar" id="btn-cerrar">X</label>
+<div class="modalPopUp">
+    <div class="contenido">
+        <h2>Visita nuestro blog</h2>
+        
+    </div>
+</div>
+
 <style>
+    body {
+	text-align: center;
+	font-family: sans-serif;
+	margin: 0;
+}
+
+.modalPopUp {
+	width: 100%;
+	height: 100%;
+	background: rgba(9,48,112,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	animation: modal 1s 2s forwards;
+	visibility: hidden;
+	opacity: 0;
+}
+.contenido {
+	margin: auto;
+	width: 40%;
+	height: 40%;
+	background: white;
+	border-radius: 10px;
+}
+
+#cerrar {
+	display: none;
+}
+
+#cerrar + label {
+	position: fixed;
+	color: #fff;
+	font-size: 25px;
+	z-index: 50;
+	background: darkred;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	right: 150px;
+	top: 150px;
+	cursor: pointer;
+	
+	animation: modal 2s 2s forwards;
+	visibility: hidden;
+	opacity: 0;
+}
+
+#cerrar:checked + label, #cerrar:checked ~ .modalPopUp {
+	display: none;
+}
+
+@keyframes  modal {
+	100% {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
     th,td,h4,.modal-header {
         text-align: center;
     }
@@ -171,5 +241,36 @@
         cursor: pointer;
     }
 </style>
+<script>
+    const openEls = document.querySelectorAll("[data-open]");
+    const closeEls = document.querySelectorAll("[data-close]");
+    const isVisible = "is-visible";
+
+    for (const el of openEls) {
+    el.addEventListener("click", function() {
+        const modalId = this.dataset.open;
+        document.getElementById(modalId).classList.add(isVisible);
+    });
+    }
+
+    for (const el of closeEls) {
+    el.addEventListener("click", function() {
+        this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+    });
+    }
+
+    document.addEventListener("click", e => {
+    if (e.target == document.querySelector(".modal.is-visible")) {
+        document.querySelector(".modal.is-visible").classList.remove(isVisible);
+    }
+    });
+
+    document.addEventListener("keyup", e => {
+    // if we press the ESC
+    if (e.key == "Escape" && document.querySelector(".modal.is-visible")) {
+        document.querySelector(".modal.is-visible").classList.remove(isVisible);
+    }
+    });
+</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pertecPagina\resources\views/admin/carusels/index.blade.php ENDPATH**/ ?>
