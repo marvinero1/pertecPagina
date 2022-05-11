@@ -1,13 +1,13 @@
 
 
 <?php $__env->startSection('content'); ?>
-<div class="row container"><br>
+<div class="container"><br>
     <?php if(Session::has('novedad')): ?>
     <div class="alert alert-success"><?php echo e(Session::get('novedad')); ?>
 
     </div>
     <?php endif; ?>
-    <div class="col">
+    
         <div class="col-md-4" >
             <div class="card card-price">
                 <div class="card-img"><br>
@@ -71,6 +71,7 @@
                 </div><br>
             </div>
         </div>
+
         <div class="modal fade" id="myModal<?php echo e($id); ?>" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -106,41 +107,40 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="modal fade" id="myModalNovedad<?php echo e($id); ?>" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title" style="text-align: center;">Añadir Producto a
-                                Novedad</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form
-                                action="<?php echo e(route( 'admin.productos.productoNovedad', $id )); ?>"
-                                method="POST" style="margin-block-end:-1em !important;">
-                                <?php echo e(csrf_field()); ?>
+        
+        <div class="modal fade" id="myModalNovedad<?php echo e($id); ?>" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" style="text-align: center;">Añadir Producto a
+                            Novedad</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form
+                            action="<?php echo e(route( 'admin.productos.productoNovedad', $id )); ?>"
+                            method="POST" style="margin-block-end:-1em !important;">
+                            <?php echo e(csrf_field()); ?>
 
-                                <?php echo e(method_field('PUT')); ?>
+                            <?php echo e(method_field('PUT')); ?>
 
-                                <input type="hidden" name="novedad" value="si">
-                                <h5 style="text-align: center;">
-                                    <?php echo e(strtoupper($nombre_producto)); ?></h5><br>
-                                <div class="row" style="display: block;">
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success"
-                                            style="width: 100% !important; ">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            &nbsp; Añadir</button>
-                                    </div>
-                            </form>
-                        </div>
+                            <input type="hidden" name="novedad" value="si">
+                            <h5 style="text-align: center;">
+                                <?php echo e(strtoupper($nombre_producto)); ?></h5><br>
+                            <div class="row" style="display: block;">
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success"
+                                        style="width: 100% !important; ">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        &nbsp; Añadir</button>
+                                </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    
 </div>
 <style>
     td{
@@ -150,7 +150,6 @@
     .card-price > .card-heading,
     .card-price > .card-footer{ color: #73879C; background-color: #fdfdfd; }
     .card-price > .card-heading{ border-bottom: 1px solid #ddd; padding: 8px; }
-    .card-price > .card-footer{ border-top: 1px solid #ddd; padding: 8px; }
     .card-price > .card-img:first-child img{ border-radius: 6px 6px 0 0; }
     .card-price > .card-left{ padding-right: 4px; }
     .card-price > .card-right{ padding-left: 4px; }

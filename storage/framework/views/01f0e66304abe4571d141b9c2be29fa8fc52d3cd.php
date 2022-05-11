@@ -73,11 +73,11 @@
 <?php $__env->stopSection(); ?>
 <style>
      .font {
-        color: #2832A1;
+        color: #093070;
         font-size: 50px;
         text-align: center;
         padding: 30px;
-        text-shadow: 7px 4px 5px #fffe04;
+        text-shadow: 7px 4px 5px #FBD800;
     }
 </style>
 <?php echo $__env->make('admin.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pertecPagina\resources\views/admin/dashboard.blade.php ENDPATH**/ ?>

@@ -21,7 +21,9 @@
         <?php echo $__env->yieldContent('styles'); ?>
 
         
-        <?php echo $__env->yieldContent('head'); ?>       
+        <?php echo $__env->yieldContent('head'); ?>    
+        <link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">
+                
     </head>
     
     <body class="<?php echo $__env->yieldContent('body_class'); ?>">

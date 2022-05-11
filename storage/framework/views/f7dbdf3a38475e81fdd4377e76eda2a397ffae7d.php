@@ -47,7 +47,7 @@
                     <div class="cat" style="text-align: center;"><br>
                         <div class="col">
                             <div class="row">
-                                <div id="lat"><?php echo e($latitud); ?></div> , <div id="long"><?php echo e($longitud); ?></div>
+                                <div id="lat" hidden="true"><?php echo e($latitud); ?></div> <div id="long" hidden="true"><?php echo e($longitud); ?></div>
                             </div>
                         </div>
                     </div>

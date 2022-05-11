@@ -21,9 +21,9 @@
                         <div class="form-group pull-right top_search">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Buscar por nombre" name="buscarpor"
-                                    style="border: 1px #2832A1 solid;">
+                                    style="border: 1px #093070 solid;">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" style="border: 1px #2832A1 solid;">
+                                    <button class="btn btn-default" type="button" style="border: 1px #093070 solid;">
                                         <i class="fa fa-search"></i> Buscar</button>
                                 </span>
                             </div>
@@ -170,7 +170,7 @@
     .container-hover {
         padding: 0px;
         position: relative;
-        background-color: #fffe04b0;
+        background-color: #FBD800;
     }
 
     .image {
@@ -207,7 +207,7 @@
         font-weight: bold;
         border: 2px solid #007bff;
         border-radius: 1rem;
-        color: #2832A1;
+        color: #093070;
         background-color: #ffe000a3;
         transition: color .15s ease-in-out,
             background-color .15s ease-in-out;

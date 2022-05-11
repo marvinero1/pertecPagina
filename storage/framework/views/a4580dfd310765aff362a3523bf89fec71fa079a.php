@@ -174,7 +174,7 @@
     .container-hover {
         padding: 0px;
         position: relative;
-        background-color: #fffe04b0;
+        background-color: #FBD800;
     }
 
     .image {

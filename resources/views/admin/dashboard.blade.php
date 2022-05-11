@@ -158,10 +158,10 @@
 @endsection
 <style>
      .font {
-        color: #2832A1;
+        color: #093070;
         font-size: 50px;
         text-align: center;
         padding: 30px;
-        text-shadow: 7px 4px 5px #fffe04;
+        text-shadow: 7px 4px 5px #FBD800;
     }
 </style>

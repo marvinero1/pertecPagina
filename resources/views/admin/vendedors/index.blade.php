@@ -37,9 +37,9 @@
                         <div class="form-group pull-right top_search">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Buscar Por Nombre Vendedor" name="buscarpor"
-                                    style="border: 1px #2832A1 solid;">
+                                    style="border: 1px #093070 solid;">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" style="border: 1px #2832A1 solid;">
+                                    <button class="btn btn-default" type="button" style="border: 1px #093070 solid;">
                                         <i class="fa fa-search"></i> Buscar</button>
                                 </span>
                             </div>
@@ -181,7 +181,7 @@ $(document).ready(function(){
         -moz-opacity: 0.8;
         -khtml-opacity: 0.8;
         opacity: 0.8;
-        background-color: #2832A1;
+        background-color: #093070;
         z-index: 1;
     }
 

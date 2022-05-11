@@ -49,7 +49,7 @@
                     <div class="cat" style="text-align: center;"><br>
                         <div class="col">
                             <div class="row">
-                                <div id="lat">{{ $latitud }}</div> , <div id="long">{{ $longitud }}</div>
+                                <div id="lat" hidden="true">{{ $latitud }}</div> <div id="long" hidden="true">{{ $longitud }}</div>
                             </div>
                         </div>
                     </div>

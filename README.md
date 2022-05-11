@@ -22,8 +22,8 @@ https://www.pertec.com.bo/wp/
 | ----------------- | ------------------------------------------------------------------ |
 | ColorBlack | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
 | ColorWhite | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
-| ColorYellow | ![#FFFE04](https://via.placeholder.com/10/FFFE04?text=+) #FFFE04 |
-| ColorBlue | ![#2832A1](https://via.placeholder.com/10/2832A1?text=+) #2832A1 |
+| ColorYellow | ![#FBD800](https://via.placeholder.com/10/FFFE04?text=+) #FBD800 |
+| ColorBlue | ![#093070](https://via.placeholder.com/10/2832A1?text=+) #093070 |
 ## License
 
 Copyright 2022 COPYRIGHT PERTEC S.R.L © ®™

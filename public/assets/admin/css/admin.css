@@ -10317,7 +10317,7 @@ html , body{
     padding: 0 0 4px 0
 }
 .left_col {
-    background: #2832A1
+    background: #093070
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
@@ -10374,7 +10374,7 @@ html , body{
 }
 .nav-sm .nav.child_menu li.active,
 .nav-sm .nav.side-menu li.active-sm {
-    border-right: 5px solid #FFFE04
+    border-right: 5px solid #FBD800
 }
 .nav-sm ul.nav.child_menu ul,
 .nav-sm .nav.side-menu li.active-sm ul ul {
@@ -10417,7 +10417,7 @@ html , body{
 }
 .menu_section h3 {
     padding-left: 15px;
-    color: #FFFE04;
+    color: #FBD800;
     text-transform: uppercase;
     letter-spacing: .5px;
     font-weight: bold;
@@ -10499,7 +10499,7 @@ html , body{
 }
 .nav_menu {
     float: left;
-    background: #FFFE04;
+    background: #FBD800;
     border-bottom: 1px solid #D9DEE4;
     margin-bottom: 10px;
     width: 100%;
@@ -10533,7 +10533,7 @@ body .container.body .right_col {
 .nav_title {
     width: 230px;
     float: left;
-    background: #2832A1;
+    background: #093070;
     border-radius: 0;
     height: 57px
 }
@@ -10583,7 +10583,7 @@ body .container.body .right_col {
     color: #9B59B6
 }
 .green {
-    color: #FFFE04;
+    color: #FBD800;
     -webkit-text-stroke: 1px black;
 }
 .aero {
@@ -10664,10 +10664,11 @@ body .container.body .right_col {
 .top_nav .nav .open>a:hover {
     background: #D9DEE4
 }
+@import url('http://fonts.cdnfonts.com/css/franklin-gothic-demi-2');
 body {
     color: #73879C;
-    background: #2832A1;
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+    background: #093070;
+    font-family: "Franklin Gothic Demi", sans-serif;
     font-size: 13px;
     font-weight: 400;
     line-height: 1.471
@@ -10945,7 +10946,7 @@ a:focus {
 }
 .nav.side-menu>li>a,
 .nav.child_menu>li>a {
-    color: #FFFE04;
+    color: #FBD800;
     font-weight: 500
 }
 .nav.child_menu li li:hover,
@@ -10963,7 +10964,7 @@ a:focus {
 }
 .nav.side-menu>li.current-page,
 .nav.side-menu>li.active {
-    border-right: 5px solid #FFFE04
+    border-right: 5px solid #FBD800
 }
 .nav li.current-page {
     background: rgba(255, 255, 255, 0.05)
@@ -10992,7 +10993,7 @@ a:focus {
     font-weight: 400;
     font-size: 22px;
     width: 100%;
-    color: #FFFE04 !important;
+    color: #FBD800 !important;
     margin-left: 0 !important;
     line-height: 59px;
     display: block;
@@ -11086,7 +11087,7 @@ a:focus {
 }
 footer {
     /* background: #ededed; */
-    background:#2832A1;
+    background:#093070;
     padding: 15px 20px;
     display: block
 }
@@ -11903,7 +11904,6 @@ span.right {
 .tile_count .tile_stats_count .count {
     font-size: 30px;
     line-height: 47px;
-    font-weight: 600
 }
 @media (min-width: 768px) {
     .tile_count .tile_stats_count .count {

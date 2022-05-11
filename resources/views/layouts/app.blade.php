@@ -20,7 +20,9 @@
         @yield('styles')
 
         {{--Head--}}
-        @yield('head')       
+        @yield('head')    
+        <link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">
+                
     </head>
     
     <body class="@yield('body_class')">
