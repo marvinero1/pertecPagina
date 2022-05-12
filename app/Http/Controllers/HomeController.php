@@ -28,10 +28,17 @@ class HomeController extends Controller
     public function getHomeProductos(){
         $a = file_get_contents('http://192.168.31.242:5000/api/getProducts');
         $a1 = file_get_contents('http://192.168.31.242:5000/api/getCaruselImage');
-        // $a2 = file_get_contents('http://192.168.31.242:5000/api/getProductsStagnat');
+        $tcb = file_get_contents('http://192.168.31.242:5000/api/getStoresCBBA');
+        $tlz = file_get_contents('http://192.168.31.242:5000/api/getStoresLPZ');
+        $tsz = file_get_contents('http://192.168.31.242:5000/api/getStoresSTCZ');
 
         $b = json_decode($a,"true");
         $b1 = json_decode($a1,"true");
+
+        $tcbba = json_decode($tcb,"true");
+        $tlapz = json_decode($tlz,"true");
+        $tstcz = json_decode($tsz,"true");
+
         $bMasVendidos = [];
         $bMenosVendidos = [];
         foreach($b as $bproduct){
@@ -45,12 +52,7 @@ class HomeController extends Controller
                 break;
             }
         }
-        // $b1 = json_decode($a1,"true");
-        // $b2 = json_decode($a2,"true");
-
-
-        return view('index', compact('bMasVendidos','bMenosVendidos','b1'));
-        // return view('index', compact('b'));
+        return view('index', compact('bMasVendidos','bMenosVendidos','b1','tcbba','tlapz','tstcz'));
     }
 
 

@@ -1,8 +1,7 @@
 @extends('includes.main')
 
 @section('content')
-
-
+<link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">
 
 <!-- carrusel -->
 
@@ -27,7 +26,7 @@
                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on"
-                            style="font-family: raleway; text-align:center;  min-height: 110px !important; min-width: 110px !important;
+                            style="font-family: 'Franklin Gothic Demi', sans-serif; text-align:center;  min-height: 110px !important; min-width: 110px !important;
                             max-height: 110px !important; max-width: 120px !important;">
                             <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen_icono'] }}"
                                 alt="hook"/>
@@ -44,7 +43,7 @@
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
                             data-lineheight="['100','45','25','25']"
-                            data-color="#ffc527" style="font-family:  Franklin Gothic Demi; ">
+                            data-color="#ffc527" style="font-family: 'Franklin Gothic Demi', sans-serif;">
                             {{ $bcarousel['titulo'] }}
                         </h1>
 
@@ -57,7 +56,7 @@
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
                             data-lineheight="['50','26','25','25']"
-                            data-color="#fff" style="font-family:  Franklin Gothic Demi;">
+                            data-color="#fff" style="font-family: 'Franklin Gothic Demi', sans-serif;">
                             {{ $bcarousel['sub_titulo'] }}
                         </div>
                     </li>
@@ -74,7 +73,7 @@
 
 <!-- acerca de nosotros -->
 
-<section id="shotcode-1" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
+<section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
     <div class="container">
         <div class="row slide">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -209,28 +208,192 @@
 
 
 
-{{-- Tiendas y Almacenes --}}
 
 
-<section>
-    <div class="container tdn">
+
+<!-- productos -->
+
+<section id="sectionProducts" style="background-color: #F6F6F6;">
+    <div class="container">
         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+                <div class="row">
+                    <div class="heading">
+                        <div class="heading-bg heading-right">
+                            <p class="mb-0">Catálogo</p>
+                            <h2>Nuestros Productos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner content" role="listbox">
+                        <div class="item active">
+                            <div class="row">
+                                <!-- product #1 -->
+                                @foreach ($bMasVendidos as $mv)
+                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                    <div class="product-img">
+                                        <img src='http://192.168.31.242:5000/{{ $mv["imagen"] }}' alt="product"
+                                            style="height:300px;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="{{ route('oneProduc', ['id'=>base64_encode($mv['id'])]) }}">Detalles</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-bio">
+                                        <h4>
+                                            <a href="#">{{ $mv["nombre_producto"] }}</a>
+                                        </h4>
+                                    </div>
+
+                                    <!-- .product-bio end -->
+                                </div>
+                                @endforeach
+                            </div>
+                            <!-- .row end -->
+                        </div>
+
+                        <div class="item">
+                            <div class="row">
+                                <!-- product #1 -->
+                                @foreach ($bMenosVendidos as $menV)
+                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                    <div class="product-img">
+                                        <img src='http://192.168.31.242:5000/{{ $menV["imagen"] }}' alt="product"
+                                            style="height:300px;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block"
+                                                    href="{{ route('oneProduc', ['id'=>base64_encode($menV['id'])]) }}">Detalles</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-bio">
+                                        <h4>
+                                            <a href="#">{{ $menV["nombre_producto"] }}</a>
+                                        </h4>
+                                    </div>
+
+                                    <!-- .product-bio end -->
+                                </div>
+                                @endforeach
 
 
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 50%; left: 50%; background-color: rgb(206 206 206 / 80%);">
+                                <span class="glyphicon glyphicon-chevron-left" style="margin-top: -16px;" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </div>
+
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                            data-slide="next">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 50%; right: 50%; background-color: rgb(206 206 206 / 80%);">
+                                <span class="glyphicon glyphicon-chevron-right" style="margin-top: -16px;"aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </div>
+
+                        </a>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- .shop-content end -->
+        </div>
+        <!-- .row end -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 product-item">
+                <div class="product-cart">
+                    <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;" href="/fullProducts">Ver más productos<i
+                            class="fa fa-plus ml-xs"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- .col-md-12 end -->
+        </div>
+    </div>
+    <!-- .container end -->
+</section>
+
+
+
+
+
+{{-- Oficinas y tiendas --}}
+
+
+<section id="sectionStores">
+    <div class="container tdn">
+
+        <!-- oficinas nivel nacional-->
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="heading heading-4">
                             <div class="heading-bg heading-right">
-                                <p class="mb-0">Maestros en Pernos</p>
-                                <h2>Nuestras Sucursales</h2>
+                                <p class="mb-0">¿Dónde nos encontramos?</p>
+                                <h2>Nuestras oficinas y tiendas</h2>
                             </div>
                         </div>
                         <!-- .heading end -->
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                        <div class="product-cart heading-right">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                                onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
+                                class="fa fa-plus ml-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- .col-md-12 end -->
+                </div>
             </div>
+        </div>
+        <div class="row" id="of-centrals" style="display: none;">
+            <!-- Entry Sucursal Cochabamba -->
+            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                <div class="entry-img">
+                    <a class="img-popup">
+                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
+                    </a>
+                </div><br>
+                <div class="entry-title">
+                    <h3>
+                        <a href="{{ route('store', ['id'=>2]) }}">Oficina Cochabamba</a>
+                    </h3>
+                </div>
+                <!-- .entry-title end -->
+                <div class="entry-content conten-stores">
+                    <h5>Dirección: Calle Innominada No. 4581 (Arocagua)</h5>
+                    <h5>Telf: (4) 4716000 (Líneas Rotativas)</h5>
+                    <h5>Fax: (4) 4111632</h5>
+                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
+                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                        <span>Más Información</span>
+                    </a>
+                </div>
+                <!-- .entry-content end -->
+            </div>
+            <!-- .entry end -->
 
 
             <!-- Entry Sucursal La Paz -->
@@ -242,60 +405,16 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>1]) }}">En La Paz</a>
+                        <a href="{{ route('store', ['id'=>1]) }}">Oficina La Paz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
-                <div class="entry-content">
-                    <p>
-                        <h5>Dirección: Villa Bolívar "B" Calle 106 No. 501</h5>
-                    </p>
-                    <p>
-                        <h5>Telf: 2822336</h5>
-                    </p>
-                    <p>
-                        <h5>Fax: (2) 2820619</h5>
-                    </p>
-                    <p>
-                        <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    </p>
-
+                <div class="entry-content conten-stores">
+                    <h5>Dirección: Villa Bolívar "B" Calle 106 No. 501</h5>
+                    <h5>Telf: (2) 2822336</h5>
+                    <h5>Fax: (2) 2820619</h5>
+                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
                     <a class="entry-more" href="{{ route('store', ['id'=>1]) }}"><i class="fa fa-plus"></i>
-                        <span>Más Información</span>
-                    </a>
-                </div>
-                <!-- .entry-content end -->
-            </div>
-            <!-- .entry end -->
-
-            <!-- Entry Sucursal Cochabamba -->
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
-                <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
-                    </a>
-                </div><br>
-                <div class="entry-title">
-                    <h3>
-                        <a href="{{ route('store', ['id'=>2]) }}">En Cochabamba</a>
-                    </h3>
-                </div>
-                <!-- .entry-title end -->
-                <div class="entry-content">
-                    <p>
-                        <h5>Dirección: Calle Innominada No. 4581 (Arocagua)</h5>
-                    </p>
-                    <p>
-                        <h5>Telf: 4716000</h5>
-                    </p>
-                    <p>
-                        <h5>Fax: (4) 4111632</h5>
-                    </p>
-                    <p>
-                        <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    </p>
-
-                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -313,24 +432,15 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>3]) }}">En Santa Cruz</a>
+                        <a href="{{ route('store', ['id'=>3]) }}">Oficina Santa Cruz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
-                <div class="entry-content">
-                    <p>
-                        <h5>Dirección: Calle Taitetú No. 2680</h5>
-                    </p>
-                    <p>
-                        <h5>Telf: 3470113</h5>
-                    </p>
-                    <p>
-                        <h5>Fax: (3) 3111228</h5>
-                    </p>
-                    <p>
-                        <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    </p>
-
+                <div class="entry-content conten-stores">
+                    <h5>Dirección: Calle Taitetú No. 2680</h5>
+                    <h5>Telf: (3) 3470113</h5>
+                    <h5>Fax: (3) 3111228</h5>
+                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
                     <a class="entry-more" href="{{ route('store', ['id'=>3]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
@@ -338,153 +448,142 @@
                 <!-- .entry-content end -->
             </div>
             <!-- .entry end -->
-
         </div>
-        <!-- .row end -->
-    </div>
-    <!-- .container end -->
-</section>
 
 
-<!-- productos -->
-
-<section class="shop pb-100">
-    <div class="container">
+        <!-- tiendas cbba -->
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="heading">
-                        <div class="heading-bg heading-right">
-                            <p class="mb-0">Maestros en Pernos</p>
-                            <h2>Nuestros Productos</h2>
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                        <div class="product-cart heading-right">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                                onclick="showOfs('storeCbba')">Tiendas Cochabamba<i
+                                class="fa fa-plus ml-xs"></i>
+                            </a>
                         </div>
                     </div>
+                    <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-    </div>
-    <div class="content">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <!-- <li data-target="#carousel-example-generic" data-slide-to="2"></li> -->
-                    </ol>
-                    <div class="carousel-inner content" role="listbox">
-
-                        <div class="item active">
-                            <div class="row">
-                                <!-- product #1 -->
-                                @foreach ($bMasVendidos as $mv)
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
-                                    <div class="product-img">
-                                        <img src='http://192.168.31.242:5000/{{ $mv["imagen"] }}' alt="product"
-                                            style="height:250px;">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block"
-                                                    href="{{ route('oneProduc', ['id'=>base64_encode($mv['id'])]) }}">Detalles</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- .product-img end -->
-                                    <div class="product-hover">
-                                        <div class="product-cart">
-                                            <a class="btn btn-secondary btn-block"
-                                                href="{{ route('oneProduc', ['id'=>base64_encode($mv['id'])]) }}">Detalles</a>
-                                        </div>
-                                    </div><br>
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">{{ $mv["nombre_producto"] }}</a>
-                                        </h4>
-                                        <p class="product-price">{{ $mv["denominacion"] }}</p>
-                                    </div>
-
-                                    <!-- .product-bio end -->
-                                </div>
-                                @endforeach
-                            </div>
-                            <!-- .row end -->
-                        </div>
-
-
-                        <div class="item">
-                            <div class="row">
-                                <!-- product #1 -->
-                                @foreach ($bMenosVendidos as $menV)
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
-                                    <div class="product-img">
-                                        <img src='http://192.168.31.242:5000/{{ $menV["imagen"] }}' alt="product"
-                                            style="height:250px;">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block"
-                                                    href="{{ route('oneProduc', ['id'=>base64_encode($menV['id'])]) }}">Detalles</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- .product-img end -->
-                                    <div class="product-hover">
-                                        <div class="product-cart">
-                                            <a class="btn btn-secondary btn-block"
-                                                href="{{ route('oneProduc', ['id'=>base64_encode($menV['id'])]) }}">Detalles</a>
-                                        </div>
-                                    </div><br>
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">{{ $menV["nombre_producto"] }}</a>
-                                        </h4>
-                                        <p class="product-price">{{ $menV["denominacion"] }}</p>
-                                    </div>
-
-                                    <!-- .product-bio end -->
-                                </div>
-                                @endforeach
-
-
-                            </div>
-                        </div>
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
-                            data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
-                            data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-
-
-                    </div>
+        <div class="row" id="storeCbba" style="display: none;">
+            @foreach ($tcbba as $tcb)
+            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                <div class="entry-img">
+                    <a class="img-popup">
+                        <img src="http://192.168.31.242:5000/{{ $tcb["imagen"] }}" alt="title" />
+                    </a>
+                </div><br>
+                <div class="entry-title">
+                    <h3>
+                        <a href="{{ route('store', ['id'=>2]) }}">Tienda {{ $tcb["nombre_tienda"] }}</a>
+                    </h3>
                 </div>
-
-
-
-            </div>
-            <!-- .shop-content end -->
-        </div>
-        <!-- .row end -->
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 product-item">
-                <div class="product-cart">
-                    <a class="btn btn-secondary btn-block" style="width: auto;" href="/fullProducts">Ver más<i
-                            class="fa fa-plus ml-xs"></i>
+                <!-- .entry-title end -->
+                <div class="entry-content conten-stores">
+                    <h5>Dirección: {{ $tcb["direccion"] }}</h5>
+                    <h5>Telf: {{ $tcb["telefono"] }}</h5>
+                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                        <span>Más Información</span>
                     </a>
                 </div>
+                <!-- .entry-content end -->
             </div>
-            <!-- .col-md-12 end -->
+            @endforeach
+
+        </div>
+
+
+        <!-- tiendas la paz-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                        <div class="product-cart heading-right">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                                onclick="showOfs('storeLaPaz')">Tiendas La Paz<i
+                                class="fa fa-plus ml-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- .col-md-12 end -->
+                </div>
+            </div>
+        </div>
+        <div class="row" id="storeLaPaz" style="display: none;">
+            @foreach ($tlapz as $tlz)
+            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                <div class="entry-img">
+                    <a class="img-popup">
+                        <img src="http://192.168.31.242:5000/{{ $tlz["imagen"] }}" alt="title" />
+                    </a>
+                </div><br>
+                <div class="entry-title">
+                    <h3>
+                        <a href="{{ route('store', ['id'=>2]) }}">Tienda {{ $tlz["nombre_tienda"] }}</a>
+                    </h3>
+                </div>
+                <!-- .entry-title end -->
+                <div class="entry-content conten-stores">
+                    <h5>Dirección: {{ $tlz["direccion"] }}</h5>
+                    <h5>Telf: {{ $tlz["telefono"] }}</h5>
+                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                        <span>Más Información</span>
+                    </a>
+                </div>
+                <!-- .entry-content end -->
+            </div>
+            @endforeach
+        </div>
+
+
+        <!-- tiendas santa cruz -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                        <div class="product-cart heading-right">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                                onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i
+                                class="fa fa-plus ml-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- .col-md-12 end -->
+                </div>
+            </div>
+        </div>
+        <div class="row" id="storeSantaCruz" style="display: none;">
+            @foreach ($tstcz as $tsz)
+            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                <div class="entry-img">
+                    <a class="img-popup">
+                        <img src="http://192.168.31.242:5000/{{ $tsz["imagen"] }}" alt="title" />
+                    </a>
+                </div><br>
+                <div class="entry-title">
+                    <h3>
+                        <a href="{{ route('store', ['id'=>2]) }}">Tienda {{ $tsz["nombre_tienda"] }}</a>
+                    </h3>
+                </div>
+                <!-- .entry-title end -->
+                <div class="entry-content conten-stores">
+                    <h5>Dirección: {{ $tsz["direccion"] }}</h5>
+                    <h5>Telf: {{ $tsz["telefono"] }}</h5>
+                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                        <span>Más Información</span>
+                    </a>
+                </div>
+                <!-- .entry-content end -->
+            </div>
+            @endforeach
         </div>
     </div>
     <!-- .container end -->
 </section>
+
+
 
 
 {{--
@@ -521,7 +620,7 @@
 
 
 <!-- Productos Promocion -->
-<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+{{-- <section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
     style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
     <div class="container">
         <div class="row">
@@ -545,10 +644,7 @@
         <!-- .row end -->
     </div>
     <!-- .container end -->
-</section>
-<!-- #cta-6 end -->
-<div class="clearfix mb-150">
-</div>
+</section> --}}
 
 
 {{--
@@ -586,7 +682,7 @@
 
 
 <!-- Productos Novedosos -->
-<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+{{-- <section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
     style="background-color:#5cb85c; border-width: 3px; border-style: solid;">
     <div class="container">
         <div class="row">
@@ -605,13 +701,11 @@
             </div>
         </div>
     </div>
-</section>
-<!-- #cta-6 end -->
-<div class="clearfix mb-150">
-</div>
+</section> --}}
+
 {{-- nustros clientes --}}
 
-<section id="clients" class="shortcode-9">
+{{-- <section id="clients" class="shortcode-9">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
@@ -678,17 +772,15 @@
 		<!-- .row End -->
 	</div>
 	<!-- .container end -->
-</section>
-<!-- #cta-6 end -->
-<div class="clearfix mb-150">
-</div>
+</section> --}}
+
 
 
 
 
 {{-- pedidos section --}}
 
-<section id="service-2" class="service service-2 bg-gray pb-0">
+{{-- <section id="service-2" class="service service-2 bg-gray pb-0">
     <div class="container-fluid bg-theme">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -715,14 +807,14 @@
     <!-- .container-fluid end -->
 </section>
 <div class="cleafix mb-150">
-</div>
+</div> --}}
 
 
 
 
 
 {{-- depositos bancarios --}}
-
+{{--
 <section id="service-2" class="service service-2 bg-gray pb-0">
     <div class="container-fluid bg-theme">
         <div class="row">
@@ -748,7 +840,7 @@
     <!-- .container-fluid end -->
 </section>
 <div class="cleafix mb-150">
-</div>
+</div> --}}
 
 
 
@@ -784,55 +876,78 @@
 
 
 <!-- call center -->
-<section id="shortcode-3" class="shortcode-3 section-img">
+
+<section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
-        <div class="row" style="background: #FFFE04; border-width:3px; border-style:solid;">
-            <div class="col-md-6 col-content">
-                <div class="heading heading-4 mb-60">
-                    <div class="heading-bg heading-right">
-                        <p class="mb-0">Maestros en Pernos</p>
-                        <h2>Nuestro Call Center</h2>
-                    </div>
-                </div>
-                <!-- .heading end -->
-                <div class="row pr-50">
-                    <div class="col-xs-12 col-sm-12 col-md-12 feature feature-1 mb-12 mb-12-xs"
-                        style="padding-left: 5%">
-                        <h3 class="text-uppercase">Diponibles en todo momento</h3><br>
-                        <p>
-                            <h4>Telf: 4716000 (Líneas Rotativas)</h4>
-                        </p>
-                        <p>
-                            <h4>Celular: </h4>
-                        </p>
-                        <p>
-                            <h4>Fax: (4) 4111632</h4>
-                        </p>
-                        <p>
-                            <h4>Email: servicio.cliente@pertec.com.bo</h4>
-                        </p>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row" style="background-color: #FBD800;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('../assets/images/features/4.jpg');"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table;">
+                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center;">
+                            {{-- <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
+                                Ahora contamos con registro de Bouchers
+                            </p> --}}
+                            <p class="p-title">CALL CENTER</p>
+                            <br>
+                            <img src="../assets/images/favicon/AGENTE 1-04.png" style="width: 66px !important;">
+                            <P class="p-subtitle">Atención al cliente</P>
+                            <p class="p-texto">
+                                Contamos con personal altamente calificado para brindarle asesoramiento,
+                                información y soluciones integrales a nivel nacional.
+                            </p>
+                            <br><br>
+                            <img src="../assets/images/favicon/AGENTE 2-05.png" style="width: 66px !important;">
+                            <P class="p-subtitle">Toma de pedidos</P>
+                            <p class="p-texto">
+                                Contamos con la tecnología adecuada que nos permite la toma de
+                                pedidos en tiempo real.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- .row end -->
             </div>
-            <!-- .col-md-6 end -->
-            <div class="col-md-6 col-img"
-                style="background: rgb(255,254,4);
-                background: linear-gradient(90deg, rgba(255,254,4,0.8673844537815126) 10%, rgba(40,50,161,0.9822303921568627) 29%);">
-                <div class="col-bg">
-                    <img src="assets/images/features/callCenter1.jpg" width="100%" alt="Background" />
-                </div>
-            </div>
-            <!-- .col-md-6 end -->
+            <!-- .col-md-12 -->
         </div>
         <!-- .row end -->
     </div>
-    <!-- .container end -->
+    <div class="container-fluid">
+        <div class="widgets-contact">
+            <div class="row" style="margin-right: 0px;">
+                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                    <div class="widget-contact-icon pull-left">
+                        <img src="../assets/images/favicon/CELULAR.png" style="margin-top: -15px;" width="30px;">
+                    </div>
+                    <div class="widget-contact-info">
+                        <p class="text-capitalize font-heading">72221031 - 72221033</p>
+                    </div>
+                </div>
+                <!-- .widget end -->
+                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                    <div class="widget-contact-icon pull-left">
+                        <img src="../assets/images/favicon/WHATSAPP.png" style="margin-top: -15px;" width="30px;">
+                    </div>
+                    <div class="widget-contact-info">
+                        <p class="font-heading">(Whatsapp) 72221032 - 72230024</p>
+                    </div>
+                </div>
+                <!-- .widget end -->
+                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                    <div class="widget-contact-icon pull-left">
+                        <img src="../assets/images/favicon/MAIL.png" style="margin-top: -15px;" width="30px;">
+                    </div>
+                    <div class="widget-contact-info">
+                        <p class="font-heading">servicio.cliente@pertec.com.bo</p>
+                    </div>
+                </div>
+                <!-- .widget end -->
+            </div>
+            <!-- .row end -->
+        </div>
+        <!-- .row end -->
+    </div>
 </section>
-
-
-
-
 
 
 <style type="text/css">
@@ -865,4 +980,17 @@
         }
     }
 </style>
+
+<script>
+    function showOfs(Element){
+        var x = document.getElementById(Element);
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+
 @endsection

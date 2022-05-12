@@ -14,7 +14,6 @@
 	<!-- Fonts
 	============================================= -->
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:100,200,300,400,500,600,700,800%7CDroid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link href="https://allfont.es/allfont.css?fonts=franklin-gothic-demi" rel="stylesheet" type="text/css" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
 
@@ -105,7 +104,14 @@
 	});
 	</script>
 
-
+<script>
+    $("a.my-menu-link").click(function(){
+        console.log($(this).attr("name"));
+        $("html, body").animate({
+            scrollTop: $("#"+ $(this).attr("name")).offset().top
+        }, 500)
+    });
+    </script>
 
 </body>
 </html>

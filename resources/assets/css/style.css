@@ -48,8 +48,9 @@
 /*------------------------------------*\
 #GLOBAL STYLES
 \*------------------------------------*/
-@import url(https://allfont.es/allfont.css?fonts=franklin-gothic-demi);
+@import url(http://fonts.cdnfonts.com/css/franklin-gothic-demi-2);
 @import url(https://allfont.es/allfont.css?fonts=franklin-gothic-book);
+@import url(//db.onlinewebfonts.com/c/45a9841a7f5ba7a780f0a804553cfce7?family=Franklin+Gothic+Medium);
 
 html {
 	font-size: 14px;
@@ -92,12 +93,18 @@ a {
   }
 
 a:hover {
+	color: #FBD800 !important;
+	text-decoration: none;
+}
+.a-card {
+    text-decoration: none !important;
+  }
+.a-card:hover {
 	color: #093070 !important;
 	text-decoration: none;
 }
-
 a:focus {
-	color: #FBD800;
+	color: #FBD800 !important;
 	outline: none;
 	text-decoration: none;
 }
@@ -1070,19 +1077,8 @@ section {
 
 .btn-primary,
 .btn-secondary {
-	font-size: 13px !important;
-	font-weight: 700 !important;
-	text-transform: uppercase !important;
-	text-align: center !important;
-	-moz-border-radius: 0 !important;
-	-webkit-border-radius: 0 !important;
-	border-radius: 0 !important;
 	padding: 0 !important;
-	line-height: 49px !important;
-	width: 170px !important;
-	height: 51px !important;
-	text-align: center !important;
-	font-family: 'Montserrat', sans-serif !important;
+	width: 50% !important;
 }
 
 .btn-primary {
@@ -1107,20 +1103,19 @@ section {
 .btn-secondary {
 	background-color: transparent;
 	color: #2f2f2f;
-	border: 2px solid #2f2f2f !important;
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active {
-	background-color: #2832A1;
+	background-color: #093070;
 	color: #fff;
 	border: 2px solid #2f2f2f
 }
 
 .btn-secondary:hover::before,
 .btn-secondary:hover::after {
-	background-color: #4f27ff;
+	background-color: #093070;
 }
 
 .btn-primary.btn-white {
@@ -1393,7 +1388,7 @@ transform: scale(1.0);
 
 .navbar-nav li a {
 	font-size: 1.2rem;
-	font-family: 'Franklin Gothic Demi';
+	font-family: 'Franklin Gothic Demi', sans-serif;
 	text-transform: uppercase;
 }
 
@@ -3385,9 +3380,10 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 
 .heading h2 {
-	font-size: 35px;
+	font-size: 2.4rem;
 	text-transform: uppercase;
-    font-family: 'Franklin Gothic Demi';
+    font-family: 'Franklin Gothic Demi', sans-serif;
+    letter-spacing: 1px;
 	line-height: 1;
 	margin-bottom: 0;
 	padding-bottom: 19px;
@@ -3406,10 +3402,10 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 
 .heading p:first-child {
-	font-size: 14px;
+	font-size: 1.4rem;
 	color: #5a5a5a73;
 	font-weight: 500;
-    font-family: 'Franklin Gothic Book';
+    font-family: 'Franklin Gothic Book' , sans-serif;
 	line-height: 1;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -7299,24 +7295,18 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	margin-right: 16px;
 }
 
-.entry-title,
-.entry-content {
-	margin-left: 30px;
-}
 
 .entry-title h3 {
 	font-size: 16px;
-	font-weight: 700;
 	line-height: 25px;
 	text-transform: uppercase;
-	margin-bottom: 20px;
 }
 
 .entry-title a {
-	font-size: 16px;
-	font-weight: 700;
+    font-family: 'Franklin Gothic Demi', sans-serif;
+	font-size: 1.6rem;
 	line-height: 25px;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	margin-bottom: 20px;
 	color: #2f2f2f;
 }
@@ -7334,10 +7324,9 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 
 .entry-content a.entry-more {
-	color: #ffc527;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 12px;
-	font-weight: bold;
+	color: #FBD800;
+	font-family: 'Franklin Gothic Demi', sans-serif;
+	font-size: 1rem;
 	text-transform: uppercase;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -8238,11 +8227,10 @@ margin-bottom: 0
 }
 
 .product-item .product-cart .btn {
-	background-color: #2f2f2f;
+	background-color: #093070;
 	color: #fff;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 13px;
-	font-weight: 700;
+	font-family: 'Franklin Gothic Demi', sans-serif;
+	font-size: 1.3rem;
 	line-height: 49px;
 	text-transform: uppercase;
 	position: relative;
@@ -8260,7 +8248,7 @@ margin-bottom: 0
 	width: 100%;
 	height: 100%;
 	opacity: 0;
-	background-color: rgba(255, 197, 39, 0.75);
+	background-color: rgba(254, 219, 0, 0.7);
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
@@ -8301,9 +8289,9 @@ margin-bottom: 0
 }
 
 .product-item h4 a {
-	color: #313131;
-	font-size: 14px;
-	font-weight: 700;
+	color: #000000;
+    font-family: 'Franklin Gothic Demi', sans-serif;
+	font-size: 1.3rem;
 	line-height: 25px;
 	text-transform: uppercase;
 }
@@ -9231,16 +9219,14 @@ footer hr {
 }
 
 .widgets-contact .widget-contact-info p:last-child {
-	color: #828282;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
+	color: #000000;
+	font-family: 'Franklin Gothic Demi', sans-serif;
+	font-size: 1.6rem;
 	line-height: 23px;
 }
 
 .widgets-contact .widget {
 	padding-left: 40px;
-	border-left: 2px solid #1f1f1f
 }
 
 .widgets-contact .widget:first-child {
@@ -9276,9 +9262,9 @@ footer hr {
 }
 
 .widgets-links p {
-	color: #9e9e9e;
-	font-size: 14px;
-	font-weight: 400;
+	color: #FFFFFF;
+    font-family: 'Franklin Gothic Book', sans-serif;
+	font-size: 1.2rem;
 	line-height: 23px;
 }
 
@@ -9290,23 +9276,21 @@ footer hr {
 	padding-top: 47px
 }
 
-.widgets-links .widget-about .widget-about-info {
-	padding-left: 76px;
-}
+
 
 .widgets-links ul li {
 	margin-bottom: 0;
 }
 
 .widgets-links ul li a {
-	color: #7f7f7f !important;
-	font-size: 13px;
-	font-weight: 400;
+	color: #FFFFFF !important;
+	font-family: 'Franklin Gothic Book', sans-serif;
+	font-size: 1.2rem;
 	line-height: 26px;
 }
 
 .widgets-links ul li a:hover {
-	color: #ffc527 !important
+	color: #FBD800 !important
 }
 
 .widget-social {
@@ -9846,12 +9830,12 @@ footer hr {
 	border-radius:50px;
 	text-align:center;
     font-size:1rem;
-    font-family: 'Franklin Gothic Demi';
+    font-family: 'Franklin Gothic Demi', sans-serif;
     z-index:100;
 }
 .btn_Whats_float:hover {
 	text-decoration: none;
-	color: #0d8925;
+	color: #0d8925 !important;
   background-color:#fff;
 }
 
@@ -9871,7 +9855,7 @@ footer hr {
 }
 .btn_Face_float:hover {
 	text-decoration: none;
-	color: #0d1be4;
+	color: #0d1be4 !important;
   background-color:#fff;
 }
 
@@ -9891,7 +9875,7 @@ footer hr {
 }
 .btn_Map_float:hover {
 	text-decoration: none;
-	color: #df0a0a;
+	color: #df0a0a !important;
     background-color:#fff;
 }
 .btn_Inf_float_my-float{
@@ -9953,7 +9937,11 @@ footer hr {
         left: 25%;
       }
   }
-
+  @media(min-width: 768px){
+    .info-footer {
+        padding-left: 5% !important;
+      }
+  }
   .header-3 .navbar-fixed-top.affix-scrooll {
     background-color: #093070c2;
 }
@@ -9961,3 +9949,44 @@ footer hr {
     color: #FBD800;
 }
 
+.btn-gereric {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+.btn-gereric:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+.p-title {
+    font-family: 'Franklin Gothic Demi', sans-serif;
+    font-size: 2rem;
+    color: #000000;
+    letter-spacing: 2px;
+}
+
+.p-subtitle {
+    font-family: 'Franklin Gothic Medium', sans-serif;
+    font-size: 1.5rem;
+    color: #000000;
+    letter-spacing: 1px;;
+}
+.p-texto {
+    font-family: 'Franklin Gothic Book', sans-serif;
+    font-size: 1.5rem;
+    color: #000000;
+    letter-spacing: 1px;;
+}
+.font-frank-book{
+    font-family: 'Franklin Gothic Book', sans-serif;
+}
+.font-frank-medium{
+    font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.conten-stores h5{
+    font-family: 'Franklin Gothic Book', sans-serif;
+    font-size: 1.4rem;
+    color: #A6A69B;
+}

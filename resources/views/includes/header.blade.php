@@ -24,10 +24,10 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="/aboutUs">¿Quiénes Somos?</a>
+							<a href="#" class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
 						</li>
                         <li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">Productos</a>
+							<a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link">Productos</a>
 							<ul class="dropdown-menu" style="border-radius: 10px;">
 								<li>
 									<a href="/fullProducts">Catálogo</a>
@@ -45,7 +45,7 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="/sucursales">Oficinas y Tiendas</a>
+							<a href="#" class="my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
 						</li>
 						<!-- li end -->
                         <li class="has-dropdown pull-left">
@@ -95,4 +95,5 @@
 	  $nav.toggleClass('affix-scrooll', $(this).scrollTop() > $nav.height());
 	});
 });
+
 </script>
