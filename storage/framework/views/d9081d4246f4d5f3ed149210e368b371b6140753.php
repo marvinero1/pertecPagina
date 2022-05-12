@@ -100,10 +100,10 @@
                                 <td scope="row"><?php echo e($vendedors->celular); ?></td>
                                 <td scope="row"><?php echo e($vendedors->whatsapp); ?></td>
                                 <td scope="row" style="text-align:center;">
-                                    <a href="<?php echo e(route('admin.vendedor.show', $hash->encode($vendedors->id))); ?>" style="color: black">
+                                    <a href="<?php echo e(route('admin.vendedor.show', $hash->encodeHex($vendedors->id))); ?>" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>   
-                                    <a href="<?php echo e(route('admin.vendedor.edit', $vendedors->id )); ?>" style="color: black">
+                                    <a href="<?php echo e(route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) )); ?>" style="color: black">
                                         <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
                                             Editar</button>
                                     </a>                                     
@@ -119,7 +119,6 @@
                                 </td>
                             </tr>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            
                         </tbody>
                     </table>
                 </div>

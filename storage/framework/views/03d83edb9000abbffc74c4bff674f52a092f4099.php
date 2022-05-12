@@ -7,15 +7,15 @@
 
     </div>
     <?php endif; ?>
-    
+    <div class="col">
         <div class="col-md-4" >
             <div class="card card-price">
                 <div class="card-img"><br>
                     <div class="cat">
-                        <img src="/<?php echo e($imagen); ?>" class="img-responsive imgprod" alt="<?php echo e($nombre_producto); ?>">
+                        <img src="/<?php echo e($productos->imagen); ?>" class="img-responsive imgprod" alt="<?php echo e($productos->nombre_producto); ?>">
                     </div>                    
                     <div class="card-caption">
-                        <span class="h2"><?php echo e($nombre_producto); ?></span>
+                        <span class="h2"><?php echo e($productos->nombre_producto); ?></span>
                         
                     </div>
                 </div>
@@ -26,24 +26,24 @@
                     </ul> 
                     <table class="table">
                         <tr><th>Caracteristicas</th><th style="text-align: center;">Detalle</th></tr>
-                        <tr><td>Denominación</td><td class="price"><?php echo e($denominacion); ?></td></tr>
-                        <tr><td>Categoria</td><td class="price"><?php echo e($categoria); ?></td></tr>
-                        <tr><td>Material</td><td class="price"><?php echo e($material); ?></td></tr>
-                        <tr><td>Acabado</td><td class="price"><?php echo e($acabado); ?></td></tr>
-                        <tr><td>Rosca</td><td class="price"><?php echo e($rosca); ?></td></tr>
-                        <tr><td>Resistencia</td><td class="price"><?php echo e($resistencia); ?></td></tr>
-                        <tr><td>Tratamiento</td><td class="price"><?php echo e($tratamiento); ?></td></tr>
-                        <tr><td>SAE</td><td class="price"><?php echo e($sae); ?></td></tr>
-                        <tr><td>ZB</td><td class="price"><?php echo e($zb); ?></td></tr>
-                        <tr><td>ZAM</td><td class="price"><?php echo e($zam); ?></td></tr>
+                        <tr><td>Denominación</td><td class="price"><?php echo e($productos->denominacion); ?></td></tr>
+                        <tr><td>Categoria</td><td class="price"><?php echo e($productos->categoria); ?></td></tr>
+                        <tr><td>Material</td><td class="price"><?php echo e($productos->material); ?></td></tr>
+                        <tr><td>Acabado</td><td class="price"><?php echo e($productos->acabado); ?></td></tr>
+                        <tr><td>Rosca</td><td class="price"><?php echo e($productos->rosca); ?></td></tr>
+                        <tr><td>Resistencia</td><td class="price"><?php echo e($productos->resistencia); ?></td></tr>
+                        <tr><td>Tratamiento</td><td class="price"><?php echo e($productos->tratamiento); ?></td></tr>
+                        <tr><td>SAE</td><td class="price"><?php echo e($productos->sae); ?></td></tr>
+                        <tr><td>ZB</td><td class="price"><?php echo e($productos->zb); ?></td></tr>
+                        <tr><td>ZAM</td><td class="price"><?php echo e($productos->zam); ?></td></tr>
                     </table>
                 </div>
                 <div class="col-md-12">
                     <a href="<?php echo e(route('admin.producto.index')); ?>" style="color: black">
                         <button class="btn btn-warning"> <i class="fa fa-close" aria-hidden="true"></i> Atras</button></a>
-                        <?php if($novedad !='si'): ?>
+                        <?php if($productos->novedad !='si'): ?>
                             <button type="button" style="float: right;" class="btn btn-success btn-md" data-toggle="modal" 
-                             data-target="#myModalNovedad<?php echo e($id); ?>">
+                             data-target="#myModalNovedad<?php echo e($productos->id); ?>">
                         <i class="fa fa-diamond" aria-hidden="true"></i> Novedad</button>
                         <?php endif; ?>
                 </div>
@@ -54,16 +54,16 @@
                 <div class="card-img"><br>
                     <h2 style="text-align: center;">MATRIZ</h2>
                     <div class="cat" style="text-align: center;">
-                        <?php if(!is_null($imagen_matriz)): ?>
-                            <img src="/<?php echo e($imagen_matriz); ?>" class="img-responsive imgprod" alt="<?php echo e($nombre_producto); ?>">
+                        <?php if(!is_null($productos->imagen_matriz)): ?>
+                            <img src="/<?php echo e($productos->imagen_matriz); ?>" class="img-responsive imgprod" alt="<?php echo e($productos->nombre_producto); ?>">
                         <?php else: ?>
-                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal<?php echo e($id); ?>">
+                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal<?php echo e($productos->id); ?>">
                             <i class="fa fa-th" aria-hidden="true"></i> Agregar Matriz</button>
                         <?php endif; ?>
                     </div><br>
                     
                     <div class="card-caption">
-                        <span class="h2"><?php echo e($nombre_producto); ?></span>
+                        <span class="h2"><?php echo e($productos->nombre_producto); ?></span>
                     </div>
                 </div>
                 <div class="card-body">
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="myModal<?php echo e($id); ?>" role="dialog">
+        <div class="modal fade" id="myModal<?php echo e($productos->id); ?>" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -81,7 +81,7 @@
                     <h4 class="modal-title">Agregar Matriz</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="<?php echo e(route( 'admin.productos.productoMatriz', $id )); ?>" method="POST"
+                        <form action="<?php echo e(route( 'admin.productos.productoMatriz', $productos->id )); ?>" method="POST"
                             style="margin-block-end:-1em !important;" enctype="multipart/form-data">
                             <?php echo e(csrf_field()); ?>
 
@@ -108,7 +108,7 @@
         </div>
 
         
-        <div class="modal fade" id="myModalNovedad<?php echo e($id); ?>" role="dialog">
+        <div class="modal fade" id="myModalNovedad<?php echo e($productos->id); ?>" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -119,7 +119,7 @@
                     </div>
                     <div class="modal-body">
                         <form
-                            action="<?php echo e(route( 'admin.productos.productoNovedad', $id )); ?>"
+                            action="<?php echo e(route( 'admin.productos.productoNovedad', $productos->id )); ?>"
                             method="POST" style="margin-block-end:-1em !important;">
                             <?php echo e(csrf_field()); ?>
 
@@ -127,7 +127,7 @@
 
                             <input type="hidden" name="novedad" value="si">
                             <h5 style="text-align: center;">
-                                <?php echo e(strtoupper($nombre_producto)); ?></h5><br>
+                                <?php echo e(strtoupper($productos->nombre_producto)); ?></h5><br>
                             <div class="row" style="display: block;">
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-success"
@@ -140,7 +140,7 @@
                 </div>
             </div>
         </div>
-    
+    </div>
 </div>
 <style>
     td{

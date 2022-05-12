@@ -33,6 +33,22 @@ class TiendaController extends Controller{
         return response()->json($tienda, 200);
     }
 
+    public function getStoresLPZ(){
+        $tiendaLPZ = Tienda::where('ciudad','La Paz')->get();
+
+        return response()->json($tiendaLPZ, 200);
+    }
+    public function getStoresCBBA(){
+        $tiendaCBBA = Tienda::where('ciudad','Cochabamba')->get();
+
+        return response()->json($tiendaCBBA, 200);
+    }
+    public function getStoresSTCZ(){
+        $tiendaSTCZ = Tienda::where('ciudad','Santa Cruz')->get();
+
+        return response()->json($tiendaSTCZ, 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -115,28 +131,11 @@ class TiendaController extends Controller{
      */
     public function show($id){
         $hash = new Hashids();
-        $hash_id = $hash->decode($id);
+        $hash_id = $hash->decodeHex($id);
 
-        $tienda = Tienda::all();
-        $tiendas = $tienda->find($hash_id);
+        $tienda = Tienda::findOrFail($hash_id);
 
-        foreach($tiendas as $tiendass){
-            $id= $tiendass->id;
-            $nombre_tienda = $tiendass->nombre_tienda;
-            $telefono = $tiendass->telefono;
-            $celular = $tiendass->celular;
-            $whatsapp = $tiendass->whatsapp;
-            $direccion = $tiendass->direccion;
-            $ciudad = $tiendass->ciudad;
-            $correo_electronico = $tiendass->correo_electronico;
-            $encargado = $tiendass->encargado;
-            $imagen = $tiendass->imagen;
-            $latitud = $tiendass->latitud;
-            $longitud = $tiendass->longitud;
-        }
-
-        return view('admin.tiends.show', compact('nombre_tienda','telefono','celular','whatsapp','direccion','ciudad',
-        'correo_electronico','encargado','imagen','latitud','longitud'));
+        return view('admin.tiends.show', compact('tienda'));
     }
 
     /**
@@ -146,7 +145,10 @@ class TiendaController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function edit($id){
-        $tienda = Tienda::findOrFail($id);
+        $hash = new Hashids();
+        $hash_id = $hash->decodeHex($id);
+
+        $tienda = Tienda::findOrFail($hash_id);
         return view('admin.tiends.edit', compact('tienda'));
     }
 

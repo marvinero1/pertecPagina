@@ -98,11 +98,11 @@
                                 <td scope="row"><?php echo e($productos->denominacion); ?></td>
                                 <td scope="row"><?php echo e($productos->categoria); ?></td>
                                 <td scope="row" style="text-align:center;">
-                                    <a href="<?php echo e(route('admin.producto.show', $hash->encode($productos->id) )); ?>" style="color: black">
+                                    <a href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id) )); ?>" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>
                                     
-                                    <a href="<?php echo e(route('admin.producto.edit', $productos->id )); ?>" style="color: black">
+                                    <a href="<?php echo e(route('admin.producto.edit', $hash->encodeHex($productos->id) )); ?>" style="color: black">
                                         <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
                                             Editar</button></a>
                                     <?php if($productos->promocion !='si'): ?>

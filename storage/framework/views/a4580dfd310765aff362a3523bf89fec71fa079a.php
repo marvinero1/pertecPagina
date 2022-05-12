@@ -1,8 +1,8 @@
 
 
 <?php $__env->startSection('content'); ?>
+
 <!-- page content -->
-<div class="container">
     <div class="row">
         <div class="title_left" style="text-align: center;">
             <h3><?php echo e(__('views.admin.products.index.title')); ?> </h3>
@@ -21,10 +21,10 @@
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Buscar por nombre" name="buscarpor"
-                                    style="border: 1px #2832A1 solid;">
+                                <input type="text" class="form-control" placeholder="Buscar por Nombre Producto" name="buscarpor"
+                                    style="border: 1px #093070 solid;">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" style="border: 1px #2832A1 solid;">
+                                    <button class="btn btn-default" type="button" style="border: 1px #093070 solid;">
                                         <i class="fa fa-search"></i> Buscar</button>
                                 </span>
                             </div>
@@ -34,29 +34,12 @@
             </div>
         </div>
     </div><br>
-    <div class="clearfix"></div>
-    <div class="row" style="display: block;">
+    
+    <div class="row">
         <div class="col-md col-sm">
             <div class="x_panel">
-                <div class="x_title">
-                    <h2>Productos en Promoción</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Settings 1</a>
-                                <a class="dropdown-item" href="#">Settings 2</a>
-                            </div>
-                        </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="x_content container">
+                <h2>Productos en Promoción</h2><br>
+                <div class="x_content ">
                     <div class=" row">
                         <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-sm-3 col-md-3">
@@ -67,7 +50,7 @@
                                             alt="<?php echo e($productos->nombre_producto); ?>">
                                     </div>
                                     <div class="middle">
-                                        <p><a href="<?php echo e(route('admin.producto.show', $productos->id )); ?>"
+                                        <p><a href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id) )); ?>"
                                                 style="color: black">
                                                 <button type="button" class="btn-borde" data-toggle="modal"
                                                     data-target="#myModal" title="Más información">
@@ -84,58 +67,24 @@
                                                 data-target="#myModal<?php echo e($productos->id); ?>">
                                                 <i class="fa fa-star" aria-hidden="true"></i> Quitar Promoción</button>
                                         </p>
+                                        <?php echo $__env->make('admin.products.modalPromocion', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="container">
-                            <div class="modal fade" id="myModal<?php echo e($productos->id); ?>" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title" style="text-align: center;">Quitar Producto de
-                                                Novedad</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form
-                                                action="<?php echo e(route( 'admin.productos.productoPromocion', $productos->id )); ?>"
-                                                method="POST" style="margin-block-end:-1em !important;">
-                                                <?php echo e(csrf_field()); ?>
-
-                                                <?php echo e(method_field('PUT')); ?>
-
-                                                <input type="hidden" name="promocion" value="no">
-                                                <h4>Quitar de Lista de Promoción </h4><br>
-                                                <h5 style="text-align: center;">
-                                                    <?php echo e(strtoupper($productos->nombre_producto)); ?></h5><br>
-                                                <div class="row" style="display: block;">
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-danger"
-                                                            style="width: 100% !important; ">
-                                                            <i class="fa fa-close" aria-hidden="true"></i>
-                                                            &nbsp; Quitar</button>
-                                                    </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div>                       
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
-                <div style="text-align: center;">
-                    <?php echo e($producto->links()); ?>
-
-                </div>
             </div>
+            <div style="text-align: center;">
+                <?php echo e($producto->links()); ?>
+
+            </div>  
         </div>
-    </div>
-</div>
+    </div><br><br><br><br><br><br><br>
 <!-- /page content -->
+<?php $__env->stopSection(); ?>
+
 <style>
     th,
     td,
@@ -162,7 +111,7 @@
 
     /* cards */
     .thumbnail {
-        height: 100% !important;
+        height: auto !important;
     }
 
     .img-responsive,
@@ -211,8 +160,8 @@
         font-weight: bold;
         border: 2px solid #007bff;
         border-radius: 1rem;
-        color: #2832A1;
-        background-color: #ffe000a3;
+        color: #093070;
+        background-color: #FBD800;
         transition: color .15s ease-in-out,
             background-color .15s ease-in-out;
     }
@@ -247,5 +196,4 @@
         transform: scale(1);
     }
 </style>
-<?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pertecPagina\resources\views/admin/products/promocion.blade.php ENDPATH**/ ?>

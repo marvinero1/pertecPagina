@@ -112,26 +112,11 @@ class VendedorController extends Controller
      */
     public function show($id){
         $hash = new Hashids();
-        $hash_id = $hash->decode($id);
+        $hash_id = $hash->decodeHex($id);
 
-        $vendedor = Vendedor::all();
-        $vendedors = $vendedor->find($hash_id);
-
-        foreach($vendedors as $vendedorss){
-            $id= $vendedorss->id;
-            $nombre_vendedor = $vendedorss->nombre_vendedor;
-            $apellido = $vendedorss->apellido;
-            $celular = $vendedorss->celular;
-            $whatsapp = $vendedorss->whatsapp;
-            $ciudad = $vendedorss->ciudad;
-            $correo_electronico = $vendedorss->correo_electronico;
-            $imagen = $vendedorss->imagen;
-            $created_at = $vendedorss->created_at;
-            $updated_at = $vendedorss->updated_at;
-        }
-
-        return view('admin.vendedors.show', compact('nombre_vendedor','apellido','celular','whatsapp','ciudad','correo_electronico',
-        'imagen','created_at','updated_at'));
+        $vendedor = Vendedor::findOrFail($hash_id);
+        
+        return view('admin.vendedors.show', compact('vendedor'));
     }
 
     /**
@@ -141,7 +126,10 @@ class VendedorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id){
-        $vendedor = Vendedor::findOrFail($id);
+        $hash = new Hashids();
+        $hash_id = $hash->decodeHex($id);
+
+        $vendedor = Vendedor::findOrFail($hash_id);
         return view('admin.vendedors.edit', ['vendedor' => $vendedor]);
     }
 

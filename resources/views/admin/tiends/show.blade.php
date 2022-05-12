@@ -7,11 +7,11 @@
             <div class="card card-price">
                 <div class="card-img"><br>
                     <div class="cat">
-                        <img src="/{{ $imagen }}" class="img-responsive imgprod card-img-top" alt="{{ $nombre_tienda }}">
+                        <img src="/{{ $tienda->imagen }}" class="img-responsive imgprod card-img-top" alt="{{ $tienda->nombre_tienda }}">
                     </div><br>
                     
                     <div class="card-caption"><br>
-                        <span class="h2">{{ $nombre_tienda }}</span>
+                        <span class="h2">{{ $tienda->nombre_tienda }}</span>
                         {{-- <p>Gluten free</p> --}}
                     </div>
                    
@@ -24,14 +24,14 @@
                         <li>There's a pony in that pile.</li> --}}
                     </ul> 
                     <table class="table">
-                        <tr><th>Denominacion Tienda</th><th style="text-align: center;">{{ $nombre_tienda }}</th></tr>
-                        <tr><td>Telefono</td><td class="price">{{ $telefono }}</td></tr>
-                        <tr><td>Celular</td><td class="price">{{ $celular }}</td></tr>
-                        <tr><td>Whatsapp</td><td class="price">{{ $whatsapp }}</td></tr>
-                        <tr><td>Direccion</td><td class="price">{{ $direccion }}</td></tr>
-                        <tr><td>Ciudad</td><td class="price">{{ $ciudad }}</td></tr>
-                        <tr><td>E-mail</td><td class="price">{{ $correo_electronico }}</td></tr>
-                        <tr><td>Encargado</td><td class="price">{{ $encargado }}</td></tr>
+                        <tr><th>Denominacion Tienda</th><th style="text-align: center;">{{ $tienda->nombre_tienda }}</th></tr>
+                        <tr><td>Telefono</td><td class="price">{{ $tienda->telefono }}</td></tr>
+                        <tr><td>Celular</td><td class="price">{{ $tienda->celular }}</td></tr>
+                        <tr><td>Whatsapp</td><td class="price">{{ $tienda->whatsapp }}</td></tr>
+                        <tr><td>Direccion</td><td class="price">{{ $tienda->direccion }}</td></tr>
+                        <tr><td>Ciudad</td><td class="price">{{ $tienda->ciudad }}</td></tr>
+                        <tr><td>E-mail</td><td class="price">{{ $tienda->correo_electronico }}</td></tr>
+                        <tr><td>Encargado</td><td class="price">{{ $tienda->encargado }}</td></tr>
                     </table>
                 </div>
                 <div class="col-md-12">
@@ -44,12 +44,12 @@
             <div class="card card-price">
                 <div class="card-img"><br>
                     <div class="card-caption">
-                        <span class="h2">{{ $nombre_tienda }}</span>
+                        <span class="h2">{{ $tienda->nombre_tienda }}</span>
                     </div>
                     <div class="cat" style="text-align: center;"><br>
                         <div class="col">
                             <div class="row">
-                                <div id="lat" hidden="true">{{ $latitud }}</div> <div id="long" hidden="true">{{ $longitud }}</div>
+                                <div id="lat" hidden="true">{{ $tienda->latitud }}</div> <div id="long" hidden="true">{{ $tienda->longitud }}</div>
                             </div>
                         </div>
                     </div>

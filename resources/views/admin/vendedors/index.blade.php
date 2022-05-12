@@ -97,10 +97,10 @@
                                 <td scope="row">{{ $vendedors->celular }}</td>
                                 <td scope="row">{{ $vendedors->whatsapp }}</td>
                                 <td scope="row" style="text-align:center;">
-                                    <a href="{{ route('admin.vendedor.show', $hash->encode($vendedors->id)) }}" style="color: black">
+                                    <a href="{{ route('admin.vendedor.show', $hash->encodeHex($vendedors->id)) }}" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>   
-                                    <a href="{{ route('admin.vendedor.edit', $vendedors->id ) }}" style="color: black">
+                                    <a href="{{ route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) ) }}" style="color: black">
                                         <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
                                             Editar</button>
                                     </a>                                     
@@ -116,7 +116,6 @@
                                 </td>
                             </tr>
                             @endforeach
-                            
                         </tbody>
                     </table>
                 </div>

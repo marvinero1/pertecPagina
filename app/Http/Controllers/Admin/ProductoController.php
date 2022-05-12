@@ -28,10 +28,11 @@ class ProductoController extends Controller
     }
 
     public function productosPromocion(Request $request){
+        $hash = new Hashids();
         $nombre_producto = $request->get('buscarpor');
         $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->where('promocion', 'si')->latest()->paginate(10);
         
-        return view('admin.products.promocion', ['producto' => $producto]);
+        return view('admin.products.promocion', ['producto' => $producto, 'hash'=>$hash]);
     }
 
     public function productosNovedad(Request $request){
@@ -54,7 +55,6 @@ class ProductoController extends Controller
     }
 
     public function getProducts(){
-        // $producto = Producto::all();
         $producto = Producto::all();
 
         return response()->json($producto, 200);
@@ -163,33 +163,10 @@ class ProductoController extends Controller
      */
     public function show($id){
         $hash = new Hashids();
-        $hash_id = $hash->decode($id);
-
-        $producto = Producto::all();
-        $productos = $producto->find($hash_id);
-
-        foreach($productos as $productoss){
-            $id= $productoss->id;
-            $nombre_producto = $productoss->nombre_producto;
-            $denominacion = $productoss->denominacion;
-            $categoria = $productoss->categoria;
-            $inox = $productoss->inox;
-            $imagen = $productoss->imagen;
-            $imagen_matriz = $productoss->imagen_matriz;
-            $material = $productoss->material;
-            $acabado = $productoss->acabado;
-            $rosca = $productoss->rosca;
-            $resistencia = $productoss->resistencia;
-            $tratamiento = $productoss->tratamiento;
-            $sae = $productoss->sae;
-            $zb = $productoss->zb;
-            $zam = $productoss->zam;
-            $promocion = $productoss->promocion;
-            $novedad = $productoss->novedad;
-        }
-
-        return view('admin.products.show', compact('nombre_producto','denominacion','categoria','inox','imagen','imagen_matriz',
-        'material','acabado','rosca','resistencia','tratamiento','sae','zb','zam','promocion','novedad','id')); 
+        $hash_id = $hash->decodeHex($id);
+        $productos = Producto::findOrFail($hash_id);
+       
+        return view('admin.products.show', compact('productos')); 
     }
     /**
      * Show the form for editing the specified resource.
@@ -198,7 +175,9 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id){
-        $producto = Producto::findOrFail($id);
+        $hash = new Hashids();
+        $hash_id = $hash->decodeHex($id);
+        $producto = Producto::findOrFail($hash_id);
         return view('admin.products.edit', compact('producto'));
     }
 
@@ -284,7 +263,7 @@ class ProductoController extends Controller
         $producto->promocion = $promocion;
         $producto->update(); 
 
-        Session::flash('promocion','Producto Agregado a Promocion Exisitosamente!');
+        Session::flash('promocion','Producto Promocion Exisitosamente!');
         return redirect()->route('admin.producto.index');
     }
 
@@ -295,7 +274,7 @@ class ProductoController extends Controller
         $producto->novedad = $novedad;
         $producto->update(); 
 
-        Session::flash('novedad','Producto Agregado a Novedad Exisitosamente!');
+        Session::flash('novedad','Producto Novedad Exisitosamente!');
         return back()->withInput();
     }
 

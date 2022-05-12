@@ -25,7 +25,7 @@
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Buscar por nombre" name="buscarpor"
+                                <input type="text" class="form-control" placeholder="Buscar por Nombre Producto" name="buscarpor"
                                     style="border: 1px #093070 solid;">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" style="border: 1px #093070 solid;">
@@ -39,7 +39,7 @@
         </div>
     </div><br>
     <div class="clearfix"></div>
-    <div class="row" style="display: block;">
+    <div class="row">
         <div class="col-md col-sm">
             <div class="x_panel">
                 <div class="x_title">
@@ -134,7 +134,7 @@
             </div>
         </div>
     </div>
-</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!-- /page content -->
 <style>
     th,

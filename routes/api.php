@@ -25,6 +25,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('getUsers', [UserController::class, 'getUsers']);
 Route::get('getProducts', [ProductoController::class, 'getProducts']);
 Route::get('getStores', [TiendaController::class, 'getStores']);
+Route::get('getStoresLPZ', [TiendaController::class, 'getStoresLPZ']);
+Route::get('getStoresCBBA', [TiendaController::class, 'getStoresCBBA']);
+Route::get('getStoresSTCZ', [TiendaController::class, 'getStoresSTCZ']);
+
 Route::get('getProductsLessSales', [ProductoController::class, 'getProductsLessSales']);
 Route::get('getProductsStagnat', [ProductoController::class, 'getProductsStagnat']);
 Route::get('getProductsPromotion', [ProductoController::class, 'getProductsPromotion']);
