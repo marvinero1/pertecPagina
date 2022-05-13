@@ -13,7 +13,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-12 widgets-links info-footer">
                 <div class="col-xs-12 col-sm-12 col-md-1 widget-about text-center-xs mb-30-xs">
                     <div class="widget-about-logo pull-left pull-none-xs">
-						<img src="../assets/images/footer-logo.png" alt="logo" width="80px"/>
+						<img src="../assets/images/favicon/Logotipo.png" alt="logo" width="80px"/>
 					</div>
                 </div>
 				<div class="col-xs-12 col-sm-12 col-md-2 widget-about text-center-xs mb-30-xs">

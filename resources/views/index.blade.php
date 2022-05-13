@@ -74,7 +74,7 @@
 <!-- acerca de nosotros -->
 
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
-    <div class="container">
+    <div class="content section-content">
         <div class="row slide">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
@@ -214,7 +214,7 @@
 <!-- productos -->
 
 <section id="sectionProducts" style="background-color: #F6F6F6;">
-    <div class="container">
+    <div class="content section-content">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div class="row">
@@ -228,7 +228,7 @@
             </div>
         </div>
     </div>
-    <div class="content">
+    <div class="content section-content">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -240,7 +240,7 @@
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
                                     <div class="product-img">
                                         <img src='http://192.168.31.242:5000/{{ $mv["imagen"] }}' alt="product"
-                                            style="height:300px;">
+                                            style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block a-card"
@@ -338,7 +338,7 @@
 
 
 <section id="sectionStores">
-    <div class="container tdn">
+    <div class="content tdn section-content">
 
         <!-- oficinas nivel nacional-->
         <div class="row">
@@ -351,7 +351,6 @@
                                 <h2>Nuestras oficinas y tiendas</h2>
                             </div>
                         </div>
-                        <!-- .heading end -->
                     </div>
 
                 </div>
@@ -482,7 +481,7 @@
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5>Dirección: {{ $tcb["direccion"] }}</h5>
+                    <h5 style="text-transform: capitalize;">Dirección: {{ $tcb["direccion"] }}</h5>
                     <h5>Telf: {{ $tcb["telefono"] }}</h5>
                     <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
@@ -521,14 +520,14 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>2]) }}">Tienda {{ $tlz["nombre_tienda"] }}</a>
+                        <a href="{{ route('store', ['id'=>1]) }}">Tienda {{ $tlz["nombre_tienda"] }}</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5>Dirección: {{ $tlz["direccion"] }}</h5>
+                    <h5 style="text-transform: capitalize;">Dirección: {{ $tlz["direccion"] }}</h5>
                     <h5>Telf: {{ $tlz["telefono"] }}</h5>
-                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('store', ['id'=>1]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -564,14 +563,14 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>2]) }}">Tienda {{ $tsz["nombre_tienda"] }}</a>
+                        <a href="{{ route('store', ['id'=>3]) }}">Tienda {{ $tsz["nombre_tienda"] }}</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5>Dirección: {{ $tsz["direccion"] }}</h5>
+                    <h5 style="text-transform: capitalize;">Dirección: {{ $tsz["direccion"] }}</h5>
                     <h5>Telf: {{ $tsz["telefono"] }}</h5>
-                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('store', ['id'=>3]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -950,6 +949,16 @@
 </section>
 
 
+<input type="checkbox" id="cerrar">
+<label for="cerrar" id="btn-cerrar" style="text-align: center !important; z-index: 1000;">X</label>
+
+<div class="modalPopUp">
+    <div class="contenido">
+        <h2>Visita nuestro blog</h2>
+    </div>
+</div>
+
+
 <style type="text/css">
     .slide {
       animation-duration: 4s;
@@ -977,6 +986,60 @@
 
         to{
             margin-top: 0%;
+        }
+    }
+
+
+    .modalPopUp {
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        background: rgba(9,48,112,0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        animation: modal 1s 2s forwards;
+        visibility: hidden;
+        opacity: 0;
+        text-align: center;
+    }
+    .contenido {
+        margin: auto;
+        width: 40%;
+        height: 40%;
+        background: white;
+        border-radius: 10px;
+    }
+
+    #cerrar {
+        display: none;
+    }
+    #cerrar + label {
+        position: fixed;
+        color: #fff;
+        font-size: 25px;
+        z-index: 50;
+        background: darkred;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        right: 150px;
+        top: 150px;
+        cursor: pointer;
+
+        animation: modal 2s 2s forwards;
+        visibility: hidden;
+        opacity: 0;
+    }
+    #cerrar:checked + label, #cerrar:checked ~ .modalPopUp {
+        display: none;
+    }
+    @keyframes modal {
+        100% {
+            visibility: visible;
+            opacity: 1;
         }
     }
 </style>

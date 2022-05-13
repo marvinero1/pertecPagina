@@ -20,7 +20,7 @@
                         <li>
                             <a href="/">Inicio</a>
                         </li>
-                        <li class="active">Productos</li>
+                        <li class="active">Catálogo</li>
                     </ol>
                 </div>
                 <!-- .page-title end -->
@@ -34,7 +34,7 @@
 
 
 <section class="shop pb-100">
-    <div class="container">
+    <div class="content">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div class="row">
@@ -50,31 +50,24 @@
 
                     @foreach ($b as $bproducto)
                     <!-- product #1 -->
-                    <div class="col-xs-12 col-sm-4 col-md-3 product-item  clearfix item">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item  clearfix item">
                         <div class="product-img">
                             <img src='http://192.168.31.242:5000/{{ $bproducto["imagen"] }}' alt="product"
-                                style="height:200px;">
+                                style="height:300px;">
                             <div class="product-hover">
                                 <div class="product-cart">
-                                    <a class="btn btn-secondary btn-block"
-                                        href="{{ route('oneProduc', ['id'=>base64_encode($bproducto['id'])]) }}">Más
-                                        información</a>
+                                    <a class="btn btn-secondary btn-block a-card"
+                                        href="{{ route('oneProduc', ['id'=>base64_encode($bproducto['id'])]) }}">
+                                        Detalles
+                                    </a>
                                 </div>
                             </div>
-                        </div><br>
-                        <div class="product-hover">
-                            <div class="product-cart">
-                                <a class="btn btn-secondary btn-block"
-                                    href="{{ route('oneProduc', ['id'=>base64_encode($bproducto['id'])]) }}">Más
-                                    información</a>
-                            </div>
-                        </div><br>
+                        </div>
                         <div class="product-bio">
                             <h4>
                                 <a
                                     href="{{ route('oneProduc', ['id'=>base64_encode($bproducto['id'])]) }}">{{ $bproducto["nombre_producto"] }}</a>
                             </h4>
-                            <p class="product-price">{{ $bproducto["denominacion"] }}</p>
                         </div>
                     </div>
                     <!-- .product-item clearfix end -->
@@ -91,8 +84,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
-                    <a class="btn btn-secondary btn-block" style="width: auto;" href="#" id="load">Ver más<i
-                            class="fa fa-plus ml-xs"></i>
+                    <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;" href="#" id="load">Ver más productos<i
+                        class="fa fa-plus ml-xs"></i>
                     </a>
                 </div>
             </div>

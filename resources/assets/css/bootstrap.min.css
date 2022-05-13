@@ -4974,7 +4974,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .input-group-btn:last-child>.btn,
 .input-group-btn:last-child>.btn-group {
     z-index: 2;
-    margin-left: -1px
+    margin-left: 0px
 }
 
 .nav {
@@ -4985,7 +4985,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
 .nav>li {
     position: relative;
-    display: block
+    display: flow-root;
 }
 
 .nav>li>a {
