@@ -1,7 +1,6 @@
 
 
 <?php $__env->startSection('content'); ?>
-   
 <!-- page content -->
 <div class="container">
     <div class="row">
