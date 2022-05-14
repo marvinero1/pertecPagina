@@ -19,17 +19,13 @@
                         <li class="active">Contactos</li>
                     </ol>
                 </div>
-                <!-- .page-title end -->
             </div>
-            <!-- .col-md-12 end -->
         </div>
-        <!-- .row end -->
     </div>
-    <!-- .container end -->
 </section>
 
 <section id="contact" class="contact">
-	<div class="container">
+	<div class="content section-content">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="heading heading-4">

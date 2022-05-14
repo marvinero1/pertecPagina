@@ -17,18 +17,14 @@
                         <li class="active">Oficinas</li>
                     </ol>
                 </div>
-                <!-- .page-title end -->
             </div>
-            <!-- .col-md-12 end -->
         </div>
-        <!-- .row end -->
     </div>
-    <!-- .container end -->
 </section>
 
 
 <section>
-	<div class="container">
+	<div class="content section-content">
 		<div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
@@ -57,7 +53,6 @@
                         <a href="{{ route('store', ['id'=>2]) }}">Oficina Cochabamba</a>
                     </h3>
                 </div>
-                <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
                     <h5>Dirección: Calle Innominada No. 4581 (Arocagua)</h5>
                     <h5>Telf: (4) 4716000 (Líneas Rotativas)</h5>
@@ -67,9 +62,7 @@
                         <span>Más Información</span>
                     </a>
                 </div>
-                <!-- .entry-content end -->
             </div>
-            <!-- .entry end -->
 
 
             <!-- Entry Sucursal La Paz -->
@@ -84,7 +77,6 @@
                         <a href="{{ route('store', ['id'=>1]) }}">Oficina La Paz</a>
                     </h3>
                 </div>
-                <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
                     <h5>Dirección: Villa Bolívar "B" Calle 106 No. 501</h5>
                     <h5>Telf: (2) 2822336</h5>
@@ -94,9 +86,7 @@
                         <span>Más Información</span>
                     </a>
                 </div>
-                <!-- .entry-content end -->
             </div>
-            <!-- .entry end -->
 
 
             <!-- Entry Sucursal Santa Cruz -->
@@ -121,14 +111,9 @@
                         <span>Más Información</span>
                     </a>
                 </div>
-                <!-- .entry-content end -->
             </div>
-            <!-- .entry end -->
-
 		</div>
-		<!-- .row end -->
 	</div>
-	<!-- .container end -->
 </section>
 
 

@@ -1048,7 +1048,7 @@
     function showOfs(Element){
         var x = document.getElementById(Element);
         if (x.style.display === "none") {
-            x.style.display = "block";
+            x.style.display = "flex";
         } else {
             x.style.display = "none";
         }

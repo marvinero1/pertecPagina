@@ -9946,6 +9946,11 @@ footer hr {
         padding-right: 50px;
     }
   }
+    @media(min-width: 992px) and (max-width: 1038px){
+        .navbar-nav li a {
+            font-size: 1.1rem;
+        }
+    }
   @media(min-width: 768px) and (max-width: 991px){
     .col-md-offset-6 {
         left: 25%;

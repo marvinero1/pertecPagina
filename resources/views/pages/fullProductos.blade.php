@@ -34,7 +34,7 @@
 
 
 <section class="shop pb-100">
-    <div class="content">
+    <div class="content section-content">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div class="row">

@@ -29,7 +29,7 @@
 
 
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
-    <div class="container">
+    <div class="content section-content">
         <div class="row slide">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
