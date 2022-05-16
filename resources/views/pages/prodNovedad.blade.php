@@ -39,14 +39,18 @@
                 <div class="row lightgallery1">
                     @foreach ($b as $bproducto)
                     <div class="col-xs-12 col-sm-4 col-md-3 product-item  clearfix item">
+                        <div class="infProd" style="background-color: #093070;">
+                            NUEVO
+                        </div>
                         <div class="product-img">
                             <img src='http://192.168.31.242:5000/{{ $bproducto["imagen"] }}' alt="product"
-                                style="height:250px;">
-                            <div class="product-hover" style="background-color: #5cb85c80;">
+                                style="height:300px;">
+                            <div class="product-hover">
                                 <div class="product-cart">
-                                    <a class="btn btn-secondary btn-block"
-                                        href="{{ route('oneProduc', ['id'=>base64_encode($bproducto['id'])]) }}">Más
-                                        información</a>
+                                    <a class="btn btn-secondary btn-block a-card"
+                                        href="{{ route('oneProduc', ['id'=>base64_encode($bproducto['id'])]) }}">
+                                        Detalles
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +59,6 @@
                                 <a
                                     href="{{ route('oneProduc', ['id'=>base64_encode($bproducto['id'])]) }}">{{ $bproducto["nombre_producto"] }}</a>
                             </h4>
-                            <p class="product-price"><i class="fa fa-diamond" aria-hidden="true" style="font-size: 2rem;"></i> {{ $bproducto["denominacion"] }}</p>
                         </div>
                     </div>
                     @endforeach

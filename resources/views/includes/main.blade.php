@@ -51,7 +51,7 @@
             <a href="#" class="btn_Face_float" target="_blank">
                 <i class="fa fa-facebook btn_Inf_float_my-float"></i>
             </a>
-            <a href="https://www.google.com.bo/maps/place/PERTEC+SRL/@-17.3803765,-66.1164195,18z/data=!4m5!3m4!1s0x93e377f4433a65e9:0x51df7da68cbca0a7!8m2!3d-17.3801617!4d-66.1161765?hl=es" class="btn_Map_float" target="_blank">
+            <a href="https://www.google.com.bo/maps/search/pertec+srl/@-17.4937283,-66.5821199,7.42z?hl=es" class="btn_Map_float" target="_blank">
                 <i class="fa fa-map-marker btn_Inf_float_my-float"></i>
             </a>
     </div>

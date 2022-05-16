@@ -16,7 +16,7 @@
                         <li>
                             <a href="/">Inicio</a>
                         </li>
-                        <li class="active">Contactos</li>
+                        <li class="active">Contáctos</li>
                     </ol>
                 </div>
             </div>
@@ -30,8 +30,8 @@
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="heading heading-4">
 					<div class="heading-bg heading-right">
-						<p class="mb-0">Maestros en Pernos</p>
-						<h2>Contáctanos</h2>
+						<p class="mb-0">Contáctanos</p>
+						<h2>Oficina Nacional</h2>
 					</div>
 				</div>
 				<!-- .heading end -->

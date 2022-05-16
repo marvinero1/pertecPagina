@@ -17,7 +17,7 @@
                             <a href="/">Inicio</a>
                         </li>
                         <li>
-                            <a href="/sucursales">Tiendas y Almacenes</a>
+                            <a href="/sucursales">Oficinas y Tiendas</a>
                         </li>
                         <li class="active">Tiendas</li>
                     </ol>
@@ -50,9 +50,7 @@
                                 <h2>Nuestras Tiendas</h2>
                             </div>
                         </div>
-                        <!-- .heading end -->
                     </div>
-
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -65,6 +63,9 @@
                     </p>
                 </div>
             </div>
+
+
+
             @foreach ($b as $btiendas)
             @if($btiendas["ciudad"] == $b1[2])
 
@@ -104,15 +105,6 @@
                                 </button>
                             </div>
                         </div>
-                        {{-- <br><br><br><br>
-                        <div class="col-md-6">
-                            <div class="product-cart">
-                                <button class="btn btn-secondary btn-block" style="width: auto;" data-toggle="modal"
-                                    data-target="#myModal{{ $btiendas["id"] }}">
-                                    Vendedor
-                                </button>
-                            </div>
-                        </div> --}}
                     </div>
 
 
@@ -174,10 +166,5 @@
 	</div>
 	<!-- .container end -->
 </section>
-<style>
-    .responsive {
-      width: 100%;
-      height: auto;
-    }
-</style>
+
 @endsection

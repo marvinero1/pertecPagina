@@ -8,13 +8,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-title title-1 text-center texto-borde">
                     <div class="title-bg">
-                        <h2>Mis Facturas</h2>
+                        <h2>Mis Pedidos</h2>
                     </div>
                     <ol class="breadcrumb" style="display: unset !important;">
                         <li>
                             <a href="/">Inicio</a>
                         </li>
-                        <li class="active">Facturas</li>
+                        <li class="active">Pedidos</li>
                     </ol>
                 </div>
             </div>
@@ -30,8 +30,8 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="heading heading-4">
 					<div class="heading-bg heading-right">
-						<p class="mb-0">Verificar Facturas</p>
-						<h2>Mis Facturas</h2>
+						<p class="mb-0">Verificar Estado</p>
+						<h2>Mis Pedidos</h2>
 					</div>
 				</div>
 				<!-- .heading end -->
@@ -43,7 +43,7 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active">
                                 <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
-                                    Facturas
+                                    Pedidos Realizados
                                 </a>
                             </li>
                         </ul>
@@ -52,11 +52,11 @@
                                 <table class="table table-striped table-respon">
                                     <tbody>
                                         <thead>
-                                            <th>Código de Factura</th>
-                                            <th> </th>
-                                            <th> </th>
-                                            <th> </th>
-                                            <th> </th>
+                                            <th>Código de Pedido</th>
+                                            <th>Lugar del Pedido</th>
+                                            <th>Fecha de Pedido</th>
+                                            <th>Fecha de Entrega</th>
+                                            <th>Estado</th>
                                         </thead>
                                         <tbody>
                                             <tr>
@@ -87,41 +87,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-
-            <div class="widget widget-download">
-                <div class="widget-content">
-                    <div class="download download-pdf btn-dowload" style="float: right;">
-                        <a href="#">
-                            <div class="download-desc">
-                                <div class="download-desc-icon">
-                                    <img src="assets/images/sidebar/1.png" alt="icon"/>
-                                </div>
-                                <h4>Download.pdf</h4>
-                            </div>
-                            <div class="download-icon">
-                                <i class="fa fa-download"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- .download-pdf end -->
-
-                    <div class="download download-doc btn-dowload">
-                        <a href="#">
-                            <div class="download-desc">
-                                <div class="download-desc-icon">
-                                    <img src="assets/images/sidebar/2.png" alt="icon"/>
-                                </div>
-                                <h4>Download.doc</h4>
-                            </div>
-                            <div class="download-icon">
-                                <i class="fa fa-download"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- .download-pdf end -->
                 </div>
             </div>
         </div>

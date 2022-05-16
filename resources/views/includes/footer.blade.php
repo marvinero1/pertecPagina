@@ -46,7 +46,7 @@
 									<a href="/contacto"> Contacto</a>
 								</li>
 								<li>
-									<a href="/pedidos"> Trabaja con nosotros</a>
+									<a href="#"> Trabaja con nosotros</a>
 								</li>
 							</ul>
 					</div>

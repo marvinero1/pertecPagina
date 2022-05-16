@@ -95,10 +95,10 @@
                                     <a href="#" style="color: #A6A69B;">Mi perfil</a>
                                 </li>
                                 <li>
-                                    <a href="#" style="color: #A6A69B;">Mis pedidos</a>
+                                    <a href="/pedidos" style="color: #A6A69B;">Mis pedidos</a>
                                 </li>
                                 <li >
-                                    <a href="#" style="color: #A6A69B;">Mis facturas</a>
+                                    <a href="/facturas" style="color: #A6A69B;">Mis facturas</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('logout') }}"

@@ -253,12 +253,9 @@
                                             <a href="#">{{ $mv["nombre_producto"] }}</a>
                                         </h4>
                                     </div>
-
-                                    <!-- .product-bio end -->
                                 </div>
                                 @endforeach
                             </div>
-                            <!-- .row end -->
                         </div>
 
                         <div class="item">
@@ -268,10 +265,10 @@
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
                                     <div class="product-img">
                                         <img src='http://192.168.31.242:5000/{{ $menV["imagen"] }}' alt="product"
-                                            style="height:300px;">
+                                            style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block"
+                                                <a class="btn btn-secondary btn-block a-card"
                                                     href="{{ route('oneProduc', ['id'=>base64_encode($menV['id'])]) }}">Detalles</a>
                                             </div>
                                         </div>
@@ -281,41 +278,28 @@
                                             <a href="#">{{ $menV["nombre_producto"] }}</a>
                                         </h4>
                                     </div>
-
-                                    <!-- .product-bio end -->
                                 </div>
                                 @endforeach
-
-
                             </div>
                         </div>
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 50%; left: 50%; background-color: rgb(206 206 206 / 80%);">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 40%; left: 50%; background-color: rgb(206 206 206 / 80%);">
                                 <span class="glyphicon glyphicon-chevron-left" style="margin-top: -16px;" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </div>
-
                         </a>
                         <a class="right carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="next">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 50%; right: 50%; background-color: rgb(206 206 206 / 80%);">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 40%; right: 50%; background-color: rgb(206 206 206 / 80%);">
                                 <span class="glyphicon glyphicon-chevron-right" style="margin-top: -16px;"aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </div>
-
                         </a>
-
-
                     </div>
                 </div>
-
-
-
             </div>
-            <!-- .shop-content end -->
         </div>
-        <!-- .row end -->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
@@ -377,7 +361,7 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>2]) }}">Oficina Cochabamba</a>
+                        <a href="{{ route('oneOfice', ['id'=>2]) }}">Oficina Cochabamba</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
@@ -386,7 +370,7 @@
                     <h5>Telf: (4) 4716000 (Líneas Rotativas)</h5>
                     <h5>Fax: (4) 4111632</h5>
                     <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>2]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -404,7 +388,7 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>1]) }}">Oficina La Paz</a>
+                        <a href="{{ route('oneOfice', ['id'=>1]) }}">Oficina La Paz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
@@ -413,7 +397,7 @@
                     <h5>Telf: (2) 2822336</h5>
                     <h5>Fax: (2) 2820619</h5>
                     <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href="{{ route('store', ['id'=>1]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>1]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -431,7 +415,7 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>3]) }}">Oficina Santa Cruz</a>
+                        <a href="{{ route('oneOfice', ['id'=>3]) }}">Oficina Santa Cruz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
@@ -440,7 +424,7 @@
                     <h5>Telf: (3) 3470113</h5>
                     <h5>Fax: (3) 3111228</h5>
                     <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href="{{ route('store', ['id'=>3]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>3]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -476,14 +460,14 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>2]) }}">Tienda {{ $tcb["nombre_tienda"] }}</a>
+                        <a href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}">Tienda {{ $tcb["nombre_tienda"] }}</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
                     <h5 style="text-transform: capitalize;">Dirección: {{ $tcb["direccion"] }}</h5>
                     <h5>Telf: {{ $tcb["telefono"] }}</h5>
-                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -520,14 +504,14 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>1]) }}">Tienda {{ $tlz["nombre_tienda"] }}</a>
+                        <a href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}">Tienda {{ $tlz["nombre_tienda"] }}</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
                     <h5 style="text-transform: capitalize;">Dirección: {{ $tlz["direccion"] }}</h5>
                     <h5>Telf: {{ $tlz["telefono"] }}</h5>
-                    <a class="entry-more" href="{{ route('store', ['id'=>1]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -563,14 +547,14 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>3]) }}">Tienda {{ $tsz["nombre_tienda"] }}</a>
+                        <a href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}">Tienda {{ $tsz["nombre_tienda"] }}</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
                     <h5 style="text-transform: capitalize;">Dirección: {{ $tsz["direccion"] }}</h5>
                     <h5>Telf: {{ $tsz["telefono"] }}</h5>
-                    <a class="entry-more" href="{{ route('store', ['id'=>3]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -955,6 +939,15 @@
 <div class="modalPopUp">
     <div class="contenido">
         <h2>Visita nuestro blog</h2>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 product-item">
+                <div class="product-cart">
+                    <a class="btn btn-secondary btn-block btn-gereric btn-popUp" href="/fullProdPromo">
+                        Ver productos en Promoción
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -969,6 +962,7 @@
         animation-duration: 3s;
         animation-name: tdn;
     }
+
 
 @keyframes slidein {
     from{
@@ -1042,6 +1036,8 @@
             opacity: 1;
         }
     }
+
+
 </style>
 
 <script>
@@ -1053,6 +1049,7 @@
             x.style.display = "none";
         }
     }
+
 </script>
 
 
