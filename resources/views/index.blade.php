@@ -64,8 +64,7 @@
             </ul>
         </div>
     </div>
-    <div style="width:100%; height: 800px; position: relative; margin-top: -800px;
-        background: rgba(9, 48, 112, 0.2) !important; background: linear-gradient(183deg, rgba(9,48,112,1) 0%, rgba(255,255,255,1) 100%);">
+    <div class="bgImgCover">
     </div>
     <!-- END OF SLIDER WRAPPER -->
 </section>

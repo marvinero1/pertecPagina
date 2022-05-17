@@ -57,10 +57,6 @@
 								</li>
 							</ul>
 						</li>
-						<!-- li end -->
-                        <li class="has-dropdown pull-left">
-							<a href="#">Facturas</a>
-						</li>
 						<li class="has-dropdown pull-left">
 							<a href="/contacto">Contacto</a>
 						</li>

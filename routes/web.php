@@ -39,10 +39,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('ofice/{id}', [App\Http\Controllers\HomeController::class, 'getOfice'])->name('oneOfice');
 
     Route::get('/aboutUs', function () {return view('pages.quienesSomos');});
-    // Route::get('/sucursales', function () {return view('pages.sucursales');});
     Route::get('/contacto', function () {return view('pages.contactos');});
     Route::get('/pedidos', function () {return view('pages.pedidosEst');});
     Route::get('/facturas', function () {return view('pages.verFacturas');});
     Route::get('/depositos', function () {return view('pages.depositoBancario');});
     Route::get('/facturas', function () {return view('pages.verFacturas');});
+    Route::get('/termCondi', function () {return view('pages.FooterTerminosCondiciones');});
+    Route::get('/polPriv', function () {return view('pages.FooterPoliticaPrivacidad');});
+    Route::get('/reglCont', function () {return view('pages.FooterReglasContenido');});
 });

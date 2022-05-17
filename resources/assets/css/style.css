@@ -10156,3 +10156,23 @@ footer hr {
     border-left: 2px solid #ff8600;
     padding-left: 24px;
 }
+.bgImgCover {
+    width:100%;
+    height: 800px;
+    position: relative;
+    margin-top: -800px;
+    background: rgba(9, 48, 112, 0.2) !important;
+    background: linear-gradient(183deg, rgba(9,48,112,1) 0%, rgba(255,255,255,1) 100%);
+}
+.bgImgCoverPages {
+    width:100%;
+    height: 800px;
+    position: relative;
+    margin-top: -220px;
+    background: rgba(9, 48, 112, 0.2) !important;
+    background: linear-gradient(183deg, rgba(9,48,112,1) 0%, rgba(255,255,255,1) 100%);
+}
+.bgPageCover{
+    background-size: cover;
+    height: 635px;
+}

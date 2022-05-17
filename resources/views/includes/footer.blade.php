@@ -54,20 +54,30 @@
                 <div class="col-xs-12 col-sm-12 col-md-3 widget-about text-center-xs mb-30-xs">
 					<div class="widget-about-info">
 						<h5 class="text-capitalize text-white p-subtitle">Legal</h5>
-						<p class="mb-0 text-white p-texto">Términos y condiciones de compra</p>
-                        <p class="mb-0">Política de privacidad</p>
-                        <p class="mb-0">Reglas de contenido</p>
+                        <div class="row">
+							<ul class="list-unstyled">
+								<li>
+									<a href="/termCondi"> Términos y Condiciones</a>
+								</li>
+								<li>
+									<a href="/polPriv"> Política de privacidad</a>
+								</li>
+								<li>
+									<a href="/reglCont"> Reglas de contenido</a>
+								</li>
+							</ul>
+					    </div>
 					</div>
 				</div>
                 <div class="col-xs-12 col-sm-12 col-md-3 widget-about text-center-xs mb-30-xs">
 					<div class="widget-about-info">
 						<h5 class="text-capitalize text-white p-subtitle">Horarios de atención</h5>
 						<p class="mb-0">De Lunes a Viernes</p>
-                        <p class="mb-0">Mañana 08:00 a 12:00 hrs.</p>
-                        <p class="mb-0">Tarde 14:00 a 18:30 hrs.</p>
+                        <p class="mb-0" style="margin-top: 2px;">Mañana 08:00 a 12:00 hrs.</p>
+                        <p class="mb-0" style="margin-top: 2px;">Tarde 14:00 a 18:30 hrs.</p>
                         <br>
                         <p class="mb-0">Sábado</p>
-                        <p class="mb-0">Mañana 08:15 a 12:30 hrs.</p>
+                        <p class="mb-0" style="margin-top: 2px;">Mañana 08:15 a 12:30 hrs.</p>
 					</div>
 				</div>
 
