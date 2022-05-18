@@ -27,7 +27,7 @@
 
 	<!-- Document Title
 	    ============================================= -->
-	<title>PERTEC | Maestros en Pernos</title>
+	<title>PERTEC S.R.L © | Maestros en Pernos</title>
 </head>
 
 <body>
@@ -48,15 +48,16 @@
 	@include('includes.footer')
 
     <div>
-            <a href="https://www.google.com.bo/maps/place/PERTEC+SRL/@-17.3803765,-66.1164195,18z/data=!4m5!3m4!1s0x93e377f4433a65e9:0x51df7da68cbca0a7!8m2!3d-17.3801617!4d-66.1161765?hl=es" class="btn_Face_float" target="_blank">
+            <a href="#" class="btn_Face_float" target="_blank">
                 <i class="fa fa-facebook btn_Inf_float_my-float"></i>
             </a>
-            <a href="https://www.google.com.bo/maps/place/PERTEC+SRL/@-17.3803765,-66.1164195,18z/data=!4m5!3m4!1s0x93e377f4433a65e9:0x51df7da68cbca0a7!8m2!3d-17.3801617!4d-66.1161765?hl=es" class="btn_Map_float" target="_blank">
+            <a href="https://www.google.com.bo/maps/search/pertec+srl/@-17.4937283,-66.5821199,7.42z?hl=es" class="btn_Map_float" target="_blank">
                 <i class="fa fa-map-marker btn_Inf_float_my-float"></i>
             </a>
     </div>
     <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" class="btn_Whats_float" target="_blank">
-        <i class="fa fa-whatsapp btn_Inf_float_my-float"></i>
+        <i class="fa fa-whatsapp btn_Inf_float_my-float" style="margin-top: 2px; font-size: 1.5rem;"></i>
+        <label style="position: relative; top: -4px; font-weight: 1 !important;">Ayuda</label>
     </a>
 
     <script type='text/javascript'>
@@ -103,7 +104,14 @@
 	});
 	</script>
 
-
+<script>
+    $("a.my-menu-link").click(function(){
+        console.log($(this).attr("name"));
+        $("html, body").animate({
+            scrollTop: $("#"+ $(this).attr("name")).offset().top
+        }, 500)
+    });
+    </script>
 
 </body>
 </html>

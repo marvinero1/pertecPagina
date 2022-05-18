@@ -1,188 +1,84 @@
+
+
 <footer id="footer" class="footer-1">
 	<!-- Contact Bar
 	============================================= -->
-	<div class="container footer-widgtes">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="widgets-contact">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-4 widget">
-							<div class="widget-contact-icon pull-left">
-								<i class="lnr lnr-map"></i>
-							</div>
-							<div class="widget-contact-info">
-								<p class="text-capitalize text-white">Visítanos</p>
-								<p class="text-capitalize font-heading">No. 4581 (Arocagua).</p>
-							</div>
-						</div>
-						<!-- .widget end -->
-						<div class="col-xs-12 col-sm-12 col-md-4 widget">
-							<div class="widget-contact-icon pull-left">
-								<i class="lnr lnr-envelope"></i>
-							</div>
-							<div class="widget-contact-info">
-								<p class="text-capitalize text-white">Nuestro Correo</p>
-								<p class="text-capitalize font-heading">servicio.cliente@pertec.com.bo</p>
-							</div>
-						</div>
-						<!-- .widget end -->
-						<div class="col-xs-12 col-sm-12 col-md-4 widget">
-							<div class="widget-contact-icon pull-left">
-								<i class="lnr lnr-phone"></i>
-							</div>
-							<div class="widget-contact-info">
-								<p class="text-capitalize text-white">Llámanos</p>
-								<p class="text-capitalize font-heading">(4) 4111632</p>
-							</div>
-						</div>
-						<!-- .widget end -->
-					</div>
-					<!-- .row end -->
-				</div>
-				<!-- .widget-contact end -->
-			</div>
-			<!-- .col-md-12 end -->
-		</div>
-		<!-- .row end -->
-	</div>
+
 	<!-- .container end -->
 
 	<!-- Widget Section
 	============================================= -->
-	<div class="container">
+	<div class="content" style="padding-right: 11px;">
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 widgets-links">
-				<div class="col-xs-12 col-sm-12 col-md-4 widget-about text-center-xs mb-30-xs">
-					<div class="widget-about-logo pull-left pull-none-xs">
-						<img src="../assets/images/footer-logo.png" alt="logo" width="60px" height="60px"/>
+			<div class="col-xs-12 col-sm-12 col-md-12 widgets-links info-footer">
+				<div class="col-xs-12 col-sm-12 col-md-5 widget-about text-center-xs mb-30-xs">
+                    <div class="widget-about-logo pull-left pull-none-xs">
+						<img src="../assets/images/favicon/Logotipo.png" alt="logo" width="80px"/>
 					</div>
 					<div class="widget-about-info">
-						<h5 class="text-capitalize text-white">PERTEC S.R.L.</h5>
-						<p class="mb-0">Desarrollamos oportunidades mutuas de servicio y beneficio con nuestros proveedores, mediante el cumplimiento de estrictas normas de calidad.</p>
+						<h5 class="text-capitalize text-white p-subtitle">PERTEC S.R.L.</h5>
+						<p class="mb-0 text-white p-texto" style="text-align: justify !important;">Somos una empresa dedicada a la venta de elementos de sujeción aportando al crecimiento de nuestro país desde 1985.</p>
 					</div>
 				</div>
-                <div class="col-xs-12 col-sm-12 col-md-1 widget-about text-center-xs mb-30-xs"></div>
-				<div class="col-xs-12 col-sm-12 col-md-7 widget-navigation text-center-xs mb-30-xs">
-					<h5 class="text-capitalize text-white">Navegación</h5>
+                <div class="col-md-1"></div>
+				<div class="col-xs-12 col-sm-12 col-md-2 widget-navigation text-center-xs mb-30-xs">
+					<h5 class="text-capitalize text-white p-subtitle">Mapa del sitio</h5>
 					<div class="row">
-						<div class="col-xs-4 col-sm-4 col-md-4">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="/aboutUs"> ¿Quienes Somos?</a>
+							<ul class="list-unstyled">
+                                <li>
+									<a href="/" class=" text-white p-texto"> Inicio</a>
 								</li>
 								<li>
-									<a href="/sucursales"> Tiendas y Almacenes</a>
+									<a href="/aboutUs"> ¿Quiénes Somos?</a>
+								</li>
+								<li>
+									<a href="/sucursales"> Oficinas y tiendas</a>
 								</li>
 								<li>
 									<a href="/fullProducts"> Productos</a>
 								</li>
-							</ul>
-						</div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="/fullProdPromo"> Promociones</a>
+                                <li>
+									<a href="#"> Facturas</a>
 								</li>
 								<li>
-									<a href="/fullProdNoved"> Novedades</a>
+									<a href="/contacto"> Contacto</a>
 								</li>
 								<li>
-									<a href="/#"> Pedidos</a>
+									<a href="#"> Trabaja con nosotros</a>
 								</li>
 							</ul>
-						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="#"> Depósitos Bancarios</a>
-								</li>
-								<li>
-									<a href="#"> Contáctanos</a>
-								</li>
-							</ul>
-						</div>
 					</div>
 				</div>
-				{{-- <div class="col-xs-12 col-sm-6 col-md-5 widget-services text-center-xs">
-					<h5 class="text-capitalize text-white">Servicios</h5>
-					<div class="row">
-						<div class="col-xs-4 col-sm-4 col-md-4">
-							<ul class="list-unstyled text-capitalize">
+                <div class="col-xs-12 col-sm-12 col-md-2 widget-about text-center-xs mb-30-xs">
+					<div class="widget-about-info">
+						<h5 class="text-capitalize text-white p-subtitle">Legal</h5>
+                        <div class="row">
+							<ul class="list-unstyled">
 								<li>
-									<a href="#"> design &amp; build</a>
+									<a href="/termCondi"> Términos y Condiciones</a>
 								</li>
 								<li>
-									<a href="#"> tiling &amp; painting</a>
+									<a href="/polPriv"> Política de privacidad</a>
 								</li>
 								<li>
-									<a href="#"> revonations</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="#"> management</a>
-								</li>
-								<li>
-									<a href="#"> wood flooring</a>
-								</li>
-								<li>
-									<a href="#"> work consulting</a>
+									<a href="/reglCont"> Reglas de contenido</a>
 								</li>
 							</ul>
-						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="#"> wood flooring</a>
-								</li>
-								<li>
-									<a href="#"> green building</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div> --}}
-			</div>
-		</div>
-	</div>
-	<!-- Social bar
-	============================================= -->
-	<div class="widget-social">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 mb-30-xs mb-30-sm">
-					<div class="widget-social-info pull-left text-capitalize pull-none-xs mb-15-xs">
-						<p class="mb-0">Síguenos En Nuestras redes sociales</p>
-					</div>
-					<div class="widget-social-icon pull-right text-right pull-none-xs">
-						<a href="#">
-							<i class="fa fa-facebook"></i><i class="fa fa-facebook"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-google-plus"></i><i class="fa fa-google-plus"></i>
-						</a>
-						<a href="#" >
-							<i class="fa fa-twitter"></i><i class="fa fa-twitter"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-linkedin"></i><i class="fa fa-linkedin"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-vimeo-square"></i><i class="fa fa-vimeo-square"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-pinterest"></i><i class="fa fa-pinterest"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-flickr"></i><i class="fa fa-flickr"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-rss"></i><i class="fa fa-rss"></i>
-						</a>
+					    </div>
 					</div>
 				</div>
+                <div class="col-xs-12 col-sm-12 col-md-2 widget-about text-center-xs mb-30-xs">
+					<div class="widget-about-info">
+						<h5 class="text-capitalize text-white p-subtitle">Horarios de atención</h5>
+						<p class="mb-0">De Lunes a Viernes</p>
+                        <p class="mb-0" style="margin-top: 2px;">Mañana 08:00 a 12:00 hrs.</p>
+                        <p class="mb-0" style="margin-top: 2px;">Tarde 14:00 a 18:30 hrs.</p>
+                        <br>
+                        <p class="mb-0">Sábado</p>
+                        <p class="mb-0" style="margin-top: 2px;">Mañana 08:15 a 12:30 hrs.</p>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -190,9 +86,17 @@
 	============================================= -->
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center">
-				<p class="text-capitalize">© 2022 - 2022 Pertec S.R.L. all rights reserved</p>
+			<div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center" style="color: white; font-size: 1.2rem;">
+                <label class="font-frank-medium"> PERTEC SRL </label>
+                <label class="font-frank-book">Copyright © </label>
+                <label id="yearcopy" class="font-frank-book">. </label>
+                <label class="font-frank-book"> Todos los derechos reservados.</label>
 			</div>
 		</div>
 	</div>
 </footer>
+
+<script>
+    var y = new Date().getFullYear();
+    document.getElementById("yearcopy").innerHTML = y;
+</script>

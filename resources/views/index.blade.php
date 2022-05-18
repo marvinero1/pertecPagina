@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <!-- carrusel -->
 
 <section id="hero" class="hero hero-4">
@@ -11,239 +10,75 @@
     <div class="rev_slider_wrapper">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
-
-                <!-- slide 1 -->
-                <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
-                    data-easeout="Power4.easeInOut" data-masterspeed="1000"
-                    style="background-color: rgba(34, 34, 34, 0.3);">
+                @foreach ($b1 as $bcarousel)
+                    <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
+                    data-easeout="Power4.easeInOut" data-masterspeed="1000">
                     <!-- MAIN IMAGE -->
-                    <img src="assets/images/sliders/p1.jpg" alt="Background" width="1920" height="1280">
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                        data-whitespace="nowrap" data-width="['80','70','70','100']"
-                        data-height="['80','70','70','100']" data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-lineheight="['80','100','100','100']"
-                        style="font-family: raleway; text-align:center">
-                        <img src="assets/images/sliders/icons/png-transparent-screw-black-hex-screw-nut-bolt-tool-screwdriver-text-black-and-white-thumbnail-removebg-preview.png"
-                            alt="hook" />
-                    </div>
+                        <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen'] }}" alt="Background" width="1920" height="1280">
+                        <!-- LAYER NR. 1 -->
+                        <div class="bgImgCover"></div>
+                        <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
+                            data-whitespace="nowrap" data-width="['150','70','70','100']"
+                            data-height="['150','70','70','100']" data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on"
+                            style="text-align:center;  min-height: 110px !important; min-width: 110px !important;
+                            max-height: 110px !important; max-width: 120px !important;">
+                            <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen_icono'] }}"
+                                alt="hook"/>
+                        </div>
 
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                        data-lineheight="['100','45','25','25']" data-fontweight="['700','500','600','300']"
-                        data-color="#ffc527" style="font-family: montserrat; ">
-                        PERTEC S.R.L.
-                    </div>
 
-                    <!-- LAYER NR. 3 -->
-                    <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['25','17','17','17']"
-                        data-lineheight="['50','26','25','25']" data-fontweight="['700','500','500','500']"
-                        data-color="#fff" style="font-family: raleway; text-align:center">
-                        © 2022 - 2022 Pertec SA. All Rights Reserved
-                    </div>
-                </li>
+                        <!-- LAYER NR. 2 -->
+                        <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                            data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
+                            data-lineheight="['100','45','25','25']"
+                            data-color="#ffc527">
+                            {{ $bcarousel['titulo'] }}
+                        </h1>
 
-                <!-- slide 2 -->
-                <li data-transition="fadefrombottom" data-slotamount="default" data-easein="Power4.easeInOut"
-                    data-easeout="Power4.easeInOut" data-masterspeed="2000">
-                    <img src="assets/images/sliders/16.png" alt="" width="1920" height="1280">
-                    <div class="tp-caption" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                        data-width="['80','70','70','100']" data-height="['80','70','70','100']"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power3.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-start="1000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['17','17','15','15']"
-                        data-lineheight="['80','100','100','100']" style="font-family: raleway; text-align:center">
-                        <img src="assets/images/sliders/icons/png-transparent-nut-bolt-black-silhouette-hexagon-hole-removebg-preview.png"
-                            alt="brush" />
-                    </div>
-
-                    <div class="tp-caption text-uppercase color-theme texto-borde" data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                        data-transform_idle="o:1;"
-                        data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="2000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                        data-lineheight="['100','45','25','25']" data-fontweight="['700','500','600','300']"
-                        data-color="#ffc527" style="font-family: montserrat; ">
-                        Maestros en Pernos
-                    </div>
-
-                    <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-                        data-transform_in="x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['25','17','17','17']"
-                        data-lineheight="['26','26','25','25']" data-fontweight="['700','500','500','500']"
-                        data-color="#fff" style="font-family: raleway; text-align:center">
-                        Calidad Garantizada
-                    </div>
-                </li>
-
-                <li data-index='rs-367' data-transition='scaledownfromtop' data-slotamount='default'
-                    data-easein='default' data-easeout='default' data-masterspeed='default'>
-                    <img src="assets/images/sliders/12.png" alt="" width="1920" height="1280">
-                    <div class="tp-caption" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                        data-width="['80','70','70','100']" data-height="['80','70','70','100']"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:-30px;rX:70deg;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="1000"
-                        data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                        data-lineheight="['80','100','100','100']" style="font-family: raleway; text-align:center">
-                        <img src="assets/images/sliders/icons/png-transparent-screw-bolt-computer-icons-nut-screw-cdr-white-technic-removebg-preview.png"
-                            alt="shovel" />
-                    </div>
-
-                    <div class="tp-caption text-uppercase color-theme texto-borde" data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="0" data-whitespace="nowrap"
-                        data-width="['auto','auto','auto','auto']" data-height="['auto','auto','auto','auto']"
-                        data-transform_idle="o:1;"
-                        data-transform_in="x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="1500" data-splitin="chars"
-                        data-splitout="none" data-responsive_offset="on" data-elementdelay="0.05"
-                        data-fontsize="['75','17','15','15']" data-lineheight="['100','45','25','25']"
-                        data-fontweight="['700','500','600','300']" data-color="#ffc527"
-                        style="font-family: montserrat; ">
-                        Nosotros Innovamos
-                    </div>
-
-                    <div class="tp-caption text-uppercase texto-borde" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-                        data-transform_in="x:-50px;skX:100px;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="2500"
-                        data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                        data-fontsize="['25','17','17','17']" data-lineheight="['26','26','25','25']"
-                        data-fontweight="['700','500','500','500']" data-color="#fff"
-                        style="font-family: raleway ;text-align:center">
-                        Materiales de Sujeción
-                    </div>
-                </li>
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                            data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
+                            data-lineheight="['50','26','25','25']"
+                            data-color="#fff">
+                            {{ $bcarousel['sub_titulo'] }}
+                        </div>
+                    </li>
+                @endforeach
             </ul>
         </div>
-        <!-- END REVOLUTION SLIDER -->
-
-        <!-- Widget Bottom -->
-        <div class="container widget-bottom widgets-contact hidden-xs">
-            <div class="row">
-                <ul class="list-inline">
-
-                    <li class="col-sm-4 col-md-3 col-md-offset-3 widget">
-                        <div class="widget-contact-icon pull-left">
-                            <i class="lnr lnr-envelope"></i>
-                        </div>
-                        <div class="widget-contact-info">
-                            <p class="text-capitalize">Nuestro Correo</p>
-                            <p class="font-heading text-white">servicio.cliente@pertec.com.bo</p>
-                        </div>
-                    </li>
-                    <!-- .widget end -->
-
-
-                    <li class="col-sm-4 col-md-3 widget">
-                        <div class="widget-contact-icon pull-left">
-                            <i class="lnr lnr-phone"></i>
-                        </div>
-                        <div class="widget-contact-info">
-                            <p class="text-capitalize">Llámanos</p>
-                            <p class="text-capitalize font-heading text-white">(4) 4111632</p>
-                        </div>
-                    </li>
-                    <!-- .widget end -->
-
-
-                    <li class="col-sm-4 col-md-3 widget">
-                        <div class="widget-contact-icon pull-left">
-                            <i class="lnr lnr-map-marker"></i>
-                        </div>
-                        <div class="widget-contact-info">
-                            <p class="text-capitalize">Encuéntranos</p>
-                            <p class="text-capitalize font-heading text-white">No. 4581 Arocagua</p>
-                        </div>
-                    </li>
-                    <!-- .widget end -->
-                    <!-- <li class="col-sm-4 col-md-3 widget">
-                        <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#model-quote"
-                            id="modelquote">Request A Quote</a>
-
-                        <div class="modal fade model-quote" id="model-quote" tabindex="-1" role="dialog"
-                            aria-labelledby="modelquote">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <div class="model-icon">
-                                            <i class="lnr lnr-apartment"></i>
-                                        </div>
-                                        <div class="model-divider">
-                                            <div class="model-title">
-                                                <p>Don’t Hesitate To ask</p>
-                                                <h6>rquest a quote</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="pop-quote-form" action="assets/php/sendpopquote.php" method="post">
-                                            <input type="text" class="form-control" name="quote-name" id="name"
-                                                placeholder="Your Name" required />
-                                            <input type="email" class="form-control" name="quote-email" id="email"
-                                                placeholder="Email" required />
-                                            <input type="text" class="form-control" name="quote-telephone"
-                                                id="telephone" placeholder="Telephone" required />
-                                            <textarea class="form-control" name="quote-message" id="quote"
-                                                placeholder="Quote Details" rows="2" required></textarea>
-                                            <button type="submit" class="btn btn-primary btn-black btn-block">Submit
-                                                Inquiry</button>
-                                            <div id="pop-quote-result" class="mt-xs">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li> -->
-                </ul>
-            </div>
-        </div>
-        <!-- .container end -->
     </div>
+
     <!-- END OF SLIDER WRAPPER -->
 </section>
 
 
 <!-- acerca de nosotros -->
 
-<section id="shotcode-1" class="shotcode-1 about-home-2 text-center-xs text-center-sm"  style="background-color: white;">
-    <div class="container">
-        <div class="row">
+<section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
+    <div class="content section-content">
+        <div class="row slide">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="heading heading-4">
                             <div class="heading-bg heading-right">
-                                <p class="mb-0">Maestros en Pernos</p>
+                                <p class="mb-0">¿Quiénes somos?</p>
                                 <h2>Nuestra Historia</h2>
                             </div>
                         </div>
@@ -254,29 +89,37 @@
             </div>
             <!-- .col-md-12 end -->
             <div class="col-xs-12 col-sm-12 col-md-6">
-                <h3 class="color-heading mb-md" style="text-align: justify;">Desarrollamos oportunidades mutuas de servicio y beneficio con nuestros
-                    proveedores, mediante el cumplimiento de estrictas normas de calidad.</h3>
-                <p style="text-align: justify;">Somos una empresa dedicada a satisfacer todas las necesidades de Elementos de Sujeción de los sectores
-                    de construcción, industria, agroindustria, minería, metalmecánica y del parque automotriz en general, a través de la importación y
+                <p style="text-align: justify;">Desarrollamos oportunidades mutuas de servicio y beneficio con
+                    nuestros proveedores, mediante el cumplimiento de estrictas normas de calidad.</p>
+                <p style="text-align: justify;">Somos una empresa dedicada a satisfacer todas las necesidades de
+                    Elementos de Sujeción de los sectores
+                    de construcción, industria, agroindustria, minería, metalmecánica y del parque automotriz en
+                    general, a través de la importación y
                     comercialización directa.</p>
-                    <ul style="text-align: justify;" class="list-unstyled">
-                        <li>
-                            <p><i class="fa fa-check ml-xs"></i> Nuestra vocación de servicio es el motor que impulsa y dirige nuestras acciones.</p>
-                        </li>
-                        <li>
-                            <p><i class="fa fa-check ml-xs"></i> Brindamos un excelente servicio a los clientes externos e internos, en procura de
+                <ul style="text-align: justify;" class="list-unstyled">
+                    <li>
+                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Nuestra vocación de servicio es el motor que impulsa y
+                            dirige nuestras acciones.</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Brindamos un excelente servicio a los clientes externos e
+                            internos, en procura de
                             maximizar la satisfacción de sus necesidades y deseos.</p>
-                        </li>
-                        <li>
-                            <p><i class="fa fa-check ml-xs"></i> Somos personas comprometidas con nuestra Empresa y trabajamos en equipo.</p>
-                        </li>
-                    </ul>
-                <p style="text-align: justify;">Importamos desde Europa, el Asia, Norte y Sudamérica el 97 % de los productos que comercializamos.
-                    Nuestros proveedores, son todas empresas líderes del rubro con certificaciones ISO 9000, QS 9000, etc., que manufacturan sus productos
-                    cumpliendo las más estrictas normas de calidad y exportan más de la mitad de su producción a Norteamérica, Europa y Japón. </p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Somos personas comprometidas con nuestra Empresa y
+                            trabajamos en equipo.</p>
+                    </li>
+                </ul>
+                <p style="text-align: justify;">Importamos desde Europa, el Asia, Norte y Sudamérica el 97 % de los
+                    productos que comercializamos.
+                    Nuestros proveedores, son todas empresas líderes del rubro con certificaciones ISO 9000, QS 9000,
+                    etc., que manufacturan sus productos
+                    cumpliendo las más estrictas normas de calidad y exportan más de la mitad de su producción a
+                    Norteamérica, Europa y Japón. </p>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="col-xs-12 col-sm-12 col-md-6 ">
                 <div class="panel-group accordion" id="accordion02" role="tablist" aria-multiselectable="true">
 
                     <!-- Panel 01 -->
@@ -333,7 +176,7 @@
                         </div>
                         <div id="collapse02-3" class="panel-collapse collapse" role="tabpanel"
                             aria-labelledby="headingThree">
-                            <div class="panel-body" style="text-align: justify;">
+                            <div class="panel-body yellow-color" style="text-align: justify;">
                                 <p><b>1.</b> Nuestra vocación de servicio es el motor que impulsa y dirige nuestras
                                     acciones, para mantener nuestro liderazgo, destacarnos y crecer en el mercado.</p>
                                 <p><b>2.</b> Hacemos que la calidad sea nuestra forma de vida.</p>
@@ -362,28 +205,175 @@
 
 
 
-{{-- Tiendas y Almacenes --}}
 
 
-<section>
-    <div class="container">
+
+<!-- productos -->
+
+<section id="sectionProducts" style="background-color: #F6F6F6;">
+    <div class="content section-content">
         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+                <div class="row">
+                    <div class="heading">
+                        <div class="heading-bg heading-right">
+                            <p class="mb-0">Catálogo</p>
+                            <h2>Nuestros Productos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content section-content">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner content" role="listbox">
+                        <div class="item active">
+                            <div class="row">
+                                <!-- product #1 -->
+                                @foreach ($bMasVendidos as $mv)
+                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                    <div class="product-img">
+                                        <img src='http://192.168.31.242:5000/{{ $mv["imagen"] }}' alt="product"
+                                            style="height:250px;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="{{ route('oneProduc', ['id'=>base64_encode($mv['id'])]) }}">Detalles</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-bio">
+                                        <h4>
+                                            <a href="#">{{ $mv["nombre_producto"] }}</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="row">
+                                <!-- product #1 -->
+                                @foreach ($bMenosVendidos as $menV)
+                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                    <div class="product-img">
+                                        <img src='http://192.168.31.242:5000/{{ $menV["imagen"] }}' alt="product"
+                                            style="height:250px;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="{{ route('oneProduc', ['id'=>base64_encode($menV['id'])]) }}">Detalles</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-bio">
+                                        <h4>
+                                            <a href="#">{{ $menV["nombre_producto"] }}</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 40%; left: 50%; background-color: rgb(206 206 206 / 80%);">
+                                <span class="glyphicon glyphicon-chevron-left" style="margin-top: -16px;" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </div>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                            data-slide="next">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 40%; right: 50%; background-color: rgb(206 206 206 / 80%);">
+                                <span class="glyphicon glyphicon-chevron-right" style="margin-top: -16px;"aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 product-item">
+                <div class="product-cart">
+                    <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;" href="/fullProducts">Ver más productos<i
+                            class="fa fa-plus ml-xs"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- .col-md-12 end -->
+        </div>
+    </div>
+    <!-- .container end -->
+</section>
 
 
+
+
+
+{{-- Oficinas y tiendas --}}
+
+
+<section id="sectionStores">
+    <div class="content tdn section-content">
+
+        <!-- oficinas nivel nacional-->
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="heading heading-4">
                             <div class="heading-bg heading-right">
-                                <p class="mb-0">Maestros en Pernos</p>
-                                <h2>Nuestras Sucursales</h2>
+                                <p class="mb-0">¿Dónde nos encontramos?</p>
+                                <h2>Nuestras oficinas y tiendas</h2>
                             </div>
                         </div>
-                        <!-- .heading end -->
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                        <div class="product-cart heading-right">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                                onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
+                                class="fa fa-plus ml-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- .col-md-12 end -->
+                </div>
             </div>
+        </div>
+        <div class="row" id="of-centrals" style="display: none;">
+            <!-- Entry Sucursal Cochabamba -->
+            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                <div class="entry-img">
+                    <a class="img-popup">
+                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
+                    </a>
+                </div><br>
+                <div class="entry-title">
+                    <h3>
+                        <a href="{{ route('oneOfice', ['id'=>2]) }}">Oficina Cochabamba</a>
+                    </h3>
+                </div>
+                <!-- .entry-title end -->
+                <div class="entry-content conten-stores">
+                    <h5>Dirección: Calle Innominada No. 4581 (Arocagua)</h5>
+                    <h5>Telf: (4) 4716000 (Líneas Rotativas)</h5>
+                    <h5>Fax: (4) 4111632</h5>
+                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
+                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                        <span>Más Información</span>
+                    </a>
+                </div>
+                <!-- .entry-content end -->
+            </div>
+            <!-- .entry end -->
 
 
             <!-- Entry Sucursal La Paz -->
@@ -395,60 +385,16 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>1]) }}">En La Paz</a>
+                        <a href="{{ route('oneOfice', ['id'=>1]) }}">Oficina La Paz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
-                <div class="entry-content">
-                    <p>
-                        <h5>Dirección: Villa Bolívar "B" Calle 106 No. 501</h5>
-                    </p>
-                    <p>
-                        <h5>Telf: 2822336</h5>
-                    </p>
-                    <p>
-                        <h5>Fax: (2) 2820619</h5>
-                    </p>
-                    <p>
-                        <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    </p>
-
-                    <a class="entry-more" href="{{ route('store', ['id'=>1]) }}"><i class="fa fa-plus"></i>
-                        <span>Más Información</span>
-                    </a>
-                </div>
-                <!-- .entry-content end -->
-            </div>
-            <!-- .entry end -->
-
-            <!-- Entry Sucursal Cochabamba -->
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
-                <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
-                    </a>
-                </div><br>
-                <div class="entry-title">
-                    <h3>
-                        <a href="{{ route('store', ['id'=>2]) }}">En Cochabamba</a>
-                    </h3>
-                </div>
-                <!-- .entry-title end -->
-                <div class="entry-content">
-                    <p>
-                        <h5>Dirección: Calle Innominada No. 4581 (Arocagua)</h5>
-                    </p>
-                    <p>
-                        <h5>Telf: 4716000</h5>
-                    </p>
-                    <p>
-                        <h5>Fax: (4) 4111632</h5>
-                    </p>
-                    <p>
-                        <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    </p>
-
-                    <a class="entry-more" href="{{ route('store', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                <div class="entry-content conten-stores">
+                    <h5>Dirección: Villa Bolívar "B" Calle 106 No. 501</h5>
+                    <h5>Telf: (2) 2822336</h5>
+                    <h5>Fax: (2) 2820619</h5>
+                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
+                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>1]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -466,174 +412,152 @@
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('store', ['id'=>3]) }}">En Santa Cruz</a>
+                        <a href="{{ route('oneOfice', ['id'=>3]) }}">Oficina Santa Cruz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
-                <div class="entry-content">
-                    <p>
-                        <h5>Dirección: Calle Taitetú No. 2680</h5>
-                    </p>
-                    <p>
-                        <h5>Telf: 3470113</h5>
-                    </p>
-                    <p>
-                        <h5>Fax: (3) 3111228</h5>
-                    </p>
-                    <p>
-                        <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    </p>
-
-                    <a class="entry-more" href="{{ route('store', ['id'=>3]) }}"><i class="fa fa-plus"></i>
+                <div class="entry-content conten-stores">
+                    <h5>Dirección: Calle Taitetú No. 2680</h5>
+                    <h5>Telf: (3) 3470113</h5>
+                    <h5>Fax: (3) 3111228</h5>
+                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
+                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>3]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
                 <!-- .entry-content end -->
             </div>
             <!-- .entry end -->
-
         </div>
-        <!-- .row end -->
-    </div>
-    <!-- .container end -->
-</section>
 
 
-<!-- productos -->
-
-<section class="shop pb-100">
-    <div class="container">
+        <!-- tiendas cbba -->
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="heading">
-                        <div class="heading-bg heading-right">
-                            <p class="mb-0">Maestros en Pernos</p>
-                            <h2>Nuestros Productos</h2>
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                        <div class="product-cart heading-right">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                                onclick="showOfs('storeCbba')">Tiendas Cochabamba<i
+                                class="fa fa-plus ml-xs"></i>
+                            </a>
                         </div>
                     </div>
+                    <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-    </div>
-    <div class="content">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <!-- <li data-target="#carousel-example-generic" data-slide-to="2"></li> -->
-                    </ol>
-                    <div class="carousel-inner content" role="listbox">
-
-                        <div class="item active">
-                            <div class="row">
-                                <!-- product #1 -->
-                                @foreach ($bMasVendidos as $mv)
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
-                                    <div class="product-img">
-                                        <img src='http://192.168.31.242:5000/{{ $mv["imagen"] }}' alt="product"
-                                            style="height:200px;">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block"
-                                                    href="{{ route('oneProduc', ['id'=>base64_encode($mv['id'])]) }}">Detalles</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- .product-img end -->
-                                    <div class="product-hover">
-                                        <div class="product-cart">
-                                            <a class="btn btn-secondary btn-block"
-                                                href="{{ route('oneProduc', ['id'=>base64_encode($mv['id'])]) }}">Detalles</a>
-                                        </div>
-                                    </div><br>
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">{{ $mv["nombre_producto"] }}</a>
-                                        </h4>
-                                        <p class="product-price">{{ $mv["denominacion"] }}</p>
-                                    </div>
-
-                                    <!-- .product-bio end -->
-                                </div>
-                                @endforeach
-                            </div>
-                            <!-- .row end -->
-                        </div>
-
-
-                        <div class="item">
-                            <div class="row">
-                                <!-- product #1 -->
-                                @foreach ($bMenosVendidos as $menV)
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
-                                    <div class="product-img">
-                                        <img src='http://192.168.31.242:5000/{{ $menV["imagen"] }}' alt="product"
-                                            style="height:200px;">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block"
-                                                    href="{{ route('oneProduc', ['id'=>base64_encode($menV['id'])]) }}">Detalles</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- .product-img end -->
-                                    <div class="product-hover">
-                                        <div class="product-cart">
-                                            <a class="btn btn-secondary btn-block"
-                                                href="{{ route('oneProduc', ['id'=>base64_encode($menV['id'])]) }}">Detalles</a>
-                                        </div>
-                                    </div><br>
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">{{ $menV["nombre_producto"] }}</a>
-                                        </h4>
-                                        <p class="product-price">{{ $menV["denominacion"] }}</p>
-                                    </div>
-
-                                    <!-- .product-bio end -->
-                                </div>
-                                @endforeach
-
-
-                            </div>
-                        </div>
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
-                            data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
-                            data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-
-
-                    </div>
+        <div class="row" id="storeCbba" style="display: none;">
+            @foreach ($tcbba as $tcb)
+            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                <div class="entry-img">
+                    <a class="img-popup">
+                        <img src="http://192.168.31.242:5000/{{ $tcb["imagen"] }}" alt="title" />
+                    </a>
+                </div><br>
+                <div class="entry-title">
+                    <h3>
+                        <a href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}">Tienda {{ $tcb["nombre_tienda"] }}</a>
+                    </h3>
                 </div>
-
-
-
-            </div>
-            <!-- .shop-content end -->
-        </div>
-        <!-- .row end -->
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 product-item">
-                <div class="product-cart">
-                    <a class="btn btn-secondary btn-block" style="width: auto;"
-                        href="/fullProducts">Ver más<i class="fa fa-plus ml-xs"></i>
+                <!-- .entry-title end -->
+                <div class="entry-content conten-stores">
+                    <h5 style="text-transform: capitalize;">Dirección: {{ $tcb["direccion"] }}</h5>
+                    <h5>Telf: {{ $tcb["telefono"] }}</h5>
+                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}"><i class="fa fa-plus"></i>
+                        <span>Más Información</span>
                     </a>
                 </div>
+                <!-- .entry-content end -->
             </div>
-            <!-- .col-md-12 end -->
+            @endforeach
+
+        </div>
+
+
+        <!-- tiendas la paz-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                        <div class="product-cart heading-right">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                                onclick="showOfs('storeLaPaz')">Tiendas La Paz<i
+                                class="fa fa-plus ml-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- .col-md-12 end -->
+                </div>
+            </div>
+        </div>
+        <div class="row" id="storeLaPaz" style="display: none;">
+            @foreach ($tlapz as $tlz)
+            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                <div class="entry-img">
+                    <a class="img-popup">
+                        <img src="http://192.168.31.242:5000/{{ $tlz["imagen"] }}" alt="title" />
+                    </a>
+                </div><br>
+                <div class="entry-title">
+                    <h3>
+                        <a href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}">Tienda {{ $tlz["nombre_tienda"] }}</a>
+                    </h3>
+                </div>
+                <!-- .entry-title end -->
+                <div class="entry-content conten-stores">
+                    <h5 style="text-transform: capitalize;">Dirección: {{ $tlz["direccion"] }}</h5>
+                    <h5>Telf: {{ $tlz["telefono"] }}</h5>
+                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}"><i class="fa fa-plus"></i>
+                        <span>Más Información</span>
+                    </a>
+                </div>
+                <!-- .entry-content end -->
+            </div>
+            @endforeach
+        </div>
+
+
+        <!-- tiendas santa cruz -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                        <div class="product-cart heading-right">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                                onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i
+                                class="fa fa-plus ml-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- .col-md-12 end -->
+                </div>
+            </div>
+        </div>
+        <div class="row" id="storeSantaCruz" style="display: none;">
+            @foreach ($tstcz as $tsz)
+            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                <div class="entry-img">
+                    <a class="img-popup">
+                        <img src="http://192.168.31.242:5000/{{ $tsz["imagen"] }}" alt="title" />
+                    </a>
+                </div><br>
+                <div class="entry-title">
+                    <h3>
+                        <a href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}">Tienda {{ $tsz["nombre_tienda"] }}</a>
+                    </h3>
+                </div>
+                <!-- .entry-title end -->
+                <div class="entry-content conten-stores">
+                    <h5 style="text-transform: capitalize;">Dirección: {{ $tsz["direccion"] }}</h5>
+                    <h5>Telf: {{ $tsz["telefono"] }}</h5>
+                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}"><i class="fa fa-plus"></i>
+                        <span>Más Información</span>
+                    </a>
+                </div>
+                <!-- .entry-content end -->
+            </div>
+            @endforeach
         </div>
     </div>
     <!-- .container end -->
@@ -641,114 +565,489 @@
 
 
 
-<!-- Productos Promocion -->
-<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6" style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
-	<div class="container">
-		<div class="row">
-            <div class="col-md-1 hidden-xs hidden-sm">
-                <i class="fa fa-star-o" aria-hidden="true" style="font-size: 14rem; position: absolute; left: -75%; top: 20px;"></i>
-            </div>
-			<div class="col-xs-12 col-sm-12 col-md-7">
 
-				<p class="text-capitalize mb-0 color-black">Conoce nuestras actuales promociones</p>
-				<h2 class="mb-xs color-black">¡ Productos</h2>
+{{--
+<!-- Productos Promocion -->
+<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+    style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 hidden-xs hidden-sm">
+                <i class="fa fa-star-o" aria-hidden="true"
+                    style="font-size: 14rem; position: absolute; left: -75%; top: 20px;"></i>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+
+                <p class="text-capitalize mb-0 color-black">Conoce nuestras actuales promociones</p>
+                <h2 class="mb-xs color-black">¡ Productos</h2>
                 <h2 class="mb-xs color-black">en Promoción !</h2>
-				<a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdPromo">Ver Promociones</a>
-			</div>
-			<!-- .col-md-8 end -->
-			<div class="col-md-4 hidden-xs hidden-sm">
-				<div class="cta-img" style="top: -95px;">
-					<img src="assets/images/call/Mi proyecto.png" alt="call to action"/>
-				</div>
-			</div>
-		</div>
-		<!-- .row end -->
-	</div>
-	<!-- .container end -->
+                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdPromo">Ver Promociones</a>
+            </div>
+            <!-- .col-md-8 end -->
+            <div class="col-md-4 hidden-xs hidden-sm">
+                <div class="cta-img" style="top: -95px;">
+                    <img src="assets/images/call/Mi proyecto.png" alt="call to action" />
+                </div>
+            </div>
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container end -->
 </section>
 <!-- #cta-6 end -->
 <div class="clearfix mb-150">
-</div>
+</div> --}}
+
+
+<!-- Productos Promocion -->
+{{-- <section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+    style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 hidden-xs hidden-sm" style="text-align: left;">
+                <i class="fa fa-star-o" aria-hidden="true"
+                    style="font-size: 14rem; margin-left: -80px;"></i>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <p class="text-capitalize mb-0 color-black">Conoce nuestras actuales promociones</p>
+                <h2 class="mb-xs color-black">¡ Productos</h2>
+                <h2 class="mb-xs color-black">en Promoción !</h2>
+                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdPromo">Ver Promociones</a>
+            </div>
+            <!-- .col-md-8 end -->
+            <div class="col-md-4 hidden-xs hidden-sm" style="text-align: left;">
+                <div class="cta-img" style="top: -95px;">
+                    <img src="assets/images/call/Mi proyecto.png" alt="call to action" />
+                </div>
+            </div>
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container end -->
+</section> --}}
+
+
+{{--
+<!-- Productos Novedosos -->
+<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+    style="background-color:#5cb85c; border-width: 3px; border-style: solid;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 hidden-xs hidden-sm" style="text-align: right;">
+                <div class="cta-img" style="top: -115px;">
+                    <img src="assets/images/call/5.png" alt="call to action" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <p class="text-capitalize mb-0 color-black">Conoce nuestras novedades</p>
+                <h2 class="mb-xs color-black">¡ Productos</h2>
+                <h2 class="mb-xs color-black">en novedad !</h2>
+                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdNoved">Ver Novedades</a>
+            </div>
+            <div class="col-md-2 hidden-xs hidden-sm" style="text-align: right;">
+                <div class="cta-img" style="top: -115px;">
+                    <i class="fa fa-diamond hidden-xs hidden-sm" aria-hidden="true"
+                    style="font-size: 14rem; "></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- #cta-6 end -->
+<div class="clearfix mb-150">
+</div> --}}
+
+
 
 
 
 <!-- Productos Novedosos -->
-<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6" style="background-color:#5cb85c; border-width: 3px; border-style: solid;">
+{{-- <section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
+    style="background-color:#5cb85c; border-width: 3px; border-style: solid;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 hidden-xs hidden-sm">
+                <div class="cta-img" style="top: -115px; padding-right: 110px;">
+                    <img src="assets/images/call/5.png" alt="call to action" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <p class="text-capitalize mb-0 color-black">Conoce nuestras novedades</p>
+                <h2 class="mb-xs color-black">¡ Productos</h2>
+                <h2 class="mb-xs color-black">en novedad !</h2>
+                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdNoved">Ver Novedades</a>
+                <i class="fa fa-diamond hidden-xs hidden-sm" aria-hidden="true"
+                    style="font-size: 14rem; position: absolute; top: 40px; right: -25px;"></i>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
+{{-- nustros clientes --}}
+
+{{-- <section id="clients" class="shortcode-9">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5 hidden-xs hidden-sm">
-				<div class="cta-img" style="top: -115px; padding-right: 110px;">
-					<img src="assets/images/call/5.png" alt="call to action"/>
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="heading heading-2 text-center">
+					<div class="heading-bg">
+						<p class="mb-0">Maestros en Pernos</p>
+						<h2>Nuestros Clientes</h2>
+					</div>
+				</div>
+				<!-- .heading end -->
+			</div>
+			<!-- .col-md-12 end -->
+		</div>
+		<!-- .row end -->
+		<div class="row">
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/1.png" alt="brand">
 				</div>
 			</div>
-            <div class="col-xs-12 col-sm-12 col-md-7">
-				<p class="text-capitalize mb-0 color-black">Conoce nuestras novedades</p>
-				<h2 class="mb-xs color-black">¡ Productos</h2>
-                <h2 class="mb-xs color-black">en novedad !</h2>
-				<a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdNoved">Ver Novedades</a>
-                <i class="fa fa-diamond hidden-xs hidden-sm" aria-hidden="true" style="font-size: 14rem; position: absolute; top: 40px; right: -25px;"></i>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/2.png" alt="brand">
+				</div>
 			</div>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/3.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/4.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand">
+					<img class="img-responsive center-block" src="assets/images/clients/5.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
+
+			<!-- Client Item -->
+			<div class="col-xs-12 col-sm-4 col-md-2">
+				<div class="brand last">
+					<img class="img-responsive center-block" src="assets/images/clients/6.png" alt="brand">
+				</div>
+			</div>
+			<!-- .col-md-2 end -->
 		</div>
+		<!-- .row End -->
 	</div>
+	<!-- .container end -->
+</section> --}}
+
+
+
+
+
+{{-- pedidos section --}}
+
+{{-- <section id="service-2" class="service service-2 bg-gray pb-0">
+    <div class="container-fluid bg-theme">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row" style="background-color: #FFFE04;">
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('assets/images/services/full/1.jpg');"></div>
+                    <!-- .col-md-6 end -->
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table; border-width: 3px; border-style: solid;">
+                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center; background-color: #FFFE04">
+                            <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
+                                verifique el estado de sus pedidos
+                            </p>
+                            <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/pedidos">Ver Mis Pedidos <i class="fa fa-plus ml-xs"></i></a>
+                        </div>
+                    </div>
+                    <!-- .col-md-6 end -->
+                </div>
+                <!-- .row end -->
+            </div>
+            <!-- .col-md-12 -->
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container-fluid end -->
 </section>
-<!-- #cta-6 end -->
-<div class="clearfix mb-150">
-</div>
+<div class="cleafix mb-150">
+</div> --}}
+
+
+
+
+
+{{-- depositos bancarios --}}
+{{--
+<section id="service-2" class="service service-2 bg-gray pb-0">
+    <div class="container-fluid bg-theme">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row" style="background-color: #FFFE04;">
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table; border-width: 3px; border-style: solid;">
+                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center;">
+                            <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
+                                Ahora contamos con registro de Bouchers
+                            </p>
+                            <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/depositos">Registrar Mi Depósito <i class="fa fa-plus ml-xs"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('assets/images/services/full/1.jpg');"></div>
+                </div>
+                <!-- .row end -->
+            </div>
+            <!-- .col-md-12 -->
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container-fluid end -->
+</section>
+<div class="cleafix mb-150">
+</div> --}}
+
+
+
+
+{{-- facturas --}}
+
+{{-- <section id="service-8" class="service service-2 service-8 bg-gray pb-0">
+	<div class="container-fluid bg-theme">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12" style="background-image: url('assets/images/services/full/1.jpg'); background-size: cover;">
+				<div class="row" >
+                    <div class="col-md-6 col-md-offset-6 col-content" style="text-align: center; background-color: #FFFE04; border-width: 3px; border-style: solid;">
+                        <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color: #0a192f; margin-bottom: 50px; line-height: 165%;">
+                            Consulte inmediatamente sus facturas
+                        </p>
+                        <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/facturas">Ver mis facturas <i class="fa fa-plus ml-xs"></i></a>
+                    </div>
+				</div>
+				<!-- .row end -->
+			</div>
+			<!-- .col-md-12 -->
+		</div>
+		<!-- .row end -->
+	</div>
+	<!-- .container-fluid end -->
+</section>
+<div class="cleafix mb-150">
+</div> --}}
+
+
+
+
+
 
 <!-- call center -->
-<section id="shortcode-3" class="shortcode-3 section-img">
+
+<section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
-        <div class="row" style="background: #FFFE04; border-width:3px; border-style:solid;">
-            <div class="col-md-6 col-content">
-                <div class="heading heading-4 mb-60">
-                    <div class="heading-bg heading-right">
-                        <p class="mb-0">Maestros en Pernos</p>
-                        <h2>Nuestro Call Center</h2>
-                    </div>
-                </div>
-                <!-- .heading end -->
-                <div class="row pr-50">
-                    <div class="col-xs-12 col-sm-12 col-md-12 feature feature-1 mb-12 mb-12-xs"
-                        style="padding-left: 5%">
-                        <h3 class="text-uppercase">Diponibles en todo momento</h3><br>
-                        <p>
-                            <h4>Telf: 4716000 (Líneas Rotativas)</h4>
-                        </p>
-                        <p>
-                            <h4>Celular: </h4>
-                        </p>
-                        <p>
-                            <h4>Fax: (4) 4111632</h4>
-                        </p>
-                        <p>
-                            <h4>Email: servicio.cliente@pertec.com.bo</h4>
-                        </p>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row" style="background-color: #FBD800;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('../assets/images/features/4.jpg');"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table;">
+                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center;">
+                            {{-- <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
+                                Ahora contamos con registro de Bouchers
+                            </p> --}}
+                            <p class="p-title">CALL CENTER</p>
+                            <br>
+                            <img src="../assets/images/favicon/AGENTE 1-04.png" style="width: 66px !important;">
+                            <P class="p-subtitle">Atención al cliente</P>
+                            <p class="p-texto">
+                                Contamos con personal altamente calificado para brindarle asesoramiento,
+                                información y soluciones integrales a nivel nacional.
+                            </p>
+                            <br><br>
+                            <img src="../assets/images/favicon/AGENTE 2-05.png" style="width: 66px !important;">
+                            <P class="p-subtitle">Toma de pedidos</P>
+                            <p class="p-texto">
+                                Contamos con la tecnología adecuada que nos permite la toma de
+                                pedidos en tiempo real.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- .row end -->
             </div>
-            <!-- .col-md-6 end -->
-            <div class="col-md-6 col-img"
-                style="background: rgb(255,254,4);
-                background: linear-gradient(90deg, rgba(255,254,4,0.8673844537815126) 10%, rgba(40,50,161,0.9822303921568627) 29%);">
-                <div class="col-bg">
-                    <img src="assets/images/features/callCenter1.jpg" width="100%" alt="Background" />
-                </div>
-            </div>
-            <!-- .col-md-6 end -->
+            <!-- .col-md-12 -->
         </div>
         <!-- .row end -->
     </div>
-    <!-- .container end -->
+    <div class="container-fluid">
+        <div class="widgets-contact">
+            <div class="row" style="margin-right: 0px;">
+                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                    <div class="widget-contact-icon pull-left">
+                        <img src="../assets/images/favicon/CELULAR.png" style="margin-top: -15px;" width="30px;">
+                    </div>
+                    <div class="widget-contact-info">
+                        <p class="text-capitalize font-heading">72221031 - 72221033</p>
+                    </div>
+                </div>
+                <!-- .widget end -->
+                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                    <div class="widget-contact-icon pull-left">
+                        <img src="../assets/images/favicon/WHATSAPP.png" style="margin-top: -15px;" width="30px;">
+                    </div>
+                    <div class="widget-contact-info">
+                        <p class="font-heading">(Whatsapp) 72221032 - 72230024</p>
+                    </div>
+                </div>
+                <!-- .widget end -->
+                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                    <div class="widget-contact-icon pull-left">
+                        <img src="../assets/images/favicon/MAIL.png" style="margin-top: -15px;" width="30px;">
+                    </div>
+                    <div class="widget-contact-info">
+                        <p class="font-heading">servicio.cliente@pertec.com.bo</p>
+                    </div>
+                </div>
+                <!-- .widget end -->
+            </div>
+            <!-- .row end -->
+        </div>
+        <!-- .row end -->
+    </div>
 </section>
-<div class="clearfix mb-150">
+
+
+<input type="checkbox" id="cerrar">
+<label for="cerrar" id="btn-cerrar" style="text-align: center !important; z-index: 1000;">X</label>
+
+<div class="modalPopUp">
+    <div class="contenido">
+        <h2>Visita nuestro blog</h2>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 product-item">
+                <div class="product-cart">
+                    <a class="btn btn-secondary btn-block btn-gereric btn-popUp" href="/fullProdPromo">
+                        Ver productos en Promoción
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-{{-- prueba carrusel productos --}}
+
+<style type="text/css">
+    .slide {
+      animation-duration: 4s;
+      animation-name: slidein;
+    }
+
+    .tdn{
+        animation-duration: 3s;
+        animation-name: tdn;
+    }
 
 
+@keyframes slidein {
+    from{
+        margin-left: 100%;
+        }
+
+        to{
+            margin-left: 0%;
+        }
+    }
+    @keyframes tdn{
+    from{
+        margin-top: 100%;
+        }
+
+        to{
+            margin-top: 0%;
+        }
+    }
 
 
+    .modalPopUp {
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        background: rgba(9,48,112,0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        animation: modal 1s 2s forwards;
+        visibility: hidden;
+        opacity: 0;
+        text-align: center;
+    }
+    .contenido {
+        margin: auto;
+        width: 40%;
+        height: 40%;
+        background: white;
+        border-radius: 10px;
+    }
+
+    #cerrar {
+        display: none;
+    }
+    #cerrar + label {
+        position: fixed;
+        color: #fff;
+        font-size: 25px;
+        z-index: 50;
+        background: darkred;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        right: 150px;
+        top: 150px;
+        cursor: pointer;
+
+        animation: modal 2s 2s forwards;
+        visibility: hidden;
+        opacity: 0;
+    }
+    #cerrar:checked + label, #cerrar:checked ~ .modalPopUp {
+        display: none;
+    }
+    @keyframes modal {
+        100% {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+
+</style>
+
+<script>
+    function showOfs(Element){
+        var x = document.getElementById(Element);
+        if (x.style.display === "none") {
+            x.style.display = "flex";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+</script>
 
 
 @endsection

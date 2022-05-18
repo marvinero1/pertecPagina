@@ -66,6 +66,11 @@
                         </div>
                     </form>
                 </div>
+                <h1>usuario1: pertec@pertec.com</h1>
+                <h2>contraseña1:pertec123</h2>
+                <br>
+                <h1>usuario2: asd@gmail.com</h1>
+                <h2>contraseña2: 123456789</h2>
             </div>
         </div>
     </div>
