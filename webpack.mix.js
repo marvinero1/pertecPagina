@@ -13,6 +13,46 @@ const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
+ | Page
+ |--------------------------------------------------------------------------
+ |
+ */
+
+mix.styles([
+    'resources/assets/page/css/external.css',
+    'resources/assets/page/css/bootstrap.min.css',
+    'resources/assets/page/css/style.css',
+    'resources/assets/page/css/font-awesome.css',
+    'resources/assets/page/css/font-awesome.min.css',
+    'node_modules/font-awesome/css/font-awesome.css',
+    'resources/assets/admin/css/font-awesome.css',
+    'resources/assets/admin/css/font-awesome.min.css',
+
+    'resources/assets/page/revolution/css/settings.css',
+    'resources/assets/page/revolution/css/layers.css',
+    'resources/assets/page/revolution/css/navigation.css',
+], 'public/assets/page/css/app_page.css').version();
+
+
+mix.scripts([
+    'resources/assets/page/js/jquery-2.1.1.min.js',
+    'resources/assets/page/js/plugins.js?v=1.0.0',
+    'resources/assets/page/js/functions.js?v=1.2.0',
+
+
+    'resources/assets/page/revolution/js/extensions/revolution.extension.video.min.js',
+    'resources/assets/page/revolution/js/extensions/revolution.extension.slideanims.min.js',
+    'resources/assets/page/revolution/js/extensions/revolution.extension.actions.min.js',
+    'resources/assets/page/revolution/js/extensions/revolution.extension.layeranimation.min.js',
+    'resources/assets/page/revolution/js/extensions/revolution.revolution.extension.kenburn.min.js',
+    'resources/assets/page/revolution/js/extensions/revolution.extension.navigation.min.js',
+    'resources/assets/page/revolution/js/extensions/revolution.extension.migration.min.js',
+    'resources/assets/page/revolution/js/extensions/revolution.revolution.extension.parallax.min.js',
+
+
+], 'public/assets/page/js/app_page.js').version();
+/*
+ |--------------------------------------------------------------------------
  | Core
  |--------------------------------------------------------------------------
  |
@@ -28,7 +68,9 @@ mix.scripts([
 mix.styles([
     'node_modules/font-awesome/css/font-awesome.css',
     'node_modules/pace-progress/themes/blue/pace-theme-minimal.css',
-
+    'resources/assets/admin/css/font-awesome.css',
+    'resources/assets/admin/css/font-awesome.min.css',
+    
 ], 'public/assets/app/css/app.css').version();
 
 mix.copy([
@@ -117,3 +159,5 @@ mix.styles([
     'node_modules/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css',
     'resources/assets/admin/css/dashboard.css',
 ], 'public/assets/admin/css/dashboard.css').version();
+
+
