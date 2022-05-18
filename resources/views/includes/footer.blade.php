@@ -11,15 +11,13 @@
 	<div class="content" style="padding-right: 11px;">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 widgets-links info-footer">
-                <div class="col-xs-12 col-sm-12 col-md-1 widget-about text-center-xs mb-30-xs">
+				<div class="col-xs-12 col-sm-12 col-md-5 widget-about text-center-xs mb-30-xs">
                     <div class="widget-about-logo pull-left pull-none-xs">
 						<img src="../assets/images/favicon/Logotipo.png" alt="logo" width="80px"/>
 					</div>
-                </div>
-				<div class="col-xs-12 col-sm-12 col-md-2 widget-about text-center-xs mb-30-xs">
 					<div class="widget-about-info">
 						<h5 class="text-capitalize text-white p-subtitle">PERTEC S.R.L.</h5>
-						<p class="mb-0 text-white p-texto">Somos una empresa dedicada a la venta de elementos de sujeción aportando al crecimiento de nuestro país desde 1985.</p>
+						<p class="mb-0 text-white p-texto" style="text-align: justify !important;">Somos una empresa dedicada a la venta de elementos de sujeción aportando al crecimiento de nuestro país desde 1985.</p>
 					</div>
 				</div>
                 <div class="col-md-1"></div>
@@ -51,7 +49,7 @@
 							</ul>
 					</div>
 				</div>
-                <div class="col-xs-12 col-sm-12 col-md-3 widget-about text-center-xs mb-30-xs">
+                <div class="col-xs-12 col-sm-12 col-md-2 widget-about text-center-xs mb-30-xs">
 					<div class="widget-about-info">
 						<h5 class="text-capitalize text-white p-subtitle">Legal</h5>
                         <div class="row">
@@ -69,7 +67,7 @@
 					    </div>
 					</div>
 				</div>
-                <div class="col-xs-12 col-sm-12 col-md-3 widget-about text-center-xs mb-30-xs">
+                <div class="col-xs-12 col-sm-12 col-md-2 widget-about text-center-xs mb-30-xs">
 					<div class="widget-about-info">
 						<h5 class="text-capitalize text-white p-subtitle">Horarios de atención</h5>
 						<p class="mb-0">De Lunes a Viernes</p>

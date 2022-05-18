@@ -1,7 +1,6 @@
 @extends('includes.main')
 
 @section('content')
-<link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">
 
 <!-- carrusel -->
 
@@ -18,7 +17,7 @@
                     <!-- MAIN IMAGE -->
                         <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen'] }}" alt="Background" width="1920" height="1280">
                         <!-- LAYER NR. 1 -->
-                        <div class="tp-caption" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
+                        <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
                             data-whitespace="nowrap" data-width="['150','70','70','100']"
                             data-height="['150','70','70','100']" data-transform_idle="o:1;"
                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
@@ -26,7 +25,7 @@
                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on"
-                            style="font-family: 'Franklin Gothic Demi', sans-serif; text-align:center;  min-height: 110px !important; min-width: 110px !important;
+                            style="text-align:center;  min-height: 110px !important; min-width: 110px !important;
                             max-height: 110px !important; max-width: 120px !important;">
                             <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen_icono'] }}"
                                 alt="hook"/>
@@ -34,7 +33,7 @@
 
 
                         <!-- LAYER NR. 2 -->
-                        <h1 class="tp-caption text-uppercase" data-x="center" data-hoffset="0" data-y="center"
+                        <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
                             data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
                             data-transform_idle="o:1;"
                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
@@ -43,12 +42,12 @@
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
                             data-lineheight="['100','45','25','25']"
-                            data-color="#ffc527" style="font-family: 'Franklin Gothic Demi', sans-serif;">
+                            data-color="#ffc527">
                             {{ $bcarousel['titulo'] }}
                         </h1>
 
                         <!-- LAYER NR. 3 -->
-                        <div class="tp-caption text-uppercase" data-x="center" data-hoffset="0" data-y="center"
+                        <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
                             data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
@@ -56,7 +55,7 @@
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
                             data-lineheight="['50','26','25','25']"
-                            data-color="#fff" style="font-family: 'Franklin Gothic Demi', sans-serif;">
+                            data-color="#fff">
                             {{ $bcarousel['sub_titulo'] }}
                         </div>
                     </li>

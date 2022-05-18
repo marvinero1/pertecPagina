@@ -42,6 +42,10 @@
                     </div>
                 </div>
 
+                <div class="row cnterDiv">
+
+                </div>
+
                 <div class="row lightgallery1">
 
                     @foreach ($b as $bproducto)

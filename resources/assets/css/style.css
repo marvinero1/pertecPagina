@@ -47,9 +47,19 @@
 /*------------------------------------*\
 #GLOBAL STYLES
 \*------------------------------------*/
-@import url(http://fonts.cdnfonts.com/css/franklin-gothic-demi-2);
-@import url(https://allfont.es/allfont.css?fonts=franklin-gothic-book);
-@import url(//db.onlinewebfonts.com/c/45a9841a7f5ba7a780f0a804553cfce7?family=Franklin+Gothic+Medium);
+
+@font-face {
+    font-family: "Franklin Gothic Demi";
+    src: url(./fonts/FRADM.ttf);
+}
+@font-face {
+    font-family: "Franklin Gothic Book";
+    src: url(./fonts/franklin-gothic-book_[allfont.net].ttf);
+}
+@font-face {
+    font-family: "Franklin Gothic Medium";
+    src: url(./fonts/franklin-gothic-medium_[allfont.net].ttf);
+}
 
 html {
     font-size: 14px;
@@ -9311,7 +9321,8 @@ footer hr {
 }
 
 .widgets-links .widget-about .widget-about-logo {
-    padding-top: 47px
+    padding-top: 47px;
+    padding-right: 35px;;
 }
 
 
@@ -10105,6 +10116,10 @@ footer hr {
     ;
 }
 
+.font-frank-demi {
+    font-family: 'Franklin Gothic Demi', sans-serif;
+}
+
 .font-frank-book {
     font-family: 'Franklin Gothic Book', sans-serif;
 }
@@ -10175,4 +10190,9 @@ footer hr {
 .bgPageCover{
     background-size: cover;
     height: 635px;
+}
+.cnterDiv {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }

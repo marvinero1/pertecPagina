@@ -87,7 +87,7 @@
                     </div>
                 </div><br><br><br>
                 <!-- .row end -->
-                <div class="row mesagges">
+                <div class="row cnterDiv">
                     <div class="col-xs-12 col-sm-12 col-md-8">
                         <div class="row">
                             <form id="contact-form" action="#" method="post">
@@ -165,13 +165,6 @@
         height: 400px;
         / The height is 400 pixels / width: 100%;
         / The width is the width of the web page /
-    }
-
-
-    .mesagges {
-        display: flex;
-        justify-content: center;
-        text-align: center;
     }
 
 </style>
