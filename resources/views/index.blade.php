@@ -12,11 +12,11 @@
             <ul>
                 @foreach ($b1 as $bcarousel)
                     <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
-                    data-easeout="Power4.easeInOut" data-masterspeed="1000"
-                    style="background-color: rgba(34, 34, 34, 0.3);">
+                    data-easeout="Power4.easeInOut" data-masterspeed="1000">
                     <!-- MAIN IMAGE -->
                         <img src="http://192.168.31.242:5000/{{ $bcarousel['imagen'] }}" alt="Background" width="1920" height="1280">
                         <!-- LAYER NR. 1 -->
+                        <div class="bgImgCover"></div>
                         <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
                             data-whitespace="nowrap" data-width="['150','70','70','100']"
                             data-height="['150','70','70','100']" data-transform_idle="o:1;"
@@ -63,8 +63,7 @@
             </ul>
         </div>
     </div>
-    <div class="bgImgCover">
-    </div>
+
     <!-- END OF SLIDER WRAPPER -->
 </section>
 

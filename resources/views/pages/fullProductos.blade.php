@@ -33,6 +33,7 @@
     <div class="content section-content">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+
                 <div class="row">
                     <div class="heading">
                         <div class="heading-bg heading-right">
@@ -41,9 +42,42 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <form class="search-form">
+                        <div class="input-group" style="width: 275px;">
+                            <input type="text" class="form-control" placeholder="Buscar">
+                            <span class="input-group-btn">
+                            <button class="btn" type="button" style="width: 50px; height: 49px;">
+                                <i class="fa fa-search" style="font-size: 25px;"></i>
+                            </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
 
-                <div class="row cnterDiv">
 
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-4 product-item aling-rigth">
+                        <div class="product-cart">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalPernos">
+                                Piezas/Kg en Pernos
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 product-item">
+                        <div class="product-cart">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalArand">
+                                Piezas/Kg en Arandelas
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 product-item aling-left">
+                        <div class="product-cart">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalAutos">
+                                Normas y Abreviaturas
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row lightgallery1">
@@ -51,6 +85,16 @@
                     @foreach ($b as $bproducto)
                     <!-- product #1 -->
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item  clearfix item">
+                        @if($bproducto["promocion"]=="si")
+                        <div class="infProd" style="background-color: #FBD800;">
+                            EN OFERTA
+                        </div>
+                        @endif
+                        @if($bproducto["novedad"]=="si")
+                        <div class="infProd" style="background-color: #093070;">
+                            NUEVO
+                        </div>
+                        @endif
                         <div class="product-img">
                             <img src='http://192.168.31.242:5000/{{ $bproducto["imagen"] }}' alt="product"
                                 style="height:300px;">
@@ -94,6 +138,15 @@
     </div>
     <!-- .container end -->
 </section>
+
+@include('pages.modalConvrPernos')
+@include('pages.modalConvrArandelas')
+@include('pages.modalDetalleAutomotriz')
+
+
+
+
+
 
 <script>
     $(function() {

@@ -1,7 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@import url(http://fonts.cdnfonts.com/css/franklin-gothic-demi-2);
-@import url(https://allfont.es/allfont.css?fonts=franklin-gothic-book);
-@import url(//db.onlinewebfonts.com/c/45a9841a7f5ba7a780f0a804553cfce7?family=Franklin+Gothic+Medium);
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.0
@@ -16685,6 +16682,19 @@ button.close {
 #GLOBAL STYLES
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Franklin Gothic Demi";
+    src: url(/fonts/FRADM.ttf?d7ea08bb5225f177af64145342a82dac);
+}
+@font-face {
+    font-family: "Franklin Gothic Book";
+    src: url(/fonts/franklin-gothic-book_[allfont.net].ttf?6bd9586a6ad0737a1186519064614ead);
+}
+@font-face {
+    font-family: "Franklin Gothic Medium";
+    src: url(/fonts/franklin-gothic-medium_[allfont.net].ttf?06a8a782dc18ac82c249e3187de6fde8);
+}
+
 html {
     font-size: 14px;
 }
@@ -16708,7 +16718,7 @@ body {
 }
 
 ::selection {
-    background-color: #FBD800;
+    background-color: #FFFFFF;
     color: #fff;
     text-shadow: none;
 }
@@ -18897,7 +18907,7 @@ footer {
 
 /* model */
 .modal-open .modal {
-    background-color: rgba(34, 34, 34, 0.95);
+    background-color: rgba(34, 34, 34, 0.45);
 }
 
 .modal-header .model-icon {
@@ -23282,7 +23292,7 @@ footer {
 }
 
 .modal-dialog {
-    margin-top: 40px;
+    margin-top: 40px !important;
     width: 360px;
 }
 
@@ -23436,7 +23446,7 @@ footer {
     }
 
     .modal-dialog {
-        width: 100%;
+        width: 92% !important;
         margin-left: auto;
         margin-right: auto
     }
@@ -25717,7 +25727,8 @@ footer hr {
 }
 
 .widgets-links .widget-about .widget-about-logo {
-    padding-top: 47px
+    padding-top: 47px;
+    padding-right: 35px;;
 }
 
 
@@ -26438,6 +26449,13 @@ footer hr {
     .info-footer {
         padding-left: 5% !important;
     }
+    .aling-rigth{
+        text-align: right;
+    }
+
+    .aling-left{
+        text-align: left;
+    }
 }
 
 @media (min-width: 1090px) and (max-width: 1400px) {
@@ -26453,6 +26471,11 @@ footer hr {
         font-size: 0.8rem !important;
         white-space: normal;
         line-height: 17px !important;
+    }
+}
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 75% !important;
     }
 }
 
@@ -26497,6 +26520,10 @@ footer hr {
     color: #000000;
     letter-spacing: 1px;
     ;
+}
+
+.font-frank-demi {
+    font-family: 'Franklin Gothic Demi', sans-serif;
 }
 
 .font-frank-book {
@@ -26552,11 +26579,10 @@ footer hr {
 }
 .bgImgCover {
     width:100%;
-    height: 800px;
+    height: 100%;
     position: relative;
-    margin-top: -800px;
-    background: rgba(9, 48, 112, 0.2) !important;
-    background: linear-gradient(183deg, rgba(9,48,112,1) 0%, rgba(255,255,255,1) 100%);
+    /* background: rgba(9, 48, 112, 0.2) !important; */
+    background: linear-gradient(183deg, rgba(9,48,112,0.2) 0%, rgba(255,255,255,0.2) 100%);
 }
 .bgImgCoverPages {
     width:100%;
@@ -26569,6 +26595,62 @@ footer hr {
 .bgPageCover{
     background-size: cover;
     height: 635px;
+}
+.cnterDiv {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.fade-scale {
+    transform: scale(0);
+    opacity: 0;
+    transition: all .25s linear;
+  }
+
+  .fade-scale.in {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+/*modal scroll*/
+
+.modal-dialog.full-screen {
+    position:fixed;
+    width:auto;
+    height: 75%;
+    margin:auto;
+    left:0px;
+    right:0px;
+    top:7%;
+    bottom:0px;
+}
+
+.modal-dialog.full-screen .modal-content {
+      position:absolute;
+      left:10px;
+      right:10px;
+      top:10px;
+      bottom:10px;
+}
+
+
+.modal-dialog.full-screen .modal-content .modal-body {
+        overflow-y: auto;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+        left:0;
+        right:0;
+          margin-top: 60px;
+          margin-bottom: 60px;
+}
+
+.modal-dialog.full-screen .modal-content .modal-footer {
+        position:absolute;
+        bottom:0;
+        right:0;
 }
 
 /*-----------------------------------------------------------------------------
