@@ -102,6 +102,7 @@
   "views.welcome.login": "Iniciar sesión",
   "views.welcome.logout": "Salir",
   "views.welcome.register": "Regístrate",
+  "views.welcome.register.Modal": "RegístrateModal",
   "views.welcome.admin": "Panel",
   "views.welcome.member_area": "Area Miembros",
   "views.welcome.guide": "Start Tour",

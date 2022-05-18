@@ -105,12 +105,17 @@
         </div>
 
         <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
-            <div class="col-md-6 col-sm-12  form-group">
+            <div class="col-md-4 col-sm-12  form-group">
                 <label for="nombre">Resistencia</label>
                 <input type="text" class="form-control" name="resistencia" placeholder="Resistencia">
             </div>
 
-            <div class="col-md-6 col-sm-12  form-group">
+            <div class="col-md-4 col-sm-12  form-group">
+                <label for="nombre">Tipo</label>
+                <input type="text" class="form-control" name="tipo" placeholder="Tipo">
+            </div>
+
+            <div class="col-md-4 col-sm-12  form-group">
                 <label for="nombre">Tratamiento</label>
                 <input type="text" class="form-control" name="tratamiento" placeholder="Tratamiento">
             </div>

@@ -33,6 +33,7 @@
                         <tr><td>Rosca</td><td class="price"><?php echo e($productos->rosca); ?></td></tr>
                         <tr><td>Resistencia</td><td class="price"><?php echo e($productos->resistencia); ?></td></tr>
                         <tr><td>Tratamiento</td><td class="price"><?php echo e($productos->tratamiento); ?></td></tr>
+                        <tr><td>Tipo</td><td class="price"><?php echo e($productos->tipo); ?></td></tr>
                         <tr><td>SAE</td><td class="price"><?php echo e($productos->sae); ?></td></tr>
                         <tr><td>ZB</td><td class="price"><?php echo e($productos->zb); ?></td></tr>
                         <tr><td>ZAM</td><td class="price"><?php echo e($productos->zam); ?></td></tr>

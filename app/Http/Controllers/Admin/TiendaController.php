@@ -49,6 +49,11 @@ class TiendaController extends Controller{
         return response()->json($tiendaSTCZ, 200);
     }
 
+    public function getStoresId($id){
+        $tienda = Tienda::findOrFail($id);
+        return response()->json($tienda, 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

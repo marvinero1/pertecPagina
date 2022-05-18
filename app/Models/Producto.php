@@ -24,6 +24,7 @@ class Producto extends Model
                         'denominacion',
                         'categoria',
                         'inox',
+                        'tipo',
                         'imagen',
                         'imagen_matriz',
                         'material',

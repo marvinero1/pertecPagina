@@ -34,6 +34,7 @@
                         <tr><td>Rosca</td><td class="price">{{ $productos->rosca }}</td></tr>
                         <tr><td>Resistencia</td><td class="price">{{ $productos->resistencia }}</td></tr>
                         <tr><td>Tratamiento</td><td class="price">{{ $productos->tratamiento }}</td></tr>
+                        <tr><td>Tipo</td><td class="price">{{ $productos->tipo }}</td></tr>
                         <tr><td>SAE</td><td class="price">{{ $productos->sae }}</td></tr>
                         <tr><td>ZB</td><td class="price">{{ $productos->zb }}</td></tr>
                         <tr><td>ZAM</td><td class="price">{{ $productos->zam }}</td></tr>
