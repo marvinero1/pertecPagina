@@ -14,8 +14,7 @@
             document.oncontextmenu = function(){return false}
         </script>
         
-        <?php echo e(Html::style(mix('assets/app/css/app.css'))); ?>
-
+        <?php echo e(Html::style(mix('assets/app/css/app.css'))); ?> 
 
         
         <?php echo $__env->yieldContent('styles'); ?>
@@ -31,8 +30,7 @@
         <?php echo $__env->yieldContent('page'); ?>
 
         
-        <?php echo e(Html::script(mix('assets/app/js/app.js'))); ?>
-
+        <?php echo e(Html::script(mix('assets/app/js/app.js'))); ?> 
 
         
         <script> window.Laravel = {"locale":"en"}</script>

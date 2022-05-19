@@ -1,17 +1,15 @@
+ 
 /*-----------------------------------------------------------------------------------
-
 	Theme Name: Yellow Hats
 	Theme URI: #
 	Description: The Construction HTML5 Template
 	Author: 7roof
 	Author URI: http://themeforest.net/user/7roof
 	Version: 1.0
-
 -----------------------------------------------------------------------------------*/
 /*!
 // Contents
 // ------------------------------------------------>
-
 	1.  Global Styles
 	2.  Typography
 	3.  Color
@@ -48,18 +46,6 @@
 #GLOBAL STYLES
 \*------------------------------------*/
 
-@font-face {
-    font-family: "Franklin Gothic Demi";
-    src: url(./fonts/FRADM.ttf);
-}
-@font-face {
-    font-family: "Franklin Gothic Book";
-    src: url(./fonts/franklin-gothic-book_[allfont.net].ttf);
-}
-@font-face {
-    font-family: "Franklin Gothic Medium";
-    src: url(./fonts/franklin-gothic-medium_[allfont.net].ttf);
-}
 
 html {
     font-size: 14px;
@@ -67,12 +53,13 @@ html {
 
 body {
     background-color: #fff;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Franklin Gothic Book', sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: #828282;
     line-height: 1.5;
-    margin: 0
+    margin: 0;
+    overflow-x: hidden;
 }
 
 * {
@@ -5546,7 +5533,7 @@ footer {
 }
 
 .service-2 .col-img {
-    height: 716px;
+    height: 765px;
 }
 
 .service-2 .tab-pane h3 {
@@ -10196,3 +10183,4 @@ footer hr {
     justify-content: center;
     text-align: center;
 }
+

@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-
+<html dir="ltr" lang="{{ app()->getLocale() }}">
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="wplly" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="construction html5 template">
 
 	{{--CSRF Token--}}
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	{{--Title and Meta--}}
 	<title>{{ config('app.name') }}</title>
-	<script type='text/javascript'>
-		document.oncontextmenu = function(){return false}
-	</script>
 
-	<link rel="stylesheet" href="/resources/assets/admin/css/font-awesome.min.css">
-	<!-- Fonts
-	
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
 	
-    <link href="{{asset('assets/page/css/app_page.css')}}" rel="stylesheet">
-    <script src="{{asset('assets/page/js/app_page.js')}}"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">
+	
+	{{ Html::style(mix('assets/page/css/app_page.css')) }}
+	{{ Html::script(mix('assets/page/js/app_page.js')) }} 
 
 	<script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
 	<script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
-
+	
 </head>
 
 <body>
@@ -39,26 +41,27 @@
 			<div class="bounce3">
 			</div>
 		</div>
-	</div> --}}
+	</div>   --}}
 
 	@include('page.layouts.header')
 	@yield('content')
 	@include('page.layouts.footer')
 
     <div>
-            <a href="#" class="btn_Face_float" target="_blank">
-                <i class="fa fa-facebook btn_Inf_float_my-float"></i>
-            </a>
-            <a href="https://www.google.com.bo/maps/search/pertec+srl/@-17.4937283,-66.5821199,7.42z?hl=es" class="btn_Map_float" target="_blank">
-                <i class="fa fa-map-marker btn_Inf_float_my-float"></i>
-            </a>
+		<a href="#" class="btn_Face_float" target="_blank">
+			<i class="fa fa-facebook btn_Inf_float_my-float"></i>
+		</a>
+		<a href="https://www.google.com.bo/maps/search/pertec+srl/@-17.4937283,-66.5821199,7.42z?hl=es" class="btn_Map_float" target="_blank">
+			<i class="fa fa-map-marker btn_Inf_float_my-float"></i>
+		</a>
     </div>
     <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" class="btn_Whats_float" target="_blank">
         <i class="fa fa-whatsapp btn_Inf_float_my-float" style="margin-top: 2px; font-size: 1.5rem;"></i>
         <label style="position: relative; top: -4px; font-weight: 1 !important;">Ayuda</label>
     </a>
 
-    <script type='text/javascript'>
+    
+	<script type='text/javascript'>
         document.oncontextmenu = function(){return false}
     </script>
 
@@ -109,7 +112,7 @@
             scrollTop: $("#"+ $(this).attr("name")).offset().top
         }, 500)
     });
-    </script>
+</script>
 
 </body>
 </html>

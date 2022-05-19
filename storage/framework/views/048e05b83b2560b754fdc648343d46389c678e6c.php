@@ -1,18 +1,68 @@
 <?php $__env->startSection('content'); ?>
-
 <!-- carrusel -->
-
 <section id="hero" class="hero hero-4">
 
     <!-- START REVOLUTION SLIDER 5.0 -->
     <div class="rev_slider_wrapper">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
-              
+                <?php $__currentLoopData = $carusel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $carusels): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
+                data-easeout="Power4.easeInOut" data-masterspeed="1000"
+                style="background-color: rgba(34, 34, 34, 0.3);">
+                <!-- MAIN IMAGE -->
+                    <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen); ?>" alt="Background" width="1920" height="1280">
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
+                        data-whitespace="nowrap" data-width="['150','70','70','100']"
+                        data-height="['150','70','70','100']" data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on"
+                        style="text-align:center;  min-height: 110px !important; min-width: 110px !important;
+                        max-height: 110px !important; max-width: 120px !important;">
+                        <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen_icono); ?>"
+                            alt="hook"/>
+                    </div>
+
+
+                    <!-- LAYER NR. 2 -->
+                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                        data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
+                        data-lineheight="['100','45','25','25']"
+                        data-color="#ffc527">
+                        <?php echo e($carusels->titulo); ?>
+
+                    </h1>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
+                        data-lineheight="['50','26','25','25']"
+                        data-color="#fff">
+                        <?php echo e($carusels->sub_titulo); ?>
+
+                    </div>
+                </li>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div>
     </div>
     <div class="bgImgCover">
+
     </div>
     <!-- END OF SLIDER WRAPPER -->
 </section>
@@ -180,55 +230,39 @@
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner content" role="listbox">
+                        
                         <div class="item active">
-                            <div class="row">
-                                <!-- product #1 -->
-                               
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
-                                    <div class="product-img">
-                                        <img src='http://192.168.31.242:5000/' alt="product"
-                                            style="height:250px;">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block a-card"
-                                                    href="">Detalles</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#"></a>
-                                        </h4>
-                                    </div>
-                                </div>
-                           
-                            </div>
-                        </div>
+                            
+                                <div class="row">
+                                    <!-- product #1 -->
+                                
+                                    <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
-                        <div class="item">
-                            <div class="row">
-                                <!-- product #1 -->
-                               
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
-                                    <div class="product-img">
-                                        <img src='http://192.168.31.242:5000/' alt="product"
-                                            style="height:250px;">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block a-card"
-                                                    href="">Detalles</a>
+                                        <div class="product-img">
+                                            <img src='http://192.168.31.242:5000/<?php echo e($productos->imagen); ?>' alt="product"
+                                                style="height:250px;">
+                                            <div class="product-hover">
+                                                <div class="product-cart">
+                                                    <a class="btn btn-secondary btn-block a-card"
+                                                        href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id))); ?>">Detalles</a>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="product-bio">
+                                            <h4>
+                                                <a href="#"><?php echo e($productos->nombre_producto); ?></a>
+                                            </h4>
+                                        </div>
+                                        
                                     </div>
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#"></a>
-                                        </h4>
-                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            
                                 </div>
-                               
-                            </div>
+                            
                         </div>
+                        
+                       
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                             <div style="width: 50px; height: 49px; position: absolute; top: 40%; left: 50%; background-color: rgb(206 206 206 / 80%);">

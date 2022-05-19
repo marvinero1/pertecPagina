@@ -10,6 +10,34 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+/*
+ |--------------------------------------------------------------------------
+ | Core
+ |--------------------------------------------------------------------------
+ |
+ */
+ mix.sass('resources/assets/page/sass/app.scss', 'public/assets/page/css/app_page.css').version();
+ 
+mix.scripts([
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/pace-progress/pace.js',
+    'resources/assets/js/app.js',
+
+], 'public/assets/app/js/app.js').version();
+
+mix.styles([
+    'node_modules/font-awesome/css/font-awesome.css',
+    'node_modules/pace-progress/themes/blue/pace-theme-minimal.css',
+    'resources/assets/admin/css/font-awesome.css',
+    'resources/assets/admin/css/font-awesome.min.css',
+    
+], 'public/assets/app/css/app.css').version();
+
+mix.copy([
+    'node_modules/font-awesome/fonts/',
+    'resources/assets/page/fonts',
+    
+], 'public/assets/app/fonts');
 
 /*
  |--------------------------------------------------------------------------
@@ -18,20 +46,22 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.styles([
+
+ mix.styles([
     'resources/assets/page/css/external.css',
     'resources/assets/page/css/bootstrap.min.css',
     'resources/assets/page/css/style.css',
-    'resources/assets/page/css/font-awesome.css',
-    'resources/assets/page/css/font-awesome.min.css',
-    'node_modules/font-awesome/css/font-awesome.css',
-    'resources/assets/admin/css/font-awesome.css',
-    'resources/assets/admin/css/font-awesome.min.css',
-
+    
     'resources/assets/page/revolution/css/settings.css',
     'resources/assets/page/revolution/css/layers.css',
     'resources/assets/page/revolution/css/navigation.css',
+
+    'node_modules/font-awesome/css/font-awesome.css',
+    'resources/assets/page/css/font-awesome.css',
+    'resources/assets/page/css/font-awesome.min.css',
+
 ], 'public/assets/page/css/app_page.css').version();
+
 
 
 mix.scripts([
@@ -51,32 +81,6 @@ mix.scripts([
 
 
 ], 'public/assets/page/js/app_page.js').version();
-/*
- |--------------------------------------------------------------------------
- | Core
- |--------------------------------------------------------------------------
- |
- */
-
-mix.scripts([
-    'node_modules/jquery/dist/jquery.js',
-    'node_modules/pace-progress/pace.js',
-    'resources/assets/js/app.js',
-
-], 'public/assets/app/js/app.js').version();
-
-mix.styles([
-    'node_modules/font-awesome/css/font-awesome.css',
-    'node_modules/pace-progress/themes/blue/pace-theme-minimal.css',
-    'resources/assets/admin/css/font-awesome.css',
-    'resources/assets/admin/css/font-awesome.min.css',
-    
-], 'public/assets/app/css/app.css').version();
-
-mix.copy([
-    'node_modules/font-awesome/fonts/',
-], 'public/assets/app/fonts');
-
 /*
  |--------------------------------------------------------------------------
  | Auth
