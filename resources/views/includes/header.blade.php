@@ -24,12 +24,7 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
-                            <ul class="dropdown-menu" style="border-radius: 10px;">
-								<li>
-									<a href="/aboutUs">Nuestra Historia</a>
-								</li>
-							</ul>
+							<a href="#" class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
 						</li>
                         <li class="has-dropdown">
 							<a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link">Productos</a>

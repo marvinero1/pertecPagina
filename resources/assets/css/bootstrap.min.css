@@ -7043,7 +7043,7 @@ button.list-group-item-danger.active:hover {
 }
 
 .panel-default>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #ddd
+    border-top-color: rgba(49, 49, 49, 0.37);
 }
 
 .panel-default>.panel-heading .badge {
@@ -7052,7 +7052,7 @@ button.list-group-item-danger.active:hover {
 }
 
 .panel-default>.panel-footer+.panel-collapse>.panel-body {
-    border-bottom-color: #ddd
+    border-bottom-color: rgba(49, 49, 49, 0.37);
 }
 
 .panel-primary {

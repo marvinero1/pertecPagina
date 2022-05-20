@@ -39,34 +39,6 @@
                 <div class="product-img product-feature-img mb-50">
                     <img src=" http://192.168.31.242:5000/{{ $b['imagen'] }}" alt="product" />
                 </div>
-                <div class="product-content">
-                    <hr class="mt-50 mb-30">
-                    <div class="product-tabs mb-50">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active">
-                                <a href="#details" aria-controls="details" role="tab" data-toggle="tab">Más Detalles</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="details">
-                                <h5>Detalles Técnicos</h5>
-                                <table class="table table-striped">
-                                    <tbody>
-                                        @foreach ( $b as $k => $v)
-                                        @if ($v && $k!="id" && $k!="nombre_producto" && $k!="imagen" &&
-                                        $k!="imagen_matriz" && $k!="created_at" && $k!="updated_at")
-                                        <tr style="text-transform: uppercase;">
-                                            <td>{{ $k }}</td>
-                                            <td>{{ $v }}</td>
-                                        </tr>
-                                        @endif
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-7 sidebar sidebar-full">
@@ -79,7 +51,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <h5>Detalles :</h5>
                     <br><br>
                     @foreach ( $b as $k => $v)
@@ -95,6 +67,33 @@
                     </div>
                     @endif
                     @endforeach
+                </div> --}}
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 product-content">
+                <hr class="mt-50 mb-30">
+                <div class="product-tabs mb-50">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#details" aria-controls="details" class="title-details" role="tab" data-toggle="tab" style="text-transform: uppercase;">Detalles Técnicos</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="details">
+                            <table class="table table-striped">
+                                <tbody>
+                                    @foreach ( $b as $k => $v)
+                                    @if ($v && $k!="id" && $k!="nombre_producto" && $k!="imagen" &&
+                                    $k!="imagen_matriz" && $k!="created_at" && $k!="updated_at")
+                                    <tr style="text-transform: uppercase;">
+                                        <td class="title-details">{{ $k }}</td>
+                                        <td class="body-details">{{ $v }}</td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

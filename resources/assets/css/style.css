@@ -103,7 +103,7 @@ a {
 }
 
 a:hover {
-    color: #FBD800 !important;
+    color: #ffcb00 !important;
     text-decoration: none;
 }
 
@@ -117,13 +117,13 @@ a:hover {
 }
 
 a:focus {
-    color: #FBD800 !important;
+    color: #ffcb00 !important;
     outline: none;
     text-decoration: none;
 }
 
 a:active {
-    color: #FBD800;
+    color: #ffcb00;
     outline: none;
     text-decoration: none;
 }
@@ -1120,8 +1120,8 @@ footer {
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: #2f2f2f;
+    background-color: #FFFFFF;
+    color: #000000;
 }
 
 .btn-secondary:hover,
@@ -1227,7 +1227,7 @@ footer {
 #ACCORDION
 \*------------------------------------*/
 .accordion .panel {
-    border-color: rgba(49, 49, 49, 0.1);
+    border-color: rgba(49, 49, 49, 0.37);
     padding: 23px 23px 0 23px;
     margin-bottom: 20px;
     box-shadow: none;
@@ -1275,7 +1275,7 @@ footer {
     font-family: fontawesome;
     font-size: 10px;
     color: #fff;
-    background-color: #FBD800;
+    background-color: #ffcb00;
     text-align: center;
     width: 30px;
     height: 30px;
@@ -1288,16 +1288,16 @@ footer {
 .accordion .panel-heading .accordion-toggle.collapsed:after {
     content: "\f067";
     /* symbol for "collapsed" panels */
-    color: #FBD800;
+    color: #ffcb00;
     background-color: transparent;
 }
 
 .accordion .panel .panel-body {
     border-top-color: rgba(49, 49, 49, 0.1);
     padding: 20px 0;
-    color: #A6A69B;
+    color: #9f9f93;
     font-family: 'Franklin Gothic Book', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     line-height: 25px;
 }
 
@@ -3455,7 +3455,7 @@ footer {
     font-size: 1.4rem;
     color: #5a5a5a73;
     font-weight: 500;
-    font-family: 'Franklin Gothic Book', sans-serif;
+    font-family: 'Franklin Gothic Demi', sans-serif;
     line-height: 1;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -4240,9 +4240,9 @@ footer {
 }
 
 .shotcode-1 p {
-    color: #A6A69B;
+    color: #9f9f93;
     font-family: 'Franklin Gothic Book', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     line-height: 26px;
 }
 
@@ -8282,7 +8282,7 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
     color: #fff;
     font-family: 'Franklin Gothic Demi', sans-serif;
     font-size: 1.3rem;
-    line-height: 49px;
+    line-height: 33px;
     text-transform: uppercase;
     position: relative;
     -webkit-transition: all 0.2s ease-in-out;
@@ -8763,13 +8763,13 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
     border-left-color: transparent;
     border-top-color: transparent;
     border-bottom-color: transparent;
-    color: #ffc527;
+    color: #ffcb00;
 }
 
 .product-tabs .nav-tabs>li.active>a,
 .product-tabs .nav-tabs>li.active>a:hover,
 .product-tabs .nav-tabs>li.active>a:focus {
-    color: #ffc527;
+    color: #ffcb00;
     border: none;
     border-right: 1px solid #ececec;
     background-color: #fff;
@@ -8780,7 +8780,7 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
 }
 
 .product-review li {
-    background-color: #f9f9f9;
+    background-color: #ffcb00;
     padding: 20px;
     margin-bottom: 30px
 }
@@ -9873,7 +9873,6 @@ footer hr {
 .texto-borde {
     text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
-
 .btn_Whats_float {
     position: fixed;
     width: 73px;
@@ -10093,13 +10092,23 @@ footer hr {
 }
 
 .yellow-color b {
-    color: #FBD800;
+    color: #ffcb00;
 }
-
+.title-details {
+    color: #ffcb00 !important;
+    font-family: 'Franklin Gothic Demi', sans-serif !important;
+    font-size: 1.5rem !important;
+}
+.body-details {
+    color: #9f9f93 !important;
+    font-family: 'Franklin Gothic Book', sans-serif;
+    font-size: 1.45rem;
+}
 .btn-gereric {
     background-color: #ffffff !important;
     color: #000000 !important;
     border: 2px solid #000000 !important;
+    line-height: 50px !important;
 }
 
 .btn-gereric:hover,
@@ -10145,8 +10154,9 @@ footer hr {
 
 .conten-stores h5 {
     font-family: 'Franklin Gothic Book', sans-serif;
-    font-size: 1.4rem;
-    color: #A6A69B;
+    font-size: 1.2rem;
+    color: #9f9f93;
+    line-height: 1;
 }
 
 .infProd {

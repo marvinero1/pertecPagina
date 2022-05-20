@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="heading heading-4">
-                            <div class="heading-bg heading-right">
+                            <div class="heading-right">
                                 <p class="mb-0">¿Quiénes somos?</p>
                                 <h2>Nuestra Historia</h2>
                             </div>
@@ -98,16 +98,16 @@
                     comercialización directa.</p>
                 <ul style="text-align: justify;" class="list-unstyled">
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Nuestra vocación de servicio es el motor que impulsa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Nuestra vocación de servicio es el motor que impulsa y
                             dirige nuestras acciones.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Brindamos un excelente servicio a los clientes externos e
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Brindamos un excelente servicio a los clientes externos e
                             internos, en procura de
                             maximizar la satisfacción de sus necesidades y deseos.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Somos personas comprometidas con nuestra Empresa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Somos personas comprometidas con nuestra Empresa y
                             trabajamos en equipo.</p>
                     </li>
                 </ul>
@@ -210,13 +210,13 @@
 
 <!-- productos -->
 
-<section id="sectionProducts" style="background-color: #F6F6F6;">
+<section id="sectionProducts" style="background-color: #F3F3F3;">
     <div class="content section-content">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div class="row">
                     <div class="heading">
-                        <div class="heading-bg heading-right">
+                        <div class="heading-right">
                             <p class="mb-0">Catálogo</p>
                             <h2>Nuestros Productos</h2>
                         </div>
@@ -281,14 +281,14 @@
                         </div>
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 40%; left: 50%; background-color: rgb(206 206 206 / 80%);">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 25%; left: 0%; background-color: rgb(206 206 206 / 80%);">
                                 <span class="glyphicon glyphicon-chevron-left" style="margin-top: -16px;" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </div>
                         </a>
                         <a class="right carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="next">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 40%; right: 50%; background-color: rgb(206 206 206 / 80%);">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 25%; right: 0%; background-color: rgb(206 206 206 / 80%);">
                                 <span class="glyphicon glyphicon-chevron-right" style="margin-top: -16px;"aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </div>
@@ -335,24 +335,26 @@
                     </div>
 
                 </div>
+
+
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
-                        <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                        <div class="product-cart">
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="of-centrals" style="display: none;">
+        <div class="row" id="of-centrals" style="display: none; margin-top: -55px;">
             <!-- Entry Sucursal Cochabamba -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
+                    <a class="img-popup" href="{{ route('oneOfice', ['id'=>2]) }}">
                         <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
@@ -379,7 +381,7 @@
             <!-- Entry Sucursal La Paz -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
+                    <a class="img-popup" href="{{ route('oneOfice', ['id'=>1]) }}">
                         <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
@@ -406,7 +408,7 @@
             <!-- Entry Sucursal Santa Cruz -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
+                    <a class="img-popup" href="{{ route('oneOfice', ['id'=>3]) }}">
                         <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
@@ -437,21 +439,21 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeCbba')">Tiendas Cochabamba<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="storeCbba" style="display: none;">
+        <div class="row" id="storeCbba" style="display: none; margin-top: -55px;">
             @foreach ($tcbba as $tcb)
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
+                    <a class="img-popup" href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}">
                         <img src="http://192.168.31.242:5000/{{ $tcb["imagen"] }}" alt="title" />
                     </a>
                 </div><br>
@@ -481,21 +483,21 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeLaPaz')">Tiendas La Paz<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="storeLaPaz" style="display: none;">
+        <div class="row" id="storeLaPaz" style="display: none; margin-top: -55px;">
             @foreach ($tlapz as $tlz)
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
+                    <a class="img-popup" href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}">
                         <img src="http://192.168.31.242:5000/{{ $tlz["imagen"] }}" alt="title" />
                     </a>
                 </div><br>
@@ -524,21 +526,21 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="storeSantaCruz" style="display: none;">
+        <div class="row" id="storeSantaCruz" style="display: none; margin-top: -55px;">
             @foreach ($tstcz as $tsz)
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
+                    <a class="img-popup" href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}">
                         <img src="http://192.168.31.242:5000/{{ $tsz["imagen"] }}" alt="title" />
                     </a>
                 </div><br>
@@ -752,11 +754,14 @@
 <script>
     function showOfs(Element){
         var x = document.getElementById(Element);
+        console.log(y);
+        console.log(y.class);
         if (x.style.display === "none") {
             x.style.display = "flex";
         } else {
             x.style.display = "none";
         }
+        console.log(y.style);
     }
 
 </script>

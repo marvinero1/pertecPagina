@@ -38,7 +38,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/sucursales', [App\Http\Controllers\HomeController::class, 'getStores'])->name('sucursales');
     Route::get('ofice/{id}', [App\Http\Controllers\HomeController::class, 'getOfice'])->name('oneOfice');
 
-    Route::get('/aboutUs', function () {return view('pages.quienesSomos');});
     Route::get('/contacto', function () {return view('pages.contactos');});
     Route::get('/pedidos', function () {return view('pages.pedidosEst');});
     Route::get('/facturas', function () {return view('pages.verFacturas');});
