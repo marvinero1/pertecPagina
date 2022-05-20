@@ -31,7 +31,7 @@
 </head>
 
 <body>
-	
+
 	<div class="preloader">
 		<div class="spinner">
 			<div class="bounce1">
@@ -44,48 +44,8 @@
 	</div>
 
 	@include('includes.header')
-	
+
 	@include('includes.footer')
 
-
-	<script type="text/javascript"> 
-	jQuery(document).ready(function() { 
-	jQuery("#slider1").revolution({
-		sliderType:"standard",
-		sliderLayout:"auto",
-		delay:6000,
-		disableProgressBar:"on",
-		spinner:"off",
-		navigation: {
-			keyboardNavigation:"off",
-			keyboard_direction: "horizontal",
-			mouseScrollNavigation:"off",
-			onHoverStop:"off",
-			arrows: {
-				style:"arrow",
-				enable:true,
-				hide_onmobile:false,
-				hide_onleave:false,
-				tmp:'',
-				left: {
-					h_align:"left",
-					v_align:"bottom",
-					h_offset:110,
-					v_offset:35
-				},
-				right: {
-					h_align:"left",
-					v_align:"bottom",
-					h_offset:150,
-					v_offset:35
-				}
-			}
-		}, 
-		gridwidth:1230,
-		gridheight:800 ,
-		
-		}); 
-	}); 
-	</script>
 </body>
 </html>

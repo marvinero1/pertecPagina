@@ -1136,7 +1136,10 @@ footer {
 .btn-secondary:hover::after {
     background-color: #093070;
 }
-
+.btn-gereric:hover::before,
+.btn-gereric:hover::after {
+    background-color: #000000;
+}
 .btn-primary.btn-white {
     background-color: #fff !important;
     border-color: #fff;

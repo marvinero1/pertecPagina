@@ -8289,23 +8289,24 @@ jQuery(document).ready(function () {
       mouseScrollNavigation: "off",
       onHoverStop: "off",
       arrows: {
-        style: "arrow",
+        enable: false
+      },
+      bullets: {
+        style: "slider-bullet",
         enable: true,
         hide_onmobile: false,
         hide_onleave: false,
-        tmp: '',
-        left: {
-          h_align: "left",
-          v_align: "bottom",
-          h_offset: 110,
-          v_offset: 35
-        },
-        right: {
-          h_align: "left",
-          v_align: "bottom",
-          h_offset: 150,
-          v_offset: 35
-        }
+        hide_delay: 200,
+        hide_delay_mobile: 1200,
+        hide_under: 0,
+        hide_over: 9999,
+        tmp: '<span></span>',
+        direction: "horizontal",
+        space: 5,
+        h_align: "center",
+        v_align: "center",
+        h_offset: 0,
+        v_offset: 280
       }
     },
     gridwidth: 1230,
