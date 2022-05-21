@@ -1185,7 +1185,7 @@ img.tp-slider-alternative-image	{
 
 .tp-tabs,
 .tp-thumbs,
-.tp-bullets						{	position:absolute; display:block; z-index:1000; top:0px; left:0px;}
+.tp-bullets						{	position:absolute; display:block; z-index:1000; top:0px; left:0px;transform: matrix(1, 0, 0, 1, -6, 345) !important;}
 
 .tp-tab,
 .tp-thumb 						{	cursor: pointer; position:absolute;opacity:0.5;  box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}

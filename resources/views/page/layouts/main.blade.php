@@ -27,7 +27,6 @@
 
 	<script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
 	<script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
-	
 </head>
 
 <body>
@@ -56,8 +55,8 @@
 		</a>
     </div>
     <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" class="btn_Whats_float" target="_blank">
-        <i class="fa fa-whatsapp btn_Inf_float_my-float" style="margin-top: 2px; font-size: 1.5rem;"></i>
-        <label style="position: relative; top: -4px; font-weight: 1 !important;">Ayuda</label>
+        <i class="fa fa-whatsapp btn_Inf_float_my-float" style="position: relative; top: -5px;"></i>
+        <label style="position: relative; top: -8px;">&nbsp;Ayuda</label>
     </a>
 
     
@@ -66,43 +65,45 @@
     </script>
 
 	<script type="text/javascript">
-	jQuery(document).ready(function() {
-	jQuery("#slider1").revolution({
-		sliderType:"standard",
-		sliderLayout:"auto",
-		delay:6000,
-		disableProgressBar:"on",
-		spinner:"off",
-		navigation: {
-			keyboardNavigation:"off",
-			keyboard_direction: "horizontal",
-			mouseScrollNavigation:"off",
-			onHoverStop:"off",
-			arrows: {
-				style:"arrow",
-				enable:true,
-				hide_onmobile:false,
-				hide_onleave:false,
-				tmp:'',
-				left: {
-					h_align:"left",
-					v_align:"bottom",
-					h_offset:110,
-					v_offset:35
-				},
-				right: {
-					h_align:"left",
-					v_align:"bottom",
-					h_offset:150,
-					v_offset:35
-				}
-			}
-		},
-		gridwidth:1230,
-		gridheight:800 ,
 
-		});
-	});
+	jQuery(document).ready(function() {
+    jQuery("#slider1").revolution({
+       sliderType:"standard",
+       sliderLayout:"auto",
+       delay:7000,
+       disableProgressBar:"on",
+       spinner:"off",
+       navigation: {
+         keyboardNavigation:"off",
+         keyboard_direction: "horizontal",
+         mouseScrollNavigation:"off",
+         onHoverStop:"off",
+         arrows: {
+			enable:false,
+		},
+		bullets:{
+            style:"slider-bullet",
+            enable:true,
+            hide_onmobile:false,
+            hide_onleave:false,
+            hide_delay:100,
+            hide_delay_mobile:1200,
+            hide_under:0,
+            hide_over:9999,
+            tmp:'<span></span>',
+            direction:"horizontal",
+            space:5,
+            h_align:"center",
+            v_align:"center",
+            h_offset:0,
+            v_offset:280
+        },
+     },
+       gridwidth:1230,
+       gridheight:800 ,
+
+     });
+ });
 	</script>
 
 <script>
