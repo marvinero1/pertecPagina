@@ -573,25 +573,19 @@
 
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="row" style="background-color: #FBD800;">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('../assets/images/features/4.jpg');"></div>
+        <div class="row alto-row-callCenter" style="background-color: #FBD800;">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('../assets/images/features/4.jpg');"></div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table;">
-                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center;">
-                            {{-- <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
-                                Ahora contamos con registro de Bouchers
-                            </p> --}}
-                            <p class="p-title">CALL CENTER</p>
-                            <br>
-                            <img src="../assets/images/favicon/AGENTE 1-04.png" style="width: 66px !important;">
+                        <div class="spaceText" style="display: table-cell; vertical-align: middle; text-align: center;">
+                            <p class="p-title">CALL CENTER</p><br>
+                            <img src="../assets/images/favicon/AGENTE 1-04.png" style="width: 48px !important;">
                             <P class="p-subtitle">Atención al cliente</P>
                             <p class="p-texto">
                                 Contamos con personal altamente calificado para brindarle asesoramiento,
                                 información y soluciones integrales a nivel nacional.
                             </p>
-                            <br><br>
-                            <img src="../assets/images/favicon/AGENTE 2-05.png" style="width: 66px !important;">
+                            <br>
+                            <img src="../assets/images/favicon/AGENTE 2-05.png" style="width: 48px !important;">
                             <P class="p-subtitle">Toma de pedidos</P>
                             <p class="p-texto">
                                 Contamos con la tecnología adecuada que nos permite la toma de
@@ -599,10 +593,6 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <!-- .row end -->
-            </div>
-            <!-- .col-md-12 -->
         </div>
         <!-- .row end -->
     </div>
@@ -618,7 +608,7 @@
                     </div>
                 </div>
                 <!-- .widget end -->
-                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
                         <img src="../assets/images/favicon/WHATSAPP.png" style="margin-top: -15px;" width="30px;">
                     </div>
@@ -627,7 +617,7 @@
                     </div>
                 </div>
                 <!-- .widget end -->
-                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right">
                     <div class="widget-contact-icon pull-left">
                         <img src="../assets/images/favicon/MAIL.png" style="margin-top: -15px;" width="30px;">
                     </div>

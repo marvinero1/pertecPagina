@@ -1030,7 +1030,7 @@ footer {
 
 .col-img {
     height: 660px;
-    padding: 60px;
+    padding: 160px;
     overflow: hidden
 }
 
@@ -5549,7 +5549,7 @@ footer {
 }
 
 .service-2 .col-img {
-    height: 716px;
+    height: 100%;
 }
 
 .service-2 .tab-pane h3 {
@@ -5578,7 +5578,7 @@ footer {
 }
 
 .service-2 .col-content {
-    padding: 100px;
+    padding: 20px;
 }
 
 /* service #3 */
@@ -5965,7 +5965,7 @@ footer {
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)and (max-width : 767px) {
+@media only screen and (min-width : 576px)and (max-width : 767px) {
 
     .single-service .service-img img {
         width: 100%;
@@ -5994,9 +5994,11 @@ footer {
 
     .service-2 .col-content {
         padding-right: 15px;
-        padding-top: 70px;
         padding-left: 15px;
         text-align: center;
+    }
+    .alto-row-callCenter {
+        height: 580px !important;
     }
 
     .service .service-img2>img {
@@ -6020,8 +6022,8 @@ footer {
         margin-bottom: 15px;
     }
 
-    .service-2 .col-content {
-        padding: 50px 15px 50px 50px;
+    .alto-row-callCenter {
+        height: 530px !important;
     }
 
     .service .service-img2>img {
@@ -6071,10 +6073,7 @@ footer {
         margin-left: auto
     }
 
-    .service-2 .col-content {
-        padding-right: 90px;
-        padding-top: 70px;
-    }
+
 
     .service .service-img2>img {
         left: auto
@@ -9492,7 +9491,7 @@ footer hr {
     }
 
     .widgets-contact .widget-contact-info p:last-child {
-        font-size: 12px;
+        font-size: 1.4rem;
     }
 
     .widgets-contact .widget {
@@ -9989,6 +9988,20 @@ footer hr {
         margin-right: -450px;
         margin-left: 71px;
     }
+    .widget-contact-center{
+        padding-left: 0px !important;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+@media (min-width: 1190px) {
+    .widget-contact-right{
+        padding-right: 40px !important;
+        display: flex;
+        justify-content: right;
+    }
+
 }
 @media (max-width: 991px) {
     .table-respon {
@@ -10014,6 +10027,9 @@ footer hr {
     .section-content {
         padding-left: 50px;
         padding-right: 50px;
+    }
+    .alto-row-callCenter{
+        height: 470px;
     }
 }
 
@@ -10091,8 +10107,14 @@ footer hr {
     background-color: #093070c2;
 }
 
-.yellow-color b {
+.yellow-color b{
     color: #ffcb00;
+}
+
+.table-prod-inf h4 {
+    color: #ffcb00;
+    font-family: 'Franklin Gothic Demi', sans-serif !important;
+
 }
 .title-details {
     color: #ffcb00 !important;
@@ -10137,7 +10159,8 @@ footer hr {
     font-size: 1.5rem;
     color: #000000;
     letter-spacing: 1px;
-    ;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .font-frank-demi {
@@ -10149,7 +10172,7 @@ footer hr {
 }
 
 .font-frank-medium {
-    font-family: 'Franklin Gothic Medium', sans-serif;
+    font-family: 'Franklin Gothic Medium', sans-serif !important;
 }
 
 .conten-stores h5 {
@@ -10273,3 +10296,8 @@ footer hr {
         bottom:0;
         right:0;
 }
+
+.spaceText p {
+    margin-bottom: 0.5rem;
+}
+

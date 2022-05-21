@@ -68,9 +68,10 @@
                     @endif
                     @endforeach
                 </div> --}}
+
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 product-content">
-                <hr class="mt-50 mb-30">
+            <div class="col-xs-12 col-sm-12 col-md-7 product-content">
+                {{-- <hr class="mt-50 mb-30"> --}}
                 <div class="product-tabs mb-50">
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active">
@@ -84,9 +85,9 @@
                                     @foreach ( $b as $k => $v)
                                     @if ($v && $k!="id" && $k!="nombre_producto" && $k!="imagen" &&
                                     $k!="imagen_matriz" && $k!="created_at" && $k!="updated_at")
-                                    <tr style="text-transform: uppercase;">
-                                        <td class="title-details">{{ $k }}</td>
-                                        <td class="body-details">{{ $v }}</td>
+                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                        <td class="title-details"><h4>{{ $k }}</h4></td>
+                                        <td class="body-details"><h5 class="font-frank-medium">{{ $v }}</h5></td>
                                     </tr>
                                     @endif
                                     @endforeach
