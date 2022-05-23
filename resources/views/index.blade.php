@@ -3,75 +3,76 @@
 @section('content')
 <!-- carrusel -->
 <section id="hero" class="hero hero-4">
-
     <!-- START REVOLUTION SLIDER 5.0 -->
     <div class="rev_slider_wrapper ">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
-                @foreach ($carusel as $carusels)
-                <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
-                data-easeout="Power4.easeInOut" data-masterspeed="1000">
-                <!-- MAIN IMAGE -->
-                    <div class="fondo con"></div>
-                    
-                    <div class="tp-bgimg defaultimg fondo slide" 
-                        style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover; 
-                        background-position: center center; width: 100%; height: 100%; opacity: 1;
-                        visibility: inherit; z-index: 20;" src="http://192.168.31.242:5000/{{ $carusels->imagen }}">
-                    </div>
-                  
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                        data-whitespace="nowrap" data-width="['150','70','70','100']"
-                        data-height="['150','70','70','100']" data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                        <img src="http://192.168.31.242:5000/{{ $carusels->imagen_icono }}"
-                            alt="hook" />
-                    </div>
+                @foreach($carusel as $carusels)
+                    <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
+                        data-easeout="Power4.easeInOut" data-masterspeed="1000">
+                        <!-- MAIN IMAGE -->
+                        <div class="tp-bgimg defaultimg fondo slide img" 
+                            style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover; 
+                            background-position: center center; width: 100%; height: 100%; opacity: 1;
+                            visibility: inherit; z-index: 20;" src="http://192.168.31.242:5000/{{ $carusels->imagen }}">
+                            <div class="fondo_con"></div>
+                        </div>
+                        
+                        
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
+                            data-whitespace="nowrap" data-width="['150','70','70','100']"
+                            data-height="['150','70','70','100']" data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
+                            <img src="http://192.168.31.242:5000/{{ $carusels->imagen_icono }}"
+                                alt="hook" />
+                                
+                        </div>
 
+                        <!-- LAYER NR. 2 -->
+                        <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                            data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
+                            data-lineheight="['100','45','25','25']"
+                            data-color="#ffc527" style="z-index: 999 !important;">
+                            {{-- {{ $carusels->titulo }} --}}
+                            {{ $carusels->titulo }}
+                        </h1>
 
-                    <!-- LAYER NR. 2 -->
-                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                        data-lineheight="['100','45','25','25']"
-                        data-color="#ffc527" style="z-index: 999 !important;">
-                       {{ $carusels->titulo }}
-                    </h1>
-
-                    <!-- LAYER NR. 3 -->
-                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
-                        data-lineheight="['50','26','25','25']"
-                        data-color="#fff" style="z-index: 999 !important;">
-                        {{ $carusels->sub_titulo }}
-                    </div>
-                </li>
-            @endforeach
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                            data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
+                            data-lineheight="['50','26','25','25']"
+                            data-color="#fff" style="z-index: 999 !important;">
+                            {{-- {{ $carusels->sub_titulo }} --}}
+                            {{ $carusels->sub_titulo }}
+                        </div>
+                        
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>
-    
     <!-- END OF SLIDER WRAPPER -->
 </section>
 
 
-<!-- acerca de nosotros -->
 
+<!-- acerca de nosotros -->
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
     <div class="content section-content">
         <div class="row slide">
@@ -207,11 +208,7 @@
 
 
 
-
-
-
 <!-- productos -->
-
 <section id="sectionProducts" style="background-color: #F6F6F6;">
     <div class="content section-content">
         <div class="row">
@@ -296,10 +293,6 @@
     </div>
     <!-- .container end -->
 </section>
-
-
-
-
 
 {{-- Oficinas y tiendas --}}
 <section id="sectionStores">
@@ -547,9 +540,6 @@
     <!-- .container end -->
 </section>
 
-
-
-
 {{--
 <!-- Productos Promocion -->
 <section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
@@ -640,8 +630,6 @@
 <!-- #cta-6 end -->
 <div class="clearfix mb-150">
 </div> --}}
-
-
 
 
 
@@ -738,10 +726,6 @@
 	<!-- .container end -->
 </section> --}}
 
-
-
-
-
 {{-- pedidos section --}}
 
 {{-- <section id="service-2" class="service service-2 bg-gray pb-0">
@@ -772,10 +756,6 @@
 </section>
 <div class="cleafix mb-150">
 </div> --}}
-
-
-
-
 
 {{-- depositos bancarios --}}
 {{--
@@ -930,7 +910,7 @@
 
 <style type="text/css">
     .slide {
-      animation-duration: 4s;
+      animation-duration: 2s;
       animation-name: slidein;
     }
     .tp-bgimg defaultimg{
@@ -941,7 +921,7 @@
         animation-duration: 3s;
         animation-name: tdn;
     }
-    .fondo.con::after {
+    .fondo_con {
     content: "";
     position: absolute;
     top: 0;
@@ -954,11 +934,13 @@
 
     @keyframes slidein {
     from{
-        margin-left: 100%;
+        margin-left: 0%;
+        margin-top: 100%;
         }
 
         to{
-            margin-left: 0%;
+            margin-down: 100%;
+            
         }
     }
     @keyframes tdn{

@@ -26,8 +26,9 @@ class HomeController extends Controller
     public function index(){
         $hash=new Hashids();
         $carusel = Carusel::all();
+        $a = count($carusel); 
         $producto = Producto::inRandomOrder()->paginate('4');
 
-        return view('index', ['hash' => $hash,'carusel' => $carusel, 'producto' => $producto ]);
+        return view('index', ['hash' => $hash,'carusel' => $carusel, 'producto' => $producto , 'a'=>$a]);
     }
 }
