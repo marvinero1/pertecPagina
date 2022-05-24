@@ -549,8 +549,8 @@
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
             <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('/assets/images/system/4.jpg');"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table;">
-                <div class="spaceText" style="display: table-cell; vertical-align: middle; text-align: center;">
-                    <p class="p-title">CALL CENTER</p>
+                <div class="spaceText" style="display: table-cell; vertical-align: middle; text-align: center; padding-top: 20px;">
+                    <p class="p-title">CALL CENTER</p><br>
                     <img src="/assets/images/system/AGENTE 1-04.png" style="width: 48px !important;">
                     <P class="p-subtitle">Atención al cliente</P>
                     <p class="p-texto">
