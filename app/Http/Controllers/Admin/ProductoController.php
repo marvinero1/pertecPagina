@@ -27,6 +27,28 @@ class ProductoController extends Controller
         return view('admin.products.index', ['producto' => $producto, 'hash' => $hash]);
     }
 
+    public function productsFront(Request $request){
+        
+        $hash=new Hashids();
+        $nombre_producto = $request->get('buscarpor');
+        $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->orderBy('nombre_producto')->paginate(10);
+        
+        return view('page.sections.productos.catalogo', ['producto' => $producto, 'hash' => $hash]);
+    }
+
+    public function prom_products(){
+        $producto = Producto::where('promocion', 'si')->latest()->paginate(10);
+        
+        return view('page.sections.productos.promocion', ['producto' => $producto]);
+    }
+
+    public function nov_products(){
+       
+        $producto = Producto::where('novedad', 'si')->latest()->paginate(10);
+        
+        return view('page.sections.productos.novedad', ['producto' => $producto]);
+    }
+
     public function productosPromocion(Request $request){
         $hash = new Hashids();
         $nombre_producto = $request->get('buscarpor');
@@ -42,40 +64,28 @@ class ProductoController extends Controller
         return view('admin.products.novedad', ['producto' => $producto]);
     }
 
-    public function getProductsPromotion(){
-        $producto = Producto::where('promocion', 'si')->get();
-        
-        return response()->json($producto, 200);
-    }
-
-    public function getProductsNovelty(){
-        $producto = Producto::where('novedad', 'si')->get();
-        
-        return response()->json($producto, 200);
-    }
-
     public function getProducts(){
         $producto = Producto::all();
 
         return response()->json($producto, 200);
     }
 
-    public function getProductsLessSales(){
-        $productoLessSales = Producto::where('productos.denominacion', '=', "nccopa")->get();
+    // public function getProductsPromotion(){
+    //     $producto = Producto::where('promocion', 'si')->get();
+        
+    //     return response()->json($producto, 200);
+    // }
 
-        return response()->json($productoLessSales, 200);
-    }
+    // public function getProductsNovelty(){
+    //     $producto = Producto::where('novedad', 'si')->get();
+        
+    //     return response()->json($producto, 200);
+    // }
 
-    public function getProductsStagnat(){
-        $productoStagna = Producto::where('productos.denominacion', '=', "chipb")->get();
-
-        return response()->json($productoStagna, 200);
-    }
-
-    public function getProductsId($id){
-        $producto = Producto::findOrFail($id);
-        return response()->json($producto, 200);
-    }
+    // public function getProductsId($id){
+    //     $producto = Producto::findOrFail($id);
+    //     return response()->json($producto, 200);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -167,6 +177,14 @@ class ProductoController extends Controller
         $productos = Producto::findOrFail($hash_id);
        
         return view('admin.products.show', compact('productos')); 
+    }
+
+    public function showFrontend($id){
+        $hash = new Hashids();
+        $hash_id = $hash->decodeHex($id);
+        $producto_Id = Producto::findOrFail($hash_id);
+       
+        return view('admin.products.show', compact('producto_Id')); 
     }
     /**
      * Show the form for editing the specified resource.

@@ -27,6 +27,11 @@ class TiendaController extends Controller{
         return view('admin.tiends.index', ['tienda' => $tienda, 'hash' => $hash]);
     }
 
+    public function tiendasOficinas(){
+        $tienda = Tienda::all();
+        return view('page.sections.tiendas.tiendas_oficinas', ['tienda' => $tienda]);
+    }
+
     public function getStores(){
         $tienda = Tienda::all();
 

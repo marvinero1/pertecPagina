@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\Access\User\EloquentUserRepository;
 use Validator;
 use Hashids\Hashids;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {   
     /**
@@ -39,6 +39,12 @@ class UserController extends Controller
         // $users = DB::table('users')->with('roles')->orderByDesc('id')->paginate(10);
         //return view('admin.users.index', ['users' => User::with('roles')->sortable(['email' => 'asc'])->paginate()]);
         return view('admin.users.index', compact('users','hash'));
+    }
+
+    public function profileUser(){
+        $id = Auth::id();
+        $user_id = User::findOrFail($id);
+        return view('page.sections.usuario.profile', compact('user_id'));
     }
 
     public function getUsers(){

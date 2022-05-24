@@ -1,26 +1,24 @@
+
+
 <?php $__env->startSection('content'); ?>
 <!-- carrusel -->
 <section id="hero" class="hero hero-4">
     <!-- START REVOLUTION SLIDER 5.0 -->
     <div class="rev_slider_wrapper ">
         <div id="slider1" class="rev_slider" data-version="5.0">
-                  
-            
-
             <ul>
-                
                 <?php $__currentLoopData = $carusel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $carusels): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
                         data-easeout="Power4.easeInOut" data-masterspeed="1000">
                         <!-- MAIN IMAGE -->
-                        <div class="tp-bgimg defaultimg fondo slide img" 
-                            style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover; 
+                        <div class="tp-bgimg defaultimg fondo slide img"
+                            style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
                             background-position: center center; width: 100%; height: 100%; opacity: 1;
                             visibility: inherit; z-index: 20;" src="http://192.168.31.242:5000/<?php echo e($carusels->imagen); ?>">
                             <div class="fondo_con"></div>
                         </div>
-                        
-                        
+
+
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
                             data-whitespace="nowrap" data-width="['150','70','70','100']"
@@ -32,7 +30,7 @@
                             data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
                             <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen_icono); ?>"
                                 alt="hook" />
-                                
+
                         </div>
 
                         <!-- LAYER NR. 2 -->
@@ -65,11 +63,10 @@
                             <?php echo e($carusels->sub_titulo); ?>
 
                         </div>
-                        
+
                     </li>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
-              
         </div>
     </div>
     <!-- END OF SLIDER WRAPPER -->
@@ -85,7 +82,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="heading heading-4">
-                            <div class="heading-bg heading-right">
+                            <div class="heading-right">
                                 <p class="mb-0">¿Quiénes somos?</p>
                                 <h2>Nuestra Historia</h2>
                             </div>
@@ -106,16 +103,16 @@
                     comercialización directa.</p>
                 <ul style="text-align: justify;" class="list-unstyled">
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Nuestra vocación de servicio es el motor que impulsa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Nuestra vocación de servicio es el motor que impulsa y
                             dirige nuestras acciones.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Brindamos un excelente servicio a los clientes externos e
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Brindamos un excelente servicio a los clientes externos e
                             internos, en procura de
                             maximizar la satisfacción de sus necesidades y deseos.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Somos personas comprometidas con nuestra Empresa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Somos personas comprometidas con nuestra Empresa y
                             trabajamos en equipo.</p>
                     </li>
                 </ul>
@@ -220,7 +217,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div class="row">
                     <div class="heading">
-                        <div class="heading-bg heading-right">
+                        <div class="heading-right">
                             <p class="mb-0">Catálogo</p>
                             <h2>Nuestros Productos</h2>
                         </div>
@@ -234,12 +231,12 @@
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner content" role="listbox">
-                        
+
                         <div class="item active">
-                            
+
                                 <div class="row">
                                     <!-- product #1 -->
-                                
+
                                     <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
@@ -258,15 +255,15 @@
                                                 <a href="#"><?php echo e($productos->nombre_producto); ?></a>
                                             </h4>
                                         </div>
-                                        
+
                                     </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            
+
                                 </div>
-                            
+
                         </div>
-                        
-                       
+
+
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                             <div style="width: 50px; height: 49px; position: absolute; top: 40%; left: 50%; background-color: rgb(206 206 206 / 80%);">
@@ -317,25 +314,27 @@
                     </div>
 
                 </div>
+
+
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
-                        <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                        <div class="product-cart">
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="of-centrals" style="display: none;">
+        <div class="row" id="of-centrals" style="display: none; margin-top: -55px;">
             <!-- Entry Sucursal Cochabamba -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="assets/images/system/1.jpg" alt="title" />
+                    <a class="img-popup" href="">
+                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -361,8 +360,8 @@
             <!-- Entry Sucursal La Paz -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="assets/images/system/1.jpg" alt="title" />
+                    <a class="img-popup" href="">
+                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -388,8 +387,8 @@
             <!-- Entry Sucursal Santa Cruz -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="assets/images/system/1.jpg" alt="title" />
+                    <a class="img-popup" href="">
+                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -419,66 +418,22 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeCbba')">Tiendas Cochabamba<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="storeCbba" style="display: none;">
-          
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
-                <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="http://192.168.31.242:5000/" alt="title" />
-                    </a>
-                </div><br>
-                <div class="entry-title">
-                    <h3>
-                        <a href="">Tienda</a>
-                    </h3>
-                </div>
-                <!-- .entry-title end -->
-                <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: </h5>
-                    <h5>Telf:</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
-                        <span>Más Información</span>
-                    </a>
-                </div>
-                <!-- .entry-content end -->
-            </div>
-         
-
-        </div>
-
-
-        <!-- tiendas la paz-->
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
-                        <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
-                                onclick="showOfs('storeLaPaz')">Tiendas La Paz<i
-                                class="fa fa-plus ml-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- .col-md-12 end -->
-                </div>
-            </div>
-        </div>
-        <div class="row" id="storeLaPaz" style="display: none;">
+        <div class="row" id="storeCbba" style="display: none; margin-top: -55px;">
             
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="http://192.168.31.242:5000/" alt="title" />
+                    <a class="img-popup" href="">
+                        
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -496,7 +451,51 @@
                 </div>
                 <!-- .entry-content end -->
             </div>
-        
+            
+
+        </div>
+
+
+        <!-- tiendas la paz-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                        <div class="product-cart heading-right">
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                                onclick="showOfs('storeLaPaz')">Tiendas La Paz<i
+                                class="fa fa-plus ml-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- .col-md-12 end -->
+                </div>
+            </div>
+        </div>
+        <div class="row" id="storeLaPaz" style="display: none; margin-top: -55px;">
+            
+            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                <div class="entry-img">
+                    <a class="img-popup" href="">
+                        <img src="" alt="title" />
+                    </a>
+                </div><br>
+                <div class="entry-title">
+                    <h3>
+                        <a href="">Tienda </a>
+                    </h3>
+                </div>
+                <!-- .entry-title end -->
+                <div class="entry-content conten-stores">
+                    <h5 style="text-transform: capitalize;">Dirección:</h5>
+                    <h5>Telf: </h5>
+                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                        <span>Más Información</span>
+                    </a>
+                </div>
+                <!-- .entry-content end -->
+            </div>
+            
         </div>
 
 
@@ -506,21 +505,22 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="storeSantaCruz" style="display: none;">
-           
+        
+        <div class="row" id="storeSantaCruz" style="display: none; margin-top: -55px;">
+            
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
+                    <a class="img-popup" href="">
                         <img src="http://192.168.31.242:5000/" alt="title" />
                     </a>
                 </div><br>
@@ -546,71 +546,31 @@
 </section>
 
 
-
-
-<!-- Productos Promocion -->
-
-
-
-
-
-
-
-<!-- Productos Novedosos -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- call center -->
 
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="row" style="background-color: #FBD800;">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('/assets/images/system/4.jpg');"></div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table;">
-                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center;">
-                            
-                            <p class="p-title">CALL CENTER</p>
-                            <br>
-                            <img src="/assets/images/system/AGENTE 1-04.png" style="width: 66px !important;">
-                            <P class="p-subtitle">Atención al cliente</P>
-                            <p class="p-texto">
-                                Contamos con personal altamente calificado para brindarle asesoramiento,
-                                información y soluciones integrales a nivel nacional.
-                            </p>
-                            <br><br>
-                            <img src="/assets/images/system/AGENTE 2-05.png" style="width: 66px !important;">
-                            <P class="p-subtitle">Toma de pedidos</P>
-                            <p class="p-texto">
-                                Contamos con la tecnología adecuada que nos permite la toma de
-                                pedidos en tiempo real.
-                            </p>
-                        </div>
-                    </div>
+        <div class="row alto-row-callCenter" style="background-color: #FBD800;">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('/assets/images/system/4.jpg');"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table;">
+                <div class="spaceText" style="display: table-cell; vertical-align: middle; text-align: center; padding: 95px 50px 95px 50px;">
+                    <p class="p-title">CALL CENTER</p><br>
+                    <img src="/assets/images/system/AGENTE 1-04.png" style="width: 48px !important;">
+                    <P class="p-subtitle">Atención al cliente</P>
+                    <p class="p-texto">
+                        Contamos con personal altamente calificado para brindarle asesoramiento,
+                        información y soluciones integrales a nivel nacional.
+                    </p>
+                    <br><br>
+                    <img src="/assets/images/system/AGENTE 2-05.png" style="width: 48px !important;">
+                    <P class="p-subtitle">Toma de pedidos</P>
+                    <p class="p-texto">
+                        Contamos con la tecnología adecuada que nos permite la toma de
+                        pedidos en tiempo real.
+                    </p>
                 </div>
-                <!-- .row end -->
             </div>
-            <!-- .col-md-12 -->
         </div>
-        <!-- .row end -->
     </div>
     <div class="container-fluid">
         <div class="widgets-contact">
@@ -624,7 +584,7 @@
                     </div>
                 </div>
                 <!-- .widget end -->
-                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
                         <img src="/assets/images/system/WHATSAPP.png" style="margin-top: -15px;" width="30px;">
                     </div>
@@ -633,7 +593,7 @@
                     </div>
                 </div>
                 <!-- .widget end -->
-                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right">
                     <div class="widget-contact-icon pull-left">
                         <img src="/assets/images/system/MAIL.png" style="margin-top: -15px;" width="30px;">
                     </div>
@@ -685,7 +645,7 @@
 
         to{
             margin-down: 100%;
-            
+
         }
     }
     @keyframes  tdn{

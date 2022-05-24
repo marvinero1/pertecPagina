@@ -9998,7 +9998,7 @@ footer hr {
     }
 
     .user-icon-margin {
-        margin-left: 14px;
+        margin-left: 0px;
     }
 
     .section-content {
@@ -10006,7 +10006,7 @@ footer hr {
         padding-right: 50px;
     }
     .alto-row-callCenter{
-        height: 470px;
+        height: 650px;
     }
 }
 

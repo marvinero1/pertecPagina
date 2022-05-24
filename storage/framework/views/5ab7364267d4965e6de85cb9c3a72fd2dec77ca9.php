@@ -24,25 +24,23 @@
 							<h4 class="text-capitalize text-white p-subtitle">Mapa del sitio</h4>
 							<ul class="list-unstyled">
 								<li>
-									<a href="/" class=" text-white p-texto"> Inicio</a>
+									<a href="/"> Inicio</a>
 								</li>
 								<li>
-									<a href="/aboutUs"> ¿Quiénes Somos?</a>
+									<a href="/historia"> ¿Quiénes Somos?</a>
 								</li>
 								<li>
-									<a href="/sucursales"> Oficinas y tiendas</a>
+									<a href="/tiendasOfinasPertec"> Oficinas y tiendas</a>
 								</li>
 								<li>
-									<a href="/fullProducts"> Productos</a>
+									<a href="/productos"> Productos</a>
+								</li>
+								
+								<li>
+									<a href="/contactanos"> Contacto</a>
 								</li>
 								<li>
-									<a href="#"> Facturas</a>
-								</li>
-								<li>
-									<a href="/contacto"> Contacto</a>
-								</li>
-								<li>
-									<a href="#"> Trabaja con nosotros</a>
+									<a href="/contactanos"> Trabaja con nosotros</a>
 								</li>
 							</ul>
 						</div>
@@ -55,7 +53,7 @@
 							<h4 class="text-capitalize text-white p-subtitle">Legal</h4>
 							<ul class="list-unstyled">
 								<li>
-									<a href="/termCondi"> Términos y Condiciones</a>
+									<a> Términos y Condiciones</a>
 								</li>
 								<li>
 									<a href="/polPriv"> Política de privacidad</a>

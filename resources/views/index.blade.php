@@ -331,13 +331,13 @@
             <!-- Entry Sucursal Cochabamba -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="{{ route('oneOfice', ['id'=>2]) }}">
+                    <a class="img-popup" href="">
                         <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('oneOfice', ['id'=>2]) }}">Oficina Cochabamba</a>
+                        <a href="">Oficina Cochabamba</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
@@ -346,7 +346,7 @@
                     <h5>Telf: (4) 4716000 (Líneas Rotativas)</h5>
                     <h5>Fax: (4) 4111632</h5>
                     <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>2]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -358,13 +358,13 @@
             <!-- Entry Sucursal La Paz -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="{{ route('oneOfice', ['id'=>1]) }}">
+                    <a class="img-popup" href="">
                         <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('oneOfice', ['id'=>1]) }}">Oficina La Paz</a>
+                        <a href="">Oficina La Paz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
@@ -373,7 +373,7 @@
                     <h5>Telf: (2) 2822336</h5>
                     <h5>Fax: (2) 2820619</h5>
                     <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>1]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -385,13 +385,13 @@
             <!-- Entry Sucursal Santa Cruz -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="{{ route('oneOfice', ['id'=>3]) }}">
+                    <a class="img-popup" href="">
                         <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('oneOfice', ['id'=>3]) }}">Oficina Santa Cruz</a>
+                        <a href="">Oficina Santa Cruz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
@@ -400,7 +400,7 @@
                     <h5>Telf: (3) 3470113</h5>
                     <h5>Fax: (3) 3111228</h5>
                     <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>3]) }}"><i class="fa fa-plus"></i>
+                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -427,29 +427,29 @@
             </div>
         </div>
         <div class="row" id="storeCbba" style="display: none; margin-top: -55px;">
-            @foreach ($tcbba as $tcb)
+            {{-- @foreach ($tcbba as $tcb) --}}
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}">
-                        <img src="http://192.168.31.242:5000/{{ $tcb["imagen"] }}" alt="title" />
+                    <a class="img-popup" href="">
+                        {{-- <img src="http://192.168.31.242:5000/{{ $tcb["imagen"] }}" alt="title" /> --}}
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}">Tienda {{ $tcb["nombre_tienda"] }}</a>
+                        <a href="">Tienda </a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: {{ $tcb["direccion"] }}</h5>
-                    <h5>Telf: {{ $tcb["telefono"] }}</h5>
-                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}"><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;">Dirección: </h5>
+                    <h5>Telf: </h5>
+                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
                 <!-- .entry-content end -->
             </div>
-            @endforeach
+            {{-- @endforeach --}}
 
         </div>
 
@@ -471,29 +471,29 @@
             </div>
         </div>
         <div class="row" id="storeLaPaz" style="display: none; margin-top: -55px;">
-            @foreach ($tlapz as $tlz)
+            {{-- @foreach ($tlapz as $tlz) --}}
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}">
-                        <img src="http://192.168.31.242:5000/{{ $tlz["imagen"] }}" alt="title" />
+                    <a class="img-popup" href="">
+                        <img src="" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}">Tienda {{ $tlz["nombre_tienda"] }}</a>
+                        <a href="">Tienda </a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: {{ $tlz["direccion"] }}</h5>
-                    <h5>Telf: {{ $tlz["telefono"] }}</h5>
-                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}"><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;">Dirección:</h5>
+                    <h5>Telf: </h5>
+                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
                 <!-- .entry-content end -->
             </div>
-            @endforeach
+            {{-- @endforeach --}}
         </div>
 
 
@@ -513,30 +513,31 @@
                 </div>
             </div>
         </div>
+        
         <div class="row" id="storeSantaCruz" style="display: none; margin-top: -55px;">
-            @foreach ($tstcz as $tsz)
+            {{-- @foreach ($tstcz as $tsz) --}}
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}">
-                        <img src="http://192.168.31.242:5000/{{ $tsz["imagen"] }}" alt="title" />
+                    <a class="img-popup" href="">
+                        <img src="http://192.168.31.242:5000/" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}">Tienda {{ $tsz["nombre_tienda"] }}</a>
+                        <a href="">Tienda </a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: {{ $tsz["direccion"] }}</h5>
-                    <h5>Telf: {{ $tsz["telefono"] }}</h5>
-                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}"><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;">Dirección: </h5>
+                    <h5>Telf: </h5>
+                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
                 <!-- .entry-content end -->
             </div>
-            @endforeach
+            {{-- @endforeach --}}
         </div>
     </div>
     <!-- .container end -->
@@ -550,7 +551,7 @@
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
             <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('/assets/images/system/4.jpg');"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table;">
-                <div class="spaceText" style="display: table-cell; vertical-align: middle; text-align: center; padding-top: 20px;">
+                <div class="spaceText" style="display: table-cell; vertical-align: middle; text-align: center; padding: 95px 50px 95px 50px;">
                     <p class="p-title">CALL CENTER</p><br>
                     <img src="/assets/images/system/AGENTE 1-04.png" style="width: 48px !important;">
                     <P class="p-subtitle">Atención al cliente</P>
@@ -558,7 +559,7 @@
                         Contamos con personal altamente calificado para brindarle asesoramiento,
                         información y soluciones integrales a nivel nacional.
                     </p>
-                    <br>
+                    <br><br>
                     <img src="/assets/images/system/AGENTE 2-05.png" style="width: 48px !important;">
                     <P class="p-subtitle">Toma de pedidos</P>
                     <p class="p-texto">

@@ -13274,7 +13274,6 @@ fieldset[disabled] .btn-link:hover {
 }
 
 .btn-block {
-    display: block;
     width: 100%
 }
 
@@ -17199,7 +17198,7 @@ button.close {
 
 /*# sourceMappingURL=bootstrap.min.css.map */
 
- 
+
 /*-----------------------------------------------------------------------------------
 	Theme Name: Yellow Hats
 	Theme URI: #
@@ -22731,7 +22730,7 @@ footer {
 }
 
 .service-2 .col-img {
-    height: 765px;
+    height: 100%;
 }
 
 .service-2 .tab-pane h3 {
@@ -22760,7 +22759,7 @@ footer {
 }
 
 .service-2 .col-content {
-    padding: 100px;
+    padding: 20px;
 }
 
 /* service #3 */
@@ -23202,8 +23201,8 @@ footer {
         margin-bottom: 15px;
     }
 
-    .service-2 .col-content {
-        padding: 50px 15px 50px 50px;
+    .alto-row-callCenter {
+        height: 530px !important;
     }
 
     .service .service-img2>img {
@@ -23251,11 +23250,6 @@ footer {
         width: 100%;
         margin-right: auto;
         margin-left: auto
-    }
-
-    .service-2 .col-content {
-        padding-right: 90px;
-        padding-top: 70px;
     }
 
     .service .service-img2>img {
@@ -25464,12 +25458,9 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
     color: #fff;
     font-family: 'Franklin Gothic Demi', sans-serif;
     font-size: 1.3rem;
-    line-height: 49px;
+    line-height: 33px;
     text-transform: uppercase;
     position: relative;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -27166,15 +27157,28 @@ footer hr {
 @media (min-width: 768px) and (max-width: 810px) {
     .container>.navbar-header {
         margin-right: -418px;
-        margin-left: 0px;
+        margin-left: 71px;
     }
 }
 
 @media (min-width: 811px) {
     .container>.navbar-header {
-        /* margin-right: -450px; */
-        margin-left: 0px !important;
+        margin-right: -450px;
+        margin-left: 71px;
     }
+    .widget-contact-center{
+        padding-left: 0px !important;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (min-width: 1190px) {
+    .widget-contact-right{
+        padding-right: 40px !important;
+        display: flex;
+        justify-content: right;
+    }
+
 }
 @media (max-width: 991px) {
     .table-respon {
@@ -27190,16 +27194,19 @@ footer hr {
     .navbar-fixed-bottom .navbar-collapse,
     .navbar-fixed-top .navbar-collapse,
     .navbar-static-top .navbar-collapse {
-        padding-right: 0%;
+        padding-right: 5%;
     }
 
     .user-icon-margin {
-        margin-left: 14px;
+        margin-left: 0px;
     }
 
     .section-content {
         padding-left: 50px;
         padding-right: 50px;
+    }
+    .alto-row-callCenter{
+        height: 650px;
     }
 }
 
@@ -27243,6 +27250,13 @@ footer hr {
     .info-footer {
         padding-left: 5% !important;
     }
+    .aling-rigth{
+        text-align: right;
+    }
+
+    .aling-left{
+        text-align: left;
+    }
 }
 
 @media (min-width: 1090px) and (max-width: 1400px) {
@@ -27260,19 +27274,40 @@ footer hr {
         line-height: 17px !important;
     }
 }
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 75% !important;
+    }
+}
 
 .header-3 .navbar-fixed-top.affix-scrooll {
     background-color: #093070c2;
 }
 
 .yellow-color b {
-    color: #FBD800;
+    color: #ffcb00;
 }
 
+.table-prod-inf h4 {
+    color: #ffcb00;
+    font-family: 'Franklin Gothic Demi', sans-serif !important;
+
+}
+.title-details {
+    color: #ffcb00 !important;
+    font-family: 'Franklin Gothic Demi', sans-serif !important;
+    font-size: 1.5rem !important;
+}
+.body-details {
+    color: #9f9f93 !important;
+    font-family: 'Franklin Gothic Book', sans-serif;
+    font-size: 1.45rem;
+}
 .btn-gereric {
     background-color: #ffffff !important;
     color: #000000 !important;
     border: 2px solid #000000 !important;
+    line-height: 50px !important;
 }
 
 .btn-gereric:hover,
@@ -27301,7 +27336,8 @@ footer hr {
     font-size: 1.5rem;
     color: #000000;
     letter-spacing: 1px;
-    ;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .font-frank-demi {
@@ -27318,8 +27354,9 @@ footer hr {
 
 .conten-stores h5 {
     font-family: 'Franklin Gothic Book', sans-serif;
-    font-size: 1.4rem;
-    color: #A6A69B;
+    font-size: 1.2rem;
+    color: #9f9f93;
+    line-height: 1;
 }
 
 .infProd {
@@ -27383,6 +27420,63 @@ footer hr {
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+
+.fade-scale {
+    transform: scale(0);
+    opacity: 0;
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+  }
+
+  .fade-scale.in {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+/*modal scroll*/
+
+.modal-dialog.full-screen {
+    position:fixed;
+    width:auto;
+    height: 75%;
+    margin:auto;
+    left:0px;
+    right:0px;
+    top:7%;
+    bottom:0px;
+}
+
+.modal-dialog.full-screen .modal-content {
+      position:absolute;
+      left:10px;
+      right:10px;
+      top:10px;
+      bottom:10px;
+}
+
+
+.modal-dialog.full-screen .modal-content .modal-body {
+        overflow-y: auto;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+        left:0;
+        right:0;
+          margin-top: 60px;
+          margin-bottom: 60px;
+}
+
+.modal-dialog.full-screen .modal-content .modal-footer {
+        position:absolute;
+        bottom:0;
+        right:0;
+}
+
+.spaceText p {
+    margin-bottom: 0.5rem;
 }
 
 
