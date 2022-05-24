@@ -11,14 +11,14 @@
                     <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
                         data-easeout="Power4.easeInOut" data-masterspeed="1000">
                         <!-- MAIN IMAGE -->
-                        <div class="tp-bgimg defaultimg fondo slide img" 
-                            style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover; 
+                        <div class="tp-bgimg defaultimg fondo slide img"
+                            style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
                             background-position: center center; width: 100%; height: 100%; opacity: 1;
                             visibility: inherit; z-index: 20;" src="http://192.168.31.242:5000/{{ $carusels->imagen }}">
                             <div class="fondo_con"></div>
                         </div>
-                        
-                        
+
+
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
                             data-whitespace="nowrap" data-width="['150','70','70','100']"
@@ -30,7 +30,7 @@
                             data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
                             <img src="http://192.168.31.242:5000/{{ $carusels->imagen_icono }}"
                                 alt="hook" />
-                                
+
                         </div>
 
                         <!-- LAYER NR. 2 -->
@@ -61,7 +61,7 @@
                             {{-- {{ $carusels->sub_titulo }} --}}
                             {{ $carusels->sub_titulo }}
                         </div>
-                        
+
                     </li>
                 @endforeach
             </ul>
@@ -80,7 +80,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="heading heading-4">
-                            <div class="heading-bg heading-right">
+                            <div class="heading-right">
                                 <p class="mb-0">¿Quiénes somos?</p>
                                 <h2>Nuestra Historia</h2>
                             </div>
@@ -101,16 +101,16 @@
                     comercialización directa.</p>
                 <ul style="text-align: justify;" class="list-unstyled">
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Nuestra vocación de servicio es el motor que impulsa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Nuestra vocación de servicio es el motor que impulsa y
                             dirige nuestras acciones.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Brindamos un excelente servicio a los clientes externos e
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Brindamos un excelente servicio a los clientes externos e
                             internos, en procura de
                             maximizar la satisfacción de sus necesidades y deseos.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #FBD800;"></i> Somos personas comprometidas con nuestra Empresa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Somos personas comprometidas con nuestra Empresa y
                             trabajamos en equipo.</p>
                     </li>
                 </ul>
@@ -215,7 +215,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div class="row">
                     <div class="heading">
-                        <div class="heading-bg heading-right">
+                        <div class="heading-right">
                             <p class="mb-0">Catálogo</p>
                             <h2>Nuestros Productos</h2>
                         </div>
@@ -229,12 +229,12 @@
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner content" role="listbox">
-                        
+
                         <div class="item active">
-                            
+
                                 <div class="row">
                                     <!-- product #1 -->
-                                
+
                                     @foreach ($producto as $productos)
                                     <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
@@ -253,15 +253,15 @@
                                                 <a href="#">{{ $productos->nombre_producto }}</a>
                                             </h4>
                                         </div>
-                                        
+
                                     </div>
                                 @endforeach
-                            
+
                                 </div>
-                            
+
                         </div>
-                        
-                       
+
+
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                             <div style="width: 50px; height: 49px; position: absolute; top: 40%; left: 50%; background-color: rgb(206 206 206 / 80%);">
@@ -304,7 +304,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="heading heading-4">
-                            <div class="heading-bg heading-right">
+                            <div class="heading-right">
                                 <p class="mb-0">¿Dónde nos encontramos?</p>
                                 <h2>Nuestras oficinas y tiendas</h2>
                             </div>
@@ -425,7 +425,7 @@
             </div>
         </div>
         <div class="row" id="storeCbba" style="display: none;">
-          
+
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup">
@@ -447,7 +447,7 @@
                 </div>
                 <!-- .entry-content end -->
             </div>
-         
+
 
         </div>
 
@@ -469,7 +469,7 @@
             </div>
         </div>
         <div class="row" id="storeLaPaz" style="display: none;">
-            
+
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup">
@@ -491,7 +491,7 @@
                 </div>
                 <!-- .entry-content end -->
             </div>
-        
+
         </div>
 
 
@@ -512,7 +512,7 @@
             </div>
         </div>
         <div class="row" id="storeSantaCruz" style="display: none;">
-           
+
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup">
@@ -534,322 +534,39 @@
                 </div>
                 <!-- .entry-content end -->
             </div>
-            
+
         </div>
     </div>
     <!-- .container end -->
 </section>
 
-{{--
-<!-- Productos Promocion -->
-<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
-    style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1 hidden-xs hidden-sm">
-                <i class="fa fa-star-o" aria-hidden="true"
-                    style="font-size: 14rem; position: absolute; left: -75%; top: 20px;"></i>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-7">
-
-                <p class="text-capitalize mb-0 color-black">Conoce nuestras actuales promociones</p>
-                <h2 class="mb-xs color-black">¡ Productos</h2>
-                <h2 class="mb-xs color-black">en Promoción !</h2>
-                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdPromo">Ver Promociones</a>
-            </div>
-            <!-- .col-md-8 end -->
-            <div class="col-md-4 hidden-xs hidden-sm">
-                <div class="cta-img" style="top: -95px;">
-                    <img src="assets/images/call/Mi proyecto.png" alt="call to action" />
-                </div>
-            </div>
-        </div>
-        <!-- .row end -->
-    </div>
-    <!-- .container end -->
-</section>
-<!-- #cta-6 end -->
-<div class="clearfix mb-150">
-</div> --}}
-
-
-<!-- Productos Promocion -->
-{{-- <section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
-    style="background-color:#FFFE04; border-width: 3px; border-style: solid;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1 hidden-xs hidden-sm" style="text-align: left;">
-                <i class="fa fa-star-o" aria-hidden="true"
-                    style="font-size: 14rem; margin-left: -80px;"></i>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-7">
-                <p class="text-capitalize mb-0 color-black">Conoce nuestras actuales promociones</p>
-                <h2 class="mb-xs color-black">¡ Productos</h2>
-                <h2 class="mb-xs color-black">en Promoción !</h2>
-                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdPromo">Ver Promociones</a>
-            </div>
-            <!-- .col-md-8 end -->
-            <div class="col-md-4 hidden-xs hidden-sm" style="text-align: left;">
-                <div class="cta-img" style="top: -95px;">
-                    <img src="assets/images/call/Mi proyecto.png" alt="call to action" />
-                </div>
-            </div>
-        </div>
-        <!-- .row end -->
-    </div>
-    <!-- .container end -->
-</section> --}}
-
-
-{{--
-<!-- Productos Novedosos -->
-<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
-    style="background-color:#5cb85c; border-width: 3px; border-style: solid;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 hidden-xs hidden-sm" style="text-align: right;">
-                <div class="cta-img" style="top: -115px;">
-                    <img src="assets/images/call/5.png" alt="call to action" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-7">
-                <p class="text-capitalize mb-0 color-black">Conoce nuestras novedades</p>
-                <h2 class="mb-xs color-black">¡ Productos</h2>
-                <h2 class="mb-xs color-black">en novedad !</h2>
-                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdNoved">Ver Novedades</a>
-            </div>
-            <div class="col-md-2 hidden-xs hidden-sm" style="text-align: right;">
-                <div class="cta-img" style="top: -115px;">
-                    <i class="fa fa-diamond hidden-xs hidden-sm" aria-hidden="true"
-                    style="font-size: 14rem; "></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- #cta-6 end -->
-<div class="clearfix mb-150">
-</div> --}}
-
-
-
-<!-- Productos Novedosos -->
-{{-- <section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6"
-    style="background-color:#5cb85c; border-width: 3px; border-style: solid;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5 hidden-xs hidden-sm">
-                <div class="cta-img" style="top: -115px; padding-right: 110px;">
-                    <img src="assets/images/call/5.png" alt="call to action" />
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-7">
-                <p class="text-capitalize mb-0 color-black">Conoce nuestras novedades</p>
-                <h2 class="mb-xs color-black">¡ Productos</h2>
-                <h2 class="mb-xs color-black">en novedad !</h2>
-                <a class="btn btn-secondary btn-white btn-modif-white" href="/fullProdNoved">Ver Novedades</a>
-                <i class="fa fa-diamond hidden-xs hidden-sm" aria-hidden="true"
-                    style="font-size: 14rem; position: absolute; top: 40px; right: -25px;"></i>
-            </div>
-        </div>
-    </div>
-</section> --}}
-
-{{-- nustros clientes --}}
-
-{{-- <section id="clients" class="shortcode-9">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="heading heading-2 text-center">
-					<div class="heading-bg">
-						<p class="mb-0">Maestros en Pernos</p>
-						<h2>Nuestros Clientes</h2>
-					</div>
-				</div>
-				<!-- .heading end -->
-			</div>
-			<!-- .col-md-12 end -->
-		</div>
-		<!-- .row end -->
-		<div class="row">
-			<!-- Client Item -->
-			<div class="col-xs-12 col-sm-4 col-md-2">
-				<div class="brand">
-					<img class="img-responsive center-block" src="assets/images/clients/1.png" alt="brand">
-				</div>
-			</div>
-			<!-- .col-md-2 end -->
-
-			<!-- Client Item -->
-			<div class="col-xs-12 col-sm-4 col-md-2">
-				<div class="brand">
-					<img class="img-responsive center-block" src="assets/images/clients/2.png" alt="brand">
-				</div>
-			</div>
-			<!-- .col-md-2 end -->
-
-			<!-- Client Item -->
-			<div class="col-xs-12 col-sm-4 col-md-2">
-				<div class="brand">
-					<img class="img-responsive center-block" src="assets/images/clients/3.png" alt="brand">
-				</div>
-			</div>
-			<!-- .col-md-2 end -->
-
-			<!-- Client Item -->
-			<div class="col-xs-12 col-sm-4 col-md-2">
-				<div class="brand">
-					<img class="img-responsive center-block" src="assets/images/clients/4.png" alt="brand">
-				</div>
-			</div>
-			<!-- .col-md-2 end -->
-
-			<!-- Client Item -->
-			<div class="col-xs-12 col-sm-4 col-md-2">
-				<div class="brand">
-					<img class="img-responsive center-block" src="assets/images/clients/5.png" alt="brand">
-				</div>
-			</div>
-			<!-- .col-md-2 end -->
-
-			<!-- Client Item -->
-			<div class="col-xs-12 col-sm-4 col-md-2">
-				<div class="brand last">
-					<img class="img-responsive center-block" src="assets/images/clients/6.png" alt="brand">
-				</div>
-			</div>
-			<!-- .col-md-2 end -->
-		</div>
-		<!-- .row End -->
-	</div>
-	<!-- .container end -->
-</section> --}}
-
-{{-- pedidos section --}}
-
-{{-- <section id="service-2" class="service service-2 bg-gray pb-0">
-    <div class="container-fluid bg-theme">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="row" style="background-color: #FFFE04;">
-
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('assets/images/services/full/1.jpg');"></div>
-                    <!-- .col-md-6 end -->
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table; border-width: 3px; border-style: solid;">
-                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center; background-color: #FFFE04">
-                            <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
-                                verifique el estado de sus pedidos
-                            </p>
-                            <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/pedidos">Ver Mis Pedidos <i class="fa fa-plus ml-xs"></i></a>
-                        </div>
-                    </div>
-                    <!-- .col-md-6 end -->
-                </div>
-                <!-- .row end -->
-            </div>
-            <!-- .col-md-12 -->
-        </div>
-        <!-- .row end -->
-    </div>
-    <!-- .container-fluid end -->
-</section>
-<div class="cleafix mb-150">
-</div> --}}
-
-{{-- depositos bancarios --}}
-{{--
-<section id="service-2" class="service service-2 bg-gray pb-0">
-    <div class="container-fluid bg-theme">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="row" style="background-color: #FFFE04;">
-
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table; border-width: 3px; border-style: solid;">
-                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center;">
-                            <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
-                                Ahora contamos con registro de Bouchers
-                            </p>
-                            <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/depositos">Registrar Mi Depósito <i class="fa fa-plus ml-xs"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('assets/images/services/full/1.jpg');"></div>
-                </div>
-                <!-- .row end -->
-            </div>
-            <!-- .col-md-12 -->
-        </div>
-        <!-- .row end -->
-    </div>
-    <!-- .container-fluid end -->
-</section>
-<div class="cleafix mb-150">
-</div> --}}
-
-
-
-
-{{-- facturas --}}
-{{-- <section id="service-8" class="service service-2 service-8 bg-gray pb-0">
-	<div class="container-fluid bg-theme">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12" style="background-image: url('assets/images/services/full/1.jpg'); background-size: cover;">
-				<div class="row" >
-                    <div class="col-md-6 col-md-offset-6 col-content" style="text-align: center; background-color: #FFFE04; border-width: 3px; border-style: solid;">
-                        <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color: #0a192f; margin-bottom: 50px; line-height: 165%;">
-                            Consulte inmediatamente sus facturas
-                        </p>
-                        <a class="btn btn-secondary btn-white btn-modif-white" style="width: 224px !important;" href="/facturas">Ver mis facturas <i class="fa fa-plus ml-xs"></i></a>
-                    </div>
-				</div>
-				<!-- .row end -->
-			</div>
-			<!-- .col-md-12 -->
-		</div>
-		<!-- .row end -->
-	</div>
-	<!-- .container-fluid end -->
-</section>
-<div class="cleafix mb-150">
-</div> --}}
 
 
 <!-- call center -->
 
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="row" style="background-color: #FBD800;">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('/assets/images/system/4.jpg');"></div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table;">
-                        <div class="row" style="display: table-cell; vertical-align: middle; text-align: center;">
-                            {{-- <p style="font-size: 37px; font-weight: 700; line-height: 25px; text-transform: uppercase; color:#0a192f; margin-bottom: 50px; line-height: 165%;">
-                                Ahora contamos con registro de Bouchers
-                            </p> --}}
-                            <p class="p-title">CALL CENTER</p>
-                            <br>
-                            <img src="/assets/images/system/AGENTE 1-04.png" style="width: 66px !important;">
-                            <P class="p-subtitle">Atención al cliente</P>
-                            <p class="p-texto">
-                                Contamos con personal altamente calificado para brindarle asesoramiento,
-                                información y soluciones integrales a nivel nacional.
-                            </p>
-                            <br><br>
-                            <img src="/assets/images/system/AGENTE 2-05.png" style="width: 66px !important;">
-                            <P class="p-subtitle">Toma de pedidos</P>
-                            <p class="p-texto">
-                                Contamos con la tecnología adecuada que nos permite la toma de
-                                pedidos en tiempo real.
-                            </p>
-                        </div>
-                    </div>
+        <div class="row alto-row-callCenter" style="background-color: #FBD800;">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('/assets/images/system/4.jpg');"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="display: table;">
+                <div class="spaceText" style="display: table-cell; vertical-align: middle; text-align: center;">
+                    <p class="p-title">CALL CENTER</p>
+                    <img src="/assets/images/system/AGENTE 1-04.png" style="width: 48px !important;">
+                    <P class="p-subtitle">Atención al cliente</P>
+                    <p class="p-texto">
+                        Contamos con personal altamente calificado para brindarle asesoramiento,
+                        información y soluciones integrales a nivel nacional.
+                    </p>
+                    <br>
+                    <img src="/assets/images/system/AGENTE 2-05.png" style="width: 48px !important;">
+                    <P class="p-subtitle">Toma de pedidos</P>
+                    <p class="p-texto">
+                        Contamos con la tecnología adecuada que nos permite la toma de
+                        pedidos en tiempo real.
+                    </p>
                 </div>
-                <!-- .row end -->
             </div>
-            <!-- .col-md-12 -->
         </div>
-        <!-- .row end -->
     </div>
     <div class="container-fluid">
         <div class="widgets-contact">
@@ -863,7 +580,7 @@
                     </div>
                 </div>
                 <!-- .widget end -->
-                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
                         <img src="/assets/images/system/WHATSAPP.png" style="margin-top: -15px;" width="30px;">
                     </div>
@@ -872,7 +589,7 @@
                     </div>
                 </div>
                 <!-- .widget end -->
-                <div class="col-xs-12 col-sm-12 col-md-4 widget">
+                <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right">
                     <div class="widget-contact-icon pull-left">
                         <img src="/assets/images/system/MAIL.png" style="margin-top: -15px;" width="30px;">
                     </div>
@@ -940,7 +657,7 @@
 
         to{
             margin-down: 100%;
-            
+
         }
     }
     @keyframes tdn{
