@@ -5530,7 +5530,7 @@ footer {
 }
 
 .service-2 .col-img {
-    height: 765px;
+    height: 100%;
 }
 
 .service-2 .tab-pane h3 {
@@ -5559,7 +5559,7 @@ footer {
 }
 
 .service-2 .col-content {
-    padding: 100px;
+    padding: 20px;
 }
 
 /* service #3 */
@@ -5979,6 +5979,9 @@ footer {
         padding-left: 15px;
         text-align: center;
     }
+    .alto-row-callCenter {
+        height: 580px !important;
+    }
 
     .service .service-img2>img {
         left: auto
@@ -6001,8 +6004,8 @@ footer {
         margin-bottom: 15px;
     }
 
-    .service-2 .col-content {
-        padding: 50px 15px 50px 50px;
+    .alto-row-callCenter {
+        height: 530px !important;
     }
 
     .service .service-img2>img {
