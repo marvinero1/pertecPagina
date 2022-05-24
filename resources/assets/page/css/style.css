@@ -8258,12 +8258,9 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
     color: #fff;
     font-family: 'Franklin Gothic Demi', sans-serif;
     font-size: 1.3rem;
-    line-height: 49px;
+    line-height: 33px;
     text-transform: uppercase;
     position: relative;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
