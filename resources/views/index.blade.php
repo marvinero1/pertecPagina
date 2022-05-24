@@ -304,7 +304,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="heading heading-4">
-                            <div class="heading-right">
+                            <div class="heading-bg heading-right">
                                 <p class="mb-0">¿Dónde nos encontramos?</p>
                                 <h2>Nuestras oficinas y tiendas</h2>
                             </div>
@@ -312,30 +312,32 @@
                     </div>
 
                 </div>
+
+
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
-                        <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                        <div class="product-cart">
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="of-centrals" style="display: none;">
+        <div class="row" id="of-centrals" style="display: none; margin-top: -55px;">
             <!-- Entry Sucursal Cochabamba -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="assets/images/system/1.jpg" alt="title" />
+                    <a class="img-popup" href="{{ route('oneOfice', ['id'=>2]) }}">
+                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Oficina Cochabamba</a>
+                        <a href="{{ route('oneOfice', ['id'=>2]) }}">Oficina Cochabamba</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
@@ -344,7 +346,7 @@
                     <h5>Telf: (4) 4716000 (Líneas Rotativas)</h5>
                     <h5>Fax: (4) 4111632</h5>
                     <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>2]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -356,13 +358,13 @@
             <!-- Entry Sucursal La Paz -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="assets/images/system/1.jpg" alt="title" />
+                    <a class="img-popup" href="{{ route('oneOfice', ['id'=>1]) }}">
+                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Oficina La Paz</a>
+                        <a href="{{ route('oneOfice', ['id'=>1]) }}">Oficina La Paz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
@@ -371,7 +373,7 @@
                     <h5>Telf: (2) 2822336</h5>
                     <h5>Fax: (2) 2820619</h5>
                     <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>1]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -383,13 +385,13 @@
             <!-- Entry Sucursal Santa Cruz -->
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="assets/images/system/1.jpg" alt="title" />
+                    <a class="img-popup" href="{{ route('oneOfice', ['id'=>3]) }}">
+                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Oficina Santa Cruz</a>
+                        <a href="{{ route('oneOfice', ['id'=>3]) }}">Oficina Santa Cruz</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
@@ -398,7 +400,7 @@
                     <h5>Telf: (3) 3470113</h5>
                     <h5>Fax: (3) 3111228</h5>
                     <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <a class="entry-more" href="{{ route('oneOfice', ['id'=>3]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
@@ -414,40 +416,40 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeCbba')">Tiendas Cochabamba<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="storeCbba" style="display: none;">
-
+        <div class="row" id="storeCbba" style="display: none; margin-top: -55px;">
+            @foreach ($tcbba as $tcb)
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="http://192.168.31.242:5000/" alt="title" />
+                    <a class="img-popup" href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}">
+                        <img src="http://192.168.31.242:5000/{{ $tcb["imagen"] }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Tienda</a>
+                        <a href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}">Tienda {{ $tcb["nombre_tienda"] }}</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: </h5>
-                    <h5>Telf:</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;">Dirección: {{ $tcb["direccion"] }}</h5>
+                    <h5>Telf: {{ $tcb["telefono"] }}</h5>
+                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tcb["id"]]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
                 <!-- .entry-content end -->
             </div>
-
+            @endforeach
 
         </div>
 
@@ -458,40 +460,40 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeLaPaz')">Tiendas La Paz<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="storeLaPaz" style="display: none;">
-
+        <div class="row" id="storeLaPaz" style="display: none; margin-top: -55px;">
+            @foreach ($tlapz as $tlz)
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="http://192.168.31.242:5000/" alt="title" />
+                    <a class="img-popup" href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}">
+                        <img src="http://192.168.31.242:5000/{{ $tlz["imagen"] }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Tienda </a>
+                        <a href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}">Tienda {{ $tlz["nombre_tienda"] }}</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: </h5>
-                    <h5>Telf: </h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;">Dirección: {{ $tlz["direccion"] }}</h5>
+                    <h5>Telf: {{ $tlz["telefono"] }}</h5>
+                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tlz["id"]]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
                 <!-- .entry-content end -->
             </div>
-
+            @endforeach
         </div>
 
 
@@ -501,45 +503,44 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
-                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
+                            <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i
                                 class="fa fa-plus ml-xs"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
-        <div class="row" id="storeSantaCruz" style="display: none;">
-
+        <div class="row" id="storeSantaCruz" style="display: none; margin-top: -55px;">
+            @foreach ($tstcz as $tsz)
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup">
-                        <img src="http://192.168.31.242:5000/" alt="title" />
+                    <a class="img-popup" href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}">
+                        <img src="http://192.168.31.242:5000/{{ $tsz["imagen"] }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Tienda </a>
+                        <a href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}">Tienda {{ $tsz["nombre_tienda"] }}</a>
                     </h3>
                 </div>
                 <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: </h5>
-                    <h5>Telf: </h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;">Dirección: {{ $tsz["direccion"] }}</h5>
+                    <h5>Telf: {{ $tsz["telefono"] }}</h5>
+                    <a class="entry-more" href="{{ route('oneStore', ['id'=>$tsz["id"]]) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
                 <!-- .entry-content end -->
             </div>
-
+            @endforeach
         </div>
     </div>
     <!-- .container end -->
 </section>
-
 
 
 <!-- call center -->
