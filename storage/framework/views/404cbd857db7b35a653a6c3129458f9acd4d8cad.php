@@ -1,20 +1,18 @@
-@extends('page.layouts.main')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!-- carrusel -->
 <section id="hero" class="hero hero-4">
     <!-- START REVOLUTION SLIDER 5.0 -->
     <div class="rev_slider_wrapper ">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
-                @foreach($carusel as $carusels)
+                <?php $__currentLoopData = $carusel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $carusels): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
                         data-easeout="Power4.easeInOut" data-masterspeed="1000">
                         <!-- MAIN IMAGE -->
                         <div class="tp-bgimg defaultimg fondo slide img"
                             style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
                             background-position: center center; width: 100%; height: 100%; opacity: 1;
-                            visibility: inherit; z-index: 20;" src="http://192.168.31.240:5000/{{ $carusels->imagen }}">
+                            visibility: inherit; z-index: 20;" src="http://192.168.31.240:5000/<?php echo e($carusels->imagen); ?>">
                             <div class="fondo_con"></div>
                         </div>
 
@@ -28,7 +26,7 @@
                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                            <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}"
+                            <img src="http://192.168.31.240:5000/<?php echo e($carusels->imagen_icono); ?>"
                                 alt="hook" />
 
                         </div>
@@ -44,8 +42,9 @@
                             data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
                             data-lineheight="['100','45','25','25']"
                             data-color="#ffc527" style="z-index: 999 !important;">
-                            {{-- {{ $carusels->titulo }} --}}
-                            {{ $carusels->titulo }}
+                            
+                            <?php echo e($carusels->titulo); ?>
+
                         </h1>
 
                         <!-- LAYER NR. 3 -->
@@ -58,12 +57,13 @@
                             data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
                             data-lineheight="['50','26','25','25']"
                             data-color="#fff" style="z-index: 999 !important;">
-                            {{-- {{ $carusels->sub_titulo }} --}}
-                            {{ $carusels->sub_titulo }}
+                            
+                            <?php echo e($carusels->sub_titulo); ?>
+
                         </div>
 
                     </li>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div>
     </div>
@@ -235,27 +235,27 @@
                                 <div class="row">
                                     <!-- product #1 -->
 
-                                    @foreach ($producto as $productos)
+                                    <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
                                         <div class="product-img">
-                                            <img src='http://192.168.31.240:5000/{{ $productos->imagen }}' alt="product"
+                                            <img src='http://192.168.31.240:5000/<?php echo e($productos->imagen); ?>' alt="product"
                                                 style="height:250px;">
                                             <div class="product-hover">
                                                 <div class="product-cart">
                                                     <a class="btn btn-secondary btn-block a-card"
-                                                        href="{{ route('admin.producto.show', $hash->encodeHex($productos->id)) }}">Detalles</a>
+                                                        href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id))); ?>">Detalles</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="product-bio">
                                             <h4>
-                                                <a href="#">{{ $productos->nombre_producto }}</a>
+                                                <a href="#"><?php echo e($productos->nombre_producto); ?></a>
                                             </h4>
                                         </div>
 
                                     </div>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                 </div>
 
@@ -294,7 +294,7 @@
     <!-- .container end -->
 </section>
 
-{{-- Oficinas y tiendas --}}
+
 <section id="sectionStores">
     <div class="content tdn section-content">
 
@@ -427,11 +427,11 @@
             </div>
         </div>
         <div class="row" id="storeCbba" style="display: none; margin-top: -55px;">
-            {{-- @foreach ($tcbba as $tcb) --}}
+            
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="">
-                        {{-- <img src="http://192.168.31.240:5000/{{ $tcb["imagen"] }}" alt="title" /> --}}
+                        
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -449,7 +449,7 @@
                 </div>
                 <!-- .entry-content end -->
             </div>
-            {{-- @endforeach --}}
+            
 
         </div>
 
@@ -471,7 +471,7 @@
             </div>
         </div>
         <div class="row" id="storeLaPaz" style="display: none; margin-top: -55px;">
-            {{-- @foreach ($tlapz as $tlz) --}}
+            
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="">
@@ -493,7 +493,7 @@
                 </div>
                 <!-- .entry-content end -->
             </div>
-            {{-- @endforeach --}}
+            
         </div>
 
 
@@ -515,7 +515,7 @@
         </div>
 
         <div class="row" id="storeSantaCruz" style="display: none; margin-top: -55px;">
-            {{-- @foreach ($tstcz as $tsz) --}}
+            
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="">
@@ -537,7 +537,7 @@
                 </div>
                 <!-- .entry-content end -->
             </div>
-            {{-- @endforeach --}}
+            
         </div>
     </div>
     <!-- .container end -->
@@ -608,23 +608,7 @@
 </section>
 
 
-{{-- <input type="checkbox" id="cerrar">
-<label for="cerrar" id="btn-cerrar" style="text-align: center !important; z-index: 1000;">X</label>
 
-<div class="modalPopUp">
-    <div class="contenido">
-        <h2>Visita nuestro blog</h2>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 product-item">
-                <div class="product-cart">
-                    <a class="btn btn-secondary btn-block btn-gereric btn-popUp" href="/fullProdPromo">
-                        Ver productos en Promoción
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 
 
 <style type="text/css">
@@ -651,7 +635,7 @@
     z-index: 99;
     }
 
-    @keyframes slidein {
+    @keyframes  slidein {
     from{
         margin-left: 0%;
         margin-top: 100%;
@@ -662,7 +646,7 @@
 
         }
     }
-    @keyframes tdn{
+    @keyframes  tdn{
     from{
         margin-top: 100%;
         }
@@ -719,7 +703,7 @@
     #cerrar:checked + label, #cerrar:checked ~ .modalPopUp {
         display: none;
     }
-    @keyframes modal {
+    @keyframes  modal {
         100% {
             visibility: visible;
             opacity: 1;
@@ -739,4 +723,6 @@
     }
 
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('page.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/index.blade.php ENDPATH**/ ?>

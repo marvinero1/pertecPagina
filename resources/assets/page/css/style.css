@@ -90,7 +90,7 @@ a {
 }
 
 a:hover {
-    color: #FBD800 !important;
+    color: #ffcb00 !important;
     text-decoration: none;
 }
 
@@ -1211,7 +1211,7 @@ footer {
 #ACCORDION
 \*------------------------------------*/
 .accordion .panel {
-    border-color: rgba(49, 49, 49, 0.1);
+    border-color: rgba(49, 49, 49, 0.37);
     padding: 23px 23px 0 23px;
     margin-bottom: 20px;
     box-shadow: none;
@@ -1232,6 +1232,7 @@ footer {
 .accordion .panel .panel-heading h4 {
     font-family: 'Franklin Gothic Demi', sans-serif;
     font-size: 1.5rem;
+    font-weight: 100;
     color: #000000;
     line-height: 1;
 }
@@ -1259,7 +1260,7 @@ footer {
     font-family: fontawesome;
     font-size: 10px;
     color: #fff;
-    background-color: #FBD800;
+    background-color: #ffcb00;
     text-align: center;
     width: 30px;
     height: 30px;
@@ -1272,16 +1273,15 @@ footer {
 .accordion .panel-heading .accordion-toggle.collapsed:after {
     content: "\f067";
     /* symbol for "collapsed" panels */
-    color: #FBD800;
+    color: #ffcb00;
     background-color: transparent;
 }
 
 .accordion .panel .panel-body {
-    border-top-color: rgba(49, 49, 49, 0.1);
     padding: 20px 0;
-    color: #A6A69B;
+    color: #9f9f93;
     font-family: 'Franklin Gothic Book', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     line-height: 25px;
 }
 
@@ -3416,6 +3416,7 @@ footer {
     font-size: 2.4rem;
     text-transform: uppercase;
     font-family: 'Franklin Gothic Demi', sans-serif;
+    font-weight: 100;
     letter-spacing: 1px;
     line-height: 1;
     margin-bottom: 0;
@@ -3438,7 +3439,7 @@ footer {
     font-size: 1.4rem;
     color: #5a5a5a73;
     font-weight: 500;
-    font-family: 'Franklin Gothic Book', sans-serif;
+    font-family: 'Franklin Gothic Demi', sans-serif;
     line-height: 1;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -4221,9 +4222,9 @@ footer {
 }
 
 .shotcode-1 p {
-    color: #A6A69B;
+    color: #9f9f93;
     font-family: 'Franklin Gothic Book', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     line-height: 26px;
 }
 
@@ -7332,6 +7333,7 @@ footer {
 .entry-title a {
     font-family: 'Franklin Gothic Demi', sans-serif;
     font-size: 1.6rem;
+    font-weight: 100;
     line-height: 25px;
     text-transform: capitalize;
     margin-bottom: 20px;
@@ -8316,16 +8318,17 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
     color: #000000;
     font-family: 'Franklin Gothic Demi', sans-serif;
     font-size: 1.3rem;
+    font-weight: 100;
     line-height: 25px;
     text-transform: uppercase;
 }
 
 .product-item h4 a:hover {
-    color: #ffc527
+    color: #ffcb00
 }
 
 .product-item p.product-price {
-    color: #ffc527;
+    color: #ffcb00;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     font-weight: 700;
@@ -10006,7 +10009,7 @@ footer hr {
         padding-right: 50px;
     }
     .alto-row-callCenter{
-        height: 650px;
+        height: 605px;
     }
 }
 
@@ -10115,7 +10118,10 @@ footer hr {
     background-color: #000000 !important;
     color: #ffffff !important;
 }
-
+.btn-gereric:hover::before,
+.btn-gereric:hover::after {
+    background-color: #000000;
+}
 .p-title {
     font-family: 'Franklin Gothic Demi', sans-serif;
     font-size: 2rem;
@@ -10155,8 +10161,10 @@ footer hr {
 .conten-stores h5 {
     font-family: 'Franklin Gothic Book', sans-serif;
     font-size: 1.2rem;
+    font-weight: 100;
     color: #9f9f93;
     line-height: 1;
+    margin-bottom: 7px;
 }
 
 .infProd {

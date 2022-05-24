@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'f5ec3dec4791dc0b21b6240a2c237029e62ff177',
+        'reference' => '9cc23deb5439be4cd63b3097e720de1ed9ac4f13',
         'name' => 'labs64/pertec',
         'dev' => true,
     ),
@@ -523,7 +523,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'f5ec3dec4791dc0b21b6240a2c237029e62ff177',
+            'reference' => '9cc23deb5439be4cd63b3097e720de1ed9ac4f13',
             'dev_requirement' => false,
         ),
         'laravel/framework' => array(
