@@ -28,7 +28,6 @@ class ProductoController extends Controller
     }
 
     public function productsFront(Request $request){
-
         $hash=new Hashids();
         $nombre_producto = $request->get('buscarpor');
         // $producto = Producto::all();
@@ -185,7 +184,7 @@ class ProductoController extends Controller
         $hash_id = $hash->decodeHex($id);
         $producto_Id = Producto::findOrFail($hash_id);
 
-        return view('admin.products.show', compact('producto_Id'));
+        return view('page.sections.productos.show', compact('producto_Id'));
     }
     /**
      * Show the form for editing the specified resource.

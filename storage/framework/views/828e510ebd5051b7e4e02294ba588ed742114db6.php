@@ -84,13 +84,13 @@
                                     <?php endif; ?>
                                     <hr>
                                     <li>
-                                        <a href="/profileUser" style="color: #A6A69B;">Mi perfil</a>
+                                        <a href="<?php echo e(route('profileUser', Auth::user()->id)); ?>" style="color: #A6A69B;">Mi perfil</a>
                                     </li>
                                     <li>
-                                        <a href="/pedidos" style="color: #A6A69B;">Mis pedidos</a>
+                                        <a href="/getPedidos" style="color: #A6A69B;">Mis pedidos</a>
                                     </li>
                                     <li >
-                                        <a href="/facturas" style="color: #A6A69B;">Mis facturas</a>
+                                        <a href="/getInvoices" style="color: #A6A69B;">Mis facturas</a>
                                     </li>
                                     <li>
                                         <a href="<?php echo e(route('logout')); ?>">
