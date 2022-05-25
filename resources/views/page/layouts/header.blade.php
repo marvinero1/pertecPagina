@@ -87,6 +87,12 @@
                         <div class="search-box navbar-nav" style="height: auto; width: 165px; padding-top: 10px; padding-left: 20px;">
                             <div class="cart-icon">
                                 <ul class="list-unstyled user-menu">
+                                    @if (Auth::user()->name == "Admin")
+                                        <li>
+                                            <a href="/admin" style="color: #A6A69B;">Panel Administrativo</a>
+                                        </li>
+                                    @endif
+                                    <hr>
                                     <li>
                                         <a href="/profileUser" style="color: #A6A69B;">Mi perfil</a>
                                     </li>
@@ -97,14 +103,9 @@
                                         <a href="/facturas" style="color: #A6A69B;">Mis facturas</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"
-                                            style="color: #A6A69B;">Cerrar sesión
+                                        <a href="{{ route('logout') }}">
+                                            <i class="fa fa-sign-out pull-right"></i> {{ __('views.backend.section.header.menu_0') }}
                                         </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
                                     </li>
                                 </ul>
                             </div>
@@ -121,19 +122,57 @@
                         <div class="cart-icon">
                             <i class="fa fa-user-circle" style="font-size: 1.8rem;" data-toggle="modal" data-target="#myModal"></i>
                             <div id="myModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog-login">
                             
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Modal Header</h4>
+                                            <h4 class="modal-title text-center">PERTEC S.R.L &copy;</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Some text in the modal.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <div class="login_content">
+                                                {{ Form::open(['route' => 'login']) }}
+                                                    <h1 class="text-center">{{ __('views.auth.login.header') }}</h1>
+                                                    <div>
+                                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
+                                                               placeholder="{{ __('views.auth.login.input_0') }}" required autofocus>
+                                                    </div>
+                                                    <div>
+                                                        <input id="password" type="password" class="form-control" name="password"
+                                                               placeholder="{{ __('views.auth.login.input_1') }}" required>
+                                                    </div>
+                                                    <div class="checkbox al_left ">
+                                                        <label style="color: black;">
+                                                            <input type="checkbox" class="checkbox"
+                                                                   name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('views.auth.login.input_2') }}
+                                                        </label>
+                                                    </div>
+                            
+                                                    @if (session('status'))
+                                                        <div class="alert alert-success">
+                                                            {{ session('status') }}
+                                                        </div>
+                                                    @endif
+                            
+                                                    @if (!$errors->isEmpty())
+                                                        <div class="alert alert-danger" role="alert">
+                                                            {!! $errors->first() !!}
+                                                        </div>
+                                                    @endif
+                            
+                                                    <div style="text-align: center;">
+                                                        <button class="btn btn-primary submit btn-lg btn-block p-2" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                                                            Ingresar</button>
+                                                        <a class="btn btn-link btn-sm" href="{{ route('password.request') }}" style="background-color: #ffc527;
+                                                        color: #093070;">
+                                                            <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; {{ __('views.auth.login.action_1') }}
+                                                        </a>
+                                                    </div>
+                            
+                                                    <div class="clearfix"></div>
+                                                {{ Form::close() }}
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -146,14 +185,50 @@
 		</div>
 	</nav>
 </header>
+<style>
+    .modal-dialog-login{
+        margin-top: 90px;
+        width: 525px;
+    }
+    .modal-open .modal{
+        background-color: rgb(9, 48, 106, 0.6) !important;
+    }
+    .modal-header{
+        border-bottom: none;
+        background-color: #FBD800;
+        padding: 20px;
+    }
 
+    @media (min-width:768px) {
+    .modal-dialog-login {
+        width: 600px;
+        margin: 90px auto;
+    }
+    .checkbox input{
+        color: #093070;
+        position:inherit !important;
+    }
+    .checkbox, .radio {
+    /* position: relative; */
+    display: inherit;
+    /* margin-top: 10px; */
+    margin-bottom: 10px
+    }
+    .modal-body{
+        padding: 30px 45px 20px;
+    }
+    .btn-primary {
+        background-color: #093070;
+        color: #fff;
+        border: 1px solid #ffc527;
+    }
+</style>
 
 <script>
     $(function () {
-  $(document).scroll(function () {
-	  var $nav = $(".navbar-fixed-top");
-	  $nav.toggleClass('affix-scrooll', $(this).scrollTop() > $nav.height());
-	});
-});
-
+    $(document).scroll(function () {
+        var $nav = $(".navbar-fixed-top");
+        $nav.toggleClass('affix-scrooll', $(this).scrollTop() > $nav.height());
+        });
+    });
 </script>

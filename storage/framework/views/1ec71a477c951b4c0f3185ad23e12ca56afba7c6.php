@@ -8,6 +8,7 @@
                     <?php echo e(Form::open(['route' => 'login'])); ?>
 
                         <h1><?php echo e(__('views.auth.login.header')); ?></h1>
+                        <h2>asdsadss</h2>
 
                         <div>
                             <input id="email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>"

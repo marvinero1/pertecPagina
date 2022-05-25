@@ -14,7 +14,7 @@
                         <div class="tp-bgimg defaultimg fondo slide img"
                             style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
                             background-position: center center; width: 100%; height: 100%; opacity: 1;
-                            visibility: inherit; z-index: 20;" src="http://192.168.31.240:5000/{{ $carusels->imagen }}">
+                            visibility: inherit; z-index: 20;" src="http://192.168.31.242:5000/{{ $carusels->imagen }}">
                             <div class="fondo_con"></div>
                         </div>
 
@@ -28,7 +28,7 @@
                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                            <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}"
+                            <img src="http://192.168.31.242:5000/{{ $carusels->imagen_icono }}"
                                 alt="hook" />
 
                         </div>
@@ -82,7 +82,7 @@
                         <div class="heading heading-4">
                             <div class="heading-right">
                                 <p class="mb-0">¿Quiénes somos?</p>
-                                <h2>Nuestra Historia</h2>
+                                <h1 class="h1s">Nuestra Historia</h1>
                             </div>
                         </div>
                         <!-- .heading end -->
@@ -217,7 +217,7 @@
                     <div class="heading">
                         <div class="heading-right">
                             <p class="mb-0">Catálogo</p>
-                            <h2>Nuestros Productos</h2>
+                            <h1 class="h1s">Nuestros Productos</h1>
                         </div>
                     </div>
                 </div>
@@ -239,7 +239,7 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
                                         <div class="product-img">
-                                            <img src='http://192.168.31.240:5000/{{ $productos->imagen }}' alt="product"
+                                            <img src='http://192.168.31.242:5000/{{ $productos->imagen }}' alt="product"
                                                 style="height:250px;">
                                             <div class="product-hover">
                                                 <div class="product-cart">
@@ -297,7 +297,6 @@
 {{-- Oficinas y tiendas --}}
 <section id="sectionStores">
     <div class="content tdn section-content">
-
         <!-- oficinas nivel nacional-->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -306,13 +305,11 @@
                         <div class="heading heading-4">
                             <div class="heading-right">
                                 <p class="mb-0">¿Dónde nos encontramos?</p>
-                                <h2>Nuestras oficinas y tiendas</h2>
+                                <h1 class="h1s">Nuestras oficinas y tiendas</h1>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
@@ -584,7 +581,8 @@
                 <!-- .widget end -->
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
-                        <img src="/assets/images/system/WHATSAPP.png" style="margin-top: -15px;" width="30px;">
+                        {{-- <img src="/assets/images/system/WHATSAPP.png" width="30px;"> --}}
+                        <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;" ></i>
                     </div>
                     <div class="widget-contact-info">
                         <p class="font-heading">(Whatsapp) 72221032 - 72230024</p>
@@ -593,7 +591,8 @@
                 <!-- .widget end -->
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right">
                     <div class="widget-contact-icon pull-left">
-                        <img src="/assets/images/system/MAIL.png" style="margin-top: -15px;" width="30px;">
+                        {{-- <img src="/assets/images/system/MAIL.png"  width="30px;"> --}}
+                        <i class="fa fa-envelope-o" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
                         <p class="font-heading">servicio.cliente@pertec.com.bo</p>
@@ -628,6 +627,17 @@
 
 
 <style type="text/css">
+    .h1s{
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        font-family: 'Franklin Gothic Demi', sans-serif;
+        font-weight: 100;
+        letter-spacing: 1px;
+        line-height: 1;
+        margin-bottom: 0;
+        padding-bottom: 19px;
+        color: #093070;
+        }
     .slide {
       animation-duration: 2s;
       animation-name: slidein;
@@ -671,8 +681,6 @@
             margin-top: 0%;
         }
     }
-
-
     .modalPopUp {
         z-index: 999;
         width: 100%;
