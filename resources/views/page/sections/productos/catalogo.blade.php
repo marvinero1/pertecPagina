@@ -30,14 +30,27 @@
 
                 <div class="row">
                     <div class="heading">
-                        <div class="heading-bg heading-right">
+                        <div class="heading-right">
                             <p class="mb-0">Maestros en Pernos</p>
                             <h2>Nuestros Productos</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <form class="search-form">
+                    <form
+                        style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
+                        <div class="form-group pull-right top_search">
+                            <div class="input-group" style="width: 275px;">
+                                <input type="text" class="form-control" placeholder="Buscar por Nombre Producto" name="buscarpor"
+                                    style="border: 1px #093070 solid;">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" style="border: 1px #093070 solid;">
+                                        <i class="fa fa-search"></i> Buscar</button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                    {{-- <form class="search-form">
                         <div class="input-group" style="width: 275px;">
                             <input type="text" class="form-control" placeholder="Buscar">
                             <span class="input-group-btn">
@@ -46,7 +59,7 @@
                             </button>
                             </span>
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
 
 
@@ -75,31 +88,38 @@
                 </div>
 
                 <div class="row lightgallery1">
-                <div class="wrapper">
                     @foreach ($producto as $bproducto)
-                        <!-- product #1 --> 
-                        <!-- .product-item clearfix end -->
-                        
-                            <div class="row">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="http://192.168.31.242:5000/{{ $bproducto->imagen }}" alt="Card image cap" style="height:300px;">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <!-- product #1 -->
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item item">
+                                @if($bproducto["promocion"]=="si")
+                                <div class="infProd" style="background-color: #FBD800;">
+                                    EN OFERTA
+                                </div>
+                                @endif
+                                @if($bproducto["novedad"]=="si")
+                                <div class="infProd" style="background-color: #093070;">
+                                    NUEVO
+                                </div>
+                                @endif
+                                <div class="product-img" >
+                                    <img src="http://192.168.31.240:5000/{{ $bproducto->imagen }}" alt="product" style="height:250px;">
+                                    <div class="product-hover">
+                                        <div class="product-cart">
+                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}" class="btn btn-secondary btn-block a-card">Detalles</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <div style="height: 50px;">
+                                        <h4>
+                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">
+                                                {{ $bproducto["nombre_producto"] }}
+                                            </a>
+                                        </h4>
+
+                                </div>
                             </div>
-                            
-                        
-                    
-                            
-                    
-                    
-                        
                     @endforeach
                 </div>
-            </div>
                 <!-- .row end -->
                 <div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 pager mb-30-xs mb-30-sm">

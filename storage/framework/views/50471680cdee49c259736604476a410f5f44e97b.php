@@ -1,11 +1,5 @@
 <?php $__env->startSection('content'); ?>
 
-<style>
-    .lightgallery1 .product-item {
-    display: none;
-    }
-</style>
-
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/okNOVNew6865.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -34,23 +28,27 @@
 
                 <div class="row">
                     <div class="heading">
-                        <div class="heading-bg heading-right">
+                        <div class="heading-right">
                             <p class="mb-0">Maestros en Pernos</p>
                             <h2>Nuestros Productos</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <form class="search-form">
-                        <div class="input-group" style="width: 275px;">
-                            <input type="text" class="form-control" placeholder="Buscar">
-                            <span class="input-group-btn">
-                            <button class="btn" type="button" style="width: 50px; height: 49px;">
-                                <i class="fa fa-search" style="font-size: 25px;"></i>
-                            </button>
-                            </span>
+                    <form
+                        style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
+                        <div class="form-group pull-right top_search">
+                            <div class="input-group" style="width: 275px;">
+                                <input type="text" class="form-control" placeholder="Buscar por Nombre Producto" name="buscarpor"
+                                    style="border: 1px #093070 solid;">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" style="border: 1px #093070 solid;">
+                                        <i class="fa fa-search"></i> Buscar</button>
+                                </span>
+                            </div>
                         </div>
                     </form>
+                    
                 </div>
 
 
@@ -79,46 +77,50 @@
                 </div>
 
                 <div class="row lightgallery1">
-
                     <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bproducto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <!-- product #1 -->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item  clearfix item">
-                        <?php if($bproducto["promocion"]=="si"): ?>
-                        <div class="infProd" style="background-color: #FBD800;">
-                            EN OFERTA
-                        </div>
-                        <?php endif; ?>
-                        <?php if($bproducto["novedad"]=="si"): ?>
-                        <div class="infProd" style="background-color: #093070;">
-                            NUEVO
-                        </div>
-                        <?php endif; ?>
-                        <div class="product-img">
-                            <img src='http://192.168.31.242:5000/<?php echo e($bproducto["imagen"]); ?>' alt="product"
-                                style="height:300px;">
-                            <div class="product-hover">
-                                <div class="product-cart">
-                                    <a class="btn btn-secondary btn-block a-card"
-                                        href="<?php echo e(route('producto', ['id'=>base64_encode($bproducto['id'])])); ?>">
-                                        Detalles
-                                    </a>
+                        <!-- product #1 -->
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item item">
+                                <?php if($bproducto["promocion"]=="si"): ?>
+                                <div class="infProd" style="background-color: #FBD800;">
+                                    EN OFERTA
+                                </div>
+                                <?php endif; ?>
+                                <?php if($bproducto["novedad"]=="si"): ?>
+                                <div class="infProd" style="background-color: #093070;">
+                                    NUEVO
+                                </div>
+                                <?php endif; ?>
+                                <div class="product-img" >
+                                    <img src="http://192.168.31.240:5000/<?php echo e($bproducto->imagen); ?>" alt="product" style="height:250px;">
+                                    <div class="product-hover">
+                                        <div class="product-cart">
+                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) )); ?>" class="btn btn-secondary btn-block a-card">Detalles</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="height: 50px;">
+                                        <h4>
+                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) )); ?>">
+                                                <?php echo e($bproducto["nombre_producto"]); ?>
+
+                                            </a>
+                                        </h4>
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-bio">
-                            <h4>
-                                <a
-                                    href="<?php echo e(route('producto', ['id'=>base64_encode($bproducto['id'])])); ?>"><?php echo e($bproducto["nombre_producto"]); ?></a>
-                            </h4>
-                        </div>
-                    </div>
-                    <!-- .product-item clearfix end -->
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
                 </div>
                 <!-- .row end -->
-
+                <div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 pager mb-30-xs mb-30-sm">
+						<div class="page-prev">
+							<a href="#"><i class="fa fa-angle-left"></i></a>
+						</div>
+						<div class="page-next">
+							<a href="#"><i class="fa fa-angle-right"></i></a>
+						</div>
+					</div>
+				</div>
             </div>
             <!-- .shop-content end -->
         </div>
@@ -137,7 +139,16 @@
     <!-- .container end -->
 </section>
 
-
+<style>
+    .lightgallery1 .product-item {
+    display: none;
+    }
+    .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+</style>
 <script>
     $(function() {
     $(".item").slice(0, 8).show(); // select the first ten
