@@ -37,16 +37,17 @@ class ProductoController extends Controller
     }
 
     public function prom_products(){
+        $hash=new Hashids();
         $producto = Producto::where('promocion', 'si')->latest()->paginate(10);
 
-        return view('page.sections.productos.promocion', ['producto' => $producto]);
+        return view('page.sections.productos.promocion', ['producto' => $producto, 'hash' => $hash]);
     }
 
     public function nov_products(){
-
+        $hash=new Hashids();
         $producto = Producto::where('novedad', 'si')->latest()->paginate(10);
 
-        return view('page.sections.productos.novedad', ['producto' => $producto]);
+        return view('page.sections.productos.novedad', ['producto' => $producto, 'hash' => $hash]);
     }
 
     public function productosPromocion(Request $request){
@@ -183,8 +184,8 @@ class ProductoController extends Controller
         $hash = new Hashids();
         $hash_id = $hash->decodeHex($id);
         $producto_Id = Producto::findOrFail($hash_id);
-
-        return view('page.sections.productos.show', compact('producto_Id'));
+        $producto_sugeridos = Producto::inRandomOrder()->paginate(6);
+        return view('page.sections.productos.show', compact('producto_Id','producto_sugeridos','hash'));
     }
     /**
      * Show the form for editing the specified resource.

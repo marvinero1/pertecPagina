@@ -6,7 +6,7 @@
                 
 				<div class="navbar-header" style="margin-left: 0px !important;">
                     <a class="logo" href="/">
-						<img src="assets/images/icon.png" alt="Pertec S.R.L &copy;" style="height: -webkit-fill-available; float: left;" >
+						<img src="../assets/images/icon.png" alt="Pertec S.R.L &copy;" style="height: -webkit-fill-available; float: left;" >
 					</a>
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
                     style="float: right;margin-right: 35px;">
@@ -46,7 +46,12 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#" class="my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
+							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
+                            <ul class="dropdown-menu" style="border-radius: 10px;">
+								<li>
+									<a href="/">Oficinas y tiendas</a>
+								</li>
+							</ul>
 						</li>
 						<li class="has-dropdown pull-left">
 							<a href="/contactanos">Contacto</a>
@@ -84,13 +89,13 @@
                                     <?php endif; ?>
                                     <hr>
                                     <li>
-                                        <a href="/profileUser" style="color: #A6A69B;">Mi perfil</a>
+                                        <a href="<?php echo e(route('users.showFront', Auth::user()->id)); ?>" style="color: #A6A69B;">Mi perfil</a>
                                     </li>
                                     <li>
-                                        <a href="/pedidos" style="color: #A6A69B;">Mis pedidos</a>
+                                        <a href="mis_pedidos" style="color: #A6A69B;">Mis pedidos</a>
                                     </li>
                                     <li >
-                                        <a href="/facturas" style="color: #A6A69B;">Mis facturas</a>
+                                        <a href="invoices" style="color: #A6A69B;">Mis facturas</a>
                                     </li>
                                     <li>
                                         <a href="<?php echo e(route('logout')); ?>">

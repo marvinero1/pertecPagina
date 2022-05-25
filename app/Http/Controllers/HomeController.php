@@ -24,10 +24,10 @@ class HomeController extends Controller
      */
     public function index(){
         $hash=new Hashids();
-        $carusel = Carusel::all(); 
+        $carusel = Carusel::all();
         $producto = Producto::inRandomOrder()->paginate('4');
-
-        return view('index', ['hash' => $hash, 'carusel' => $carusel, 'producto' => $producto]);
+        $producto2 = Producto::inRandomOrder()->paginate('4');
+        return view('index', ['hash' => $hash, 'carusel' => $carusel, 'producto' => $producto, 'producto2' => $producto2]);
     }
 
     public function historia(){

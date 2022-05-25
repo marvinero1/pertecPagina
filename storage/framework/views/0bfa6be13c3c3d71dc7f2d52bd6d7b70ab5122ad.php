@@ -9,7 +9,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-12 widgets-links info-footer">
 				<div class="col-xs-12 col-sm-12 col-md-4 widget-links text-center-xs mb-30-xs">
                     <div class="widget-about-logo pull-left pull-none-xs" style="padding-block-end: 10px;">
-						<img src="assets/images/icon.png" alt="logo" width="80px"/>
+						<img src="../assets/images/icon.png" alt="logo" width="80px"/>
 					</div>
 					<div class="widget-about-info">
 						<h4 class="text-capitalize text-white p-subtitle" style="text-align: justify !important;padding: 0px 125px 0px 99px;">PERTEC S.R.L.</h4>
@@ -44,7 +44,7 @@
 								</li>
 							</ul>
 						</div>
-					</div>					
+					</div>
 				</div>
 
                 <div class="col-xs-12 col-sm-12 col-md-2 widget-links text-center-xs mb-30-xs">

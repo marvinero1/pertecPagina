@@ -248,7 +248,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="product-bio">
+                                        <div style="height: 50px;">
                                             <h4>
                                                 <a href="#"><?php echo e($productos->nombre_producto); ?></a>
                                             </h4>
@@ -260,6 +260,39 @@
                                 </div>
 
                         </div>
+
+
+                        <div class="item">
+
+                            <div class="row">
+                                <!-- product #1 -->
+
+                                <?php $__currentLoopData = $producto2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+
+                                    <div class="product-img">
+                                        <img src='http://192.168.31.240:5000/<?php echo e($productos->imagen); ?>' alt="product"
+                                            style="height:250px;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id))); ?>">Detalles</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="height: 50px;">
+                                        <h4>
+                                            <a href="#"><?php echo e($productos->nombre_producto); ?></a>
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                            </div>
+
+                        </div>
+
 
 
                         <!-- Controls -->

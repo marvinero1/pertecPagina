@@ -6,7 +6,7 @@
                 {{-- style="margin-left: 100px;" --}}
 				<div class="navbar-header" style="margin-left: 0px !important;">
                     <a class="logo" href="/">
-						<img src="assets/images/icon.png" alt="Pertec S.R.L &copy;" style="height: -webkit-fill-available; float: left;" >
+						<img src="../assets/images/icon.png" alt="Pertec S.R.L &copy;" style="height: -webkit-fill-available; float: left;" >
 					</a>
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
                     style="float: right;margin-right: 35px;">
@@ -46,7 +46,12 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#" class="my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
+							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
+                            <ul class="dropdown-menu" style="border-radius: 10px;">
+								<li>
+									<a href="/">Oficinas y tiendas</a>
+								</li>
+							</ul>
 						</li>
 						<li class="has-dropdown pull-left">
 							<a href="/contactanos">Contacto</a>
