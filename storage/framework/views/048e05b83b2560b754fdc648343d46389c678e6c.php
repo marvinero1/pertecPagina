@@ -14,7 +14,7 @@
                         <div class="tp-bgimg defaultimg fondo slide img"
                             style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
                             background-position: center center; width: 100%; height: 100%; opacity: 1;
-                            visibility: inherit; z-index: 20;" src="http://192.168.31.242:5000/<?php echo e($carusels->imagen); ?>">
+                            visibility: inherit; z-index: 20;" src="http://192.168.31.240:5000/<?php echo e($carusels->imagen); ?>">
                             <div class="fondo_con"></div>
                         </div>
 
@@ -28,7 +28,7 @@
                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                             data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                            <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen_icono); ?>"
+                            <img src="http://192.168.31.240:5000/<?php echo e($carusels->imagen_icono); ?>"
                                 alt="hook" />
 
                         </div>
@@ -241,7 +241,7 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
                                         <div class="product-img">
-                                            <img src='http://192.168.31.242:5000/<?php echo e($productos->imagen); ?>' alt="product"
+                                            <img src='http://192.168.31.240:5000/<?php echo e($productos->imagen); ?>' alt="product"
                                                 style="height:250px;">
                                             <div class="product-hover">
                                                 <div class="product-cart">
@@ -266,14 +266,14 @@
 
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 40%; left: 50%; background-color: rgb(206 206 206 / 80%);">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 25%; left: 0%; background-color: rgb(206 206 206 / 80%);">
                                 <span class="glyphicon glyphicon-chevron-left" style="margin-top: -16px;" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </div>
                         </a>
                         <a class="right carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="next">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 40%; right: 50%; background-color: rgb(206 206 206 / 80%);">
+                            <div style="width: 50px; height: 49px; position: absolute; top: 25%; right: 0%; background-color: rgb(206 206 206 / 80%);">
                                 <span class="glyphicon glyphicon-chevron-right" style="margin-top: -16px;"aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </div>
@@ -550,18 +550,18 @@
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
             <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('/assets/images/system/4.jpg');"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="height: 100%; display: flex; align-items: center; word-break: break-all;">
-                <div class="spaceText" style="text-align: center; padding: 95px 50px 95px 50px;">
+                <div class="spaceText" style="text-align: center; padding: 95px 40px 95px 40px;">
                     <p class="p-title">CALL CENTER</p><br>
                     <img src="/assets/images/system/AGENTE 1-04.png" style="width: 48px !important;">
                     <P class="p-subtitle">Atención al cliente</P>
-                    <p class="p-texto">
+                    <p class="p-texto" style="word-break: normal;">
                         Contamos con personal altamente calificado para brindarle asesoramiento,
                         información y soluciones integrales a nivel nacional.
                     </p>
                     <br>
                     <img src="/assets/images/system/AGENTE 2-05.png" style="width: 48px !important;">
                     <P class="p-subtitle">Toma de pedidos</P>
-                    <p class="p-texto">
+                    <p class="p-texto" style="word-break: normal;">
                         Contamos con la tecnología adecuada que nos permite la toma de
                         pedidos en tiempo real.
                     </p>

@@ -31,10 +31,10 @@ class ProductoController extends Controller
 
         $hash=new Hashids();
         $nombre_producto = $request->get('buscarpor');
-        $producto = Producto::all();
-        // $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->paginate(10);
-echo json_encode($producto);
-        // return view('page.sections.productos.catalogo', ['producto' => $producto, 'hash' => $hash]);
+        // $producto = Producto::all();
+        $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->get();
+        // echo json_encode($producto);
+        return view('page.sections.productos.catalogo', ['producto' => $producto, 'hash' => $hash]);
     }
 
     public function prom_products(){

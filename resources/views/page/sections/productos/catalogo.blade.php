@@ -2,12 +2,6 @@
 
 @section('content')
 {{-- tu variable para el for es $producto --}}
-<style>
-    .lightgallery1 .product-item {
-    display: none;
-    }
-</style>
-
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/okNOVNew6865.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -81,46 +75,42 @@
                 </div>
 
                 <div class="row lightgallery1">
-
+                <div class="wrapper">
                     @foreach ($producto as $bproducto)
-                    <!-- product #1 -->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item  clearfix item">
-                        @if($bproducto["promocion"]=="si")
-                        <div class="infProd" style="background-color: #FBD800;">
-                            EN OFERTA
-                        </div>
-                        @endif
-                        @if($bproducto["novedad"]=="si")
-                        <div class="infProd" style="background-color: #093070;">
-                            NUEVO
-                        </div>
-                        @endif
-                        <div class="product-img">
-                            <img src='http://192.168.31.242:5000/{{ $bproducto["imagen"] }}' alt="product"
-                                style="height:300px;">
-                            <div class="product-hover">
-                                <div class="product-cart">
-                                    <a class="btn btn-secondary btn-block a-card"
-                                        href="{{ route('producto', ['id'=>base64_encode($bproducto['id'])]) }}">
-                                        Detalles
-                                    </a>
+                        <!-- product #1 --> 
+                        <!-- .product-item clearfix end -->
+                        
+                            <div class="row">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="http://192.168.31.242:5000/{{ $bproducto->imagen }}" alt="Card image cap" style="height:300px;">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-bio">
-                            <h4>
-                                <a
-                                    href="{{ route('producto', ['id'=>base64_encode($bproducto['id'])]) }}">{{ $bproducto["nombre_producto"] }}</a>
-                            </h4>
-                        </div>
-                    </div>
-                    <!-- .product-item clearfix end -->
+                            
+                        
+                    
+                            
+                    
+                    
+                        
                     @endforeach
-
-
                 </div>
+            </div>
                 <!-- .row end -->
-
+                <div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 pager mb-30-xs mb-30-sm">
+						<div class="page-prev">
+							<a href="#"><i class="fa fa-angle-left"></i></a>
+						</div>
+						<div class="page-next">
+							<a href="#"><i class="fa fa-angle-right"></i></a>
+						</div>
+					</div>
+				</div>
             </div>
             <!-- .shop-content end -->
         </div>
@@ -139,7 +129,16 @@
     <!-- .container end -->
 </section>
 
-
+<style>
+    .lightgallery1 .product-item {
+    display: none;
+    }
+    .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+</style>
 <script>
     $(function() {
     $(".item").slice(0, 8).show(); // select the first ten

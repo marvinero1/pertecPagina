@@ -91,7 +91,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('productos', 'Admin\ProductoController@productsFront')->name('productos');
     Route::get('prom_products', 'Admin\ProductoController@prom_products')->name('prom_products');
     Route::get('nov_products', 'Admin\ProductoController@nov_products')->name('nov_products');
-    Route::get('producto/{id}', 'Admin\ProductoController@showFrontend')->name('producto');
+    Route::get('producto/{id}', 'Admin\ProductoController@showFrontend')->name('producto.showFrontEnd');
     Route::get('tiendasOfinasPertec', 'Admin\TiendaController@tiendasOficinas')->name('tiendasOfinasPertec');
     Route::get('profileUser', 'Admin\UserController@profileUser')->name('profileUser');
     
