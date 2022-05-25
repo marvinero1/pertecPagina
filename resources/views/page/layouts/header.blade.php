@@ -84,13 +84,13 @@
                                     @endif
                                     <hr>
                                     <li>
-                                        <a href="{{ route('profileUser', Auth::user()->id) }}" style="color: #A6A69B;">Mi perfil</a>
+                                        <a href="{{ route('users.showFront', Auth::user()->id) }}" style="color: #A6A69B;">Mi perfil</a>
                                     </li>
                                     <li>
-                                        <a href="/getPedidos" style="color: #A6A69B;">Mis pedidos</a>
+                                        <a href="mis_pedidos" style="color: #A6A69B;">Mis pedidos</a>
                                     </li>
                                     <li >
-                                        <a href="/getInvoices" style="color: #A6A69B;">Mis facturas</a>
+                                        <a href="invoices" style="color: #A6A69B;">Mis facturas</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}">

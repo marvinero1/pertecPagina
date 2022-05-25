@@ -13,6 +13,12 @@
 /**
  * Auth routes
  */
+Route::middleware(['auth'] )->group(function () {
+    Route::get('profileUser/{id}', 'Admin\UserController@profileUser')->name('users.showFront');
+    Route::get('invoices', 'HomeController@getInvoices')->name('invoices');
+    Route::get('mis_pedidos', 'HomeController@getPedidos')->name('mis_pedidos');
+
+});
 
 Route::group(['namespace' => 'Auth'], function () {
 
@@ -57,7 +63,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('users/restore', 'UserController@restore')->name('users.restore')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('users/{id}/restore', 'UserController@restoreUser')->name('users.restore-user')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('users/{id}', 'UserController@show')->name('users.show')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
-    Route::get('profileUser/{id}', 'UserController@profileUser')->name('profileUser.show')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
 
     Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::put('users/{user}', 'UserController@update')->name('users.update')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
@@ -92,8 +97,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('nov_products', 'Admin\ProductoController@nov_products')->name('nov_products');
     Route::get('producto/{id}', 'Admin\ProductoController@showFrontend')->name('producto.showFrontEnd');
     Route::get('tiendasOfinasPertec', 'Admin\TiendaController@tiendasOficinas')->name('tiendasOfinasPertec');
-    Route::get('invoices', 'HomeController@getInvoices')->name('getInvoices');
-    Route::get('mis_pedidos', 'HomeController@getPedidos')->name('getPedidos');
 
 /**
 * Membership
@@ -103,4 +106,6 @@ Route::group(['as' => 'protection.'], function () {
     Route::get('membership', 'MembershipController@index')->name('membership')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('membership/access-denied', 'MembershipController@failed')->name('membership.failed');
     Route::get('membership/clear-cache/', 'MembershipController@clearValidationCache')->name('membership.clear_validation_cache');
+
+    
 });
