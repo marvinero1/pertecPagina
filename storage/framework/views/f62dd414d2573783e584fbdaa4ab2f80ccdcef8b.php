@@ -25,12 +25,7 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
-                            <ul class="dropdown-menu" style="border-radius: 10px;">
-								<li>
-									<a href="/historia">Nuestra Historia</a>
-								</li>
-							</ul>
+							<a href="#" class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
 						</li>
                         <li class="has-dropdown">
 							<a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link">Productos</a>
@@ -51,12 +46,7 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
-                            <ul class="dropdown-menu" style="border-radius: 10px;">
-								<li>
-									<a href="/tiendasOfinasPertec">Oficinas y tiendas</a>
-								</li>
-							</ul>
+							<a href="#" class="my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
 						</li>
 						<li class="has-dropdown pull-left">
 							<a href="/contactanos">Contacto</a>
@@ -68,7 +58,7 @@
                            <strong  style="color: white; width: 20px;font-size: 1.8rem;">|
                              <i class="fa fa-search" style="font-size: 1.8rem;"></i></strong>
                         </div>
-                
+
                         <div class="search-box">
                             <form class="search-form">
                                 <div class="input-group">
@@ -77,7 +67,7 @@
                                         <i class="fa fa-search"></i></span>
                                     </div>
                             </form>
-                        </div> 
+                        </div>
                     </div>
 
                     <div class="module module-search" style="padding-top: 5px;">
@@ -87,6 +77,12 @@
                         <div class="search-box navbar-nav" style="height: auto; width: 165px; padding-top: 10px; padding-left: 20px;">
                             <div class="cart-icon">
                                 <ul class="list-unstyled user-menu">
+                                    <?php if(Auth::user()->name == "Admin"): ?>
+                                        <li>
+                                            <a href="/admin" style="color: #A6A69B;">Panel Administrativo</a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <hr>
                                     <li>
                                         <a href="/profileUser" style="color: #A6A69B;">Mi perfil</a>
                                     </li>
@@ -97,14 +93,10 @@
                                         <a href="/facturas" style="color: #A6A69B;">Mis facturas</a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo e(route('logout')); ?>"
-                                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"
-                                            style="color: #A6A69B;">Cerrar sesión
+                                        <a href="<?php echo e(route('logout')); ?>">
+                                            <i class="fa fa-sign-out pull-right"></i> <?php echo e(__('views.backend.section.header.menu_0')); ?>
+
                                         </a>
-                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
-                                            <?php echo csrf_field(); ?>
-                                        </form>
                                     </li>
                                 </ul>
                             </div>
@@ -121,19 +113,63 @@
                         <div class="cart-icon">
                             <i class="fa fa-user-circle" style="font-size: 1.8rem;" data-toggle="modal" data-target="#myModal"></i>
                             <div id="myModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-                            
+                                <div class="modal-dialog-login">
+
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Modal Header</h4>
+                                            <h4 class="modal-title text-center">PERTEC S.R.L &copy;</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Some text in the modal.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <div class="login_content">
+                                                <?php echo e(Form::open(['route' => 'login'])); ?>
+
+                                                    <h1 class="text-center"><?php echo e(__('views.auth.login.header')); ?></h1>
+                                                    <div>
+                                                        <input id="email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>"
+                                                               placeholder="<?php echo e(__('views.auth.login.input_0')); ?>" required autofocus>
+                                                    </div>
+                                                    <div>
+                                                        <input id="password" type="password" class="form-control" name="password"
+                                                               placeholder="<?php echo e(__('views.auth.login.input_1')); ?>" required>
+                                                    </div>
+                                                    <div class="checkbox al_left ">
+                                                        <label style="color: black;">
+                                                            <input type="checkbox" class="checkbox"
+                                                                   name="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>> <?php echo e(__('views.auth.login.input_2')); ?>
+
+                                                        </label>
+                                                    </div>
+
+                                                    <?php if(session('status')): ?>
+                                                        <div class="alert alert-success">
+                                                            <?php echo e(session('status')); ?>
+
+                                                        </div>
+                                                    <?php endif; ?>
+
+                                                    <?php if(!$errors->isEmpty()): ?>
+                                                        <div class="alert alert-danger" role="alert">
+                                                            <?php echo $errors->first(); ?>
+
+                                                        </div>
+                                                    <?php endif; ?>
+
+                                                    <div style="text-align: center;">
+                                                        <button class="btn btn-primary submit btn-lg btn-block p-2" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                                                            Ingresar</button>
+                                                        <a class="btn btn-link btn-sm" href="<?php echo e(route('password.request')); ?>" style="background-color: #ffc527;
+                                                        color: #093070;">
+                                                            <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; <?php echo e(__('views.auth.login.action_1')); ?>
+
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="clearfix"></div>
+                                                <?php echo e(Form::close()); ?>
+
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -146,15 +182,51 @@
 		</div>
 	</nav>
 </header>
+<style>
+    .modal-dialog-login{
+        margin-top: 90px;
+        width: 525px;
+    }
+    .modal-open .modal{
+        background-color: rgb(9, 48, 106, 0.6) !important;
+    }
+    .modal-header{
+        border-bottom: none;
+        background-color: #FBD800;
+        padding: 20px;
+    }
 
+    @media (min-width:768px) {
+    .modal-dialog-login {
+        width: 600px;
+        margin: 90px auto;
+    }
+    .checkbox input{
+        color: #093070;
+        position:inherit !important;
+    }
+    .checkbox, .radio {
+    /* position: relative; */
+    display: inherit;
+    /* margin-top: 10px; */
+    margin-bottom: 10px
+    }
+    .modal-body{
+        padding: 30px 45px 20px;
+    }
+    .btn-primary {
+        background-color: #093070;
+        color: #fff;
+        border: 1px solid #ffc527;
+    }
+</style>
 
 <script>
     $(function () {
-  $(document).scroll(function () {
-	  var $nav = $(".navbar-fixed-top");
-	  $nav.toggleClass('affix-scrooll', $(this).scrollTop() > $nav.height());
-	});
-});
-
+    $(document).scroll(function () {
+        var $nav = $(".navbar-fixed-top");
+        $nav.toggleClass('affix-scrooll', $(this).scrollTop() > $nav.height());
+        });
+    });
 </script>
 <?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/layouts/header.blade.php ENDPATH**/ ?>

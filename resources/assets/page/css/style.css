@@ -6003,7 +6003,7 @@ footer {
     }
 
     .alto-row-callCenter {
-        height: 530px !important;
+        height: 560px !important;
     }
 
     .service .service-img2>img {
@@ -9468,7 +9468,7 @@ footer hr {
     }
 
     .widgets-contact .widget-contact-info p:last-child {
-        font-size: 12px;
+        font-size: 1.4rem;
     }
 
     .widgets-contact .widget {
@@ -9969,11 +9969,6 @@ footer hr {
         margin-right: -450px;
         margin-left: 71px;
     }
-    .widget-contact-center{
-        padding-left: 0px !important;
-        display: flex;
-        justify-content: center;
-    }
 }
 @media (min-width: 1190px) {
     .widget-contact-right{
@@ -10145,7 +10140,11 @@ footer hr {
     padding-left: 10%;
     padding-right: 10%;
 }
-
+.message-contact {
+    font-family: 'Franklin Gothic Book', sans-serif;
+    font-size: 1.4rem;
+    color: #5a5a5aa6;
+}
 .font-frank-demi {
     font-family: 'Franklin Gothic Demi', sans-serif;
 }

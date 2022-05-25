@@ -25,12 +25,7 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
-                            <ul class="dropdown-menu" style="border-radius: 10px;">
-								<li>
-									<a href="/historia">Nuestra Historia</a>
-								</li>
-							</ul>
+							<a href="#" class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
 						</li>
                         <li class="has-dropdown">
 							<a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link">Productos</a>
@@ -51,12 +46,7 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
-                            <ul class="dropdown-menu" style="border-radius: 10px;">
-								<li>
-									<a href="/tiendasOfinasPertec">Oficinas y tiendas</a>
-								</li>
-							</ul>
+							<a href="#" class="my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
 						</li>
 						<li class="has-dropdown pull-left">
 							<a href="/contactanos">Contacto</a>
@@ -68,7 +58,7 @@
                            <strong  style="color: white; width: 20px;font-size: 1.8rem;">|
                              <i class="fa fa-search" style="font-size: 1.8rem;"></i></strong>
                         </div>
-                
+
                         <div class="search-box">
                             <form class="search-form">
                                 <div class="input-group">
@@ -77,7 +67,7 @@
                                         <i class="fa fa-search"></i></span>
                                     </div>
                             </form>
-                        </div> 
+                        </div>
                     </div>
 
                     <div class="module module-search" style="padding-top: 5px;">
@@ -123,7 +113,7 @@
                             <i class="fa fa-user-circle" style="font-size: 1.8rem;" data-toggle="modal" data-target="#myModal"></i>
                             <div id="myModal" class="modal fade" role="dialog">
                                 <div class="modal-dialog-login">
-                            
+
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -148,19 +138,19 @@
                                                                    name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('views.auth.login.input_2') }}
                                                         </label>
                                                     </div>
-                            
+
                                                     @if (session('status'))
                                                         <div class="alert alert-success">
                                                             {{ session('status') }}
                                                         </div>
                                                     @endif
-                            
+
                                                     @if (!$errors->isEmpty())
                                                         <div class="alert alert-danger" role="alert">
                                                             {!! $errors->first() !!}
                                                         </div>
                                                     @endif
-                            
+
                                                     <div style="text-align: center;">
                                                         <button class="btn btn-primary submit btn-lg btn-block p-2" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
                                                             Ingresar</button>
@@ -169,7 +159,7 @@
                                                             <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; {{ __('views.auth.login.action_1') }}
                                                         </a>
                                                     </div>
-                            
+
                                                     <div class="clearfix"></div>
                                                 {{ Form::close() }}
                                                 </div>

@@ -23,29 +23,30 @@ class ProductoController extends Controller
         $hash=new Hashids();
         $nombre_producto = $request->get('buscarpor');
         $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->orderBy('nombre_producto')->paginate(10);
-        
+
         return view('admin.products.index', ['producto' => $producto, 'hash' => $hash]);
     }
 
     public function productsFront(Request $request){
-        
+
         $hash=new Hashids();
         $nombre_producto = $request->get('buscarpor');
-        $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->orderBy('nombre_producto')->paginate(10);
-        
-        return view('page.sections.productos.catalogo', ['producto' => $producto, 'hash' => $hash]);
+        $producto = Producto::all();
+        // $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->paginate(10);
+echo json_encode($producto);
+        // return view('page.sections.productos.catalogo', ['producto' => $producto, 'hash' => $hash]);
     }
 
     public function prom_products(){
         $producto = Producto::where('promocion', 'si')->latest()->paginate(10);
-        
+
         return view('page.sections.productos.promocion', ['producto' => $producto]);
     }
 
     public function nov_products(){
-       
+
         $producto = Producto::where('novedad', 'si')->latest()->paginate(10);
-        
+
         return view('page.sections.productos.novedad', ['producto' => $producto]);
     }
 
@@ -53,14 +54,14 @@ class ProductoController extends Controller
         $hash = new Hashids();
         $nombre_producto = $request->get('buscarpor');
         $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->where('promocion', 'si')->latest()->paginate(10);
-        
+
         return view('admin.products.promocion', ['producto' => $producto, 'hash'=>$hash]);
     }
 
     public function productosNovedad(Request $request){
         $nombre_producto = $request->get('buscarpor');
         $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->where('novedad', 'si')->latest()->paginate(10);
-        
+
         return view('admin.products.novedad', ['producto' => $producto]);
     }
 
@@ -72,13 +73,13 @@ class ProductoController extends Controller
 
     // public function getProductsPromotion(){
     //     $producto = Producto::where('promocion', 'si')->get();
-        
+
     //     return response()->json($producto, 200);
     // }
 
     // public function getProductsNovelty(){
     //     $producto = Producto::where('novedad', 'si')->get();
-        
+
     //     return response()->json($producto, 200);
     // }
 
@@ -103,9 +104,9 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        
+
         $requestData = $request->all();
-        
+
         $validator = Validator::make($requestData, [
             'nombre_producto' => 'required|max:191',
             'denominacion' => 'required|max:191',
@@ -159,7 +160,7 @@ class ProductoController extends Controller
             }else{
                 DB::rollback();
             }
-        }       
+        }
 
         Session::flash('message','Producto Creado Exisitosamente!');
         return redirect()->route('admin.producto.index');
@@ -175,16 +176,16 @@ class ProductoController extends Controller
         $hash = new Hashids();
         $hash_id = $hash->decodeHex($id);
         $productos = Producto::findOrFail($hash_id);
-       
-        return view('admin.products.show', compact('productos')); 
+
+        return view('admin.products.show', compact('productos'));
     }
 
     public function showFrontend($id){
         $hash = new Hashids();
         $hash_id = $hash->decodeHex($id);
         $producto_Id = Producto::findOrFail($hash_id);
-       
-        return view('admin.products.show', compact('producto_Id')); 
+
+        return view('admin.products.show', compact('producto_Id'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -237,20 +238,20 @@ class ProductoController extends Controller
             if($request->imagen == ''){
                 unset($requestData['imagen']);
             }
-    
+
             $mensaje = "Producto Actualizado correctamente :3";
             if($request->imagen){
                 $data = $request->imagen;
                 $file = file_get_contents($request->imagen);
-                $info = $data->getClientOriginalExtension(); 
+                $info = $data->getClientOriginalExtension();
                 $extension = explode('images/productos', mime_content_type('images/productos'))[0];
                 $image = Image::make($file);
-                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info; 
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
                 $path  = 'images/productos';
                 if (!file_exists($path)) {
                     mkdir($path, 0777, true);
                 }
-                $img = $path.'/'.$fileName; 
+                $img = $path.'/'.$fileName;
                 if($image->save($img)) {
                     $archivo_antiguo = $producto->imagen;
                     $requestData['imagen'] = $img;
@@ -262,7 +263,7 @@ class ProductoController extends Controller
                     $mensaje = "Error al guardar la imagen";
                 }
             }
-    
+
             if($producto->update($requestData)){
                 DB::commit();
             }else{
@@ -279,7 +280,7 @@ class ProductoController extends Controller
         $promocion = $request->get('promocion');
 
         $producto->promocion = $promocion;
-        $producto->update(); 
+        $producto->update();
 
         Session::flash('promocion','Producto Promocion Exisitosamente!');
         return redirect()->route('admin.producto.index');
@@ -290,19 +291,19 @@ class ProductoController extends Controller
         $novedad = $request->get('novedad');
 
         $producto->novedad = $novedad;
-        $producto->update(); 
+        $producto->update();
 
         Session::flash('novedad','Producto Novedad Exisitosamente!');
         return back()->withInput();
     }
 
     public function  productoMatriz(Request $request, $id){
-     
+
         $producto = Producto::findOrFail($id);
         $mensaje = 'Matriz Creada Exitosamente!!!';
 
         $requestData = $request->all();
-        
+
         if(is_null($request->imagen_matriz)){
             unset($requestData['imagen_matriz']);
         }
@@ -323,7 +324,7 @@ class ProductoController extends Controller
             if($image->save($img)) {
                 $archivo_antiguo = $producto->imagen_matriz;
                 $requestData['imagen_matriz'] = $img;
-               
+
                 $mensaje = "Matriz Creada correctamente :3";
                 if ($archivo_antiguo != '' && !File::delete($archivo_antiguo)) {
                     $mensaje = "Matriz Creada. error al eliminar la imagen";
