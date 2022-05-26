@@ -11,7 +11,7 @@ use Validator;
 use Hashids\Hashids;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
-{   
+{
     /**
      * Repository
      *
@@ -21,7 +21,7 @@ class UserController extends Controller
 
     /**
      * Construct
-     * 
+     *
      */
     public function __construct()
     {
@@ -106,13 +106,13 @@ class UserController extends Controller
      * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(User $user, $id){  
+    public function show(User $user, $id){
         $hash = new Hashids();
         $hash_id = $hash->decode($id);
 
         $users = User::all();
         $user = $users->find($hash_id);
-        
+
         return view('admin.users.show', ['user' => $user]);
     }
 

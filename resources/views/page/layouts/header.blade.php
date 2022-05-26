@@ -4,7 +4,7 @@
 			<div class="container" style="padding-right: 0px !important;padding-left: 0px; !important">
 				<!-- Brand and toggle get grouped for better mobile display -->
                 {{-- style="margin-left: 100px;" --}}
-				<div class="navbar-header" style="margin-left: 0px !important;">
+				<div class="navbar-header">
                     <a class="logo" href="/">
 						<img src="../assets/images/icon.png" alt="Pertec S.R.L &copy;" style="height: -webkit-fill-available; float: left;" >
 					</a>
@@ -58,122 +58,123 @@
 						</li>
 					</ul>
                     @if (!auth()->guest())
-                    <div class="module module-search pull-left" style="margin-right: 25px;">
-                        <div class="search-icon">
-                           <strong  style="color: white; width: 20px;font-size: 1.8rem;">|
-                             <i class="fa fa-search" style="font-size: 1.8rem;"></i></strong>
-                        </div>
+                        <div class="module module-search pull-left" style="margin-right: 5px;">
+                            <div class="search-icon">
+                            <strong  style="color: white; width: 20px;font-size: 1.8rem;">|
+                                <i class="fa fa-search" style="font-size: 1.8rem;"></i></strong>
+                            </div>
 
-                        <div class="search-box">
-                            <form class="search-form">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder=" &nbsp; Buscar">
-                                    <span class="input-group-addon" style="border-radius: 20px;background: #093070;color: white;">
-                                        <i class="fa fa-search"></i></span>
-                                    </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="module module-search" style="padding-top: 5px;">
-                        <div class="search-icon user-icon-margin">
-                            <i class="fa fa-user-circle" style="font-size: 1.8rem;padding-left: 0px !important;padding-right: 0px !important;"></i>
-                        </div>
-                        <div class="search-box navbar-nav" style="height: auto; width: 165px; padding-top: 10px; padding-left: 20px;">
-                            <div class="cart-icon">
-                                <ul class="list-unstyled user-menu">
-                                    @if (Auth::user()->name == "Admin")
-                                        <li>
-                                            <a href="/admin" style="color: #A6A69B;">Panel Administrativo</a>
-                                        </li>
-                                    @endif
-                                    <hr>
-                                    <li>
-                                        <a href="{{ route('users.showFront', Auth::user()->id) }}" style="color: #A6A69B;">Mi perfil</a>
-                                    </li>
-                                    <li>
-                                        <a href="mis_pedidos" style="color: #A6A69B;">Mis pedidos</a>
-                                    </li>
-                                    <li >
-                                        <a href="invoices" style="color: #A6A69B;">Mis facturas</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('logout') }}">
-                                            <i class="fa fa-sign-out pull-right"></i> {{ __('views.backend.section.header.menu_0') }}
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div class="search-box">
+                                <form class="search-form">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder=" &nbsp; Buscar">
+                                        <span class="input-group-addon" style="border-radius: 20px;background: #093070;color: white;">
+                                            <i class="fa fa-search"></i></span>
+                                        </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
-                    @else
-                    <div class="module module-search pull-left" style="margin-right: 25px;">
-                        <div class="search-icon">
-                            <strong  style="color: white; width: 20px;font-size: 1.8rem;">| </strong>
+
+                        <div class="module module-search" style="padding-top: 5px;">
+                            <div class="search-icon user-icon-margin">
+                                <i class="fa fa-user-circle" style="font-size: 1.8rem;padding-left: 0px !important;padding-right: 0px !important;"></i>
+                                {{-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: 40px; margin-top: -15px;" title="" alt=""> --}}
+                            </div>
+                            <div class="search-box navbar-nav" style="height: auto; width: 165px; padding-top: 10px; padding-left: 20px;">
+                                <div class="cart-icon">
+                                    <ul class="list-unstyled user-menu">
+                                        @if (Auth::user()->name == "Admin")
+                                            <li>
+                                                <a href="/admin" style="color: #A6A69B;">Panel Administrativo</a>
+                                            </li>
+                                        @endif
+                                        <hr>
+                                        <li>
+                                            <a href="{{ route('users.showFront', Auth::user()->id) }}" style="color: #A6A69B;">Mi perfil</a>
+                                        </li>
+                                        <li>
+                                            <a href="mis_pedidos" style="color: #A6A69B;">Mis pedidos</a>
+                                        </li>
+                                        <li >
+                                            <a href="invoices" style="color: #A6A69B;">Mis facturas</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('logout') }}">
+                                                <i class="fa fa-sign-out pull-right"></i> {{ __('views.backend.section.header.menu_0') }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="module module-search pull-left" style="margin-right: 25px;">
+                            <div class="search-icon">
+                                <strong  style="color: white; width: 20px;font-size: 1.8rem;">| </strong>
+                            </div>
+                        </div>
 
-                    <div class="module module-cart pull-right" style="padding-top: 5px;">
-                        <div class="cart-icon">
-                            <i class="fa fa-user-circle" style="font-size: 1.8rem;" data-toggle="modal" data-target="#myModal"></i>
-                            <div id="myModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog-login">
+                        <div class="module module-cart pull-right" style="padding-top: 5px;">
+                            <div class="cart-icon">
+                                <i class="fa fa-user-circle" style="font-size: 1.8rem;" data-toggle="modal" data-target="#myModal"></i>
+                                <div id="myModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog-login">
 
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title text-center">PERTEC S.R.L &copy;</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="login_content">
-                                                {{ Form::open(['route' => 'login']) }}
-                                                    <h1 class="text-center">{{ __('views.auth.login.header') }}</h1>
-                                                    <div>
-                                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
-                                                               placeholder="{{ __('views.auth.login.input_0') }}" required autofocus>
-                                                    </div>
-                                                    <div>
-                                                        <input id="password" type="password" class="form-control" name="password"
-                                                               placeholder="{{ __('views.auth.login.input_1') }}" required>
-                                                    </div>
-                                                    <div class="checkbox al_left ">
-                                                        <label style="color: black;">
-                                                            <input type="checkbox" class="checkbox"
-                                                                   name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('views.auth.login.input_2') }}
-                                                        </label>
-                                                    </div>
-
-                                                    @if (session('status'))
-                                                        <div class="alert alert-success">
-                                                            {{ session('status') }}
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title text-center">PERTEC S.R.L &copy;</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="login_content">
+                                                    {{ Form::open(['route' => 'login']) }}
+                                                        <h1 class="text-center">{{ __('views.auth.login.header') }}</h1>
+                                                        <div>
+                                                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
+                                                                placeholder="{{ __('views.auth.login.input_0') }}" required autofocus>
                                                         </div>
-                                                    @endif
-
-                                                    @if (!$errors->isEmpty())
-                                                        <div class="alert alert-danger" role="alert">
-                                                            {!! $errors->first() !!}
+                                                        <div>
+                                                            <input id="password" type="password" class="form-control" name="password"
+                                                                placeholder="{{ __('views.auth.login.input_1') }}" required>
                                                         </div>
-                                                    @endif
+                                                        <div class="checkbox al_left ">
+                                                            <label style="color: black;">
+                                                                <input type="checkbox" class="checkbox"
+                                                                    name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('views.auth.login.input_2') }}
+                                                            </label>
+                                                        </div>
 
-                                                    <div style="text-align: center;">
-                                                        <button class="btn btn-primary submit btn-lg btn-block p-2" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
-                                                            Ingresar</button>
-                                                        <a class="btn btn-link btn-sm" href="{{ route('password.request') }}" style="background-color: #ffc527;
-                                                        color: #093070;">
-                                                            <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; {{ __('views.auth.login.action_1') }}
-                                                        </a>
+                                                        @if (session('status'))
+                                                            <div class="alert alert-success">
+                                                                {{ session('status') }}
+                                                            </div>
+                                                        @endif
+
+                                                        @if (!$errors->isEmpty())
+                                                            <div class="alert alert-danger" role="alert">
+                                                                {!! $errors->first() !!}
+                                                            </div>
+                                                        @endif
+
+                                                        <div style="text-align: center;">
+                                                            <button class="btn btn-primary submit btn-lg btn-block p-2" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                                                                Ingresar</button>
+                                                            <a class="btn btn-link btn-sm" href="{{ route('password.request') }}" style="background-color: #ffc527;
+                                                            color: #093070;">
+                                                                <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; {{ __('views.auth.login.action_1') }}
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="clearfix"></div>
+                                                    {{ Form::close() }}
                                                     </div>
-
-                                                    <div class="clearfix"></div>
-                                                {{ Form::close() }}
-                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endif
 				</div>
 			</div>

@@ -14211,7 +14211,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
     .container>.navbar-collapse,
     .container>.navbar-header {
         margin-right: 0;
-        margin-left: 0
+        margin-left: 0px !important;
     }
 }
 
