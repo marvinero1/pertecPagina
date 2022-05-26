@@ -3,35 +3,19 @@
 @section('content')
 {{-- <h1>{{ $user_id->name }}</h1> --}}
 
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/producBackground.jpg);">
-    <div class="bgImgCoverPages"></div>
-    <div class="container" style="margin-top: -540px;">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-title title-1 text-center texto-borde">
-                    <div>
-                        <h2>Mi Perfil</h2>
-                    </div>
-                    <ol class="breadcrumb" style="display: unset !important;">
-                        <li>
-                            <a href="/">Inicio</a>
-                        </li>
-                        <li class="active">Mi Perfil</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-
-<section class="section about-section gray-bg" id="about">
+<section class="section about-section gray-bg" id="about" style="padding-top: 240px">
     <div class="container">
         <div class="row align-items-center flex-row-reverse">
             <div class="col-lg-6">
                 <div class="about-text go-to">
                     <h3 class="dark-color font-frank-demi">Mi Perfil</h3>
-                    <h6 class="theme-color lead font-frank-demi">Usuario Verificado</h6>
+                    @if($user_id->confirmed != 1)
+                        <h6 class="theme-color lead font-frank-demi">Usuario No Verificado <i class="fa fa-times-circle-o" aria-hidden="true"></i></h6>
+                    @else
+                    <h6 class="lead font-frank-demi" style="color: green">Usuario Verificado <i class="fa fa-check-circle-o" aria-hidden="true"></i></h6>
+                    @endif
+
                     <div class="row about-list">
                         <div class="col-md-12">
                             <div class="media">
@@ -46,10 +30,6 @@
                                 <label>Correo</label>
                                 <p>{{ $user_id->email }}</p>
                             </div>
-                            <div class="media">
-                                <label>Contraseña</label>
-                                <p>{{ $user_id->password }}</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,9 +37,9 @@
             <div class="col-lg-6" style="text-align: center;">
                 <div class="about-avatar">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
-                </div>
+                </div><br>
                 <div class="row">
-                    <button class="btn btn-primary">Actualizar Datos</button>
+                    <button class="btn btn-primary" style="height: 35px; font-size: 1.5rem;">Actualizar Datos</button>
                 </div>
             </div>
         </div>
@@ -100,7 +80,7 @@
         position: relative;
     }
 
-    .gray-bg {
+    .gray-bg, br {
         background-color: #f5f5f5;
     }
 
