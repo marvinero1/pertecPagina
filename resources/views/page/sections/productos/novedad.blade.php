@@ -39,6 +39,24 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-4 aling-rigth" style="display: flex;">
+                        <form
+                        style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
+                        <div class="form-group pull-right top_search">
+                            <div class="input-group" style="width: 380px;">
+                                <input type="text" class="form-control font-frank-book" placeholder="Buscar por Nombre de Producto" name="buscarpor"
+                                    style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" style="border: 1px #093070 solid; font-size: 1.3rem;">
+                                        <i class="fa fa-search"></i> Buscar</button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                
                 <div class="row lightgallery1">
                     @foreach ($producto as $bproducto)
                     <div class="col-xs-12 col-sm-4 col-md-3 product-item  clearfix item">

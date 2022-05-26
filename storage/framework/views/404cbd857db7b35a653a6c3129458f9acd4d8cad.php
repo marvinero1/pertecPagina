@@ -6,63 +6,68 @@
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <?php $__currentLoopData = $carusel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $carusels): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
-                        data-easeout="Power4.easeInOut" data-masterspeed="1000">
-                        <!-- MAIN IMAGE -->
-                        <div class="tp-bgimg defaultimg fondo slide img"
-                            style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
+                <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
+                    data-easeout="Power4.easeInOut" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <div class="slotholder"
+                        style="position: absolute; top: 0px; left: 0px; z-index: 0; width: 100%; height: 100%; visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <img class="tp-bgimg defaultimg fondo slide img" style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
                             background-position: center center; width: 100%; height: 100%; opacity: 1;
-                            visibility: inherit; z-index: 20;" src="http://192.168.31.240:5000/<?php echo e($carusels->imagen); ?>">
+                            visibility: inherit; z-index: 20;"
+                            src="http://192.168.31.240:5000/<?php echo e($carusels->imagen); ?>">
                             <div class="fondo_con"></div>
-                        </div>
+            </img>
+                    </div>
+                    
 
 
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                            data-whitespace="nowrap" data-width="['150','70','70','100']"
-                            data-height="['150','70','70','100']" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                            <img src="http://192.168.31.240:5000/<?php echo e($carusels->imagen_icono); ?>"
-                                alt="hook" />
 
-                        </div>
+                    
+                    
 
-                        <!-- LAYER NR. 2 -->
-                        <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-                            data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                            data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                            data-lineheight="['100','45','25','25']"
-                            data-color="#ffc527" style="z-index: 999 !important;">
-                            
-                            <?php echo e($carusels->titulo); ?>
 
-                        </h1>
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                        data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
+                        data-height="['150','70','70','100']" data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
+                        <img src="http://192.168.31.240:5000/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
 
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-                            data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
-                            data-lineheight="['50','26','25','25']"
-                            data-color="#fff" style="z-index: 999 !important;">
-                            
-                            <?php echo e($carusels->sub_titulo); ?>
+                    </div>
 
-                        </div>
+                    <!-- LAYER NR. 2 -->
+                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                        data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
+                        data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
+                        <?php echo e($carusels->titulo); ?>
 
-                    </li>
+                    </h1>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                        data-y="center" data-voffset="80" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
+                        data-lineheight="['50','26','25','25']" data-color="#fff" style="z-index: 999 !important;">
+                        <?php echo e($carusels->sub_titulo); ?>
+
+                    </div>
+
+                </li>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div>
@@ -72,8 +77,11 @@
 
 
 
+
+
 <!-- acerca de nosotros -->
-<section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
+<section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm"
+    style="background-color: white;">
     <div class="content section-content">
         <div class="row slide">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -101,16 +109,19 @@
                     comercialización directa.</p>
                 <ul style="text-align: justify;" class="list-unstyled">
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Nuestra vocación de servicio es el motor que impulsa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Nuestra vocación de servicio es el
+                            motor que impulsa y
                             dirige nuestras acciones.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Brindamos un excelente servicio a los clientes externos e
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Brindamos un excelente servicio a
+                            los clientes externos e
                             internos, en procura de
                             maximizar la satisfacción de sus necesidades y deseos.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Somos personas comprometidas con nuestra Empresa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Somos personas comprometidas con
+                            nuestra Empresa y
                             trabajamos en equipo.</p>
                     </li>
                 </ul>
@@ -232,32 +243,32 @@
 
                         <div class="item active">
 
-                                <div class="row">
-                                    <!-- product #1 -->
+                            <div class="row">
+                                <!-- product #1 -->
 
-                                    <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
-                                        <div class="product-img">
-                                            <img src='http://192.168.31.240:5000/<?php echo e($productos->imagen); ?>' alt="product"
-                                                style="height:250px;">
-                                            <div class="product-hover">
-                                                <div class="product-cart">
-                                                    <a class="btn btn-secondary btn-block a-card"
-                                                        href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id))); ?>">Detalles</a>
-                                                </div>
+                                    <div class="product-img">
+                                        <img src='http://192.168.31.240:5000/<?php echo e($productos->imagen); ?>' alt="product"
+                                            style="height:250px;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id))); ?>">Detalles</a>
                                             </div>
                                         </div>
-                                        <div style="height: 50px;">
-                                            <h4>
-                                                <a href="#"><?php echo e($productos->nombre_producto); ?></a>
-                                            </h4>
-                                        </div>
-
                                     </div>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    <div style="height: 50px;">
+                                        <h4>
+                                            <a href="#"><?php echo e($productos->nombre_producto); ?></a>
+                                        </h4>
+                                    </div>
 
                                 </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                            </div>
 
                         </div>
 
@@ -287,7 +298,7 @@
                                     </div>
 
                                 </div>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                             </div>
 
@@ -296,17 +307,20 @@
 
 
                         <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 25%; left: 0%; background-color: rgb(206 206 206 / 80%);">
-                                <span class="glyphicon glyphicon-chevron-left" style="margin-top: -16px;" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                            data-slide="prev">
+                            <div
+                                style="width: 50px; height: 49px; position: absolute; top: 25%; left: 0%; background-color: rgb(206 206 206 / 80%);">
+                                <i class="fa fa-angle-left" style="margin-top: 2px; font-size: 3rem; font-weight: bold;"
+                                    aria-hidden="true"></i>
                             </div>
                         </a>
                         <a class="right carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="next">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 25%; right: 0%; background-color: rgb(206 206 206 / 80%);">
-                                <span class="glyphicon glyphicon-chevron-right" style="margin-top: -16px;"aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
+                            <div
+                                style="width: 50px; height: 49px; position: absolute; top: 25%; right: 0%; background-color: rgb(206 206 206 / 80%);">
+                                <i class="fa fa-angle-right"
+                                    style="margin-top: 2px; font-size: 3rem; font-weight: bold;" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
@@ -316,8 +330,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
-                    <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;" href="/fullProducts">Ver más productos<i
-                            class="fa fa-plus ml-xs"></i>
+                    <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;"
+                        href="/fullProducts">Ver más productos<i class="fa fa-plus ml-xs"></i>
                     </a>
                 </div>
             </div>
@@ -349,7 +363,7 @@
                         <div class="product-cart">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
-                                class="fa fa-plus ml-xs"></i>
+                                    class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -447,8 +461,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
-                                onclick="showOfs('storeCbba')">Tiendas Cochabamba<i
-                                class="fa fa-plus ml-xs"></i>
+                                onclick="showOfs('storeCbba')">Tiendas Cochabamba<i class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -491,8 +504,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
-                                onclick="showOfs('storeLaPaz')">Tiendas La Paz<i
-                                class="fa fa-plus ml-xs"></i>
+                                onclick="showOfs('storeLaPaz')">Tiendas La Paz<i class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -534,8 +546,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
-                                onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i
-                                class="fa fa-plus ml-xs"></i>
+                                onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -579,8 +590,10 @@
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('/assets/images/system/4.jpg');"></div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="height: 100%; display: flex; align-items: center; word-break: break-all;">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg"
+                style="background-image: url('/assets/images/system/4.jpg');"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-content"
+                style="height: 100%; display: flex; align-items: center; word-break: break-all;">
                 <div class="spaceText" style="text-align: center; padding: 95px 40px 95px 40px;">
                     <p class="p-title">CALL CENTER</p><br>
                     <img src="/assets/images/system/AGENTE 1-04.png" style="width: 48px !important;">
@@ -615,7 +628,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
                         
-                        <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;" ></i>
+                        <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
                         <p class="font-heading">(Whatsapp) 72221032 - 72230024</p>
@@ -644,7 +657,7 @@
 
 
 <style type="text/css">
-    .h1s{
+    .h1s {
         font-size: 2.4rem;
         text-transform: uppercase;
         font-family: 'Franklin Gothic Demi', sans-serif;
@@ -654,55 +667,60 @@
         margin-bottom: 0;
         padding-bottom: 19px;
         color: #093070;
-        }
-    .slide {
-      animation-duration: 2s;
-      animation-name: slidein;
     }
-    .tp-bgimg defaultimg{
+
+    .slide {
+        animation-duration: 2s;
+        animation-name: slidein;
+    }
+
+    .tp-bgimg defaultimg {
         filter: contrast(0.8) !important;
     }
 
-    .tdn{
+    .tdn {
         animation-duration: 3s;
         animation-name: tdn;
     }
+
     .fondo_con {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(181deg, rgba(9,48,112,0.5) 0%, rgba(255,255,255,0.2) 100%);
-    z-index: 99;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(181deg, rgba(9, 48, 112, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
+        z-index: 99;
     }
 
     @keyframes  slidein {
-    from{
-        margin-left: 0%;
-        margin-top: 100%;
+        from {
+            margin-left: 0%;
+            margin-top: 100%;
         }
 
-        to{
+        to {
             margin-down: 100%;
-
+            width: 100%;
         }
     }
-    @keyframes  tdn{
-    from{
-        margin-top: 100%;
+
+    @keyframes  tdn {
+        from {
+            margin-top: 100%;
         }
 
-        to{
+        to {
             margin-top: 0%;
         }
     }
+
     .modalPopUp {
         z-index: 999;
         width: 100%;
         height: 100%;
-        background: rgba(9,48,112,0.5);
+        background: rgba(9, 48, 112, 0.5);
         position: fixed;
         top: 0;
         left: 0;
@@ -712,6 +730,7 @@
         opacity: 0;
         text-align: center;
     }
+
     .contenido {
         margin: auto;
         width: 40%;
@@ -723,7 +742,8 @@
     #cerrar {
         display: none;
     }
-    #cerrar + label {
+
+    #cerrar+label {
         position: fixed;
         color: #fff;
         font-size: 25px;
@@ -741,9 +761,12 @@
         visibility: hidden;
         opacity: 0;
     }
-    #cerrar:checked + label, #cerrar:checked ~ .modalPopUp {
+
+    #cerrar:checked+label,
+    #cerrar:checked~.modalPopUp {
         display: none;
     }
+
     @keyframes  modal {
         100% {
             visibility: visible;
@@ -751,10 +774,33 @@
         }
     }
 
+    .fondo {
+        background-color: rgba(0, 0, 0, 0);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        opacity: 1 !important;
+        visibility: inherit !important;
+        z-index: 1 !important;
+    }
+
+    .fondo.con::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(181deg, rgba(9, 48, 112, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
+        z-index: -1;
+    }
+
 </style>
 
 <script>
-    function showOfs(Element){
+    function showOfs(Element) {
         var x = document.getElementById(Element);
         if (x.style.display === "none") {
             x.style.display = "flex";

@@ -18946,7 +18946,7 @@ footer {
 }
 
 .full-header .module-search .search-icon i {
-    border-left-color: rgba(49, 49, 49, 0.1);
+    border-left-color: transparent;
 }
 
 .full-header .navbar.affix {
@@ -19535,6 +19535,7 @@ footer {
     .navbar-nav {
         margin: 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 87%;
     }
 
     .collapse.in {
@@ -19961,7 +19962,8 @@ footer {
         border-radius: 0;
         margin-top: 35px;
         display: block;
-        float: left;
+        float: left !important;
+        left: 51%;
     }
 
     .navbar-toggle .icon-bar {
@@ -25901,7 +25903,7 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
     -webkit-border-radius: 1px;
     border-radius: 1px;
     color: #9e9e9e;
-    font-size: 13px;
+    font-size: 1.3rem;
     font-weight: 500;
     line-height: 22px;
 }
@@ -25915,8 +25917,7 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
 }
 
 .product-tabs .nav-tabs>li>a {
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 1.5rem;
     text-transform: capitalize;
     color: #313131;
     -moz-border-radius: 0;
@@ -27183,6 +27184,9 @@ footer hr {
         display: block;
         overflow-x: auto;
     }
+    .icon-margin {
+        padding-right: 40px;
+    }
 }
 @media(min-width: 992px) {
     .col-md-offset-6 {
@@ -27205,6 +27209,15 @@ footer hr {
     }
     .alto-row-callCenter{
         height: 605px;
+    }
+    .aling-rigth{
+        text-align: right;
+    }
+    .aling-left{
+        text-align: left;
+    }
+    .icon-margin {
+        margin-top: 10px;
     }
 }
 
@@ -27248,13 +27261,6 @@ footer hr {
     .info-footer {
         padding-left: 5% !important;
     }
-    .aling-rigth{
-        text-align: right;
-    }
-
-    .aling-left{
-        text-align: left;
-    }
 }
 
 @media (min-width: 1090px) and (max-width: 1400px) {
@@ -27277,7 +27283,18 @@ footer hr {
         max-width: 75% !important;
     }
 }
-
+@media (min-width: 722px) {
+    .modal-body {
+        margin-top: 72px;
+        margin-bottom: 65px;
+    }
+}
+@media (max-width: 721px) {
+    .modal-body {
+        margin-top: 102px;
+        margin-bottom: 66px;
+    }
+}
 .header-3 .navbar-fixed-top.affix-scrooll {
     background-color: #093070c2;
 }
@@ -27289,6 +27306,7 @@ footer hr {
 .table-prod-inf h4 {
     color: #ffcb00;
     font-family: 'Franklin Gothic Demi', sans-serif !important;
+    font-weight: 100;
 
 }
 .title-details {
@@ -27472,14 +27490,13 @@ footer hr {
           bottom: 0;
         left:0;
         right:0;
-          margin-top: 60px;
-          margin-bottom: 60px;
 }
 
 .modal-dialog.full-screen .modal-content .modal-footer {
         position:absolute;
         bottom:0;
         right:0;
+        width: 100%;
 }
 
 .spaceText p {

@@ -34,21 +34,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <form
+                <div class="row" style="height: 85px;">
+                    <div class="col-xs-12 col-sm-12 col-md-4 aling-rigth" style="display: flex;">
+                        <form
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
-                            <div class="input-group" style="width: 275px;">
-                                <input type="text" class="form-control" placeholder="Buscar por Nombre Producto" name="buscarpor"
-                                    style="border: 1px #093070 solid;">
+                            <div class="input-group" style="width: 380px;">
+                                <input type="text" class="form-control font-frank-book" placeholder="Buscar por Nombre de Producto" name="buscarpor"
+                                    style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" style="border: 1px #093070 solid;">
+                                    <button class="btn btn-default" type="button" style="border: 1px #093070 solid; font-size: 1.3rem;">
                                         <i class="fa fa-search"></i> Buscar</button>
                                 </span>
                             </div>
                         </div>
                     </form>
-                    
+                    </div>
                 </div>
 
 
@@ -65,6 +66,7 @@
                             <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalArand">
                                 Piezas/Kg en Arandelas
                             </a>
+                            
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 product-item aling-left">
@@ -72,6 +74,7 @@
                             <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalAutos">
                                 Normas y Abreviaturas
                             </a>
+                            
                         </div>
                     </div>
                 </div>
@@ -110,17 +113,6 @@
                             </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
-                <!-- .row end -->
-                <div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 pager mb-30-xs mb-30-sm">
-						<div class="page-prev">
-							<a href="#"><i class="fa fa-angle-left"></i></a>
-						</div>
-						<div class="page-next">
-							<a href="#"><i class="fa fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
             </div>
             <!-- .shop-content end -->
         </div>
@@ -137,7 +129,12 @@
         </div>
     </div>
     <!-- .container end -->
+
+
 </section>
+<?php echo $__env->make('page.sections.productos.modalConvrPernos', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('page.sections.productos.modalConvrArandelas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('page.sections.productos.modalDetalleAutomotriz', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <style>
     .lightgallery1 .product-item {

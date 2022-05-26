@@ -8,61 +8,76 @@
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 @foreach($carusel as $carusels)
-                    <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
-                        data-easeout="Power4.easeInOut" data-masterspeed="1000">
-                        <!-- MAIN IMAGE -->
-                        <div class="tp-bgimg defaultimg fondo slide img"
-                            style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
+                <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
+                    data-easeout="Power4.easeInOut" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <div class="slotholder"
+                        style="position: absolute; top: 0px; left: 0px; z-index: 0; width: 100%; height: 100%; visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <div class="tp-bgimg defaultimg fondo slide img" style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
                             background-position: center center; width: 100%; height: 100%; opacity: 1;
-                            visibility: inherit; z-index: 20;" src="http://192.168.31.240:5000/{{ $carusels->imagen }}">
+                            visibility: inherit; z-index: 20;"
+                            src="http://192.168.31.240:5000/{{ $carusels->imagen }}">
                             <div class="fondo_con"></div>
-                        </div>
+            </div>
+                    </div>
+                    {{-- <div class="slotholder"
+            style="position: absolute; top: 0px; left: 0px; z-index: 0; width: 100%; height: 100%; visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="tp-bgimg defaultimg"
+                style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;https://images7.alphacoders.com/909/909952.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;"
+                src="https://images7.alphacoders.com/909/909952.jpg"></div>
+        </div> --}}
 
 
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-                            data-whitespace="nowrap" data-width="['150','70','70','100']"
-                            data-height="['150','70','70','100']" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                            <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}"
-                                alt="hook" />
 
-                        </div>
+                    {{-- <div class="slotholder"
+        style="position: absolute; top: 0px; left: 0px; z-index: 0; width: 100%; height: 100%; visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+        <div class="tp-bgimg defaultimg fondo"
+            src="https://images7.alphacoders.com/909/909952.jpg"></div>
+    </div> --}}
+                    {{-- <img src="https://images7.alphacoders.com/909/909952.jpg" class="img-pruebita" style="z-index: 98;"
+            alt="" width="100%" height="100%"> --}}
 
-                        <!-- LAYER NR. 2 -->
-                        <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-                            data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                            data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                            data-lineheight="['100','45','25','25']"
-                            data-color="#ffc527" style="z-index: 999 !important;">
-                            {{-- {{ $carusels->titulo }} --}}
-                            {{ $carusels->titulo }}
-                        </h1>
 
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-                            data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
-                            data-lineheight="['50','26','25','25']"
-                            data-color="#fff" style="z-index: 999 !important;">
-                            {{-- {{ $carusels->sub_titulo }} --}}
-                            {{ $carusels->sub_titulo }}
-                        </div>
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                        data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
+                        data-height="['150','70','70','100']" data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
+                        <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}" alt="hook" />
 
-                    </li>
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                        data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
+                        data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
+                        {{ $carusels->titulo }}
+                    </h1>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                        data-y="center" data-voffset="80" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
+                        data-lineheight="['50','26','25','25']" data-color="#fff" style="z-index: 999 !important;">
+                        {{ $carusels->sub_titulo }}
+                    </div>
+
+                </li>
                 @endforeach
             </ul>
         </div>
@@ -71,9 +86,296 @@
 </section>
 
 
+{{--
+<section id="hero" class="hero">
+
+	<!-- START REVOLUTION SLIDER 5.0 -->
+	<div class="rev_slider_wrapper">
+		<div id="slider1" class="rev_slider"  data-version="5.0">
+			<ul>
+
+				<!-- slide 1 -->
+				<li data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" style="background-color: rgba(34, 34, 34, 0.3);">
+					<!-- MAIN IMAGE -->
+					<img src="https://images7.alphacoders.com/909/909952.jpg"  alt=""  width="1920" height="1280">
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="-50"
+						data-whitespace="nowrap"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:50px;opacity:0;s:1000;e:Power3.easeOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-start="500"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','15','15']"
+						data-lineheight="['45','45','25','25']"
+						data-fontweight="['600','500','600','300']"
+						data-color="#fff" style="font-family: raleway">
+						Welcome To
+					</div>
+
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption text-uppercase color-theme"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="0"
+						data-whitespace="nowrap"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-start="1750"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['55','17','15','15']"
+						data-lineheight="['50','45','25','25']"
+						data-fontweight="['700','500','600','300']"
+						data-color="#ffc527" style="font-family: montserrat; "
+						>
+						<h1 style="color:#ffc527; font-size:55px">Yellow Hats Construction</h1>
+					</div>
+
+					<!-- LAYER NR. 3 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="70"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+						data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+						data-start="2000"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','17','17']"
+						data-lineheight="['26','26','25','25']"
+						data-fontweight="['700','500','500','500']"
+						data-color="#fff" style="font-family: raleway; text-align:center"
+						>
+						Our promise as a contractor is to build community value into every project <br/>
+						while delivering professional expertise.
+					</div>
+
+					<!-- LAYER NR. 4 -->
+					<div class="tp-caption"
+						id="slide-163-layer-6"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="160"
+						data-width="none"
+						data-height="none"
+						data-whitespace="nowrap"
+						data-transform_idle="o:1;"
+						data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
+						data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-mask_out="x:inherit;y:inherit;"
+						data-start="2500"
+						data-splitin="none"
+						data-splitout="none"
+						data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+						data-basealign="slide"
+						data-responsive_offset="on"
+						data-responsive="off">
+						<a class="btn btn-primary mr-sm" href="#">read more</a>
+						<a class="btn btn-primary btn-white" href="#">get started</a>
+					</div>
+				</li>
+
+				<!-- slide 2 -->
+				<li data-transition="scaledownfromright" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000">
+					<!-- MAIN IMAGE -->
+					<img src="https://images.hdqwalls.com/wallpapers/starcraft-2020-dq.jpg"  alt=""  width="1920" height="1280">
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="-50"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power3.easeInOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+						data-start="1000"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','15','15']"
+						data-lineheight="['45','45','25','25']"
+						data-fontweight="['600','500','600','300']"
+						data-color="#fff" style="font-family: raleway" >
+						What We Can Do ?
+					</div>
+
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption text-uppercase color-theme"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="0"
+						data-whitespace="nowrap"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+						data-start="1500"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['55','17','15','15']"
+						data-lineheight="['50','45','25','25']"
+						data-fontweight="['700','500','600','300']"
+						data-color="#ffc527" style="font-family: montserrat; ">
+						Design & Build
+					</div>
+
+					<!-- LAYER NR. 3 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="70"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+						data-start="2000"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','17','17']"
+						data-lineheight="['26','26','25','25']"
+						data-fontweight="['700','500','500','500']"
+						data-color="#fff" style="font-family: raleway; text-align:center">
+						Yellow Hats is a leading developer of A-grade commercial,<br/>
+						industrial and residential projects in USA.
+					</div>
+
+					<!-- LAYER NR. 4 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="160"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1000;e:Power2.easeOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-start="2500"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on">
+						<a class="btn btn-primary mr-sm" href="#">read more</a>
+						<a class="btn btn-primary btn-white" href="#">get started</a>
+					</div>
+				</li>
+
+				<!-- slide 3 -->
+				<li data-index='rs-367' data-transition='fadetotopfadefrombottom' data-slotamount='default' data-easein='default' data-easeout='default' data-masterspeed='default'>
+					<!-- MAIN IMAGE -->
+					<img src="https://s1.1zoom.me/b5050/838/Heroes_of_the_Storm_Diablo_World_of_WarCraft_524787_3840x2160.jpg"  alt=""  width="1920" height="1280">
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="-50"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:-30px;rX:70deg;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-start="1000"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','15','15']"
+						data-lineheight="['45','45','25','25']"
+						data-fontweight="['600','500','600','300']"
+						data-color="#fff" style="font-family: raleway">
+						Internationally Trusted !
+					</div>
+
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption text-uppercase color-theme"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="0"
+						data-whitespace="nowrap"
+						data-width="['auto','auto','auto','auto']"
+						data-height="['auto','auto','auto','auto']"
+						data-transform_idle="o:1;"
+						data-transform_in="x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+						data-start="2000"
+						data-splitin="chars"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-elementdelay="0.05" data-fontsize="['55','17','15','15']"
+						data-lineheight="['50','45','25','25']"
+						data-fontweight="['700','500','600','300']"
+						data-color="#ffc527" style="font-family: montserrat; ">
+						WE INNOVATE & DESIGN
+					</div>
+
+					<!-- LAYER NR. 3 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="70"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:-50px;skX:100px;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-start="4810"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','17','17']"
+						data-lineheight="['26','26','25','25']"
+						data-fontweight="['700','500','500','500']"
+						data-color="#fff" style="font-family: raleway ;text-align:center">
+						We have a team of specialists capable of maximizing the result and delivering the projects
+					</div>
+
+					<!-- LAYER NR. 4 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="160"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+						data-style_hover="c:rgba(255, 255, 255, 1.00);bg:rgba(41, 46, 49, 0);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-start="5670"
+						data-splitin="none"
+						data-splitout="none"
+						data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+						data-responsive_offset="on"
+						data-responsive="off">
+						<a class="btn btn-primary mr-sm" href="#">read more</a>
+						<a class="btn btn-primary btn-white" href="#">get started</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- END REVOLUTION SLIDER -->
+	</div>
+	<!-- END OF SLIDER WRAPPER -->
+</section> --}}
+
 
 <!-- acerca de nosotros -->
-<section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
+<section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm"
+    style="background-color: white;">
     <div class="content section-content">
         <div class="row slide">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -101,16 +403,19 @@
                     comercialización directa.</p>
                 <ul style="text-align: justify;" class="list-unstyled">
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Nuestra vocación de servicio es el motor que impulsa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Nuestra vocación de servicio es el
+                            motor que impulsa y
                             dirige nuestras acciones.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Brindamos un excelente servicio a los clientes externos e
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Brindamos un excelente servicio a
+                            los clientes externos e
                             internos, en procura de
                             maximizar la satisfacción de sus necesidades y deseos.</p>
                     </li>
                     <li>
-                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Somos personas comprometidas con nuestra Empresa y
+                        <p><i class="fa fa-check ml-xs" style="color: #ffcb00;"></i> Somos personas comprometidas con
+                            nuestra Empresa y
                             trabajamos en equipo.</p>
                     </li>
                 </ul>
@@ -232,32 +537,32 @@
 
                         <div class="item active">
 
-                                <div class="row">
-                                    <!-- product #1 -->
+                            <div class="row">
+                                <!-- product #1 -->
 
-                                    @foreach ($producto as $productos)
-                                    <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                @foreach ($producto as $productos)
+                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
-                                        <div class="product-img">
-                                            <img src='http://192.168.31.240:5000/{{ $productos->imagen }}' alt="product"
-                                                style="height:250px;">
-                                            <div class="product-hover">
-                                                <div class="product-cart">
-                                                    <a class="btn btn-secondary btn-block a-card"
-                                                        href="{{ route('admin.producto.show', $hash->encodeHex($productos->id)) }}">Detalles</a>
-                                                </div>
+                                    <div class="product-img">
+                                        <img src='http://192.168.31.240:5000/{{ $productos->imagen }}' alt="product"
+                                            style="height:250px;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="{{ route('admin.producto.show', $hash->encodeHex($productos->id)) }}">Detalles</a>
                                             </div>
                                         </div>
-                                        <div style="height: 50px;">
-                                            <h4>
-                                                <a href="#">{{ $productos->nombre_producto }}</a>
-                                            </h4>
-                                        </div>
-
                                     </div>
-                                @endforeach
+                                    <div style="height: 50px;">
+                                        <h4>
+                                            <a href="#">{{ $productos->nombre_producto }}</a>
+                                        </h4>
+                                    </div>
 
                                 </div>
+                                @endforeach
+
+                            </div>
 
                         </div>
 
@@ -287,7 +592,7 @@
                                     </div>
 
                                 </div>
-                            @endforeach
+                                @endforeach
 
                             </div>
 
@@ -296,17 +601,20 @@
 
 
                         <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 25%; left: 0%; background-color: rgb(206 206 206 / 80%);">
-                                <span class="glyphicon glyphicon-chevron-left" style="margin-top: -16px;" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                            data-slide="prev">
+                            <div
+                                style="width: 50px; height: 49px; position: absolute; top: 25%; left: 0%; background-color: rgb(206 206 206 / 80%);">
+                                <i class="fa fa-angle-left" style="margin-top: 2px; font-size: 3rem; font-weight: bold;"
+                                    aria-hidden="true"></i>
                             </div>
                         </a>
                         <a class="right carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="next">
-                            <div style="width: 50px; height: 49px; position: absolute; top: 25%; right: 0%; background-color: rgb(206 206 206 / 80%);">
-                                <span class="glyphicon glyphicon-chevron-right" style="margin-top: -16px;"aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
+                            <div
+                                style="width: 50px; height: 49px; position: absolute; top: 25%; right: 0%; background-color: rgb(206 206 206 / 80%);">
+                                <i class="fa fa-angle-right"
+                                    style="margin-top: 2px; font-size: 3rem; font-weight: bold;" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
@@ -316,8 +624,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
-                    <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;" href="/fullProducts">Ver más productos<i
-                            class="fa fa-plus ml-xs"></i>
+                    <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;"
+                        href="/fullProducts">Ver más productos<i class="fa fa-plus ml-xs"></i>
                     </a>
                 </div>
             </div>
@@ -349,7 +657,7 @@
                         <div class="product-cart">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
-                                class="fa fa-plus ml-xs"></i>
+                                    class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -447,8 +755,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
-                                onclick="showOfs('storeCbba')">Tiendas Cochabamba<i
-                                class="fa fa-plus ml-xs"></i>
+                                onclick="showOfs('storeCbba')">Tiendas Cochabamba<i class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -491,8 +798,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
-                                onclick="showOfs('storeLaPaz')">Tiendas La Paz<i
-                                class="fa fa-plus ml-xs"></i>
+                                onclick="showOfs('storeLaPaz')">Tiendas La Paz<i class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -534,8 +840,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
-                                onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i
-                                class="fa fa-plus ml-xs"></i>
+                                onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -579,8 +884,10 @@
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg" style="background-image: url('/assets/images/system/4.jpg');"></div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-content" style="height: 100%; display: flex; align-items: center; word-break: break-all;">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-img col-bg"
+                style="background-image: url('/assets/images/system/4.jpg');"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-content"
+                style="height: 100%; display: flex; align-items: center; word-break: break-all;">
                 <div class="spaceText" style="text-align: center; padding: 95px 40px 95px 40px;">
                     <p class="p-title">CALL CENTER</p><br>
                     <img src="/assets/images/system/AGENTE 1-04.png" style="width: 48px !important;">
@@ -615,7 +922,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
                         {{-- <img src="/assets/images/system/WHATSAPP.png" width="30px;"> --}}
-                        <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;" ></i>
+                        <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
                         <p class="font-heading">(Whatsapp) 72221032 - 72230024</p>
@@ -660,7 +967,7 @@
 
 
 <style type="text/css">
-    .h1s{
+    .h1s {
         font-size: 2.4rem;
         text-transform: uppercase;
         font-family: 'Franklin Gothic Demi', sans-serif;
@@ -670,55 +977,60 @@
         margin-bottom: 0;
         padding-bottom: 19px;
         color: #093070;
-        }
-    .slide {
-      animation-duration: 2s;
-      animation-name: slidein;
     }
-    .tp-bgimg defaultimg{
+
+    .slide {
+        animation-duration: 2s;
+        animation-name: slidein;
+    }
+
+    .tp-bgimg defaultimg {
         filter: contrast(0.8) !important;
     }
 
-    .tdn{
+    .tdn {
         animation-duration: 3s;
         animation-name: tdn;
     }
+
     .fondo_con {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(181deg, rgba(9,48,112,0.5) 0%, rgba(255,255,255,0.2) 100%);
-    z-index: 99;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(181deg, rgba(9, 48, 112, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
+        z-index: 99;
     }
 
     @keyframes slidein {
-    from{
-        margin-left: 0%;
-        margin-top: 100%;
+        from {
+            margin-left: 0%;
+            margin-top: 100%;
         }
 
-        to{
+        to {
             margin-down: 100%;
-
+            width: 100%;
         }
     }
-    @keyframes tdn{
-    from{
-        margin-top: 100%;
+
+    @keyframes tdn {
+        from {
+            margin-top: 100%;
         }
 
-        to{
+        to {
             margin-top: 0%;
         }
     }
+
     .modalPopUp {
         z-index: 999;
         width: 100%;
         height: 100%;
-        background: rgba(9,48,112,0.5);
+        background: rgba(9, 48, 112, 0.5);
         position: fixed;
         top: 0;
         left: 0;
@@ -728,6 +1040,7 @@
         opacity: 0;
         text-align: center;
     }
+
     .contenido {
         margin: auto;
         width: 40%;
@@ -739,7 +1052,8 @@
     #cerrar {
         display: none;
     }
-    #cerrar + label {
+
+    #cerrar+label {
         position: fixed;
         color: #fff;
         font-size: 25px;
@@ -757,9 +1071,12 @@
         visibility: hidden;
         opacity: 0;
     }
-    #cerrar:checked + label, #cerrar:checked ~ .modalPopUp {
+
+    #cerrar:checked+label,
+    #cerrar:checked~.modalPopUp {
         display: none;
     }
+
     @keyframes modal {
         100% {
             visibility: visible;
@@ -767,10 +1084,33 @@
         }
     }
 
+    .fondo {
+        background-color: rgba(0, 0, 0, 0);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        opacity: 1 !important;
+        visibility: inherit !important;
+        z-index: 1 !important;
+    }
+
+    .fondo.con::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(181deg, rgba(9, 48, 112, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
+        z-index: -1;
+    }
+
 </style>
 
 <script>
-    function showOfs(Element){
+    function showOfs(Element) {
         var x = document.getElementById(Element);
         if (x.style.display === "none") {
             x.style.display = "flex";
