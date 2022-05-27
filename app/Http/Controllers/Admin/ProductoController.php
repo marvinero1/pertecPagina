@@ -278,8 +278,10 @@ class ProductoController extends Controller
     public function productoPromocion(Request $request, $id){
         $producto = Producto::findOrFail($id);
         $promocion = $request->get('promocion');
+        $descripcion_promocion = $request->get('descripcion_promocion');
 
         $producto->promocion = $promocion;
+        $producto->descripcion_promocion = $descripcion_promocion;
         $producto->update();
 
         Session::flash('promocion','Producto Promocion Exisitosamente!');
@@ -289,8 +291,11 @@ class ProductoController extends Controller
     public function productoNovedad(Request $request, $id){
         $producto = Producto::findOrFail($id);
         $novedad = $request->get('novedad');
+        $descripcion_novedad = $request->get('descripcion_novedad');
 
         $producto->novedad = $novedad;
+        $producto->descripcion_novedad = $descripcion_novedad;
+
         $producto->update();
 
         Session::flash('novedad','Producto Novedad Exisitosamente!');
@@ -344,6 +349,54 @@ class ProductoController extends Controller
         return back()->withInput();
     }
 
+    public function changeMatrix(Request $request, $id){
+        
+        $producto = Producto::findOrFail($id);
+        $mensaje = 'Matriz Creada Exitosamente!!!';
+
+        $requestData = $request->all();
+
+        if(is_null($request->imagen_matriz)){
+            unset($requestData['imagen_matriz']);
+        }
+
+        $mensaje = "Matriz Creada correctamente :3";
+        if($request->imagen_matriz){
+            $data = $request->imagen_matriz;
+            $file = file_get_contents($request->imagen_matriz);
+            $info = $data->getClientOriginalExtension();
+            $extension = explode('images/productos/matrices', mime_content_type('images/productos/matrices'))[0];
+            $image = Image::make($file);
+            $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
+            $path  = 'images/productos/matrices';
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
+            }
+            $img = $path.'/'.$fileName;
+            if($image->save($img)) {
+                $archivo_antiguo = $producto->imagen_matriz;
+                $requestData['imagen_matriz'] = $img;
+
+                $mensaje = "Matriz Creada correctamente :3";
+                if ($archivo_antiguo != '' && !File::delete($archivo_antiguo)) {
+                    $mensaje = "Matriz Creada. error al eliminar la imagen";
+                }
+            }else{
+                $mensaje = "Error al guardar la imagen";
+            }
+        }
+
+        if($producto->update($requestData)){
+            DB::commit();
+        }else{
+            DB::rollback();
+        }
+
+        Session::flash('message','Matriz Creada Exisitosamente!');
+        return back()->withInput();
+      
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -352,7 +405,7 @@ class ProductoController extends Controller
      */
     public function destroy($id){
         $producto = Producto::findOrFail($id);
-        $producto->delete();
+        // $producto->delete();
 
         Session::flash('danger','Producto Eliminado Exitosamente!');
         return back()->withInput();

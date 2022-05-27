@@ -1,10 +1,9 @@
 <?php $__env->startSection('title', __('views.admin.users.index.title')); ?>
 
 <?php $__env->startSection('content'); ?>
-    <div class="row table-responsive">
-        <table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
-               width="100%">
-            <thead>
+<div class="row table-responsive">
+    <table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+        <thead>
             <tr>
                 <th><?php echo \Kyslik\ColumnSortable\SortableLink::render(array ('email', __('views.admin.users.index.table_header_0'),['page' => $users->currentPage()]));?></th>
                 <th><?php echo \Kyslik\ColumnSortable\SortableLink::render(array ('name',  __('views.admin.users.index.table_header_1'),['page' => $users->currentPage()]));?></th>
@@ -14,10 +13,10 @@
                 <th><?php echo \Kyslik\ColumnSortable\SortableLink::render(array ('created_at', __('views.admin.users.index.table_header_5'),['page' => $users->currentPage()]));?></th>
                 <th><?php echo \Kyslik\ColumnSortable\SortableLink::render(array ('updated_at', __('views.admin.users.index.table_header_6'),['page' => $users->currentPage()]));?></th>
                 <th><?php echo \Kyslik\ColumnSortable\SortableLink::render(array ('last_login', __('views.admin.users.index.table_header_7'),['page' => $users->currentPage()]));?></th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                     <td><?php echo e($user->email); ?></td>
@@ -40,12 +39,12 @@
                     <td><?php echo e($user->updated_at); ?></td>
                     <td><?php echo e($user->last_login); ?></td>
                     <td>
+                        <button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal">
+                            <i class="fa fa-check"></i></button>
                         <a class="btn btn-xs btn-primary" href="<?php echo e(route('admin.users.show',  [$hash->encode($user->id)])); ?>" data-toggle="tooltip" data-placement="top" data-title="<?php echo e(__('views.admin.users.index.show')); ?>">
                             <i class="fa fa-eye"></i>
                         </a>
-                        <a class="btn btn-xs btn-info" href="<?php echo e(route('admin.users.edit', [$user->id])); ?>" data-toggle="tooltip" data-placement="top" data-title="<?php echo e(__('views.admin.users.index.edit')); ?>">
-                            <i class="fa fa-pencil"></i>
-                        </a>
+                        
                         <?php if(!$user->hasRole('administrator')): ?>
                             <a href="<?php echo e(route('admin.users.destroy', [$user->id])); ?>" class="btn btn-xs btn-danger user_destroy" data-toggle="tooltip" data-placement="top" data-title="<?php echo e(__('views.admin.users.index.delete')); ?>">
                                 <i class="fa fa-trash"></i>
@@ -54,13 +53,13 @@
                     </td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </tbody>
-        </table>
-        <div class="pull-right">
-            <?php echo e($users->links()); ?>
+        </tbody>
+    </table>
+    <div class="pull-right">
+        <?php echo e($users->links()); ?>
 
-        </div>
     </div>
+</div>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('admin.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pertecPagina\resources\views/admin/users/index.blade.php ENDPATH**/ ?>

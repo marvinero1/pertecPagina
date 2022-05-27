@@ -115,10 +115,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div style="text-align: center;">
-                    <?php echo e($tienda->links()); ?>
+            </div>
+            <div style="text-align: center;">
+                <?php echo e($tienda->links()); ?>
 
-                </div>
             </div>
         </div>
     </div>

@@ -22,7 +22,7 @@ class TiendaController extends Controller{
     public function index(Request $request){
         $hash=new Hashids();
         $nombre_tienda = $request->get('buscarpor');
-        $tienda = Tienda::where('nombre_tienda','like',"%$nombre_tienda%")->latest()->paginate(10);
+        $tienda = Tienda::where('nombre_tienda','like',"%$nombre_tienda%")->latest()->paginate(5);
 
         return view('admin.tiends.index', ['tienda' => $tienda, 'hash' => $hash]);
     }

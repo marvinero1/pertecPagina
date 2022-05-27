@@ -89,7 +89,7 @@
                     </li>
                     <li>
                         <a href="{{ route('admin.vendedor.index') }}">
-                            <i class="fa fa-address-card" aria-hidden="true"></i>
+                            <i class="fa fa-male" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_5') }}
                         </a>
                     </li>

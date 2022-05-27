@@ -31,6 +31,8 @@ return new class extends Migration
             $table->string('zam')->nullable();
             $table->string('promocion')->nullable();
             $table->string('novedad')->nullable();
+            $table->longText('descripcion_novedad')->nullable();
+            $table->longText('descripcion_promocion')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

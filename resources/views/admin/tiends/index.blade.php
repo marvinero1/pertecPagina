@@ -113,9 +113,9 @@
                         </tbody>
                     </table>
                 </div>
-                <div style="text-align: center;">
-                    {{ $tienda->links() }}
-                </div>
+            </div>
+            <div style="text-align: center;">
+                {{ $tienda->links() }}
             </div>
         </div>
     </div>

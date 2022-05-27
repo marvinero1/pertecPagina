@@ -26,7 +26,7 @@
             <div class="col-xs-5">
                 <div>
                     <a href="{{ route('admin.vendedor.create') }}" type="button btn btn-primary" style="color: black">
-                        <button class="btn btn-primary"> <i class="fa fa-address-card" aria-hidden="true"></i> Crear
+                        <button class="btn btn-primary"> <i class="fa fa-plus" aria-hidden="true"></i> Crear
                             Vendedor</button></a>
                 </div>
             </div>
@@ -119,9 +119,9 @@
                         </tbody>
                     </table>
                 </div>
-                <div style="text-align: center;">
-                    {{ $vendedor->links() }}
-                </div>
+            </div>
+            <div style="text-align: center;">
+                {{ $vendedor->links() }}
             </div>
         </div>
     </div>

@@ -9,15 +9,15 @@
 
         </div>
         <?php endif; ?>
-        
+
         <div class="title_left" style="text-align: center;">
-            <h3><?php echo e(__('views.admin.products.index.title')); ?> </h3>
+            <h3><?php echo e(__('views.admin.products.index.title')); ?> en Novedad</h3>
         </div><br>
 
         <?php if(Session::has('danger')): ?>
-            <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?>
+        <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?>
 
-            </div>
+        </div>
         <?php endif; ?>
 
         <div class="row"><br>
@@ -27,8 +27,8 @@
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Buscar por Nombre Producto" name="buscarpor"
-                                    style="border: 1px #093070 solid;">
+                                <input type="text" class="form-control" placeholder="Buscar por Nombre Producto"
+                                    name="buscarpor" style="border: 1px #093070 solid;">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" style="border: 1px #093070 solid;">
                                         <i class="fa fa-search"></i> Buscar</button>
@@ -40,7 +40,7 @@
             </div>
         </div>
     </div><br>
-    <div class="clearfix"></div>
+</div>
     <div class="row">
         <div class="col-md col-sm">
             <div class="x_panel">
@@ -57,8 +57,7 @@
                                 <a class="dropdown-item" href="#">Settings 2</a>
                             </div>
                         </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
@@ -85,6 +84,11 @@
                                 <div class="caption">
                                     <h3><?php echo e(strtoupper($productos->denominacion)); ?></h3>
                                     <p><?php echo e(strtoupper($productos->nombre_producto)); ?></p>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Example textarea</label>
+                                        <textarea disabled="true" class="form-control" id="exampleFormControlTextarea1"
+                                            rows="3" placeholder="<?php echo e($productos->descripcion_novedad); ?>"></textarea>
+                                    </div>
                                     <div style="text-align: center;padding-block-start: 15px;">
                                         <p><button type="button" class="btn btn-danger btn-md" data-toggle="modal"
                                                 data-target="#myModal<?php echo e($productos->id); ?>">
@@ -106,8 +110,7 @@
                                                 Novedad</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <form
-                                                action="<?php echo e(route( 'admin.productos.productoNovedad', $productos->id )); ?>"
+                                            <form action="<?php echo e(route( 'admin.productos.productoNovedad', $productos->id )); ?>"
                                                 method="POST" style="margin-block-end:-1em !important;">
                                                 <?php echo e(csrf_field()); ?>
 
@@ -139,7 +142,8 @@
             </div>
         </div>
     </div>
-</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>
 <!-- /page content -->
 <style>
     th,

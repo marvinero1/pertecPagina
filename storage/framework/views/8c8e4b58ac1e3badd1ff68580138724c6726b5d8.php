@@ -98,7 +98,7 @@
                     </li>
                     <li>
                         <a href="<?php echo e(route('admin.vendedor.index')); ?>">
-                            <i class="fa fa-address-card" aria-hidden="true"></i>
+                            <i class="fa fa-male" aria-hidden="true"></i>
                             <?php echo e(__('views.backend.section.navigation.menu_1_5')); ?>
 
                         </a>

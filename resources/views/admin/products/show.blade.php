@@ -57,12 +57,49 @@
                     <h2 style="text-align: center;">MATRIZ</h2>
                     <div class="cat" style="text-align: center;">
                         @if(!is_null($productos->imagen_matriz))
+                        <div>
+                            <button type="button" class="btn btn-warning btn-md" data-toggle="modal" data-target="#myModalMatrizEdit{{ $productos->id }}">
+                                <i class="fa fa-th" aria-hidden="true"></i> Editar Matriz</button>
+                            <div class="modal fade" id="myModalMatrizEdit{{ $productos->id }}" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Actualizar Matriz</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="{{route('changeMatrix', $productos->id )}}" method="POST"
+                                                style="margin-block-end:-1em !important;" enctype="multipart/form-data">
+                                                {{ csrf_field() }}
+                                                {{ method_field('PUT') }}
+                                                <div class="col-md-12 col-sm-12  form-group">
+                                                    <label><strong>Imagen</strong></label>
+                                                    <label for="file-upload" class="custom-file-upload" style="text-align: center;">
+                                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i>&nbsp;
+                                                        <strong>Imagen Matriz</strong>
+                                                    </label>
+                                                    <p><strong>Sugerencia:</strong> Para una mejor visualizacion se recomienda
+                                                        resolucion a partir de<strong> 1280 x720 pixels</strong></p>
+                                                    <input id="file-upload" type="file" name="imagen_matriz">
+                                                </div>
+                                                <div class="footer" style="padding: 15px 15px 5px 5px; float: right;">
+                                                    <button type="submit" class="btn btn-primary float-right mr-2"><i class="fa fas fa-save"></i>
+                                                        Guardar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                             <img src="/{{ $productos->imagen_matriz }}" class="img-responsive imgprod" alt="{{ $productos->nombre_producto }}">
+                            
                         @else
                         <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal{{ $productos->id }}">
                             <i class="fa fa-th" aria-hidden="true"></i> Agregar Matriz</button>
                         @endif
-                    </div><br>
+                    </div><br><br>
                     
                     <div class="card-caption">
                         <span class="h2">{{ $productos->nombre_producto }}</span>
@@ -130,6 +167,10 @@
                             <input type="hidden" name="novedad" value="si">
                             <h5 style="text-align: center;">
                                 {{ strtoupper($productos->nombre_producto) }}</h5><br>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Descripción Novedad</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="descripcion_novedad"></textarea>
+                            </div>
                             <div class="row" style="display: block;">
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-success"
@@ -137,6 +178,7 @@
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                         &nbsp; Añadir</button>
                                 </div>
+                            </div>
                         </form>
                     </div>
                 </div>
