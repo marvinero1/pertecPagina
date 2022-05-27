@@ -168,8 +168,12 @@
                                 <button type="submit" class = "btn btn-default btn-lg btn-block" style="background-color: #093070;color:#FBD800"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
                                     Ingresar
                                 </button>
-                                <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModalRegister" style="background-color: #FBD800;color:#093070">
-                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Aun no tienes cuenta, ¡Registrate!
+                                <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModalRegister"
+                                style="word-break: normal;background-color: #FBD800;">
+                                    <p style="color:#093070;">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                                        Aun no tienes cuenta, ¡Registrate!
+                                    </p>
                                 </button>
                             </div>
                         </div>
@@ -281,11 +285,11 @@
 <style>
     .modal-dialog-login{
         margin-top: 90px;
-        width: 525px;
+        width: auto;
     }
     .modal-dialog-register{
         margin-top: 90px;
-        width: 525px;
+        width: auto;
     }
     .modal-open .modal{
         background-color: rgb(9, 48, 106, 0.6) !important;
