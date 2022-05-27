@@ -22,9 +22,13 @@ class VendedorController extends Controller
     public function index(Request $request){
         $hash=new Hashids();
         $nombre_vendedor = $request->get('buscarpor');
-        $vendedor = Vendedor::where('nombre_vendedor','like',"%$nombre_vendedor%")->latest()->paginate(10);
+        // $vendedor = Vendedor::where('nombre_vendedor','like',"%$nombre_vendedor%")->latest()->paginate(10);
+        $vendedor_LaPaz = Vendedor::where('nombre_vendedor','like',"%$nombre_vendedor%")->where('ciudad','La Paz')->latest()->paginate(10);
+        $vendedor_Cbba = Vendedor::where('nombre_vendedor','like',"%$nombre_vendedor%")->where('ciudad','Cochabamba')->latest()->paginate(10);
+        $vendedor_Stcz = Vendedor::where('nombre_vendedor','like',"%$nombre_vendedor%")->where('ciudad','Santa Cruz')->latest()->paginate(10);
 
-        return view('admin.vendedors.index', ['vendedor' => $vendedor, 'hash'=>$hash]);
+        return view('admin.vendedors.index', 
+        ['hash'=>$hash,'vendedor_LaPaz'=>$vendedor_LaPaz,'vendedor_Cbba'=>$vendedor_Cbba,'vendedor_Stcz'=>$vendedor_Stcz]);
     }
 
     public function getSalesman(){
@@ -52,7 +56,6 @@ class VendedorController extends Controller
         $mensaje = "Vendedor Guardado Correctamente";
 
         $requestData = $request->all();
-        
         $validator = Validator::make($requestData, [
             'nombre_vendedor' => 'required|max:191',
             'apellido' => 'required|max:191',
@@ -156,9 +159,7 @@ class VendedorController extends Controller
             'correo_electronico' => 'nullable',
             'imagen' => 'nullable'
         ]);
-
         DB::beginTransaction();
-
         if ($validator->fails()){
             return redirect('admin/vendedor/'.$id.'/edit')
                         ->withErrors($validator)

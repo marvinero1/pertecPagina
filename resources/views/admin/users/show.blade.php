@@ -7,18 +7,49 @@
         @foreach ($user as $users)
             <table class="table table-striped table-hover">
                 <tbody>
-                <tr>
-                    <th>{{ __('views.admin.users.show.table_header_0') }}</th>
-                    <td><img src="{{ $users->avatar }}" class="user-profile-image"></td>
-                </tr>
+                    @if(is_null($users->imagen))
+                    <tr>
+                        <th>{{ __('views.admin.users.show.table_header_0') }}</th>
+                        <td><img src="{{ $users->avatar }}" class="user-profile-image" alt="imagen_perfil"></td>
+                    </tr>
+                    @else
+                    <tr>
+                        <th>{{ __('views.admin.users.show.table_header_0') }}</th>
+                        <td><img src="{{ $users->imagen }}" class="user-profile-image" alt="imagen_perfil"></td>
+                    </tr>
+                    @endif
+                
 
                 <tr>
                     <th>{{ __('views.admin.users.show.table_header_1') }}</th>
                     <td>{{ $users->name }}</td>
                 </tr>
-
                 <tr>
                     <th>{{ __('views.admin.users.show.table_header_2') }}</th>
+                    <td>{{ $users->apellido }}</td>
+                </tr>
+
+                
+                <tr>
+                    <th>{{ __('views.admin.users.show.table_header_3') }}</th>
+                    <td>
+                        {{ $users->ciudad }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ __('views.admin.users.show.table_header_4') }}</th>
+                    <td>
+                        {{ $users->celular }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ __('views.admin.users.show.table_header_5') }}</th>
+                    <td>
+                        {{ $users->nit }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ __('views.admin.users.show.table_header_6') }}</th>
                     <td>
                         <a href="mailto:{{ $users->email }}">
                             {{ $users->email }}
@@ -26,13 +57,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>{{ __('views.admin.users.show.table_header_3') }}</th>
-                    <td>
+                    <th>{{ __('views.admin.users.show.table_header_7') }}</th>
+                    {{-- <td>
                         {{ $users->roles->pluck('name')->implode(',') }}
+                    </td> --}}
+                     <td>
+                        {{ $users->rol }}
                     </td>
                 </tr>
                 <tr>
-                    <th>{{ __('views.admin.users.show.table_header_4') }}</th>
+                    <th>{{ __('views.admin.users.show.table_header_8') }}</th>
                     <td>
                         @if($users->active)
                             <span class="label label-primary">{{ __('views.admin.users.show.active') }}</span>
@@ -43,7 +77,7 @@
                 </tr>
 
                 <tr>
-                    <th>{{ __('views.admin.users.show.table_header_5') }}</th>
+                    <th>{{ __('views.admin.users.show.table_header_9') }}</th>
                     <td>
                         @if($users->confirmed)
                             <span class="label label-success">{{ __('views.admin.users.show.confirmed') }}</span>
@@ -54,17 +88,17 @@
                 </tr>
 
                 <tr>
-                    <th>{{ __('views.admin.users.show.table_header_6') }}</th>
+                    <th>{{ __('views.admin.users.show.table_header_10') }}</th>
                     <td>{{ $users->created_at }} ({{ $users->created_at }})</td>
                 </tr>
 
                 <tr>
-                    <th>{{ __('views.admin.users.show.table_header_7') }}</th>
+                    <th>{{ __('views.admin.users.show.table_header_11') }}</th>
                     <td>{{ $users->updated_at }} ({{ $users->updated_at }})</td>
                 </tr>
 
                 <tr>
-                    <th>{{ __('views.admin.users.show.table_header_8') }}</th>
+                    <th>{{ __('views.admin.users.show.table_header_12') }}</th>
                     <td>{{ $users->last_login }} ({{ $users->last_login }})</td>
                 </tr>
                 </tbody>

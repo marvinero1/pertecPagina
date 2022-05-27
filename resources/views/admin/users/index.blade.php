@@ -3,7 +3,14 @@
 @section('title', __('views.admin.users.index.title'))
 
 @section('content')
+
+
+
 <div class="row table-responsive">
+    @if (Session::has('confirmed'))
+        <div class="alert alert-success">{{ Session::get('confirmed') }}</div>
+    @endif  
+    
     <table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -41,15 +48,47 @@
                     <td>{{ $user->updated_at }}</td>
                     <td>{{ $user->last_login }}</td>
                     <td>
-                        <button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal">
-                            <i class="fa fa-check"></i></button>
                         <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show',  [$hash->encode($user->id)]) }}" data-toggle="tooltip" data-placement="top" data-title="{{ __('views.admin.users.index.show') }}">
                             <i class="fa fa-eye"></i>
                         </a>
-                        {{-- <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', [$user->id]) }}" data-toggle="tooltip" data-placement="top" data-title="{{ __('views.admin.users.index.edit') }}">
-                            <i class="fa fa-pencil"></i>
-                        </a> --}}
+
                         @if(!$user->hasRole('administrator'))
+                            <button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal{{ $user->id }}">
+                            <i class="fa fa-check"></i></button>
+
+                            <!-- Modal -->
+                            <div id="myModal{{ $user->id }}" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Confirmar a Usuario {{ $user->name }}</h4>
+                                        </div>
+                                        <div class="modal-body" style="text-align: center;">
+                                            <form action="{{route( 'admin.users.confirmedUsuario', $user->id )}}"
+                                                method="POST" style="margin-block-end:-1em !important;">
+                                                {{ csrf_field() }}
+                                                {{ method_field('PUT') }}
+                                                <input type="hidden" name="confirmed" value="1">
+                                                <h4> ¿SE CONFIRMA LA SOLICITUD DE INGRESO AL SISTEMA A: ? </h4>
+                                                <h4>{{ $user->name }}</h4>
+
+                                                <div class="row" style="display: block;">
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-warning" data-dismiss="modal">
+                                                            <i class="fa fa-close"></i>&nbsp; No</button>
+
+                                                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>
+                                                            &nbsp; Si</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <a href="{{ route('admin.users.destroy', [$user->id]) }}" class="btn btn-xs btn-danger user_destroy" data-toggle="tooltip" data-placement="top" data-title="{{ __('views.admin.users.index.delete') }}">
                                 <i class="fa fa-trash"></i>
                             </a>

@@ -8,18 +8,15 @@
         </div><br>
 
         @if (Session::has('message'))
-        <div class="alert alert-info">{{ Session::get('message') }}
-        </div>
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
 
         @if (Session::has('danger'))
-        <div class="alert alert-danger">{{ Session::get('danger') }}
-        </div>
+            <div class="alert alert-danger">{{ Session::get('danger') }}</div>
         @endif
 
         @if (Session::has('edit'))
-        <div class="alert alert-success">{{ Session::get('edit') }}
-        </div>
+            <div class="alert alert-success">{{ Session::get('edit') }}</div>
         @endif
         
         <div class="row"><br>
@@ -49,83 +46,248 @@
             </div>
         </div>
     </div>
-    
     <div class="clearfix"></div>
-    <div class="row" style="display: block;">
-        <div class="col-md col-sm">
-            <div class="x_panel">
-                <div class="x_title">
-                    <h2>Tabla de Vendedores</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Settings 1</a>
-                                <a class="dropdown-item" href="#">Settings 2</a>
-                            </div>
-                        </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
-                    </ul>
-                <div class="clearfix"></div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">La Paz</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Cochabamba</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Santa Cruz</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row" style="display: block;">
+                <div class="col-md col-sm">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Tabla de Vendedores</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                        <div class="clearfix"></div>
+                        </div>
+                        
+                        <div class="x_content table-responsive">
+                            <table class="table" >
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Ciudad</th>
+                                        <th>Nombre y Apellidos </th>
+                                        <th>Celular</th>
+                                        <th>Whatsapp</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                    @foreach($vendedor_LaPaz as $vendedors)
+                                        <tr>
+                                            <td scope="row" id='listimages'> <img src="/{{ $vendedors->imagen }}" class="img-responsive imgprod" id='listimages'
+                                                alt="{{ $vendedors->nombre_tienda }}" style="display: block;margin: auto;">
+                                            </td>
+                                            <td scope="row">{{ strtoupper($vendedors->ciudad) }}</td>
+                                            <td scope="row">{{ strtoupper($vendedors->nombre_vendedor) }}, {{ strtoupper($vendedors->apellido) }}</td>
+                                            <td scope="row">{{ $vendedors->celular }}</td>
+                                            <td scope="row">{{ $vendedors->whatsapp }}</td>
+                                            <td scope="row" style="text-align:center;">
+                                                <a href="{{ route('admin.vendedor.show', $hash->encodeHex($vendedors->id)) }}" style="color: black">
+                                                    <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                        Ver</button></a>   
+                                                <a href="{{ route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) ) }}" style="color: black">
+                                                    <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        Editar</button>
+                                                </a>                                     
+        
+                                                <form action="{{ route('admin.vendedor.destroy', $vendedors->id ) }}" method="POST"
+                                                    accept-charset="UTF-8" style="display:inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger" title="Delete Image"
+                                                        onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
+                                                            class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        {{ $vendedor_LaPaz->links() }}
+                    </div>
                 </div>
-                
-                <div class="x_content table-responsive">
-                    <table class="table" >
-                        <thead>
-                            <tr>
-                                <th>Imagen</th>
-                                <th>Ciudad</th>
-                                <th>Nombre y Apellidos </th>
-                                <th>Celular</th>
-                                <th>Whatsapp</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            @foreach($vendedor as $vendedors)
-                            <tr>
-                                <td scope="row" id='listimages'> <img src="/{{ $vendedors->imagen }}" class="img-responsive imgprod" id='listimages'
-                                    alt="{{ $vendedors->nombre_tienda }}" style="display: block;margin: auto;">
-                                </td>
-                                <td scope="row">{{ strtoupper($vendedors->ciudad) }}</td>
-                                <td scope="row">{{ strtoupper($vendedors->nombre_vendedor) }}, {{ strtoupper($vendedors->apellido) }}</td>
-                                <td scope="row">{{ $vendedors->celular }}</td>
-                                <td scope="row">{{ $vendedors->whatsapp }}</td>
-                                <td scope="row" style="text-align:center;">
-                                    <a href="{{ route('admin.vendedor.show', $hash->encodeHex($vendedors->id)) }}" style="color: black">
-                                        <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            Ver</button></a>   
-                                    <a href="{{ route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) ) }}" style="color: black">
-                                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
-                                            Editar</button>
-                                    </a>                                     
-
-                                    <form action="{{ route('admin.vendedor.destroy', $vendedors->id ) }}" method="POST"
-                                        accept-charset="UTF-8" style="display:inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" title="Delete Image"
-                                            onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
-                                                class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div style="text-align: center;">
-                {{ $vendedor->links() }}
             </div>
         </div>
-    </div>
-   
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row" style="display: block;">
+                <div class="col-md col-sm">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Tabla de Vendedores</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                        <div class="clearfix"></div>
+                        </div>
+                        
+                        <div class="x_content table-responsive">
+                            <table class="table" >
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Ciudad</th>
+                                        <th>Nombre y Apellidos </th>
+                                        <th>Celular</th>
+                                        <th>Whatsapp</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                    @foreach($vendedor_Cbba as $vendedors)
+                                        <tr>
+                                            <td scope="row" id='listimages'> <img src="/{{ $vendedors->imagen }}" class="img-responsive imgprod" id='listimages'
+                                                alt="{{ $vendedors->nombre_tienda }}" style="display: block;margin: auto;">
+                                            </td>
+                                            <td scope="row">{{ strtoupper($vendedors->ciudad) }}</td>
+                                            <td scope="row">{{ strtoupper($vendedors->nombre_vendedor) }}, {{ strtoupper($vendedors->apellido) }}</td>
+                                            <td scope="row">{{ $vendedors->celular }}</td>
+                                            <td scope="row">{{ $vendedors->whatsapp }}</td>
+                                            <td scope="row" style="text-align:center;">
+                                                <a href="{{ route('admin.vendedor.show', $hash->encodeHex($vendedors->id)) }}" style="color: black">
+                                                    <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                        Ver</button></a>   
+                                                <a href="{{ route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) ) }}" style="color: black">
+                                                    <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        Editar</button>
+                                                </a>                                     
+        
+                                                <form action="{{ route('admin.vendedor.destroy', $vendedors->id ) }}" method="POST"
+                                                    accept-charset="UTF-8" style="display:inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger" title="Delete Image"
+                                                        onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
+                                                            class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        {{ $vendedor_Cbba->links() }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="row" style="display: block;">
+                <div class="col-md col-sm">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Tabla de Vendedores</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                        <div class="clearfix"></div>
+                        </div>
+                        
+                        <div class="x_content table-responsive">
+                            <table class="table" >
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Ciudad</th>
+                                        <th>Nombre y Apellidos </th>
+                                        <th>Celular</th>
+                                        <th>Whatsapp</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                    @foreach($vendedor_Stcz as $vendedors)
+                                        <tr>
+                                            <td scope="row" id='listimages'> <img src="/{{ $vendedors->imagen }}" class="img-responsive imgprod" id='listimages'
+                                                alt="{{ $vendedors->nombre_tienda }}" style="display: block;margin: auto;">
+                                            </td>
+                                            <td scope="row">{{ strtoupper($vendedors->ciudad) }}</td>
+                                            <td scope="row">{{ strtoupper($vendedors->nombre_vendedor) }}, {{ strtoupper($vendedors->apellido) }}</td>
+                                            <td scope="row">{{ $vendedors->celular }}</td>
+                                            <td scope="row">{{ $vendedors->whatsapp }}</td>
+                                            <td scope="row" style="text-align:center;">
+                                                <a href="{{ route('admin.vendedor.show', $hash->encodeHex($vendedors->id)) }}" style="color: black">
+                                                    <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                        Ver</button></a>   
+                                                <a href="{{ route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) ) }}" style="color: black">
+                                                    <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        Editar</button>
+                                                </a>                                     
+        
+                                                <form action="{{ route('admin.vendedor.destroy', $vendedors->id ) }}" method="POST"
+                                                    accept-charset="UTF-8" style="display:inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger" title="Delete Image"
+                                                        onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
+                                                            class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        {{ $vendedor_Stcz->links() }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
 </div>
 <!--div para el fondo de pantalla-->
 <div id='background'></div>

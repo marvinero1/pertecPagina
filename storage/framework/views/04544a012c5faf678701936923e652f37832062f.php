@@ -145,10 +145,8 @@
     </div>
 </div>
 <!-- /page content -->
-<style>
-    th,
-    td,
-    h4,
+<style>    
+th,td,h4,
     .modal-header {
         text-align: center;
     }

@@ -1,7 +1,14 @@
 <?php $__env->startSection('title', __('views.admin.users.index.title')); ?>
 
 <?php $__env->startSection('content'); ?>
+
+
+
 <div class="row table-responsive">
+    <?php if(Session::has('confirmed')): ?>
+        <div class="alert alert-success"><?php echo e(Session::get('confirmed')); ?></div>
+    <?php endif; ?>  
+    
     <table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -39,13 +46,49 @@
                     <td><?php echo e($user->updated_at); ?></td>
                     <td><?php echo e($user->last_login); ?></td>
                     <td>
-                        <button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal">
-                            <i class="fa fa-check"></i></button>
                         <a class="btn btn-xs btn-primary" href="<?php echo e(route('admin.users.show',  [$hash->encode($user->id)])); ?>" data-toggle="tooltip" data-placement="top" data-title="<?php echo e(__('views.admin.users.index.show')); ?>">
                             <i class="fa fa-eye"></i>
                         </a>
-                        
+
                         <?php if(!$user->hasRole('administrator')): ?>
+                            <button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal<?php echo e($user->id); ?>">
+                            <i class="fa fa-check"></i></button>
+
+                            <!-- Modal -->
+                            <div id="myModal<?php echo e($user->id); ?>" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Confirmar a Usuario <?php echo e($user->name); ?></h4>
+                                        </div>
+                                        <div class="modal-body" style="text-align: center;">
+                                            <form action="<?php echo e(route( 'admin.users.confirmedUsuario', $user->id )); ?>"
+                                                method="POST" style="margin-block-end:-1em !important;">
+                                                <?php echo e(csrf_field()); ?>
+
+                                                <?php echo e(method_field('PUT')); ?>
+
+                                                <input type="hidden" name="confirmed" value="1">
+                                                <h4> ¿SE CONFIRMA LA SOLICITUD DE INGRESO AL SISTEMA A: ? </h4>
+                                                <h4><?php echo e($user->name); ?></h4>
+
+                                                <div class="row" style="display: block;">
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-warning" data-dismiss="modal">
+                                                            <i class="fa fa-close"></i>&nbsp; No</button>
+
+                                                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>
+                                                            &nbsp; Si</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <a href="<?php echo e(route('admin.users.destroy', [$user->id])); ?>" class="btn btn-xs btn-danger user_destroy" data-toggle="tooltip" data-placement="top" data-title="<?php echo e(__('views.admin.users.index.delete')); ?>">
                                 <i class="fa fa-trash"></i>
                             </a>

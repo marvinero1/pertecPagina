@@ -52,84 +52,251 @@
             </div>
         </div>
     </div>
-    
     <div class="clearfix"></div>
-    <div class="row" style="display: block;">
-        <div class="col-md col-sm">
-            <div class="x_panel">
-                <div class="x_title">
-                    <h2>Tabla de Vendedores</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Settings 1</a>
-                                <a class="dropdown-item" href="#">Settings 2</a>
-                            </div>
-                        </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
-                    </ul>
-                <div class="clearfix"></div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">La Paz</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Cochabamba</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Santa Cruz</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row" style="display: block;">
+                <div class="col-md col-sm">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Tabla de Vendedores</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                        <div class="clearfix"></div>
+                        </div>
+                        
+                        <div class="x_content table-responsive">
+                            <table class="table" >
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Ciudad</th>
+                                        <th>Nombre y Apellidos </th>
+                                        <th>Celular</th>
+                                        <th>Whatsapp</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                    <?php $__currentLoopData = $vendedor_LaPaz; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vendedors): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <tr>
+                                            <td scope="row" id='listimages'> <img src="/<?php echo e($vendedors->imagen); ?>" class="img-responsive imgprod" id='listimages'
+                                                alt="<?php echo e($vendedors->nombre_tienda); ?>" style="display: block;margin: auto;">
+                                            </td>
+                                            <td scope="row"><?php echo e(strtoupper($vendedors->ciudad)); ?></td>
+                                            <td scope="row"><?php echo e(strtoupper($vendedors->nombre_vendedor)); ?>, <?php echo e(strtoupper($vendedors->apellido)); ?></td>
+                                            <td scope="row"><?php echo e($vendedors->celular); ?></td>
+                                            <td scope="row"><?php echo e($vendedors->whatsapp); ?></td>
+                                            <td scope="row" style="text-align:center;">
+                                                <a href="<?php echo e(route('admin.vendedor.show', $hash->encodeHex($vendedors->id))); ?>" style="color: black">
+                                                    <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                        Ver</button></a>   
+                                                <a href="<?php echo e(route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) )); ?>" style="color: black">
+                                                    <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        Editar</button>
+                                                </a>                                     
+        
+                                                <form action="<?php echo e(route('admin.vendedor.destroy', $vendedors->id )); ?>" method="POST"
+                                                    accept-charset="UTF-8" style="display:inline">
+                                                    <?php echo csrf_field(); ?>
+                                                    <?php echo method_field('DELETE'); ?>
+                                                    <button type="submit" class="btn btn-danger" title="Delete Image"
+                                                        onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
+                                                            class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <?php echo e($vendedor_LaPaz->links()); ?>
+
+                    </div>
                 </div>
-                
-                <div class="x_content table-responsive">
-                    <table class="table" >
-                        <thead>
-                            <tr>
-                                <th>Imagen</th>
-                                <th>Ciudad</th>
-                                <th>Nombre y Apellidos </th>
-                                <th>Celular</th>
-                                <th>Whatsapp</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <?php $__currentLoopData = $vendedor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vendedors): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <tr>
-                                <td scope="row" id='listimages'> <img src="/<?php echo e($vendedors->imagen); ?>" class="img-responsive imgprod" id='listimages'
-                                    alt="<?php echo e($vendedors->nombre_tienda); ?>" style="display: block;margin: auto;">
-                                </td>
-                                <td scope="row"><?php echo e(strtoupper($vendedors->ciudad)); ?></td>
-                                <td scope="row"><?php echo e(strtoupper($vendedors->nombre_vendedor)); ?>, <?php echo e(strtoupper($vendedors->apellido)); ?></td>
-                                <td scope="row"><?php echo e($vendedors->celular); ?></td>
-                                <td scope="row"><?php echo e($vendedors->whatsapp); ?></td>
-                                <td scope="row" style="text-align:center;">
-                                    <a href="<?php echo e(route('admin.vendedor.show', $hash->encodeHex($vendedors->id))); ?>" style="color: black">
-                                        <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            Ver</button></a>   
-                                    <a href="<?php echo e(route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) )); ?>" style="color: black">
-                                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
-                                            Editar</button>
-                                    </a>                                     
-
-                                    <form action="<?php echo e(route('admin.vendedor.destroy', $vendedors->id )); ?>" method="POST"
-                                        accept-charset="UTF-8" style="display:inline">
-                                        <?php echo csrf_field(); ?>
-                                        <?php echo method_field('DELETE'); ?>
-                                        <button type="submit" class="btn btn-danger" title="Delete Image"
-                                            onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
-                                                class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div style="text-align: center;">
-                <?php echo e($vendedor->links()); ?>
-
             </div>
         </div>
-    </div>
-   
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row" style="display: block;">
+                <div class="col-md col-sm">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Tabla de Vendedores</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                        <div class="clearfix"></div>
+                        </div>
+                        
+                        <div class="x_content table-responsive">
+                            <table class="table" >
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Ciudad</th>
+                                        <th>Nombre y Apellidos </th>
+                                        <th>Celular</th>
+                                        <th>Whatsapp</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                    <?php $__currentLoopData = $vendedor_Cbba; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vendedors): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <tr>
+                                            <td scope="row" id='listimages'> <img src="/<?php echo e($vendedors->imagen); ?>" class="img-responsive imgprod" id='listimages'
+                                                alt="<?php echo e($vendedors->nombre_tienda); ?>" style="display: block;margin: auto;">
+                                            </td>
+                                            <td scope="row"><?php echo e(strtoupper($vendedors->ciudad)); ?></td>
+                                            <td scope="row"><?php echo e(strtoupper($vendedors->nombre_vendedor)); ?>, <?php echo e(strtoupper($vendedors->apellido)); ?></td>
+                                            <td scope="row"><?php echo e($vendedors->celular); ?></td>
+                                            <td scope="row"><?php echo e($vendedors->whatsapp); ?></td>
+                                            <td scope="row" style="text-align:center;">
+                                                <a href="<?php echo e(route('admin.vendedor.show', $hash->encodeHex($vendedors->id))); ?>" style="color: black">
+                                                    <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                        Ver</button></a>   
+                                                <a href="<?php echo e(route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) )); ?>" style="color: black">
+                                                    <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        Editar</button>
+                                                </a>                                     
+        
+                                                <form action="<?php echo e(route('admin.vendedor.destroy', $vendedors->id )); ?>" method="POST"
+                                                    accept-charset="UTF-8" style="display:inline">
+                                                    <?php echo csrf_field(); ?>
+                                                    <?php echo method_field('DELETE'); ?>
+                                                    <button type="submit" class="btn btn-danger" title="Delete Image"
+                                                        onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
+                                                            class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <?php echo e($vendedor_Cbba->links()); ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="row" style="display: block;">
+                <div class="col-md col-sm">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Tabla de Vendedores</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                        <div class="clearfix"></div>
+                        </div>
+                        
+                        <div class="x_content table-responsive">
+                            <table class="table" >
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Ciudad</th>
+                                        <th>Nombre y Apellidos </th>
+                                        <th>Celular</th>
+                                        <th>Whatsapp</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                    <?php $__currentLoopData = $vendedor_Stcz; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vendedors): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <tr>
+                                            <td scope="row" id='listimages'> <img src="/<?php echo e($vendedors->imagen); ?>" class="img-responsive imgprod" id='listimages'
+                                                alt="<?php echo e($vendedors->nombre_tienda); ?>" style="display: block;margin: auto;">
+                                            </td>
+                                            <td scope="row"><?php echo e(strtoupper($vendedors->ciudad)); ?></td>
+                                            <td scope="row"><?php echo e(strtoupper($vendedors->nombre_vendedor)); ?>, <?php echo e(strtoupper($vendedors->apellido)); ?></td>
+                                            <td scope="row"><?php echo e($vendedors->celular); ?></td>
+                                            <td scope="row"><?php echo e($vendedors->whatsapp); ?></td>
+                                            <td scope="row" style="text-align:center;">
+                                                <a href="<?php echo e(route('admin.vendedor.show', $hash->encodeHex($vendedors->id))); ?>" style="color: black">
+                                                    <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                        Ver</button></a>   
+                                                <a href="<?php echo e(route('admin.vendedor.edit', $hash->encodeHex($vendedors->id) )); ?>" style="color: black">
+                                                    <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        Editar</button>
+                                                </a>                                     
+        
+                                                <form action="<?php echo e(route('admin.vendedor.destroy', $vendedors->id )); ?>" method="POST"
+                                                    accept-charset="UTF-8" style="display:inline">
+                                                    <?php echo csrf_field(); ?>
+                                                    <?php echo method_field('DELETE'); ?>
+                                                    <button type="submit" class="btn btn-danger" title="Delete Image"
+                                                        onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
+                                                            class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <?php echo e($vendedor_Stcz->links()); ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
 </div>
 <!--div para el fondo de pantalla-->
 <div id='background'></div>

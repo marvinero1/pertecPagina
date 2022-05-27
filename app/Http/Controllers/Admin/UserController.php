@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Access\User\EloquentUserRepository;
 use Validator;
+use Session;
 use Hashids\Hashids;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
@@ -35,7 +36,7 @@ class UserController extends Controller
      */
     public function index(Request $request){
         $hash=new Hashids();
-        $users = User::with('roles')->orderByDesc('email', 'asc')->paginate();
+        $users = User::with('roles')->orderByDesc('email', 'asc')->paginate(20);
         // $users = DB::table('users')->with('roles')->orderByDesc('id')->paginate(10);
         //return view('admin.users.index', ['users' => User::with('roles')->sortable(['email' => 'asc'])->paginate()]);
         return view('admin.users.index', compact('users','hash'));
@@ -175,6 +176,18 @@ class UserController extends Controller
         }
 
         return redirect()->intended(route('admin.users'));
+    }
+
+
+    public function confirmedUsuario(Request $request, $id){
+        $user = User::findOrFail($id);
+        $confirmed = $request->get('confirmed');
+
+        $user->confirmed = $confirmed;
+        $user->update();
+
+        Session::flash('confirmed','Usuario Confirmado Exisitosamente!');
+        return back()->withInput();
     }
 
     /**
