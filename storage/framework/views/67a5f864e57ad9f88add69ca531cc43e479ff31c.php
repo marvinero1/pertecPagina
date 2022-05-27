@@ -142,13 +142,17 @@
 
                                                     <input type="hidden" name="promocion" value="si">
                                                     <h4>Agregar a Lista de Promoción </h4>
+                                                    <div class="form-group">
+                                                        <label for="exampleFormControlTextarea1">Descripción Promoción</label>
+                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="descripcion_promocion"></textarea>
+                                                    </div>
                                                     <div class="row" style="display: block;">
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-primary"
-                                                                style="width: 100% !important; "><span
-                                                                    class="icon-star"></span>
-                                                                &nbsp; Añadir</button>
+                                                                style="width: 100% !important; "><i class="fa fa-star"></i>
+                                                                &nbsp; Añadir Promoción</button>
                                                         </div>
+                                                    </div>
                                                 </form>
                                             </div>
                                         </div>
@@ -159,10 +163,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div style="text-align: center;">
-                    <?php echo e($producto->links()); ?>
+            </div>
+            <div style="text-align: center;">
+                <?php echo e($producto->links()); ?>
 
-                </div>
             </div>
         </div>
     </div>

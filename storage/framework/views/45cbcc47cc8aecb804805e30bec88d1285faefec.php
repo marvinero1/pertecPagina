@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 
 
@@ -139,9 +141,6 @@
                                     </div>
                                 </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
-
                             </div>
                         </div>
                     </div>
@@ -149,7 +148,6 @@
             </div>
         </div>
 </section>
-
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('page.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/productos/show.blade.php ENDPATH**/ ?>

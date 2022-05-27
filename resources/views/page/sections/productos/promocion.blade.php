@@ -56,7 +56,7 @@
                     </form>
                     </div>
                 </div>
-                
+
                 <div class="row lightgallery1">
                     @foreach ($producto as $bproducto)
                     <div class="col-xs-12 col-sm-4 col-md-3 product-item  clearfix item">
@@ -80,6 +80,7 @@
                             <h4>
                                 <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">{{ $bproducto["nombre_producto"] }}</a>
                             </h4>
+                            <h5 class="body-details" style="font-weight: 100;">{{ $bproducto["descripcion_promocion"] }}</h5>
                         </div>
                     </div>
                     @endforeach

@@ -54,7 +54,7 @@
                     </form>
                     </div>
                 </div>
-                
+
                 <div class="row lightgallery1">
                     <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bproducto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-xs-12 col-sm-4 col-md-3 product-item  clearfix item">
@@ -78,6 +78,7 @@
                             <h4>
                                 <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) )); ?>"><?php echo e($bproducto["nombre_producto"]); ?></a>
                             </h4>
+                            <h5 class="body-details" style="font-weight: 100;"><?php echo e($bproducto["descripcion_promocion"]); ?></h5>
                         </div>
                     </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

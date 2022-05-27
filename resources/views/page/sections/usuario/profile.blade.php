@@ -5,9 +5,9 @@
 
 
 <section class="section about-section gray-bg" id="about" style="padding-top: 240px">
-    <div class="container">
-        <div class="row align-items-center flex-row-reverse">
-            <div class="col-lg-6">
+    <div class="content section-content">
+        <div class="row align-items-center flex-row-reverse" style="margin-left: 40px;">
+            <div class="col-lg-8">
                 <div class="about-text go-to">
                     <h3 class="dark-color font-frank-demi">Mi Perfil</h3>
                     @if($user_id->confirmed != 1)
@@ -15,31 +15,53 @@
                     @else
                     <h6 class="lead font-frank-demi" style="color: green">Usuario Verificado <i class="fa fa-check-circle-o" aria-hidden="true"></i></h6>
                     @endif
+                        <div class="row about-list">
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <label>Código de Usuario</label>
+                                    <p>{{ $user_id->id }}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Nombres</label>
+                                    <p>{{ $user_id->name }}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Apellidos</label>
+                                    <p>{{ $user_id->apellido }}</p>
+                                </div>
 
-                    <div class="row about-list">
-                        <div class="col-md-12">
-                            <div class="media">
-                                <label>Código de Usuario</label>
-                                <p>{{ $user_id->id }}</p>
                             </div>
-                            <div class="media">
-                                <label>Nombre</label>
-                                <p>{{ $user_id->name }}</p>
-                            </div>
-                            <div class="media">
-                                <label>Correo</label>
-                                <p>{{ $user_id->email }}</p>
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <label>Ciudad</label>
+                                    <p>{{ $user_id->ciudad }}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Celular</label>
+                                    <p>{{ $user_id->celular }}</p>
+                                </div>
+                                <div class="media">
+                                    <label>NIT/CI</label>
+                                    <p>{{ $user_id->nit }}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="row about-list">
+                            <div class="col-md-12">
+                                <div class="media">
+                                    <label>Correo</label>
+                                    <p>{{ $user_id->email }}</p>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
-            <div class="col-lg-6" style="text-align: center;">
+            <div class="col-lg-4" style="text-align: center; margin-left: -5%;">
                 <div class="about-avatar">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
                 </div><br>
                 <div class="row">
-                    <button class="btn btn-primary" style="height: 35px; font-size: 1.5rem;">Actualizar Datos</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModalUpdate" style="height: 35px; font-size: 1.5rem;">Actualizar Datos</button>
                 </div>
             </div>
         </div>
@@ -72,6 +94,106 @@
         </div>
     </div>
 </section>
+
+
+ <!-- ModalUpdate -->
+ <div id="myModalUpdate" class="modal fade" role="dialog">
+    <div class="modal-dialog-register">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center font-title-user-mod" style="font-size: 2rem;">Actualiza tus Datos</h4>
+            </div>
+            <div class="modal-body" style="padding: 0px 45px 0px !important; margin-top: 27px;">
+                <div class="login_wrapper">
+                    <div class="animate form body-details" style="padding: 0px 0px 54px 0px !important;">
+                        {{ Form::open(['route' => 'register']) }}
+                            <h1 class="font-title-user-mod">{{ __('views.auth.update.header') }}</h1>
+                            <div>
+                                <input type="text" name="name" class="form-control body-details"
+                                        placeholder="{{ __('views.auth.update.input_0') }}"
+                                        value="{{ $user_id->name }}" required autofocus/>
+                            </div>
+                            <div>
+                                <input type="text" name="apellido" class="form-control"
+                                        placeholder="{{ __('views.auth.update.input_4') }}"
+                                        value="{{ $user_id->apellido }}" required autofocus/>
+                            </div>
+                            <div>
+                                <label for="{{ __('views.auth.update.input_5') }}">{{ __('views.auth.update.input_5') }}</label>
+                                <select id="{{ __('views.auth.update.input_5') }}" name="ciudad" class="form-control form-group"
+                                    value="{{ $user_id->ciudad }}" required autofocus>
+                                    <option>{{ $user_id->ciudad }}</option>
+                                    <option value="La Paz">La Paz</option>
+                                    <option value="Oruro">Oruro</option>
+                                    <option value="Potosi">Potosi</option>
+                                    <option value="Cochabamba">Cochabamba</option>
+                                    <option value="Sucre">Sucre</option>
+                                    <option value="Tarija">Tarija</option>
+                                    <option value="Santa Cruz">Santa Cruz</option>
+                                    <option value="Beni">Beni</option>
+                                    <option value="Pando">Pando</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="text" name="celular" class="form-control"
+                                        placeholder="{{ __('views.auth.update.input_6') }}"
+                                        value="{{ $user_id->celular }}" required autofocus/>
+                            </div>
+                            <div>
+                                <input type="text" name="nit" class="form-control"
+                                        placeholder="{{ __('views.auth.update.input_7') }}"
+                                        value="{{ $user_id->nit }}" required autofocus/>
+                            </div>
+                            <div>
+                                <input type="email" name="email" class="form-control"
+                                        placeholder="{{ __('views.auth.update.input_1') }}"
+                                        value="{{ $user_id->email }}" required/>
+                            </div>
+                            <div>
+                                <input type="password" name="password" class="form-control"
+                                        placeholder="{{ __('views.auth.update.input_2') }}"
+                                        required=""/>
+                            </div>
+                            <div>
+                                <input type="password" name="password_confirmation" class="form-control"
+                                        placeholder="{{ __('views.auth.update.input_3') }}" required/>
+                            </div>
+                            <div>
+                                <input type="text" name="confirmed" value="0" hidden="true">
+                                <input type="text" name="rol" value="usuario" hidden="true">
+                            </div>
+
+                            @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+
+                            @if (!$errors->isEmpty())
+                                <div class="alert alert-danger" role="alert">
+                                    {!! $errors->first() !!}
+                                </div>
+                            @endif
+
+                            @if(config('auth.captcha.registration'))
+                                @captcha()
+                            @endif
+                            <div>
+                                <button type="submit" class = "btn btn-default btn-lg btn-block" style="background-color: #093070;color:#fff"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                                    {{ __('views.auth.update.action_3') }}
+                                </button>
+                            </div>
+                            <div class="clearfix"></div>
+                        {{ Form::close() }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <style>

@@ -79,13 +79,13 @@
                             <div class="search-icon user-icon-margin">
                                 <i class="fa fa-user-circle" style="font-size: 1.8rem; padding-left: 0px !important;padding-right: 0px !important;"></i>
                             </div>
-                            <div class="search-box navbar-nav" style="height: auto; width: auto; padding-top: 10px; padding-left: 20px; padding-right: 20px;">
+                            <div class="search-box navbar-nav" style="height: auto; padding-top: 10px; padding-left: 20px; padding-right: 20px;">
                                 <div class="cart-icon">
                                     <ul class="list-unstyled user-menu">
                                         <?php if(Auth::user()->name == "Admin"): ?>
-                                            <li>
-                                                <a href="/admin" style="color: #A6A69B;">Panel Administrativo</a>
-                                            </li>
+                                        <li>
+                                            <a href="/admin" style="color: #A6A69B;">Panel Administrativo</a>
+                                        </li>
                                         <?php endif; ?>
                                         <hr>
                                         <li>
@@ -113,11 +113,9 @@
                                 <strong  style="color: white; width: 20px;font-size: 1.8rem;">| </strong>
                             </div>
                         </div>
-
                         <div class="module module-cart pull-right" style="padding-top: 5px;">
                             <div class="cart-icon">
                                 <i class="fa fa-user-circle" style="font-size: 1.8rem;" data-toggle="modal" data-target="#myModal"></i>
-                            </div>
                         </div>
                     <?php endif; ?>
 				</div>
@@ -129,71 +127,180 @@
 
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog-login">
-
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center">PERTEC S.R.L &copy;</h4>
+                <h4 class="modal-title text-center color-blue">PERTEC S.R.L &copy;</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="margin-top: 5px !important;margin-bottom: 5px !important;">
                 <div class="login_content">
                     <?php echo e(Form::open(['route' => 'login'])); ?>
 
-                        <h1 class="text-center"><?php echo e(__('views.auth.login.header')); ?></h1>
-                        <div>
-                            <input id="email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>"
-                                placeholder="<?php echo e(__('views.auth.login.input_0')); ?>" required autofocus>
-                        </div>
-                        <div>
-                            <input id="password" type="password" class="form-control" name="password"
-                                placeholder="<?php echo e(__('views.auth.login.input_1')); ?>" required>
-                        </div>
-                        <div class="checkbox al_left ">
-                            <label style="color: black;">
-                                <input type="checkbox" class="checkbox"
-                                    name="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>> <?php echo e(__('views.auth.login.input_2')); ?>
-
-                            </label>
-                        </div>
-
-                        <?php if(session('status')): ?>
-                            <div class="alert alert-success">
-                                <?php echo e(session('status')); ?>
-
+                        <h1 class="text-center color-blue"><?php echo e(__('views.auth.login.header')); ?></h1>
+                        <div style="padding: 12px 20px 12px 10px;">
+                            <div>
+                                <input id="email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>"
+                                    placeholder="<?php echo e(__('views.auth.login.input_0')); ?>" required autofocus>
                             </div>
-                        <?php endif; ?>
-
-                        <?php if(!$errors->isEmpty()): ?>
-                            <div class="alert alert-danger" role="alert">
-                                <?php echo $errors->first(); ?>
-
+                            <div>
+                                <input id="password" type="password" class="form-control" name="password"
+                                    placeholder="<?php echo e(__('views.auth.login.input_1')); ?>" required>
                             </div>
-                        <?php endif; ?>
+                            <div class="checkbox al_left ">
+                                <label class="color-black">
+                                    <input type="checkbox" class="checkbox"
+                                        name="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>> <?php echo e(__('views.auth.login.input_2')); ?>
 
-                        <div style="text-align: center;">
-                            <button class="btn btn-primary submit btn-lg btn-block p-2" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
-                                Ingresar</button>
-                            <a class="btn btn-link btn-sm" href="<?php echo e(route('password.request')); ?>" style="background-color: #ffc527;
-                            color: #093070;">
-                                <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; <?php echo e(__('views.auth.login.action_1')); ?>
+                                </label>
+                            </div>
 
-                            </a>
+                            <?php if(session('status')): ?>
+                                <div class="alert alert-success">
+                                    <?php echo e(session('status')); ?>
+
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if(!$errors->isEmpty()): ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?php echo $errors->first(); ?>
+
+                                </div>
+                            <?php endif; ?><br><br>
+
+                            <div style="text-align: center;">
+                                <button type="submit" class = "btn btn-default btn-lg btn-block color-yellow bg-blue"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                                    Ingresar
+                                </button>
+                                <button type="button" class="btn btn-default btn-lg btn-block bg-yellow" data-toggle="modal" data-target="#myModalRegister"
+                                style="word-break: normal;">
+                                    <p class="color-blue" style="margin-bottom: 0px !important">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        Aun no tienes cuenta, ¡Registrate!
+                                    </p>
+                                </button>
+                            </div>
                         </div>
-
-                        <div class="clearfix"></div>
+                    <div class="clearfix"></div>
                     <?php echo e(Form::close()); ?>
 
-                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+ <!-- ModalRegister -->
+ <div id="myModalRegister" class="modal fade" role="dialog">
+    <div class="modal-dialog-register">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Registrate</h4>
+            </div>
+            <div class="modal-body" style="padding: 0px 45px 0px !important; margin-top: 27px;">
+                <div class="login_wrapper">
+                    <div class="animate form" style="padding: 0px 0px 54px 0px !important;">
+                        <?php echo e(Form::open(['route' => 'register'])); ?>
+
+                            <h1><?php echo e(__('views.auth.register.header')); ?></h1>
+                            <div>
+                                <input type="text" name="name" class="form-control"
+                                        placeholder="<?php echo e(__('views.auth.register.input_0')); ?>"
+                                        value="<?php echo e(old('name')); ?>" required autofocus/>
+                            </div>
+                            <div>
+                                <input type="text" name="apellido" class="form-control"
+                                        placeholder="<?php echo e(__('views.auth.register.input_4')); ?>"
+                                        value="<?php echo e(old('apellido')); ?>" required autofocus/>
+                            </div>
+                            <div>
+                                <label for="<?php echo e(__('views.auth.register.input_5')); ?>"><?php echo e(__('views.auth.register.input_5')); ?></label>
+                                <select id="<?php echo e(__('views.auth.register.input_5')); ?>" name="ciudad" class="form-control form-group"
+                                    value="<?php echo e(old('ciudad')); ?>" required autofocus>
+                                    <option>Elige</option>
+                                    <option value="La Paz">La Paz</option>
+                                    <option value="Oruro">Oruro</option>
+                                    <option value="Potosi">Potosi</option>
+                                    <option value="Cochabamba">Cochabamba</option>
+                                    <option value="Sucre">Sucre</option>
+                                    <option value="Tarija">Tarija</option>
+                                    <option value="Santa Cruz">Santa Cruz</option>
+                                    <option value="Beni">Beni</option>
+                                    <option value="Pando">Pando</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="text" name="celular" class="form-control"
+                                        placeholder="<?php echo e(__('views.auth.register.input_6')); ?>"
+                                        value="<?php echo e(old('celular')); ?>" required autofocus/>
+                            </div>
+                            <div>
+                                <input type="text" name="nit" class="form-control"
+                                        placeholder="<?php echo e(__('views.auth.register.input_7')); ?>"
+                                        value="<?php echo e(old('nit')); ?>" required autofocus/>
+                            </div>
+                            <div>
+                                <input type="email" name="email" class="form-control"
+                                        placeholder="<?php echo e(__('views.auth.register.input_1')); ?>"
+                                        required/>
+                            </div>
+                            <div>
+                                <input type="password" name="password" class="form-control"
+                                        placeholder="<?php echo e(__('views.auth.register.input_2')); ?>"
+                                        required=""/>
+                            </div>
+                            <div>
+                                <input type="password" name="password_confirmation" class="form-control"
+                                        placeholder="<?php echo e(__('views.auth.register.input_3')); ?>" required/>
+                            </div>
+                            <div>
+                                <input type="text" name="confirmed" value="0" hidden="true">
+                                <input type="text" name="rol" value="usuario" hidden="true">
+                            </div>
+
+                            <?php if(session('status')): ?>
+                                <div class="alert alert-success">
+                                    <?php echo e(session('status')); ?>
+
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if(!$errors->isEmpty()): ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?php echo $errors->first(); ?>
+
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if(config('auth.captcha.registration')): ?>
+                                <?php echo app('captcha')->renderCaptcha(); ?>
+                            <?php endif; ?>
+                            <div>
+                                <button type="submit" class = "btn btn-default btn-lg btn-block" style="background-color: #093070;color:#fff"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                                    <?php echo e(__('views.auth.register.action_3')); ?>
+
+                                </button>
+                            </div>
+                            <div class="clearfix"></div>
+                        <?php echo e(Form::close()); ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <style>
     .modal-dialog-login{
         margin-top: 90px;
-        width: 525px;
+        width: auto;
+    }
+    .modal-dialog-register{
+        margin-top: 90px;
+        width: auto;
     }
     .modal-open .modal{
         background-color: rgb(9, 48, 106, 0.6) !important;
@@ -205,19 +312,25 @@
     }
 
     @media (min-width:768px) {
-    .modal-dialog-login {
-        width: 600px;
-        margin: 90px auto;
+        .modal-dialog-login {
+            width: 600px;
+            margin: 90px auto;
+        }
+    }
+
+    @media (min-width:768px) {
+        .modal-dialog-register {
+            width: 620px;
+            margin: 40px auto;
+        }
     }
     .checkbox input{
         color: #093070;
         position:inherit !important;
     }
     .checkbox, .radio {
-    /* position: relative; */
-    display: inherit;
-    /* margin-top: 10px; */
-    margin-bottom: 10px
+        display: inherit;
+        margin-bottom: 10px
     }
     .modal-body{
         padding: 30px 45px 20px;

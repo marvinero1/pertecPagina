@@ -1,20 +1,20 @@
-@extends('admin.layouts.admin')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div>
-    @if ($errors->any())
+    <?php if($errors->any()): ?>
         <div class="alert alert-danger">
             <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <li><?php echo e($error); ?></li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div><br/>
-    @endif
+    <?php endif; ?>
 
-    <form action="{{route('admin.producto.update', $producto->id)}}" method="POST" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        {{ method_field('PUT') }}
+    <form action="<?php echo e(route('admin.producto.update', $producto->id)); ?>" method="POST" enctype="multipart/form-data">
+        <?php echo e(csrf_field()); ?>
+
+        <?php echo e(method_field('PUT')); ?>
+
         <div class="row" style="border: outset;"><br>
             <div class="col-md-12 col-sm-12  form-group">
                 <h3><strong>Crear Producto</strong></h3>
@@ -24,12 +24,12 @@
             <div class="col-md-12 col-sm-12" style="padding-block-end: 15px;">
                 <div class="col-md-6 col-sm-12  form-group">
                     <label for="nombre">Nombre Producto *</label>
-                    <input type="text" class="form-control" name="nombre_producto" value="{{ $producto->nombre_producto }}" required>
+                    <input type="text" class="form-control" name="nombre_producto" value="<?php echo e($producto->nombre_producto); ?>" required>
                 </div>
 
                 <div class="col-md-6 col-sm-12  form-group">
                     <label for="nombre">Denominación Simplificada *</label>
-                    <input type="text" class="form-control" name="denominacion" value="{{ $producto->denominacion }}"
+                    <input type="text" class="form-control" name="denominacion" value="<?php echo e($producto->denominacion); ?>"
                         required>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 <div class="col-md-4 col-sm-12 form-group">
                     <label for="categoria">Categoria</label>
                     <select id="categoria" name="categoria" class="form-control" required>
-                        <option>{{ $producto->categoria }}</option>
+                        <option><?php echo e($producto->categoria); ?></option>
                         <option value="Accesorios Sujeción Techos">Accesorios Sujeción Techos.</option>
                         <option value="Agricultura">Agricultura.</option>
                         <option value="Arandelas Planas">Arandelas Planas.</option>
@@ -66,7 +66,7 @@
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="inox">Inoxidable</label>
                     <select id="inox" name="inox" class="form-control" required>
-                        <option>{{ $producto->inox }}</option>
+                        <option><?php echo e($producto->inox); ?></option>
                         <option value="si">SI</option>
                         <option value="no">NO</option>
                     </select>
@@ -90,29 +90,29 @@
         <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
             <div class="col-md-4 col-sm-12  form-group">
                 <label for="nombre">Material</label>
-                <input type="text" class="form-control" name="material" value="{{ $producto->material }}">
+                <input type="text" class="form-control" name="material" value="<?php echo e($producto->material); ?>">
             </div>
 
             <div class="col-md-4 col-sm-12  form-group">
                 <label for="nombre">Acabado</label>
-                <input type="text" class="form-control" name="acabado" value="{{ $producto->acabado }}">
+                <input type="text" class="form-control" name="acabado" value="<?php echo e($producto->acabado); ?>">
             </div>
 
             <div class="col-md-4 col-sm-12  form-group">
                 <label for="nombre">Rosca</label>
-                <input type="text" class="form-control" name="rosca" value="{{ $producto->rosca }}">
+                <input type="text" class="form-control" name="rosca" value="<?php echo e($producto->rosca); ?>">
             </div>
         </div>
 
         <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
             <div class="col-md-6 col-sm-12  form-group">
                 <label for="nombre">Resistencia</label>
-                <input type="text" class="form-control" name="resistencia" value="{{ $producto->resistencia }}">
+                <input type="text" class="form-control" name="resistencia" value="<?php echo e($producto->resistencia); ?>">
             </div>
 
             <div class="col-md-6 col-sm-12  form-group">
                 <label for="nombre">Tratamiento</label>
-                <input type="text" class="form-control" name="tratamiento" value="{{ $producto->tratamiento }}">
+                <input type="text" class="form-control" name="tratamiento" value="<?php echo e($producto->tratamiento); ?>">
             </div>
         </div>
 
@@ -120,7 +120,7 @@
             <div class="col-md-4 col-sm-12 form-group">
                 <label for="sae">Norma SAE</label>
                 <select id="sae" name="sae" class="form-control">
-                    <option>{{ $producto->sae }}</option>
+                    <option><?php echo e($producto->sae); ?></option>
                     <option value="si">SI</option>
                     <option value="no">NO</option>
                 </select>
@@ -129,7 +129,7 @@
             <div class="col-md-4 col-sm-12  form-group">
                 <label for="zb">Zincado Blanco</label>
                 <select id="zb" name="zb" class="form-control">
-                    <option>{{ $producto->zb }}</option>
+                    <option><?php echo e($producto->zb); ?></option>
                     <option value="si">SI</option>
                     <option value="no">NO</option>
                 </select>
@@ -137,8 +137,8 @@
 
             <div class="col-md-4 col-sm-12  form-group">
                 <label for="zam">Zincado Amarillo</label>
-                <select id="zam" name="zam" class="form-control"  value="{{ $producto->zam }}" required>
-                    <option>{{ $producto->zam }}</option>
+                <select id="zam" name="zam" class="form-control"  value="<?php echo e($producto->zam); ?>" required>
+                    <option><?php echo e($producto->zam); ?></option>
                     <option value="si">SI</option>
                     <option value="no">NO</option>
                 </select>
@@ -146,7 +146,7 @@
         </div>
 
         <div class="footer" style="padding: 15px 15px 5px 5px; float: right;">
-            <a type="button" class="btn btn-warning float-right" href="{{url('/admin/producto')}}" style="color: black">
+            <a type="button" class="btn btn-warning float-right" href="<?php echo e(url('/admin/producto')); ?>" style="color: black">
                 <i class="fa fas fa-arrow-left"></i> Cerrar</a>
             <button type="submit" class="btn btn-primary float-right mr-2"><i class="fa fas fa-save"></i>
                 Guardar</button>
@@ -169,4 +169,6 @@
         cursor: pointer;
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/admin/products/edit.blade.php ENDPATH**/ ?>

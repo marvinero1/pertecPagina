@@ -17658,6 +17658,13 @@ ul.dot-list li i {
     color: #f9f9f9 !important
 }
 
+.color-blue {
+    color: #093070 !important
+}
+
+.color-yellow {
+    color: #FBD800 !important;
+}
 /*------------------------------------*\
 #ALIGN
 \*------------------------------------*/
@@ -18164,6 +18171,14 @@ footer {
     background-color: #fff !important
 }
 
+.bg-yellow {
+    background-color: #FBD800
+}
+
+.bg-blue {
+    background-color: #093070
+}
+
 .bg-dark h6 {
     color: #f6f6f7
 }
@@ -18296,9 +18311,9 @@ footer {
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-    background-color: #2f2f2f;
+    background-color: #093070;
     color: #fff;
-    border: 2px solid #2f2f2f
+    border: 2px solid #093070
 }
 
 .btn-primary:hover::before,
@@ -20550,6 +20565,7 @@ footer {
         -webkit-transform: translateY(0px);
         -moz-transform: translateY(0px);
         transform: translateY(0px);
+        width: 170px;
     }
 
     .module-cart .cart-box {
@@ -27319,6 +27335,15 @@ footer hr {
     font-family: 'Franklin Gothic Book', sans-serif;
     font-size: 1.45rem;
 }
+
+.body-details input,
+.body-details label,
+.body-details select {
+    color: #9f9f93 !important;
+    font-family: 'Franklin Gothic Book', sans-serif;
+    font-size: 1.25rem;
+}
+
 .btn-gereric {
     background-color: #ffffff !important;
     color: #000000 !important;
@@ -27363,6 +27388,13 @@ footer hr {
     font-size: 1.4rem;
     color: #5a5a5aa6;
 }
+.font-title-user-mod {
+    font-family: 'Franklin Gothic Demi', sans-serif;
+    font-weight: 100;
+    color: #000000;
+    font-size: 2.5rem;
+}
+
 .font-frank-demi {
     font-family: 'Franklin Gothic Demi', sans-serif;
 }
