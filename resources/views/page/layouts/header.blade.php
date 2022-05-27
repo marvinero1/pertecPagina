@@ -170,7 +170,7 @@
                                 </button>
                                 <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModalRegister"
                                 style="word-break: normal;background-color: #FBD800;">
-                                    <p style="color:#093070;">
+                                    <p style="color:#093070;margin-bottom: 0px !impo">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
                                         Aun no tienes cuenta, ¡Registrate!
                                     </p>

@@ -430,7 +430,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="">
-                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
+                        <img src="" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
