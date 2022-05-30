@@ -11,7 +11,7 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-                    <img src="http://192.168.31.240:5000/{{ $carusels->imagen }}" alt="">
+                    <img src="http://192.168.31.242:5000/{{ $carusels->imagen }}" alt="">
 
 
                     <!-- LAYER NR. 1 -->
@@ -23,7 +23,7 @@
                         data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                         data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                         data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                        <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}" alt="hook" />
+                        <img src="http://192.168.31.242:5000/{{ $carusels->imagen_icono }}" alt="hook" />
 
                     </div>
 
@@ -597,6 +597,7 @@
             </div>
         </div>
     </div>
+    
     <div class="container-fluid">
         <div class="widgets-contact">
             <div class="row" style="margin-right: 0px;">
@@ -605,27 +606,31 @@
                         <img src="/assets/images/system/CELULAR.png" style="margin-top: -15px;" width="30px;">
                     </div>
                     <div class="widget-contact-info">
-                        <p class="text-capitalize font-heading">72221031 - 72221033</p>
+                        <a class="text-capitalize font-heading awithmodelh1" href="tel:+591 72221031">72221031 - </a>
+                        <a class="text-capitalize font-heading awithmodelh1" href="tel:+591 72221033"">72221033</a>
                     </div>
                 </div>
                 <!-- .widget end -->
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
-                        {{-- <img src="/assets/images/system/WHATSAPP.png" width="30px;"> --}}
                         <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
-                        <p class="font-heading">(Whatsapp) 72221032 - 72230024</p>
+                        <a class="font-heading awithmodelh1">(Whatsapp)</a>
+                        <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" 
+                        class=" awithmodelh1" target="_blank">72221032</a>
+                        <strong>-</strong>
+                        <a href="https://wa.me/+59172230024/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" 
+                        class="awithmodelh1" target="_blank">72230024</a>
                     </div>
                 </div>
                 <!-- .widget end -->
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right">
                     <div class="widget-contact-icon pull-left">
-                        {{-- <img src="/assets/images/system/MAIL.png"  width="30px;"> --}}
                         <i class="fa fa-envelope-o" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
-                        <p class="font-heading">servicio.cliente@pertec.com.bo</p>
+                        <a class="font-heading awithmodelh1" href="mailto:servicio.cliente@pertec.com.bo">servicio.cliente@pertec.com.bo</a>
                     </div>
                 </div>
                 <!-- .widget end -->

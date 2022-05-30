@@ -11,55 +11,56 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-                <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen); ?>" alt="">
+                    <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen); ?>" alt="">
 
 
-    <!-- LAYER NR. 1 -->
-    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-        data-whitespace="nowrap" data-width="['150','70','70','100']" data-height="['150','70','70','100']"
-        data-transform_idle="o:1;"
-        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-        data-start="3000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-        style="z-index: 999 !important;">
-        <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                        data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
+                        data-height="['150','70','70','100']" data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
+                        <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
 
-    </div>
+                    </div>
 
-    <!-- LAYER NR. 2 -->
-    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-        data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none" data-transform_idle="o:1;"
-        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-        data-start="3500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-        data-fontsize="['75','17','15','15']" data-lineheight="['100','45','25','25']" data-color="#ffc527"
-        style="z-index: 999 !important;">
-        <?php echo e($carusels->titulo); ?>
+                    <!-- LAYER NR. 2 -->
+                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                        data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
+                        data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
+                        <?php echo e($carusels->titulo); ?>
 
-    </h1>
+                    </h1>
 
-    <!-- LAYER NR. 3 -->
-    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-        data-start="4000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-        data-fontsize="['50','17','17','17']" data-lineheight="['50','26','25','25']" data-color="#fff"
-        style="z-index: 999 !important;">
-        <?php echo e($carusels->sub_titulo); ?>
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                        data-y="center" data-voffset="80" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
+                        data-lineheight="['50','26','25','25']" data-color="#fff" style="z-index: 999 !important;">
+                        <?php echo e($carusels->sub_titulo); ?>
 
-    </div>
-    </li>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </ul>
-    </div>
+                    </div>
+                </li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </ul>
+        </div>
     </div>
     <!-- END OF SLIDER WRAPPER -->
 </section>
-
 
 
 <!-- acerca de nosotros -->
@@ -200,6 +201,8 @@
     <!-- .container end -->
 </section>
 
+
+
 <!-- productos -->
 <section id="sectionProducts" style="background-color: #F6F6F6;">
     <div class="content section-content">
@@ -242,7 +245,7 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
+                                            <a href="#"><?php echo e($productos->nombre_producto); ?></a>
                                         </h4>
                                     </div>
 
@@ -253,12 +256,15 @@
 
                         </div>
 
- 
+
                         <div class="item">
+
                             <div class="row">
                                 <!-- product #1 -->
+
                                 <?php $__currentLoopData = $producto2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+
                                     <div class="product-img">
                                         <img src='http://192.168.31.240:5000/<?php echo e($productos->imagen); ?>' alt="product"
                                             style="height:250px;">
@@ -271,13 +277,18 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
+                                            <a href="#"><?php echo e($productos->nombre_producto); ?></a>
                                         </h4>
                                     </div>
+
                                 </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
                             </div>
-                        </div> 
+
+                        </div>
+
+
 
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button"
@@ -448,6 +459,7 @@
                 <div class="entry-img">
                     <a class="img-popup" href="">
                         
+                        
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -557,7 +569,9 @@
     <!-- .container end -->
 </section>
 
+
 <!-- call center -->
+
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
@@ -584,6 +598,7 @@
             </div>
         </div>
     </div>
+    
     <div class="container-fluid">
         <div class="widgets-contact">
             <div class="row" style="margin-right: 0px;">
@@ -640,7 +655,7 @@
 
 
 <style type="text/css">
-    .awithmodelh1{
+.awithmodelh1{
         color: #000000;
         font-family: 'Franklin Gothic Demi', sans-serif;
         font-size: 1.6rem;
@@ -776,17 +791,19 @@
         z-index: 1 !important;
     }
 
-    .fondo.con::after {
+    /* .fondo::after, .fondo::before{
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(181deg, rgba(9, 48, 112, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
-        z-index: -1;
-    }
-    cookie-disclaimer {
+        background: linear-gradient(181deg, rgba(9, 48, 112, 0.3) 0%, rgba(255, 255, 255, 0.14) 100%);
+        z-index: 99;
+    } */
+
+
+    .cookie-disclaimer {
         background: #000000;
         color: #FFF;
         opacity: 0.8;
@@ -797,11 +814,13 @@
         height: 150px;
         position: fixed;
     }
+
     .cookie-disclaimer .container {
         text-align: center;
         padding-top: 20px;
         padding-bottom: 20px;
     }
+
     .cookie-disclaimer .cookie-close {
         float: right;
         padding: 10px;
@@ -819,21 +838,26 @@
             x.style.display = "none";
         }
     }
+
 </script>
 <script>
     $(document).ready(function () {
         var cookie = false;
         var cookieContent = $('.cookie-disclaimer');
+
         checkCookie();
+
         if (cookie === true) {
             cookieContent.hide();
         }
+
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
             var expires = "expires=" + d.toGMTString();
             document.cookie = cname + "=" + cvalue + "; " + expires;
         }
+
         function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
@@ -843,6 +867,7 @@
             }
             return "";
         }
+
         function checkCookie() {
             var check = getCookie("acookie");
             if (check !== "") {
@@ -850,12 +875,14 @@
             } else {
                 return cookie = false; //setCookie("acookie", "accepted", 365);
             }
+
         }
         $('.accept-cookie').click(function () {
             setCookie("acookie", "accepted", 365);
             cookieContent.hide(500);
         });
     });
+
 </script>
 <?php $__env->stopSection(); ?>
 
