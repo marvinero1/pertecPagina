@@ -1,5 +1,6 @@
-<?php $__env->startSection('content'); ?>
 
+
+<?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/producBackground.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -132,10 +133,8 @@
 </section>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXolVNo_nkRhEqs9BV_oJDY6Dz1OUQCUU&callback=initMap&v=weekly"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXolVNo_nkRhEqs9BV_oJDY6Dz1OUQCUU&callback=initMap&v=weekly"
     defer></script>
-
 <script>
     function initMap() {
         var lat1 = -17.38012174009731;
@@ -160,17 +159,14 @@
         });
     }
     window.initMap = initMap;
-
 </script>
 <style>
     #map {
         height: 400px;
-        / The height is 400 pixels / width: 100%;
-        / The width is the width of the web page /
+        /* / The height is 400 pixels / width: 100%; */
+        /* / The width is the width of the web page / */
     }
-
 </style>
-
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('page.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/contactanos.blade.php ENDPATH**/ ?>

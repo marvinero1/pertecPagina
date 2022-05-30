@@ -243,7 +243,7 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="#"><?php echo e($productos->nombre_producto); ?></a>
+                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
                                         </h4>
                                     </div>
 
@@ -275,7 +275,7 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="#"><?php echo e($productos->nombre_producto); ?></a>
+                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
                                         </h4>
                                     </div>
 

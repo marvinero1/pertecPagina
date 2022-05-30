@@ -18,12 +18,12 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
-	
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">
-	
+
 	{{ Html::style(mix('assets/page/css/app_page.css')) }}
-	{{ Html::script(mix('assets/page/js/app_page.js')) }} 
+	{{ Html::script(mix('assets/page/js/app_page.js')) }}
 
 	<script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
 	<script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
@@ -31,16 +31,16 @@
 
 <body>
 
-	{{-- <div class="preloader">
+	<div class="preloader">
 		<div class="spinner">
 			<div class="bounce1">
 			</div>
 			<div class="bounce2">
 			</div>
-			<div class="bounce3">aw
+			<div class="bounce3">
 			</div>
 		</div>
-	</div>   --}}
+	</div>
 
 	@include('page.layouts.header')
 	@yield('content')
@@ -59,7 +59,7 @@
         <label style="position: relative; top: -8px;">&nbsp;Ayuda</label>
     </a>
 
-    
+
 	<script type='text/javascript'>
         document.oncontextmenu = function(){return false}
     </script>
@@ -107,6 +107,13 @@
 	</script>
 
 <script>
+
+$(window).on("load", function() {
+        $(".preloader").fadeOut("slow");
+        $(".preloader").remove();
+    });
+
+
     $("a.my-menu-link").click(function(){
         console.log($(this).attr("name"));
         $("html, body").animate({

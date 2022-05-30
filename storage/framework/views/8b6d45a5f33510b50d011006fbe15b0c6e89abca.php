@@ -17,8 +17,6 @@
             <span class="count_top"><i class="fa fa-cubes "></i> <?php echo e(__('views.admin.dashboard.count_2')); ?></span>
             <div>
                 <span class="count green"><?php echo e($counts['products']); ?></span>
-                 
-                
             </div>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
