@@ -11,49 +11,51 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-                <img src="http://192.168.31.240:5000/{{ $carusels->imagen }}" alt="">
+                    <img src="http://192.168.31.240:5000/{{ $carusels->imagen }}" alt="">
 
 
-    <!-- LAYER NR. 1 -->
-    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
-        data-whitespace="nowrap" data-width="['150','70','70','100']" data-height="['150','70','70','100']"
-        data-transform_idle="o:1;"
-        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-        data-start="3000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-        style="z-index: 999 !important;">
-        <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}" alt="hook" />
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                        data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
+                        data-height="['150','70','70','100']" data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
+                        <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}" alt="hook" />
 
-    </div>
+                    </div>
 
-    <!-- LAYER NR. 2 -->
-    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-        data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none" data-transform_idle="o:1;"
-        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-        data-start="3500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-        data-fontsize="['75','17','15','15']" data-lineheight="['100','45','25','25']" data-color="#ffc527"
-        style="z-index: 999 !important;">
-        {{ $carusels->titulo }}
-    </h1>
+                    <!-- LAYER NR. 2 -->
+                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                        data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
+                        data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
+                        {{ $carusels->titulo }}
+                    </h1>
 
-    <!-- LAYER NR. 3 -->
-    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
-        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-        data-start="4000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-        data-fontsize="['50','17','17','17']" data-lineheight="['50','26','25','25']" data-color="#fff"
-        style="z-index: 999 !important;">
-        {{ $carusels->sub_titulo }}
-    </div>
-    </li>
-    @endforeach
-    </ul>
-    </div>
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                        data-y="center" data-voffset="80" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
+                        data-lineheight="['50','26','25','25']" data-color="#fff" style="z-index: 999 !important;">
+                        {{ $carusels->sub_titulo }}
+                    </div>
+                </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
     <!-- END OF SLIDER WRAPPER -->
 </section>
@@ -234,7 +236,8 @@
                                             style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block a-card" href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">Detalles</a>
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
@@ -266,7 +269,7 @@
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block a-card"
-                                                href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">Detalles</a>
+                                                    href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
@@ -453,7 +456,8 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="">
-                    {{-- <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($productos->id)) }}"> --}}
+                        {{-- <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($productos->id)) }}">
+                        --}}
                         {{-- <img src="http://192.168.31.240:5000/{{ $tcb["imagen"] }}" alt="title" /> --}}
                     </a>
                 </div><br>
@@ -632,7 +636,15 @@
     </div>
 </section>
 
-
+<div class="cookie-disclaimer">
+    <div class="cookie-close accept-cookie"><i class="fa fa-times"></i></div>
+    <div class="container">
+        <p>PERTEC S.R.L. utiliza ("cookies") para aumentar la calidad del sitio. <a
+                href="#">Lea más sobre nuestro uso de cookies</a>.
+            <br>Al continuar utilizando el sitio web, acepta nuetro uso de cookies.</p>
+        <button type="button" class="btn btn-success accept-cookie">¡Está bien!</button>
+    </div>
+</div>
 {{-- <input type="checkbox" id="cerrar">
 <label for="cerrar" id="btn-cerrar" style="text-align: center !important; z-index: 1000;">X</label>
 
@@ -793,6 +805,31 @@
         z-index: 99;
     } */
 
+
+    .cookie-disclaimer {
+        background: #000000;
+        color: #FFF;
+        opacity: 0.8;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 200;
+        height: 150px;
+        position: fixed;
+    }
+
+    .cookie-disclaimer .container {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .cookie-disclaimer .cookie-close {
+        float: right;
+        padding: 10px;
+        cursor: pointer;
+    }
+
 </style>
 
 <script>
@@ -804,6 +841,50 @@
             x.style.display = "none";
         }
     }
+
+</script>
+<script>
+    $(document).ready(function () {
+        var cookie = false;
+        var cookieContent = $('.cookie-disclaimer');
+
+        checkCookie();
+
+        if (cookie === true) {
+            cookieContent.hide();
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            var check = getCookie("acookie");
+            if (check !== "") {
+                return cookie = true;
+            } else {
+                return cookie = false; //setCookie("acookie", "accepted", 365);
+            }
+
+        }
+        $('.accept-cookie').click(function () {
+            setCookie("acookie", "accepted", 365);
+            cookieContent.hide(500);
+        });
+    });
 
 </script>
 @endsection
