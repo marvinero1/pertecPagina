@@ -25,7 +25,7 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#" class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
+							<a class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
 						</li>
                         <li class="has-dropdown">
 							<a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link">Productos</a>
@@ -79,7 +79,7 @@
                             <div class="search-icon user-icon-margin">
                                 <i class="fa fa-user-circle" style="font-size: 1.8rem; padding-left: 0px !important;padding-right: 0px !important;"></i>
                             </div>
-                            <div class="search-box navbar-nav" style="height: auto; padding-top: 10px; padding-left: 20px; padding-right: 20px;">
+                            <div class="search-box navbar-nav" style="height: auto; width: auto; padding-top: 10px; padding-left: 20px; padding-right: 20px;">
                                 <div class="cart-icon">
                                     <ul class="list-unstyled user-menu">
                                         <?php if(Auth::user()->name == "Admin"): ?>
@@ -131,13 +131,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center color-blue">PERTEC S.R.L &copy;</h4>
+                <h4 class="modal-title text-center" style="color: #093070;">PERTEC S.R.L &copy;</h4>
             </div>
             <div class="modal-body" style="margin-top: 5px !important;margin-bottom: 5px !important;">
                 <div class="login_content">
                     <?php echo e(Form::open(['route' => 'login'])); ?>
 
-                        <h1 class="text-center color-blue"><?php echo e(__('views.auth.login.header')); ?></h1>
+                        <h1 class="text-center" style="color: #093070;"><?php echo e(__('views.auth.login.header')); ?></h1>
                         <div style="padding: 12px 20px 12px 10px;">
                             <div>
                                 <input id="email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>"
@@ -148,35 +148,35 @@
                                     placeholder="<?php echo e(__('views.auth.login.input_1')); ?>" required>
                             </div>
                             <div class="checkbox al_left ">
-                                <label class="color-black">
+                                <label style="color: black;">
                                     <input type="checkbox" class="checkbox"
                                         name="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>> <?php echo e(__('views.auth.login.input_2')); ?>
 
                                 </label>
                             </div>
-
+    
                             <?php if(session('status')): ?>
                                 <div class="alert alert-success">
                                     <?php echo e(session('status')); ?>
 
                                 </div>
                             <?php endif; ?>
-
+    
                             <?php if(!$errors->isEmpty()): ?>
                                 <div class="alert alert-danger" role="alert">
                                     <?php echo $errors->first(); ?>
 
                                 </div>
                             <?php endif; ?><br><br>
-
+    
                             <div style="text-align: center;">
-                                <button type="submit" class = "btn btn-default btn-lg btn-block color-yellow bg-blue"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                                <button type="submit" class = "btn btn-default btn-lg btn-block" style="background-color: #093070;color:#FBD800"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
                                     Ingresar
                                 </button>
-                                <button type="button" class="btn btn-default btn-lg btn-block bg-yellow" data-toggle="modal" data-target="#myModalRegister"
-                                style="word-break: normal;">
-                                    <p class="color-blue" style="margin-bottom: 0px !important">
-                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModalRegister"
+                                style="word-break: normal;background-color: #FBD800;">
+                                    <p style="color:#093070;margin-bottom: 0px !impo">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
                                         Aun no tienes cuenta, ¡Registrate!
                                     </p>
                                 </button>
@@ -218,7 +218,7 @@
                             </div>
                             <div>
                                 <label for="<?php echo e(__('views.auth.register.input_5')); ?>"><?php echo e(__('views.auth.register.input_5')); ?></label>
-                                <select id="<?php echo e(__('views.auth.register.input_5')); ?>" name="ciudad" class="form-control form-group"
+                                <select id="<?php echo e(__('views.auth.register.input_5')); ?>" name="ciudad" class="form-control form-group" 
                                     value="<?php echo e(old('ciudad')); ?>" required autofocus>
                                     <option>Elige</option>
                                     <option value="La Paz">La Paz</option>
@@ -260,21 +260,21 @@
                                 <input type="text" name="confirmed" value="0" hidden="true">
                                 <input type="text" name="rol" value="usuario" hidden="true">
                             </div>
-
+    
                             <?php if(session('status')): ?>
                                 <div class="alert alert-success">
                                     <?php echo e(session('status')); ?>
 
                                 </div>
                             <?php endif; ?>
-
+    
                             <?php if(!$errors->isEmpty()): ?>
                                 <div class="alert alert-danger" role="alert">
                                     <?php echo $errors->first(); ?>
 
                                 </div>
                             <?php endif; ?>
-
+    
                             <?php if(config('auth.captcha.registration')): ?>
                                 <?php echo app('captcha')->renderCaptcha(); ?>
                             <?php endif; ?>
@@ -288,7 +288,7 @@
                         <?php echo e(Form::close()); ?>
 
                     </div>
-                </div>
+                </div>             
             </div>
         </div>
     </div>

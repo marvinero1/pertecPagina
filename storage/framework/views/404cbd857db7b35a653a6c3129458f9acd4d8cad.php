@@ -648,6 +648,13 @@
 
 
 <style type="text/css">
+.awithmodelh1{
+        color: #000000;
+        font-family: 'Franklin Gothic Demi', sans-serif;
+        font-size: 1.6rem;
+        line-height: 23px;
+        cursor: pointer;
+    }
     .h1s {
         font-size: 2.4rem;
         text-transform: uppercase;
