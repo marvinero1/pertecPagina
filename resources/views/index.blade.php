@@ -11,55 +11,336 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-                    <img src="http://192.168.31.240:5000/{{ $carusels->imagen }}" alt="">
+                <img src="http://192.168.31.242:5000/{{ $carusels->imagen }}" alt="">
 
 
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
-                        data-height="['150','70','70','100']" data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                        <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}" alt="hook" />
+    <!-- LAYER NR. 1 -->
+    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
+        data-whitespace="nowrap" data-width="['150','70','70','100']" data-height="['150','70','70','100']"
+        data-transform_idle="o:1;"
+        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="3000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        style="z-index: 999 !important;">
+        <img src="http://192.168.31.242:5000/{{ $carusels->imagen_icono }}" alt="hook" />
 
-                    </div>
+    </div>
 
-                    <!-- LAYER NR. 2 -->
-                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                        data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
-                        {{ $carusels->titulo }}
-                    </h1>
+    <!-- LAYER NR. 2 -->
+    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+        data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none" data-transform_idle="o:1;"
+        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="3500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        data-fontsize="['75','17','15','15']" data-lineheight="['100','45','25','25']" data-color="#ffc527"
+        style="z-index: 999 !important;">
+        {{ $carusels->titulo }}
+    </h1>
 
-                    <!-- LAYER NR. 3 -->
-                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="80" data-width="none" data-height="none"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
-                        data-lineheight="['50','26','25','25']" data-color="#fff" style="z-index: 999 !important;">
-                        {{ $carusels->sub_titulo }}
-                    </div>
-                </li>
-                @endforeach
-            </ul>
-        </div>
+    <!-- LAYER NR. 3 -->
+    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
+        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="4000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        data-fontsize="['50','17','17','17']" data-lineheight="['50','26','25','25']" data-color="#fff"
+        style="z-index: 999 !important;">
+        {{ $carusels->sub_titulo }}
+    </div>
+    </li>
+    @endforeach
+    </ul>
+    </div>
     </div>
     <!-- END OF SLIDER WRAPPER -->
 </section>
 
+{{-- <section id="hero" class="hero">
+	<!-- START REVOLUTION SLIDER 5.0 -->
+	<div class="rev_slider_wrapper">
+		<div id="slider1" class="rev_slider"  data-version="5.0">
+			<ul>
+
+				<!-- slide 1 -->
+				<li data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" style="background-color: rgba(34, 34, 34, 0.3);">
+					<!-- MAIN IMAGE -->
+					<img src="https://images7.alphacoders.com/909/909952.jpg"  alt=""  width="1920" height="1280">
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="-50"
+						data-whitespace="nowrap"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:50px;opacity:0;s:1000;e:Power3.easeOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-start="500"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','15','15']"
+						data-lineheight="['45','45','25','25']"
+						data-fontweight="['600','500','600','300']"
+						data-color="#fff" style="font-family: raleway">
+						Welcome To
+					</div>
+
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption text-uppercase color-theme"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="0"
+						data-whitespace="nowrap"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-start="1750"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['55','17','15','15']"
+						data-lineheight="['50','45','25','25']"
+						data-fontweight="['700','500','600','300']"
+						data-color="#ffc527" style="font-family: montserrat; "
+						>
+						<h1 style="color:#ffc527; font-size:55px">Yellow Hats Construction</h1>
+					</div>
+
+					<!-- LAYER NR. 3 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="70"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+						data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+						data-start="2000"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','17','17']"
+						data-lineheight="['26','26','25','25']"
+						data-fontweight="['700','500','500','500']"
+						data-color="#fff" style="font-family: raleway; text-align:center"
+						>
+						Our promise as a contractor is to build community value into every project <br/>
+						while delivering professional expertise.
+					</div>
+
+					<!-- LAYER NR. 4 -->
+					<div class="tp-caption"
+						id="slide-163-layer-6"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="160"
+						data-width="none"
+						data-height="none"
+						data-whitespace="nowrap"
+						data-transform_idle="o:1;"
+						data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
+						data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-mask_out="x:inherit;y:inherit;"
+						data-start="2500"
+						data-splitin="none"
+						data-splitout="none"
+						data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+						data-basealign="slide"
+						data-responsive_offset="on"
+						data-responsive="off">
+						<a class="btn btn-primary mr-sm" href="#">read more</a>
+						<a class="btn btn-primary btn-white" href="#">get started</a>
+					</div>
+				</li>
+
+				<!-- slide 2 -->
+				<li data-transition="scaledownfromright" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000">
+					<!-- MAIN IMAGE -->
+					<img src="https://images.hdqwalls.com/wallpapers/starcraft-2020-dq.jpg"  alt=""  width="1920" height="1280">
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="-50"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power3.easeInOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+						data-start="1000"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','15','15']"
+						data-lineheight="['45','45','25','25']"
+						data-fontweight="['600','500','600','300']"
+						data-color="#fff" style="font-family: raleway" >
+						What We Can Do ?
+					</div>
+
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption text-uppercase color-theme"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="0"
+						data-whitespace="nowrap"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+						data-start="1500"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['55','17','15','15']"
+						data-lineheight="['50','45','25','25']"
+						data-fontweight="['700','500','600','300']"
+						data-color="#ffc527" style="font-family: montserrat; ">
+						Design & Build
+					</div>
+
+					<!-- LAYER NR. 3 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="70"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+						data-start="2000"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','17','17']"
+						data-lineheight="['26','26','25','25']"
+						data-fontweight="['700','500','500','500']"
+						data-color="#fff" style="font-family: raleway; text-align:center">
+						Yellow Hats is a leading developer of A-grade commercial,<br/>
+						industrial and residential projects in USA.
+					</div>
+
+					<!-- LAYER NR. 4 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="160"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1000;e:Power2.easeOut;"
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+						data-start="2500"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on">
+						<a class="btn btn-primary mr-sm" href="#">read more</a>
+						<a class="btn btn-primary btn-white" href="#">get started</a>
+					</div>
+				</li>
+
+				<!-- slide 3 -->
+				<li data-index='rs-367' data-transition='fadetotopfadefrombottom' data-slotamount='default' data-easein='default' data-easeout='default' data-masterspeed='default'>
+					<!-- MAIN IMAGE -->
+					<img src="https://s1.1zoom.me/b5050/838/Heroes_of_the_Storm_Diablo_World_of_WarCraft_524787_3840x2160.jpg"  alt=""  width="1920" height="1280">
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="-50"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:-30px;rX:70deg;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-start="1000"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','15','15']"
+						data-lineheight="['45','45','25','25']"
+						data-fontweight="['600','500','600','300']"
+						data-color="#fff" style="font-family: raleway">
+						Internationally Trusted !
+					</div>
+
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption text-uppercase color-theme"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="0"
+						data-whitespace="nowrap"
+						data-width="['auto','auto','auto','auto']"
+						data-height="['auto','auto','auto','auto']"
+						data-transform_idle="o:1;"
+						data-transform_in="x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+						data-start="2000"
+						data-splitin="chars"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-elementdelay="0.05" data-fontsize="['55','17','15','15']"
+						data-lineheight="['50','45','25','25']"
+						data-fontweight="['700','500','600','300']"
+						data-color="#ffc527" style="font-family: montserrat; ">
+						WE INNOVATE & DESIGN
+					</div>
+
+					<!-- LAYER NR. 3 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="70"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:-50px;skX:100px;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-start="4810"
+						data-splitin="none"
+						data-splitout="none"
+						data-responsive_offset="on"
+						data-fontsize="['17','17','17','17']"
+						data-lineheight="['26','26','25','25']"
+						data-fontweight="['700','500','500','500']"
+						data-color="#fff" style="font-family: raleway ;text-align:center">
+						We have a team of specialists capable of maximizing the result and delivering the projects
+					</div>
+
+					<!-- LAYER NR. 4 -->
+					<div class="tp-caption"
+						data-x="center" data-hoffset="0"
+						data-y="center" data-voffset="160"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+						data-style_hover="c:rgba(255, 255, 255, 1.00);bg:rgba(41, 46, 49, 0);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+						data-start="5670"
+						data-splitin="none"
+						data-splitout="none"
+						data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+						data-responsive_offset="on"
+						data-responsive="off">
+						<a class="btn btn-primary mr-sm" href="#">read more</a>
+						<a class="btn btn-primary btn-white" href="#">get started</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- END REVOLUTION SLIDER -->
+	</div>
+	<!-- END OF SLIDER WRAPPER -->
+</section> --}}
 
 <!-- acerca de nosotros -->
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm"
@@ -199,8 +480,6 @@
     <!-- .container end -->
 </section>
 
-
-
 <!-- productos -->
 <section id="sectionProducts" style="background-color: #F6F6F6;">
     <div class="content section-content">
@@ -243,7 +522,7 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="#">{{ $productos->nombre_producto }}</a>
+                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
                                         </h4>
                                     </div>
 
@@ -254,15 +533,12 @@
 
                         </div>
 
-
+ 
                         <div class="item">
-
                             <div class="row">
                                 <!-- product #1 -->
-
                                 @foreach ($producto2 as $productos)
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
-
                                     <div class="product-img">
                                         <img src='http://192.168.31.240:5000/{{ $productos->imagen }}' alt="product"
                                             style="height:250px;">
@@ -275,18 +551,13 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="#">{{ $productos->nombre_producto }}</a>
+                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
                                         </h4>
                                     </div>
-
                                 </div>
                                 @endforeach
-
                             </div>
-
-                        </div>
-
-
+                        </div> 
 
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button"
@@ -456,8 +727,6 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="">
-                        {{-- <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($productos->id)) }}">
-                        --}}
                         {{-- <img src="http://192.168.31.240:5000/{{ $tcb["imagen"] }}" alt="title" /> --}}
                     </a>
                 </div><br>
@@ -568,9 +837,7 @@
     <!-- .container end -->
 </section>
 
-
 <!-- call center -->
-
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
@@ -605,27 +872,31 @@
                         <img src="/assets/images/system/CELULAR.png" style="margin-top: -15px;" width="30px;">
                     </div>
                     <div class="widget-contact-info">
-                        <p class="text-capitalize font-heading">72221031 - 72221033</p>
+                        <a class="text-capitalize font-heading awithmodelh1" href="tel:+591 72221031">72221031 - </a>
+                        <a class="text-capitalize font-heading awithmodelh1" href="tel:+591 72221033"">72221033</a>
                     </div>
                 </div>
                 <!-- .widget end -->
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
-                        {{-- <img src="/assets/images/system/WHATSAPP.png" width="30px;"> --}}
                         <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
-                        <p class="font-heading">(Whatsapp) 72221032 - 72230024</p>
+                        <a class="font-heading awithmodelh1">(Whatsapp)</a>
+                        <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" 
+                        class=" awithmodelh1" target="_blank">72221032</a>
+                        <strong>-</strong>
+                        <a href="https://wa.me/+59172230024/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" 
+                        class="awithmodelh1" target="_blank">72230024</a>
                     </div>
                 </div>
                 <!-- .widget end -->
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right">
                     <div class="widget-contact-icon pull-left">
-                        {{-- <img src="/assets/images/system/MAIL.png"  width="30px;"> --}}
                         <i class="fa fa-envelope-o" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
-                        <p class="font-heading">servicio.cliente@pertec.com.bo</p>
+                        <a class="font-heading awithmodelh1" href="mailto:servicio.cliente@pertec.com.bo">servicio.cliente@pertec.com.bo</a>
                     </div>
                 </div>
                 <!-- .widget end -->
@@ -665,6 +936,13 @@
 
 
 <style type="text/css">
+    .awithmodelh1{
+        color: #000000;
+        font-family: 'Franklin Gothic Demi', sans-serif;
+        font-size: 1.6rem;
+        line-height: 23px;
+        cursor: pointer;
+    }
     .h1s {
         font-size: 2.4rem;
         text-transform: uppercase;
@@ -794,19 +1072,17 @@
         z-index: 1 !important;
     }
 
-    /* .fondo::after, .fondo::before{
+    .fondo.con::after {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(181deg, rgba(9, 48, 112, 0.3) 0%, rgba(255, 255, 255, 0.14) 100%);
-        z-index: 99;
-    } */
-
-
-    .cookie-disclaimer {
+        background: linear-gradient(181deg, rgba(9, 48, 112, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
+        z-index: -1;
+    }
+    cookie-disclaimer {
         background: #000000;
         color: #FFF;
         opacity: 0.8;
@@ -817,13 +1093,11 @@
         height: 150px;
         position: fixed;
     }
-
     .cookie-disclaimer .container {
         text-align: center;
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
     .cookie-disclaimer .cookie-close {
         float: right;
         padding: 10px;
@@ -841,26 +1115,21 @@
             x.style.display = "none";
         }
     }
-
 </script>
 <script>
     $(document).ready(function () {
         var cookie = false;
         var cookieContent = $('.cookie-disclaimer');
-
         checkCookie();
-
         if (cookie === true) {
             cookieContent.hide();
         }
-
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
             var expires = "expires=" + d.toGMTString();
             document.cookie = cname + "=" + cvalue + "; " + expires;
         }
-
         function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
@@ -870,7 +1139,6 @@
             }
             return "";
         }
-
         function checkCookie() {
             var check = getCookie("acookie");
             if (check !== "") {
@@ -878,13 +1146,11 @@
             } else {
                 return cookie = false; //setCookie("acookie", "accepted", 365);
             }
-
         }
         $('.accept-cookie').click(function () {
             setCookie("acookie", "accepted", 365);
             cookieContent.hide(500);
         });
     });
-
 </script>
 @endsection

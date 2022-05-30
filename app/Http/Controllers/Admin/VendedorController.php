@@ -12,8 +12,7 @@ use DB;
 use Image;
 use Session;
 
-class VendedorController extends Controller
-{
+class VendedorController extends Controller{
     /**
      * Display a listing of the resource.
      *
@@ -118,7 +117,6 @@ class VendedorController extends Controller
         $hash_id = $hash->decodeHex($id);
 
         $vendedor = Vendedor::findOrFail($hash_id);
-        
         return view('admin.vendedors.show', compact('vendedor'));
     }
 
@@ -131,8 +129,8 @@ class VendedorController extends Controller
     public function edit($id){
         $hash = new Hashids();
         $hash_id = $hash->decodeHex($id);
-
         $vendedor = Vendedor::findOrFail($hash_id);
+        
         return view('admin.vendedors.edit', ['vendedor' => $vendedor]);
     }
 

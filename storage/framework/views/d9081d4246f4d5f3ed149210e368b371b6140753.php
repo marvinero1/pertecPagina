@@ -8,21 +8,15 @@
         </div><br>
 
         <?php if(Session::has('message')): ?>
-        <div class="alert alert-info"><?php echo e(Session::get('message')); ?>
-
-        </div>
+            <div class="alert alert-info"><?php echo e(Session::get('message')); ?></div>
         <?php endif; ?>
 
         <?php if(Session::has('danger')): ?>
-        <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?>
-
-        </div>
+            <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?></div>
         <?php endif; ?>
 
         <?php if(Session::has('edit')): ?>
-        <div class="alert alert-success"><?php echo e(Session::get('edit')); ?>
-
-        </div>
+            <div class="alert alert-success"><?php echo e(Session::get('edit')); ?></div>
         <?php endif; ?>
         
         <div class="row"><br>

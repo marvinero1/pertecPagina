@@ -121,7 +121,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
-                    <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;" href="#" id="load">Ver más productos<i
+                    <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;" id="load">Ver más productos<i
                         class="fa fa-plus ml-xs"></i>
                     </a>
                 </div>
@@ -142,9 +142,9 @@
     display: none;
     }
     .wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
 }
 </style>
 <script>
@@ -159,6 +159,4 @@
     });
     });
 </script>
-
-
 @endsection

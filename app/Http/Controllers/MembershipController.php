@@ -5,15 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Auth\User\User;
 use Illuminate\Http\Request;
 
-class MembershipController extends Controller
-{
-    public function __construct()
-    {
+class MembershipController extends Controller{
+
+    public function __construct(){
         $this->middleware('admin', ['except' => ['index', 'failed', 'clearValidationCache']]);
     }
 
-    public function index(Request $request)
-    {
+    public function index(Request $request){
         /** @var  $user User */
         $user = $request->user();
 
@@ -21,7 +19,6 @@ class MembershipController extends Controller
             'valid' => true,
             'shopUrl' => null,
             'expires' => null,
-
         ]);
 
         if ($user->protectionValidation) {
@@ -49,10 +46,9 @@ class MembershipController extends Controller
             'valid' => false,
             'shopUrl' => null,
             'expires' => null,
-
         ]);
 
-        if (!$user->protectionValidation) return redirect($request->get('dest', '/'));
+        if(!$user->protectionValidation) return redirect($request->get('dest', '/'));
 
         $validationResult = collect($user->protectionValidation->getValidationResult(config('protection.membership.product_module_number')));
 
@@ -68,8 +64,8 @@ class MembershipController extends Controller
         return view('membership')->with($membership->toArray());
     }
 
-    public function clearValidationCache(Request $request)
-    {
+    public function clearValidationCache(Request $request){
+        
         /** @var  $user User */
         $user = $request->user();
         $user->load(['protectionValidation']);

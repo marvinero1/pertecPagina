@@ -25,7 +25,7 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown">
-							<a href="#" class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
+							<a class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
 						</li>
                         <li class="has-dropdown">
 							<a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link">Productos</a>
