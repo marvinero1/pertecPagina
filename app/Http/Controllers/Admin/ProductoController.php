@@ -71,23 +71,6 @@ class ProductoController extends Controller
         return response()->json($producto, 200);
     }
 
-    // public function getProductsPromotion(){
-    //     $producto = Producto::where('promocion', 'si')->get();
-
-    //     return response()->json($producto, 200);
-    // }
-
-    // public function getProductsNovelty(){
-    //     $producto = Producto::where('novedad', 'si')->get();
-
-    //     return response()->json($producto, 200);
-    // }
-
-    // public function getProductsId($id){
-    //     $producto = Producto::findOrFail($id);
-    //     return response()->json($producto, 200);
-    // }
-
     /**
      * Show the form for creating a new resource.
      *

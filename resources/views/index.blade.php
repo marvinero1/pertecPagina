@@ -354,87 +354,28 @@
             </div>
         </div>
         <div class="row" id="of-centrals" style="display: none; margin-top: -55px;">
-            <!-- Entry Sucursal Cochabamba -->
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
-                <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
-                    </a>
-                </div><br>
-                <div class="entry-title">
-                    <h3>
-                        <a href="">Oficina Cochabamba</a>
-                    </h3>
+            @foreach ($oficinas as $item)
+                <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                    <div class="entry-img">
+                        <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($item->id)) }}">
+                            <img src="http://192.168.31.240:5000/{{ $item->imagen }}" alt="title" />
+                        </a>
+                    </div><br>
+                    <div class="entry-title">
+                        <h3><a href="{{ route('tiendasPertec', $hash->encodeHex($item->id)) }}" >Oficina {{ $item->ciudad }}</a></h3>
+                    </div>
+                    <div class="entry-content conten-stores">
+                        <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: {{ $item->direccion}}</h5>
+                        <h5><i class="fa fa-telephone"></i> Telf: {{ $item->telefono}}</h5>
+                        <h5><i class="fa fa-whatsapp"></i> Whatsapp: {{ $item->whatsapp}}</h5>
+                        <h5><i class="fa fa-phone"></i> Celular: {{ $item->celular}}</h5>
+                        <a class="entry-more" href="{{ route('tiendasPertec', $hash->encodeHex($item->id)) }}"><i class="fa fa-plus"></i>
+                            <span>Más Información</span>
+                        </a>
+                    </div>
                 </div>
-                <!-- .entry-title end -->
-                <div class="entry-content conten-stores">
-                    <h5>Dirección: Calle Innominada No. 4581 (Arocagua)</h5>
-                    <h5>Telf: (4) 4716000 (Líneas Rotativas)</h5>
-                    <h5>Fax: (4) 4111632</h5>
-                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
-                        <span>Más Información</span>
-                    </a>
-                </div>
-                <!-- .entry-content end -->
-            </div>
-            <!-- .entry end -->
-
-
-            <!-- Entry Sucursal La Paz -->
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
-                <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
-                    </a>
-                </div><br>
-                <div class="entry-title">
-                    <h3>
-                        <a href="">Oficina La Paz</a>
-                    </h3>
-                </div>
-                <!-- .entry-title end -->
-                <div class="entry-content conten-stores">
-                    <h5>Dirección: Villa Bolívar "B" Calle 106 No. 501</h5>
-                    <h5>Telf: (2) 2822336</h5>
-                    <h5>Fax: (2) 2820619</h5>
-                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
-                        <span>Más Información</span>
-                    </a>
-                </div>
-                <!-- .entry-content end -->
-            </div>
-            <!-- .entry end -->
-
-
-            <!-- Entry Sucursal Santa Cruz -->
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
-                <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
-                    </a>
-                </div><br>
-                <div class="entry-title">
-                    <h3>
-                        <a href="">Oficina Santa Cruz</a>
-                    </h3>
-                </div>
-                <!-- .entry-title end -->
-                <div class="entry-content conten-stores">
-                    <h5>Dirección: Calle Taitetú No. 2680</h5>
-                    <h5>Telf: (3) 3470113</h5>
-                    <h5>Fax: (3) 3111228</h5>
-                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
-                        <span>Más Información</span>
-                    </a>
-                </div>
-                <!-- .entry-content end -->
-            </div>
-            <!-- .entry end -->
+            @endforeach
         </div>
-
 
         <!-- tiendas cbba -->
         <div class="row">
@@ -447,39 +388,34 @@
                             </button>
                         </div>
                     </div>
-                    <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
         <div class="row" id="storeCbba" style="display: none; margin-top: -55px;">
-            {{-- @foreach ($tcbba as $tcb) --}}
+            @foreach ($tiendaCBBA as $tcb)
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="">
-                        {{-- <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($productos->id)) }}">
-                        --}}
-                        {{-- <img src="http://192.168.31.240:5000/{{ $tcb["imagen"] }}" alt="title" /> --}}
+                    <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tcb->id)) }}">
+                        <img src="http://192.168.31.240:5000/{{ $tcb->imagen }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Tienda </a>
+                        <a href="{{ route('tiendasPertec', $hash->encodeHex($tcb->id)) }}">Tienda {{ $tcb->nombre_tienda}}</a>
                     </h3>
                 </div>
-                <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: </h5>
-                    <h5>Telf: </h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: {{ $tcb->direccion}}</h5>
+                    <h5><i class="fa fa-telephone"></i> Telf: {{ $tcb->telefono}}</h5>
+                    <h5><i class="fa fa-whatsapp"></i> Whatsapp: {{ $tcb->whatsapp}}</h5>
+                    <h5><i class="fa fa-phone"></i> Celular: {{ $tcb->celular}}</h5>
+                    <a class="entry-more" href="{{ route('tiendasPertec', $hash->encodeHex($tcb->id)) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
-                <!-- .entry-content end -->
             </div>
-            {{-- @endforeach --}}
-
+            @endforeach
         </div>
-
 
         <!-- tiendas la paz-->
         <div class="row">
@@ -497,31 +433,30 @@
             </div>
         </div>
         <div class="row" id="storeLaPaz" style="display: none; margin-top: -55px;">
-            {{-- @foreach ($tlapz as $tlz) --}}
+            @foreach ($tiendaLPZ as $tlz)
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="" alt="title" />
+                    <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tlz->id)) }}">
+                        <img src="http://192.168.31.240:5000/{{ $tlz->imagen }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Tienda </a>
+                        <a href="{{ route('tiendasPertec', $hash->encodeHex($tlz->id)) }}">Tienda {{ $tlz->nombre_tienda}}</a>
                     </h3>
                 </div>
-                <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección:</h5>
-                    <h5>Telf: </h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: {{ $tlz->direccion}}</h5>
+                    <h5><i class="fa fa-telephone"></i> Telf: {{ $tlz->telefono}}</h5>
+                    <h5><i class="fa fa-whatsapp"></i> Whatsapp: {{ $tlz->whatsapp}}</h5>
+                    <h5><i class="fa fa-phone"></i> Celular: {{ $tlz->celular}}</h5>
+                    <a class="entry-more" href="{{ route('tiendasPertec', $hash->encodeHex($tlz->id)) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
-                <!-- .entry-content end -->
             </div>
-            {{-- @endforeach --}}
+            @endforeach
         </div>
-
 
         <!-- tiendas santa cruz -->
         <div class="row">
@@ -534,43 +469,39 @@
                             </button>
                         </div>
                     </div>
-                    <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
 
         <div class="row" id="storeSantaCruz" style="display: none; margin-top: -55px;">
-            {{-- @foreach ($tstcz as $tsz) --}}
+            @foreach ($tiendaSTCZ as $tsz)
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="http://192.168.31.240:5000/" alt="title" />
+                    <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tsz->id)) }}">
+                        <img src="http://192.168.31.240:5000/{{ $tsz->imagen }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Tienda </a>
+                        <a href="{{ route('tiendasPertec', $hash->encodeHex($tsz->id)) }}">Tienda {{ $tsz->nombre_tienda}}</a>
                     </h3>
                 </div>
-                <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: </h5>
-                    <h5>Telf: </h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: {{ $tsz->direccion}}</h5>
+                    <h5><i class="fa fa-telephone"></i> Telf: {{ $tsz->telefono}}</h5>
+                    <h5><i class="fa fa-whatsapp"></i> Whatsapp: {{ $tsz->whatsapp}}</h5>
+                    <h5><i class="fa fa-phone"></i> Celular: {{ $tsz->celular}}</h5>
+                    <a class="entry-more" href="{{ route('tiendasPertec', $hash->encodeHex($tsz->id)) }}"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
-                <!-- .entry-content end -->
             </div>
-            {{-- @endforeach --}}
+            @endforeach
         </div>
     </div>
-    <!-- .container end -->
 </section>
 
-
 <!-- call center -->
-
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
@@ -610,7 +541,7 @@
                         <a class="text-capitalize font-heading awithmodelh1" href="tel:+591 72221033"">72221033</a>
                     </div>
                 </div>
-                <!-- .widget end -->
+
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
                         <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
@@ -624,7 +555,7 @@
                         class="awithmodelh1" target="_blank">72230024</a>
                     </div>
                 </div>
-                <!-- .widget end -->
+
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right">
                     <div class="widget-contact-icon pull-left">
                         <i class="fa fa-envelope-o" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
@@ -633,19 +564,16 @@
                         <a class="font-heading awithmodelh1" href="mailto:servicio.cliente@pertec.com.bo">servicio.cliente@pertec.com.bo</a>
                     </div>
                 </div>
-                <!-- .widget end -->
             </div>
-            <!-- .row end -->
         </div>
-        <!-- .row end -->
     </div>
 </section>
 
 <div class="cookie-disclaimer">
     <div class="cookie-close accept-cookie"><i class="fa fa-times"></i></div>
     <div class="container">
-        <p>PERTEC S.R.L. utiliza ("cookies") para aumentar la calidad del sitio. <a
-                href="#">Lea más sobre nuestro uso de cookies</a>.
+        <p>PERTEC S.R.L. &copy; utiliza ("cookies") para aumentar la calidad del sitio. 
+                Lea más sobre nuestro uso de cookies.
             <br>Al continuar utilizando el sitio web, acepta nuetro uso de cookies.</p>
         <button type="button" class="btn btn-success accept-cookie">¡Está bien!</button>
     </div>

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('correo_electronico')->nullable();
             $table->string('encargado')->nullable();
             $table->string('imagen')->nullable();
+            $table->string('tipo')->nullable();
             $table->longText('latitud')->nullable();
             $table->longText('longitud')->nullable();
             

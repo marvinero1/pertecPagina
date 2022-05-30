@@ -8,23 +8,18 @@
         </div><br>
 
         <?php if(Session::has('message')): ?>
-        <div class="alert alert-info"><?php echo e(Session::get('message')); ?>
-
-        </div>
+            <div class="alert alert-info"><?php echo e(Session::get('message')); ?></div>
         <?php endif; ?>
 
         <?php if(Session::has('danger')): ?>
-        <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?>
-
-        </div>
+            <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?></div>
         <?php endif; ?>
-        
         <div class="row"><br>
             <div class="col-xs-5">
                 <div>
                     <a href="<?php echo e(route('admin.tienda.create')); ?>" type="button btn btn-primary" style="color: black">
                         <button class="btn btn-primary"> <i class="fa fa-shopping-bag" aria-hidden="true"></i> Crear
-                            Tienda</button></a>
+                            Tienda / Oficina</button></a>
                 </div>
             </div>
             <div class="col-xs-7">

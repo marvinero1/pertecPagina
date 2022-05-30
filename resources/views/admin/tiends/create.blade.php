@@ -66,14 +66,22 @@
             </div>
         
             <div class="col-md-12 col-sm-12" style="padding-block-end: 15px;">
-                <div class="col-md-6 col-sm-12  form-group">
+                <div class="col-md-4 col-sm-12  form-group">
                     <label for="latitud">Latitud *</label>
                     <input type="text" class="form-control" name="latitud" placeholder="Latitud">
                 </div>
 
-                <div class="col-md-6 col-sm-12  form-group">
+                <div class="col-md-4 col-sm-12  form-group">
                     <label for="longitud">Longitud *</label>
                     <input type="text" class="form-control" name="longitud" placeholder="Longitud">
+                </div>
+
+                <div class="col-md-4 col-sm-12  form-group">
+                    <label for="longitud">Tienda u Oficina *</label>
+                    <select type="text" class="form-control" name="tipo" placeholder="Tipo">
+                        <option value="oficina">Oficina</option>
+                        <option value="tienda">Tienda</option> 
+                    </select>
                 </div>
             </div>
 

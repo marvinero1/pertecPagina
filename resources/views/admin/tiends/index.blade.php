@@ -8,21 +8,18 @@
         </div><br>
 
         @if (Session::has('message'))
-        <div class="alert alert-info">{{ Session::get('message') }}
-        </div>
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
 
         @if (Session::has('danger'))
-        <div class="alert alert-danger">{{ Session::get('danger') }}
-        </div>
+            <div class="alert alert-danger">{{ Session::get('danger') }}</div>
         @endif
-        
         <div class="row"><br>
             <div class="col-xs-5">
                 <div>
                     <a href="{{ route('admin.tienda.create') }}" type="button btn btn-primary" style="color: black">
                         <button class="btn btn-primary"> <i class="fa fa-shopping-bag" aria-hidden="true"></i> Crear
-                            Tienda</button></a>
+                            Tienda / Oficina</button></a>
                 </div>
             </div>
             <div class="col-xs-7">

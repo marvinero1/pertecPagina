@@ -23,41 +23,18 @@ class TiendaController extends Controller{
         $hash=new Hashids();
         $nombre_tienda = $request->get('buscarpor');
         $tienda = Tienda::where('nombre_tienda','like',"%$nombre_tienda%")->latest()->paginate(5);
+        $tiendaLPZ = Tienda::where('ciudad','La Paz')->get();
+        $tiendaCBBA = Tienda::where('ciudad','Cochabamba')->get();
+        $tiendaSTCZ = Tienda::where('ciudad','Santa Cruz')->get();
 
-        return view('admin.tiends.index', ['tienda' => $tienda, 'hash' => $hash]);
+        return view('admin.tiends.index', ['tienda' => $tienda, 'hash' => $hash, 'tiendaLPZ'=>$tiendaLPZ,
+        'tiendaCBBA'=>$tiendaCBBA, 'tiendaSTCZ'=>$tiendaSTCZ]);
     }
 
     public function tiendasOficinas(){
         $tienda = Tienda::all();
         return view('page.sections.tiendas.tiendas_oficinas', ['tienda' => $tienda]);
-    }
-
-    public function getStores(){
-        $tienda = Tienda::all();
-
-        return response()->json($tienda, 200);
-    }
-
-    public function getStoresLPZ(){
-        $tiendaLPZ = Tienda::where('ciudad','La Paz')->get();
-
-        return response()->json($tiendaLPZ, 200);
-    }
-    public function getStoresCBBA(){
-        $tiendaCBBA = Tienda::where('ciudad','Cochabamba')->get();
-
-        return response()->json($tiendaCBBA, 200);
-    }
-    public function getStoresSTCZ(){
-        $tiendaSTCZ = Tienda::where('ciudad','Santa Cruz')->get();
-
-        return response()->json($tiendaSTCZ, 200);
-    }
-
-    public function getStoresId($id){
-        $tienda = Tienda::findOrFail($id);
-        return response()->json($tienda, 200);
-    }
+    }   
 
     /**
      * Show the form for creating a new resource.
@@ -142,7 +119,6 @@ class TiendaController extends Controller{
     public function show($id){
         $hash = new Hashids();
         $hash_id = $hash->decodeHex($id);
-
         $tienda = Tienda::findOrFail($hash_id);
 
         return view('admin.tiends.show', compact('tienda'));
@@ -152,10 +128,9 @@ class TiendaController extends Controller{
     public function showTienda($id){
         $hash = new Hashids();
         $hash_id = $hash->decodeHex($id);
-
         $tienda = Tienda::findOrFail($hash_id);
 
-        return view('page.sections.tiendas.tienda', compact('tienda'));
+        return view('page.sections.tiendas.tienda_oficinas', compact('tienda'));
     }
 
     public function showOficina($id){
