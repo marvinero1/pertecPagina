@@ -11,26 +11,7 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-
-                    <div class="slotholder"
-                        style="position: absolute; top: 0px; left: 0px; z-index: 0; width: 100%; height: 100%; visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-                        <!--Runtime Modification - Img tag is Still Available for SEO Goals in Source - <img src="https://images7.alphacoders.com/909/909952.jpg" alt="" class="defaultimg">-->
-                        <div class="tp-bgimg defaultimg fondo"
-                            style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;https://images7.alphacoders.com/909/909952.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility:inherit; z-index: 20;"
-                            src="http://192.168.31.240:5000/{{ $carusels->imagen }}">
-                            <div class="fondo_con"></div>
-                        </div>
-
-                    </div>
-                    {{-- <div class="slotholder"
-                        style="position: absolute; top: 0px; left: 0px; z-index: 0; width: 100%; height: 100%; visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-                        <div class="tp-bgimg defaultimg fondo"
-                            style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;http://192.168.31.240:5000/{{ $carusels->imagen }}&quot;);
-                    background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1;
-                    visibility:inherit; z-index: 20;"
-                    src="http://192.168.31.240:5000/{{ $carusels->imagen }}">
-        </div>
-    </div> --}}
+                <img src="http://192.168.31.240:5000/{{ $carusels->imagen }}" alt="">
 
 
     <!-- LAYER NR. 1 -->
@@ -253,8 +234,7 @@
                                             style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block a-card"
-                                                    href="{{ route('admin.producto.show', $hash->encodeHex($productos->id)) }}">Detalles</a>
+                                                <a class="btn btn-secondary btn-block a-card" href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
@@ -286,7 +266,7 @@
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block a-card"
-                                                    href="{{ route('admin.producto.show', $hash->encodeHex($productos->id)) }}">Detalles</a>
+                                                href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
@@ -473,6 +453,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="">
+                    {{-- <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($productos->id)) }}"> --}}
                         {{-- <img src="http://192.168.31.240:5000/{{ $tcb["imagen"] }}" alt="title" /> --}}
                     </a>
                 </div><br>

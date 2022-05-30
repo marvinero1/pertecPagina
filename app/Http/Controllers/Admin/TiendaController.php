@@ -13,7 +13,7 @@ use Image;
 use Session;
 
 class TiendaController extends Controller{
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -78,7 +78,7 @@ class TiendaController extends Controller{
         $mensaje = "Tienda Guardada Correctamente";
 
         $requestData = $request->all();
-        
+
         $validator = Validator::make($requestData, [
             'nombre_tienda' => 'required|max:191',
             'telefono' => 'required|max:191',
@@ -94,7 +94,7 @@ class TiendaController extends Controller{
         ]);
 
         DB::beginTransaction();
-        
+
         if ($validator->fails()) {
             return redirect('admin/tiends/create')
                         ->withErrors($validator)
@@ -119,15 +119,15 @@ class TiendaController extends Controller{
                     $mensaje = "Error al guardar la imagen";
                 }
             }
-    
+
             $tienda = Tienda::create($requestData);
-    
+
             if($tienda){
                 DB::commit();
             }else{
                 DB::rollback();
             }
-        }      
+        }
 
         Session::flash('message','Tienda Creado Exisitosamente!');
         return redirect()->route('admin.tienda.index');
@@ -146,6 +146,25 @@ class TiendaController extends Controller{
         $tienda = Tienda::findOrFail($hash_id);
 
         return view('admin.tiends.show', compact('tienda'));
+    }
+
+
+    public function showTienda($id){
+        $hash = new Hashids();
+        $hash_id = $hash->decodeHex($id);
+
+        $tienda = Tienda::findOrFail($hash_id);
+
+        return view('page.sections.tiendas.tienda', compact('tienda'));
+    }
+
+    public function showOficina($id){
+        $hash = new Hashids();
+        // $hash_id = $hash->decodeHex($id);
+
+        // $tienda = Tienda::findOrFail($hash_id);
+
+        return view('page.sections.tiendas.oficina', compact('oficina'));
     }
 
     /**
@@ -195,20 +214,20 @@ class TiendaController extends Controller{
             if($request->imagen == ''){
                 unset($requestData['imagen']);
             }
-    
+
             $mensaje = "Tienda Actualizado correctamente :3";
             if($request->imagen){
                 $data = $request->imagen;
                 $file = file_get_contents($request->imagen);
-                $info = $data->getClientOriginalExtension(); 
+                $info = $data->getClientOriginalExtension();
                 $extension = explode('images/tiendas', mime_content_type('images/tiendas'))[0];
                 $image = Image::make($file);
-                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info; 
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
                 $path  = 'images/tiendas';
                 if (!file_exists($path)) {
                     mkdir($path, 0777, true);
                 }
-                $img = $path.'/'.$fileName; 
+                $img = $path.'/'.$fileName;
                 if($image->save($img)) {
                     $archivo_antiguo = $tienda->imagen;
                     $requestData['imagen'] = $img;
@@ -220,7 +239,7 @@ class TiendaController extends Controller{
                     $mensaje = "Error al guardar la imagen";
                 }
             }
-    
+
             if($tienda->update($requestData)){
                 DB::commit();
             }else{

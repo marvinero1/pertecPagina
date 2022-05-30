@@ -80,8 +80,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('boucherConfirmado', 'BoucherController@boucherConfirmado')->name('boucherConfirmado')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::put('productoPromocion/{id}/','ProductoController@productoPromocion')->name('productos.productoPromocion')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::put('productoNovedad/{id}/','ProductoController@productoNovedad')->name('productos.productoNovedad')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
-    Route::put('productoMatriz/{id}/','ProductoController@productoMatriz')->name('productos.productoMatriz')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');   
-    
+    Route::put('productoMatriz/{id}/','ProductoController@productoMatriz')->name('productos.productoMatriz')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+
     Route::resource('producto', ProductoController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::resource('tienda', TiendaController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::resource('vendedor', VendedorController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
@@ -89,7 +89,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('boucher', BoucherController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::resource('carusel', CaruselController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
 });
-    
+
     // Secciones
     Route::get('/', 'HomeController@index');
     Route::get('historia', 'HomeController@historia')->name('historia');
@@ -98,8 +98,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('prom_products', 'Admin\ProductoController@prom_products')->name('prom_products');
     Route::get('nov_products', 'Admin\ProductoController@nov_products')->name('nov_products');
     Route::get('producto/{id}', 'Admin\ProductoController@showFrontend')->name('producto.showFrontEnd');
-    Route::get('tiendasOfinasPertec', 'Admin\TiendaController@tiendasOficinas')->name('tiendasOfinasPertec');
-
+    Route::get('tiendasPertec', 'Admin\TiendaController@showTienda')->name('tiendasPertec');
+    Route::get('ofinasPertec', 'Admin\TiendaController@showOficina')->name('ofinasPertec');
 /**
 * Membership
 */
@@ -109,5 +109,5 @@ Route::group(['as' => 'protection.'], function () {
     Route::get('membership/access-denied', 'MembershipController@failed')->name('membership.failed');
     Route::get('membership/clear-cache/', 'MembershipController@clearValidationCache')->name('membership.clear_validation_cache');
 
-    
+
 });

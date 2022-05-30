@@ -6,77 +6,57 @@
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <?php $__currentLoopData = $carusel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $carusels): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <li data-transition="3dcurtain-vertical" data-slotamount="default" data-easein="Power4.easeInOut"
-                    data-easeout="Power4.easeInOut" data-masterspeed="1000">
+                <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
+                    data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-                    <div class="slotholder"
-                        style="position: absolute; top: 0px; left: 0px; z-index: 0; width: 100%; height: 100%; visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-                        <img class="tp-bgimg defaultimg fondo slide img" style="background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;background-size: cover;
-                            background-position: center center; width: 100%; height: 100%; opacity: 1;
-                            visibility: inherit; z-index: 20;"
-                            src="http://192.168.31.240:5000/<?php echo e($carusels->imagen); ?>">
-                            <div class="fondo_con"></div>
-            </img>
-                    </div>
-                    
+                <img src="http://192.168.31.240:5000/<?php echo e($carusels->imagen); ?>" alt="">
 
 
+    <!-- LAYER NR. 1 -->
+    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center" data-voffset="-120"
+        data-whitespace="nowrap" data-width="['150','70','70','100']" data-height="['150','70','70','100']"
+        data-transform_idle="o:1;"
+        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="3000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        style="z-index: 999 !important;">
+        <img src="http://192.168.31.240:5000/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
 
-                    
-                    
+    </div>
 
+    <!-- LAYER NR. 2 -->
+    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+        data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none" data-transform_idle="o:1;"
+        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="3500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        data-fontsize="['75','17','15','15']" data-lineheight="['100','45','25','25']" data-color="#ffc527"
+        style="z-index: 999 !important;">
+        <?php echo e($carusels->titulo); ?>
 
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-                        data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
-                        data-height="['150','70','70','100']" data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                        <img src="http://192.168.31.240:5000/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
+    </h1>
 
-                    </div>
+    <!-- LAYER NR. 3 -->
+    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+        data-voffset="80" data-width="none" data-height="none" data-transform_idle="o:1;"
+        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="4000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        data-fontsize="['50','17','17','17']" data-lineheight="['50','26','25','25']" data-color="#fff"
+        style="z-index: 999 !important;">
+        <?php echo e($carusels->sub_titulo); ?>
 
-                    <!-- LAYER NR. 2 -->
-                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                        data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
-                        <?php echo e($carusels->titulo); ?>
-
-                    </h1>
-
-                    <!-- LAYER NR. 3 -->
-                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="80" data-width="none" data-height="none"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
-                        data-lineheight="['50','26','25','25']" data-color="#fff" style="z-index: 999 !important;">
-                        <?php echo e($carusels->sub_titulo); ?>
-
-                    </div>
-
-                </li>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </ul>
-        </div>
+    </div>
+    </li>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </ul>
+    </div>
     </div>
     <!-- END OF SLIDER WRAPPER -->
 </section>
-
-
-
 
 
 <!-- acerca de nosotros -->
@@ -254,8 +234,7 @@
                                             style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block a-card"
-                                                    href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id))); ?>">Detalles</a>
+                                                <a class="btn btn-secondary btn-block a-card" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
@@ -287,7 +266,7 @@
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block a-card"
-                                                    href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id))); ?>">Detalles</a>
+                                                href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
@@ -331,7 +310,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
                     <a class="btn btn-secondary btn-block btn-gereric" style="width: 240px !important;"
-                        href="/fullProducts">Ver más productos<i class="fa fa-plus ml-xs"></i>
+                        href="/productos">Ver más productos<i class="fa fa-plus ml-xs"></i>
                     </a>
                 </div>
             </div>
@@ -430,7 +409,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="">
-                        <img src="" alt="title" />
+                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -474,6 +453,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="">
+                    
                         
                     </a>
                 </div><br>
@@ -786,16 +766,16 @@
         z-index: 1 !important;
     }
 
-    .fondo.con::after {
+    /* .fondo::after, .fondo::before{
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(181deg, rgba(9, 48, 112, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
-        z-index: -1;
-    }
+        background: linear-gradient(181deg, rgba(9, 48, 112, 0.3) 0%, rgba(255, 255, 255, 0.14) 100%);
+        z-index: 99;
+    } */
 
 </style>
 
