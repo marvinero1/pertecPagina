@@ -341,7 +341,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
@@ -354,137 +354,74 @@
             </div>
         </div>
         <div class="row" id="of-centrals" style="display: none; margin-top: -55px;">
-            <!-- Entry Sucursal Cochabamba -->
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
-                <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
-                    </a>
-                </div><br>
-                <div class="entry-title">
-                    <h3>
-                        <a href="">Oficina Cochabamba</a>
-                    </h3>
+            <?php $__currentLoopData = $oficinas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="col-xs-12 col-sm-6 col-md-4 entry">
+                    <div class="entry-img">
+                        <a class="img-popup" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($item->id))); ?>">
+                            <img src="http://192.168.31.240:5000/<?php echo e($item->imagen); ?>" alt="title" />
+                        </a>
+                    </div><br>
+                    <div class="entry-title">
+                        <h3><a href="<?php echo e(route('tiendasPertec', $hash->encodeHex($item->id))); ?>" >Oficina <?php echo e($item->ciudad); ?></a></h3>
+                    </div>
+                    <div class="entry-content conten-stores">
+                        <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: <?php echo e($item->direccion); ?></h5>
+                        <h5><i class="fa fa-phone-square"></i> Telf: <?php echo e($item->telefono); ?></h5>
+                        <h5><i class="fa fa-whatsapp"></i> Whatsapp: <?php echo e($item->whatsapp); ?></h5>
+                        <h5><i class="fa fa-phone"></i> Celular: <?php echo e($item->celular); ?></h5>
+                        <a class="entry-more" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($item->id))); ?>"><i class="fa fa-plus"></i>
+                            <span>Más Información</span>
+                        </a>
+                    </div>
                 </div>
-                <!-- .entry-title end -->
-                <div class="entry-content conten-stores">
-                    <h5>Dirección: Calle Innominada No. 4581 (Arocagua)</h5>
-                    <h5>Telf: (4) 4716000 (Líneas Rotativas)</h5>
-                    <h5>Fax: (4) 4111632</h5>
-                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
-                        <span>Más Información</span>
-                    </a>
-                </div>
-                <!-- .entry-content end -->
-            </div>
-            <!-- .entry end -->
-
-
-            <!-- Entry Sucursal La Paz -->
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
-                <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
-                    </a>
-                </div><br>
-                <div class="entry-title">
-                    <h3>
-                        <a href="">Oficina La Paz</a>
-                    </h3>
-                </div>
-                <!-- .entry-title end -->
-                <div class="entry-content conten-stores">
-                    <h5>Dirección: Villa Bolívar "B" Calle 106 No. 501</h5>
-                    <h5>Telf: (2) 2822336</h5>
-                    <h5>Fax: (2) 2820619</h5>
-                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
-                        <span>Más Información</span>
-                    </a>
-                </div>
-                <!-- .entry-content end -->
-            </div>
-            <!-- .entry end -->
-
-
-            <!-- Entry Sucursal Santa Cruz -->
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
-                <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="assets/images/blog/grid/1.jpg" alt="title" />
-                    </a>
-                </div><br>
-                <div class="entry-title">
-                    <h3>
-                        <a href="">Oficina Santa Cruz</a>
-                    </h3>
-                </div>
-                <!-- .entry-title end -->
-                <div class="entry-content conten-stores">
-                    <h5>Dirección: Calle Taitetú No. 2680</h5>
-                    <h5>Telf: (3) 3470113</h5>
-                    <h5>Fax: (3) 3111228</h5>
-                    <h5>Email: servicio.cliente@pertec.com.bo</h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
-                        <span>Más Información</span>
-                    </a>
-                </div>
-                <!-- .entry-content end -->
-            </div>
-            <!-- .entry end -->
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
-
 
         <!-- tiendas cbba -->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeCbba')">Tiendas Cochabamba<i class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
-                    <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
         <div class="row" id="storeCbba" style="display: none; margin-top: -55px;">
-            
+            <?php $__currentLoopData = $tiendaCBBA; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tcb): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="">
-                        
-                        
+                    <a class="img-popup" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tcb->id))); ?>">
+                        <img src="http://192.168.31.240:5000/<?php echo e($tcb->imagen); ?>" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Tienda </a>
+                        <a href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tcb->id))); ?>">Tienda <?php echo e($tcb->nombre_tienda); ?></a>
                     </h3>
                 </div>
-                <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: </h5>
-                    <h5>Telf: </h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: <?php echo e($tcb->direccion); ?></h5>
+                    <h5><i class="fa fa-phone-square"></i> Telf: <?php echo e($tcb->telefono); ?></h5>
+                    <h5><i class="fa fa-whatsapp"></i> Whatsapp: <?php echo e($tcb->whatsapp); ?></h5>
+                    <h5><i class="fa fa-phone"></i> Celular: <?php echo e($tcb->celular); ?></h5>
+                    <a class="entry-more" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tcb->id))); ?>"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
-                <!-- .entry-content end -->
             </div>
-            
-
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
-
 
         <!-- tiendas la paz-->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeLaPaz')">Tiendas La Paz<i class="fa fa-plus ml-xs"></i>
@@ -496,80 +433,75 @@
             </div>
         </div>
         <div class="row" id="storeLaPaz" style="display: none; margin-top: -55px;">
-            
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+            <?php $__currentLoopData = $tiendaLPZ; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tlz): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="col-xs-12 col-sm-6 col-md-4 entry" style="float: right;">
                 <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="" alt="title" />
+                    <a class="img-popup" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tlz->id))); ?>">
+                        <img src="http://192.168.31.240:5000/<?php echo e($tlz->imagen); ?>" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Tienda </a>
+                        <a href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tlz->id))); ?>">Tienda <?php echo e($tlz->nombre_tienda); ?></a>
                     </h3>
                 </div>
-                <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección:</h5>
-                    <h5>Telf: </h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: <?php echo e($tlz->direccion); ?></h5>
+                    <h5><i class="fa fa-phone-square"></i> Telf: <?php echo e($tlz->telefono); ?></h5>
+                    <h5><i class="fa fa-whatsapp"></i> Whatsapp: <?php echo e($tlz->whatsapp); ?></h5>
+                    <h5><i class="fa fa-phone"></i> Celular: <?php echo e($tlz->celular); ?></h5>
+                    <a class="entry-more" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tlz->id))); ?>"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
-                <!-- .entry-content end -->
             </div>
-            
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
-
 
         <!-- tiendas santa cruz -->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i class="fa fa-plus ml-xs"></i>
                             </button>
                         </div>
                     </div>
-                    <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
 
         <div class="row" id="storeSantaCruz" style="display: none; margin-top: -55px;">
-            
+            <?php $__currentLoopData = $tiendaSTCZ; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tsz): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
-                    <a class="img-popup" href="">
-                        <img src="http://192.168.31.240:5000/" alt="title" />
+                    <a class="img-popup" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tsz->id))); ?>">
+                        <img src="http://192.168.31.240:5000/<?php echo e($tsz->imagen); ?>" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
                     <h3>
-                        <a href="">Tienda </a>
+                        <a href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tsz->id))); ?>">Tienda <?php echo e($tsz->nombre_tienda); ?></a>
                     </h3>
                 </div>
-                <!-- .entry-title end -->
                 <div class="entry-content conten-stores">
-                    <h5 style="text-transform: capitalize;">Dirección: </h5>
-                    <h5>Telf: </h5>
-                    <a class="entry-more" href=""><i class="fa fa-plus"></i>
+                    <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: <?php echo e($tsz->direccion); ?></h5>
+                    <h5><i class="fa fa-phone-square"></i> Telf: <?php echo e($tsz->telefono); ?></h5>
+                    <h5><i class="fa fa-whatsapp"></i> Whatsapp: <?php echo e($tsz->whatsapp); ?></h5>
+                    <h5><i class="fa fa-phone"></i> Celular: <?php echo e($tsz->celular); ?></h5>
+                    <a class="entry-more" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tsz->id))); ?>"><i class="fa fa-plus"></i>
                         <span>Más Información</span>
                     </a>
                 </div>
-                <!-- .entry-content end -->
             </div>
-            
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div>
-    <!-- .container end -->
 </section>
 
-
 <!-- call center -->
-
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
@@ -596,6 +528,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid">
         <div class="widgets-contact">
             <div class="row" style="margin-right: 0px;">
@@ -604,42 +537,43 @@
                         <img src="/assets/images/system/CELULAR.png" style="margin-top: -15px;" width="30px;">
                     </div>
                     <div class="widget-contact-info">
-                        <p class="text-capitalize font-heading">72221031 - 72221033</p>
+                        <a class="text-capitalize font-heading awithmodelh1" href="tel:+591 72221031">72221031 - </a>
+                        <a class="text-capitalize font-heading awithmodelh1" href="tel:+591 72221033"">72221033</a>
                     </div>
                 </div>
-                <!-- .widget end -->
+
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-center">
                     <div class="widget-contact-icon pull-left">
-                        
                         <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
-                        <p class="font-heading">(Whatsapp) 72221032 - 72230024</p>
+                        <a class="font-heading awithmodelh1">(Whatsapp)</a>
+                        <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
+                        class=" awithmodelh1" target="_blank">72221032</a>
+                        <strong>-</strong>
+                        <a href="https://wa.me/+59172230024/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
+                        class="awithmodelh1" target="_blank">72230024</a>
                     </div>
                 </div>
-                <!-- .widget end -->
+
                 <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right">
                     <div class="widget-contact-icon pull-left">
-                        
                         <i class="fa fa-envelope-o" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
-                        <p class="font-heading">servicio.cliente@pertec.com.bo</p>
+                        <a class="font-heading awithmodelh1" href="mailto:servicio.cliente@pertec.com.bo">servicio.cliente@pertec.com.bo</a>
                     </div>
                 </div>
-                <!-- .widget end -->
             </div>
-            <!-- .row end -->
         </div>
-        <!-- .row end -->
     </div>
 </section>
 
 <div class="cookie-disclaimer">
     <div class="cookie-close accept-cookie"><i class="fa fa-times"></i></div>
     <div class="container">
-        <p>PERTEC S.R.L. utiliza ("cookies") para aumentar la calidad del sitio. <a
-                href="#">Lea más sobre nuestro uso de cookies</a>.
+        <p>PERTEC S.R.L. &copy; utiliza ("cookies") para aumentar la calidad del sitio.
+                Lea más sobre nuestro uso de cookies.
             <br>Al continuar utilizando el sitio web, acepta nuetro uso de cookies.</p>
         <button type="button" class="btn btn-success accept-cookie">¡Está bien!</button>
     </div>
@@ -826,7 +760,7 @@
     function showOfs(Element) {
         var x = document.getElementById(Element);
         if (x.style.display === "none") {
-            x.style.display = "flex";
+            x.style.display = "block";
         } else {
             x.style.display = "none";
         }

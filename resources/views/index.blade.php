@@ -11,7 +11,7 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-                    <img src="http://192.168.31.242:5000/{{ $carusels->imagen }}" alt="">
+                    <img src="http://192.168.31.240:5000/{{ $carusels->imagen }}" alt="">
 
 
                     <!-- LAYER NR. 1 -->
@@ -23,7 +23,7 @@
                         data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                         data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                         data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                        <img src="http://192.168.31.242:5000/{{ $carusels->imagen_icono }}" alt="hook" />
+                        <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}" alt="hook" />
 
                     </div>
 
@@ -341,7 +341,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
@@ -366,7 +366,7 @@
                     </div>
                     <div class="entry-content conten-stores">
                         <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: {{ $item->direccion}}</h5>
-                        <h5><i class="fa fa-telephone"></i> Telf: {{ $item->telefono}}</h5>
+                        <h5><i class="fa fa-phone-square"></i> Telf: {{ $item->telefono}}</h5>
                         <h5><i class="fa fa-whatsapp"></i> Whatsapp: {{ $item->whatsapp}}</h5>
                         <h5><i class="fa fa-phone"></i> Celular: {{ $item->celular}}</h5>
                         <a class="entry-more" href="{{ route('tiendasPertec', $hash->encodeHex($item->id)) }}"><i class="fa fa-plus"></i>
@@ -381,7 +381,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeCbba')">Tiendas Cochabamba<i class="fa fa-plus ml-xs"></i>
@@ -406,7 +406,7 @@
                 </div>
                 <div class="entry-content conten-stores">
                     <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: {{ $tcb->direccion}}</h5>
-                    <h5><i class="fa fa-telephone"></i> Telf: {{ $tcb->telefono}}</h5>
+                    <h5><i class="fa fa-phone-square"></i> Telf: {{ $tcb->telefono}}</h5>
                     <h5><i class="fa fa-whatsapp"></i> Whatsapp: {{ $tcb->whatsapp}}</h5>
                     <h5><i class="fa fa-phone"></i> Celular: {{ $tcb->celular}}</h5>
                     <a class="entry-more" href="{{ route('tiendasPertec', $hash->encodeHex($tcb->id)) }}"><i class="fa fa-plus"></i>
@@ -421,7 +421,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeLaPaz')">Tiendas La Paz<i class="fa fa-plus ml-xs"></i>
@@ -434,7 +434,7 @@
         </div>
         <div class="row" id="storeLaPaz" style="display: none; margin-top: -55px;">
             @foreach ($tiendaLPZ as $tlz)
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+            <div class="col-xs-12 col-sm-6 col-md-4 entry" style="float: right;">
                 <div class="entry-img">
                     <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tlz->id)) }}">
                         <img src="http://192.168.31.240:5000/{{ $tlz->imagen }}" alt="title" />
@@ -447,7 +447,7 @@
                 </div>
                 <div class="entry-content conten-stores">
                     <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: {{ $tlz->direccion}}</h5>
-                    <h5><i class="fa fa-telephone"></i> Telf: {{ $tlz->telefono}}</h5>
+                    <h5><i class="fa fa-phone-square"></i> Telf: {{ $tlz->telefono}}</h5>
                     <h5><i class="fa fa-whatsapp"></i> Whatsapp: {{ $tlz->whatsapp}}</h5>
                     <h5><i class="fa fa-phone"></i> Celular: {{ $tlz->celular}}</h5>
                     <a class="entry-more" href="{{ route('tiendasPertec', $hash->encodeHex($tlz->id)) }}"><i class="fa fa-plus"></i>
@@ -462,7 +462,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i class="fa fa-plus ml-xs"></i>
@@ -488,7 +488,7 @@
                 </div>
                 <div class="entry-content conten-stores">
                     <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: {{ $tsz->direccion}}</h5>
-                    <h5><i class="fa fa-telephone"></i> Telf: {{ $tsz->telefono}}</h5>
+                    <h5><i class="fa fa-phone-square"></i> Telf: {{ $tsz->telefono}}</h5>
                     <h5><i class="fa fa-whatsapp"></i> Whatsapp: {{ $tsz->whatsapp}}</h5>
                     <h5><i class="fa fa-phone"></i> Celular: {{ $tsz->celular}}</h5>
                     <a class="entry-more" href="{{ route('tiendasPertec', $hash->encodeHex($tsz->id)) }}"><i class="fa fa-plus"></i>
@@ -528,7 +528,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid">
         <div class="widgets-contact">
             <div class="row" style="margin-right: 0px;">
@@ -548,10 +548,10 @@
                     </div>
                     <div class="widget-contact-info">
                         <a class="font-heading awithmodelh1">(Whatsapp)</a>
-                        <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" 
+                        <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
                         class=" awithmodelh1" target="_blank">72221032</a>
                         <strong>-</strong>
-                        <a href="https://wa.me/+59172230024/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" 
+                        <a href="https://wa.me/+59172230024/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
                         class="awithmodelh1" target="_blank">72230024</a>
                     </div>
                 </div>
@@ -572,7 +572,7 @@
 <div class="cookie-disclaimer">
     <div class="cookie-close accept-cookie"><i class="fa fa-times"></i></div>
     <div class="container">
-        <p>PERTEC S.R.L. &copy; utiliza ("cookies") para aumentar la calidad del sitio. 
+        <p>PERTEC S.R.L. &copy; utiliza ("cookies") para aumentar la calidad del sitio.
                 Lea más sobre nuestro uso de cookies.
             <br>Al continuar utilizando el sitio web, acepta nuetro uso de cookies.</p>
         <button type="button" class="btn btn-success accept-cookie">¡Está bien!</button>
@@ -776,7 +776,7 @@
     function showOfs(Element) {
         var x = document.getElementById(Element);
         if (x.style.display === "none") {
-            x.style.display = "flex";
+            x.style.display = "block";
         } else {
             x.style.display = "none";
         }
