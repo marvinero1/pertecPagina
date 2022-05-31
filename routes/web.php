@@ -19,7 +19,9 @@ Route::middleware(['auth'] )->group(function () {
     Route::get('mis_pedidos', 'HomeController@getPedidos')->name('mis_pedidos');
     Route::put('changeMatrix/{id}', 'Admin\ProductoController@changeMatrix')->name('changeMatrix');
 
+
 });
+    Route::post('sendemail', 'HomeController@sendemail')->name('sendemail');
 
 Route::group(['namespace' => 'Auth'], function () {
 
@@ -100,6 +102,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('producto/{id}', 'Admin\ProductoController@showFrontend')->name('producto.showFrontEnd');
     Route::get('showTienda/{id}', 'Admin\TiendaController@showTienda')->name('tiendasPertec');
     Route::get('ofinasPertec', 'Admin\TiendaController@showOficina')->name('ofinasPertec');
+    
 /**
 * Membership
 */

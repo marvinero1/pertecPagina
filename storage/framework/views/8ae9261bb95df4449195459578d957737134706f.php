@@ -42,7 +42,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-5 shop-content">
                 <div class="product-img product-feature-img mb-50">
-                    <img src="http://192.168.31.242:5000/<?php echo e($tienda->imagen); ?>" alt="product" />
+                    <img src="http://192.168.31.242:5000/<?php echo e($tienda->imagen); ?>" alt="<?php echo e($tienda->nombre_tienda); ?>"/>
                 </div>
             </div>
 

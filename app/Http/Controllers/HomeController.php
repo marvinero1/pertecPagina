@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use Illuminate\Http\Request;
 use Hashids\Hashids;
 use App\Models\Carusel;
@@ -56,5 +57,21 @@ class HomeController extends Controller
 
     public function getPedidos(){
         return view('page.sections.pedidos');
+    }
+
+    public function sendemail(Request $request){
+        $all = $request->all();
+        // dd($all);
+
+        $all = $request->validate([
+            'nombre' => 'required',
+            'email' => 'required|email',
+            'celular'=>'required',
+            'mensaje' => 'required'
+        ]);
+
+        
+        Mail::to('pertec.digital@int.pertec.com.bo')->send(new \App\Mail\MyTestMail($all));
+        dd("Email is Sent.");
     }
 }
