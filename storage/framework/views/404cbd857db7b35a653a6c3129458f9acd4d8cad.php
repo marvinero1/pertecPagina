@@ -9,7 +9,7 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-                    <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen); ?>" alt="">
+                    <img src="http://192.168.31.240:5000/<?php echo e($carusels->imagen); ?>" alt="">
 
 
                     <!-- LAYER NR. 1 -->
@@ -21,7 +21,7 @@
                         data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                         data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                         data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                        <img src="http://192.168.31.242:5000/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
+                        <img src="http://192.168.31.240:5000/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
 
                     </div>
 

@@ -53,6 +53,14 @@
 								</li>
 							</ul>
 						</li>
+                        <li class="has-dropdown">
+							<a href="#" data-toggle="dropdown" class="dropdown-toggle">Facturas</a>
+                            {{-- <ul class="dropdown-menu" style="border-radius: 10px;">
+								<li>
+									<a href="#">Imprime tu factura</a>
+								</li>
+							</ul> --}}
+						</li>
 						<li class="has-dropdown pull-left">
 							<a href="/contactanos">Contacto</a>
 						</li>
