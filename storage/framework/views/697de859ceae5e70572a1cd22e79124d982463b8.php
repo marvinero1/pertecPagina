@@ -1,4 +1,4 @@
-<div class="container p-1">
+<div class="container p-1" style="width: 612px;">
 
 
     <table class="minimalistBlack alineacion">
@@ -175,13 +175,13 @@
     <table class="minimalistBlack">
         <tbody>
             <tr>
-                <td style="width: 400px; padding: 0px 20px 0px 20px;">
+                <td style="width: 390px; padding: 15px 20px 0px 20px;">
                     <h6 class="font-frank-demi color-black" style="margin-bottom: -5px; line-height: 11px; text-align: center; font-size: 8px;">
                         ESTA FACTURA CONTRIBUJE AL DESARROLLO DEL PAÍS, EL USO ILÍCITO DE ESTA SERÁ
                         SANCIONADO PENALMENTE DE ACUERDO A LEY.
                     </h6>
                 </td>
-                <td rowspan="2" style="text-align: center; padding-left: 120px;">
+                <td rowspan="2" style="text-align: center;">
                     <img src="https://qrcode.tec-it.com/API/QRCode?data=smsto%3A555-555-5555%3AGenerador+de+Códigos+QR+de+TEC-IT" alt="qrCode" width="68px" style="padding-top: 30px;">
                 </td>
             </tr>
@@ -303,5 +303,11 @@
         font-size: 14px;
     }
 
+    table.minimalistBlack,
+    th,
+    td {
+        border: 1px solid;
+    }
 
 </style>
+<?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/pruebas.blade.php ENDPATH**/ ?>

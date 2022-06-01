@@ -1,6 +1,4 @@
-@extends('page.layouts.main')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
     style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
     <div class="bgImgCoverPages"></div>
@@ -322,4 +320,6 @@
     }
 
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('page.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/show.blade.php ENDPATH**/ ?>

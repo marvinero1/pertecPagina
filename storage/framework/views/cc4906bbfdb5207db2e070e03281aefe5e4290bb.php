@@ -305,3 +305,4 @@
 
 
 </style>
+<?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/pdf.blade.php ENDPATH**/ ?>
