@@ -54,7 +54,7 @@
 							</ul>
 						</li>
                         <li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">Facturas</a>
+							<a href="/consultasDigitales">Facturas</a>
                             {{-- <ul class="dropdown-menu" style="border-radius: 10px;">
 								<li>
 									<a href="#">Imprime tu factura</a>
@@ -91,11 +91,10 @@
                                 <div class="cart-icon">
                                     <ul class="list-unstyled user-menu">
                                         @if (Auth::user()->name == "Admin")
-                                        <li>
-                                            <a href="/admin" style="color: #A6A69B;">Panel Administrativo</a>
-                                        </li>
-                                        @endif
-                                        <hr>
+                                            <li>
+                                                <a href="/admin" style="color: #A6A69B;">Panel Administrativo</a>
+                                            </li>
+                                        @endif<hr>
                                         <li>
                                             <a href="{{ route('users.showFront', Auth::user()->id) }}" style="color: #A6A69B;">Mi perfil</a>
                                         </li>
@@ -134,7 +133,6 @@
 
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog-login">
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -307,14 +305,12 @@
         background-color: #FBD800;
         padding: 20px;
     }
-
     @media (min-width:768px) {
         .modal-dialog-login {
             width: 600px;
             margin: 90px auto;
         }
     }
-
     @media (min-width:768px) {
         .modal-dialog-register {
             width: 620px;

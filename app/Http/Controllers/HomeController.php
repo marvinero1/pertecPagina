@@ -67,10 +67,9 @@ class HomeController extends Controller
             'nombre' => 'required',
             'email' => 'required|email',
             'celular'=>'required',
-            'mensaje' => 'required'
+            'mensaje' => 'required',
         ]);
 
-        
         Mail::to('pertec.digital@int.pertec.com.bo')->send(new \App\Mail\MyTestMail($all));
         dd("Email is Sent.");
     }

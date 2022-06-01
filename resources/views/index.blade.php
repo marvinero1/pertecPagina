@@ -11,7 +11,7 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-                    <img src="http://192.168.31.240:5000/{{ $carusels->imagen }}" alt="">
+                    <img src="http://192.168.31.242:5000/{{ $carusels->imagen }}" alt="">
 
 
                     <!-- LAYER NR. 1 -->
@@ -23,7 +23,7 @@
                         data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                         data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                         data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                        <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}" alt="hook" />
+                        <img src="http://192.168.31.242:5000/{{ $carusels->imagen_icono }}" alt="hook" />
 
                     </div>
 
@@ -190,16 +190,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- End .Accordion-->
             </div>
-            <!-- .col-md-6 end -->
         </div>
-        <!-- .row end -->
     </div>
-    <!-- .container end -->
 </section>
-
-
 
 <!-- productos -->
 <section id="sectionProducts" style="background-color: #F6F6F6;">
@@ -222,17 +216,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner content" role="listbox">
-
                         <div class="item active">
-
                             <div class="row">
                                 <!-- product #1 -->
-
                                 @foreach ($producto as $productos)
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
                                     <div class="product-img">
-                                        <img src='http://192.168.31.240:5000/{{ $productos->imagen }}' alt="product"
+                                        <img src='http://192.168.31.242:5000/{{ $productos->imagen }}' alt="product"
                                             style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
@@ -249,22 +240,17 @@
 
                                 </div>
                                 @endforeach
-
                             </div>
-
                         </div>
 
-
                         <div class="item">
-
                             <div class="row">
                                 <!-- product #1 -->
-
                                 @foreach ($producto2 as $productos)
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
                                     <div class="product-img">
-                                        <img src='http://192.168.31.240:5000/{{ $productos->imagen }}' alt="product"
+                                        <img src='http://192.168.31.242:5000/{{ $productos->imagen }}' alt="product"
                                             style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
@@ -278,15 +264,10 @@
                                             <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
                                         </h4>
                                     </div>
-
                                 </div>
                                 @endforeach
-
                             </div>
-
                         </div>
-
-
 
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button"
@@ -358,7 +339,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-4 entry">
                     <div class="entry-img">
                         <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($item->id)) }}">
-                            <img src="http://192.168.31.240:5000/{{ $item->imagen }}" alt="title" />
+                            <img src="http://192.168.31.242:5000/{{ $item->imagen }}" alt="title" />
                         </a>
                     </div><br>
                     <div class="entry-title">
@@ -396,7 +377,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tcb->id)) }}">
-                        <img src="http://192.168.31.240:5000/{{ $tcb->imagen }}" alt="title" />
+                        <img src="http://192.168.31.242:5000/{{ $tcb->imagen }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -437,7 +418,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry" style="float: right;">
                 <div class="entry-img">
                     <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tlz->id)) }}">
-                        <img src="http://192.168.31.240:5000/{{ $tlz->imagen }}" alt="title" />
+                        <img src="http://192.168.31.242:5000/{{ $tlz->imagen }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -478,7 +459,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tsz->id)) }}">
-                        <img src="http://192.168.31.240:5000/{{ $tsz->imagen }}" alt="title" />
+                        <img src="http://192.168.31.242:5000/{{ $tsz->imagen }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -598,7 +579,7 @@
 
 
 <style type="text/css">
-.awithmodelh1{
+    .awithmodelh1{
         color: #000000;
         font-family: 'Franklin Gothic Demi', sans-serif;
         font-size: 1.6rem;
@@ -616,21 +597,17 @@
         padding-bottom: 19px;
         color: #093070;
     }
-
     .slide {
         animation-duration: 2s;
         animation-name: slidein;
     }
-
     .tp-bgimg defaultimg {
         filter: contrast(0.8) !important;
     }
-
     .tdn {
         animation-duration: 3s;
         animation-name: tdn;
     }
-
     .fondo_con {
         content: "";
         position: absolute;
@@ -641,7 +618,6 @@
         background: linear-gradient(181deg, rgba(9, 48, 112, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
         z-index: 99;
     }
-
     @keyframes slidein {
         from {
             margin-left: 0%;
@@ -653,7 +629,6 @@
             width: 100%;
         }
     }
-
     @keyframes tdn {
         from {
             margin-top: 100%;
@@ -663,7 +638,6 @@
             margin-top: 0%;
         }
     }
-
     .modalPopUp {
         z-index: 999;
         width: 100%;
@@ -678,7 +652,6 @@
         opacity: 0;
         text-align: center;
     }
-
     .contenido {
         margin: auto;
         width: 40%;
@@ -686,11 +659,9 @@
         background: white;
         border-radius: 10px;
     }
-
     #cerrar {
         display: none;
     }
-
     #cerrar+label {
         position: fixed;
         color: #fff;
@@ -709,19 +680,16 @@
         visibility: hidden;
         opacity: 0;
     }
-
     #cerrar:checked+label,
     #cerrar:checked~.modalPopUp {
         display: none;
     }
-
     @keyframes modal {
         100% {
             visibility: visible;
             opacity: 1;
         }
     }
-
     .fondo {
         background-color: rgba(0, 0, 0, 0);
         background-repeat: no-repeat;
@@ -744,8 +712,6 @@
         background: linear-gradient(181deg, rgba(9, 48, 112, 0.3) 0%, rgba(255, 255, 255, 0.14) 100%);
         z-index: 99;
     } */
-
-
     .cookie-disclaimer {
         background: #000000;
         color: #FFF;
@@ -757,19 +723,16 @@
         height: 150px;
         position: fixed;
     }
-
     .cookie-disclaimer .container {
         text-align: center;
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
     .cookie-disclaimer .cookie-close {
         float: right;
         padding: 10px;
         cursor: pointer;
     }
-
 </style>
 
 <script>

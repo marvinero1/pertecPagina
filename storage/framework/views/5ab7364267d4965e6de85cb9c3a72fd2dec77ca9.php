@@ -27,10 +27,10 @@
 									<a href="/"> Inicio</a>
 								</li>
 								<li>
-									<a  name="sectionAboutUs"> ¿Quiénes Somos?</a>
+									<a href="#" class="my-menu-link" name="sectionAboutUs"> ¿Quiénes Somos?</a>
 								</li>
 								<li>
-									<a href="/tiendasOfinasPertec"> Oficinas y tiendas</a>
+									<a href="#" class="my-menu-link" name="sectionStores"> Oficinas y tiendas</a>
 								</li>
 								<li>
 									<a href="/productos"> Productos</a>

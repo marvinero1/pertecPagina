@@ -192,16 +192,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- End .Accordion-->
             </div>
-            <!-- .col-md-6 end -->
         </div>
-        <!-- .row end -->
     </div>
-    <!-- .container end -->
 </section>
-
-
 
 <!-- productos -->
 <section id="sectionProducts" style="background-color: #F6F6F6;">
@@ -224,17 +218,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner content" role="listbox">
-
                         <div class="item active">
-
                             <div class="row">
                                 <!-- product #1 -->
-
                                 <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
                                     <div class="product-img">
-                                        <img src='http://192.168.31.240:5000/<?php echo e($productos->imagen); ?>' alt="product"
+                                        <img src='http://192.168.31.242:5000/<?php echo e($productos->imagen); ?>' alt="product"
                                             style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
@@ -251,22 +242,17 @@
 
                                 </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
                             </div>
-
                         </div>
 
-
                         <div class="item">
-
                             <div class="row">
                                 <!-- product #1 -->
-
                                 <?php $__currentLoopData = $producto2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
                                     <div class="product-img">
-                                        <img src='http://192.168.31.240:5000/<?php echo e($productos->imagen); ?>' alt="product"
+                                        <img src='http://192.168.31.242:5000/<?php echo e($productos->imagen); ?>' alt="product"
                                             style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
@@ -280,15 +266,10 @@
                                             <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
                                         </h4>
                                     </div>
-
                                 </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
                             </div>
-
                         </div>
-
-
 
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button"
@@ -343,7 +324,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('of-centrals')">Oficinas a nivel nacional<i
@@ -360,7 +341,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-4 entry">
                     <div class="entry-img">
                         <a class="img-popup" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($item->id))); ?>">
-                            <img src="http://192.168.31.240:5000/<?php echo e($item->imagen); ?>" alt="title" />
+                            <img src="http://192.168.31.242:5000/<?php echo e($item->imagen); ?>" alt="title" />
                         </a>
                     </div><br>
                     <div class="entry-title">
@@ -368,7 +349,7 @@
                     </div>
                     <div class="entry-content conten-stores">
                         <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: <?php echo e($item->direccion); ?></h5>
-                        <h5><i class="fa fa-telephone"></i> Telf: <?php echo e($item->telefono); ?></h5>
+                        <h5><i class="fa fa-phone-square"></i> Telf: <?php echo e($item->telefono); ?></h5>
                         <h5><i class="fa fa-whatsapp"></i> Whatsapp: <?php echo e($item->whatsapp); ?></h5>
                         <h5><i class="fa fa-phone"></i> Celular: <?php echo e($item->celular); ?></h5>
                         <a class="entry-more" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($item->id))); ?>"><i class="fa fa-plus"></i>
@@ -383,7 +364,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeCbba')">Tiendas Cochabamba<i class="fa fa-plus ml-xs"></i>
@@ -398,7 +379,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tcb->id))); ?>">
-                        <img src="http://192.168.31.240:5000/<?php echo e($tcb->imagen); ?>" alt="title" />
+                        <img src="http://192.168.31.242:5000/<?php echo e($tcb->imagen); ?>" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -408,7 +389,7 @@
                 </div>
                 <div class="entry-content conten-stores">
                     <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: <?php echo e($tcb->direccion); ?></h5>
-                    <h5><i class="fa fa-telephone"></i> Telf: <?php echo e($tcb->telefono); ?></h5>
+                    <h5><i class="fa fa-phone-square"></i> Telf: <?php echo e($tcb->telefono); ?></h5>
                     <h5><i class="fa fa-whatsapp"></i> Whatsapp: <?php echo e($tcb->whatsapp); ?></h5>
                     <h5><i class="fa fa-phone"></i> Celular: <?php echo e($tcb->celular); ?></h5>
                     <a class="entry-more" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tcb->id))); ?>"><i class="fa fa-plus"></i>
@@ -423,7 +404,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeLaPaz')">Tiendas La Paz<i class="fa fa-plus ml-xs"></i>
@@ -436,10 +417,10 @@
         </div>
         <div class="row" id="storeLaPaz" style="display: none; margin-top: -55px;">
             <?php $__currentLoopData = $tiendaLPZ; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tlz): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="col-xs-12 col-sm-6 col-md-4 entry">
+            <div class="col-xs-12 col-sm-6 col-md-4 entry" style="float: right;">
                 <div class="entry-img">
                     <a class="img-popup" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tlz->id))); ?>">
-                        <img src="http://192.168.31.240:5000/<?php echo e($tlz->imagen); ?>" alt="title" />
+                        <img src="http://192.168.31.242:5000/<?php echo e($tlz->imagen); ?>" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -449,7 +430,7 @@
                 </div>
                 <div class="entry-content conten-stores">
                     <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: <?php echo e($tlz->direccion); ?></h5>
-                    <h5><i class="fa fa-telephone"></i> Telf: <?php echo e($tlz->telefono); ?></h5>
+                    <h5><i class="fa fa-phone-square"></i> Telf: <?php echo e($tlz->telefono); ?></h5>
                     <h5><i class="fa fa-whatsapp"></i> Whatsapp: <?php echo e($tlz->whatsapp); ?></h5>
                     <h5><i class="fa fa-phone"></i> Celular: <?php echo e($tlz->celular); ?></h5>
                     <a class="entry-more" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tlz->id))); ?>"><i class="fa fa-plus"></i>
@@ -464,7 +445,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 product-item" style="text-align: left;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 product-item ofice-store-item" style="text-align: left;">
                         <div class="product-cart heading-right">
                             <button class="btn btn-secondary btn-block btn-gereric" style="width: 300px !important;"
                                 onclick="showOfs('storeSantaCruz')">Tiendas Santa Cruz<i class="fa fa-plus ml-xs"></i>
@@ -480,7 +461,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tsz->id))); ?>">
-                        <img src="http://192.168.31.240:5000/<?php echo e($tsz->imagen); ?>" alt="title" />
+                        <img src="http://192.168.31.242:5000/<?php echo e($tsz->imagen); ?>" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -490,7 +471,7 @@
                 </div>
                 <div class="entry-content conten-stores">
                     <h5 style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> Dirección: <?php echo e($tsz->direccion); ?></h5>
-                    <h5><i class="fa fa-telephone"></i> Telf: <?php echo e($tsz->telefono); ?></h5>
+                    <h5><i class="fa fa-phone-square"></i> Telf: <?php echo e($tsz->telefono); ?></h5>
                     <h5><i class="fa fa-whatsapp"></i> Whatsapp: <?php echo e($tsz->whatsapp); ?></h5>
                     <h5><i class="fa fa-phone"></i> Celular: <?php echo e($tsz->celular); ?></h5>
                     <a class="entry-more" href="<?php echo e(route('tiendasPertec', $hash->encodeHex($tsz->id))); ?>"><i class="fa fa-plus"></i>
@@ -530,7 +511,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid">
         <div class="widgets-contact">
             <div class="row" style="margin-right: 0px;">
@@ -550,10 +531,10 @@
                     </div>
                     <div class="widget-contact-info">
                         <a class="font-heading awithmodelh1">(Whatsapp)</a>
-                        <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" 
+                        <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
                         class=" awithmodelh1" target="_blank">72221032</a>
                         <strong>-</strong>
-                        <a href="https://wa.me/+59172230024/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos" 
+                        <a href="https://wa.me/+59172230024/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
                         class="awithmodelh1" target="_blank">72230024</a>
                     </div>
                 </div>
@@ -574,7 +555,7 @@
 <div class="cookie-disclaimer">
     <div class="cookie-close accept-cookie"><i class="fa fa-times"></i></div>
     <div class="container">
-        <p>PERTEC S.R.L. &copy; utiliza ("cookies") para aumentar la calidad del sitio. 
+        <p>PERTEC S.R.L. &copy; utiliza ("cookies") para aumentar la calidad del sitio.
                 Lea más sobre nuestro uso de cookies.
             <br>Al continuar utilizando el sitio web, acepta nuetro uso de cookies.</p>
         <button type="button" class="btn btn-success accept-cookie">¡Está bien!</button>
@@ -584,7 +565,7 @@
 
 
 <style type="text/css">
-.awithmodelh1{
+    .awithmodelh1{
         color: #000000;
         font-family: 'Franklin Gothic Demi', sans-serif;
         font-size: 1.6rem;
@@ -602,21 +583,17 @@
         padding-bottom: 19px;
         color: #093070;
     }
-
     .slide {
         animation-duration: 2s;
         animation-name: slidein;
     }
-
     .tp-bgimg defaultimg {
         filter: contrast(0.8) !important;
     }
-
     .tdn {
         animation-duration: 3s;
         animation-name: tdn;
     }
-
     .fondo_con {
         content: "";
         position: absolute;
@@ -627,7 +604,6 @@
         background: linear-gradient(181deg, rgba(9, 48, 112, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
         z-index: 99;
     }
-
     @keyframes  slidein {
         from {
             margin-left: 0%;
@@ -639,7 +615,6 @@
             width: 100%;
         }
     }
-
     @keyframes  tdn {
         from {
             margin-top: 100%;
@@ -649,7 +624,6 @@
             margin-top: 0%;
         }
     }
-
     .modalPopUp {
         z-index: 999;
         width: 100%;
@@ -664,7 +638,6 @@
         opacity: 0;
         text-align: center;
     }
-
     .contenido {
         margin: auto;
         width: 40%;
@@ -672,11 +645,9 @@
         background: white;
         border-radius: 10px;
     }
-
     #cerrar {
         display: none;
     }
-
     #cerrar+label {
         position: fixed;
         color: #fff;
@@ -695,19 +666,16 @@
         visibility: hidden;
         opacity: 0;
     }
-
     #cerrar:checked+label,
     #cerrar:checked~.modalPopUp {
         display: none;
     }
-
     @keyframes  modal {
         100% {
             visibility: visible;
             opacity: 1;
         }
     }
-
     .fondo {
         background-color: rgba(0, 0, 0, 0);
         background-repeat: no-repeat;
@@ -730,8 +698,6 @@
         background: linear-gradient(181deg, rgba(9, 48, 112, 0.3) 0%, rgba(255, 255, 255, 0.14) 100%);
         z-index: 99;
     } */
-
-
     .cookie-disclaimer {
         background: #000000;
         color: #FFF;
@@ -743,26 +709,23 @@
         height: 150px;
         position: fixed;
     }
-
     .cookie-disclaimer .container {
         text-align: center;
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
     .cookie-disclaimer .cookie-close {
         float: right;
         padding: 10px;
         cursor: pointer;
     }
-
 </style>
 
 <script>
     function showOfs(Element) {
         var x = document.getElementById(Element);
         if (x.style.display === "none") {
-            x.style.display = "flex";
+            x.style.display = "block";
         } else {
             x.style.display = "none";
         }

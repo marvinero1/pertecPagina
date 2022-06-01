@@ -102,7 +102,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('producto/{id}', 'Admin\ProductoController@showFrontend')->name('producto.showFrontEnd');
     Route::get('showTienda/{id}', 'Admin\TiendaController@showTienda')->name('tiendasPertec');
     Route::get('ofinasPertec', 'Admin\TiendaController@showOficina')->name('ofinasPertec');
-    
+    Route::get('consultasDigitales', 'Admin\FacturaController@index')->name('consultasDigitales');
+
 /**
 * Membership
 */
