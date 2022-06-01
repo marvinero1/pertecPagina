@@ -1,6 +1,4 @@
-@extends('page.layouts.main')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -25,7 +23,7 @@
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
     <div class="content section-content">
         <div class="row">
-            @if (empty($buscardorEmpty))
+            <?php if(empty($buscardorEmpty)): ?>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="heading heading-4">
                         <div class="heading-right">
@@ -53,7 +51,7 @@
                     </form>
                     </div>
                 </div>
-            @else
+            <?php else: ?>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="heading heading-4">
                         <div class="heading-right">
@@ -323,7 +321,7 @@
                         Descarga PDF &nbsp;<i class="fa fa-download"></i>
                     </a>
                 </div>
-            @endif
+            <?php endif; ?>
         </div>
     </div>
 </section>
@@ -406,4 +404,6 @@
     }
 
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('page.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/index.blade.php ENDPATH**/ ?>
