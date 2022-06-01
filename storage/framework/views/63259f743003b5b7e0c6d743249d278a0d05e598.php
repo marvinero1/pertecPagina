@@ -32,7 +32,6 @@
 </head>
 
 <body>
-
 	<div class="preloader">
 		<div class="spinner">
 			<div class="bounce1">

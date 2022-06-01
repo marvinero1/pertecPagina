@@ -89,10 +89,6 @@
                         </div><br>
             
             
-            
-            
-            
-            
                         <div class="row">
                             <div class="col-md-2" style="padding-right: 0px;">
                                 <h6 class="font-frank-demi color-black" style="margin-bottom: 8px; line-height: 17px;">Lugar y Fecha :</h6>
@@ -241,7 +237,7 @@
                     <i class="fa fa-arrow-left"></i> Atras
                 </a>
                 <a class="btn btn-warning btn-lg" type="button" href="/viewPDF">
-                    Descarga PDF &nbsp;<i class="fa fa-download"></i>
+                    Descargar PDF &nbsp;<i class="fa fa-download"></i>
                 </a>
             </div>
         </div>

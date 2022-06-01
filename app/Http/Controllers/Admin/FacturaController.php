@@ -22,6 +22,7 @@ class FacturaController extends Controller
         $factuta_json = json_encode($factura);
 
         $nit = $request->get('buscarpor');
+        
         $buscardorEmpty = $nit;
         // $factura_encontrada = $factuta_json::where('nit','like',"%nit%")->get();
 
@@ -40,6 +41,11 @@ class FacturaController extends Controller
 
     public function facturaVista(){
         return view('page.sections.facturas.show');
+
+    }
+
+    public function verPDFprueba(){
+        return view('page.sections.facturas.pruebas');
 
     }
 

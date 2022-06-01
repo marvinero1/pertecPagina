@@ -30,7 +30,6 @@
 </head>
 
 <body>
-
 	<div class="preloader">
 		<div class="spinner">
 			<div class="bounce1">
@@ -59,7 +58,6 @@
         <label style="position: relative; top: -8px;">&nbsp;Ayuda</label>
     </a>
 
-
 	<script type='text/javascript'>
         document.oncontextmenu = function(){return false}
     </script>
@@ -68,46 +66,44 @@
 
 	jQuery(document).ready(function() {
     jQuery("#slider1").revolution({
-       sliderType:"standard",
-       sliderLayout:"auto",
-       delay:7000,
-       disableProgressBar:"on",
-       spinner:"off",
-       navigation: {
-         keyboardNavigation:"off",
-         keyboard_direction: "horizontal",
-         mouseScrollNavigation:"off",
-         onHoverStop:"off",
-         arrows: {
-			enable:false,
-		},
-		bullets:{
-            style:"slider-bullet",
-            enable:true,
-            hide_onmobile:false,
-            hide_onleave:false,
-            hide_delay:100,
-            hide_delay_mobile:1200,
-            hide_under:0,
-            hide_over:9999,
-            tmp:'<span></span>',
-            direction:"horizontal",
-            space:5,
-            h_align:"center",
-            v_align:"center",
-            h_offset:0,
-            v_offset:280
+        sliderType:"standard",
+        sliderLayout:"auto",
+        delay:7000,
+        disableProgressBar:"on",
+        spinner:"off",
+        navigation: {
+            keyboardNavigation:"off",
+            keyboard_direction: "horizontal",
+            mouseScrollNavigation:"off",
+            onHoverStop:"off",
+            arrows: {
+                enable:false,
+            },
+            bullets:{
+                style:"slider-bullet",
+                enable:true,
+                hide_onmobile:false,
+                hide_onleave:false,
+                hide_delay:100,
+                hide_delay_mobile:1200,
+                hide_under:0,
+                hide_over:9999,
+                tmp:'<span></span>',
+                direction:"horizontal",
+                space:5,
+                h_align:"center",
+                v_align:"center",
+                h_offset:0,
+                v_offset:280
+            },
         },
-     },
-       gridwidth:1230,
-       gridheight:800 ,
-
-     });
- });
-	</script>
+        gridwidth:1230,
+        gridheight:800 ,
+        });
+    });
+</script>
 
 <script>
-
 $(window).on("load", function() {
         $(".preloader").fadeOut("slow");
         $(".preloader").remove();

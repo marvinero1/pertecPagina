@@ -196,4 +196,76 @@
         </div>
     </div>
     
-</div><?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/facturas/pdf.blade.php ENDPATH**/ ?>
+</div>
+<style>
+        .alineacion p {
+            line-height: 7px !important;
+        }
+
+        .alineacion h6 {
+            margin-bottom: 8px;
+            line-height: 17px;
+        }
+
+        .infoFactura {
+            font-size: 14px !important;
+            color: #000000 !important;
+            line-height: 16px !important;
+            margin-bottom: 7px;
+        }
+
+        table.greyGridTable {
+            border: 2px solid #FFFFFF;
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        table.greyGridTable td,
+        table.greyGridTable th {
+            border: 1px solid #FFFFFF;
+            padding: 3px 4px;
+        }
+
+        table.greyGridTable tbody td {
+            font-size: 15px;
+            color: #000000;
+        }
+
+        table.greyGridTable thead {
+            font-family: 'Franklin Gothic Demi', sans-serif;
+            font-weight: 100;
+            background: #FFFFFF;
+            border-bottom: 2px solid #000000;
+            border-top: 2px solid #000000;
+        }
+
+        table.greyGridTable thead th {
+            font-size: 15px;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+        }
+
+        table.greyGridTable tfoot {
+            font-family: 'Franklin Gothic Demi', sans-serif;
+            font-weight: 100;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: right;
+            color: #000000;
+            border-top: 2px solid #000000;
+        }
+
+        table.greyGridTable tfoot td {
+            font-size: 14px;
+        }
+
+        .alingLeft {
+            text-align: left;
+        }
+
+        .alingRight {
+            text-align: right;
+        }
+    </style><?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/facturas/pdf.blade.php ENDPATH**/ ?>

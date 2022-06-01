@@ -43,12 +43,12 @@
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
                             <div class="input-group" style="width: 545px;">
-                                <input type="text" class="form-control font-frank-book"
-                                    placeholder="Ingrese su C.I o NIT" name="buscarpor"
-                                    style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
+                                <input class="form-control font-frank-book"   name="somename"
+                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                type = "number" maxlength="13" minlength="5" placeholder="Ingrese su C.I o NIT" name="buscarpor"
+                                style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"
-                                        style="border: 1px #093070 solid; font-size: 1.3rem;width:100px">
+                                    <button class="btn btn-default" type="submit" style="border: 1px #093070 solid; font-size: 1.3rem;width:100px">
                                         <i class="fa fa-search"></i> Buscar</button>
                                 </span>
                             </div>
@@ -68,7 +68,7 @@
                                 <div class="form-group pull-right top_search">
                                     <div class="input-group">
                                         <input type="hidden" class="form-control font-frank-book"
-                                            placeholder="Ingrese su C.I o NIT" name="buscarpor" value=" "
+                                            placeholder="Ingrese su C.I o NIT" name="buscarpor" value=" " 
                                             style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
                                         <button class="btn btn-danger btn-lg" type="submit">
                                             <i class="fa fa-times-circle"></i> Limpiar
@@ -133,4 +133,16 @@
         text-align: center;
     }
 </style>
+<script>
+    $(document).ready(function() {
+        function disableBack() {
+            window.history.forward()
+        }
+        window.onload = disableBack();
+        window.onpageshow = function(e) {
+            if (e.persisted)
+                disableBack();
+        }
+    });
+</script>
 @endsection

@@ -54,7 +54,7 @@
 							</ul>
 						</li>
                         <li class="has-dropdown">
-							<a href="/consultasDigitales">Facturas</a>
+							<a href="/consultasDigitales" target="_blank">Facturas</a>
                             
 						</li>
 						<li class="has-dropdown pull-left">
