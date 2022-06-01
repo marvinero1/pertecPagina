@@ -20,6 +20,7 @@
         "php": "^7.3|^8.0",
         "albertcht/invisible-recaptcha": "^1.9",
         "arcanedev/log-viewer": "^9.0",
+        "barryvdh/laravel-dompdf": "^1.0",
         "creativeorange/gravatar": "^1.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.2",
         "elgibor-solution/laravel-database-encryption": "^1.1",

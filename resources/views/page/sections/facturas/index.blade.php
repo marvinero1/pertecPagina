@@ -22,9 +22,6 @@
     </div>
 </section>
 
-
-
-
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
     <div class="content section-content">
         <div class="row">
@@ -36,6 +33,7 @@
                             <h2>Mis Facturas</h2>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="row">
@@ -56,105 +54,87 @@
                     </div>
                 </div>
             @else
-            <div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="heading heading-4">
-					<div class="heading-right">
-						<p class="mb-0">Verificar Facturas</p>
-						<h2>Mis Facturas</h2>
-					</div>
-				</div>
-			</div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
-                <div class="product-content">
-                    <div class="product-tabs mb-50">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active">
-                                <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
-                                    Facturas
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="details">
-                                <table class="table table-striped table-respon">
-                                    <tbody>
-                                        <thead>
-                                            <th>Código de Factura</th>
-                                            <th> </th>
-                                            <th> </th>
-                                            <th> </th>
-                                            <th> </th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>a</td>
-                                                <td>b</td>
-                                                <td>c</td>
-                                                <td>d</td>
-                                                <td>e</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>2</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                            </tr>
-                                            <tr>
-                                                <td>α</td>
-                                                <td>β</td>
-                                                <td>γ</td>
-                                                <td>δ</td>
-                                                <td>ε</td>
-                                            </tr>
-                                        </tbody>
-
-                                    </tbody>
-                                </table>
-                            </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="heading heading-4">
+                        <div class="heading-right">
+                            <p class="mb-0">Verificar Facturas</p>
+                            <h2>Mis Facturas</h2>
+                            <div style="float: right;">
+                                <form
+                                    style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
+                                    <div class="form-group pull-right top_search">
+                                        <div class="input-group">
+                                            <input type="hidden" class="form-control font-frank-book" placeholder="Ingrese su C.I o NIT" name="buscarpor"
+                                                value=" "
+                                                style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
+                                            <button class="btn btn-danger btn-lg" type="submit">
+                                                <i class="fa fa-times-circle"></i> Limpiar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                            </div><br>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+                    <div class="product-content">
+                        <div class="product-tabs mb-50">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
+                                        Facturas
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="details">
+                                    <table class="table table-striped table-respon">
+                                        <tbody>
+                                            <thead>
+                                                <th>Código de Factura</th>
+                                                <th>Lugar Fecha</th>
+                                                <th>Nom/Razon Social</th>
+                                                <th>Acciones</th>
+                                            </thead>
+                                            <tbody> 
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>
+                                                        <a href="{{ route('facturaVista') }}" style="color: black">
+                                                            <button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button>
+                                                        </a>    
+                                                    </td>
+                                                    
+                                                </tr>
+                                            </tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+
+                {{-- <div style="float: right;">
+                    <a class="btn btn-success btn-lg" type="button" href="/viewPDF">
+                        Ver PDF &nbsp;<i class="fa fa-eye"></i>
+                    </a> 
+                    <a class="btn btn-warning btn-lg" type="button" href="/viewPDF">
+                        Descarga PDF &nbsp;<i class="fa fa-download"></i>
+                    </a>
+                </div>  --}}
             @endif
-            
-
-
-            {{-- <div class="widget widget-download">
-                <div class="widget-content">
-                    <div class="download download-pdf btn-dowload" style="float: right;">
-                        <a href="#">
-                            <div class="download-desc">
-                                <div class="download-desc-icon">
-                                    <img src="assets/images/sidebar/1.png" alt="icon"/>
-                                </div>
-                                <h4>Download.pdf</h4>
-                            </div>
-                            <div class="download-icon">
-                                <i class="fa fa-download"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- .download-pdf end -->
-
-                    <div class="download download-doc btn-dowload">
-                        <a href="#">
-                            <div class="download-desc">
-                                <div class="download-desc-icon">
-                                    <img src="assets/images/sidebar/2.png" alt="icon"/>
-                                </div>
-                                <h4>Download.doc</h4>
-                            </div>
-                            <div class="download-icon">
-                                <i class="fa fa-download"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- .download-doc end -->
-                </div>
-            </div> --}}
         </div>
     </div>
 </section>
+<style>
+    th,td{
+        text-align: center;
+    }
+</style>
 @endsection

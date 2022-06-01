@@ -103,6 +103,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('showTienda/{id}', 'Admin\TiendaController@showTienda')->name('tiendasPertec');
     Route::get('ofinasPertec', 'Admin\TiendaController@showOficina')->name('ofinasPertec');
     Route::get('consultasDigitales', 'Admin\FacturaController@index')->name('consultasDigitales');
+    // Route::get('viewPDF\{factura}', 'Admin\FacturaController@viewPDF')->name('viewPDF');
+    Route::get('viewPDF', 'Admin\FacturaController@viewPDF')->name('viewPDF');
+    Route::get('facturaVista', 'Admin\FacturaController@facturaVista')->name('facturaVista');
 
 /**
 * Membership

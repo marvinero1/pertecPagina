@@ -1,0 +1,1 @@
+<h1>HOLA LOLA</h1> <?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/facturas/pdf.blade.php ENDPATH**/ ?>

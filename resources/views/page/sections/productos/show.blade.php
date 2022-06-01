@@ -1,8 +1,6 @@
 @extends('page.layouts.main')
 
 @section('content')
-{{-- tu variable para es $producto_Id --}}
-
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/producBackground.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -25,11 +23,7 @@
             </div>
         </div>
     </div>
-
 </section>
-
-
-
 
 <section class="shop" style="padding-bottom: 0px;">
     <div class="content section-content">
@@ -51,7 +45,6 @@
                         @endif
                     </div>
                 </div>
-
             </div>
             <div class="col-xs-12 col-sm-12 col-md-7 product-content">
                 <div class="product-tabs mb-50">
