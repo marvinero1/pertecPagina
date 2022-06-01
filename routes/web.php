@@ -106,7 +106,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Route::get('viewPDF\{factura}', 'Admin\FacturaController@viewPDF')->name('viewPDF');
     Route::get('viewPDF', 'Admin\FacturaController@viewPDF')->name('viewPDF');
     Route::get('facturaVista', 'Admin\FacturaController@facturaVista')->name('facturaVista');
-    Route::get('verPDFprueba', 'Admin\FacturaController@facturaVista')->name('verPDFprueba');
+    Route::get('verPDFprueba', 'Admin\FacturaController@verPDFprueba')->name('verPDFprueba');
 
 
 /**
