@@ -768,7 +768,6 @@
             cookieContent.hide(500);
         });
     });
-
 </script>
 <?php $__env->stopSection(); ?>
 

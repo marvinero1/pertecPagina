@@ -782,6 +782,5 @@
             cookieContent.hide(500);
         });
     });
-
 </script>
 @endsection
