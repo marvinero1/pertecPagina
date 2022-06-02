@@ -1,6 +1,4 @@
 <div class="container p-1">
-
-
     <table class="minimalistBlack alineacion">
         <tbody>
             <tr>
@@ -59,7 +57,6 @@
                 <td>8021631019</td>
             </tr>
 
-
             <tr>
                 <td><b>Nom/Razon Social : </b></td>
                 <td colspan="2">ALVARO BENJAMIN MERINO VELARDE</td>
@@ -68,9 +65,6 @@
             </tr>
         </tbody>
     </table>
-
-
-
 
     <table class="greyGridTable">
         <thead>
@@ -168,7 +162,6 @@
                 <td class="font-frank-book" style="padding: 0px 0px;">4,740.00</td>
             </tr>
         </tfoot>
-
     </table>
 
 
@@ -202,8 +195,6 @@
             </tr>
         </tbody>
     </table>
-
-
 </div>
 <style>
     .alineacion p {
@@ -282,13 +273,6 @@
 
 
 
-
-
-
-
-
-
-
     table.minimalistBlack {
         width: 100%;
         text-align: left;
@@ -302,6 +286,4 @@
     table.minimalistBlack tfoot td {
         font-size: 14px;
     }
-
-
 </style>

@@ -42,7 +42,7 @@
                     <form
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
-                            <div class="input-group" style="width: 545px;">
+                            <div class="input-group" style="width: 420px;">
                                 <input class="form-control font-frank-book"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 type = "text" maxlength="13" minlength="5" placeholder="Ingrese su C.I o NIT" name="buscarpor"

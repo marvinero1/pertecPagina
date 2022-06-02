@@ -40,7 +40,7 @@
 									<a href="/nov_products">Novedades <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
 								</li>
                                 <li>
-									<a href="/contactanos">Cotización <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
+									<a href="/cotizacion">Cotización <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
 								</li>
 							</ul>
 						</li>

@@ -18,10 +18,9 @@ Route::middleware(['auth'] )->group(function () {
     Route::get('invoices', 'HomeController@getInvoices')->name('invoices');
     Route::get('mis_pedidos', 'HomeController@getPedidos')->name('mis_pedidos');
     Route::put('changeMatrix/{id}', 'Admin\ProductoController@changeMatrix')->name('changeMatrix');
-
-
 });
-    Route::post('sendemail', 'HomeController@sendemail')->name('sendemail');
+
+Route::post('sendemail', 'HomeController@sendemail')->name('sendemail');
 
 Route::group(['namespace' => 'Auth'], function () {
 
@@ -43,7 +42,7 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('password/reset', 'ResetPasswordController@reset');
 
     // Confirmation Routes...
-    if (config('auth.users.confirm_email')) {
+    if (config('auth.users.confirm_email')){
         Route::get('confirm/{user_by_code}', 'ConfirmController@confirm')->name('confirm');
         Route::get('confirm/resend/{user_by_email}', 'ConfirmController@sendEmail')->name('confirm.send');
     }
@@ -108,8 +107,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('viewPDF', 'Admin\FacturaController@viewPDF')->name('viewPDF');
     Route::get('facturaVista', 'Admin\FacturaController@facturaVista')->name('facturaVista');
     Route::get('verPDFprueba', 'Admin\FacturaController@verPDFprueba')->name('verPDFprueba');
-
-
+    
 /**
 * Membership
 */
@@ -118,6 +116,4 @@ Route::group(['as' => 'protection.'], function () {
     Route::get('membership', 'MembershipController@index')->name('membership')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('membership/access-denied', 'MembershipController@failed')->name('membership.failed');
     Route::get('membership/clear-cache/', 'MembershipController@clearValidationCache')->name('membership.clear_validation_cache');
-
-
 });

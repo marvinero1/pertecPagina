@@ -10317,7 +10317,7 @@ html , body{
     padding: 0 0 4px 0
 }
 .left_col {
-    background: #2832A1
+    background: #093070
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
@@ -10533,7 +10533,7 @@ body .container.body .right_col {
 .nav_title {
     width: 230px;
     float: left;
-    background: #2832A1;
+    background: #093070;
     border-radius: 0;
     height: 57px
 }
@@ -10666,7 +10666,7 @@ body .container.body .right_col {
 }
 body {
     color: #73879C;
-    background: #2832A1;
+    background: #093070;
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -11086,7 +11086,7 @@ a:focus {
 }
 footer {
     /* background: #ededed; */
-    background:#2832A1;
+    background:#093070;
     padding: 15px 20px;
     display: block
 }

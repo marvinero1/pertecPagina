@@ -59,7 +59,6 @@
             </ul>
         </div>
     </div>
-    <!-- END OF SLIDER WRAPPER -->
 </section>
 
 
@@ -119,7 +118,6 @@
 
             <div class="col-xs-12 col-sm-12 col-md-6 ">
                 <div class="panel-group accordion" id="accordion02" role="tablist" aria-multiselectable="true">
-
                     <!-- Panel 01 -->
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
@@ -250,7 +248,6 @@
                                 <!-- product #1 -->
                                 <?php $__currentLoopData = $producto2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
-
                                     <div class="product-img">
                                         <img src='http://192.168.31.242:5000/<?php echo e($productos->imagen); ?>' alt="product"
                                             style="height:250px;">
@@ -300,10 +297,8 @@
                     </a>
                 </div>
             </div>
-            <!-- .col-md-12 end -->
         </div>
     </div>
-    <!-- .container end -->
 </section>
 
 
@@ -561,7 +556,6 @@
         <button type="button" class="btn btn-success accept-cookie">¡Está bien!</button>
     </div>
 </div>
-
 
 
 <style type="text/css">
