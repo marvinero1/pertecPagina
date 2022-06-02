@@ -51,6 +51,10 @@ class HomeController extends Controller
         return view('page.sections.contactanos');
     }
 
+    public function cotizacion(){
+        return view('page.sections.cotizacion');
+    }
+
     public function getInvoices(){
         return view('page.sections.facturas');
     }

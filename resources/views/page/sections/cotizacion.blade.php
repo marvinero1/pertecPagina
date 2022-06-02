@@ -73,7 +73,7 @@
     .awithmodelh1{
             color: #000000;
             font-family: 'Franklin Gothic Demi', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             line-height: 23px;
             cursor: pointer;
         }

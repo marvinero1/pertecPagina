@@ -96,6 +96,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('/', 'HomeController@index');
     Route::get('historia', 'HomeController@historia')->name('historia');
     Route::get('contactanos', 'HomeController@contactanos')->name('contactanos');
+    Route::get('cotizacion', 'HomeController@cotizacion')->name('cotizacion');
     Route::get('productos', 'Admin\ProductoController@productsFront')->name('productos');
     Route::get('prom_products', 'Admin\ProductoController@prom_products')->name('prom_products');
     Route::get('nov_products', 'Admin\ProductoController@nov_products')->name('nov_products');

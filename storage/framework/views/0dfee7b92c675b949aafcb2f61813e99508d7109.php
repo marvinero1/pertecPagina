@@ -9,8 +9,8 @@
 			</div>
 
 			<div class="modal-body">
-                <img src="../assets/images/matrizVacia.jpg" alt="matriz" />
-                <img src="../assets/images/matrizVacia.jpg" alt="matriz" />
+                <img src="../images/productos/conversiones/pernos1.jpg" style="width: 84%; display: block; margin: auto;" alt="matriz" />
+                <img src="../images/productos/conversiones/pernos2.jpg" style="width: 55%; display: block; margin: auto;" alt="matriz" />
             </div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
