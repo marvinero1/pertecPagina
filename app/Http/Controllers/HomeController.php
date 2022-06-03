@@ -8,6 +8,8 @@ use Hashids\Hashids;
 use App\Models\Carusel;
 use App\Models\Producto;
 use App\Models\Tienda;
+use App\Models\ModalPopup;
+
 class HomeController extends Controller
 {
     /**
@@ -37,10 +39,11 @@ class HomeController extends Controller
         $tiendaLPZ = Tienda::where('ciudad','La Paz')->get();
         $tiendaCBBA = Tienda::where('ciudad','Cochabamba')->get();
         $tiendaSTCZ = Tienda::where('ciudad','Santa Cruz')->get();
+        $modalPopup = ModalPopup::all();
 
         return view('index', ['hash' => $hash, 'carusel' => $carusel, 'producto' => $producto, 'producto2' => $producto2,
-        'tienda' => $tienda, 'tiendaLPZ'=>$tiendaLPZ, 'tiendaCBBA'=>$tiendaCBBA, 'tiendaSTCZ'=>$tiendaSTCZ,
-        'oficinas'=>$oficinas]);
+                    'tienda' => $tienda, 'tiendaLPZ'=>$tiendaLPZ, 'tiendaCBBA'=>$tiendaCBBA, 'tiendaSTCZ'=>$tiendaSTCZ,
+                    'oficinas'=>$oficinas,'modalPopup'=>$modalPopup]);
     }
 
     public function historia(){

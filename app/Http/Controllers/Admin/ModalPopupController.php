@@ -9,16 +9,17 @@ use Illuminate\Support\Facades\Validator;
 use DB;
 use Image;
 use Session;
+class ModalPopupController extends Controller{
 
-class ModalPopupController extends Controller
-{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index(){
-        return view('admin.pop-up.index');
+        $modalPopup = ModalPopup::all();
+        return view('admin.pop-up.index', ['modalPopup'=>$modalPopup]);
     }
 
     /**
@@ -26,8 +27,7 @@ class ModalPopupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         //
     }
 
@@ -38,7 +38,6 @@ class ModalPopupController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-
         $requestData = $request->all();
 
         $validator = Validator::make($requestData,[
@@ -90,9 +89,8 @@ class ModalPopupController extends Controller
      * @param  \App\Models\ModalPopup  $modalPopup
      * @return \Illuminate\Http\Response
      */
-    public function show(ModalPopup $modalPopup)
-    {
-        //
+    public function show(ModalPopup $modalPopup){
+        
     }
 
     /**
@@ -101,8 +99,7 @@ class ModalPopupController extends Controller
      * @param  \App\Models\ModalPopup  $modalPopup
      * @return \Illuminate\Http\Response
      */
-    public function edit(ModalPopup $modalPopup)
-    {
+    public function edit(ModalPopup $modalPopup){
         //
     }
 
@@ -113,8 +110,7 @@ class ModalPopupController extends Controller
      * @param  \App\Models\ModalPopup  $modalPopup
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ModalPopup $modalPopup)
-    {
+    public function update(Request $request, ModalPopup $modalPopup){
         //
     }
 
@@ -124,8 +120,11 @@ class ModalPopupController extends Controller
      * @param  \App\Models\ModalPopup  $modalPopup
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ModalPopup $modalPopup)
-    {
-        //
+    public function destroy($id){
+        $modalPopup = ModalPopup::findOrFail($id);
+        $modalPopup->delete();
+
+        Session::flash('danger','ModalPopup Eliminado Exitosamente!');
+        return back()->withInput();
     }
 }

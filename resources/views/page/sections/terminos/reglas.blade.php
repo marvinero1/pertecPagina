@@ -11,7 +11,7 @@
             <div class="modal-body">
                 <h2 style="text-align: center;"><strong>Politica de Reglas de Contenido</strong></h2>
 
-                <h5><strong>XII. PROHIBICIÓN GENERAL </strong></h5>
+                <h5><strong>XI. PROHIBICIÓN GENERAL </strong></h5>
                 <p>Al acceder a y utilizar el Sitio Web, el Usuario se compromete a NO: <br>
                     <br> <strong>(a)</strong> Incumplir todas las leyes, reglamentos y normas aplicables a nivel local,
                     estatal, provincial,
@@ -62,7 +62,7 @@
                     su empresa.
                 </p>
 
-                <h5><strong>XIII. CUENTA Y CONTRASEÑA </strong></h5>
+                <h5><strong>XII. CUENTA Y CONTRASEÑA </strong></h5>
                 <p>&nbsp;Cuando el Usuario utiliza el Sitio Web, puede optar por abrir una cuenta en el Sitio. En ese caso, el
                     Usuario debe de esperar que el sistema lo de de alta para poder ingresar el sistema siendo verificado
                     por los administradores de la pagina para su posterior uso.
@@ -72,7 +72,7 @@
                     cualquier vulneración de las medidas de seguridad.
                 </p>
 
-                <h5><strong>XIV. LEY APLICABLE</strong></h5>
+                <h5><strong>XIII. LEY APLICABLE</strong></h5>
                 <p>&nbsp;Estos términos y condiciones se rigen e interpretan de acuerdo con las leyes globales y usted se
                     somete irrevocablemente a la jurisdicción exclusiva de los tribunales en ese estado o
                     ubicación.</p>

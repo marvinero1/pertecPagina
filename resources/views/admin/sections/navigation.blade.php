@@ -47,7 +47,7 @@
                         </a>
                     </li>
 
-                    <li><a><i class="fa fa-inbox"></i> Boucheres <span class="fa fa-chevron-down"></span></a>
+                    {{-- <li><a><i class="fa fa-inbox"></i> Boucheres <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li>
                                 <a href="{{ route('admin.boucher.index') }}">
@@ -62,7 +62,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
            
                     <li><a><i class="fa fa-cubes"></i> Productos <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
@@ -81,12 +81,12 @@
                         </ul>
                     </li>
 
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('admin.pedido.index') }}">
                             <i class="fa fa-list" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_11') }}
                         </a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="{{ route('admin.tienda.index') }}">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>

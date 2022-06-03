@@ -557,6 +557,33 @@
     </div>
 </div>
 
+<input type="checkbox" id="cerrar">
+<label for="cerrar" id="btn-cerrar" style="text-align: center !important; z-index: 1000;">X</label>
+
+<div class="modalPopUp">
+    <div class="contenido"><br>
+        <h2>Promociones</h2><br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 product-item">
+                <div class="product-cart">
+                    <?php $__currentLoopData = $modalPopup; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $modalPopups): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <img src="/<?php echo e($modalPopups->imagen); ?>" alt="<?php echo e($modalPopups->descripcion); ?>"
+                        width="75%" style="display: block;margin: auto;">
+                        <div style="padding: 25px;">
+                            <h3><?php echo e($modalPopups->descripcion); ?></h3>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> <br>
+                    <div style="padding: 10px;">
+                        <button type="button" class="btn btn-lg btn-block btn-popUp" href="/prom_products">
+                            Productos en Promoción
+                        </button>    
+                    </div>
+                </div>
+            </div>                    
+
+        </div>
+    </div>
+</div>
 
 <style type="text/css">
     .awithmodelh1{
@@ -565,6 +592,14 @@
         font-size: 1.6rem;
         line-height: 23px;
         cursor: pointer;
+    }
+    .product-item {
+        text-align: center;
+        margin-bottom: 40px !important;
+    }
+    .spaceText p {
+        margin-bottom: 0.5rem;
+        text-align: center;
     }
     .h1s {
         font-size: 2.4rem;
@@ -634,8 +669,8 @@
     }
     .contenido {
         margin: auto;
-        width: 40%;
-        height: 40%;
+        width: auto;
+        height: auto;
         background: white;
         border-radius: 10px;
     }
@@ -652,10 +687,9 @@
         width: 40px;
         line-height: 40px;
         border-radius: 50%;
-        right: 150px;
-        top: 150px;
+        right: 21px;
+        top: 132px;
         cursor: pointer;
-
         animation: modal 2s 2s forwards;
         visibility: hidden;
         opacity: 0;
