@@ -75,6 +75,7 @@ return array(
     'App\\Models\\Boucher' => $baseDir . '/app/Models/Boucher.php',
     'App\\Models\\Carusel' => $baseDir . '/app/Models/Carusel.php',
     'App\\Models\\Factura' => $baseDir . '/app/Models/Factura.php',
+    'App\\Models\\ModalPopup' => $baseDir . '/app/Models/ModalPopup.php',
     'App\\Models\\Pedido' => $baseDir . '/app/Models/Pedido.php',
     'App\\Models\\Producto' => $baseDir . '/app/Models/Producto.php',
     'App\\Models\\Protection\\ProtectionShopToken' => $baseDir . '/app/Models/Protection/ProtectionShopToken.php',

@@ -15,6 +15,7 @@
         </script>
         
         <?php echo e(Html::style(mix('assets/app/css/app.css'))); ?> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         
         <?php echo $__env->yieldContent('styles'); ?>
@@ -25,7 +26,7 @@
                 
     </head>
     
-    <body class="<?php echo $__env->yieldContent('body_class'); ?>">
+    <body class="<?php echo $__env->yieldContent('body_class'); ?>"> 
         
         <?php echo $__env->yieldContent('page'); ?>
 

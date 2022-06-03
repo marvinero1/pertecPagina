@@ -3,77 +3,77 @@
         <!-- para poner tamaño de modal por bootstrap (modal-lg o modal-sm)-->
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Terminos y Condiciones</h4>
+                <h4 class="modal-title text-center">Terminos y Condiciones</h4>
                 <button type="button" class="close button-modal-close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
             </div>
 
             <div class="modal-body">
                 <h2 style="text-align: center;"><strong>Términos y Condiciones de Uso</strong></h2>
-                <p>&nbsp;</p>
-                <p><strong>INFORMACIÓN RELEVANTE</strong></p>
-                <p>Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y
-                    acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros
-                    servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los
-                    Términos y Condiciones de Uso en el presente documento. Todas los productos &nbsp;que son ofrecidos
-                    por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web
-                    tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para
-                    adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos
-                    personales fidedignos y definición de una contraseña.</p>
-                <p>El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier
-                    momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros
-                    productos. www.pertec.com.bo no asume la responsabilidad en caso de que entregue dicha clave a
-                    terceros.</p>
-                <p>Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a
-                    un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y
-                    disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de
-                    existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En
-                    algunos casos puede que se requiera una verificación por medio de correo electrónico.</p>
-                <p>Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras
-                    realizadas en este sitio web.</p>
-                <p><strong>LICENCIA</strong></p>
-                <p>Pertec S.R.L&nbsp; a través de su sitio web concede una licencia para que los usuarios utilicen&nbsp;
-                    los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se
-                    describen en este documento.</p>
-                <p><strong>USO NO AUTORIZADO</strong></p>
-                <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación)
-                    usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o
-                    ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.</p>
-                <p><strong>PROPIEDAD</strong></p>
+                <h5><strong>INFORMACIÓN RELEVANTE</strong></h5>
+
+                <p>El presente contrato describe los términos y condiciones aplicables al uso del contenido, productos
+                    y/o servicios del sistema web <a href="https://www.pertec.com.bo">https://www.pertec.com.bo.</a>  del cual es titular
+                    <strong> PERTEC S.R.L </strong> Para hacer uso del contenido, productos y/o servicios del sitio web el usuario deberá sujetarse a los presentes
+                    términos y condiciones.
+                </p>
+
+                <h5><strong>I. OBJETO</strong></h5>
+                <p>El objeto es regular el acceso y utilización del contenido, productos y/o servicios a disposición del
+                    público en general en el dominio <a href="https://www.pertec.com.bo">https://www.pertec.com.bo.</a> 
+                    El titular se reserva el derecho de realizar cualquier tipo de modificación en el sitio web en
+                    cualquier momento y sin previo aviso, el usuario acepta dichas modificaciones.
+                    El acceso al sitio web por parte del usuario es libre y gratuito.
+                    El sitio web solo admite el acceso a personas mayores de edad y no se hace responsable por el
+                    incumplimiento de esto.
+                    El sitio web está dirigido a usuarios residentes en Boliva y cumple con la legislación establecida
+                    en dicho país, si el usuario reside en otro país y decide acceder al sitio web lo hará bajo su
+                    responsabilidad.
+                    La administración del sitio web puede ejercerse solo por la administracion de PERTEC S.R.L, es decir, 
+                    personas distintas al
+                    titular NO podran realizar cambios, ingenieria invers
+                    a, encapsulacion y re-distribucion, afectando
+                     esto los presentes términos y condiciones.</p>
+                <h5><strong>II. USUARIO</strong></h5>
+                <p>La actividad del usuario en el sitio web como publicaciones o comentarios estarán sujetos a los
+                    presentes términos y condiciones. El usuario se compromete a utilizar el contenido, productos y/o
+                    servicios de forma lícita, sin faltar a la moral o al orden público, absteniéndose de realizar
+                    cualquier acto que afecte los derechos de terceros o el funcionamiento del sitio web.
+                    El usuario se compromete a proporcionar información verídica en los formularios del sitio web.
+                    El acceso al sitio web no supone una relación entre el usuario y el titular del sitio web.
+                    El usuario manifiesta ser mayor de edad y contar con la capacidad jurídica de acatar los presentes
+                    términos y condiciones.</p>
+
+                <h5><strong>III. LICENCIA Y PROPIEDAD</strong></h5>
                 <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado
                     o sin modificar. Todos los productos son propiedad &nbsp;de los proveedores del contenido. En caso
-                    de que no se especifique lo contrario, nuestros productos se proporcionan&nbsp; sin ningún tipo de
-                    garantía, expresa o implícita. En ningún esta compañía será &nbsp;responsables de ningún daño
-                    incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u
-                    otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.</p>
-                <p><strong>POLÍTICA DE REEMBOLSO Y GARANTÍA</strong></p>
-                <p>En el caso de productos que sean&nbsp; mercancías irrevocables no-tangibles, no realizamos reembolsos
-                    después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.
-                    &nbsp;Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta
-                    regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener
-                    garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales
-                    casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya
-                    usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos
-                    de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de
-                    los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente.
-                    Esto incluye:</p>
-                <p>– De acuerdo a las especificaciones técnicas indicadas para cada producto.<br>– En condiciones
-                    ambientales acorde con las especificaciones indicadas por el fabricante.<br>– En uso específico para
-                    la función con que fue diseñado de fábrica.<br>– En condiciones de operación eléctricas acorde con
-                    las especificaciones y tolerancias indicadas.</p>
-                <p><strong>COMPROBACIÓN ANTIFRAUDE</strong></p>
+                    de que no se especifique lo contrario, nuestros productos se proporcionan&nbsp;
+                </p>
+
+                <h5><strong>IV. COMPROBACIÓN ANTIFRAUDE</strong></h5>
                 <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser
                     suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones
-                    fraudulentas.</p>
-                <p><strong>PRIVACIDAD</strong></p>
-                <p>Este www.pertec.com.bo garantiza que la información personal que usted envía cuenta con la
-                    seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los
-                    pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden
-                    judicial o requerimientos legales.</p>
-                <p>La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser
-                    seleccionada al momento de crear su cuenta.</p>
+                    fraudulentas. </p>
+
+                <h5><strong>V. ACCESO Y NAVEGACIÓN EN EL SITIO WEB</strong></h5>
+                <p>El titular no garantiza la continuidad y disponibilidad del contenido, productos y/o servicios en el
+                    sitito web, realizará acciones que fomenten el buen funcionamiento de dicho sitio web sin
+                    responsabilidad alguna.
+
+                    El titular no se responsabiliza de que el software esté libre de errores que puedan causar un daño
+                    al software y/o hardware del equipo del cual el usuario accede al sitio web. De igual forma, no se
+                    responsabiliza por los daños causados por el acceso y/o utilización del sitio web.</p>
+
                 <p>Pertec S.R.L reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
             </div>
         </div>
     </div>
+    <style>
+		p{
+			text-align: justify;
+		}
+        .modal-dialog {
+            max-width: 50% !important;
+        }
+	</style>
 </div>

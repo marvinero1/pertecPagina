@@ -89,6 +89,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('pedido', PedidoController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::resource('boucher', BoucherController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::resource('carusel', CaruselController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::resource('pop-up', ModalPopupController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+
 });
 
     // Secciones

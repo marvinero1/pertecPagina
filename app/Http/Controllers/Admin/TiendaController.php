@@ -171,7 +171,7 @@ class TiendaController extends Controller{
             'nombre_tienda' => 'required|max:191',
             'telefono' => 'required|max:191',
             'celular' => 'required|max:191',
-            'imagen' => 'nullable',
+            'imagen' => 'nullable|mimes:jpeg,png,tif|max:10000',
             'whatsapp' => 'nullable',
             'direccion' => 'nullable',
             'ciudad' => 'nullable',

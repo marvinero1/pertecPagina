@@ -95,7 +95,7 @@ class ProductoController extends Controller
             'denominacion' => 'required|max:191',
             'categoria' => 'required|max:191',
             'inox' => 'required|max:191',
-            'imagen' => 'required|max:10500',
+            'imagen' => 'required|mimes:jpeg,png,tif|max:10500',
             'imagen_matriz' => 'nullable',
             'material' => 'nullable',
             'acabado' => 'nullable',

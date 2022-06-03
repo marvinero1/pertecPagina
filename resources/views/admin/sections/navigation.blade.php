@@ -35,6 +35,12 @@
                 <h3>{{ __('views.backend.section.navigation.sub_header_1') }}</h3>
                 <ul class="nav side-menu">
                     <li>
+                        <a href="{{ route('admin.pop-up.index') }}">
+                            <i class="fa fa-wpexplorer" aria-hidden="true"></i>
+                            {{ __('views.backend.section.navigation.menu_1_14') }}
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.carusel.index') }}">
                             <i class="fa fa-picture-o" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_13') }}

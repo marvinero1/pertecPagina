@@ -9,23 +9,19 @@
         </div><br>
 
         @if (Session::has('message'))
-        <div class="alert alert-info">{{ Session::get('message') }}
-        </div>
+        <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
 
         @if (Session::has('danger'))
-        <div class="alert alert-danger">{{ Session::get('danger') }}
-        </div>
+            <div class="alert alert-danger">{{ Session::get('danger') }}</div>
         @endif
         
         @if (Session::has('promocion'))
-        <div class="alert alert-warning">{{ Session::get('promocion') }}
-        </div>
+            <div class="alert alert-warning">{{ Session::get('promocion') }}</div>
         @endif
 
         @if (Session::has('novedad'))
-        <div class="alert alert-success">{{ Session::get('novedad') }}
-        </div>
+            <div class="alert alert-success">{{ Session::get('novedad') }} </div>
         @endif
         <div class="row"><br>
             <div class="col-xs-5">

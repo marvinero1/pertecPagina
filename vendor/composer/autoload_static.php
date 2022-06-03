@@ -751,6 +751,7 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'App\\Models\\Boucher' => __DIR__ . '/../..' . '/app/Models/Boucher.php',
         'App\\Models\\Carusel' => __DIR__ . '/../..' . '/app/Models/Carusel.php',
         'App\\Models\\Factura' => __DIR__ . '/../..' . '/app/Models/Factura.php',
+        'App\\Models\\ModalPopup' => __DIR__ . '/../..' . '/app/Models/ModalPopup.php',
         'App\\Models\\Pedido' => __DIR__ . '/../..' . '/app/Models/Pedido.php',
         'App\\Models\\Producto' => __DIR__ . '/../..' . '/app/Models/Producto.php',
         'App\\Models\\Protection\\ProtectionShopToken' => __DIR__ . '/../..' . '/app/Models/Protection/ProtectionShopToken.php',
