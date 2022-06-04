@@ -1,7 +1,6 @@
 
 
 <?php $__env->startSection('content'); ?>
-<!-- carrusel -->
 <section id="hero" class="hero hero-4">
     <!-- START REVOLUTION SLIDER 5.0 -->
     <div class="rev_slider_wrapper ">

@@ -1,9 +1,6 @@
 @extends('page.layouts.main')
 
 @section('content')
-{{-- tu variable para el for es $producto --}}
-
-
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/fuego.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -24,7 +21,6 @@
         </div>
     </div>
 </section>
-
 
 <section class="shop pb-100">
     <div class="content section-content">
@@ -48,7 +44,7 @@
                                 <input type="text" class="form-control font-frank-book" placeholder="Buscar por Nombre de Producto" name="buscarpor"
                                     style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" style="border: 1px #093070 solid; font-size: 1.3rem;">
+                                    <button class="btn btn-default" type="submit" style="border: 1px #093070 solid; font-size: 1.3rem;">
                                         <i class="fa fa-search"></i> Buscar</button>
                                 </span>
                             </div>
@@ -59,37 +55,34 @@
 
                 <div class="row lightgallery1">
                     @foreach ($producto as $bproducto)
-                    <div class="col-xs-12 col-sm-4 col-md-3 product-item  clearfix item">
-                        <div class="infProd" style="background-color: #FBD800;">
-                            EN OFERTA
-                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-3 product-item  clearfix item">
+                            <div class="infProd" style="background-color: #FBD800;">
+                                EN OFERTA
+                            </div>
 
-                        <div class="product-img" style="z-index: 10;">
-                            <img src='http://192.168.31.240:5000/{{ $bproducto["imagen"] }}' alt="product"
-                                style="height:300px;">
-                            <div class="product-hover">
-                                <div class="product-cart">
-                                    <a class="btn btn-secondary btn-block a-card"
-                                    href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">
-                                        Detalles
-                                    </a>
+                            <div class="product-img" style="z-index: 10;">
+                                <img src='http://192.168.31.240:5000/{{ $bproducto["imagen"] }}' alt="product"
+                                    style="height:300px;">
+                                <div class="product-hover">
+                                    <div class="product-cart">
+                                        <a class="btn btn-secondary btn-block a-card"
+                                            href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">
+                                            Detalles
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
+                            <div style="height: 50px;">
+                                <h4>
+                                    <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">{{ $bproducto["nombre_producto"] }}</a>
+                                </h4>
+                                <h5 class="body-details" style="font-weight: 100;">{{ $bproducto["descripcion_promocion"] }}</h5>
+                            </div>
                         </div>
-                        <div style="height: 50px;">
-                            <h4>
-                                <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">{{ $bproducto["nombre_producto"] }}</a>
-                            </h4>
-                            <h5 class="body-details" style="font-weight: 100;">{{ $bproducto["descripcion_promocion"] }}</h5>
-                        </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
-
 @endsection

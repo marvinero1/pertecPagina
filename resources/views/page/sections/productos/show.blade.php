@@ -57,46 +57,66 @@
                         <div role="tabpanel" class="tab-pane active" id="details">
                             <table class="table table-striped">
                                 <tbody>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Denominación</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->denominacion }}</h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Categoría</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->categoria }}</h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Material</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->material }}</h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Acabado</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->acabado }}</h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Rosca</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->rosca }}</h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Resistencia</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->resistencia }}</h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Tratamiento</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->tratamiento }}</h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>SAE</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->sae }}</h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>ZB</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->zb }}</h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>ZAM</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->zam }}</h5></td>
-                                    </tr>
+                                    @if (!is_null($producto_Id->denominacion))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Denominación</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->denominacion }}</h5></td>
+                                        </tr>   
+                                    @endif
+                                    @if (!is_null($producto_Id->categoria))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Categoría</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->categoria }}</h5></td>
+                                        </tr>
+                                    @endif
+                                    @if(!is_null($producto_Id->material))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Material</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->material }}</h5></td>
+                                        </tr>
+                                    @endif
+                                    @if(!is_null($producto_Id->acabado))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Acabado</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->acabado }}</h5></td>
+                                        </tr>
+                                    @endif
+                                    @if(!is_null($producto_Id->rosca))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Rosca</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->rosca }}</h5></td>
+                                        </tr>
+                                    @endif
+                                    @if(!is_null($producto_Id->resistencia))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Resistencia</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->resistencia }}</h5></td>
+                                        </tr>
+                                    @endif
+                                    @if(!is_null($producto_Id->tratamiento))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Tratamiento</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->tratamiento }}</h5></td>
+                                        </tr>
+                                    @endif
+                                    @if(!is_null($producto_Id->sae))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>SAE</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->sae }}</h5></td>
+                                        </tr>
+                                    @endif
+                                    @if(!is_null($producto_Id->zb))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>ZB</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->zb }}</h5></td>
+                                        </tr>
+                                    @endif
+                                    @if(!is_null($producto_Id->zam))
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>ZAM</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->zam }}</h5></td>
+                                        </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

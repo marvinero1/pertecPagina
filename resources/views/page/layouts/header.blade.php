@@ -40,7 +40,7 @@
 									<a href="/nov_products">Novedades <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
 								</li>
                                 <li>
-									<a href="/cotizacion">Cotización <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
+									<a href="/contactanos">Cotización <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
 								</li>
 							</ul>
 						</li>
@@ -171,12 +171,12 @@
                             @endif<br><br>
 
                             <div style="text-align: center;">
-                                <button type="submit" class = "btn btn-default btn-lg btn-block bg-blue color-yellow"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                                <button type="submit" class="btn btn-default btn-lg btn-block bg-blue color-white"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
                                     Ingresar
                                 </button>
-                                <button type="button" class="btn btn-default btn-lg btn-block bg-yellow" data-toggle="modal" data-target="#myModalRegister"
+                                <button type="button" class="btn btn-default btn-lg btn-block bg-yellow color-blue" data-toggle="modal" data-target="#myModalRegister"
                                 style="word-break: normal;">
-                                    <p class="color-blue" style="margin-bottom: 0px !important">
+                                    <p class="color-blue" style="margin-bottom: 0px !important;text-align: center;">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         Aún no tienes cuenta, ¡Registrate!
                                     </p>
