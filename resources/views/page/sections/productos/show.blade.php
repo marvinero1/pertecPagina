@@ -27,11 +27,11 @@
 
 <section class="shop" style="padding-bottom: 0px;">
     <div class="content section-content">
-        <h1 style="text-align: center; text-transform: uppercase;"><b>{{ $producto_Id['nombre_producto'] }}</b></h1><br>
+        <h1 style="text-align: center; text-transform: uppercase;"><b>{{ $producto_Id->nombre_producto }}</b></h1><br>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-5 shop-content">
                 <div class="product-img product-feature-img mb-50">
-                    <img src=" http://192.168.31.240:5000/{{ $producto_Id['imagen'] }}" alt="product" />
+                    <img src="/{{ $producto_Id->imagen }}" alt="{{ $producto_Id->nombre_producto }}"/>
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
                         @if(is_null($producto_Id['imagen_matriz']))
                             <img src="../assets/images/matrizVacia.jpg" alt="matriz Vacia" />
                         @else
-                            <img src=" http://192.168.31.240:5000/{{ $producto_Id['imagen_matriz'] }}" alt="matriz"/>
+                            <img src=" /{{ $producto_Id->imagen_matriz }}" alt="matriz"/>
                         @endif
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                                 @foreach ( $producto_sugeridos as $producto_sugeridoss )
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 product-item clearfix">
                                     <div class="product-img">
-                                        <img src="http://192.168.31.240:5000/{{ $producto_sugeridoss->imagen }}" style="height: 220px;" alt="product">
+                                        <img src="/{{ $producto_sugeridoss->imagen }}" style="height: 220px;" alt="product">
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a style="font-size: 1rem;" class="btn btn-secondary btn-block" href="{{ route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) ) }}">Detalles</a>

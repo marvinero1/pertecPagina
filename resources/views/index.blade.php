@@ -10,7 +10,7 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <!-- MAIN IMAGE -->
-                    <img src="http://192.168.31.240:5000/{{ $carusels->imagen }}" alt="">
+                    <img src="/{{ $carusels->imagen }}" alt="">
 
 
                     <!-- LAYER NR. 1 -->
@@ -22,7 +22,7 @@
                         data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                         data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                         data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                        <img src="http://192.168.31.240:5000/{{ $carusels->imagen_icono }}" alt="hook" />
+                        <img src="/{{ $carusels->imagen_icono }}" alt="hook" />
 
                     </div>
 
@@ -220,7 +220,7 @@
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
 
                                     <div class="product-img">
-                                        <img src='http://192.168.31.240:5000/{{ $productos->imagen }}' alt="product"
+                                        <img src='/{{ $productos->imagen }}' alt="product"
                                             style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
@@ -246,7 +246,7 @@
                                 @foreach ($producto2 as $productos)
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
                                     <div class="product-img">
-                                        <img src='http://192.168.31.240:5000/{{ $productos->imagen }}' alt="product"
+                                        <img src='/{{ $productos->imagen }}' alt="product"
                                             style="height:250px;">
                                         <div class="product-hover">
                                             <div class="product-cart">
@@ -333,7 +333,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-4 entry">
                     <div class="entry-img">
                         <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($item->id)) }}">
-                            <img src="http://192.168.31.240:5000/{{ $item->imagen }}" alt="title" />
+                            <img src="/{{ $item->imagen }}" alt="title" />
                         </a>
                     </div><br>
                     <div class="entry-title">
@@ -371,7 +371,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tcb->id)) }}">
-                        <img src="http://192.168.31.240:5000/{{ $tcb->imagen }}" alt="title" />
+                        <img src="/{{ $tcb->imagen }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -412,7 +412,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry" style="float: right;">
                 <div class="entry-img">
                     <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tlz->id)) }}">
-                        <img src="http://192.168.31.240:5000/{{ $tlz->imagen }}" alt="title" />
+                        <img src="/{{ $tlz->imagen }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">
@@ -453,7 +453,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 entry">
                 <div class="entry-img">
                     <a class="img-popup" href="{{ route('tiendasPertec', $hash->encodeHex($tsz->id)) }}">
-                        <img src="http://192.168.31.240:5000/{{ $tsz->imagen }}" alt="title" />
+                        <img src="/{{ $tsz->imagen }}" alt="title" />
                     </a>
                 </div><br>
                 <div class="entry-title">

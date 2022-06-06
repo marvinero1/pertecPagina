@@ -64,7 +64,7 @@
                             NUEVO
                         </div>
                         <div class="product-img">
-                            <img src='http://192.168.31.240:5000/{{ $bproducto["imagen"] }}' alt="product"
+                            <img src='/{{ $bproducto["imagen"] }}' alt="product"
                                 style="height:300px;">
                             <div class="product-hover">
                                 <div class="product-cart">

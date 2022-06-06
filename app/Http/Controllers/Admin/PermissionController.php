@@ -13,8 +13,7 @@ class PermissionController
         return view('admin.permissions', ['users' => $users]);
     }
 
-    public function repeat(User $user, Request $request)
-    {
+    public function repeat(User $user, Request $request){
         $protectionValidation = protection_validate($user);
 
         if ($request->expectsJson()) return response($protectionValidation->toArray());

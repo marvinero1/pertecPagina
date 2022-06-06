@@ -96,7 +96,7 @@
                                 </div>
                                 @endif
                                 <div class="product-img" >
-                                    <img src="http://192.168.31.240:5000/{{ $bproducto->imagen }}" alt="product" style="height:250px;">
+                                    <img src="/{{ $bproducto->imagen }}" alt="product" style="height:250px;">
                                     <div class="product-hover">
                                         <div class="product-cart">
                                             <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}" class="btn btn-secondary btn-block a-card">Detalles</a>
