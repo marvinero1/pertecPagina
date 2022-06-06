@@ -37,11 +37,11 @@
 
             <div class="col-xs-12 col-sm-12 col-md-7 sidebar sidebar-full">
                 <div class="row">
-                    <div class="product-img product-feature-img mb-50">
+                    <div class="product-img product-feature-img mb-50" style="text-align: center;">
                         @if(is_null($producto_Id['imagen_matriz']))
                             <img src="../assets/images/matrizVacia.jpg" alt="matriz Vacia" />
                         @else
-                            <img src=" http://192.168.31.240:5000/{{ $producto_Id['imagen_matriz'] }}" alt="matriz" />
+                            <img src=" http://192.168.31.240:5000/{{ $producto_Id['imagen_matriz'] }}" alt="matriz"/>
                         @endif
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                                         <tr style="text-transform: uppercase;" class="table-prod-inf">
                                             <td class="title-details"><h4>Denominación</h4></td>
                                             <td class="body-details"><h5 class="font-frank-medium">{{ $producto_Id->denominacion }}</h5></td>
-                                        </tr>   
+                                        </tr>
                                     @endif
                                     @if (!is_null($producto_Id->categoria))
                                         <tr style="text-transform: uppercase;" class="table-prod-inf">
@@ -143,11 +143,11 @@
                                         <img src="http://192.168.31.240:5000/{{ $producto_sugeridoss->imagen }}" style="height: 220px;" alt="product">
                                         <div class="product-hover">
                                             <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="{{ route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) ) }}">Detalles</a>
+                                                <a style="font-size: 1rem;" class="btn btn-secondary btn-block" href="{{ route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) ) }}">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-bio">
+                                    <div style="height: 50px;">
                                         <h4>
                                             <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) ) }}">{{ $producto_sugeridoss["nombre_producto"] }}</a>
                                         </h4>

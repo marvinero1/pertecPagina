@@ -9,27 +9,19 @@
         </div><br>
 
         <?php if(Session::has('message')): ?>
-        <div class="alert alert-info"><?php echo e(Session::get('message')); ?>
-
-        </div>
+        <div class="alert alert-info"><?php echo e(Session::get('message')); ?></div>
         <?php endif; ?>
 
         <?php if(Session::has('danger')): ?>
-        <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?>
-
-        </div>
+            <div class="alert alert-danger"><?php echo e(Session::get('danger')); ?></div>
         <?php endif; ?>
         
         <?php if(Session::has('promocion')): ?>
-        <div class="alert alert-warning"><?php echo e(Session::get('promocion')); ?>
-
-        </div>
+            <div class="alert alert-warning"><?php echo e(Session::get('promocion')); ?></div>
         <?php endif; ?>
 
         <?php if(Session::has('novedad')): ?>
-        <div class="alert alert-success"><?php echo e(Session::get('novedad')); ?>
-
-        </div>
+            <div class="alert alert-success"><?php echo e(Session::get('novedad')); ?> </div>
         <?php endif; ?>
         <div class="row"><br>
             <div class="col-xs-5">

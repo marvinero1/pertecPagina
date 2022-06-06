@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/producBackground.jpg);">
     <div class="bgImgCoverPages"></div>
@@ -37,11 +35,11 @@
 
             <div class="col-xs-12 col-sm-12 col-md-7 sidebar sidebar-full">
                 <div class="row">
-                    <div class="product-img product-feature-img mb-50">
+                    <div class="product-img product-feature-img mb-50" style="text-align: center;">
                         <?php if(is_null($producto_Id['imagen_matriz'])): ?>
                             <img src="../assets/images/matrizVacia.jpg" alt="matriz Vacia" />
                         <?php else: ?>
-                            <img src=" http://192.168.31.240:5000/<?php echo e($producto_Id['imagen_matriz']); ?>" alt="matriz" />
+                            <img src=" http://192.168.31.240:5000/<?php echo e($producto_Id['imagen_matriz']); ?>" alt="matriz"/>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -57,46 +55,66 @@
                         <div role="tabpanel" class="tab-pane active" id="details">
                             <table class="table table-striped">
                                 <tbody>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Denominación</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->denominacion); ?></h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Categoría</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->categoria); ?></h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Material</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->material); ?></h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Acabado</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->acabado); ?></h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Rosca</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->rosca); ?></h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Resistencia</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->resistencia); ?></h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>Tratamiento</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->tratamiento); ?></h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>SAE</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->sae); ?></h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>ZB</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->zb); ?></h5></td>
-                                    </tr>
-                                    <tr style="text-transform: uppercase;" class="table-prod-inf">
-                                        <td class="title-details"><h4>ZAM</h4></td>
-                                        <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->zam); ?></h5></td>
-                                    </tr>
+                                    <?php if(!is_null($producto_Id->denominacion)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Denominación</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->denominacion); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if(!is_null($producto_Id->categoria)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Categoría</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->categoria); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if(!is_null($producto_Id->material)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Material</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->material); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if(!is_null($producto_Id->acabado)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Acabado</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->acabado); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if(!is_null($producto_Id->rosca)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Rosca</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->rosca); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if(!is_null($producto_Id->resistencia)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Resistencia</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->resistencia); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if(!is_null($producto_Id->tratamiento)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>Tratamiento</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->tratamiento); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if(!is_null($producto_Id->sae)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>SAE</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->sae); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if(!is_null($producto_Id->zb)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>ZB</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->zb); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if(!is_null($producto_Id->zam)): ?>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details"><h4>ZAM</h4></td>
+                                            <td class="body-details"><h5 class="font-frank-medium"><?php echo e($producto_Id->zam); ?></h5></td>
+                                        </tr>
+                                    <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -123,11 +141,11 @@
                                         <img src="http://192.168.31.240:5000/<?php echo e($producto_sugeridoss->imagen); ?>" style="height: 220px;" alt="product">
                                         <div class="product-hover">
                                             <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) )); ?>">Detalles</a>
+                                                <a style="font-size: 1rem;" class="btn btn-secondary btn-block" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) )); ?>">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-bio">
+                                    <div style="height: 50px;">
                                         <h4>
                                             <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) )); ?>"><?php echo e($producto_sugeridoss["nombre_producto"]); ?></a>
                                         </h4>

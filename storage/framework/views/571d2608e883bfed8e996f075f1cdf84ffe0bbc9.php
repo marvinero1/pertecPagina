@@ -36,6 +36,13 @@
                 <h3><?php echo e(__('views.backend.section.navigation.sub_header_1')); ?></h3>
                 <ul class="nav side-menu">
                     <li>
+                        <a href="<?php echo e(route('admin.pop-up.index')); ?>">
+                            <i class="fa fa-wpexplorer" aria-hidden="true"></i>
+                            <?php echo e(__('views.backend.section.navigation.menu_1_14')); ?>
+
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?php echo e(route('admin.carusel.index')); ?>">
                             <i class="fa fa-picture-o" aria-hidden="true"></i>
                             <?php echo e(__('views.backend.section.navigation.menu_1_13')); ?>
@@ -43,24 +50,7 @@
                         </a>
                     </li>
 
-                    <li><a><i class="fa fa-inbox"></i> Boucheres <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li>
-                                <a href="<?php echo e(route('admin.boucher.index')); ?>">
-                                    <i class="fa fa-inbox" aria-hidden="true"></i>
-                                    <?php echo e(__('views.admin.bouchers_pendients.index.title')); ?>
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo e(route('admin.boucherConfirmado')); ?>">
-                                    <i class="fa fa-inbox" aria-hidden="true"></i>
-                                    <?php echo e(__('views.admin.bouchers_confirmado.index.title')); ?>
-
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    
            
                     <li><a><i class="fa fa-cubes"></i> Productos <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
@@ -82,13 +72,7 @@
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="<?php echo e(route('admin.pedido.index')); ?>">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <?php echo e(__('views.backend.section.navigation.menu_1_11')); ?>
-
-                        </a>
-                    </li>
+                    
                     <li>
                         <a href="<?php echo e(route('admin.tienda.index')); ?>">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
