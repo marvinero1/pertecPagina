@@ -94,7 +94,7 @@
                                 </div>
                                 <?php endif; ?>
                                 <div class="product-img" >
-                                    <img src="http://192.168.31.240:5000/<?php echo e($bproducto->imagen); ?>" alt="product" style="height:250px;">
+                                    <img src="/<?php echo e($bproducto->imagen); ?>" alt="product" style="height:250px;">
                                     <div class="product-hover">
                                         <div class="product-cart">
                                             <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) )); ?>" class="btn btn-secondary btn-block a-card">Detalles</a>
@@ -134,7 +134,7 @@
 </section>
 <?php echo $__env->make('page.sections.productos.modalConvrPernos', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('page.sections.productos.modalConvrArandelas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->make('page.sections.productos.modalDetalleAutomotriz', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('page.sections.productos.modalDetalles', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <style>
     .lightgallery1 .product-item {

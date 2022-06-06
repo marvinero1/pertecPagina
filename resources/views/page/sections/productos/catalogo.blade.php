@@ -135,7 +135,7 @@
 </section>
 @include('page.sections.productos.modalConvrPernos')
 @include('page.sections.productos.modalConvrArandelas')
-@include('page.sections.productos.modalDetalleAutomotriz')
+@include('page.sections.productos.modalDetalles')
 
 <style>
     .lightgallery1 .product-item {

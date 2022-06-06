@@ -42,6 +42,7 @@
                         <option value="Accesorios Sujeción Techos">Accesorios Sujeción Techos.</option>
                         <option value="Agricultura">Agricultura.</option>
                         <option value="Arandelas Planas">Arandelas Planas.</option>
+                        <option value="Automotriz">Automotriz.</option>
                         <option value="Brocas y Anclajes">Brocas y Anclajes.</option>
                         <option value="Cincados">Cincados.</option>
                         <option value="Fijación Placas de Yeso">Fijación Placas de Yeso.</option>

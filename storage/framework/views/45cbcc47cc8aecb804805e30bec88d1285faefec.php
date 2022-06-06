@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/producBackground.jpg);">
     <div class="bgImgCoverPages"></div>
@@ -25,11 +27,11 @@
 
 <section class="shop" style="padding-bottom: 0px;">
     <div class="content section-content">
-        <h1 style="text-align: center; text-transform: uppercase;"><b><?php echo e($producto_Id['nombre_producto']); ?></b></h1><br>
+        <h1 style="text-align: center; text-transform: uppercase;"><b><?php echo e($producto_Id->nombre_producto); ?></b></h1><br>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-5 shop-content">
                 <div class="product-img product-feature-img mb-50">
-                    <img src=" http://192.168.31.240:5000/<?php echo e($producto_Id['imagen']); ?>" alt="product" />
+                    <img src="/<?php echo e($producto_Id->imagen); ?>" alt="<?php echo e($producto_Id->nombre_producto); ?>"/>
                 </div>
             </div>
 
@@ -39,7 +41,7 @@
                         <?php if(is_null($producto_Id['imagen_matriz'])): ?>
                             <img src="../assets/images/matrizVacia.jpg" alt="matriz Vacia" />
                         <?php else: ?>
-                            <img src=" http://192.168.31.240:5000/<?php echo e($producto_Id['imagen_matriz']); ?>" alt="matriz"/>
+                            <img src=" /<?php echo e($producto_Id->imagen_matriz); ?>" alt="matriz"/>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -138,7 +140,7 @@
                                 <?php $__currentLoopData = $producto_sugeridos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $producto_sugeridoss): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 product-item clearfix">
                                     <div class="product-img">
-                                        <img src="http://192.168.31.240:5000/<?php echo e($producto_sugeridoss->imagen); ?>" style="height: 220px;" alt="product">
+                                        <img src="/<?php echo e($producto_sugeridoss->imagen); ?>" style="height: 220px;" alt="product">
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a style="font-size: 1rem;" class="btn btn-secondary btn-block" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) )); ?>">Detalles</a>
