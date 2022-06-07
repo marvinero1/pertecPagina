@@ -84,8 +84,6 @@
                     <input id="file-upload" type="file" name="imagen">
                 </div>
             </div>
-
-            
         </div><br><br>
 
         <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
