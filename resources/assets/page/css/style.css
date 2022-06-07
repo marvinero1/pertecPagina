@@ -8546,8 +8546,10 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
 }
 
 .product-img img {
-    width: 100%;
-    height: auto
+    width: 75%;
+    height: auto;
+    display: block;
+    margin: auto;
 }
 
 .product-content .product-title h3 {
@@ -10082,6 +10084,15 @@ footer hr {
 @media(min-width: 768px) {
     .info-footer {
         padding-left: 5% !important;
+    }
+    .cotizacion-div {
+        width: 277px;
+        height: 120px;
+        background-color: #055FAC;
+        position: relative;
+        top: -120px;
+        right: 3%;
+        float: right;
     }
 }
 

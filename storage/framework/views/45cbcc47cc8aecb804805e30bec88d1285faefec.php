@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/producBackground.jpg);">
     <div class="bgImgCoverPages"></div>
@@ -15,7 +13,7 @@
                             <a href="/">Inicio</a>
                         </li>
                         <li>
-                            <a href="/fullProducts">Productos</a>
+                            <a href="/productos">Productos</a>
                         </li>
                         <li class="active">Producto</li>
                     </ol>

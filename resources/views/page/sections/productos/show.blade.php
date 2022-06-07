@@ -15,7 +15,7 @@
                             <a href="/">Inicio</a>
                         </li>
                         <li>
-                            <a href="/fullProducts">Productos</a>
+                            <a href="/productos">Productos</a>
                         </li>
                         <li class="active">Producto</li>
                     </ol>
