@@ -60,6 +60,20 @@
     </div>
 </section>
 
+<div class="cotizacion-div">
+    <div class="widgets-contact" style="padding-top: 36px; background-color: transparent;">
+        <div class="widget widget-contact-center" style="padding-left: 5px; position: relative;">
+            <div class="pull-left">
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <strong class="text-white">|</strong>
+            </div>
+            <div class="widget-contact-info">
+                <a class="font-heading awithmodelh1" href="/contactanos">REALIZA UN PEDIDO</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- acerca de nosotros -->
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm"
@@ -746,6 +760,21 @@
         padding: 10px;
         cursor: pointer;
     }
+    .cotizacion-div a {
+        color: white;font-size: 2rem;
+    }
+    .cotizacion-div strong {
+        width: 20px; font-size: 4rem;color: #FBD800 !important;font-weight: lighter;
+    }
+    .cotizacion-div i {
+        margin-top: -15px;font-size: 4rem;color: white;
+    }
+    .cotizacion-div .pull-left {
+        position: absolute;top: 50%;left: 50%;height: 30%;width: 50%;margin: -7% 0 0px -43%;
+    }
+    .cotizacion-div .widget-contact-info {
+        position: absolute;top: 50%;left: 50%;height: 30%;width: 50%;margin: 0% 0 0px -8%;
+    }
 </style>
 
 <script>
@@ -757,7 +786,6 @@
             x.style.display = "none";
         }
     }
-
 </script>
 <script>
     $(document).ready(function () {
