@@ -27072,7 +27072,8 @@ footer hr {
 }
 
 .texto-borde {
-    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+    /* text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000; */
+    text-shadow: 0px 0px 7px #000, 0px 0px 0px #000, 0px 0px 0px #000, 0px 0px 6px #000;
 }
 
 .btn_Whats_float {
@@ -27438,7 +27439,7 @@ footer hr {
     height: 50px;
     z-index: 20;
     position: absolute;
-    right: 7%;
+    right: 17%;
     top: 3%;
     text-align: center;
     display: grid;

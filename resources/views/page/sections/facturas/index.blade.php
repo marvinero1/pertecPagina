@@ -7,7 +7,7 @@
     <div class="container" style="margin-top: -540px;">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-title title-1 text-center">
+                <div class="page-title title-1 text-center texto-borde">
                     <div><h2> Mis Facturas </h2></div>
                     <ol class="breadcrumb" style="display: unset !important;">
                         <li><a href="/">Inicio</a></li>

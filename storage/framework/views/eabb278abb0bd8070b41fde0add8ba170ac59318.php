@@ -5,14 +5,10 @@
     <div class="container" style="margin-top: -540px;">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-title title-1 text-center">
-                    <div>
-                        <h2>Mis Facturas</h2>
-                    </div>
+                <div class="page-title title-1 text-center texto-borde">
+                    <div><h2> Mis Facturas </h2></div>
                     <ol class="breadcrumb" style="display: unset !important;">
-                        <li>
-                            <a href="/">Inicio</a>
-                        </li>
+                        <li><a href="/">Inicio</a></li>
                         <li class="active">Facturas</li>
                     </ol>
                 </div>
@@ -36,11 +32,11 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6" style="float: right;">
                     <form
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
-                            <div class="input-group" style="width: 545px;">
+                            <div class="input-group" style="width: 390px;">
                                 <input class="form-control font-frank-book"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 type = "text" maxlength="13" minlength="5" placeholder="Ingrese su C.I o NIT" name="buscarpor"
@@ -126,8 +122,7 @@
     </div>
 </section>
 <style>
-    th,
-    td {
+    th,td{
         text-align: center;
     }
 </style>
