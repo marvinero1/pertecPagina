@@ -80,7 +80,7 @@
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">Cód Autorización: </h6>
                                 </div>
                                 <div class="col-md-2" style="text-align: left; padding-left: 0;">
-                                    <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;"><?php echo e($verfactura->nit); ?></h6>
+                                    <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">1023109029</h6>
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">00000<?php echo e($verfactura->codigo); ?></h6>
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;"><?php echo e($verfactura->nroautorizacion); ?></h6>
                                 </div>
@@ -93,7 +93,7 @@
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 8px; line-height: 17px;">Nom/Razon Social :</h6>
                                 </div>
                                 <div class="col-md-6" style="padding-left: 0px; margin: 0 30px 0 -30px;">
-                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;"><?php echo e($verfactura->idcuenta); ?>, <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> Hrs. <?php echo e($verfactura->horareg); ?></h6>
+                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;">SACABA, <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> Hrs. <?php echo e($verfactura->horareg); ?></h6>
                                     <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;"><?php echo e($verfactura->nomcliente); ?></h6>
                                 </div>
                                 <div class="col-md-2" style="text-align: right;">
@@ -167,21 +167,23 @@
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 8px; line-height: 17px;">
                                         ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS, EL USO ILÍCITO DE ESTA SERÁ SANCIONADO PENALMENTE DE ACUERDO A LEY.
                                     </h6>
-                                    <P class="infoFactura">
-                                        Ley N° 453: Está prohibido importar, distribuir o comercializar productos prohibidos o retirados en el
-                                        país de origen por atentar a la integridad física y a la salud.
-                                    </P>
-                                    <p class="infoFactura">
-                                        Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
-                                        modalidad de facturación en línea
-                                    </p><br>
-                                    <p class="infoFactura" style="float: right;">
-                                        Página 1 de 1 - FC311-133850
-                                    </p>
+                                    <p class="infoFactura"><?php echo e($leyendaFactura->descripcionleyenda); ?></p>
+                                    <?php if($en_linea != 0 ): ?>
+                                        <p class="infoFactura">
+                                            Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
+                                            modalidad de facturación local
+                                        </p><br>
+                                    <?php else: ?>
+                                        <p class="infoFactura">
+                                            Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
+                                            modalidad de facturación en línea
+                                        </p><br>
+                                    <?php endif; ?>
+                                    <p class="infoFactura" style="float: right;"><?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?></p>
                                 </div>
-                                <div class="col-md-4">
-                                    <br>
-                                    <img src="https://qrcode.tec-it.com/API/QRCode?data=smsto%3A555-555-5555%3AGenerador+de+Códigos+QR+de+TEC-IT" alt="qrCode" width="120px">
+                                <div class="col-md-4"><br>
+                                    <?php echo QrCode::size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'); ?>
+
                                 </div>
                             </div>
                         </div>
@@ -191,7 +193,7 @@
 
             <div style="float: right;">
                 
-                <a class="btn btn-warning btn-lg" type="button" href="/viewPDF">
+                <a class="btn btn-warning btn-lg" type="button" href="/viewPDF/<?php echo e($verfactura->numeroid); ?>">
                     Descargar PDF &nbsp;<i class="fa fa-download"></i>
                 </a>
             </div>
@@ -203,7 +205,7 @@
         font-family: Tahoma,Verdana,Segoe,sans-serif !important;
     }
     .font-frank-demi{
-        font-family: Tahoma,Verdana,Segoe,sans-serif;
+        font-family: Tahoma,Verdana,Segoe,sans-serif !important;
     }
     .alineacion p {
         line-height: 7px !important;

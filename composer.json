@@ -35,6 +35,7 @@
         "laravelcollective/html": "^6.1.0",
         "laraveles/spanish": "^1.5",
         "luecano/numero-a-letras": "^3.0",
+        "simplesoftwareio/simple-qrcode": "^4.2",
         "vinkla/hashids": "^10.0"
     },
     "require-dev": {

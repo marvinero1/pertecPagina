@@ -46,7 +46,7 @@
                                 maxlength="13">
                             </div>
                             <div class="col-md-12 col-sm-12 form-group">
-                                <input type="text" class="form-control" name="cod_cliente" placeholder="Codigo Cliente" required
+                                <input type="text" class="form-control" name="id" placeholder="Numero ID Factura Ej. FC341" required
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 maxlength="6">
                             </div><br>

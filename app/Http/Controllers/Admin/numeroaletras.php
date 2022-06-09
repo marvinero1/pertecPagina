@@ -142,15 +142,15 @@ class modelonumero  {
                case 2:
                   if($xcifra < 1)
                   {
-                     $xcadena = "CERO " ." $xdecimales/100 ".strtoupper($moneda).strtoupper($centimos);  // borrar en caso no se desee decimales /100
+                     $xcadena = "CERO " ." $xdecimales/100".strtoupper($moneda).strtoupper($centimos);  // borrar en caso no se desee decimales /100
                   }
                   if($xcifra >= 1 && $xcifra < 2)
                   {
-                     $xcadena = "UNO "." $xdecimales/100 ".strtoupper($moneda).strtoupper($centimos);   // borrar en caso no se desee decimales /100
+                     $xcadena = "UNO "."$xdecimales/100".strtoupper($moneda).strtoupper($centimos);   // borrar en caso no se desee decimales /100
                   }
                   if($xcifra >= 2)
                   {
-                     $xcadena .= " $xdecimales/100 ".strtoupper($moneda).strtoupper($centimos);  // borrar en caso no se desee decimales /100
+                     $xcadena .= "$xdecimales/100".strtoupper($moneda).strtoupper($centimos);  // borrar en caso no se desee decimales /100
                   }
                   break;
             } // endswitch ($xz)
