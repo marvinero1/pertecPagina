@@ -34,20 +34,25 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6" style="float: right;">
-                    <form
-                        style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
-                        <div class="form-group pull-right top_search">
-                            <div class="input-group" style="width: 390px;">
-                                <input class="form-control font-frank-book"
+                <div class="col-xs-6 col-sm-6 col-md-6" style="float: left;">
+                    <form action="{{route('facturaVista')}}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="row" style="border: outset;padding: 25px;">
+                            <label><strong>Ingrese los datos requeridos para visualizar sus Facturas.</strong></label><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<label><strong>Los campos (*) son obligatorios.</strong></label>
+                            <div class="col-md-12 col-sm-12 form-group">
+                                <input type="number" class="form-control" name="nit" placeholder="NIT/C.I" required
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                type = "text" maxlength="13" minlength="5" placeholder="Ingrese su C.I o NIT" name="buscarpor"
-                                style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" style="border: 1px #093070 solid; font-size: 1.3rem;width:100px">
-                                        <i class="fa fa-search"></i> Buscar</button>
-                                </span>
+                                maxlength="13">
                             </div>
+                            <div class="col-md-12 col-sm-12 form-group">
+                                <input type="text" class="form-control" name="cod_cliente" placeholder="Codigo Cliente" required
+                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                maxlength="6">
+                            </div><br>
+                            
+                            <button type="submit" class="btn btn-primary btn-block"><i class="fa fas fa-book"></i>
+                                &nbsp; Ver Facturas</button>
                         </div>
                     </form>
                 </div>
@@ -73,8 +78,8 @@
                                 </div>
                             </form>
 
-                        </div><br>
-                    </div>
+                        </div>
+                    </div><br>
                 </div>
             </div>
 
@@ -106,7 +111,7 @@
                                             <td>3</td>
                                             <td>
                                                 <a href="{{ route('facturaVista') }}" style="color: black">
-                                                    <button class="btn btn-primary"><i class="fa fa-eye"
+                                                    <button class="btn btn-primary "><i class="fa fa-eye"
                                                             aria-hidden="true"></i> Ver</button>
                                                 </a>
                                             </td>
@@ -128,7 +133,7 @@
         text-align: center;
     }
 </style>
-<script>
+{{-- <script>
     $(document).ready(function() {
         function disableBack() {
             window.history.forward()
@@ -139,5 +144,5 @@
                 disableBack();
         }
     });
-</script>
+</script> --}}
 @endsection

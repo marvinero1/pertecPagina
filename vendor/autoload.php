@@ -8,5 +8,5 @@ if (PHP_VERSION_ID < 50600) {
 }
 
 require_once __DIR__ . '/composer/autoload_real.php';
-
+use Luecano\NumeroALetras\NumeroALetras;
 return ComposerAutoloaderInit01d7c883fbe4f9ea8f3ce3fc4bc1280f::getLoader();

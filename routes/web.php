@@ -107,8 +107,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('consultasDigitales', 'Admin\FacturaController@index')->name('consultasDigitales');
     // Route::get('viewPDF\{factura}', 'Admin\FacturaController@viewPDF')->name('viewPDF');
     Route::get('viewPDF', 'Admin\FacturaController@viewPDF')->name('viewPDF');
-    Route::get('facturaVista', 'Admin\FacturaController@facturaVista')->name('facturaVista');
+    Route::post('facturaVista', 'Admin\FacturaController@facturaVista')->name('facturaVista');
     Route::get('verPDFprueba', 'Admin\FacturaController@verPDFprueba')->name('verPDFprueba');
+    Route::get('viewFactura/{id}', 'Admin\FacturaController@show')->name('viewFactura');
+
     
 /**
 * Membership

@@ -64,7 +64,7 @@
 
                                     <h6 class="font-frank-medium color-black">Sucursal N°4</h6>
                                     <P class="infoFactura">C. INNOMINADA S/N ZONA AROCAGUA</P>
-                                    <P class="infoFactura">Teléfono: 4716000 Fax:</P>
+                                    <P class="infoFactura">Teléfono: 4716000</P>
                                     <P class="infoFactura">Sacaba-Cochabamba</P>
                                 </div>
                                 <div class="col-md-3" style="height: 170px; display: table;">
@@ -80,14 +80,9 @@
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">Cód Autorización: </h6>
                                 </div>
                                 <div class="col-md-2" style="text-align: left; padding-left: 0;">
-                                    <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">1023109029</h6>
-                                    <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">0000000002</h6>
-                                    <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">
-                                        4601038E819DE561
-                                        E6BC49981F101C0B
-                                        57C6DF8D431E0294
-                                        254776D74
-                                    </h6>
+                                    <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">{{ $verfactura->nit }}</h6>
+                                    <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">00000{{ $verfactura->codigo }}</h6>
+                                    <h6 class="font-frank-demi color-black" style="margin-bottom: 5px;">{{ $verfactura->nroautorizacion }}</h6>
                                 </div>
                             </div><br>
 
@@ -98,16 +93,16 @@
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 8px; line-height: 17px;">Nom/Razon Social :</h6>
                                 </div>
                                 <div class="col-md-6" style="padding-left: 0px; margin: 0 30px 0 -30px;">
-                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;">SACABA, 31/5/2022 Hrs. 16:54</h6>
-                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;">ALVARO BENJAMIN MERINO VELARDE</h6>
+                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;">{{ $verfactura->idcuenta }}, {{ date('d-m-y', strtotime($verfactura->fecha)) }} Hrs. {{ $verfactura->horareg }}</h6>
+                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;">{{ $verfactura->nomcliente }}</h6>
                                 </div>
                                 <div class="col-md-2" style="text-align: right;">
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 8px; line-height: 17px;">Nit/Ci/Cex :</h6>
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 8px; line-height: 17px;">Código Cliente :</h6>
                                 </div>
                                 <div class="col-md-2" style="padding-left: 0px;">
-                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;">8021631019</h6>
-                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;">8021631019</h6>
+                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;">{{ $verfactura->nit }} </h6>
+                                    <h6 class="font-frank-book color-black" style="margin-bottom: 8px; line-height: 17px;">{{ $verfactura->nit }}</h6>
                                 </div>
                             </div>
 
@@ -127,83 +122,41 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>03EAGD10</td>
-                                        <td class="alingLeft">TOR CHIPBOARD ZA</td>
-                                        <td class="alingLeft">4 X 40</td>
-                                        <td>PZ</td>
-                                        <td class="alingRight">1,000.00</td>
-                                        <td class="alingRight">0.07</td>
-                                        <td class="alingRight">0.00</td>
-                                        <td class="alingRight">70.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>03EAGD10</td>
-                                        <td class="alingLeft">TOR CHIPBOARD ZA</td>
-                                        <td class="alingLeft">4 X 50</td>
-                                        <td>PZ</td>
-                                        <td class="alingRight">1,000.00</td>
-                                        <td class="alingRight">0.14</td>
-                                        <td class="alingRight">0.00</td>
-                                        <td class="alingRight">140.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>03EAGD10</td>
-                                        <td class="alingLeft">PER HEX G2 UNC C/T</td>
-                                        <td class="alingLeft">1/2-13 X 1</td>
-                                        <td>PZ</td>
-                                        <td class="alingRight">1,000.00</td>
-                                        <td class="alingRight">1.67</td>
-                                        <td class="alingRight">70.00</td>
-                                        <td class="alingRight">1,600.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>03EAGD10</td>
-                                        <td class="alingLeft">PER HEX G2 UNC C/T</td>
-                                        <td class="alingLeft">1/2-13 X 1 1/4</td>
-                                        <td>PZ</td>
-                                        <td class="alingRight">1,000.00</td>
-                                        <td class="alingRight">1.81</td>
-                                        <td class="alingRight">70.00</td>
-                                        <td class="alingRight">1,740.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>03EAGD10</td>
-                                        <td class="alingLeft">PER HEX G2 UNC C/T</td>
-                                        <td class="alingLeft">1/2-13 X 1 1/2</td>
-                                        <td>PZ</td>
-                                        <td class="alingRight">1,000.00</td>
-                                        <td class="alingRight">1.95</td>
-                                        <td class="alingRight">70.00</td>
-                                        <td class="alingRight">1,880.00</td>
-                                    </tr>
+                                    @foreach ($vefacturaProducto as $vefacturaDetalles)
+                                        <tr>
+                                            <td>{{ $vefacturaDetalles->codfactura }}</td>
+                                            <td>{{ $vefacturaDetalles->coditem }}</td>
+                                            <td class="alingLeft">{{ $vefacturaDetalles->descripcion }}</td>
+                                            <td class="alingLeft">{{ $vefacturaDetalles->medida }}</td>
+                                            <td>{{ $vefacturaDetalles->udm }}</td>
+                                            <td class="alingRight">{{ $vefacturaDetalles->cantidad }}</td>
+                                            <td class="alingRight">{{ round($vefacturaDetalles->preciolista, 2) }}</td>
+                                            <td class="alingRight">{{ $cantidad_precio_decimal - $cantidad_precioneto_decimal }}</td>
+                                            <td class="alingRight">{{ round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2) }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
 
                                 <tfoot>
                                     <tr>
                                         <td colspan="5" rowspan="2" class="alingLeft" style="border-bottom: 2px solid #333333; padding: 0px 0px;">
-                                            SON: CUATRO MIL SETECIENTOS CUARENTA 00/100 BOLIVIANOS Equivalentes a 681.03 DOLAR AMERICANO
+                                            SON: {{ $total_literal,2 }} Equivalentes a {{ round($total / 6.96, 2) }} DOLAR AMERICANO
                                         </td>
                                         <td colspan="3" style="padding: 0px 2%;">Sub Total(BS):</td>
-                                        <td class="font-frank-book" style="padding: 0px 0px;">5,430.00</td>
+                                        <td class="font-frank-book" style="padding: 0px 0px;">{{ round($total, 2) }}</td>
                                     </tr>
                                     <tr>
                                         <td colspan="3" style="padding: 0px 2%;">Descuentos(BS):</td>
-                                        <td class="font-frank-book" style="padding: 0px 0px;">690.00</td>
+                                        <td class="font-frank-book" style="padding: 0px 0px;">{{ round($descuento, 2) }}</td>
                                     </tr>
                                     <tr>
                                         <td colspan="5" rowspan="2"></td>
                                         <td colspan="3" style="padding: 0px 2%;">Total(BS):</td>
-                                        <td class="font-frank-book" style="padding: 0px 0px;">4,740.00</td>
+                                        <td class="font-frank-book" style="padding: 0px 0px;">{{ round($total_menos_descuento, 2) }}</td>
                                     </tr>
                                     <tr>
                                         <td colspan="3" style="padding: 0px 2%;">Importe Base Crédito Fiscal(BS):</td>
-                                        <td class="font-frank-book" style="padding: 0px 0px;">4,740.00</td>
+                                        <td class="font-frank-book" style="padding: 0px 0px;">{{ round($total_menos_descuento, 2) }}</td>
                                     </tr>
                                 </tfoot>
 
@@ -212,7 +165,7 @@
                             <div class="row" style="text-align: -webkit-center;">
                                 <div class="col-md-8" style="padding: 0px 40px 0px 40px;">
                                     <h6 class="font-frank-demi color-black" style="margin-bottom: 8px; line-height: 17px;">
-                                        ESTA FACTURA CONTRIBUJE AL DESARROLLO DEL PAÍS, EL USO ILÍCITO DE ESTA SERÁ SANCIONADO PENALMENTE DE ACUERDO A LEY.
+                                        ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS, EL USO ILÍCITO DE ESTA SERÁ SANCIONADO PENALMENTE DE ACUERDO A LEY.
                                     </h6>
                                     <P class="infoFactura">
                                         Ley N° 453: Está prohibido importar, distribuir o comercializar productos prohibidos o retirados en el
@@ -232,17 +185,14 @@
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
             </div><br>
 
             <div style="float: right;">
-                <a class="btn btn-danger btn-lg" type="button" href="/consultasDigitales">
+                {{-- <a class="btn btn-danger btn-lg" type="button" href="/consultasDigitales">
                     <i class="fa fa-arrow-left"></i> Atras
-                </a>
+                </a> --}}
                 <a class="btn btn-warning btn-lg" type="button" href="/viewPDF">
                     Descargar PDF &nbsp;<i class="fa fa-download"></i>
                 </a>
@@ -251,7 +201,12 @@
     </div>
 </section>
 <style>
-
+    body{
+        font-family: Tahoma,Verdana,Segoe,sans-serif !important;
+    }
+    .font-frank-demi{
+        font-family: Tahoma,Verdana,Segoe,sans-serif !important;
+    }
     .alineacion p {
         line-height: 7px !important;
     }
@@ -320,6 +275,5 @@
     .alingRight {
         text-align: right;
     }
-
 </style>
 @endsection

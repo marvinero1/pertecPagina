@@ -126,6 +126,7 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         ),
         'L' => 
         array (
+            'Luecano\\NumeroALetras\\' => 22,
             'League\\OAuth1\\Client\\' => 21,
             'League\\MimeTypeDetection\\' => 25,
             'League\\Flysystem\\' => 17,
@@ -432,6 +433,10 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Luecano\\NumeroALetras\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/luecano/numero-a-letras/src',
+        ),
         'League\\OAuth1\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/oauth1-client/src',
@@ -706,6 +711,7 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'App\\Http\\Controllers\\Admin\\CaruselController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CaruselController.php',
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
         'App\\Http\\Controllers\\Admin\\FacturaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FacturaController.php',
+        'App\\Http\\Controllers\\Admin\\ModalPopupController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ModalPopupController.php',
         'App\\Http\\Controllers\\Admin\\PedidoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PedidoController.php',
         'App\\Http\\Controllers\\Admin\\PermissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PermissionController.php',
         'App\\Http\\Controllers\\Admin\\ProductoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductoController.php',
@@ -3624,6 +3630,7 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'League\\OAuth1\\Client\\Signature\\RsaSha1Signature' => __DIR__ . '/..' . '/league/oauth1-client/src/Signature/RsaSha1Signature.php',
         'League\\OAuth1\\Client\\Signature\\Signature' => __DIR__ . '/..' . '/league/oauth1-client/src/Signature/Signature.php',
         'League\\OAuth1\\Client\\Signature\\SignatureInterface' => __DIR__ . '/..' . '/league/oauth1-client/src/Signature/SignatureInterface.php',
+        'Luecano\\NumeroALetras\\NumeroALetras' => __DIR__ . '/..' . '/luecano/numero-a-letras/src/NumeroALetras.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',

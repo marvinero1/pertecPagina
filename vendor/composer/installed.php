@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd82d8d36e8708ea307b22ba11f19b4a18cf71198',
+        'reference' => '188a8de290fde0161c89294610c7efd200e475ed',
         'name' => 'labs64/pertec',
         'dev' => true,
     ),
@@ -541,7 +541,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd82d8d36e8708ea307b22ba11f19b4a18cf71198',
+            'reference' => '188a8de290fde0161c89294610c7efd200e475ed',
             'dev_requirement' => false,
         ),
         'laravel/framework' => array(
@@ -659,6 +659,15 @@
             'install_path' => __DIR__ . '/../league/oauth1-client',
             'aliases' => array(),
             'reference' => '88dd16b0cff68eb9167bfc849707d2c40ad91ddc',
+            'dev_requirement' => false,
+        ),
+        'luecano/numero-a-letras' => array(
+            'pretty_version' => 'v3.0.0',
+            'version' => '3.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../luecano/numero-a-letras',
+            'aliases' => array(),
+            'reference' => 'bab51e3e81545e38d6a11efccb3e6d568765ba7c',
             'dev_requirement' => false,
         ),
         'maximebf/debugbar' => array(
