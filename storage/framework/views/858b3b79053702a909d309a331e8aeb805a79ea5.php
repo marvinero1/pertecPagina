@@ -333,7 +333,7 @@
     table.section4 thead {}
 
     table.section4 thead th {
-        font-size: 0.74rem;
+        font-size: 0.65rem;
         font-weight: bold;
         text-align: center;
     }
