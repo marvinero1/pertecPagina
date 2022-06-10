@@ -82,9 +82,9 @@
                                 </tbody>
                             </table>
                         </div>
-
-
-
+                        <div style="text-align: center;">
+                            {{ $vefactura->links() }}
+                        </div>
                     </div>
                 </div>
             </div><br>

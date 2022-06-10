@@ -114,8 +114,7 @@ class FacturaController extends Controller{
         $nit = $cliente['nit'];
         $id = $cliente['id'];
         
-        $vefactura = DB::table('vefactura')->where('id', $id)->where('nit', $nit)->get();
-        //dd($cliente);
+        $vefactura = DB::table('vefactura')->where('id', $id)->where('nit', $nit)->paginate(10);
 
         return view('page.sections.facturas.listfacturas', ['vefactura'=>$vefactura]);
     }
@@ -187,6 +186,11 @@ class FacturaController extends Controller{
 
     }
 
+
+    public function pruebaRollo(){
+        return view('page.sections.facturas.pruebaRollo');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -235,15 +239,13 @@ class FacturaController extends Controller{
         $verfactura = DB::table('vefactura')->where('codigo', $codfactura)->first();
         $vefacturaDetalle = DB::table('vefactura1')->where('codfactura', $codfactura)->get();
         $item = DB::table('initem')->get();
-
         $leyendaFactura = DB::table('adsiat_leyenda_factura')->inRandomOrder()->first();
 
         $vefacturaProducto = DB::table('vefactura1')
         ->join('initem', function($join) use($codfactura){
             $join->on('vefactura1.coditem', '=', 'initem.codigo')
                  ->where('vefactura1.codfactura','=', $codfactura);
-        })
-        ->get();
+        })->get();
 
         $tienda = $verfactura->idcuenta;
         $en_linea = $verfactura->en_linea;
@@ -266,7 +268,6 @@ class FacturaController extends Controller{
             $cantidad_precio_decimal=(round($cantidad_precio, 2, PHP_ROUND_HALF_UP));
             $cantidad_precioneto_decimal=(round($cantidad_precioneto, 2, PHP_ROUND_HALF_UP));
             $precio_neto_decimal=number_format($precio_neto, 2);
-            
             $descuento = $cantidad_precio_decimal - $cantidad_precioneto_decimal;
 
             $total_menos_descuento = $total - $descuento;

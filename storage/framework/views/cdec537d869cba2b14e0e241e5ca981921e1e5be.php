@@ -82,9 +82,10 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div style="text-align: center;">
+                            <?php echo e($vefactura->links()); ?>
 
-
-
+                        </div>
                     </div>
                 </div>
             </div><br>
