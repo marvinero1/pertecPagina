@@ -351,3 +351,4 @@
         margin: 0 0 0 0;
     }
 </style>
+<?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/pruebaRollo.blade.php ENDPATH**/ ?>

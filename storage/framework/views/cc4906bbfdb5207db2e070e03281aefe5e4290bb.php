@@ -1,6 +1,4 @@
-<div class="container p-1">
-
-
+<div class="container" style="padding: 5px;">
     <table class="minimalistBlack alineacion">
         <tbody>
             <tr>
@@ -31,18 +29,12 @@
             </tr>
             <tr>
                 <td style="text-align: right;"><b>Factura Nro: </b></td>
-                <td><b>0000000002</b></td>
+                <td><b>00000<?php echo e($verfactura->codigo); ?></b></td>
             </tr>
             <tr>
                 <td style="text-align: right;"><b>Cód Autorización: </b></td>
                 <td style="width: 117px;">
-                    <b>
-                        4601038E819DE561
-                        E6BC49981F101C0B
-                        57C6DF8D431E0294
-                        254776D74
-                    </b>
-
+                    <b><?php echo e($verfactura->nroautorizacion); ?></b>
                 </td>
             </tr>
             <tr>
@@ -54,23 +46,19 @@
             </tr>
             <tr>
                 <td><b>Lugar y Fecha : </b></td>
-                <td colspan="2">SACABA, 31/5/2022 Hrs. 16:54</td>
+                <td colspan="2">SACABA, <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> Hrs. <?php echo e($verfactura->horareg); ?></td>
                 <td><b>Nit/Ci/Cex : </b></td>
-                <td>8021631019</td>
+                <td><?php echo e($verfactura->nit); ?></td>
             </tr>
-
 
             <tr>
                 <td><b>Nom/Razon Social : </b></td>
-                <td colspan="2">ALVARO BENJAMIN MERINO VELARDE</td>
+                <td colspan="2"><?php echo e($verfactura->nomcliente); ?></td>
                 <td><b>Código Cliente : </b></td>
-                <td>8021631019</td>
+                <td><?php echo e($verfactura->nit); ?></td>
             </tr>
         </tbody>
     </table>
-
-
-
 
     <table class="greyGridTable">
         <thead>
@@ -87,88 +75,44 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>03EAGD10</td>
-                <td class="alingLeft">TOR CHIPBOARD ZA</td>
-                <td class="alingLeft">4 X 40</td>
-                <td>PZ</td>
-                <td class="alingRight">1,000.00</td>
-                <td class="alingRight">0.07</td>
-                <td class="alingRight">0.00</td>
-                <td class="alingRight">70.00</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>03EAGD10</td>
-                <td class="alingLeft">TOR CHIPBOARD ZA</td>
-                <td class="alingLeft">4 X 50</td>
-                <td>PZ</td>
-                <td class="alingRight">1,000.00</td>
-                <td class="alingRight">0.14</td>
-                <td class="alingRight">0.00</td>
-                <td class="alingRight">140.00</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>03EAGD10</td>
-                <td class="alingLeft">PER HEX G2 UNC C/T</td>
-                <td class="alingLeft">1/2-13 X 1</td>
-                <td>PZ</td>
-                <td class="alingRight">1,000.00</td>
-                <td class="alingRight">1.67</td>
-                <td class="alingRight">70.00</td>
-                <td class="alingRight">1,600.00</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>03EAGD10</td>
-                <td class="alingLeft">PER HEX G2 UNC C/T</td>
-                <td class="alingLeft">1/2-13 X 1 1/4</td>
-                <td>PZ</td>
-                <td class="alingRight">1,000.00</td>
-                <td class="alingRight">1.81</td>
-                <td class="alingRight">70.00</td>
-                <td class="alingRight">1,740.00</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>03EAGD10</td>
-                <td class="alingLeft">PER HEX G2 UNC C/T</td>
-                <td class="alingLeft">1/2-13 X 1 1/2</td>
-                <td>PZ</td>
-                <td class="alingRight">1,000.00</td>
-                <td class="alingRight">1.95</td>
-                <td class="alingRight">70.00</td>
-                <td class="alingRight">1,880.00</td>
-            </tr>
+            <?php $__currentLoopData = $vefacturaProducto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturaDetalles): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <tr>
+                    <td><?php echo e($vefacturaDetalles->codfactura); ?></td>
+                    <td><?php echo e($vefacturaDetalles->coditem); ?></td>
+                    <td class="alingLeft"><?php echo e($vefacturaDetalles->descripcion); ?></td>
+                    <td class="alingLeft"><?php echo e($vefacturaDetalles->medida); ?></td>
+                    <td><?php echo e($vefacturaDetalles->udm); ?></td>
+                    <td class="alingRight"><?php echo e($vefacturaDetalles->cantidad); ?></td>
+                    <td class="alingRight"><?php echo e(round($vefacturaDetalles->preciolista, 2)); ?></td>
+                    <td class="alingRight"><?php echo e($cantidad_precio_decimal - $cantidad_precioneto_decimal); ?></td>
+                    <td class="alingRight"><?php echo e(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2)); ?></td>
+                </tr>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
 
         <tfoot>
             <tr>
                 <td colspan="5" rowspan="2" class="alingLeft"
                     style="border-bottom: 2px solid #333333; padding: 0px 0px;">
-                    SON: CUATRO MIL SETECIENTOS CUARENTA 00/100 BOLIVIANOS Equivalentes a 681.03
-                    DOLAR AMERICANO
+                    SON: <?php echo e($total_literal,2); ?> Equivalentes a <?php echo e(round($total / 6.96, 2)); ?> DOLAR AMERICANO
                 </td>
                 <td colspan="3" style="padding: 0px 2%;">Sub Total(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">5,430.00</td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($total, 2)); ?></td>
             </tr>
             <tr>
                 <td colspan="3" style="padding: 0px 2%;">Descuentos(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">690.00</td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($descuento, 2)); ?></td>
             </tr>
             <tr>
                 <td colspan="5" rowspan="2"></td>
                 <td colspan="3" style="padding: 0px 2%;">Total(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">4,740.00</td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($total_menos_descuento, 2)); ?></td>
             </tr>
             <tr>
                 <td colspan="3" style="padding: 0px 2%;">Importe Base Crédito Fiscal(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">4,740.00</td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($total_menos_descuento, 2)); ?></td>
             </tr>
         </tfoot>
-
     </table>
 
 
@@ -182,41 +126,50 @@
                     </h6>
                 </td>
                 <td rowspan="2" style="text-align: center; padding-left: 120px;">
-                    <img src="https://qrcode.tec-it.com/API/QRCode?data=smsto%3A555-555-5555%3AGenerador+de+Códigos+QR+de+TEC-IT" alt="qrCode" width="68px" style="padding-top: 30px;">
+                    <?php echo QrCode::size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'); ?>
+
                 </td>
             </tr>
             <tr>
                 <td style="padding: 0px 20px 0px 20px;">
-                    <P class="infoFactura">
-                        Ley N° 453: Está prohibido importar, distribuir o comercializar productos prohibidos o retirados en el
-                        país de origen por atentar a la integridad física y a la salud.
-                    </P>
-                    <p class="infoFactura">
-                        Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
-                        modalidad de facturación en línea
-                    </p><br>
+                    <p class="infoFactura"><?php echo e($leyendaFactura->descripcionleyenda); ?></p>
+                    <?php if($en_linea != 0 ): ?>
+                        <p class="infoFactura">
+                            Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
+                            modalidad de facturación local
+                        </p><br>
+                    <?php else: ?>
+                        <p class="infoFactura">
+                            Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
+                            modalidad de facturación en línea
+                        </p><br>
+                    <?php endif; ?>
                     <p class="infoFactura" style="float: right;">
-                        Página 1 de 1 - FC311-133850
+                        Página 1 de 1 - <?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?>
+
                     </p>
                 </td>
             </tr>
         </tbody>
     </table>
-
-
 </div>
+
 <style>
+     body{
+        font-family: Tahoma,Verdana,Segoe,sans-serif !important;
+    }
+    .font-frank-demi{
+        font-family: Tahoma,Verdana,Segoe,sans-serif !important;
+    }
     .alineacion p {
         line-height: 2px !important;
     }
-
     .alineacion h6 {
         margin-bottom: 11px;
         line-height: 0px;
         margin-top: 12px;
 
     }
-
     .infoFactura {
         font-size: 7px !important;
         color: #000000 !important;
@@ -224,25 +177,21 @@
         margin-bottom: 0px;
         text-align: center;
     }
-
     table.greyGridTable {
         border: 2px solid #FFFFFF;
         width: 100%;
         text-align: center;
         border-collapse: collapse;
     }
-
     table.greyGridTable td,
     table.greyGridTable th {
         border: 1px solid #FFFFFF;
         padding: 3px 4px;
     }
-
     table.greyGridTable tbody td {
         font-size: 9px;
         color: #000000;
     }
-
     table.greyGridTable thead {
         font-family: 'Franklin Gothic Demi', sans-serif;
         font-weight: 100;
@@ -250,14 +199,12 @@
         border-bottom: 2px solid #000000;
         border-top: 2px solid #000000;
     }
-
     table.greyGridTable thead th {
         font-size: 9px;
         font-weight: bold;
         color: #000000;
         text-align: center;
     }
-
     table.greyGridTable tfoot {
         font-family: 'Franklin Gothic Demi', sans-serif;
         font-weight: 100;
@@ -267,42 +214,25 @@
         color: #000000;
         border-top: 2px solid #000000;
     }
-
     table.greyGridTable tfoot td {
         font-size: 7px;
     }
-
     .alingLeft {
         text-align: left;
     }
-
     .alingRight {
         text-align: right;
     }
-
-
-
-
-
-
-
-
-
-
     table.minimalistBlack {
         width: 100%;
         text-align: left;
         border-collapse: collapse;
     }
-
     table.minimalistBlack tbody td {
         font-size: 11px;
     }
-
     table.minimalistBlack tfoot td {
         font-size: 14px;
     }
-
-
 </style>
 <?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/pdf.blade.php ENDPATH**/ ?>
