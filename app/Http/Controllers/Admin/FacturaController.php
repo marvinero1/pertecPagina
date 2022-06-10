@@ -6,6 +6,8 @@ use App\Models\Factura;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Hashids\Hashids;
+use Session;
 use numeroaletras;
 use modelonumero;
 
@@ -17,26 +19,19 @@ class FacturaController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
+        $hash=new Hashids();
+        $nit = $request->get('nit');
+        $id = $request->get('id');
+        $vefactura = empty($vefactura) ? DB::table('vefactura')->where('id', $id)->where('nit', $nit)->paginate(15): $vefactura;
 
-        // $factura_encontrada = "";
-        // $factura =[ "nit"=>"123456789","id"=>"1","codigo_producto"=>"03EAGD10", "descripcion"=>"TOR CHIPBOARD ZA 4 * 40",
-        //            "unidad_pieza"=>"PZ","cantidad"=>"1000.00","precio_unitario"=>"00.7","descuento"=>"0.00","subtotal"=>"70.00" ];
-
-        // $factuta_json = json_encode($factura);
-
-        // $nit = $request->get('buscarpor');
-
-        // $buscardorEmpty = $nit;
-        // $factura_encontrada = $factuta_json::where('nit','like',"%nit%")->get();
-
-        // print($nit);
-
-        return view('page.sections.facturas.index');
+        if($nit == "0"){
+            Session::flash('warning','NIT o C.I No puede ser 0.');
+        }
+        
+        return view('page.sections.facturas.index', compact('nit','id','vefactura','hash'));
     }
 
     public function viewPDF($codfactura){
-        // $verfactura1 = DB::table('vefactura')->where('codigo', $codfactura)->first();
-       
         $numeroaletras = new numeroaletras();
         $modelonumero = new modelonumero();
 
@@ -220,6 +215,8 @@ class FacturaController extends Controller{
         
         $numeroaletras = new numeroaletras();
         $modelonumero = new modelonumero();
+        $hash = new Hashids();
+        $hash_id = $hash->decodeHex($codfactura);
 
         $cod_factura=0;
         $cod_item=0;
@@ -235,20 +232,23 @@ class FacturaController extends Controller{
         $total_literal="";
         $total_menos_descuento=0;
         $cantidad_precio_decimal=0;
+        $en_linea=0;
 
-        $verfactura = DB::table('vefactura')->where('codigo', $codfactura)->first();
-        $vefacturaDetalle = DB::table('vefactura1')->where('codfactura', $codfactura)->get();
+        $verfactura = DB::table('vefactura')->where('codigo', $hash_id)->first();
+        $vefacturaDetalle = DB::table('vefactura1')->where('codfactura', $hash_id)->get();
         $item = DB::table('initem')->get();
         $leyendaFactura = DB::table('adsiat_leyenda_factura')->inRandomOrder()->first();
 
         $vefacturaProducto = DB::table('vefactura1')
-        ->join('initem', function($join) use($codfactura){
+        ->join('initem', function($join) use($hash_id){
             $join->on('vefactura1.coditem', '=', 'initem.codigo')
-                 ->where('vefactura1.codfactura','=', $codfactura);
+                 ->where('vefactura1.codfactura','=', $hash_id);
         })->get();
 
-        $tienda = $verfactura->idcuenta;
-        $en_linea = $verfactura->en_linea;
+        // $tienda = $verfactura->idcuenta;      
+        if(!empty($verfactura)){
+            $en_linea = $verfactura->en_linea;
+        }
         // dd($verfactura);
 
         foreach($vefacturaProducto as $vefacturaProductos){
@@ -277,7 +277,7 @@ class FacturaController extends Controller{
         
         return view('page.sections.facturas.show', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','en_linea','leyendaFactura'));
+        'total_literal','leyendaFactura','en_linea','hash'));
     }
 
     /**

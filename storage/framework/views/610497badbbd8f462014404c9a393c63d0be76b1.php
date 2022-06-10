@@ -23,108 +23,119 @@
     style="background-color: white;">
     <div class="content section-content">
         <div class="row">
-            <?php if(empty($buscardorEmpty)): ?>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="heading heading-4">
-                    <div class="heading-right">
-                        <p class="mb-0">Verificar Facturas</p>
-                        <h2>Mis Facturas</h2>
+            <?php if(Session::has('warning')): ?>
+                <div class="alert alert-warning"><?php echo e(Session::get('warning')); ?></div>
+            <?php endif; ?>
+
+            <?php if(empty($nit)): ?>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="heading heading-4">
+                        <div class="heading-right">
+                            <p class="mb-0">Verificar Facturas</p>
+                            <h2>Mis Facturas</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6" style="float: left;">
-                    <form action="<?php echo e(route('facturaVista')); ?>" method="POST">
-                        <?php echo e(csrf_field()); ?>
-
-                        <div class="row" style="border: outset;padding: 25px;">
-                            <label><strong>Ingrese los datos requeridos para visualizar sus Facturas.</strong></label><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<label><strong>Los campos (*) son obligatorios.</strong></label>
-                            <div class="col-md-12 col-sm-12 form-group">
-                                <input type="number" class="form-control" name="nit" placeholder="NIT/C.I" required
-                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                maxlength="13">
-                            </div>
-                            <div class="col-md-12 col-sm-12 form-group">
-                                <input type="text" class="form-control" name="id" placeholder="Numero ID Factura Ej. FC341" required
-                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                maxlength="6">
-                            </div><br>
-                            
-                            <button type="submit" class="btn btn-primary btn-block"><i class="fa fas fa-book"></i>
-                                &nbsp; Ver Facturas</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <?php else: ?>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="heading heading-4">
-                    <div class="heading-right">
-                        <p class="mb-0">Verificar Facturas</p>
-                        <h2>Mis Facturas</h2>
-                        <div style="float: right;">
-                            <form
-                                style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
-                                <div class="form-group pull-right top_search">
-                                    <div class="input-group">
-                                        <input type="hidden" class="form-control font-frank-book"
-                                            placeholder="Ingrese su C.I o NIT" name="buscarpor" value=" "
-                                            style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
-                                        <button class="btn btn-danger btn-lg" type="submit">
-                                            <i class="fa fa-times-circle"></i> Limpiar
-                                        </button>
-                                    </div>
+            
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6" style="float: left;">
+                        <form>
+                            <div class="row" style="border: outset;padding: 25px;">
+                                <label><strong>Ingrese los datos requeridos para visualizar sus Facturas.</strong></label><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<label><strong>Los campos (*) son obligatorios.</strong></label>
+                                <div class="col-md-12 col-sm-12 form-group">
+                                    <input type="number" class="form-control" name="nit" placeholder="NIT/C.I" required
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    maxlength="13">
                                 </div>
-                            </form>
-
-                        </div>
-                    </div><br>
+                                <div class="col-md-12 col-sm-12 form-group">
+                                    <input type="text" class="form-control" name="id" placeholder="Numero ID Factura Ej. FC341" required
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    maxlength="6">
+                                </div><br>
+                                
+                                <button type="submit" class="btn btn-primary btn-block"><i class="fa fas fa-book"></i>
+                                    &nbsp; Ver Facturas</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            <?php else: ?>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="heading heading-4">
+                        <div class="heading-right">
+                            <p class="mb-0">Verificar Facturas</p>
+                            <h2>Mis Facturas</h2>
+                            <div style="float: right;">
+                                <form
+                                    style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
+                                    <div class="form-group pull-right top_search">
+                                        <div class="input-group">
+                                            <input type="hidden" class="form-control font-frank-book"
+                                                placeholder="Ingrese su C.I o NIT" name="buscarpor" value=" "
+                                                style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
+                                            <button class="btn btn-danger btn-lg" type="submit">
+                                                <i class="fa fa-times-circle"></i> Limpiar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
-                <div class="product-content">
-                    <div class="product-tabs mb-50">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active">
-                                <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
-                                    Facturas
-                                </a>
-                            </li>
-                        </ul>
+                            </div>
+                        </div><br>
+                    </div>
+                </div>
 
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="details">
-                                <table class="table table-striped table-respon">
-                                    <tbody>
-                                        <thead>
-                                            <th>Código de Factura</th>
-                                            <th>Lugar Fecha</th>
-                                            <th>Nom/Razon Social</th>
-                                            <th>Acciones</th>
-                                        </thead>
-                                    <tbody>
+                <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+                    <div class="product-content">
+                        <div class="product-tabs mb-50">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
+                                        Factura
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="x_content table-responsive">
+                                <table class="table">
+                                    <thead>
                                         <tr>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>
-                                                <a href="<?php echo e(route('facturaVista')); ?>" style="color: black">
-                                                    <button class="btn btn-primary "><i class="fa fa-eye"
-                                                            aria-hidden="true"></i> Ver</button>
-                                                </a>
+                                            <th>Codigo</th>
+                                            <th>ID</th>
+                                            <th>Nombre Cliente</th>
+                                            <th>NIT / C.I</th>
+                                            <th>Codigo Control</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+            
+                                    <tbody>
+                                        <?php $__currentLoopData = $vefactura; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <tr>
+                                            <td class="row1" scope="row"><?php echo e($vefacturas->codigo); ?></td>
+                                            <td scope="row"><?php echo e($vefacturas->id); ?></td>
+                                            <td scope="row"><?php echo e($vefacturas->nomcliente); ?></td>
+                                            <td scope="row"><?php echo e($vefacturas->nit); ?></td>
+                                            <td scope="row"><?php echo e($vefacturas->codigocontrol); ?></td>
+
+                                            <td scope="row" style="text-align:center;">
+                                                <a href="<?php echo e(route('viewFactura', $hash->encodeHex($vefacturas->codigo))); ?>" style="color: black">
+                                                    <button class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i>
+                                                        Ver</button></a>
                                             </td>
                                         </tr>
-                                    </tbody>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
                                 </table>
                             </div>
+                            <div style="text-align: center;">
+                                <?php echo e($vefactura->appends(['nit' => $nit, 'id'=>$id])->links()); ?>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div><br>
+                </div><br>
             <?php endif; ?>
         </div>
     </div>

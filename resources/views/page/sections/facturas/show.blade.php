@@ -194,8 +194,11 @@
                 {{-- <a class="btn btn-danger btn-lg" type="button" href="/consultasDigitales">
                     <i class="fa fa-arrow-left"></i> Atras
                 </a> --}}
-                <a class="btn btn-warning btn-lg" type="button" href="/viewPDF/{{ $verfactura->numeroid }}">
-                    Descargar PDF &nbsp;<i class="fa fa-download"></i>
+                <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i class="fa fa-arrow-left"></i>
+                    &nbsp;Atras</button>
+
+                <a class="btn btn-danger btn-lg" type="button" href="/viewPDF/{{ $verfactura->numeroid }}">
+                    Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
                 </a>
             </div>
         </div>

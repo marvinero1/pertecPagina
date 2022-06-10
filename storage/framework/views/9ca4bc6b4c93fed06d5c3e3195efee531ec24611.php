@@ -1,7 +1,6 @@
 
 
 <?php $__env->startSection('content'); ?>
-
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/okNOVNew6865.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -27,7 +26,6 @@
     <div class="content section-content">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
-
                 <div class="row">
                     <div class="heading">
                         <div class="heading-right">
@@ -54,71 +52,63 @@
                     </div>
                 </div>
 
-
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-4 product-item aling-rigth">
                         <div class="product-cart">
                             <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalPernos">
-                                Piezas/Kg en Pernos
-                            </a>
+                                Piezas/Kg en Pernos</a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 product-item">
                         <div class="product-cart">
                             <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalArand">
-                                Piezas/Kg en Arandelas
-                            </a>
-                            
+                                Piezas/Kg en Arandelas</a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 product-item aling-left">
                         <div class="product-cart">
                             <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalAutos">
-                                Normas y Abreviaturas
-                            </a>
-                            
+                                Normas y Abreviaturas </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="row lightgallery1">
                     <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bproducto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <!-- product #1 -->
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item item">
-                                <?php if($bproducto["promocion"]=="si"): ?>
-                                <div class="infProd" style="background-color: #FBD800;">
-                                    EN OFERTA
-                                </div>
-                                <?php endif; ?>
-                                <?php if($bproducto["novedad"]=="si"): ?>
-                                <div class="infProd" style="background-color: #093070;">
-                                    NUEVO
-                                </div>
-                                <?php endif; ?>
-                                <div class="product-img" >
-                                    <img src="/<?php echo e($bproducto->imagen); ?>" alt="product" style="height:250px;">
-                                    <div class="product-hover">
-                                        <div class="product-cart">
-                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) )); ?>" class="btn btn-secondary btn-block a-card">Detalles</a>
-                                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item item">
+                            <?php if($bproducto["promocion"]=="si"): ?>
+                            <div class="infProd" style="background-color: #FBD800;">
+                                EN OFERTA
+                            </div>
+                            <?php endif; ?>
+                            <?php if($bproducto["novedad"]=="si"): ?>
+                            <div class="infProd" style="background-color: #093070;">
+                                NUEVO
+                            </div>
+                            <?php endif; ?>
+                            <div class="product-img" >
+                                <img src="/<?php echo e($bproducto->imagen); ?>" alt="product" style="height:250px;">
+                                <div class="product-hover">
+                                    <div class="product-cart">
+                                        <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) )); ?>" class="btn btn-secondary btn-block a-card">Detalles</a>
                                     </div>
                                 </div>
-                                <div style="height: 50px;">
-                                        <h4>
-                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) )); ?>">
-                                                <?php echo e($bproducto["nombre_producto"]); ?>
-
-                                            </a>
-                                        </h4>
-
-                                </div>
                             </div>
+                            <div style="height: 50px;">
+                                    <h4>
+                                        <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) )); ?>">
+                                            <?php echo e($bproducto["nombre_producto"]); ?>
+
+                                        </a>
+                                    </h4>
+
+                            </div>
+                        </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
-            <!-- .shop-content end -->
         </div>
-        <!-- .row end -->
+
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
@@ -127,12 +117,8 @@
                     </a>
                 </div>
             </div>
-            <!-- .col-md-12 end -->
         </div>
     </div>
-    <!-- .container end -->
-
-
 </section>
 <?php echo $__env->make('page.sections.productos.modalConvrPernos', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('page.sections.productos.modalConvrArandelas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

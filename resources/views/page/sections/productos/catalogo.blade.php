@@ -1,7 +1,6 @@
 @extends('page.layouts.main')
 
 @section('content')
-{{-- tu variable para el for es $producto --}}
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/okNOVNew6865.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -27,7 +26,6 @@
     <div class="content section-content">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
-
                 <div class="row">
                     <div class="heading">
                         <div class="heading-right">
@@ -54,70 +52,62 @@
                     </div>
                 </div>
 
-
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-4 product-item aling-rigth">
                         <div class="product-cart">
                             <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalPernos">
-                                Piezas/Kg en Pernos
-                            </a>
+                                Piezas/Kg en Pernos</a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 product-item">
                         <div class="product-cart">
                             <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalArand">
-                                Piezas/Kg en Arandelas
-                            </a>
-                            {{-- @include('pages.modalConvrArandelas') --}}
+                                Piezas/Kg en Arandelas</a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 product-item aling-left">
                         <div class="product-cart">
                             <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalAutos">
-                                Normas y Abreviaturas
-                            </a>
-                            {{-- @include('pages.modalDetalleAutomotriz') --}}
+                                Normas y Abreviaturas </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="row lightgallery1">
                     @foreach ($producto as $bproducto)
-                        <!-- product #1 -->
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item item">
-                                @if($bproducto["promocion"]=="si")
-                                <div class="infProd" style="background-color: #FBD800;">
-                                    EN OFERTA
-                                </div>
-                                @endif
-                                @if($bproducto["novedad"]=="si")
-                                <div class="infProd" style="background-color: #093070;">
-                                    NUEVO
-                                </div>
-                                @endif
-                                <div class="product-img" >
-                                    <img src="/{{ $bproducto->imagen }}" alt="product" style="height:250px;">
-                                    <div class="product-hover">
-                                        <div class="product-cart">
-                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}" class="btn btn-secondary btn-block a-card">Detalles</a>
-                                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item item">
+                            @if($bproducto["promocion"]=="si")
+                            <div class="infProd" style="background-color: #FBD800;">
+                                EN OFERTA
+                            </div>
+                            @endif
+                            @if($bproducto["novedad"]=="si")
+                            <div class="infProd" style="background-color: #093070;">
+                                NUEVO
+                            </div>
+                            @endif
+                            <div class="product-img" >
+                                <img src="/{{ $bproducto->imagen }}" alt="product" style="height:250px;">
+                                <div class="product-hover">
+                                    <div class="product-cart">
+                                        <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}" class="btn btn-secondary btn-block a-card">Detalles</a>
                                     </div>
                                 </div>
-                                <div style="height: 50px;">
-                                        <h4>
-                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">
-                                                {{ $bproducto["nombre_producto"] }}
-                                            </a>
-                                        </h4>
-
-                                </div>
                             </div>
+                            <div style="height: 50px;">
+                                    <h4>
+                                        <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">
+                                            {{ $bproducto["nombre_producto"] }}
+                                        </a>
+                                    </h4>
+
+                            </div>
+                        </div>
                     @endforeach
                 </div>
             </div>
-            <!-- .shop-content end -->
         </div>
-        <!-- .row end -->
+
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
@@ -126,12 +116,8 @@
                     </a>
                 </div>
             </div>
-            <!-- .col-md-12 end -->
         </div>
     </div>
-    <!-- .container end -->
-
-
 </section>
 @include('page.sections.productos.modalConvrPernos')
 @include('page.sections.productos.modalConvrArandelas')
