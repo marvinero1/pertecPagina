@@ -1,1 +1,0 @@
-<h1>factura rollo aca</h1><?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/facturas/pruebaRollo.blade.php ENDPATH**/ ?>

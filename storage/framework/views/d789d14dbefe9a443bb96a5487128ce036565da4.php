@@ -1,1 +1,0 @@
-<?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/pop-up/index.blade.php ENDPATH**/ ?>

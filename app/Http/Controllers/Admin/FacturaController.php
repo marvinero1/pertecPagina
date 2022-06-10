@@ -182,7 +182,7 @@ class FacturaController extends Controller{
     }
 
 
-    public function pruebaRollo(){
+    public function pruebaRollo($codfactura){
         return view('page.sections.facturas.pruebaRollo');
     }
 
