@@ -143,7 +143,7 @@
                                             SON: {{ $total_literal,2 }} Equivalentes a {{ round($total / 6.96, 2) }} DOLAR AMERICANO
                                         </td>
                                         <td colspan="3" style="padding: 0px 2%;">Sub Total(BS):</td>
-                                        <td class="font-frank-book" style="padding: 0px 0px;">{{ round($total, 2) }}</td>
+                                        <td class="font-frank-book" style="padding: 0px 0px;">asass{{ $totalParse }}</td>
                                     </tr>
                                     <tr>
                                         <td colspan="3" style="padding: 0px 2%;">Descuentos(BS):</td>

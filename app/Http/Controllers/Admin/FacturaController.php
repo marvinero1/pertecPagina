@@ -261,23 +261,24 @@ class FacturaController extends Controller{
             $cantidad_precio =  $cantidad * $precio_lista;
             $cantidad_precioneto =$vefacturaProductos->cantidad * $vefacturaProductos->precioneto;
 
-            $sub_total = $cantidad * $precio_lista;
+            $sub_total = (round($cantidad,2) * round($precio_lista,2));
             $total += $sub_total;
 
             $precio_lista_decimal=number_format($precio_lista, 2);
             $cantidad_precio_decimal=(round($cantidad_precio, 2, PHP_ROUND_HALF_UP));
+            $totalParse =(round($total, 2, PHP_ROUND_HALF_UP));
             $cantidad_precioneto_decimal=(round($cantidad_precioneto, 2, PHP_ROUND_HALF_UP));
             $precio_neto_decimal=number_format($precio_neto, 2);
             $descuento = $cantidad_precio_decimal - $cantidad_precioneto_decimal;
 
             $total_menos_descuento = $total - $descuento;
-        }  
+        } 
         
         $total_literal = $modelonumero->numtoletras(round($total_menos_descuento,2),'Bolivianos');          
         
         return view('page.sections.facturas.show', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','en_linea','hash'));
+        'total_literal','leyendaFactura','en_linea','hash','totalParse'));
     }
 
     /**
