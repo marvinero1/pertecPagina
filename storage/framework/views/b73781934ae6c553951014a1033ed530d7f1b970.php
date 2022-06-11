@@ -1,10 +1,9 @@
-error en el servidor
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>500-Error en el servidor</title>
+    <title>404-Página no Encontrada</title>
     <style>
-        @import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
+        @import  url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
         html {
             height: 100%;
             overflow: hidden;
@@ -80,12 +79,12 @@ error en el servidor
 
         <div class="cont">
             <header>
-                <h2>500.</h2>
+                <h2>404.</h2>
                 <p>
-                    Ours bee materials to search but...
+                    Lo que trata de buscar no se encontró, intentelo después...
                 </p>
             </header>
-                <h3>ERROR EN EL SERVIDOR</h3>
+                <h3>PÁGINA NO ENCONTRADA</h3>
 
         <a href="/"><button class="button" style="font-size: x-large;">Regresar</button></a>
 
@@ -272,3 +271,4 @@ error en el servidor
     </script>
 </body>
 </html>
+<?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/errors/404.blade.php ENDPATH**/ ?>

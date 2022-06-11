@@ -32,7 +32,7 @@
                     <b style="top: -18px; position: relative;">Factura Nro: </b>
                 </td>
                 <td>
-                    <b style="top: -18px; position: relative;">00000{{ $verfactura->codigo }}</b>
+                    <b style="top: -18px; position: relative;">00000<?php echo e($verfactura->codigo); ?></b>
                 </td>
             </tr>
             <tr>
@@ -40,7 +40,7 @@
                     <b style="top: -34px; position: relative;">Cód Autorización: </b>
                 </td>
                 <td style="width: 117px;">
-                    <b style="top: -34px; position: relative;">{{ $verfactura->nroautorizacion }}</b>
+                    <b style="top: -34px; position: relative;"><?php echo e($verfactura->nroautorizacion); ?></b>
                 </td>
             </tr>
             <tr>
@@ -52,16 +52,16 @@
             </tr>
             <tr>
                 <td><b>Lugar y Fecha : </b></td>
-                <td colspan="2">SACABA, {{ date('d-m-y', strtotime($verfactura->fecha)) }} Hrs. {{ $verfactura->horareg }}</td>
+                <td colspan="2">SACABA, <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> Hrs. <?php echo e($verfactura->horareg); ?></td>
                 <td style="text-align: right;"><b>Nit/Ci/Cex : </b></td>
-                <td>{{ $verfactura->nit }}</td>
+                <td><?php echo e($verfactura->nit); ?></td>
             </tr>
 
             <tr>
                 <td><b>Nom/Razon Social : </b></td>
-                <td colspan="2">{{ $verfactura->nomcliente }}</td>
+                <td colspan="2"><?php echo e($verfactura->nomcliente); ?></td>
                 <td style="text-align: right;"><b>Código Cliente : </b></td>
-                <td>{{ $verfactura->nit }}</td>
+                <td><?php echo e($verfactura->nit); ?></td>
             </tr>
         </tbody>
     </table>
@@ -81,42 +81,42 @@
         </thead>
 
         <tbody>
-            @foreach ($vefacturaProducto as $vefacturaDetalles)
+            <?php $__currentLoopData = $vefacturaProducto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturaDetalles): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                    <td>{{ $vefacturaDetalles->codfactura }}</td>
-                    <td>{{ $vefacturaDetalles->coditem }}</td>
-                    <td class="alingLeft">{{ $vefacturaDetalles->descripcion }}</td>
-                    <td class="alingLeft">{{ $vefacturaDetalles->medida }}</td>
-                    <td>{{ $vefacturaDetalles->udm }}</td>
-                    <td class="alingRight">{{ $vefacturaDetalles->cantidad }}</td>
-                    <td class="alingRight">{{ round($vefacturaDetalles->preciolista, 2) }}</td>
-                    <td class="alingRight">{{ $cantidad_precio_decimal - $cantidad_precioneto_decimal }}</td>
-                    <td class="alingRight">{{ round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2) }}</td>
+                    <td><?php echo e($vefacturaDetalles->codfactura); ?></td>
+                    <td><?php echo e($vefacturaDetalles->coditem); ?></td>
+                    <td class="alingLeft"><?php echo e($vefacturaDetalles->descripcion); ?></td>
+                    <td class="alingLeft"><?php echo e($vefacturaDetalles->medida); ?></td>
+                    <td><?php echo e($vefacturaDetalles->udm); ?></td>
+                    <td class="alingRight"><?php echo e($vefacturaDetalles->cantidad); ?></td>
+                    <td class="alingRight"><?php echo e(round($vefacturaDetalles->preciolista, 2)); ?></td>
+                    <td class="alingRight"><?php echo e($cantidad_precio_decimal - $cantidad_precioneto_decimal); ?></td>
+                    <td class="alingRight"><?php echo e(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2)); ?></td>
                 </tr>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
 
         <tfoot>
             <tr>
                 <td colspan="5" rowspan="2" class="alingLeft"
                     style="border-bottom: 2px solid #333333; padding: 0px 0px;">
-                    SON: {{ $total_literal,2 }} Equivalentes a {{ round($total / 6.96, 2) }} DOLAR AMERICANO
+                    SON: <?php echo e($total_literal,2); ?> Equivalentes a <?php echo e(round($total / 6.96, 2)); ?> DOLAR AMERICANO
                 </td>
                 <td colspan="3" style="padding: 0px 2%;">Sub Total(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">{{ round($total, 2) }}</td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($total, 2)); ?></td>
             </tr>
             <tr>
                 <td colspan="3" style="padding: 0px 2%;">Descuentos(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">{{ round($descuento, 2) }}</td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($descuento, 2)); ?></td>
             </tr>
             <tr>
                 <td colspan="5" rowspan="2"></td>
                 <td colspan="3" style="padding: 0px 2%;">Total(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">{{ round($total_menos_descuento, 2) }}</td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($total_menos_descuento, 2)); ?></td>
             </tr>
             <tr>
                 <td colspan="3" style="padding: 0px 2%;">Importe Base Crédito Fiscal(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">{{ round($total_menos_descuento, 2) }}</td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($total_menos_descuento, 2)); ?></td>
             </tr>
         </tfoot>
     </table>
@@ -132,25 +132,27 @@
                     </h6>
                 </td>
                 <td rowspan="2" style="text-align: center; padding-left: 120px;">
-                    {!! QrCode::size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2') !!}
+                    <?php echo QrCode::size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'); ?>
+
                 </td>
             </tr>
             <tr>
                 <td style="padding: 0px 20px 0px 20px;">
-                    <p class="infoFactura">{{ $leyendaFactura->descripcionleyenda }}</p>
-                    @if($en_linea != 0 )
+                    <p class="infoFactura"><?php echo e($leyendaFactura->descripcionleyenda); ?></p>
+                    <?php if($en_linea != 0 ): ?>
                         <p class="infoFactura">
                             Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
                             modalidad de facturación local
                         </p><br>
-                    @else
+                    <?php else: ?>
                         <p class="infoFactura">
                             Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
                             modalidad de facturación en línea
                         </p><br>
-                    @endif
+                    <?php endif; ?>
                     <p class="infoFactura" style="float: right;">
-                        Página 1 de 1 - {{ $verfactura->id }}-{{ $verfactura->numeroid }}
+                        Página 1 de 1 - <?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?>
+
                     </p>
                 </td>
             </tr>
@@ -239,3 +241,4 @@
         font-size: 14px;
     }
 </style>
+<?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/pdf.blade.php ENDPATH**/ ?>

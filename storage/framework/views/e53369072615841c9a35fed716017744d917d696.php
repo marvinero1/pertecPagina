@@ -4,7 +4,7 @@ error en el servidor
 <head>
     <title>500-Error en el servidor</title>
     <style>
-        @import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
+        @import  url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
         html {
             height: 100%;
             overflow: hidden;
@@ -272,3 +272,4 @@ error en el servidor
     </script>
 </body>
 </html>
+<?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/errors/500.blade.php ENDPATH**/ ?>

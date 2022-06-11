@@ -9,7 +9,7 @@
             overflow: hidden;
         }
         body {
-            background: #FCC53F;
+            background: #FBD800;
             font-family: "Dosis", sans-serif;
             height: calc(100%);
             overflow: auto;
@@ -30,17 +30,17 @@
             margin-top: 4rem;
         }
         h2 {
-            color:rgb(255, 255, 255);
+            color: #093070;
             font-size: 150px;
             margin-bottom:0rem;
         }
         h3 {
-        color:rgb(46, 46, 46);
+        color:#093070;
             font-size: 60px;
             opacity: 100%;
         }
         p {
-            color:rgb(255, 255, 255);
+            color:#000000;
             font-size: 24px;
             margin-top: 0rem;
         }
@@ -48,8 +48,8 @@
             text-decoration: none;
         }
         .button {
-            background-color: #FCC53F;
-            color: #000;
+            background-color: #093070;
+            color: #FBD800;
             padding: 12px 0px 10px 0px;
             border: 3px solid rgb(0, 0, 0);
             outline: none;
