@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="wplly" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="construction html5 template">
+	<meta name="description" content="Maestros en Pernos &copy;">
 
 	
 	<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">

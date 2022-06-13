@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 <section id="hero" class="hero hero-4">
     <!-- START REVOLUTION SLIDER 5.0 -->

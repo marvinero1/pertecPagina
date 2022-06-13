@@ -6841,10 +6841,6 @@ footer {
     border: none
 }
 
-.modal-body {
-    padding: 30px 50px 50px;
-}
-
 .modal-body form {
     margin-bottom: 0
 }
@@ -10116,17 +10112,30 @@ footer hr {
     .modal-dialog {
         max-width: 75% !important;
     }
+    .modal-body {
+        padding: 30px 50px 50px ;
+    }
+}
+@media (min-width: 348px) and (max-width: 575px) {
+    .modal-body {
+        padding: 30px 18px 50px !important;
+    }
+}
+@media (max-width: 347px) {
+    .modal-body {
+        margin-top: 140px !important;
+    }
 }
 @media (min-width: 722px) {
     .modal-body {
         margin-top: 72px;
-        margin-bottom: 65px;
+        margin-bottom: 22px;
     }
 }
 @media (max-width: 721px) {
     .modal-body {
         margin-top: 102px;
-        margin-bottom: 66px;
+        margin-bottom: 40px;
     }
 }
 .header-3 .navbar-fixed-top.affix-scrooll {

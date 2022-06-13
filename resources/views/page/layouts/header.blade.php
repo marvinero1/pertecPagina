@@ -175,7 +175,7 @@
                                     Ingresar
                                 </button>
                                 <button type="button" class="btn btn-default btn-lg btn-block bg-yellow color-blue" data-toggle="modal" data-target="#myModalRegister"
-                                style="word-break: normal;">
+                                style="word-break: normal; white-space: normal;">
                                     <p class="color-blue" style="margin-bottom: 0px !important;text-align: center;">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         Aún no tienes cuenta, ¡Registrate!
