@@ -123,6 +123,7 @@
 @include('page.sections.productos.modalConvrArandelas')
 @include('page.sections.productos.modalDetalles')
 
+
 <style>
     .lightgallery1 .product-item {
     display: none;

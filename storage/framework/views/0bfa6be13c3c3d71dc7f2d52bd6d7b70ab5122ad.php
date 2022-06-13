@@ -5,7 +5,7 @@
 	<!-- Widget Section
 	============================================= -->
 	<div class="content" style="padding-right: 11px;">
-		<div class="row">
+		<div class="row" style="margin-right: 11px;">
 			<div class="col-xs-12 col-sm-12 col-md-12 widgets-links info-footer">
 				<div class="col-xs-12 col-sm-12 col-md-4 widget-links text-center-xs mb-30-xs">
                     <div class="widget-about-logo pull-left pull-none-xs" style="padding-block-end: 10px;">

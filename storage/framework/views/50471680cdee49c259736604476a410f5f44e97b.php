@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/okNOVNew6865.jpg);">
     <div class="bgImgCoverPages"></div>
@@ -123,6 +121,7 @@
 <?php echo $__env->make('page.sections.productos.modalConvrPernos', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('page.sections.productos.modalConvrArandelas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('page.sections.productos.modalDetalles', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
 
 <style>
     .lightgallery1 .product-item {
