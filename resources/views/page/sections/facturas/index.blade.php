@@ -36,25 +36,25 @@
                         </div>
                     </div>
                 </div>
-            
+
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6" style="float: left;">
                         <form>
                             <div class="row" style="border: outset;padding: 25px;">
-                                <label><strong>Ingrese los datos requeridos para visualizar sus Facturas.</strong></label><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<label><strong>Los campos (*) son obligatorios.</strong></label>
+                                <label><strong style="font-size: 1.3rem;">Ingrese los datos requeridos para visualizar sus Facturas.</strong></label><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<label><strong style="font-size: 1.3rem;">Los campos (*) son obligatorios.</strong></label>
                                 <div class="col-md-12 col-sm-12 form-group">
-                                    <input type="number" class="form-control" name="nit" placeholder="NIT/C.I" required
+                                    <input type="number" class="form-control" name="nit" placeholder="NIT/C.I" required style="font-size: 1.3rem;"
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                     maxlength="13">
                                 </div>
                                 <div class="col-md-12 col-sm-12 form-group">
-                                    <input type="text" class="form-control" name="id" placeholder="Numero ID Factura Ej. FC341" required
+                                    <input type="text" class="form-control" name="id" placeholder="Numero ID Factura Ej. FC341" required style="font-size: 1.3rem;"
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                     maxlength="6">
                                 </div><br>
-                                
-                                <button type="submit" class="btn btn-primary btn-block"><i class="fa fas fa-book"></i>
+
+                                <button style="font-size: 1.3rem;" type="submit" class="btn btn-primary btn-block"><i class="fa fas fa-book"></i>
                                     &nbsp; Ver Facturas</button>
                             </div>
                         </form>
@@ -109,7 +109,7 @@
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
-            
+
                                     <tbody>
                                         @foreach($vefactura as $vefacturas)
                                         <tr>

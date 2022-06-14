@@ -11,8 +11,8 @@
                 <h2 style="text-align: center;"><strong>Politica de Privacidad y Protección de Datos</strong></h2>
 
                 <h5><strong>VI. PRIVACIDAD</strong></h5>
-                <p>El sitio web <a href="https://www.pertec.com.bo"> www.pertec.com.bo </a> garantiza que la
-                    información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o 
+                <p>El sitio web <a style="word-break: break-all;" href="https://www.pertec.com.bo"> www.pertec.com.bo </a> garantiza que la
+                    información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o
 					en el caso de requerir una validación de los
                     pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden
                     judicial o requerimientos legales.</p>
