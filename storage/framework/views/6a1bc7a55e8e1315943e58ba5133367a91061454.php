@@ -3,7 +3,7 @@
     <div class="modal-dialog full-screen" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Politica de Reglas de Contenido</h4>
+                <h4 class="modal-title" style="font-size: 20px;">Politica de Reglas de Contenido</h4>
                 <button type="button" class="close button-modal-close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
             </div>
@@ -88,4 +88,5 @@
             max-width: 50% !important;
         }
     </style>
-</div><?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/terminos/reglas.blade.php ENDPATH**/ ?>
+</div>
+<?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/terminos/reglas.blade.php ENDPATH**/ ?>

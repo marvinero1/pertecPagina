@@ -18,12 +18,11 @@ Route::middleware(['auth'] )->group(function () {
     Route::get('invoices', 'HomeController@getInvoices')->name('invoices');
     Route::get('mis_pedidos', 'HomeController@getPedidos')->name('mis_pedidos');
     Route::put('changeMatrix/{id}', 'Admin\ProductoController@changeMatrix')->name('changeMatrix');
+    Route::put('usersUpdate/{id}', 'Admin\UserController@update')->name('users.update');
 });
 
 Route::post('sendemail', 'HomeController@sendemail')->name('sendemail');
-
 Route::group(['namespace' => 'Auth'], function () {
-
     // Authentication Routes...
     Route::get('login', 'LoginController@showLoginForm')->name('login');
     Route::post('login', 'LoginController@login');
@@ -65,9 +64,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('users/restore', 'UserController@restore')->name('users.restore')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('users/{id}/restore', 'UserController@restoreUser')->name('users.restore-user')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('users/{id}', 'UserController@show')->name('users.show')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
-
-    Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::put('users/{user}', 'UserController@update')->name('users.update')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
+    Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::put('usersConfirmed/{id}','UserController@confirmedUsuario')->name('users.confirmedUsuario')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::any('users/{id}/destroy', 'UserController@destroy')->name('users.destroy')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('permissions', 'PermissionController@index')->name('permissions')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');

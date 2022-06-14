@@ -7,8 +7,10 @@ use App\Models\Auth\User\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Access\User\EloquentUserRepository;
+use Illuminate\Support\Facades\Hash;
 use Validator;
 use Session;
+use DB;
 use Hashids\Hashids;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
@@ -135,47 +137,26 @@ class UserController extends Controller
      * @param User $user
      * @return mixed
      */
-    public function update(Request $request, User $user)
-    {
+    public function update(Request $request, $id){
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255',
+            'password'=> 'required',
             'active' => 'sometimes|boolean',
             'confirmed' => 'sometimes|boolean',
         ]);
 
-        $validator->sometimes('email', 'unique:users', function ($input) use ($user) {
-            return strtolower($input->email) != strtolower($user->email);
-        });
-
+        $user = User::find(auth()->user()->id)->update(['password'=> bcrypt($request->password)]);
+       
         $validator->sometimes('password', 'min:6|confirmed', function ($input) {
-            return $input->password;
+            return Hash::make($input->password);
         });
 
         if ($validator->fails()) return redirect()->back()->withErrors($validator->errors());
-
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-
-        if ($request->has('password')) {
-            $user->password = bcrypt($request->get('password'));
-        }
-
-        $user->active = $request->get('active', 0);
-        $user->confirmed = $request->get('confirmed', 0);
-
-        $user->save();
-
-        //roles
-        if ($request->has('roles')) {
-            $user->roles()->detach();
-
-            if ($request->get('roles')) {
-                $user->roles()->attach($request->get('roles'));
-            }
-        }
-
-        return redirect()->intended(route('admin.users'));
+        
+        Session::flash('message','Perfil Actualizado Exisitosamente!');
+        return back()->withInput();
     }
 
 
@@ -200,9 +181,9 @@ class UserController extends Controller
         $status = $this->repository->destroy($id);
 
         if($status){
-            return redirect()->route('admin.users')->withFlashSuccess('User Deleted Successfully!');
+            return redirect()->route('admin.users')->withFlashSuccess('Usuario Eliminado Satisfactoriamente =)!');
         }
 
-        return redirect()->route('admin.users')->withFlashDanger('Unable to Delete User!');
+        return redirect()->route('admin.users')->withFlashDanger('No se pudo eliminar al usuario seleccionado  =(!');
     }
 }

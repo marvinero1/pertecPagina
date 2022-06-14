@@ -4,6 +4,9 @@
 <section class="section about-section gray-bg" id="about" style="padding-top: 180px">
     <div class="content section-content">
         <div class="row align-items-center flex-row-reverse" style="margin-left: 40px;">
+            @if (Session::has('message'))
+                <div class="alert alert-info">{{ Session::get('message') }}</div>
+            @endif
             <div class="col-lg-8">
                 <div class="about-text go-to">
                     <h3 class="dark-color font-frank-demi">Mi Perfil</h3>
@@ -43,19 +46,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row about-list">
+                    {{--<div class="row about-list">
                             <div class="col-md-12">
                                 <div class="media">
                                     <label>Correo</label>
                                     <p>{{ $user_id->email }}</p>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                 </div>
             </div>
             <div class="col-lg-4" style="text-align: center; margin-left: -5%;">
-                <div class="about-avatar">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+                <div class="about-avatar"><br><br><br><br>
+                    <img src="https://icons-for-free.com/iconfiles/png/512/avatar+human+man+profile+icon-1320085876716628234.png" 
+                    title="Perfil" alt="Perfil" width="280px;">
                 </div><br>
                 <div class="row">
                     <button class="btn btn-primary" data-toggle="modal" data-target="#myModalUpdate" style="height: 35px; font-size: 1.5rem;">Actualizar Datos</button>
@@ -100,22 +104,22 @@
             <div class="modal-body" style="padding: 0px 45px 0px !important; margin-top: 27px;">
                 <div class="login_wrapper">
                     <div class="animate form body-details" style="padding: 0px 0px 54px 0px !important;">
-                        {{ Form::open(['route' => 'register']) }}
+                        <form action="{{ route('users.update', $user_id->id) }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <div>
                                 <input type="text" name="name" class="form-control body-details"
-                                        placeholder="{{ __('views.auth.update.input_0') }}"
-                                        value="{{ $user_id->name }}" required autofocus/>
+                                        placeholder="{{ $user_id->name }}" required autofocus/>
                             </div>
                             <div>
                                 <input type="text" name="apellido" class="form-control"
-                                        placeholder="{{ __('views.auth.update.input_4') }}"
-                                        value="{{ $user_id->apellido }}" required autofocus/>
+                                    placeholder="{{ $user_id->apellido }}" required autofocus/>
                             </div>
                             <div>
                                 <label for="{{ __('views.auth.update.input_5') }}">{{ __('views.auth.update.input_5') }}</label>
                                 <select id="{{ __('views.auth.update.input_5') }}" name="ciudad" class="form-control form-group"
-                                    value="{{ $user_id->ciudad }}" required autofocus>
-                                    <option>{{ $user_id->ciudad }}</option>
+                                 required autofocus>
+                                    <option value="{{ $user_id->ciudad }}">{{ $user_id->ciudad }}</option>
                                     <option value="La Paz">La Paz</option>
                                     <option value="Oruro">Oruro</option>
                                     <option value="Potosi">Potosi</option>
@@ -129,18 +133,15 @@
                             </div>
                             <div>
                                 <input type="text" name="celular" class="form-control"
-                                        placeholder="{{ __('views.auth.update.input_6') }}"
-                                        value="{{ $user_id->celular }}" required autofocus/>
+                                        placeholder="{{ $user_id->celular }}" required autofocus/>
                             </div>
                             <div>
                                 <input type="text" name="nit" class="form-control"
-                                        placeholder="{{ __('views.auth.update.input_7') }}"
                                         value="{{ $user_id->nit }}" required autofocus/>
                             </div>
                             <div>
                                 <input type="email" name="email" class="form-control"
-                                        placeholder="{{ __('views.auth.update.input_1') }}"
-                                        value="{{ $user_id->email }}" required/>
+                                        placeholder="{{ $user_id->email }}" required hidden="true"/>
                             </div>
                             <div>
                                 <input type="password" name="password" class="form-control"
@@ -152,8 +153,8 @@
                                         placeholder="{{ __('views.auth.update.input_3') }}" required/>
                             </div>
                             <div>
-                                <input type="text" name="confirmed" value="0" hidden="true">
-                                <input type="text" name="rol" value="usuario" hidden="true">
+                                <input type="text" name="confirmed" value="1" hidden="true">
+                                <input type="text" name="rol" value="{{ $user_id->rol }}" hidden="true">
                             </div>
 
                             @if (session('status'))
@@ -181,7 +182,7 @@
                                 </button>
                             </div>
                             <div class="clearfix"></div>
-                        {{ Form::close() }}
+                        </form>
                     </div>
                 </div>
             </div>

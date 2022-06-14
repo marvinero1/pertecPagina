@@ -110,7 +110,6 @@ class FacturaController extends Controller{
         $id = $cliente['id'];
         
         $vefactura = DB::table('vefactura')->where('id', $id)->where('nit', $nit)->paginate(10);
-
         return view('page.sections.facturas.listfacturas', ['vefactura'=>$vefactura]);
     }
 

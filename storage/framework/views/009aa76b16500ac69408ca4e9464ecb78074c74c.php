@@ -13,14 +13,14 @@
                 <h5><strong>INFORMACIÓN RELEVANTE</strong></h5>
 
                 <p>El presente contrato describe los términos y condiciones aplicables al uso del contenido, productos
-                    y/o servicios del sistema web <a href="https://www.pertec.com.bo">https://www.pertec.com.bo.</a>  del cual es titular
+                    y/o servicios del sistema web <a style="word-break: break-all;" href="https://www.pertec.com.bo">https://www.pertec.com.bo.</a>  del cual es titular
                     <strong> PERTEC S.R.L </strong> Para hacer uso del contenido, productos y/o servicios del sitio web el usuario deberá sujetarse a los presentes
                     términos y condiciones.
                 </p>
 
                 <h5><strong>I. OBJETO</strong></h5>
                 <p>El objeto es regular el acceso y utilización del contenido, productos y/o servicios a disposición del
-                    público en general en el dominio <a href="https://www.pertec.com.bo">https://www.pertec.com.bo.</a> 
+                    público en general en el dominio <a style="word-break: break-all;" href="https://www.pertec.com.bo">https://www.pertec.com.bo.</a>
                     El titular se reserva el derecho de realizar cualquier tipo de modificación en el sitio web en
                     cualquier momento y sin previo aviso, el usuario acepta dichas modificaciones.
                     El acceso al sitio web por parte del usuario es libre y gratuito.
@@ -29,7 +29,7 @@
                     El sitio web está dirigido a usuarios residentes en Boliva y cumple con la legislación establecida
                     en dicho país, si el usuario reside en otro país y decide acceder al sitio web lo hará bajo su
                     responsabilidad.
-                    La administración del sitio web puede ejercerse solo por la administracion de PERTEC S.R.L, es decir, 
+                    La administración del sitio web puede ejercerse solo por la administracion de PERTEC S.R.L, es decir,
                     personas distintas al
                     titular NO podran realizar cambios, ingenieria invers
                     a, encapsulacion y re-distribucion, afectando
@@ -76,4 +76,5 @@
             max-width: 50% !important;
         }
 	</style>
-</div><?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/terminos/terminos.blade.php ENDPATH**/ ?>
+</div>
+<?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/terminos/terminos.blade.php ENDPATH**/ ?>
