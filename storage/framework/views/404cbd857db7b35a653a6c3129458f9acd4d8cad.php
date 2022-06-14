@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <section id="hero" class="hero hero-4">
     <!-- START REVOLUTION SLIDER 5.0 -->
@@ -284,16 +282,14 @@
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="prev">
-                            <div
-                                style="width: 50px; height: 49px; position: absolute; top: 25%; left: 0%; background-color: rgb(206 206 206 / 80%);">
+                            <div class="controlCarrProd" style="left: 0%;">
                                 <i class="fa fa-angle-left" style="margin-top: 2px; font-size: 3rem; font-weight: bold;"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <a class="right carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="next">
-                            <div
-                                style="width: 50px; height: 49px; position: absolute; top: 25%; right: 0%; background-color: rgb(206 206 206 / 80%);">
+                            <div class="controlCarrProd" style="right: 0%;">
                                 <i class="fa fa-angle-right"
                                     style="margin-top: 2px; font-size: 3rem; font-weight: bold;" aria-hidden="true"></i>
                             </div>
@@ -599,6 +595,26 @@
 </div>
 
 <style type="text/css">
+    .controlCarrProd {
+        width: 50px; height: 49px; position: absolute; background-color: rgb(206 206 206 / 80%)
+    }
+    @media (min-width: 992px) {
+        .controlCarrProd {
+            top: 25%;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        .controlCarrProd {
+            top: 41%;
+        }
+    }
+    @media (max-width: 767px) {
+        .controlCarrProd {
+            top: 46%;
+        }
+    }
+
+
     .awithmodelh1{
         color: #000000;
         font-family: 'Franklin Gothic Demi', sans-serif;

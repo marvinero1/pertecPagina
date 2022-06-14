@@ -60,7 +60,7 @@
 
                             <div class="product-img" style="z-index: 10;">
                                 <img src='/<?php echo e($bproducto["imagen"]); ?>' alt="product"
-                                    style="height:300px;">
+                                    style="height:250px;">
                                 <div class="product-hover">
                                     <div class="product-cart">
                                         <a class="btn btn-secondary btn-block a-card"
