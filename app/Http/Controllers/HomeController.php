@@ -18,7 +18,7 @@ class HomeController extends Controller
      * @return void
      */
     public function __construct(){
-        $this->middleware('auth', ['except' => ['index','historia','contactanos']]);
+        $this->middleware('auth', ['except' => ['index','historia','contactanos','confirmation']]);
     }
 
     /**
@@ -56,6 +56,10 @@ class HomeController extends Controller
 
     public function cotizacion(){
         return view('page.sections.cotizacion');
+    }
+
+    public function confirmation(){
+        return view('page.sections.mail.confirmation');
     }
 
     public function sendemail(Request $request){
