@@ -1,22 +1,15 @@
 
 
 <?php $__env->startSection('content'); ?>
-
-
-
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-title title-1 text-center texto-borde">
-                    <div>
-                        <h2>Mis Pedidos</h2>
-                    </div>
+                    <div><h2> Pedidos de <?php echo e(Auth::user()->name); ?> </h2></div>
                     <ol class="breadcrumb" style="display: unset !important;">
-                        <li>
-                            <a href="/">Inicio</a>
-                        </li>
+                        <li><a href="/">Inicio</a></li>
                         <li class="active">Pedidos</li>
                     </ol>
                 </div>
@@ -24,7 +17,6 @@
         </div>
     </div>
 </section>
-
 
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
     <div class="content section-content">
@@ -36,7 +28,6 @@
 						<h2>Mis Pedidos</h2>
 					</div>
 				</div>
-				<!-- .heading end -->
 			</div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
@@ -61,29 +52,29 @@
                                             <th>Estado</th>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>a</td>
-                                                <td>b</td>
-                                                <td>c</td>
-                                                <td>d</td>
-                                                <td>e</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>2</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                            </tr>
-                                            <tr>
-                                                <td>α</td>
-                                                <td>β</td>
-                                                <td>γ</td>
-                                                <td>δ</td>
-                                                <td>ε</td>
-                                            </tr>
-                                        </tbody>
+                                            <?php $__currentLoopData = $pedido; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pedidos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <tr>
+                                                    <td class="row1" scope="row"></td>
+                                                    <td scope="row"></td>
+                                                    <td scope="row"></td>
+                                                    <td scope="row"></td>
+                                                    <td scope="row" style="text-align:center;">
+                                                    
+                                                        <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>
+                                                            Confirmado</div>
+                                                            
+                                                        <div class="div-background-pendiente"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                            En revision</div>
+                    
+                                                        <div class="div-background-danger"><i class="fa fa-close" aria-hidden="true"></i>
+                                                            Rechazado</div>
 
+                                                        <div class="div-background-orange"><i class="fa fa-close" aria-hidden="true"></i>
+                                                                Despachado, No Recibido</div>
+                                                    </td>
+                                                </tr>  
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </tbody>
                                     </tbody>
                                 </table>
                             </div>
@@ -91,14 +82,34 @@
                     </div>
                 </div>
             </div>
-
-
-            
         </div>
     </div>
 </section>
 
-
+<style>
+    th,td,h4,.modal-header {
+        text-align: center;
+    }
+    .row1 {
+        text-align: left;
+    }
+    .div-background-pendiente{
+        background-color:green; 
+        color: white;
+    }
+    .div-background-success{
+        background-color:yellow; 
+        color: black;
+    }
+    .div-background-danger{
+        background-color:red; 
+        color: white;
+    }
+    .div-background-orange{
+        background-color:orange; 
+        color: white;
+    }
+</style>
 
 <?php $__env->stopSection(); ?>
 

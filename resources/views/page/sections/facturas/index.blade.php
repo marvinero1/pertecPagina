@@ -140,20 +140,8 @@
     </div>
 </section>
 <style>
-    th,td{
-        text-align: center;
+    th,td,tr,table{
+        text-align: center !important;
     }
 </style>
-{{-- <script>
-    $(document).ready(function() {
-        function disableBack() {
-            window.history.forward()
-        }
-        window.onload = disableBack();
-        window.onpageshow = function(e) {
-            if (e.persisted)
-                disableBack();
-        }
-    });
-</script> --}}
 @endsection

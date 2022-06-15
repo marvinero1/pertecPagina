@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Pedido;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PedidoController extends Controller
 {
@@ -13,8 +15,24 @@ class PedidoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //funcion para el backend
     public function index(Request  $request){
-        return view('admin.pedids.index');
+        $pedido = DB::table('vedespacho')->get();
+
+        // dd($pedido);
+        return view('admin.pedids.index', compact('pedido'));
+    }
+
+
+
+
+
+
+    // funcion para el frontend
+    public function getPedidos(){
+        $pedido = DB::table('vedespacho')->get();
+
+        return view('page.sections.pedidos', compact('pedido'));
     }
 
     /**

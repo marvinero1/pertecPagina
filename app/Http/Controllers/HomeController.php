@@ -58,14 +58,6 @@ class HomeController extends Controller
         return view('page.sections.cotizacion');
     }
 
-    public function getInvoices(){
-        return view('page.sections.facturas');
-    }
-
-    public function getPedidos(){
-        return view('page.sections.pedidos');
-    }
-
     public function sendemail(Request $request){
         $all = $request->all();
         // dd($all);

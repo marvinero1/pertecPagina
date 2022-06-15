@@ -182,8 +182,9 @@
                                     <p class="infoFactura" style="float: right;"><?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?></p>
                                 </div>
                                 <div class="col-md-4"><br>
-                                    <?php echo QrCode::size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'); ?>
+                                    <?php echo QrCode::format('png')->size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'); ?>
 
+                                    
                                 </div>
                             </div>
                         </div>
