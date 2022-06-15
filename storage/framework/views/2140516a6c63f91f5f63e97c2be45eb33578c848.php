@@ -1,0 +1,1 @@
+<h1>ACA TEMPLATE RESPONSIVE EMAIL CONFIRMATION </h1><?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/mail/confirmation.blade.php ENDPATH**/ ?>
