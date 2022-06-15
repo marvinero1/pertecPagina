@@ -6,6 +6,7 @@ use App\Models\Factura;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Hashids\Hashids;
 use Session;
 use numeroaletras;
@@ -104,7 +105,6 @@ class FacturaController extends Controller{
     }
 
     public function facturaVista(Request $request){
-
         $cliente = $request->all();
         $nit = $cliente['nit'];
         $id = $cliente['id'];
@@ -185,6 +185,16 @@ class FacturaController extends Controller{
         return view('page.sections.facturas.pruebaRollo');
     }
 
+    // funcion vista facturas con usuario logueado
+    public function getInvoices(){
+        $user = auth()->user();
+        $hash=new Hashids();
+        $nit = $user['nit'];
+        $vefactura = DB::table('vefactura')->where('nit', $nit)->paginate(10);
+
+        return view('page.sections.facturas',['vefactura'=>$vefactura,'hash'=>$hash]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -244,6 +254,8 @@ class FacturaController extends Controller{
                  ->where('vefactura1.codfactura','=', $hash_id);
         })->get();
 
+        $qrcode = base64_encode(\QrCode::format('svg')->size(200)->errorCorrection('H')->generate('string'));
+
         // $tienda = $verfactura->idcuenta;      
         if(!empty($verfactura)){
             $en_linea = $verfactura->en_linea;
@@ -277,7 +289,7 @@ class FacturaController extends Controller{
         
         return view('page.sections.facturas.show', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','en_linea','hash','totalParse'));
+        'total_literal','leyendaFactura','en_linea','hash','totalParse','qrcode'));
     }
 
     /**

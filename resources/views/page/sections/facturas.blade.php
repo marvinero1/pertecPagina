@@ -1,21 +1,15 @@
 @extends('page.layouts.main')
 
 @section('content')
-
-
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-title title-1 text-center texto-borde">
-                    <div>
-                        <h2>Mis Facturas</h2>
-                    </div>
+                    <div><h2>Facturas de {{ Auth::user()->name }}</h2></div>
                     <ol class="breadcrumb" style="display: unset !important;">
-                        <li>
-                            <a href="/">Inicio</a>
-                        </li>
+                        <li><a href="/">Inicio</a></li>
                         <li class="active">Facturas</li>
                     </ol>
                 </div>
@@ -23,9 +17,6 @@
         </div>
     </div>
 </section>
-
-
-
 
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm" style="background-color: white;">
     <div class="content section-content">
@@ -37,7 +28,6 @@
 						<h2>Mis Facturas</h2>
 					</div>
 				</div>
-				<!-- .heading end -->
 			</div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
@@ -55,36 +45,32 @@
                                 <table class="table table-striped table-respon">
                                     <tbody>
                                         <thead>
-                                            <th>Código de Factura</th>
-                                            <th> </th>
-                                            <th> </th>
-                                            <th> </th>
-                                            <th> </th>
+                                            <tr>
+                                                <th>Codigo</th>
+                                                <th>ID</th>
+                                                <th>Nombre Cliente</th>
+                                                <th>NIT / C.I</th>
+                                                <th>Codigo Control</th>
+                                                <th>Acciones</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($vefactura as $vefacturas)
                                             <tr>
-                                                <td>a</td>
-                                                <td>b</td>
-                                                <td>c</td>
-                                                <td>d</td>
-                                                <td>e</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>2</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                            </tr>
-                                            <tr>
-                                                <td>α</td>
-                                                <td>β</td>
-                                                <td>γ</td>
-                                                <td>δ</td>
-                                                <td>ε</td>
-                                            </tr>
+                                                <td class="row1" scope="row">{{ $vefacturas->codigo }}</td>
+                                                <td scope="row">{{ $vefacturas->id }}</td>
+                                                <td scope="row">{{ $vefacturas->nomcliente }}</td>
+                                                <td scope="row">{{ $vefacturas->nit }}</td>
+                                                <td scope="row">{{ $vefacturas->codigocontrol }}</td>
+    
+                                                <td scope="row" style="text-align:center;">
+                                                    <a href="{{ route('viewFactura', $hash->encodeHex($vefacturas->codigo)) }}" style="color: black">
+                                                        <button class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i>
+                                                            Ver</button></a>
+                                                </td>
+                                            </tr> 
+                                            @endforeach
                                         </tbody>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -92,46 +78,12 @@
                     </div>
                 </div>
             </div>
-
-
-            {{-- <div class="widget widget-download">
-                <div class="widget-content">
-                    <div class="download download-pdf btn-dowload" style="float: right;">
-                        <a href="#">
-                            <div class="download-desc">
-                                <div class="download-desc-icon">
-                                    <img src="assets/images/sidebar/1.png" alt="icon"/>
-                                </div>
-                                <h4>Download.pdf</h4>
-                            </div>
-                            <div class="download-icon">
-                                <i class="fa fa-download"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- .download-pdf end -->
-
-                    <div class="download download-doc btn-dowload">
-                        <a href="#">
-                            <div class="download-desc">
-                                <div class="download-desc-icon">
-                                    <img src="assets/images/sidebar/2.png" alt="icon"/>
-                                </div>
-                                <h4>Download.doc</h4>
-                            </div>
-                            <div class="download-icon">
-                                <i class="fa fa-download"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- .download-doc end -->
-                </div>
-            </div> --}}
         </div>
     </div>
 </section>
-
-
-
-
+<style>
+    th,td,tr,table{
+        text-align: center !important;
+    }
+</style>
 @endsection

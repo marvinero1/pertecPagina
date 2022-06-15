@@ -10,13 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 /**
- * Auth routes
+ * Auth routes,FronEnt User logueado
  */
+
 Route::middleware(['auth'] )->group(function () {
     Route::get('profileUser/{id}', 'Admin\UserController@profileUser')->name('users.showFront');
-    Route::get('invoices', 'HomeController@getInvoices')->name('invoices');
-    Route::get('mis_pedidos', 'HomeController@getPedidos')->name('mis_pedidos');
+    Route::get('invoices', 'Admin\FacturaController@getInvoices')->name('invoices');
+    Route::get('mis_pedidos', 'Admin\PedidoController@getPedidos')->name('mis_pedidos');
     Route::put('changeMatrix/{id}', 'Admin\ProductoController@changeMatrix')->name('changeMatrix');
     Route::put('usersUpdate/{id}', 'Admin\UserController@update')->name('users.update');
 });
@@ -28,13 +30,13 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('login', 'LoginController@login');
     Route::get('logout', 'LoginController@logout')->name('logout');
 
-    // Registration Routes...
+    // Registration Routes
     if (config('auth.users.registration')) {
         Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
         Route::post('register', 'RegisterController@register');
     }
 
-    // Password Reset Routes...
+    // Password Reset Routes.
     Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
     Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');

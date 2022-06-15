@@ -68,26 +68,26 @@
                         </thead>
 
                         <tbody>
-                            
-                            <tr>
-                                <td class="row1" scope="row"></td>
-                                <td scope="row"></td>
-                                <td scope="row"></td>
-                                <td scope="row"></td>
-                                <td scope="row" style="text-align:center;">
-                                   
-                                    <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>
-                                        Confirmado</div>
-                                        
-                                    <div class="div-background-pendiente"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        En revision</div>
-
-                                    <div class="div-background-danger"><i class="fa fa-close" aria-hidden="true"></i>
-                                        Rechazado</div>
+                            @foreach ($pedido as $pedidos)
+                                <tr>
+                                    <td class="row1" scope="row"></td>
+                                    <td scope="row"></td>
+                                    <td scope="row"></td>
+                                    <td scope="row"></td>
+                                    <td scope="row" style="text-align:center;">
                                     
-                                </td>
-                            </tr>
-                            
+                                        <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>
+                                            Confirmado</div>
+                                            
+                                        <div class="div-background-pendiente"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            En revision</div>
+
+                                        <div class="div-background-danger"><i class="fa fa-close" aria-hidden="true"></i>
+                                            Rechazado</div>
+                                        
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
