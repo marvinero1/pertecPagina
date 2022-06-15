@@ -358,7 +358,7 @@
             padding: 6px 25px 6px 25px !important;
         }
 
-        @media only screen and (max-width:600px) {
+        @media  only screen and (max-width:600px) {
 
             p,
             ul li,
@@ -606,3 +606,4 @@
 
     </script>
 </body>
+<?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/mail/confirmation.blade.php ENDPATH**/ ?>

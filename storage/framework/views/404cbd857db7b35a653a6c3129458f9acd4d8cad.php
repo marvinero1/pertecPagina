@@ -1,17 +1,14 @@
+
+
 <?php $__env->startSection('content'); ?>
 <section id="hero" class="hero hero-4">
-    <!-- START REVOLUTION SLIDER 5.0 -->
     <div class="rev_slider_wrapper ">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <?php $__currentLoopData = $carusel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $carusels): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
-                    <!-- MAIN IMAGE -->
                     <img src="/<?php echo e($carusels->imagen); ?>" alt="">
-
-
-                    <!-- LAYER NR. 1 -->
                     <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
                         data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
                         data-height="['150','70','70','100']" data-transform_idle="o:1;"
@@ -21,10 +18,7 @@
                         data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                         data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
                         <img src="/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
-
                     </div>
-
-                    <!-- LAYER NR. 2 -->
                     <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
                         data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
                         data-transform_idle="o:1;"
@@ -37,8 +31,6 @@
                         <?php echo e($carusels->titulo); ?>
 
                     </h1>
-
-                    <!-- LAYER NR. 3 -->
                     <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
                         data-y="center" data-voffset="80" data-width="none" data-height="none"
                         data-transform_idle="o:1;"
@@ -72,8 +64,6 @@
     </div>
 </div>
 
-
-<!-- acerca de nosotros -->
 <section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm"
     style="background-color: white;">
     <div class="content section-content">
@@ -87,12 +77,10 @@
                                 <h1 class="h1s">Nuestra Historia</h1>
                             </div>
                         </div>
-                        <!-- .heading end -->
                     </div>
 
                 </div>
             </div>
-            <!-- .col-md-12 end -->
             <div class="col-xs-12 col-sm-12 col-md-6">
                 <p style="text-align: justify;">Desarrollamos oportunidades mutuas de servicio y beneficio con
                     nuestros proveedores, mediante el cumplimiento de estrictas normas de calidad.</p>
@@ -129,7 +117,6 @@
 
             <div class="col-xs-12 col-sm-12 col-md-6 ">
                 <div class="panel-group accordion" id="accordion02" role="tablist" aria-multiselectable="true">
-                    <!-- Panel 01 -->
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
@@ -151,7 +138,6 @@
                         </div>
                     </div>
 
-                    <!-- Panel 02 -->
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
@@ -172,7 +158,6 @@
                         </div>
                     </div>
 
-                    <!-- Panel 03 -->
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
@@ -206,7 +191,6 @@
     </div>
 </section>
 
-<!-- productos -->
 <section id="sectionProducts" style="background-color: #F6F6F6;">
     <div class="content section-content">
         <div class="row">
@@ -229,10 +213,8 @@
                     <div class="carousel-inner content" role="listbox">
                         <div class="item active">
                             <div class="row">
-                                <!-- product #1 -->
                                 <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
-
                                     <div class="product-img">
                                         <img src='/<?php echo e($productos->imagen); ?>' alt="product"
                                             style="height:250px;">
@@ -256,7 +238,6 @@
 
                         <div class="item">
                             <div class="row">
-                                <!-- product #1 -->
                                 <?php $__currentLoopData = $producto2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
                                     <div class="product-img">
@@ -279,7 +260,7 @@
                             </div>
                         </div>
 
-                        <!-- Controls -->
+
                         <a class="left carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="prev">
                             <div class="controlCarrProd" style="left: 0%;">
@@ -310,10 +291,8 @@
     </div>
 </section>
 
-
 <section id="sectionStores">
     <div class="content tdn section-content">
-        <!-- oficinas nivel nacional-->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
@@ -336,7 +315,6 @@
                             </button>
                         </div>
                     </div>
-                    <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
@@ -364,7 +342,6 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
-        <!-- tiendas cbba -->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
@@ -404,7 +381,6 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
-        <!-- tiendas la paz-->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
@@ -415,7 +391,6 @@
                             </button>
                         </div>
                     </div>
-                    <!-- .col-md-12 end -->
                 </div>
             </div>
         </div>
@@ -445,7 +420,6 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
-        <!-- tiendas santa cruz -->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="row">
@@ -488,7 +462,6 @@
     </div>
 </section>
 
-<!-- call center -->
 <section id="sectionCallCenter" class="service service-2 bg-gray pb-0">
     <div class="container-fluid">
         <div class="row alto-row-callCenter" style="background-color: #FBD800;">
@@ -593,7 +566,6 @@
         </div>
     </div>
 </div>
-
 <style type="text/css">
     .controlCarrProd {
         width: 50px; height: 49px; position: absolute; background-color: rgb(206 206 206 / 80%)
