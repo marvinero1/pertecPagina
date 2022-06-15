@@ -46,9 +46,9 @@
                                     <tbody>
                                         <thead>
                                             <th>Código de Pedido</th>
-                                            <th>Lugar del Pedido</th>
+                                            <th>Cliente</th>
+                                            <th>Transporte</th>
                                             <th>Fecha de Pedido</th>
-                                            <th>Fecha de Entrega</th>
                                             <th>Estado</th>
                                         </thead>
                                         <tbody>
@@ -59,18 +59,25 @@
                                                     <td scope="row"></td>
                                                     <td scope="row"></td>
                                                     <td scope="row" style="text-align:center;">
-                                                    
+                                                    @if($pedidos->estado == "DESPACHADO")
                                                         <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>
-                                                            Confirmado</div>
-                                                            
+                                                        Despachado</div>
+                                                    @elseif($pedidos->estado == "SINESTADO")
+                                                    <div class="div-background-sin-estado"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                        Sin Estado</div>
+                                                    @elseif($pedidos->estado == "PREPARACION")
                                                         <div class="div-background-pendiente"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                            En revision</div>
-                    
-                                                        <div class="div-background-danger"><i class="fa fa-close" aria-hidden="true"></i>
-                                                            Rechazado</div>
-
+                                                            En Preparacion</div>
+                                                    @elseif($pedidos->estado == "PENDIENTE")
+                                                        <div class="div-background-pendiente"><i class="fa fa-close" aria-hidden="true"></i>
+                                                        Pendiente</div>
+                                                    @elseif($pedidos->estado == "DESPACHADO SIN EXITO")
                                                         <div class="div-background-orange"><i class="fa fa-close" aria-hidden="true"></i>
                                                                 Despachado, No Recibido</div>
+                                                    @elseif($pedidos->estado == "RECHAZADO")
+                                                        <div class="div-background-danger"><i class="fa fa-close" aria-hidden="true"></i>
+                                                            Rechazado</div>
+                                                    @endif
                                                     </td>
                                                 </tr>  
                                             @endforeach
@@ -94,12 +101,12 @@
         text-align: left;
     }
     .div-background-pendiente{
-        background-color:green; 
-        color: white;
-    }
-    .div-background-success{
         background-color:yellow; 
         color: black;
+    }
+    .div-background-success{
+        background-color:green; 
+        color: white;
     }
     .div-background-danger{
         background-color:red; 
@@ -107,7 +114,11 @@
     }
     .div-background-orange{
         background-color:orange; 
-        color: white;
+        color: black;
+    }
+    .div-background-sin-estado{
+        background-color:gray; 
+        color: black;
     }
 </style>
 
