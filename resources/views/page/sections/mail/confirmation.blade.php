@@ -122,7 +122,7 @@
                                                         <table width="100%" cellspacing="0" cellpadding="0"
                                                             role="presentation"
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                
+
                                                             <tr style="border-collapse:collapse">
                                                                 <td class="es-m-txt-c" align="center"
                                                                     style="padding:0;Margin:0">
@@ -283,9 +283,7 @@
                                                             <tr style="border-collapse:collapse">
                                                                 <td class="es-infoblock made_with" align="center"
                                                                     style="padding:0;Margin:0;line-height:120%;font-size:0;color:#CCCCCC">
-                                                                    <a target="_blank"
-                                                                        href="https://viewstripo.email/?utm_source=templates&utm_medium=email&utm_campaign=yoga&utm_content=trigger_newsletter"
-                                                                        style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#CCCCCC;font-size:12px">
+                                                                    <a href="#" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#CCCCCC;font-size:12px">
                                                                         <img
                                                                             src="../assets/images/icon.png"
                                                                             alt width="100"
