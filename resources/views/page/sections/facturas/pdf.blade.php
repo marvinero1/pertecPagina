@@ -121,7 +121,6 @@
         </tfoot>
     </table>
 
-
     <table class="minimalistBlack">
         <tbody>
             <tr>
@@ -131,8 +130,8 @@
                         SANCIONADO PENALMENTE DE ACUERDO A LEY.
                     </h6>
                 </td>
-                <td rowspan="2" style="text-align: center; padding-left: 120px;">
-                    {!! QrCode::size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2') !!}
+                <td rowspan="2" style="text-align: center; padding-left: 120px;"><br>
+                    <img src="data:image/png;base64, {{ base64_encode(QrCode::size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2')) }} ">
                 </td>
             </tr>
             <tr>
@@ -172,7 +171,6 @@
         margin-bottom: 11px;
         line-height: 0px;
         margin-top: 12px;
-
     }
     .infoFactura {
         font-size: 8px !important;

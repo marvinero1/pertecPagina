@@ -93,7 +93,6 @@
                                     <a href="{{ route('admin.producto.show', $hash->encodeHex($productos->id) ) }}" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>
-                                    
                                     <a href="{{ route('admin.producto.edit', $hash->encodeHex($productos->id) ) }}" style="color: black">
                                         <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
                                             Editar</button></a>
@@ -102,8 +101,6 @@
                                         data-target="#myModal{{$productos->id}}">
                                         <i class="fa fa-star" aria-hidden="true"></i> Promoción</button>
                                     @endif
-                                    
-
                                     <form action="{{ route('admin.producto.destroy',$productos->id ) }}" method="POST"
                                         accept-charset="UTF-8" style="display:inline">
                                         @csrf

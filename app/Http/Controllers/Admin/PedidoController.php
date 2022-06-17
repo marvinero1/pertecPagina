@@ -25,16 +25,16 @@ class PedidoController extends Controller
 
     // funcion para el frontend
     public function getPedidos(){
+        $cod_cliente="";
+        
         $nit_user = Auth::user()->nit;
-        $proforma = DB::table('veproforma')->where('nit', $nit_user)->paginate(10);
+        $proforma = DB::table('veproforma')->where('nit', $nit_user)->first();
+        $cod_cliente = $proforma->codcliente;
+        // dd($proforma);
 
-        foreach ($proforma as $proformas) {
-            $cod_cliente = $proformas->codcliente;
-        }
-        $vedespacho='';
-        $pedido = DB::table('vedespacho')->where('codcliente', $cod_cliente)->paginate(10);
+        $pedido = DB::table('vedespacho')->where('codcliente', $cod_cliente)->orderBy('frecibido','DESC')->paginate(10);
         // dd($pedido);
-        return view('page.sections.pedidos',compact('proforma','pedido'));
+        return view('page.sections.pedidos',compact('proforma','pedido','cod_cliente'));
     }
 
     /**

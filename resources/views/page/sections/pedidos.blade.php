@@ -36,7 +36,8 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active">
                                 <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
-                                    Pedidos Realizados
+                                    Pedidos Realizados de: {{ $proforma->nomcliente }}
+                                    Codigo Cliente: {{ $proforma->codcliente }}
                                 </a>
                             </li>
                         </ul>
@@ -45,39 +46,43 @@
                                 <table class="table table-striped table-respon">
                                     <tbody>
                                         <thead>
-                                            <th>Código de Pedido</th>
-                                            <th>Cliente</th>
-                                            <th>Transporte</th>
-                                            <th>Fecha de Pedido</th>
-                                            <th>Estado</th>
+                                            <th class="text-center">Código de Pedido</th>
+                                            <th class="text-center">Codigo Proforma</th>
+                                            <th class="text-center">Transporte</th>
+                                            <th class="text-center">Fecha de Pedido</th>
+                                            <th class="text-center">Fecha de Entrega</th>
+                                            <th class="text-center"># Items</th>
+                                            <th class="text-center">Estado</th>
                                         </thead>
                                         <tbody>
                                             @foreach ($pedido as $pedidos)
                                                 <tr>
-                                                    <td class="row1" scope="row"></td>
-                                                    <td scope="row"></td>
-                                                    <td scope="row"></td>
-                                                    <td scope="row"></td>
+                                                    <td class="text-center" scope="row">{{$pedidos->codigo}}</td>
+                                                    <td scope="row" class="text-center">{{$pedidos->codproforma}}</td>
+                                                    <td scope="row" class="text-center">{{$pedidos->tipotrans}}</td>
+                                                    <td scope="row" class="text-center">{{ date('d-M-y', strtotime($pedidos->frecibido)) }}</td>
+                                                    <td scope="row" class="text-center">{{ date('d-M-y', strtotime($pedidos->fdespachado)) }}</td>
+                                                    <td scope="row" class="text-center">{{$pedidos->nroitems}}</td>
                                                     <td scope="row" style="text-align:center;">
-                                                    @if($pedidos->estado == "DESPACHADO")
-                                                        <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>
-                                                        Despachado</div>
-                                                    @elseif($pedidos->estado == "SINESTADO")
-                                                    <div class="div-background-sin-estado"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                        Sin Estado</div>
-                                                    @elseif($pedidos->estado == "PREPARACION")
-                                                        <div class="div-background-pendiente"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                            En Preparacion</div>
-                                                    @elseif($pedidos->estado == "PENDIENTE")
-                                                        <div class="div-background-pendiente"><i class="fa fa-close" aria-hidden="true"></i>
-                                                        Pendiente</div>
-                                                    @elseif($pedidos->estado == "DESPACHADO SIN EXITO")
-                                                        <div class="div-background-orange"><i class="fa fa-close" aria-hidden="true"></i>
-                                                                Despachado, No Recibido</div>
-                                                    @elseif($pedidos->estado == "RECHAZADO")
-                                                        <div class="div-background-danger"><i class="fa fa-close" aria-hidden="true"></i>
-                                                            Rechazado</div>
-                                                    @endif
+                                                        @if($pedidos->estado == "DESPACHADO")
+                                                            <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>
+                                                            Despachado</div>
+                                                        @elseif($pedidos->estado == "SINESTADO")
+                                                        <div class="div-background-sin-estado"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                            Sin Estado</div>
+                                                        @elseif($pedidos->estado == "PREPARACION")
+                                                            <div class="div-background-pendiente"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                                En Preparacion</div>
+                                                        @elseif($pedidos->estado == "PENDIENTE")
+                                                            <div class="div-background-pendiente"><i class="fa fa-close" aria-hidden="true"></i>
+                                                            Pendiente</div>
+                                                        @elseif($pedidos->estado == "DESPACHADO SIN EXITO")
+                                                            <div class="div-background-orange"><i class="fa fa-close" aria-hidden="true"></i>
+                                                                    Despachado, No Recibido</div>
+                                                        @elseif($pedidos->estado == "RECHAZADO")
+                                                            <div class="div-background-danger"><i class="fa fa-close" aria-hidden="true"></i>
+                                                                Rechazado</div>
+                                                        @endif
                                                     </td>
                                                 </tr>  
                                             @endforeach
@@ -85,6 +90,9 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                        <div style="text-align: center;">
+                            {{ $pedido->appends(['cod_cliente' => $cod_cliente])->links() }}
                         </div>
                     </div>
                 </div>
@@ -94,9 +102,6 @@
 </section>
 
 <style>
-    th,td,h4,.modal-header {
-        text-align: center;
-    }
     .row1 {
         text-align: left;
     }

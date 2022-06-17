@@ -1,6 +1,7 @@
 <?php $__env->startSection('body_class','login'); ?>
 
 <?php $__env->startSection('content'); ?>
+<h1>hola Lola</h1>
     <div>
         <div class="login_wrapper">
             <div class="animate form login_form">

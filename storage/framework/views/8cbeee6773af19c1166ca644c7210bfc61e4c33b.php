@@ -36,7 +36,10 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active">
                                 <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
-                                    Pedidos Realizados
+                                    Pedidos Realizados de: <?php echo e($proforma->nomcliente); ?>
+
+                                    Codigo Cliente: <?php echo e($proforma->codcliente); ?>
+
                                 </a>
                             </li>
                         </ul>
@@ -45,39 +48,43 @@
                                 <table class="table table-striped table-respon">
                                     <tbody>
                                         <thead>
-                                            <th>Código de Pedido</th>
-                                            <th>Cliente</th>
-                                            <th>Transporte</th>
-                                            <th>Fecha de Pedido</th>
-                                            <th>Estado</th>
+                                            <th class="text-center">Código de Pedido</th>
+                                            <th class="text-center">Codigo Proforma</th>
+                                            <th class="text-center">Transporte</th>
+                                            <th class="text-center">Fecha de Pedido</th>
+                                            <th class="text-center">Fecha de Entrega</th>
+                                            <th class="text-center"># Items</th>
+                                            <th class="text-center">Estado</th>
                                         </thead>
                                         <tbody>
                                             <?php $__currentLoopData = $pedido; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pedidos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <tr>
-                                                    <td class="row1" scope="row"></td>
-                                                    <td scope="row"></td>
-                                                    <td scope="row"></td>
-                                                    <td scope="row"></td>
+                                                    <td class="text-center" scope="row"><?php echo e($pedidos->codigo); ?></td>
+                                                    <td scope="row" class="text-center"><?php echo e($pedidos->codproforma); ?></td>
+                                                    <td scope="row" class="text-center"><?php echo e($pedidos->tipotrans); ?></td>
+                                                    <td scope="row" class="text-center"><?php echo e(date('d-M-y', strtotime($pedidos->frecibido))); ?></td>
+                                                    <td scope="row" class="text-center"><?php echo e(date('d-M-y', strtotime($pedidos->fdespachado))); ?></td>
+                                                    <td scope="row" class="text-center"><?php echo e($pedidos->nroitems); ?></td>
                                                     <td scope="row" style="text-align:center;">
-                                                    <?php if($pedidos->estado == "DESPACHADO"): ?>
-                                                        <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>
-                                                        Despachado</div>
-                                                    <?php elseif($pedidos->estado == "SINESTADO"): ?>
-                                                    <div class="div-background-sin-estado"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                        Sin Estado</div>
-                                                    <?php elseif($pedidos->estado == "PREPARACION"): ?>
-                                                        <div class="div-background-pendiente"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                            En Preparacion</div>
-                                                    <?php elseif($pedidos->estado == "PENDIENTE"): ?>
-                                                        <div class="div-background-pendiente"><i class="fa fa-close" aria-hidden="true"></i>
-                                                        Pendiente</div>
-                                                    <?php elseif($pedidos->estado == "DESPACHADO SIN EXITO"): ?>
-                                                        <div class="div-background-orange"><i class="fa fa-close" aria-hidden="true"></i>
-                                                                Despachado, No Recibido</div>
-                                                    <?php elseif($pedidos->estado == "RECHAZADO"): ?>
-                                                        <div class="div-background-danger"><i class="fa fa-close" aria-hidden="true"></i>
-                                                            Rechazado</div>
-                                                    <?php endif; ?>
+                                                        <?php if($pedidos->estado == "DESPACHADO"): ?>
+                                                            <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>
+                                                            Despachado</div>
+                                                        <?php elseif($pedidos->estado == "SINESTADO"): ?>
+                                                        <div class="div-background-sin-estado"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                            Sin Estado</div>
+                                                        <?php elseif($pedidos->estado == "PREPARACION"): ?>
+                                                            <div class="div-background-pendiente"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                                En Preparacion</div>
+                                                        <?php elseif($pedidos->estado == "PENDIENTE"): ?>
+                                                            <div class="div-background-pendiente"><i class="fa fa-close" aria-hidden="true"></i>
+                                                            Pendiente</div>
+                                                        <?php elseif($pedidos->estado == "DESPACHADO SIN EXITO"): ?>
+                                                            <div class="div-background-orange"><i class="fa fa-close" aria-hidden="true"></i>
+                                                                    Despachado, No Recibido</div>
+                                                        <?php elseif($pedidos->estado == "RECHAZADO"): ?>
+                                                            <div class="div-background-danger"><i class="fa fa-close" aria-hidden="true"></i>
+                                                                Rechazado</div>
+                                                        <?php endif; ?>
                                                     </td>
                                                 </tr>  
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -85,6 +92,10 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <?php echo e($pedido->appends(['cod_cliente' => $cod_cliente])->links()); ?>
+
                         </div>
                     </div>
                 </div>
@@ -94,9 +105,6 @@
 </section>
 
 <style>
-    th,td,h4,.modal-header {
-        text-align: center;
-    }
     .row1 {
         text-align: left;
     }
