@@ -263,7 +263,7 @@
                         <div style="float: right;">
                             <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i class="fa fa-arrow-left"></i>
                                 &nbsp;Atras </button>
-                            <a class="btn btn-danger btn-lg" type="button" href="/viewPDFRollo/{{ $verfactura->numeroid }}">
+                            <a class="btn btn-danger btn-lg" type="button" href="/viewPDFRollo/{{ $verfactura->codigo }}">
                                 Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
                             </a>
                         </div>

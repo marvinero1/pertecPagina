@@ -134,8 +134,6 @@
                                 </div>
                             </div>
 
-
-
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="x_content table-responsive">
@@ -244,10 +242,10 @@
                 <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i
                         class="fa fa-arrow-left"></i>
                     &nbsp;Atras </button>
-                <a class="btn btn-danger btn-lg" type="button" href="/viewPDF/{{ $verfactura->numeroid }}">
+                <a class="btn btn-danger btn-lg" type="button" href="/viewPDF/{{ $verfactura->codigo }}">
                     Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
                 </a>
-                <a class="btn btn-success btn-lg" type="button" href="/pruebaRollo/{{ $verfactura->numeroid }}">
+                <a class="btn btn-success btn-lg" type="button" href="/pruebaRollo/{{ $verfactura->codigo }}">
                     Impresion Rollo <i class="fa fa-print"></i>&nbsp;
                 </a>
             </div>

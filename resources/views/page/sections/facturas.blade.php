@@ -51,6 +51,7 @@
                                                 <th>Nombre Cliente</th>
                                                 <th>NIT / C.I</th>
                                                 <th>Codigo Control</th>
+                                                <th>Codigo</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -62,6 +63,7 @@
                                                 <td scope="row">{{ $vefacturas->nomcliente }}</td>
                                                 <td scope="row">{{ $vefacturas->nit }}</td>
                                                 <td scope="row">{{ $vefacturas->codigocontrol }}</td>
+                                                <td scope="row">{{ $vefacturas->codigo }}</td>
     
                                                 <td scope="row" style="text-align:center;">
                                                     <a href="{{ route('viewFactura', $hash->encodeHex($vefacturas->codigo)) }}" style="color: black">

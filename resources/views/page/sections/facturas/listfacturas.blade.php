@@ -54,12 +54,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Codigo</th>
-                                        <th>ID</th>
-                                        <th>Nombre Cliente</th>
-                                        <th>NIT / C.I</th>
-                                        <th>Codigo Control</th>
-                                        <th>Acciones</th>
+                                       
                                     </tr>
                                 </thead>
         
@@ -71,11 +66,12 @@
                                         <td scope="row">{{ $vefacturas->nomcliente }}</td>
                                         <td scope="row">{{ $vefacturas->nit }}</td>
                                         <td scope="row">{{ $vefacturas->codigocontrol }}</td>
+                                        <td scope="row">{{ $vefacturas->codigo }}</td>
 
                                         <td scope="row" style="text-align:center;">
                                             <a href="{{ route('viewFactura', $vefacturas->codigo) }}" style="color: black">
                                                 <button class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i>
-                                                    Ver</button></a>
+                                                     Ver</button></a>
                                         </td>
                                     </tr>
                                     @endforeach

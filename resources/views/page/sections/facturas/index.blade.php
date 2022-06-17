@@ -119,11 +119,11 @@
                                             <td scope="row">{{ $vefacturas->nomcliente }}</td>
                                             <td scope="row">{{ $vefacturas->nit }}</td>
                                             <td scope="row">{{ $vefacturas->codigocontrol }}</td>
-
                                             <td scope="row" style="text-align:center;">
                                                 <a href="{{ route('viewFactura', $hash->encodeHex($vefacturas->codigo)) }}" style="color: black">
                                                     <button class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i>
-                                                        Ver</button></a>
+                                                        Ver</button>
+                                                </a>
                                             </td>
                                         </tr>
                                         @endforeach

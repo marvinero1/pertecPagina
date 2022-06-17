@@ -119,11 +119,11 @@
                                             <td scope="row"><?php echo e($vefacturas->nomcliente); ?></td>
                                             <td scope="row"><?php echo e($vefacturas->nit); ?></td>
                                             <td scope="row"><?php echo e($vefacturas->codigocontrol); ?></td>
-
                                             <td scope="row" style="text-align:center;">
                                                 <a href="<?php echo e(route('viewFactura', $hash->encodeHex($vefacturas->codigo))); ?>" style="color: black">
                                                     <button class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i>
-                                                        Ver</button></a>
+                                                        Ver</button>
+                                                </a>
                                             </td>
                                         </tr>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
