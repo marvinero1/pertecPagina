@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
     style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
@@ -36,11 +38,11 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-md-6" style="float: left;">
+                    <div class="col-xs-11 col-sm-11 col-md-11" style="padding-left: 44px;">
                         <form>
                             <div class="row" style="border: outset;padding: 25px;">
-                                <label><strong style="font-size: 1.3rem;">Ingrese los datos requeridos para visualizar sus Facturas.</strong></label><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<label><strong style="font-size: 1.3rem;">Los campos (*) son obligatorios.</strong></label>
+                                <label style="font-size: 1.3rem;">Ingrese los datos requeridos para visualizar sus Facturas.</label><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<p style="font-size: 1.3rem;">Los campos (*) son obligatorios.</p>
                                 <div class="col-md-12 col-sm-12 form-group">
                                     <input type="number" class="form-control" name="nit" placeholder="NIT/C.I" required style="font-size: 1.3rem;"
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
@@ -57,6 +59,7 @@
                             </div>
                         </form>
                     </div>
+                   
                 </div>
             <?php else: ?>
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -139,11 +142,10 @@
     </div>
 </section>
 <style>
-    th,td{
-        text-align: center;
+    th,td,tr,table{
+        text-align: center !important;
     }
 </style>
-
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('page.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/index.blade.php ENDPATH**/ ?>
