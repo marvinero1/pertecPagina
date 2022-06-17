@@ -1,6 +1,7 @@
 @extends('page.layouts.main')
 
 @section('content')
+dsfdsf
 {{-- {{ Html::style(mix('assets/admin/css/admin.css')) }} --}}
 {{ Html::script(mix('assets/admin/js/admin.js')) }}
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"

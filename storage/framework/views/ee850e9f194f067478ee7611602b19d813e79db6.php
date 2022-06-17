@@ -1,6 +1,7 @@
 
 
 <?php $__env->startSection('content'); ?>
+dsfdsf
 
 <?php echo e(Html::script(mix('assets/admin/js/admin.js'))); ?>
 
