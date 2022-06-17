@@ -144,7 +144,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>CODIGO PRODUCTO</th>
-                                                    <th colspan="2">DESCRIPCION</th>
+                                                    <th colspan="2" style="text-align: center;">DESCRIPCION</th>
                                                     <th>UNIDAD DE MEDIDA</th>
                                                     <th>CANTIDAD</th>
                                                     <th style="text-align: right;">PRECIO UNITARIO</th>
@@ -160,7 +160,7 @@
                                                     <td><?php echo e($vefacturaDetalles->coditem); ?></td>
                                                     <td class="alingLeft"><?php echo e($vefacturaDetalles->descripcion); ?></td>
                                                     <td class="alingLeft"><?php echo e($vefacturaDetalles->medida); ?></td>
-                                                    <td><?php echo e($vefacturaDetalles->udm); ?></td>
+                                                    <td class="alingCenter"><?php echo e($vefacturaDetalles->udm); ?></td>
                                                     <td class="alingRight"><?php echo e($vefacturaDetalles->cantidad); ?></td>
                                                     <td class="alingRight"><?php echo e(round($vefacturaDetalles->preciolista, 2)); ?></td>
                                                     <td class="alingRight">
@@ -334,6 +334,10 @@
 
     .alingRight {
         text-align: right;
+    }
+
+    .alingCenter {
+        text-align: center;
     }
 
     @media (max-width: 991px) {

@@ -559,6 +559,9 @@
                         <button type="button" class="btn btn-lg btn-block btn-popUp" href="/prom_products">
                             Productos en Promoción
                         </button>
+                        <button type="button" class="btn btn-lg btn-block btn-popUp" href="/prom_products">
+                            Cerrar
+                        </button>
                     </div>
                 </div>
             </div>
@@ -585,8 +588,6 @@
             top: 46%;
         }
     }
-
-
     .awithmodelh1{
         color: #000000;
         font-family: 'Franklin Gothic Demi', sans-serif;

@@ -1,6 +1,4 @@
-@extends('page.layouts.main')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
     style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
     <div class="bgImgCoverPages"></div>
@@ -98,17 +96,17 @@
                                         <tr>
                                             <td colspan="2">NIT
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
-                                            <td colspan="2">{{ $verfactura->nit }}</td>
+                                            <td colspan="2"><?php echo e($verfactura->nit); ?></td>
                                             <td></td>
                                         </tr>
                                         <tr>
                                             <td colspan="2">FACTURA No. &nbsp;:</td>
-                                            <td colspan="2">{{ $verfactura->codigo }}</td>
+                                            <td colspan="2"><?php echo e($verfactura->codigo); ?></td>
                                             <td></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3">COD. AUTORIZACION: </td>
-                                            <td colspan="3">{{ $verfactura->nroautorizacion }}</td>
+                                            <td colspan="3"><?php echo e($verfactura->nroautorizacion); ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -117,21 +115,21 @@
                                     <tbody>
                                         <tr>
                                             <td colspan="3">LUGAR Y FECHA EMISION :</td>
-                                            <td colspan="3">Sacaba {{ date('d-m-y', strtotime($verfactura->fecha)) }} HRS: {{ $verfactura->horareg }}</td>
+                                            <td colspan="3">Sacaba <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> HRS: <?php echo e($verfactura->horareg); ?></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3">NOMBRE / RAZON SOCIAL:</td>
-                                            <td colspan="3">{{ $verfactura->nomcliente }}</td>
+                                            <td colspan="3"><?php echo e($verfactura->nomcliente); ?></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3">NIT/CI/CEX
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
                                             </td>
-                                            <td colspan="3">{{ $verfactura->nit }}</td>
+                                            <td colspan="3"><?php echo e($verfactura->nit); ?></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3">CODIGO CLIENTE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
-                                            <td colspan="3">{{ $verfactura->nit }}</td>
+                                            <td colspan="3"><?php echo e($verfactura->nit); ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -161,22 +159,22 @@
                                 <hr>
                                 <table class="section2">
                                     <tbody>
-                                        @foreach ($vefacturaProducto as $vefacturaDetalles)
+                                        <?php $__currentLoopData = $vefacturaProducto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturaDetalles): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <tr style="height: 3px;"></tr>
                                             <tr style="font-size: 13px;">
-                                                <td colspan="2">{{ $vefacturaDetalles->codfactura }} {{ $vefacturaDetalles->coditem }}</td>
-                                                <td>{{ $vefacturaDetalles->descripcion }}</td>
+                                                <td colspan="2"><?php echo e($vefacturaDetalles->codfactura); ?> <?php echo e($vefacturaDetalles->coditem); ?></td>
+                                                <td><?php echo e($vefacturaDetalles->descripcion); ?></td>
                                                 <td ></td>
-                                                <td>{{ $vefacturaDetalles->medida }}</td>
+                                                <td><?php echo e($vefacturaDetalles->medida); ?></td>
                                             </tr>
                                             <tr style="font-size: 13px;">
-                                                <td style="width: 25%">{{ $vefacturaDetalles->udm }}</td>
-                                                <td style="width: 25%">{{ $vefacturaDetalles->cantidad }}</td>
-                                                <td style="width: 25%">{{ round($vefacturaDetalles->preciolista, 2) }}</td>
-                                                <td style="width: 25%">{{ $cantidad_precio_decimal - $cantidad_precioneto_decimal }}</td>
-                                                <td style="width: 25%">{{ round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2) }}</td>
+                                                <td style="width: 25%"><?php echo e($vefacturaDetalles->udm); ?></td>
+                                                <td style="width: 25%"><?php echo e($vefacturaDetalles->cantidad); ?></td>
+                                                <td style="width: 25%"><?php echo e(round($vefacturaDetalles->preciolista, 2)); ?></td>
+                                                <td style="width: 25%"><?php echo e($cantidad_precio_decimal - $cantidad_precioneto_decimal); ?></td>
+                                                <td style="width: 25%"><?php echo e(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2)); ?></td>
                                             </tr>
-                                        @endforeach
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
                                 </table>
                                 <hr>
@@ -185,25 +183,25 @@
                                         <tr style="height: 3px;"></tr>
                                         <tr>
                                             <th>SubTotal(BS) :</th>
-                                            <th style="text-align: right;padding-right: 18px;">{{ $totalParse }}</th>
+                                            <th style="text-align: right;padding-right: 18px;"><?php echo e($totalParse); ?></th>
                                         </tr>
                                         <tr>
                                             <th>Descuentos(BS) :</th>
-                                            <th style="text-align: right;padding-right: 18px;">{{ round($descuento, 2) }}</th>
+                                            <th style="text-align: right;padding-right: 18px;"><?php echo e(round($descuento, 2)); ?></th>
                                         </tr>
                                         <tr>
                                             <th>Total(BS) :</th>
-                                            <th style="text-align: right;padding-right: 18px;">{{ round($total_menos_descuento, 2) }}</th>
+                                            <th style="text-align: right;padding-right: 18px;"><?php echo e(round($total_menos_descuento, 2)); ?></th>
                                         </tr>
                                         <tr>
-                                            <th colspan="2">Importe Base Credito Fiscal (BS) : {{ round($total_menos_descuento, 2) }}</th>
+                                            <th colspan="2">Importe Base Credito Fiscal (BS) : <?php echo e(round($total_menos_descuento, 2)); ?></th>
                                         </tr>
                                         <tr>
                                             <th style="border-bottom: solid 1px;"></th>
-                                            <th style="text-align: right;padding-right: 18px;">{{ round($total_menos_descuento, 2) }}</th>
+                                            <th style="text-align: right;padding-right: 18px;"><?php echo e(round($total_menos_descuento, 2)); ?></th>
                                         </tr>
                                         <tr style="height: 25px;">
-                                            <th colspan="2">Son: {{ $total_literal,2 }}</th>
+                                            <th colspan="2">Son: <?php echo e($total_literal,2); ?></th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -223,35 +221,36 @@
                                         <tr style="height: 5px;"></tr>
                                         <tr>
                                             <td>
-                                                <p style="text-align: center !important;">{{ $leyendaFactura->descripcionleyenda }}</p>
+                                                <p style="text-align: center !important;"><?php echo e($leyendaFactura->descripcionleyenda); ?></p>
                                             </td>
                                         </tr>
                                         <tr style="height: 5px;"></tr>
                                         <tr>
                                             <td>
-                                                @if($en_linea != 0 )
+                                                <?php if($en_linea != 0 ): ?>
                                                     <p class="infoFactura">
                                                         Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
                                                         modalidad de facturación local
                                                     </p><br>
-                                                @else
+                                                <?php else: ?>
                                                     <p class="infoFactura">
                                                         Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una
                                                         modalidad de facturación en línea
                                                     </p><br>
-                                                @endif
+                                                <?php endif; ?>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                {!! QrCode::format('svg')->size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2') !!}
+                                                <?php echo QrCode::format('svg')->size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'); ?>
+
                                             </td>
                                         </tr>
                                     </tbody>
 
                                     <tfoot>
                                         <tr style="padding-top: 5px;font-size: 13px;">
-                                            <td>{{ $verfactura->id }}-{{ $verfactura->numeroid }} Vendedor: 34103 YUCRA ALEXANDER</td>
+                                            <td><?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?> Vendedor: 34103 YUCRA ALEXANDER</td>
                                         </tr>
                                         <tr style="font-size: 13px;">
                                             <td>***PERNOS-TUERCAS-TORNILLOS***</td>
@@ -263,7 +262,7 @@
                         <div style="float: right;">
                             <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i class="fa fa-arrow-left"></i>
                                 &nbsp;Atras </button>
-                            <a class="btn btn-danger btn-lg" type="button" href="/viewPDFRollo/{{ $verfactura->numeroid }}">
+                            <a class="btn btn-danger btn-lg" type="button" href="/viewPDFRollo/<?php echo e($verfactura->numeroid); ?>">
                                 Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
                             </a>
                         </div>
@@ -273,7 +272,7 @@
         </div>
     </div>
 </section>
-@endsection
+<?php $__env->stopSection(); ?>
 
 <style>
     p{
@@ -397,3 +396,5 @@
         font-size: 0.9rem;
     }
 </style>
+
+<?php echo $__env->make('page.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/pruebaRollo.blade.php ENDPATH**/ ?>
