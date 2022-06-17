@@ -29,13 +29,25 @@
         <h1 style="text-align: center; text-transform: uppercase;"><b><?php echo e($producto_Id->nombre_producto); ?></b></h1><br>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-5 shop-content">
-                
+                <?php if($producto_Id->promocion=="si"): ?>
+                    <div class="infProd" style="background-color: #FBD800;">
+                        EN OFERTA
+                    </div>
+                <?php endif; ?>
+                <?php if($producto_Id->novedad=="si"): ?>
+                    <div class="infProd" style="background-color: #093070;">
+                        NUEVO
+                    </div>
+                <?php endif; ?>
                 <div class="product-img product-feature-img mb-50">
                     <img src="/<?php echo e($producto_Id->imagen); ?>" alt="<?php echo e($producto_Id->nombre_producto); ?>" />
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-7 sidebar sidebar-full">
+                <div style="float: right;">
+                    <button class="boton-info" title="Ayuda" data-toggle="modal" data-target="#ModalInfoProd">?</button>
+                </div>
                 <div class="product-img product-feature-img mb-50" style="text-align: center;">
                     <?php if(is_null($producto_Id['imagen_matriz'])): ?>
                     <img src="../assets/images/matrizVacia.jpg" alt="matriz Vacia" />
@@ -204,6 +216,7 @@
         </div>
 </section>
 
+<?php echo $__env->make('page.sections.productos.modalInfoProd', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <!-- The Modal -->
 <div id="myModalImg" class="modal">
@@ -333,6 +346,26 @@
         -webkit-transform: scale(1.5);
         /* Safari 3-8 */
         transform: scale(1.5);
+    }
+
+
+    .boton-info {
+        border-radius: 50%;
+        background-color: #FBD800;
+        color: #093070;
+        border-color: #FBD800;
+        font-weight: bold;
+        font-size: large;
+        width: 30px;
+        position: absolute;
+        top: -20px;
+        right: 20px;
+    }
+
+    .boton-info:hover {
+        background-color: #093070;
+        color: #FBD800;
+        border-color: #093070;
     }
 
 </style>
