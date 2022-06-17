@@ -113,7 +113,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('postDataPDF/{id}', 'Admin\FacturaController@postDataPDF')->name('postDataPDF');
     Route::get('viewFactura/{id}', 'Admin\FacturaController@show')->name('viewFactura');
     Route::get('confirmation', 'HomeController@confirmation')->name('confirmacionEmail');
-
     
 /**
 * Membership
