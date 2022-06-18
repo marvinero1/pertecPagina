@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <section id="hero" class="hero hero-4">
     <div class="rev_slider_wrapper ">
@@ -540,7 +538,6 @@
 </div>
 
 <input type="checkbox" id="cerrar">
-<label for="cerrar" id="btn-cerrar" style="text-align: center !important; z-index: 1000;">X</label>
 
 <div class="modalPopUp">
     <div class="contenido"><br>
@@ -557,18 +554,17 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> <br>
                     <div style="padding: 10px;">
                         <button type="button" class="btn btn-lg btn-block btn-popUp" href="/prom_products">
-                            Productos en Promoción
+                            <i class="fa fa-star"></i> Productos en Promoción
                         </button>
-                        <button type="button" class="btn btn-lg btn-block btn-popUp" href="/prom_products">
-                            Cerrar
-                        </button>
+                        <label for="cerrar" id="btn-cerrar" style="text-align: center !important; z-index: 1000;"
+                        class="btn-lg btn-danger btn-block"><i class="fa fa-close"></i> Cerrar</label>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
+
 <style type="text/css">
     .controlCarrProd {
         width: 50px; height: 49px; position: absolute; background-color: rgb(206 206 206 / 80%)
@@ -587,6 +583,9 @@
         .controlCarrProd {
             top: 46%;
         }
+        .cotizacion-div {
+            display: none;
+        }
     }
     .awithmodelh1{
         color: #000000;
@@ -597,7 +596,7 @@
     }
     .product-item {
         text-align: center;
-        margin-bottom: 40px !important;
+        margin-bottom: 5px !important;
     }
     .spaceText p {
         margin-bottom: 0.5rem;
@@ -695,6 +694,10 @@
         animation: modal 2s 2s forwards;
         visibility: hidden;
         opacity: 0;
+    }
+    .btn-close{
+        background: darkred;
+        color: white;
     }
     #cerrar:checked+label,
     #cerrar:checked~.modalPopUp {

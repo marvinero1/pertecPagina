@@ -2375,6 +2375,7 @@ footer {
 
     .container>.navbar-collapse {
         width: 100%;
+        max-height: 250px;
         background-color: #093070;
         margin-right: 0;
         padding-left: 25px;

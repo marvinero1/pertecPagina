@@ -32,7 +32,7 @@
                     <b style="top: -18px; position: relative;">Factura Nro: </b>
                 </td>
                 <td>
-                    <b style="top: -18px; position: relative;">00000<?php echo e($verfactura->codigo); ?></b>
+                    <b style="top: -18px; position: relative;">00000</b>
                 </td>
             </tr>
             <tr>
@@ -103,7 +103,7 @@
                     SON: <?php echo e($total_literal,2); ?> Equivalentes a <?php echo e(round($total / 6.96, 2)); ?> DOLAR AMERICANO
                 </td>
                 <td colspan="3" style="padding: 0px 2%;">Sub Total(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($total, 2)); ?></td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e($totalParse); ?></td>
             </tr>
             <tr>
                 <td colspan="3" style="padding: 0px 2%;">Descuentos(BS):</td>

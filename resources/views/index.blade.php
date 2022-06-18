@@ -583,6 +583,9 @@
         .controlCarrProd {
             top: 46%;
         }
+        .cotizacion-div {
+            display: none;
+        }
     }
     .awithmodelh1{
         color: #000000;
