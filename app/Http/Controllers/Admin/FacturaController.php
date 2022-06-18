@@ -6,13 +6,12 @@ use App\Models\Factura;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
 use Hashids\Hashids;
 use Session;
 use numeroaletras;
 use modelonumero;
-
 require_once 'numeroaletras.php';
+
 class FacturaController extends Controller{    
     /**
      * Display a listing of the resource.
@@ -56,7 +55,6 @@ class FacturaController extends Controller{
         $verfactura = DB::table('vefactura')->where('codigo', $codfactura)->first();
         $vefacturaDetalle = DB::table('vefactura1')->where('codfactura', $codfactura)->get();
         $item = DB::table('initem')->get();
-        // dd($verfactura);
         $leyendaFactura = DB::table('adsiat_leyenda_factura')->inRandomOrder()->first();
         $vefacturaProducto = DB::table('vefactura1')
         ->join('initem', function($join) use($codfactura){
@@ -68,10 +66,8 @@ class FacturaController extends Controller{
         if(!empty($verfactura)){
             $en_linea = $verfactura->en_linea;
         }
-        // dd($verfactura);
 
         foreach($vefacturaProducto as $vefacturaProductos){
-            
             $cod_factura = $vefacturaProductos->codfactura;
             $cod_item = $vefacturaProductos->coditem;
             $precio_lista = $vefacturaProductos->preciolista;
@@ -92,12 +88,15 @@ class FacturaController extends Controller{
 
             $total_menos_descuento = $total - $descuento;
         } 
+
+        $descuento_round=round($descuento);
+        $total_menos_descuento_round = round($total_menos_descuento,2); 
         
         $total_literal = $modelonumero->numtoletras(round($total_menos_descuento,2),'Bolivianos');          
 
         $pdf = \PDF::loadView('page.sections.facturas.pdf', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','en_linea','totalParse'));
+        'total_literal','leyendaFactura','en_linea','totalParse','descuento_round','total_menos_descuento_round'));
 
         $pdf_download= $pdf->download('mi-factura-pertec-'.$verfactura->codigo.'.pdf');
 
@@ -126,7 +125,6 @@ class FacturaController extends Controller{
         $verfactura = DB::table('vefactura')->where('codigo', $codfactura)->first();
         $vefacturaDetalle = DB::table('vefactura1')->where('codfactura', $codfactura)->get();
         $item = DB::table('initem')->get();
-        // dd($verfactura);
         $leyendaFactura = DB::table('adsiat_leyenda_factura')->inRandomOrder()->first();
 
         $vefacturaProducto = DB::table('vefactura1')
@@ -134,13 +132,10 @@ class FacturaController extends Controller{
             $join->on('vefactura1.coditem', '=', 'initem.codigo')
                     ->where('vefactura1.codfactura','=', $codfactura);
         })->get();
-        
-        // $tienda = $verfactura->idcuenta;
-        $en_linea = $verfactura->en_linea;
-        // dd($verfactura);
 
+        $en_linea = $verfactura->en_linea;
+        
         foreach($vefacturaProducto as $vefacturaProductos){
-            
             $cod_factura = $vefacturaProductos->codfactura;
             $cod_item = $vefacturaProductos->coditem;
             $precio_lista = $vefacturaProductos->preciolista;
@@ -160,13 +155,16 @@ class FacturaController extends Controller{
             $descuento = $cantidad_precio_decimal - $cantidad_precioneto_decimal;
 
             $total_menos_descuento = $total - $descuento;
-        }   
+        } 
+
+        $descuento_round=round($descuento);
+        $total_menos_descuento_round = round($total_menos_descuento,2);   
         
         $total_literal = $modelonumero->numtoletras(round($total_menos_descuento,2),'Bolivianos');
 
         $pdf = \PDF::loadView('page.sections.facturas.pdf_rollo', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','en_linea','totalParse'));
+        'total_literal','leyendaFactura','en_linea','totalParse','descuento_round','total_menos_descuento_round'));
 
         $pdf_download= $pdf->download('mi-factura-pertec-'.$verfactura->codigo.'.pdf');
 
@@ -217,7 +215,7 @@ class FacturaController extends Controller{
         // $tienda = $verfactura->idcuenta;
         $en_linea = $verfactura->en_linea;
         // dd($verfactura);
-
+        
         foreach($vefacturaProducto as $vefacturaProductos){
             
             $cod_factura = $vefacturaProductos->codfactura;
@@ -228,24 +226,27 @@ class FacturaController extends Controller{
             $cantidad_precio =  $cantidad * $precio_lista;
             $cantidad_precioneto =$vefacturaProductos->cantidad * $vefacturaProductos->precioneto;
 
-            $sub_total = $cantidad * $precio_lista;
+            $sub_total = (round($cantidad,2) * round($precio_lista,2));
             $total += $sub_total;
 
             $precio_lista_decimal=number_format($precio_lista, 2);
             $cantidad_precio_decimal=(round($cantidad_precio, 2, PHP_ROUND_HALF_UP));
+            $totalParse =(round($total, 2, PHP_ROUND_HALF_UP));
             $cantidad_precioneto_decimal=(round($cantidad_precioneto, 2, PHP_ROUND_HALF_UP));
             $precio_neto_decimal=number_format($precio_neto, 2);
-            
             $descuento = $cantidad_precio_decimal - $cantidad_precioneto_decimal;
 
             $total_menos_descuento = $total - $descuento;
-        }  
+        } 
+
+        $descuento_round=round($descuento);
+        $total_menos_descuento_round = round($total_menos_descuento,2);
         
         $total_literal = $modelonumero->numtoletras(round($total_menos_descuento,2),'Bolivianos');          
         
         return view('page.sections.facturas.pdf', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura'));
+        'total_literal','leyendaFactura','descuento_round','total_menos_descuento_round'));
 
     }
 
@@ -284,13 +285,16 @@ class FacturaController extends Controller{
             $descuento = $cantidad_precio_decimal - $cantidad_precioneto_decimal;
 
             $total_menos_descuento = $total - $descuento;
-        }  
+        } 
+
+        $descuento_round=round($descuento);
+        $total_menos_descuento_round = round($total_menos_descuento,2); 
         
         $total_literal = $modelonumero->numtoletras(round($total_menos_descuento,2),'Bolivianos');    
 
         return view('page.sections.facturas.pruebaRollo', compact('verfactura','vefacturaProducto','cod_item',
         'cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','totalParse','en_linea'));
+        'total_literal','leyendaFactura','totalParse','en_linea','descuento_round','total_menos_descuento_round'));
     }
 
     // funcion vista facturas con usuario logueado
@@ -298,7 +302,8 @@ class FacturaController extends Controller{
         $user = auth()->user();
         $hash=new Hashids();
         $nit = $user['nit'];
-        $vefactura = DB::table('vefactura')->where('nit', $nit)->paginate(10);
+        $vefactura = DB::table('vefactura')->where('nit', $nit)->orderBy('fechareg','DESC')->paginate(15);
+        // dd($vefactura);
 
         return view('page.sections.facturas',['vefactura'=>$vefactura,'hash'=>$hash]);
     }
@@ -388,14 +393,17 @@ class FacturaController extends Controller{
             $precio_neto_decimal=number_format($precio_neto, 2);
             $descuento = $cantidad_precio_decimal - $cantidad_precioneto_decimal;
 
-            $total_menos_descuento = $total - $descuento;
+            $total_menos_descuento = $total - $descuento; 
+            
         } 
-        
+        $descuento_round=round($descuento);
+        $total_menos_descuento_round = round($total_menos_descuento,2);
+
         $total_literal = $modelonumero->numtoletras(round($total_menos_descuento,2),'Bolivianos');          
         
         return view('page.sections.facturas.show', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','en_linea','hash','totalParse'));
+        'total_literal','leyendaFactura','en_linea','hash','totalParse','total_menos_descuento_round','descuento_round'));
     }
 
     /**
@@ -405,7 +413,7 @@ class FacturaController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function edit(Factura $factura){
-        //
+        
     }
 
     /**
@@ -415,9 +423,8 @@ class FacturaController extends Controller{
      * @param  \App\Models\Factura  $factura
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Factura $factura)
-    {
-        //
+    public function update(Request $request, Factura $factura){
+        
     }
 
     /**
@@ -426,8 +433,7 @@ class FacturaController extends Controller{
      * @param  \App\Models\Factura  $factura
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Factura $factura)
-    {
-        //
+    public function destroy(Factura $factura){
+        
     }
 }

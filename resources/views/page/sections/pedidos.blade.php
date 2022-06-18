@@ -52,17 +52,20 @@
                                             <th class="text-center">Fecha de Pedido</th>
                                             <th class="text-center">Fecha de Entrega</th>
                                             <th class="text-center"># Items</th>
+                                            <th class="text-center">Peso Kg.</th>
                                             <th class="text-center">Estado</th>
                                         </thead>
                                         <tbody>
                                             @foreach ($pedido as $pedidos)
                                                 <tr>
-                                                    <td class="text-center" scope="row">{{$pedidos->codigo}}</td>
-                                                    <td scope="row" class="text-center">{{$pedidos->codproforma}}</td>
-                                                    <td scope="row" class="text-center">{{$pedidos->tipotrans}}</td>
+                                                    <td class="text-center" scope="row">{{ $pedidos->codigo }}</td>
+                                                    <td scope="row" class="text-center">{{ $pedidos->codproforma }}</td>
+                                                    <td scope="row" class="text-center">{{ $pedidos->tipotrans }}</td>
                                                     <td scope="row" class="text-center">{{ date('d-M-y', strtotime($pedidos->frecibido)) }}</td>
                                                     <td scope="row" class="text-center">{{ date('d-M-y', strtotime($pedidos->fdespachado)) }}</td>
-                                                    <td scope="row" class="text-center">{{$pedidos->nroitems}}</td>
+                                                    <td scope="row" class="text-center">{{ $pedidos->nroitems }}</td>
+                                                    <td scope="row" class="text-center">{{ $pedidos->peso }}</td>
+
                                                     <td scope="row" style="text-align:center;">
                                                         @if($pedidos->estado == "DESPACHADO")
                                                             <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>

@@ -36,7 +36,7 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active">
                                 <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
-                                    Facturas
+                                    Facturas de: {{ Auth::user()->name }} con NIT: {{ Auth::user()->nit }}
                                 </a>
                             </li>
                         </ul>
@@ -48,10 +48,12 @@
                                             <tr>
                                                 <th>Codigo</th>
                                                 <th>ID</th>
-                                                <th>Nombre Cliente</th>
-                                                <th>NIT / C.I</th>
+                                                <th>#ID</th>
+                                                <th>CUF</th>
                                                 <th>Codigo Control</th>
-                                                <th>Codigo</th>
+                                                <th>Fecha Reg</th>
+                                                <th>Peso Kg.</th>
+                                                <th>Total Bs.</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -60,11 +62,13 @@
                                             <tr>
                                                 <td class="row1" scope="row">{{ $vefacturas->codigo }}</td>
                                                 <td scope="row">{{ $vefacturas->id }}</td>
-                                                <td scope="row">{{ $vefacturas->nomcliente }}</td>
-                                                <td scope="row">{{ $vefacturas->nit }}</td>
+                                                <td scope="row">{{ $vefacturas->numeroid }}</td>
+                                                <td scope="row">{{ $vefacturas->cuf }}</td>
                                                 <td scope="row">{{ $vefacturas->codigocontrol }}</td>
-                                                <td scope="row">{{ $vefacturas->codigo }}</td>
-    
+                                                <td scope="row">{{ date('d-m-y', strtotime($vefacturas->fechareg)) }}</td>
+                                                <td scope="row">{{ number_format($vefacturas->peso,2) }}</td>
+                                                <td scope="row">{{ $vefacturas->total }}</td>
+
                                                 <td scope="row" style="text-align:center;">
                                                     <a href="{{ route('viewFactura', $hash->encodeHex($vefacturas->codigo)) }}" style="color: black">
                                                         <button class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i>
@@ -76,6 +80,9 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                        <div style="text-align: center;">
+                            {{ $vefactura->links() }}
                         </div>
                     </div>
                 </div>

@@ -553,9 +553,9 @@
                         </div>
                     @endforeach <br>
                     <div style="padding: 10px;">
-                        <button type="button" class="btn btn-lg btn-block btn-popUp" href="/prom_products">
+                        <a type="button" class="btn btn-lg btn-block btn-popUp" href="/prom_products">
                             <i class="fa fa-star"></i> Productos en Promoción
-                        </button>
+                        </a>
                         <label for="cerrar" id="btn-cerrar" style="text-align: center !important; z-index: 1000;"
                         class="btn-lg btn-danger btn-block"><i class="fa fa-close"></i> Cerrar</label>
                     </div>

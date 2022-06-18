@@ -1,8 +1,6 @@
 
 
 <?php $__env->startSection('content'); ?>
-
-
 <?php echo e(Html::script(mix('assets/admin/js/admin.js'))); ?>
 
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
@@ -46,8 +44,6 @@
                 <div class="col-md col-sm">
                     <div class="x_panel">
                         <div style="padding: 25px;">
-
-
                             <div class="row" style="text-align: center; height: 170px;">
                                 <div class="col-md-2 col-sm-12" style="margin-top: 10px;">
                                     <img src="../assets/images/icon.png" alt="Pertec S.R.L &copy;" width="150px">
@@ -93,19 +89,16 @@
                                 </div>
                             </div><br>
 
-
-
-
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="row">
-                                        <div class="col-md-4 col-sm-6 col-xs-6">
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
                                             <h6 class="font-frank-demi color-black inf-per-fac-1"
                                                 style="margin-bottom: 8px; line-height: 17px; padding-right: 0px;">Lugar y Fecha :</h6>
                                             <h6 class="font-frank-demi color-black inf-per-fac-1"
                                                 style="margin-bottom: 8px; line-height: 17px; padding-right: 0px;">Nom/Razon Social :</h6>
                                         </div>
-                                        <div class="col-md-8 col-sm-6 col-xs-6">
+                                        <div class="col-md-9 col-sm-6 col-xs-6">
                                             <h6 class="font-frank-book color-black inf-per-fac-2"
                                                 style="margin: 0 30px 8px -30px; line-height: 17px; padding-left: 0px;">SACABA,
                                                 <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> Hrs.
@@ -139,14 +132,14 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="x_content table-responsive">
-                                        <table class="table">
+                                        <table class="table greyGridTable">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
                                                     <th>CODIGO PRODUCTO</th>
-                                                    <th colspan="2">DESCRIPCION</th>
+                                                    <th colspan="2" style="text-align: center;">DESCRIPCION</th>
                                                     <th>UNIDAD DE MEDIDA</th>
-                                                    <th>CANTIDAD</th>
+                                                    <th style="text-align: right;">CANTIDAD</th>
                                                     <th style="text-align: right;">PRECIO UNITARIO</th>
                                                     <th style="text-align: right;">DESCUENTO</th>
                                                     <th style="text-align: right;">SUBTOTAL(BS)</th>
@@ -160,13 +153,13 @@
                                                     <td><?php echo e($vefacturaDetalles->coditem); ?></td>
                                                     <td class="alingLeft"><?php echo e($vefacturaDetalles->descripcion); ?></td>
                                                     <td class="alingLeft"><?php echo e($vefacturaDetalles->medida); ?></td>
-                                                    <td><?php echo e($vefacturaDetalles->udm); ?></td>
+                                                    <td class="alingCenter"><?php echo e($vefacturaDetalles->udm); ?></td>
                                                     <td class="alingRight"><?php echo e($vefacturaDetalles->cantidad); ?></td>
-                                                    <td class="alingRight"><?php echo e(round($vefacturaDetalles->preciolista, 2)); ?></td>
+                                                    <td class="alingRight"><?php echo e(number_format(round($vefacturaDetalles->preciolista, 2) ,2,'.',',')); ?></td>
                                                     <td class="alingRight">
-                                                        <?php echo e($cantidad_precio_decimal - $cantidad_precioneto_decimal); ?></td>
+                                                        <?php echo e(number_format($cantidad_precio_decimal - $cantidad_precioneto_decimal,2,'.',',')); ?></td>
                                                     <td class="alingRight">
-                                                        <?php echo e(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2)); ?>
+                                                        <?php echo e(number_format(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2),2,'.',',')); ?>
 
                                                     </td>
                                                 </tr>
@@ -182,24 +175,24 @@
                                                         DOLAR AMERICANO
                                                     </td>
                                                     <td colspan="3" style="padding: 0px 2%;">Sub Total(BS):</td>
-                                                    <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e($totalParse); ?></td>
+                                                    <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(number_format($totalParse,2,'.',',')); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3" style="padding: 0px 2%;">Descuentos(BS):</td>
                                                     <td class="font-frank-book" style="padding: 0px 0px;">
-                                                        <?php echo e(round($descuento, 2)); ?></td>
+                                                        <?php echo e(number_format($descuento_round,2,'.',',')); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="5" rowspan="2"></td>
                                                     <td colspan="3" style="padding: 0px 2%;">Total(BS):</td>
                                                     <td class="font-frank-book" style="padding: 0px 0px;">
-                                                        <?php echo e(round($total_menos_descuento, 2)); ?></td>
+                                                        <?php echo e(number_format($total_menos_descuento_round,2,'.',',')); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3" style="padding: 0px 2%;">Importe Base Crédito Fiscal(BS):
                                                     </td>
                                                     <td class="font-frank-book" style="padding: 0px 0px;">
-                                                        <?php echo e(round($total_menos_descuento, 2)); ?></td>
+                                                        <?php echo e(number_format($total_menos_descuento_round,2,'.',',')); ?></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -240,7 +233,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><br><br>
             <div style="float: right;">
                 <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i
                         class="fa fa-arrow-left"></i>
@@ -303,7 +296,7 @@
         font-family: 'Franklin Gothic Demi', sans-serif;
         font-weight: 100;
         background: #FFFFFF;
-        border-bottom: 2px solid #000000;
+        border-bottom: 2px solid #000000 !important;
         border-top: 2px solid #000000;
     }
 
@@ -312,6 +305,7 @@
         font-weight: bold;
         color: #000000;
         text-align: center;
+        border-bottom: 2px solid #000000 !important;
     }
 
     table.greyGridTable tfoot {
@@ -344,6 +338,9 @@
             text-align: left;
             margin-left: 0px !important;
         }
+    }
+    .alingCenter {
+        text-align: center;
     }
 
     @media (max-width: 767px) {

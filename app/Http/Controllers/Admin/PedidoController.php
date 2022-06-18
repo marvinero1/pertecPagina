@@ -30,7 +30,6 @@ class PedidoController extends Controller
         $nit_user = Auth::user()->nit;
         $proforma = DB::table('veproforma')->where('nit', $nit_user)->first();
         $cod_cliente = $proforma->codcliente;
-        // dd($proforma);
 
         $pedido = DB::table('vedespacho')->where('codcliente', $cod_cliente)->orderBy('frecibido','DESC')->paginate(10);
         // dd($pedido);
