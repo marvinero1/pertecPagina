@@ -142,7 +142,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>CODIGO PRODUCTO</th>
-                                                    <th colspan="2">DESCRIPCION</th>
+                                                    <th colspan="2" style="text-align: center;">DESCRIPCION</th>
                                                     <th>UNIDAD DE MEDIDA</th>
                                                     <th>CANTIDAD</th>
                                                     <th style="text-align: right;">PRECIO UNITARIO</th>
@@ -158,7 +158,7 @@
                                                     <td>{{ $vefacturaDetalles->coditem }}</td>
                                                     <td class="alingLeft">{{ $vefacturaDetalles->descripcion }}</td>
                                                     <td class="alingLeft">{{ $vefacturaDetalles->medida }}</td>
-                                                    <td>{{ $vefacturaDetalles->udm }}</td>
+                                                    <td class="alingCenter">{{ $vefacturaDetalles->udm }}</td>
                                                     <td class="alingRight">{{ $vefacturaDetalles->cantidad }}</td>
                                                     <td class="alingRight">{{ round($vefacturaDetalles->preciolista, 2) }}</td>
                                                     <td class="alingRight">
@@ -341,6 +341,9 @@
             text-align: left;
             margin-left: 0px !important;
         }
+    }
+    .alingCenter {
+        text-align: center;
     }
 
     @media (max-width: 767px) {
