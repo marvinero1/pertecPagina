@@ -160,9 +160,9 @@
                     <td class="alingLeft">{{ $vefacturaDetalles->medida }}</td>
                     <td>{{ $vefacturaDetalles->udm }}</td>
                     <td class="alingRight">{{ $vefacturaDetalles->cantidad }}</td>
-                    <td class="alingRight">{{ round($vefacturaDetalles->preciolista, 2) }}</td>
-                    <td class="alingRight">{{ $cantidad_precio_decimal - $cantidad_precioneto_decimal }}</td>
-                    <td class="alingRight">{{ round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2) }}</td>
+                    <td class="alingRight">{{ number_format(round($vefacturaDetalles->preciolista, 2) ,2,'.',',')  }}</td>
+                    <td class="alingRight">{{ number_format($cantidad_precio_decimal - $cantidad_precioneto_decimal,2,'.',',') }}</td>
+                    <td class="alingRight">{{ number_format(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2),2,'.',',') }}</td>
                 </tr>
             @endforeach
         </tbody>
@@ -171,23 +171,28 @@
             <tr>
                 <td colspan="5" rowspan="2" class="alingLeft"
                     style="border-bottom: 2px solid #333333; padding: 0px 0px;">
-                    SON: {{ $total_literal,2 }} Equivalentes a {{ round($total / 6.96, 2) }} DOLAR AMERICANO
+                    SON: {{ $total_literal,2 }} Equivalentes a {{ round($total / 6.96, 2) }}
+                    DOLAR AMERICANO
                 </td>
                 <td colspan="3" style="padding: 0px 2%;">Sub Total(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">{{ $totalParse }}</td>
+                <td class="font-frank-book" style="padding: 0px 0px;">{{ number_format($totalParse,2,'.',',') }}</td>
             </tr>
             <tr>
                 <td colspan="3" style="padding: 0px 2%;">Descuentos(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">{{ round($descuento, 2) }}</td>
+                <td class="font-frank-book" style="padding: 0px 0px;">
+                    {{ number_format($descuento_round,2,'.',',') }}</td>
             </tr>
             <tr>
                 <td colspan="5" rowspan="2"></td>
                 <td colspan="3" style="padding: 0px 2%;">Total(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">{{ round($total_menos_descuento, 2) }}</td>
+                <td class="font-frank-book" style="padding: 0px 0px;">
+                    {{ number_format($total_menos_descuento_round,2,'.',',') }}</td>
             </tr>
             <tr>
-                <td colspan="3" style="padding: 0px 2%;">Importe Base Crédito Fiscal(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;">{{ round($total_menos_descuento, 2) }}</td>
+                <td colspan="3" style="padding: 0px 2%;">Importe Base Crédito Fiscal(BS):
+                </td>
+                <td class="font-frank-book" style="padding: 0px 0px;">
+                    {{ number_format($total_menos_descuento_round,2,'.',',') }}</td>
             </tr>
         </tfoot>
     </table>

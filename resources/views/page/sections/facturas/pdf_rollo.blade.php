@@ -122,10 +122,10 @@
                     <tr style="font-size: 13px;">
                         <td style="width: 25%">{{ $vefacturaDetalles->udm }}</td>
                         <td style="width: 25%">{{ $vefacturaDetalles->cantidad }}</td>
-                        <td style="width: 25%">{{ round($vefacturaDetalles->preciolista, 2) }}</td>
-                        <td style="width: 25%">{{ $cantidad_precio_decimal - $cantidad_precioneto_decimal }}</td>
-                        <td style="width: 25%">{{ round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2) }}</td>
-                    </tr>
+                        <td class="alingRight">{{ number_format(round($vefacturaDetalles->preciolista, 2) ,2,'.',',')  }}</td>
+                        <td class="alingRight">{{ number_format($cantidad_precio_decimal - $cantidad_precioneto_decimal,2,'.',',') }}</td>
+                        <td class="alingRight">{{ number_format(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2),2,'.',',') }}</td>
+                     </tr>
                 @endforeach
             </tbody>
         </table>
@@ -135,22 +135,23 @@
                 <tr style="height: 3px;"></tr>
                 <tr>
                     <th>SubTotal(BS) :</th>
-                    <th style="text-align: right;padding-right: 18px;">{{ $totalParse }}</th>
+                    <th style="text-align: right;padding-right: 18px;">{{ number_format($totalParse,2,'.',',') }}</th>
                 </tr>
                 <tr>
                     <th>Descuentos(BS) :</th>
-                    <th style="text-align: right;padding-right: 18px;">{{ round($descuento, 2) }}</th>
+                    <th style="text-align: right;padding-right: 18px;">{{ number_format($descuento_round,2,'.',',') }}</th>
                 </tr>
                 <tr>
                     <th>Total(BS) :</th>
-                    <th style="text-align: right;padding-right: 18px;">{{ round($total_menos_descuento, 2) }}</th>
+                    <th style="text-align: right;padding-right: 18px;">{{ number_format($total_menos_descuento_round,2,'.',',') }}</th>
                 </tr>
                 <tr>
-                    <th colspan="2">Importe Base Credito Fiscal (BS) : {{ round($total_menos_descuento, 2) }}</th>
+                    <th >Importe Base Credito Fiscal (BS) : </th>
+                    {{-- <th style="text-align: right;padding-right: 18px;">{{ round($total_menos_descuento, 2) }}</th> --}}
                 </tr>
                 <tr>
                     <th style="border-bottom: solid 1px;"></th>
-                    <th style="text-align: right;padding-right: 18px;">{{ round($total_menos_descuento, 2) }}</th>
+                    <th style="text-align: right;padding-right: 18px;">{{ number_format($total_menos_descuento_round,2,'.',',') }}</th>
                 </tr>
                 <tr style="height: 25px;">
                     <th colspan="2">Son: {{ $total_literal,2 }}</th>

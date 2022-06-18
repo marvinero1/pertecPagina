@@ -89,9 +89,9 @@
                     <td class="alingLeft"><?php echo e($vefacturaDetalles->medida); ?></td>
                     <td><?php echo e($vefacturaDetalles->udm); ?></td>
                     <td class="alingRight"><?php echo e($vefacturaDetalles->cantidad); ?></td>
-                    <td class="alingRight"><?php echo e(round($vefacturaDetalles->preciolista, 2)); ?></td>
-                    <td class="alingRight"><?php echo e($cantidad_precio_decimal - $cantidad_precioneto_decimal); ?></td>
-                    <td class="alingRight"><?php echo e(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2)); ?></td>
+                    <td class="alingRight"><?php echo e(number_format(round($vefacturaDetalles->preciolista, 2) ,2,'.',',')); ?></td>
+                    <td class="alingRight"><?php echo e(number_format($cantidad_precio_decimal - $cantidad_precioneto_decimal,2,'.',',')); ?></td>
+                    <td class="alingRight"><?php echo e(number_format(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2),2,'.',',')); ?></td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
@@ -100,23 +100,29 @@
             <tr>
                 <td colspan="5" rowspan="2" class="alingLeft"
                     style="border-bottom: 2px solid #333333; padding: 0px 0px;">
-                    SON: <?php echo e($total_literal,2); ?> Equivalentes a <?php echo e(round($total / 6.96, 2)); ?> DOLAR AMERICANO
+                    SON: <?php echo e($total_literal,2); ?> Equivalentes a <?php echo e(round($total / 6.96, 2)); ?>
+
+                    DOLAR AMERICANO
                 </td>
                 <td colspan="3" style="padding: 0px 2%;">Sub Total(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e($totalParse); ?></td>
+                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(number_format($totalParse,2,'.',',')); ?></td>
             </tr>
             <tr>
                 <td colspan="3" style="padding: 0px 2%;">Descuentos(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($descuento, 2)); ?></td>
+                <td class="font-frank-book" style="padding: 0px 0px;">
+                    <?php echo e(number_format($descuento_round,2,'.',',')); ?></td>
             </tr>
             <tr>
                 <td colspan="5" rowspan="2"></td>
                 <td colspan="3" style="padding: 0px 2%;">Total(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($total_menos_descuento, 2)); ?></td>
+                <td class="font-frank-book" style="padding: 0px 0px;">
+                    <?php echo e(number_format($total_menos_descuento_round,2,'.',',')); ?></td>
             </tr>
             <tr>
-                <td colspan="3" style="padding: 0px 2%;">Importe Base Crédito Fiscal(BS):</td>
-                <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(round($total_menos_descuento, 2)); ?></td>
+                <td colspan="3" style="padding: 0px 2%;">Importe Base Crédito Fiscal(BS):
+                </td>
+                <td class="font-frank-book" style="padding: 0px 0px;">
+                    <?php echo e(number_format($total_menos_descuento_round,2,'.',',')); ?></td>
             </tr>
         </tfoot>
     </table>

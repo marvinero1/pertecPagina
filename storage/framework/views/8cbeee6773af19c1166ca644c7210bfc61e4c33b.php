@@ -54,6 +54,7 @@
                                             <th class="text-center">Fecha de Pedido</th>
                                             <th class="text-center">Fecha de Entrega</th>
                                             <th class="text-center"># Items</th>
+                                            <th class="text-center">Peso Kg.</th>
                                             <th class="text-center">Estado</th>
                                         </thead>
                                         <tbody>
@@ -65,6 +66,8 @@
                                                     <td scope="row" class="text-center"><?php echo e(date('d-M-y', strtotime($pedidos->frecibido))); ?></td>
                                                     <td scope="row" class="text-center"><?php echo e(date('d-M-y', strtotime($pedidos->fdespachado))); ?></td>
                                                     <td scope="row" class="text-center"><?php echo e($pedidos->nroitems); ?></td>
+                                                    <td scope="row" class="text-center"><?php echo e($pedidos->peso); ?></td>
+
                                                     <td scope="row" style="text-align:center;">
                                                         <?php if($pedidos->estado == "DESPACHADO"): ?>
                                                             <div class="div-background-success"><i class="fa fa-check" aria-hidden="true"></i>
