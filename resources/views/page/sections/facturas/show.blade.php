@@ -98,13 +98,13 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="row">
-                                        <div class="col-md-4 col-sm-6 col-xs-6">
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
                                             <h6 class="font-frank-demi color-black inf-per-fac-1"
                                                 style="margin-bottom: 8px; line-height: 17px; padding-right: 0px;">Lugar y Fecha :</h6>
                                             <h6 class="font-frank-demi color-black inf-per-fac-1"
                                                 style="margin-bottom: 8px; line-height: 17px; padding-right: 0px;">Nom/Razon Social :</h6>
                                         </div>
-                                        <div class="col-md-8 col-sm-6 col-xs-6">
+                                        <div class="col-md-9 col-sm-6 col-xs-6">
                                             <h6 class="font-frank-book color-black inf-per-fac-2"
                                                 style="margin: 0 30px 8px -30px; line-height: 17px; padding-left: 0px;">SACABA,
                                                 {{ date('d-m-y', strtotime($verfactura->fecha)) }} Hrs.
@@ -137,7 +137,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="x_content table-responsive">
-                                        <table class="table">
+                                        <table class="table greyGridTable">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
@@ -300,7 +300,7 @@
         font-family: 'Franklin Gothic Demi', sans-serif;
         font-weight: 100;
         background: #FFFFFF;
-        border-bottom: 2px solid #000000;
+        border-bottom: 2px solid #000000 !important;
         border-top: 2px solid #000000;
     }
 
@@ -309,6 +309,7 @@
         font-weight: bold;
         color: #000000;
         text-align: center;
+        border-bottom: 2px solid #000000 !important;
     }
 
     table.greyGridTable tfoot {

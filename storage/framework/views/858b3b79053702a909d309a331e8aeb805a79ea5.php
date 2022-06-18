@@ -106,7 +106,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="3">COD. AUTORIZACION: </td>
-                                            <td colspan="3"><?php echo e($verfactura->nroautorizacion); ?></td>
+                                            <td colspan="3" style="width: 155px;"><?php echo e($verfactura->nroautorizacion); ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -114,7 +114,7 @@
                                 <table class="section1">
                                     <tbody>
                                         <tr>
-                                            <td colspan="3">LUGAR Y FECHA EMISION :</td>
+                                            <td colspan="3">LUGAR Y FECHA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
                                             <td colspan="3">Sacaba <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> HRS: <?php echo e($verfactura->horareg); ?></td>
                                         </tr>
                                         <tr>
@@ -161,13 +161,13 @@
                                     <tbody>
                                         <?php $__currentLoopData = $vefacturaProducto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturaDetalles): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <tr style="height: 3px;"></tr>
-                                            <tr style="font-size: 13px;">
+                                            <tr style="font-size: 12px;">
                                                 <td colspan="2"><?php echo e($vefacturaDetalles->codfactura); ?> <?php echo e($vefacturaDetalles->coditem); ?></td>
                                                 <td><?php echo e($vefacturaDetalles->descripcion); ?></td>
                                                 <td ></td>
                                                 <td><?php echo e($vefacturaDetalles->medida); ?></td>
                                             </tr>
-                                            <tr style="font-size: 13px;">
+                                            <tr style="font-size: 12px;">
                                                 <td style="width: 25%"><?php echo e($vefacturaDetalles->udm); ?></td>
                                                 <td style="width: 25%"><?php echo e($vefacturaDetalles->cantidad); ?></td>
                                                 <td style="width: 25%"><?php echo e(round($vefacturaDetalles->preciolista, 2)); ?></td>
@@ -194,7 +194,8 @@
                                             <th style="text-align: right;padding-right: 18px;"><?php echo e(round($total_menos_descuento, 2)); ?></th>
                                         </tr>
                                         <tr>
-                                            <th colspan="2">Importe Base Credito Fiscal (BS) : <?php echo e(round($total_menos_descuento, 2)); ?></th>
+                                            <th >Importe Base Credito Fiscal (BS) : </th>
+                                            
                                         </tr>
                                         <tr>
                                             <th style="border-bottom: solid 1px;"></th>
@@ -262,7 +263,7 @@
                         <div style="float: right;">
                             <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i class="fa fa-arrow-left"></i>
                                 &nbsp;Atras </button>
-                            <a class="btn btn-danger btn-lg" type="button" href="/viewPDFRollo/<?php echo e($verfactura->numeroid); ?>">
+                            <a class="btn btn-danger btn-lg" type="button" href="/viewPDFRollo/<?php echo e($verfactura->codigo); ?>">
                                 Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
                             </a>
                         </div>
@@ -316,7 +317,7 @@
         padding: 0px 4px;
     }
     table.section1 tbody td {
-        font-size: 10px;
+        font-size: 11px;
         color: #000000;
     }
     table.section1 tfoot td {

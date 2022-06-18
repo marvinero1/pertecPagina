@@ -108,7 +108,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="3">COD. AUTORIZACION: </td>
-                                            <td colspan="3">{{ $verfactura->nroautorizacion }}</td>
+                                            <td colspan="3" style="width: 155px;">{{ $verfactura->nroautorizacion }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -116,7 +116,7 @@
                                 <table class="section1">
                                     <tbody>
                                         <tr>
-                                            <td colspan="3">LUGAR Y FECHA EMISION :</td>
+                                            <td colspan="3">LUGAR Y FECHA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
                                             <td colspan="3">Sacaba {{ date('d-m-y', strtotime($verfactura->fecha)) }} HRS: {{ $verfactura->horareg }}</td>
                                         </tr>
                                         <tr>
@@ -163,13 +163,13 @@
                                     <tbody>
                                         @foreach ($vefacturaProducto as $vefacturaDetalles)
                                             <tr style="height: 3px;"></tr>
-                                            <tr style="font-size: 13px;">
+                                            <tr style="font-size: 12px;">
                                                 <td colspan="2">{{ $vefacturaDetalles->codfactura }} {{ $vefacturaDetalles->coditem }}</td>
                                                 <td>{{ $vefacturaDetalles->descripcion }}</td>
                                                 <td ></td>
                                                 <td>{{ $vefacturaDetalles->medida }}</td>
                                             </tr>
-                                            <tr style="font-size: 13px;">
+                                            <tr style="font-size: 12px;">
                                                 <td style="width: 25%">{{ $vefacturaDetalles->udm }}</td>
                                                 <td style="width: 25%">{{ $vefacturaDetalles->cantidad }}</td>
                                                 <td style="width: 25%">{{ round($vefacturaDetalles->preciolista, 2) }}</td>
@@ -196,7 +196,8 @@
                                             <th style="text-align: right;padding-right: 18px;">{{ round($total_menos_descuento, 2) }}</th>
                                         </tr>
                                         <tr>
-                                            <th colspan="2">Importe Base Credito Fiscal (BS) : {{ round($total_menos_descuento, 2) }}</th>
+                                            <th >Importe Base Credito Fiscal (BS) : </th>
+                                            {{-- <th style="text-align: right;padding-right: 18px;">{{ round($total_menos_descuento, 2) }}</th> --}}
                                         </tr>
                                         <tr>
                                             <th style="border-bottom: solid 1px;"></th>
@@ -317,7 +318,7 @@
         padding: 0px 4px;
     }
     table.section1 tbody td {
-        font-size: 10px;
+        font-size: 11px;
         color: #000000;
     }
     table.section1 tfoot td {
