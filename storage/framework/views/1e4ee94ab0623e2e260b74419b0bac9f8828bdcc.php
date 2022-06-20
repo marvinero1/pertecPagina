@@ -1,10 +1,10 @@
-@extends('admin.layouts.admin')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div>
-    <form action="{{route('admin.tienda.update', $tienda->id)}}" method="POST" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        {{ method_field('PUT') }}
+    <form action="<?php echo e(route('admin.tienda.update', $tienda->id)); ?>" method="POST" enctype="multipart/form-data">
+        <?php echo e(csrf_field()); ?>
+
+        <?php echo e(method_field('PUT')); ?>
+
         <div class="row" style="border: outset;">
             <div class="col-md-12 col-sm-12 form-group">
                 <h3><strong>Editar Tienda</strong></h3>
@@ -14,24 +14,24 @@
             <div class="col-md-12 col-sm-12" style="padding-block-end: 15px;">
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Nombre Tienda *</label>
-                    <input type="text" class="form-control" name="nombre_tienda" value="{{ $tienda->nombre_tienda }}">
+                    <input type="text" class="form-control" name="nombre_tienda" value="<?php echo e($tienda->nombre_tienda); ?>">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Teléfono *</label>
-                    <input type="number" class="form-control" name="telefono" value="{{ $tienda->telefono }}">
+                    <input type="number" class="form-control" name="telefono" value="<?php echo e($tienda->telefono); ?>">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Celular *</label>
-                    <input type="number" class="form-control" name="celular" value="{{ $tienda->celular }}">
+                    <input type="number" class="form-control" name="celular" value="<?php echo e($tienda->celular); ?>">
                 </div>
             </div>
 
             <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Whatsapp *</label>
-                    <input type="number" class="form-control" name="whatsapp" value="{{ $tienda->whatsapp }}">
+                    <input type="number" class="form-control" name="whatsapp" value="<?php echo e($tienda->whatsapp); ?>">
                 </div>
 
                 <div class="col-md-4 col-sm-12 form-group">
@@ -52,31 +52,31 @@
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Dirección *</label>
-                    <input type="text" class="form-control" name="direccion" value="{{ $tienda->direccion }}">
+                    <input type="text" class="form-control" name="direccion" value="<?php echo e($tienda->direccion); ?>">
                 </div>
             </div>
 
             <div class="col-md-12 col-sm-12" style="padding-block-end: 15px;">
                 <div class="col-md-6 col-sm-12  form-group">
                     <label for="latitud">Latitud *</label>
-                    <input type="text" class="form-control" name="latitud" value="{{ $tienda->latitud }}">
+                    <input type="text" class="form-control" name="latitud" value="<?php echo e($tienda->latitud); ?>">
                 </div>
 
                 <div class="col-md-6 col-sm-12  form-group">
                     <label for="longitud">Longitud *</label>
-                    <input type="text" class="form-control" name="longitud" value="{{ $tienda->longitud }}">
+                    <input type="text" class="form-control" name="longitud" value="<?php echo e($tienda->longitud); ?>">
                 </div>
             </div>
 
             <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">E-mail *</label>
-                    <input type="email" class="form-control" name="correo_electronico" value="{{ $tienda->correo_electronico }}">
+                    <input type="email" class="form-control" name="correo_electronico" value="<?php echo e($tienda->correo_electronico); ?>">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="cargo">Encargado *</label>
-                    <input type="text" class="form-control" name="encargado" value="{{ $tienda->encargado }}">
+                    <input type="text" class="form-control" name="encargado" value="<?php echo e($tienda->encargado); ?>">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
@@ -93,7 +93,7 @@
         </div><br>
 
         <div class="footer" style="padding: 15px 15px 5px 5px; float: right;">
-            <a type="button" class="btn btn-warning float-right" href="{{url('/admin/tienda')}}" style="color: black">
+            <a type="button" class="btn btn-warning float-right" href="<?php echo e(url('/admin/tienda')); ?>" style="color: black">
                 <i class="fa fas fa-arrow-left"></i> Cerrar</a>
             <button type="submit" class="btn btn-primary float-right mr-2"><i class="fa fas fa-save"></i>
                 Guardar</button>
@@ -116,4 +116,6 @@
         cursor: pointer;
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/admin/tiends/edit.blade.php ENDPATH**/ ?>

@@ -212,10 +212,10 @@
                         <div class="item active">
                             <div class="row">
                                 @foreach ($producto as $productos)
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                <div class="col-xs-12 col-sm-6 col-md-4 product-item  clearfix">
                                     <div class="product-img">
-                                        <img src='/{{ $productos->imagen }}' alt="product"
-                                            style="height:250px;">
+                                        <img src='/{{ $productos->imagen }}' alt="product" class="car-prod-img"
+                                            style="height: auto; width: auto;">
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block a-card"
@@ -225,7 +225,7 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
+                                            <a class="tama-car-nom" href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
                                         </h4>
                                     </div>
 
@@ -237,10 +237,10 @@
                         <div class="item">
                             <div class="row">
                                 @foreach ($producto2 as $productos)
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                <div class="col-xs-12 col-sm-6 col-md-4 product-item  clearfix">
                                     <div class="product-img">
-                                        <img src='/{{ $productos->imagen }}' alt="product"
-                                            style="height:250px;">
+                                        <img src='/{{ $productos->imagen }}' alt="product" class="car-prod-img"
+                                            style="height: auto; width: auto;">
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block a-card"
@@ -250,7 +250,7 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
+                                            <a class="tama-car-nom" href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
                                         </h4>
                                     </div>
                                 </div>
@@ -585,6 +585,56 @@
         }
         .cotizacion-div {
             display: none;
+        }
+    }
+
+
+
+    /* tamaños para pantallas grandes */
+    @media (max-width: 1246px) {
+        .car-prod-img {
+            max-height:250px;
+        }
+    }
+    @media (min-width: 1247px) and (max-width: 1824px) {
+        .car-prod-img {
+            max-height:350px;
+        }
+        .tama-car-nom {
+            font-size: 1.4rem !important;
+        }
+    }
+    @media (min-width: 1825px) and (max-width: 2204px) {
+        .car-prod-img {
+            max-height:450px;
+        }
+        .tama-car-nom {
+            font-size: 1.8rem !important;
+        }
+    }
+    @media (min-width: 2205px) and (max-width: 2564px) {
+        .car-prod-img {
+            max-height:550px;
+        }
+        .tama-car-nom {
+            font-size: 2.3rem !important;
+        }
+    }
+    @media (min-width: 2565px) and (max-width: 3068px) {
+        .car-prod-img {
+            max-height:650px;
+        }
+        .tama-car-nom {
+            font-size: 2.8rem !important;
+            /* line-height: 3!important; */
+        }
+    }
+    @media (min-width: 3069px) {
+        .car-prod-img {
+            max-height:750px;
+        }
+        .tama-car-nom {
+            font-size: 2.8rem !important;
         }
     }
     .awithmodelh1{

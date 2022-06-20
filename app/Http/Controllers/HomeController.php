@@ -32,8 +32,8 @@ class HomeController extends Controller
 
         $hash=new Hashids();
         $carusel = Carusel::all();
-        $producto = Producto::inRandomOrder()->paginate('4');
-        $producto2 = Producto::inRandomOrder()->paginate('4');
+        $producto = Producto::inRandomOrder()->paginate('3');
+        $producto2 = Producto::inRandomOrder()->paginate('3');
 
         $oficinas = Tienda::where('tipo','oficina')->get();
         $tiendaLPZ = Tienda::where('ciudad','La Paz')->get();

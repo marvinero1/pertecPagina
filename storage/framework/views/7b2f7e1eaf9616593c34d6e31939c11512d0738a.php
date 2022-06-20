@@ -1,37 +1,47 @@
-@extends('admin.layouts.admin')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 <div>
-    <form action="{{route('admin.tienda.update', $tienda->id)}}" method="POST" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        {{ method_field('PUT') }}
+    <?php if($errors->any()): ?>
+        <div class="alert alert-danger">
+            <ul>
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <li><?php echo e($error); ?></li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </ul>
+        </div><br/>
+    <?php endif; ?>
+    
+    <form action="<?php echo e(route('admin.tienda.store')); ?>" method="POST" enctype="multipart/form-data">
+        <?php echo e(csrf_field()); ?>
+
         <div class="row" style="border: outset;">
             <div class="col-md-12 col-sm-12 form-group">
-                <h3><strong>Editar Tienda</strong></h3>
+                <h3><strong>Crear Tienda</strong></h3>
                 <p><strong>Los campos (*) son obligatorios</strong></p>
             </div>
 
             <div class="col-md-12 col-sm-12" style="padding-block-end: 15px;">
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Nombre Tienda *</label>
-                    <input type="text" class="form-control" name="nombre_tienda" value="{{ $tienda->nombre_tienda }}">
+                    <input type="text" class="form-control" name="nombre_tienda" placeholder="Nombre Tienda" required>
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Teléfono *</label>
-                    <input type="number" class="form-control" name="telefono" value="{{ $tienda->telefono }}">
+                    <input type="number" class="form-control" name="telefono" placeholder="Teléfono" required>
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Celular *</label>
-                    <input type="number" class="form-control" name="celular" value="{{ $tienda->celular }}">
+                    <input type="number" class="form-control" name="celular" placeholder="Celular" required>
                 </div>
             </div>
 
             <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Whatsapp *</label>
-                    <input type="number" class="form-control" name="whatsapp" value="{{ $tienda->whatsapp }}">
+                    <input type="number" class="form-control" name="whatsapp" placeholder="Whatsapp" required>
                 </div>
 
                 <div class="col-md-4 col-sm-12 form-group">
@@ -52,31 +62,39 @@
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">Dirección *</label>
-                    <input type="text" class="form-control" name="direccion" value="{{ $tienda->direccion }}">
+                    <input type="text" class="form-control" name="direccion" placeholder="Dirección" required>
                 </div>
             </div>
-
+        
             <div class="col-md-12 col-sm-12" style="padding-block-end: 15px;">
-                <div class="col-md-6 col-sm-12  form-group">
+                <div class="col-md-4 col-sm-12  form-group">
                     <label for="latitud">Latitud *</label>
-                    <input type="text" class="form-control" name="latitud" value="{{ $tienda->latitud }}">
+                    <input type="text" class="form-control" name="latitud" placeholder="Latitud">
                 </div>
 
-                <div class="col-md-6 col-sm-12  form-group">
+                <div class="col-md-4 col-sm-12  form-group">
                     <label for="longitud">Longitud *</label>
-                    <input type="text" class="form-control" name="longitud" value="{{ $tienda->longitud }}">
+                    <input type="text" class="form-control" name="longitud" placeholder="Longitud">
+                </div>
+
+                <div class="col-md-4 col-sm-12  form-group">
+                    <label for="longitud">Tienda u Oficina *</label>
+                    <select type="text" class="form-control" name="tipo" placeholder="Tipo">
+                        <option value="oficina">Oficina</option>
+                        <option value="tienda">Tienda</option> 
+                    </select>
                 </div>
             </div>
 
             <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="nombre">E-mail *</label>
-                    <input type="email" class="form-control" name="correo_electronico" value="{{ $tienda->correo_electronico }}">
+                    <input type="email" class="form-control" name="correo_electronico" placeholder="E-mail">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
                     <label for="cargo">Encargado *</label>
-                    <input type="text" class="form-control" name="encargado" value="{{ $tienda->encargado }}">
+                    <input type="text" class="form-control" name="encargado" placeholder="Encargado">
                 </div>
 
                 <div class="col-md-4 col-sm-12  form-group">
@@ -87,13 +105,13 @@
                     </label>
                     <p><strong>Sugerencia:</strong> Para una mejor visualizacion se recomienda
                         resolucion a partir de<strong> 1280 x720 pixels</strong></p>
-                    <input id="file-upload" type="file" name="imagen">
+                    <input id="file-upload" type="file" name="imagen" required>
                 </div>
             </div>
         </div><br>
 
         <div class="footer" style="padding: 15px 15px 5px 5px; float: right;">
-            <a type="button" class="btn btn-warning float-right" href="{{url('/admin/tienda')}}" style="color: black">
+            <a type="button" class="btn btn-warning float-right" href="<?php echo e(url('/admin/tienda')); ?>" style="color: black">
                 <i class="fa fas fa-arrow-left"></i> Cerrar</a>
             <button type="submit" class="btn btn-primary float-right mr-2"><i class="fa fas fa-save"></i>
                 Guardar</button>
@@ -116,4 +134,5 @@
         cursor: pointer;
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/admin/tiends/create.blade.php ENDPATH**/ ?>
