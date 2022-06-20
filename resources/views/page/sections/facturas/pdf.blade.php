@@ -84,7 +84,6 @@
                                     <P class="infoFactura">Gral. Achá N°330</P>
                                     <P class="infoFactura">Tels.: 4259660 - 4250800 - Fax: 4111282</P>
                                     <P class="infoFactura">Cochabamba-Bolivia</P>
-
                                     <h6 class="font-frank-medium color-black">Sucursal N°4</h6>
                                     <P class="infoFactura">C. INNOMINADA S/N ZONA AROCAGUA</P>
                                     <P class="infoFactura">Teléfono: 4716000 Fax:</P>
@@ -128,7 +127,6 @@
                                 <td style="text-align: right;"><b>Nit/Ci/Cex : </b></td>
                                 <td>{{ $verfactura->nit }}</td>
                             </tr>
-
                             <tr>
                                 <td><b>Nom/Razon Social : </b></td>
                                 <td colspan="2">{{ $verfactura->nomcliente }}</td>
