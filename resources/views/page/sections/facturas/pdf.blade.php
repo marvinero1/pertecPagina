@@ -68,7 +68,6 @@
 
     <table class="greyGridTable">
         <thead style="border-top: none;">
-
             <tr>
                 <th colspan="9">
                     <table class="minimalistBlack alineacion">
