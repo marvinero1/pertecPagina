@@ -59,10 +59,11 @@ class ProductoController extends Controller
     }
 
     public function productosNovedad(Request $request){
+        $hash=new Hashids();
         $nombre_producto = $request->get('buscarpor');
         $producto = Producto::where('nombre_producto','like',"%$nombre_producto%")->where('novedad', 'si')->latest()->paginate(10);
 
-        return view('admin.products.novedad', ['producto' => $producto]);
+        return view('admin.products.novedad', ['producto' => $producto,'hash'=>$hash]);
     }
 
     public function getProducts(){

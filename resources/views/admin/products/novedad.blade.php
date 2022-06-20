@@ -70,7 +70,7 @@
                                             alt="{{ $productos->nombre_producto }}">
                                     </div>
                                     <div class="middle">
-                                        <p><a href="{{ route('admin.producto.show', $productos->id ) }}"
+                                        <p><a href="{{ route('admin.producto.show', $hash->encodeHex($productos->id)) }}"
                                                 style="color: black">
                                                 <button type="button" class="btn-borde" data-toggle="modal"
                                                     data-target="#myModal" title="Más información">
