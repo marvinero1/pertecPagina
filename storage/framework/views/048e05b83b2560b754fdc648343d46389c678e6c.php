@@ -559,7 +559,7 @@
                             <i class="fa fa-star"></i> Productos en Promoción
                         </a>
                         <label for="cerrar" id="btn-cerrar" style="text-align: center !important; z-index: 1000;"
-                        class="btn-lg btn-danger btn-block"><i class="fa fa-close"></i> Cerrar</label>
+                        class="btn-sm btn-danger btn-block"><i class="fa fa-close"></i> Cerrar</label>
                     </div>
                 </div>
             </div>
@@ -584,6 +584,9 @@
     @media (max-width: 767px) {
         .controlCarrProd {
             top: 46%;
+        }
+        .cotizacion-div {
+            display: none;
         }
     }
     .awithmodelh1{

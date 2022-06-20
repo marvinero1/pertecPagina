@@ -81,7 +81,7 @@
                                             <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">
                                                 00000{{ $verfactura->codigo }}</h6>
                                             <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">
-                                                {{ $verfactura->nroautorizacion }}</h6>
+                                                {{ $verfactura->cuf }}</h6>
                                         </div>
                                     </div>
 

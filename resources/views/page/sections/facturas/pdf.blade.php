@@ -112,7 +112,7 @@
                                     <b style="top: -34px; position: relative;">Cód Autorización: </b>
                                 </td>
                                 <td style="width: 117px;">
-                                    <b style="top: -34px; position: relative;">{{ $verfactura->nroautorizacion }}</b>
+                                    <b style="top: -34px; position: relative;">{{ $verfactura->cuf }}</b>
                                 </td>
                             </tr>
                             <tr>

@@ -39,8 +39,8 @@
                         <form
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
-                            <div class="input-group" style="width: 380px;">
-                                <input type="text" class="form-control font-frank-book" placeholder="Buscar por Nombre de Producto" name="buscarpor"
+                            <div class="input-group" style="width: 332px;">
+                                <input type="text" class="form-control font-frank-book" placeholder="Nombre de Producto" name="buscarpor"
                                     style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit" style="border: 1px #093070 solid; font-size: 1.3rem;">
@@ -123,6 +123,7 @@
 <?php echo $__env->make('page.sections.productos.modalConvrPernos', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('page.sections.productos.modalConvrArandelas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('page.sections.productos.modalDetalles', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
 
 <style>
     .lightgallery1 .product-item {

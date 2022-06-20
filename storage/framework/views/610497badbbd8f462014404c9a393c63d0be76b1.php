@@ -24,7 +24,7 @@
     <div class="content section-content">
         <div class="row">
             <?php if(Session::has('warning')): ?>
-                <div class="alert alert-warning"><?php echo e(Session::get('warning')); ?></div>
+                <div class="alert alert-danger"><?php echo e(Session::get('warning')); ?></div>
             <?php endif; ?>
 
             <?php if(empty($nit)): ?>
@@ -38,8 +38,8 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-11 col-sm-11 col-md-11" style="padding-left: 44px;">
-                        <form>
+                    <div class="col-xs-12 col-sm-12 col-md-12" style="padding: 15px 20px 0px 40px;">
+                        <form >
                             <div class="row" style="border: outset;padding: 25px;">
                                 <label style="font-size: 1.3rem;">Ingrese los datos requeridos para visualizar sus Facturas.</label><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<p style="font-size: 1.3rem;">Los campos (*) son obligatorios.</p>
@@ -47,19 +47,13 @@
                                     <input type="number" class="form-control" name="nit" placeholder="NIT/C.I" required style="font-size: 1.3rem;"
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                     maxlength="13">
-                                </div>
-                                <div class="col-md-12 col-sm-12 form-group">
-                                    <input type="text" class="form-control" name="id" placeholder="Numero ID Factura Ej. FC341" required style="font-size: 1.3rem;"
-                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                    maxlength="6">
                                 </div><br>
-
+                                
                                 <button style="font-size: 1.3rem;" type="submit" class="btn btn-primary btn-block"><i class="fa fas fa-book"></i>
                                     &nbsp; Ver Facturas</button>
                             </div>
                         </form>
                     </div>
-                   
                 </div>
             <?php else: ?>
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -110,7 +104,6 @@
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         <?php $__currentLoopData = $vefactura; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
@@ -131,7 +124,7 @@
                                 </table>
                             </div>
                             <div style="text-align: center;">
-                                <?php echo e($vefactura->appends(['nit' => $nit, 'id'=>$id])->links()); ?>
+                                <?php echo e($vefactura->appends(['nit' => $nit])->links()); ?>
 
                             </div>
                         </div>

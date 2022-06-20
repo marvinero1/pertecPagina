@@ -21,14 +21,13 @@ class FacturaController extends Controller{
     public function index(Request $request){
         $hash=new Hashids();
         $nit = $request->get('nit');
-        $id = $request->get('id');
-        $vefactura = empty($vefactura) ? DB::table('vefactura')->where('id', $id)->where('nit', $nit)->paginate(15): $vefactura;
+        $vefactura = empty($vefactura) ? DB::table('vefactura')->where('nit', $nit)->paginate(20): $vefactura;
 
         if($nit == "0"){
             Session::flash('warning','NIT o C.I No puede ser 0.');
         }
         
-        return view('page.sections.facturas.index', compact('nit','id','vefactura','hash'));
+        return view('page.sections.facturas.index', compact('nit','vefactura','hash'));
     }
 
     public function viewPDF($codfactura){

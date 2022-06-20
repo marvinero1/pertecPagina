@@ -82,7 +82,7 @@
                                             <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">
                                                 00000<?php echo e($verfactura->codigo); ?></h6>
                                             <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">
-                                                <?php echo e($verfactura->nroautorizacion); ?></h6>
+                                                <?php echo e($verfactura->cuf); ?></h6>
                                         </div>
                                     </div>
 

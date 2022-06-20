@@ -58,7 +58,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">COD. AUTORIZACION: </td>
-                    <td colspan="3">{{ $verfactura->nroautorizacion }}</td>
+                    <td colspan="3">{{ $verfactura->cuf }}</td>
                 </tr>
             </tbody>
         </table>

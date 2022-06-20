@@ -11,9 +11,9 @@
                     <div class="widget-about-logo pull-left pull-none-xs" style="padding-block-end: 10px;">
 						<img src="../assets/images/icon.png" alt="logo" width="80px"/>
 					</div>
-					<div class="widget-about-info">
-						<h4 class="text-capitalize text-white p-subtitle" style="text-align: justify !important;padding: 0px 125px 0px 99px;">PERTEC S.R.L.</h4>
-						<p class="mb-0 text-white p-texto" style="text-align: justify !important;padding: 0px 125px 0px 99px;">
+					<div class="widget-about-info ini-footer">
+						<h4 class="text-capitalize text-white p-subtitle">PERTEC S.R.L.</h4>
+						<p class="mb-0 text-white p-texto">
 						Somos una empresa dedicada a la venta de elementos de sujeción aportando al crecimiento de nuestro país desde 1985.</p>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 					</div>
 				</div>
                 <div class="col-xs-12 col-sm-12 col-md-3 widget-links text-center-xs mb-30-xs">
-					<div class="widget-about-info">
+					<div class="widget-about-info time-attention">
 						<h4 class="text-capitalize text-white p-subtitle">Horarios de atención</h4>
 						<p class="mb-0">De Lunes a Viernes</p>
                         <p class="mb-0" style="margin-top: 2px;">Mañana 08:00 a 12:00 hrs.</p>
@@ -92,6 +92,33 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+    <style>
+        @media (min-width: 768px) {
+            .ini-footer h4, .ini-footer p {
+                text-align: justify !important;padding: 0px 125px 0px 99px;
+            }
+        }
+        @media (max-width: 767px) {
+            .ini-footer h4, .ini-footer p {
+                text-align: center !important;
+            }
+            .time-attention p {
+                text-align: center !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .ini-footer h4, .ini-footer p {
+                padding: 0px 25px 0px 35px;
+            }
+        }
+
+    </style>
 </footer>
 <?php echo $__env->make('page.sections.terminos.politica', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('page.sections.terminos.reglas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
