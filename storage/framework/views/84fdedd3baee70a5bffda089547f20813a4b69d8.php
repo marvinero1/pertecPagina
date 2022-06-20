@@ -1,6 +1,4 @@
 <?php $__env->startSection('content'); ?>
-
-
 <?php echo e(Html::script(mix('assets/admin/js/admin.js'))); ?>
 
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
@@ -40,12 +38,10 @@
             </div>
 
             <div class="clearfix"></div>
-            <div class="row" style="display: block;">
+            <div class="row" style="display: block; margin-right: 0px;">
                 <div class="col-md col-sm">
                     <div class="x_panel">
-                        <div style="padding: 25px;">
-
-
+                        <div style="padding: 25px; padding-right: 15px;">
                             <div class="row" style="text-align: center; height: 170px;">
                                 <div class="col-md-2 col-sm-12" style="margin-top: 10px;">
                                     <img src="../assets/images/icon.png" alt="Pertec S.R.L &copy;" width="150px">
@@ -90,9 +86,6 @@
 
                                 </div>
                             </div><br>
-
-
-
 
                             <div class="row">
                                 <div class="col-md-8">
@@ -144,7 +137,7 @@
                                                     <th>CODIGO PRODUCTO</th>
                                                     <th colspan="2" style="text-align: center;">DESCRIPCION</th>
                                                     <th>UNIDAD DE MEDIDA</th>
-                                                    <th>CANTIDAD</th>
+                                                    <th style="text-align: right;">CANTIDAD</th>
                                                     <th style="text-align: right;">PRECIO UNITARIO</th>
                                                     <th style="text-align: right;">DESCUENTO</th>
                                                     <th style="text-align: right;">SUBTOTAL(BS)</th>
@@ -160,11 +153,11 @@
                                                     <td class="alingLeft"><?php echo e($vefacturaDetalles->medida); ?></td>
                                                     <td class="alingCenter"><?php echo e($vefacturaDetalles->udm); ?></td>
                                                     <td class="alingRight"><?php echo e($vefacturaDetalles->cantidad); ?></td>
-                                                    <td class="alingRight"><?php echo e(round($vefacturaDetalles->preciolista, 2)); ?></td>
+                                                    <td class="alingRight"><?php echo e(number_format(round($vefacturaDetalles->preciolista, 2) ,2,'.',',')); ?></td>
                                                     <td class="alingRight">
-                                                        <?php echo e($cantidad_precio_decimal - $cantidad_precioneto_decimal); ?></td>
+                                                        <?php echo e(number_format($cantidad_precio_decimal - $cantidad_precioneto_decimal,2,'.',',')); ?></td>
                                                     <td class="alingRight">
-                                                        <?php echo e(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2)); ?>
+                                                        <?php echo e(number_format(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2),2,'.',',')); ?>
 
                                                     </td>
                                                 </tr>
@@ -180,24 +173,24 @@
                                                         DOLAR AMERICANO
                                                     </td>
                                                     <td colspan="3" style="padding: 0px 2%;">Sub Total(BS):</td>
-                                                    <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e($totalParse); ?></td>
+                                                    <td class="font-frank-book" style="padding: 0px 0px;"><?php echo e(number_format($totalParse,2,'.',',')); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3" style="padding: 0px 2%;">Descuentos(BS):</td>
                                                     <td class="font-frank-book" style="padding: 0px 0px;">
-                                                        <?php echo e(round($descuento, 2)); ?></td>
+                                                        <?php echo e(number_format($descuento_round,2,'.',',')); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="5" rowspan="2"></td>
                                                     <td colspan="3" style="padding: 0px 2%;">Total(BS):</td>
                                                     <td class="font-frank-book" style="padding: 0px 0px;">
-                                                        <?php echo e(round($total_menos_descuento, 2)); ?></td>
+                                                        <?php echo e(number_format($total_menos_descuento_round,2,'.',',')); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3" style="padding: 0px 2%;">Importe Base Crédito Fiscal(BS):
                                                     </td>
                                                     <td class="font-frank-book" style="padding: 0px 0px;">
-                                                        <?php echo e(round($total_menos_descuento, 2)); ?></td>
+                                                        <?php echo e(number_format($total_menos_descuento_round,2,'.',',')); ?></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -238,7 +231,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><br><br>
             <div style="float: right;">
                 <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i
                         class="fa fa-arrow-left"></i>

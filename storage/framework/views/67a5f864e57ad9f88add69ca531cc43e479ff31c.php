@@ -93,7 +93,6 @@
                                     <a href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id) )); ?>" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</button></a>
-                                    
                                     <a href="<?php echo e(route('admin.producto.edit', $hash->encodeHex($productos->id) )); ?>" style="color: black">
                                         <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
                                             Editar</button></a>
@@ -102,8 +101,6 @@
                                         data-target="#myModal<?php echo e($productos->id); ?>">
                                         <i class="fa fa-star" aria-hidden="true"></i> Promoción</button>
                                     <?php endif; ?>
-                                    
-
                                     <form action="<?php echo e(route('admin.producto.destroy',$productos->id )); ?>" method="POST"
                                         accept-charset="UTF-8" style="display:inline">
                                         <?php echo csrf_field(); ?>

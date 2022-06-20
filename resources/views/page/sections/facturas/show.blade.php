@@ -39,10 +39,10 @@
             </div>
 
             <div class="clearfix"></div>
-            <div class="row" style="display: block;">
+            <div class="row" style="display: block; margin-right: 0px;">
                 <div class="col-md col-sm">
                     <div class="x_panel">
-                        <div style="padding: 25px;">
+                        <div style="padding: 25px; padding-right: 15px;">
                             <div class="row" style="text-align: center; height: 170px;">
                                 <div class="col-md-2 col-sm-12" style="margin-top: 10px;">
                                     <img src="../assets/images/icon.png" alt="Pertec S.R.L &copy;" width="150px">

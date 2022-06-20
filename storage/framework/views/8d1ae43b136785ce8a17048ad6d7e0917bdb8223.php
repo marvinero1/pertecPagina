@@ -36,7 +36,8 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active">
                                 <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
-                                    Facturas
+                                    Facturas de: <?php echo e(Auth::user()->name); ?> con NIT: <?php echo e(Auth::user()->nit); ?>
+
                                 </a>
                             </li>
                         </ul>
@@ -48,10 +49,12 @@
                                             <tr>
                                                 <th>Codigo</th>
                                                 <th>ID</th>
-                                                <th>Nombre Cliente</th>
-                                                <th>NIT / C.I</th>
+                                                <th>#ID</th>
+                                                <th>CUF</th>
                                                 <th>Codigo Control</th>
-                                                <th>Codigo</th>
+                                                <th>Fecha Reg</th>
+                                                <th>Peso Kg.</th>
+                                                <th>Total Bs.</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -60,11 +63,13 @@
                                             <tr>
                                                 <td class="row1" scope="row"><?php echo e($vefacturas->codigo); ?></td>
                                                 <td scope="row"><?php echo e($vefacturas->id); ?></td>
-                                                <td scope="row"><?php echo e($vefacturas->nomcliente); ?></td>
-                                                <td scope="row"><?php echo e($vefacturas->nit); ?></td>
+                                                <td scope="row"><?php echo e($vefacturas->numeroid); ?></td>
+                                                <td scope="row"><?php echo e($vefacturas->cuf); ?></td>
                                                 <td scope="row"><?php echo e($vefacturas->codigocontrol); ?></td>
-                                                <td scope="row"><?php echo e($vefacturas->codigo); ?></td>
-    
+                                                <td scope="row"><?php echo e(date('d-m-y', strtotime($vefacturas->fechareg))); ?></td>
+                                                <td scope="row"><?php echo e(number_format($vefacturas->peso,2)); ?></td>
+                                                <td scope="row"><?php echo e($vefacturas->total); ?></td>
+
                                                 <td scope="row" style="text-align:center;">
                                                     <a href="<?php echo e(route('viewFactura', $hash->encodeHex($vefacturas->codigo))); ?>" style="color: black">
                                                         <button class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i>
@@ -76,6 +81,10 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <?php echo e($vefactura->links()); ?>
+
                         </div>
                     </div>
                 </div>
