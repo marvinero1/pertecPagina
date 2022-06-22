@@ -303,12 +303,12 @@
     @if($nombre_producto != "null")
         <div class="content section-content">
             <div class="col-md-6">
-                <h3>Productos Buscados</h3> 
+                <h3>Productos Buscados</h3>
             </div><br>
             <div class="col-md-6">
                 <div class="input-group">
                     <form class="search-form">
-                        <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value="null">        
+                        <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value="null">
                         <button type="submit" class="input-group-addon bg-blue text-white" style="border-radius: 20px;
                             width: 170px !important"><i class="fa fa-close"></i> Limpiar
                         </button>
@@ -552,8 +552,8 @@
                         <img src="/assets/images/system/CELULAR.png" style="margin-top: -15px;" width="30px;">
                     </div>
                     <div class="widget-contact-info">
-                        <a class="text-capitalize font-heading awithmodelh1" href="tel:+591 72221031">72221031 - </a>
-                        <a class="text-capitalize font-heading awithmodelh1" href="tel:+591 72221033"">72221033</a>
+                        <a class="text-capitalize font-heading awithmodelh1 font-tam-respp" href="tel:+591 72221031">72221031 - </a>
+                        <a class="text-capitalize font-heading awithmodelh1 font-tam-respp" href="tel:+591 72221033"">72221033</a>
                     </div>
                 </div>
 
@@ -562,12 +562,12 @@
                         <i class="fa fa-whatsapp" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
-                        <a class="font-heading awithmodelh1">(Whatsapp)</a>
+                        <a class="font-heading awithmodelh1 font-tam-respp">(Whatsapp)</a>
                         <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
-                        class=" awithmodelh1" target="_blank">72221032</a>
+                        class=" awithmodelh1 font-tam-respp" target="_blank">72221032 - </a>
                         <strong>-</strong>
                         <a href="https://wa.me/+59172230024/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
-                        class="awithmodelh1" target="_blank">72230024</a>
+                        class="awithmodelh1 font-tam-respp" target="_blank">72230024</a>
                     </div>
                 </div>
 
@@ -576,7 +576,7 @@
                         <i class="fa fa-envelope-o" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>
                     <div class="widget-contact-info">
-                        <a class="font-heading awithmodelh1" href="mailto:servicio.cliente@pertec.com.bo">servicio.cliente@pertec.com.bo</a>
+                        <a class="font-heading awithmodelh1 font-tam-respp" href="mailto:servicio.cliente@pertec.com.bo">servicio.cliente@pertec.com.bo</a>
                     </div>
                 </div>
             </div>

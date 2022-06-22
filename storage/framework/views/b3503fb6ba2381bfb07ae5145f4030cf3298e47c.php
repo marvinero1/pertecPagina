@@ -1,7 +1,5 @@
-<!-- Modal -->
 <div class="modal fade-scale" id="ModalInfoProd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-
-	<div class="modal-dialog full-screen" role="document"> <!-- para poner tamaño de modal por bootstrap (modal-lg o modal-sm)-->
+	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title" style="text-align: center;">Información</h4>
@@ -9,34 +7,30 @@
 			</div>
 
 			<div class="modal-body">
-				<img id="myImg3" src="../images/productos/conversiones/referencia.jpg" style="width: 60%; display: block; margin: auto;" alt="matriz" /><br>
+				<img id="myImg3" src="../images/productos/conversiones/referencia.jpg" style="display: block; margin: auto;" alt="matriz" /><br>
                 <p style="text-align: center; color: black;">Las casillas que contienen datos pertenecen a las medidas disponibles del producto</p>
             </div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+			
+		</div>
+	</div>
+</div>
 
-
-
-
-<!-- The Modal -->
 <div id="myModalImg2" class="modal">
     <button onclick="closeMod();" class="close">×</button>
     <img class="modal-content" id="img02">
     <div id="caption2"></div>
 </div>
 
-
 <style>
     #myImg3 {
         border-radius: 5px;
         cursor: pointer;
         transition: 0.3s;
+        width: 365px;
     }
-
+    .modal-body{
+        padding-top: 10px !important;
+    }
     /* The Modal (background) */
     .modal {
         display: none;
@@ -65,10 +59,9 @@
     .modal-content {
         margin: auto;
         display: block;
-        width: 80%;
+        width: 130% !important;
         max-width: 700px;
     }
-
     /* Caption of Modal Image */
     #caption {
         margin: auto;
@@ -80,7 +73,6 @@
         padding: 10px 0;
         height: 150px;
     }
-
     /* Add Animation */
     .modal-content,
     #caption {
@@ -89,7 +81,6 @@
         animation-name: zoom;
         animation-duration: 0.6s;
     }
-
     @-webkit-keyframes zoom {
         from {
             -webkit-transform: scale(0)
@@ -99,7 +90,6 @@
             -webkit-transform: scale(1)
         }
     }
-
     @keyframes  zoom {
         from {
             transform: scale(0)
@@ -109,7 +99,6 @@
             transform: scale(1)
         }
     }
-
     /* The Close Button */
     .close {
         position: absolute;
@@ -121,26 +110,21 @@
         transition: 0.3s;
         opacity: 1;
     }
-
     .close:hover,
     .close:focus {
         color: #bbb;
         text-decoration: none;
         cursor: pointer;
     }
-
     /* 100% Image Width on Smaller Screens */
     @media  only screen and (max-width: 700px) {
         .modal-content {
             width: 100%;
         }
-
         .zoom:hover {
             left: 25%;
         }
     }
-
-
 </style>
 <script>
     // Get the modal

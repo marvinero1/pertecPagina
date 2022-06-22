@@ -27077,7 +27077,7 @@ footer hr {
     position: fixed;
     width: 96px;
     height: 38px;
-    bottom: 40px;
+    bottom: 130px;
     right: 40px;
     background-color: #25D366;
     color: #FFF;
@@ -27124,7 +27124,7 @@ footer hr {
     height: 45px;
     /* top: 287px;
     left: 20px; */
-    bottom: 90px;
+    bottom: 180px;
     right: 40px;
     background-color: #FBD800;
     color: #FFF;
@@ -27396,6 +27396,9 @@ footer hr {
         font-weight: 100 !important;
         line-height: normal !important;
     }
+    .font-tam-respp {
+        font-size: 1.4vw !important;
+    }
 }
 
 .header-3 .navbar-fixed-top.affix-scrooll {
@@ -27635,6 +27638,9 @@ footer hr {
     .tama-car-nom {
         font-size: 1.4rem !important;
     }
+    .controlCarrProd {
+        top: 34% !important;
+    }
 }
 @media (min-width: 1440px) and (max-width: 1824px) {
     .car-prod-img {
@@ -27642,6 +27648,9 @@ footer hr {
     }
     .tama-car-nom {
         font-size: 1.4rem !important;
+    }
+    .controlCarrProd {
+        top: 36% !important;
     }
 }
 @media (min-width: 1825px) and (max-width: 2204px) {
@@ -27651,6 +27660,9 @@ footer hr {
     .tama-car-nom {
         font-size: 1.8rem !important;
     }
+    .controlCarrProd {
+        top: 37% !important;
+    }
 }
 @media (min-width: 2205px) and (max-width: 2564px) {
     .car-prod-img {
@@ -27658,6 +27670,9 @@ footer hr {
     }
     .tama-car-nom {
         font-size: 2.3rem !important;
+    }
+    .controlCarrProd {
+        top: 38% !important;
     }
 }
 @media (min-width: 2565px) and (max-width: 3068px) {
@@ -27668,6 +27683,9 @@ footer hr {
         font-size: 2.8rem !important;
         /* line-height: 3!important; */
     }
+    .controlCarrProd {
+        top: 39% !important;
+    }
 }
 @media (min-width: 3069px) {
     .car-prod-img {
@@ -27675,6 +27693,9 @@ footer hr {
     }
     .tama-car-nom {
         font-size: 2.8rem !important;
+    }
+    .controlCarrProd {
+        top: 40% !important;
     }
 }
 
