@@ -11,7 +11,7 @@
                 <div class="login_wrapper" style="height: 100%; position: relative;">
                     <div class="animate form login_form" style="position: absolute; top: 13%;">
                         <section class="login_content login_content-login">
-                            <img src="../assets/images/icon.png" alt="logo" width="100px"><br>
+                            <a href="/"><img src="../assets/images/icon.png" alt="logo" width="100px"></a><br>
                             <?php if(config('auth.users.registration')): ?>
                                 <div>
                                     <div class="clearfix"></div>

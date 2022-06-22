@@ -44,7 +44,6 @@ class HomeController extends Controller
         $modalPopup = ModalPopup::all();
 
         // print($productoBuscado);
-
         return view('index', ['hash' => $hash, 'carusel' => $carusel, 'producto' => $producto, 'producto2' => $producto2,
                     'tienda' => $tienda, 'tiendaLPZ'=>$tiendaLPZ, 'tiendaCBBA'=>$tiendaCBBA, 'tiendaSTCZ'=>$tiendaSTCZ,
                     'oficinas'=>$oficinas,'modalPopup'=>$modalPopup,'productoBuscado'=>$productoBuscado,'nombre_producto'=>$nombre_producto]);
