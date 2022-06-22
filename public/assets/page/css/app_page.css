@@ -27563,6 +27563,185 @@ footer hr {
     margin-bottom: 0.5rem;
 }
 
+/* tamaños para pantallas grandes  carrusel imagenes*/
+@media (max-width: 1246px) {
+    .car-prod-img {
+        max-height:200px;
+    }
+}
+@media (min-width: 1247px) and (max-width: 1824px) {
+    .car-prod-img {
+        max-height:300px;
+    }
+    .tama-car-nom {
+        font-size: 1.4rem !important;
+    }
+}
+@media (min-width: 1440px) and (max-width: 1824px) {
+    .car-prod-img {
+        max-height:350px;
+    }
+    .tama-car-nom {
+        font-size: 1.4rem !important;
+    }
+}
+@media (min-width: 1825px) and (max-width: 2204px) {
+    .car-prod-img {
+        max-height:400px;
+    }
+    .tama-car-nom {
+        font-size: 1.8rem !important;
+    }
+}
+@media (min-width: 2205px) and (max-width: 2564px) {
+    .car-prod-img {
+        max-height:450px;
+    }
+    .tama-car-nom {
+        font-size: 2.3rem !important;
+    }
+}
+@media (min-width: 2565px) and (max-width: 3068px) {
+    .car-prod-img {
+        max-height:500px;
+    }
+    .tama-car-nom {
+        font-size: 2.8rem !important;
+        /* line-height: 3!important; */
+    }
+}
+@media (min-width: 3069px) {
+    .car-prod-img {
+        max-height:750px;
+    }
+    .tama-car-nom {
+        font-size: 2.8rem !important;
+    }
+}
+
+/* tamaños patalla grande para header */
+.tama-font-nav {
+    display: table !important;
+}
+.tama-font-nav a {
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
+@media (min-width: 992px) and (max-width: 1099px) {
+    .tama-font-nav a {
+        font-size: 1.2rem !important;
+    }
+}
+@media (min-width: 1100px) and (max-width: 1340px) {
+    .tama-font-nav a {
+        font-size: 1.3rem !important;
+    }
+    .header-3 .navbar-fixed-top.affix,
+    .header-3 .navbar-fixed-top.affix .navbar-nav>li,
+    .header-3 .navbar-fixed-top.affix .navbar-header,
+    .tama-div {
+        height: 140px !important;
+    }
+}
+@media (min-width: 1341px) and (max-width: 1482px) {
+    .tama-font-nav a {
+        font-size: 1.5rem !important;
+    }
+    .header-3 .navbar-fixed-top.affix,
+    .header-3 .navbar-fixed-top.affix .navbar-nav>li,
+    .header-3 .navbar-fixed-top.affix .navbar-header,
+    .tama-div {
+        height: 140px !important;
+    }
+    .search-box {
+        width: 185px !important;
+    }
+}
+@media (min-width: 1483px) and (max-width: 1700px) {
+    .tama-font-nav a {
+        font-size: 1.7rem !important;
+    }
+    .icon-tama-resp {
+        font-size: 2.4rem !important;
+    }
+    .header-3 .navbar-fixed-top.affix,
+    .header-3 .navbar-fixed-top.affix .navbar-nav>li,
+    .header-3 .navbar-fixed-top.affix .navbar-header,
+    .tama-div {
+        height: 160px !important;
+    }
+    .search-box {
+        width: 205px !important;
+    }
+}
+@media (min-width: 1701px) and (max-width: 1900px) {
+    .tama-font-nav a {
+        font-size: 2rem !important;
+    }
+    .icon-tama-resp {
+        font-size: 2.8rem !important;
+    }
+    .header-3 .navbar-fixed-top.affix,
+    .header-3 .navbar-fixed-top.affix .navbar-nav>li,
+    .header-3 .navbar-fixed-top.affix .navbar-header,
+    .tama-div {
+        height: 160px !important;
+    }
+    .search-box {
+        width: 235px !important;
+    }
+}
+@media (min-width: 1901px) and (max-width: 2100px) {
+    .tama-font-nav a {
+        font-size: 2.5rem !important;
+    }
+    .icon-tama-resp {
+        font-size: 3rem !important;
+    }
+    .header-3 .navbar-fixed-top.affix,
+    .header-3 .navbar-fixed-top.affix .navbar-nav>li,
+    .header-3 .navbar-fixed-top.affix .navbar-header,
+    .tama-div {
+        height: 160px !important;
+    }
+    .search-box {
+        width: 285px !important;
+    }
+}
+@media (min-width: 2101px) and (max-width: 2400px) {
+    .tama-font-nav a {
+        font-size: 2.8rem !important;
+    }
+    .icon-tama-resp {
+        font-size: 3.2rem !important;
+    }
+    .header-3 .navbar-fixed-top.affix,
+    .header-3 .navbar-fixed-top.affix .navbar-nav>li,
+    .header-3 .navbar-fixed-top.affix .navbar-header,
+    .tama-div {
+        height: 180px !important;
+    }
+    .search-box {
+        width: 315px !important;
+    }
+}
+@media (min-width: 2401px) {
+    .tama-font-nav a {
+        font-size: 3.2rem !important;
+    }
+    .icon-tama-resp {
+        font-size: 3.4rem !important;
+    }
+    .header-3 .navbar-fixed-top.affix,
+    .header-3 .navbar-fixed-top.affix .navbar-nav>li,
+    .header-3 .navbar-fixed-top.affix .navbar-header,
+    .tama-div {
+        height: 250px !important;
+    }
+    .search-box {
+        width: 345px !important;
+    }
+}
 
 /*-----------------------------------------------------------------------------
 

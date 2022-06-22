@@ -1,7 +1,11 @@
 <header id="navbar-spy" class="full-header header-3 style-2">
 	<nav id="primary-menu" class="navbar navbar-fixed-top affix" style="display: revert !important;" >
 		<div class="row">
+<<<<<<< HEAD
+			<div class="container" style="padding-right: 0px !important;padding-left: 0px !important; margin: 0 4% 0 4%; width: -webkit-fill-available;">
+=======
 			<div class="container" style="padding-right: 0px !important;padding-left: 0px; !important">
+>>>>>>> ae0cd125a8aca196835a02eaea0f7d7c1c15aec4
 				<div class="navbar-header">
                     <a class="logo" href="/">
 						<img src="../assets/images/icon.png" alt="Pertec S.R.L &copy;" style="height: -webkit-fill-available; float: left;" >
@@ -17,13 +21,18 @@
 
 				<div class="collapse navbar-collapse pull-right collapse" id="bs-example-navbar-collapse-1" style="padding-right: 0% !important">
 					<ul class="nav navbar-nav navbar-left">
-						<li class="has-dropdown active">
+						<li class="has-dropdown active tama-font-nav">
 							<a href="/" >Inicio</a>
 						</li>
+<<<<<<< HEAD
+						<!-- li end -->
+						<li class="has-dropdown tama-font-nav">
+=======
 						<li class="has-dropdown">
+>>>>>>> ae0cd125a8aca196835a02eaea0f7d7c1c15aec4
 							<a class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
 						</li>
-                        <li class="has-dropdown">
+                        <li class="has-dropdown tama-font-nav">
 							<a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link">Productos</a>
 							<ul class="dropdown-menu" style="border-radius: 10px;">
 								<li>
@@ -40,7 +49,12 @@
 								</li>
 							</ul>
 						</li>
+<<<<<<< HEAD
+						<!-- li end -->
+						<li class="has-dropdown tama-font-nav">
+=======
 						<li class="has-dropdown">
+>>>>>>> ae0cd125a8aca196835a02eaea0f7d7c1c15aec4
 							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
                             <ul class="dropdown-menu" style="border-radius: 10px;">
 								<li>
@@ -48,26 +62,45 @@
 								</li>
 							</ul>
 						</li>
+<<<<<<< HEAD
                         <li class="has-dropdown">
+=======
+<<<<<<< HEAD
+                        <li class="has-dropdown tama-font-nav">
+=======
+                        {{-- <li class="has-dropdown">
+>>>>>>> ae0cd125a8aca196835a02eaea0f7d7c1c15aec4
+>>>>>>> 36e2cf601a2485d5952a5cf763adaa46c2030e78
 							<a href="/consultasDigitales" target="_blank">Facturas</a>
                             {{-- <ul class="dropdown-menu" style="border-radius: 10px;">
 								<li>
 									<a href="#">Imprime tu factura</a>
 								</li>
+<<<<<<< HEAD
 							</ul>  --}}
 						</li>
+=======
+<<<<<<< HEAD
+							</ul> --}}
+						</li>
+						<li class="has-dropdown pull-left tama-font-nav">
+=======
+							</ul> 
+						</li> --}}
+>>>>>>> 36e2cf601a2485d5952a5cf763adaa46c2030e78
 						<li class="has-dropdown pull-left">
+>>>>>>> ae0cd125a8aca196835a02eaea0f7d7c1c15aec4
 							<a href="/contactanos">Contacto</a>
 						</li>
 					</ul>
                     @if (!auth()->guest())
-                        <div class="module module-search pull-left" style="margin-right: 5px;">
-                            <div class="search-icon">
+                        <div class="module module-search pull-left tama-div" style="margin-right: 5px; display: table;">
+                            <div class="search-icon" style="height: 100%;display: table-cell;vertical-align: middle;">
                             <strong class="text-white" style="width: 20px;font-size: 1.8rem;">|
-                                <i class="fa fa-search" style="font-size: 1.8rem;"></i></strong>
+                                <i class="fa fa-search icon-tama-resp" style="font-size: 1.8rem;"></i></strong>
                             </div>
 
-                            <div class="search-box">
+                            <div class="search-box" >
                                 <form class="search-form">
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder=" &nbsp; Buscar">
@@ -78,13 +111,13 @@
                             </div>
                         </div>
 
-                        <div class="module module-search pull-left" style="padding-top: 5px;">
-                            <div class="search-icon user-icon-margin">
-                                <i class="fa fa-user-circle" style="font-size: 1.8rem; padding-left: 0px !important;padding-right: 0px !important;"></i>
+                        <div class="module module-search pull-left tama-div" style="padding-top: 5px; display: table;">
+                            <div class="search-icon user-icon-margin" style="height: 100%;display: table-cell;vertical-align: middle;">
+                                <i class="fa fa-user-circle icon-tama-resp" style="font-size: 1.8rem; padding-left: 0px !important;padding-right: 0px !important;"></i>
                             </div>
                             <div class="search-box navbar-nav" style="height: auto; padding-top: 10px; padding-left: 20px; padding-right: 20px;">
                                 <div class="cart-icon">
-                                    <ul class="list-unstyled user-menu">
+                                    <ul class="list-unstyled user-menu tama-font-nav">
                                         @if (Auth::user()->name == "Admin")
                                             <li>
                                                 <a href="/admin" style="color: #A6A69B;">Panel Administrativo</a>
