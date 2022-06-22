@@ -173,7 +173,6 @@ class FacturaController extends Controller{
     public function facturaVista(Request $request){
         $cliente = $request->all();
         $nit = $cliente['nit'];
-        $id = $cliente['id'];
         
         $vefactura = DB::table('vefactura')->where('id', $id)->where('nit', $nit)->paginate(10);
         return view('page.sections.facturas.listfacturas', ['vefactura'=>$vefactura]);

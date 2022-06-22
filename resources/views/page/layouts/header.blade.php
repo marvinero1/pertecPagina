@@ -50,9 +50,15 @@
 								</li>
 							</ul>
 						</li>
-
-
-						<li class="has-dropdown pull-left">
+                        <li class="has-dropdown tama-font-nav">
+							<a href="/consultasDigitales" target="_blank">Facturas</a>
+                            <ul class="dropdown-menu" style="border-radius: 10px;">
+								<li>
+									<a href="#">Imprime tu factura</a>
+								</li>
+							</ul>
+						</li>
+						<li class="has-dropdown pull-left tama-font-nav">
 							<a href="/contactanos">Contacto</a>
 						</li>
 					</ul>
@@ -119,6 +125,9 @@
                                             <i class="fa fa-search"></i></span>
                                         </div>
                                 </form>
+
+                                
+                                
                             </div>
                         </div>
                         <div class="module module-cart pull-right" style="padding-top: 5px;">

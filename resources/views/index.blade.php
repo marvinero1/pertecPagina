@@ -287,7 +287,54 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><br>
+
+    @if($nombre_producto != "null")
+        <div class="content section-content">
+            <div>
+                <div class="col-md-6">
+                    <h3>Productos Buscados</h3> 
+                </div><br>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <form class="search-form">
+                            <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value="null">        
+                            <button type="submit" class="input-group-addon bg-blue text-white" style="border-radius: 20px;
+                                width: 170px !important"><i class="fa fa-close"></i> Limpiar
+                            </button>
+                        </form>
+                    </div><br><br>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+                    <div class="item">
+                        <div class="row">
+                            @foreach ($productoBuscado as $productos)
+                                <div class="col-xs-12 col-sm-6 col-md-4 product-item  clearfix">
+                                    <div class="product-img">
+                                        <img src='/{{ $productos->imagen }}' alt="product" class="car-prod-img"
+                                            style="height: auto; width: auto;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">Detalles</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="height: 50px;">
+                                        <h4>
+                                            <a class="tama-car-nom" href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
 </section>
 
 <section id="sectionStores">

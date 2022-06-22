@@ -1,6 +1,7 @@
 
 
 <?php $__env->startSection('content'); ?>
+
 <section id="hero" class="hero hero-4">
     <div class="rev_slider_wrapper ">
         <div id="slider1" class="rev_slider" data-version="5.0">
@@ -288,7 +289,54 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><br>
+
+    <?php if($nombre_producto != "null"): ?>
+        <div class="content section-content">
+            <div>
+                <div class="col-md-6">
+                    <h3>Productos Buscados</h3> 
+                </div><br>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <form class="search-form">
+                            <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value="null">        
+                            <button type="submit" class="input-group-addon bg-blue text-white" style="border-radius: 20px;
+                                width: 170px !important"><i class="fa fa-close"></i> Limpiar
+                            </button>
+                        </form>
+                    </div><br><br>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+                    <div class="item">
+                        <div class="row">
+                            <?php $__currentLoopData = $productoBuscado; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="col-xs-12 col-sm-6 col-md-4 product-item  clearfix">
+                                    <div class="product-img">
+                                        <img src='/<?php echo e($productos->imagen); ?>' alt="product" class="car-prod-img"
+                                            style="height: auto; width: auto;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>">Detalles</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="height: 50px;">
+                                        <h4>
+                                            <a class="tama-car-nom" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 </section>
 
 <section id="sectionStores">
@@ -592,53 +640,7 @@
 
 
 
-    /* tamaños para pantallas grandes */
-    @media (max-width: 1246px) {
-        .car-prod-img {
-            max-height:250px;
-        }
-    }
-    @media (min-width: 1247px) and (max-width: 1824px) {
-        .car-prod-img {
-            max-height:350px;
-        }
-        .tama-car-nom {
-            font-size: 1.4rem !important;
-        }
-    }
-    @media (min-width: 1825px) and (max-width: 2204px) {
-        .car-prod-img {
-            max-height:450px;
-        }
-        .tama-car-nom {
-            font-size: 1.8rem !important;
-        }
-    }
-    @media (min-width: 2205px) and (max-width: 2564px) {
-        .car-prod-img {
-            max-height:550px;
-        }
-        .tama-car-nom {
-            font-size: 2.3rem !important;
-        }
-    }
-    @media (min-width: 2565px) and (max-width: 3068px) {
-        .car-prod-img {
-            max-height:650px;
-        }
-        .tama-car-nom {
-            font-size: 2.8rem !important;
-            /* line-height: 3!important; */
-        }
-    }
-    @media (min-width: 3069px) {
-        .car-prod-img {
-            max-height:750px;
-        }
-        .tama-car-nom {
-            font-size: 2.8rem !important;
-        }
-    }
+
     .awithmodelh1{
         color: #000000;
         font-family: 'Franklin Gothic Demi', sans-serif;
@@ -818,6 +820,23 @@
     }
     .cotizacion-div .widget-contact-info {
         position: absolute;top: 50%;left: 50%;height: 30%;width: 50%;margin: 0% 0 0px -8%;
+    }
+
+
+    .car-prod-img::after {
+        position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(254, 219, 0, 0.7);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+
     }
 </style>
 

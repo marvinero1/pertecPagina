@@ -27,7 +27,7 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
-        $nombre_producto= $request->get('buscarpor');
+        $nombre_producto = $request->get('buscarpor');
         $tienda = Tienda::latest()->get();
 
         $hash=new Hashids();
@@ -43,11 +43,11 @@ class HomeController extends Controller
         $tiendaSTCZ = Tienda::where('ciudad','Santa Cruz')->get();
         $modalPopup = ModalPopup::all();
 
-        print($productoBuscado);
+        // print($productoBuscado);
 
         return view('index', ['hash' => $hash, 'carusel' => $carusel, 'producto' => $producto, 'producto2' => $producto2,
                     'tienda' => $tienda, 'tiendaLPZ'=>$tiendaLPZ, 'tiendaCBBA'=>$tiendaCBBA, 'tiendaSTCZ'=>$tiendaSTCZ,
-                    'oficinas'=>$oficinas,'modalPopup'=>$modalPopup,'productoBuscado'=>$productoBuscado]);
+                    'oficinas'=>$oficinas,'modalPopup'=>$modalPopup,'productoBuscado'=>$productoBuscado,'nombre_producto'=>$nombre_producto]);
     }
 
     public function historia(){
