@@ -1,4 +1,3 @@
-
 <header id="navbar-spy" class="full-header header-3 style-2">
 	<nav id="primary-menu" class="navbar navbar-fixed-top affix" style="display: revert !important;" >
 		<div class="row">
@@ -16,7 +15,6 @@
 					</button>
 				</div>
 
-				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse pull-right collapse" id="bs-example-navbar-collapse-1" style="padding-right: 0% !important">
 					<ul class="nav navbar-nav navbar-left">
 						<li class="has-dropdown active tama-font-nav">
@@ -53,10 +51,16 @@
 							</ul>
 						</li>
                         <li class="has-dropdown tama-font-nav">
+
+                        <li class="has-dropdown">
 							<a href="/consultasDigitales" target="_blank">Facturas</a>
-                            
+                            <ul class="dropdown-menu" style="border-radius: 10px;">
+								<li>
+									<a href="#">Imprime tu factura</a>
+								</li>
+							</ul>
 						</li>
-						<li class="has-dropdown pull-left tama-font-nav">
+						<li class="has-dropdown pull-left">
 							<a href="/contactanos">Contacto</a>
 						</li>
 					</ul>
@@ -110,9 +114,20 @@
                             </div>
                         </div>
                     <?php else: ?>
-                        <div class="module module-search pull-left" style="margin-right: 25px;">
+                        <div class="module module-search pull-left" style="margin-right: 5px;">
                             <div class="search-icon">
-                                <strong class="text-white" style="width: 20px;font-size: 1.8rem;">| </strong>
+                            <strong class="text-white" style="width: 20px;font-size: 1.8rem;">|
+                                <i class="fa fa-search" style="font-size: 1.8rem;"></i></strong>
+                            </div>
+
+                            <div class="search-box">
+                                <form class="search-form">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder=" &nbsp; Buscar">
+                                        <span class="input-group-addon bg-blue text-white" style="border-radius: 20px;">
+                                            <i class="fa fa-search"></i></span>
+                                        </div>
+                                </form>
                             </div>
                         </div>
                         <div class="module module-cart pull-right" style="padding-top: 5px;">
@@ -125,7 +140,6 @@
 		</div>
 	</nav>
 </header>
-
 
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog-login">

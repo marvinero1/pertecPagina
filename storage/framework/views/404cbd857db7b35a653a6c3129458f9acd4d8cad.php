@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+
 <section id="hero" class="hero hero-4">
     <div class="rev_slider_wrapper ">
         <div id="slider1" class="rev_slider" data-version="5.0">
