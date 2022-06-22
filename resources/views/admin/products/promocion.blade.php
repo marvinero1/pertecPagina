@@ -5,7 +5,7 @@
 <!-- page content -->
     <div class="row">
         <div class="title_left" style="text-align: center;">
-            <h3>{{ __('views.admin.products.index.title') }} en Promocion</h3>
+            <h3>{{ __('views.admin.products.index.title') }} en Promoción</h3>
         </div><br>
 
         @if (Session::has('danger'))
@@ -38,7 +38,7 @@
         <div class="col-md col-sm">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Productos en Promocion</h2>
+                    <h2>Productos en Promoción</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
@@ -65,7 +65,7 @@
                                             alt="{{ $productos->nombre_producto }}">
                                     </div>
                                     <div class="middle">
-                                        <p><a href="{{ route('admin.producto.show', $productos->id ) }}"
+                                        <p><a href="{{ route('admin.producto.show', $hash->encodeHex($productos->id) ) }}"
                                                 style="color: black">
                                                 <button type="button" class="btn-borde" data-toggle="modal"
                                                     data-target="#myModal" title="Más información">
