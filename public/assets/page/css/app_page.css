@@ -27122,8 +27122,10 @@ footer hr {
     position: fixed;
     width: 45px;
     height: 45px;
-    top: 287px;
-    left: 20px;
+    /* top: 287px;
+    left: 20px; */
+    bottom: 90px;
+    right: 40px;
     background-color: #FBD800;
     color: #FFF;
     border-radius: 50px;
@@ -27209,6 +27211,19 @@ footer hr {
     .icon-margin {
         padding-right: 40px;
     }
+    .resp-dist-2 {
+        text-align: center !important;
+    }
+    .resp-dist-3 {
+        text-align: center !important;
+    }
+    .resp-dist-4 {
+        text-align: center !important;
+    }
+    .pull-none-xs {
+        float: none !important;
+        text-align: center !important;
+    }
 }
 @media(min-width: 992px) {
     .col-md-offset-6 {
@@ -27241,6 +27256,40 @@ footer hr {
     .icon-margin {
         margin-top: 10px;
     }
+    .resp-dist-1 {
+        width: 32% !important;
+    }
+    .resp-dist-2 {
+        width: 23% !important;
+    }
+    .resp-dist-3 {
+        width: 23% !important;
+    }
+    .resp-dist-4 {
+        width: 19% !important;
+    }
+    .poss-seting-nav {
+        top: 100%;
+    }
+    .tama-div {
+        display: table;
+    }
+    .search-icon {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    /* alineacion header pantallas grandes */
+    .tama-font-nav {
+        display: table !important;
+    }
+    .tama-font-nav a {
+        display: table-cell !important;
+        vertical-align: middle !important;
+    }
+    .op-prod-1 {width: 60%;}
+    .op-prod-2 {width: 85%;}
+    .op-prod-3 {width: 69%;}
+    .op-prod-4 {width: 69%;}
 }
 
 @media(min-width: 992px) and (max-width: 1038px) {
@@ -27339,6 +27388,16 @@ footer hr {
         margin-bottom: 40px;
     }
 }
+@media (min-width: 1879px) {
+    .resp-size-p,
+    .widgets-links ul li a,
+    .widgets-links p {
+        font-size: 1vw !important;
+        font-weight: 100 !important;
+        line-height: normal !important;
+    }
+}
+
 .header-3 .navbar-fixed-top.affix-scrooll {
     background-color: #093070c2;
 }
@@ -27620,19 +27679,30 @@ footer hr {
 }
 
 /* tamaños patalla grande para header */
-.tama-font-nav {
-    display: table !important;
-}
-.tama-font-nav a {
-    display: table-cell !important;
-    vertical-align: middle !important;
-}
+
 @media (min-width: 992px) and (max-width: 1099px) {
     .tama-font-nav a {
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
+    }
+    .tam-rep-submenu {
+        height: 170% !important;
     }
 }
 @media (min-width: 1100px) and (max-width: 1340px) {
+    .tama-font-nav a {
+        font-size: 1.2rem !important;
+    }
+    .header-3 .navbar-fixed-top.affix,
+    .header-3 .navbar-fixed-top.affix .navbar-nav>li,
+    .header-3 .navbar-fixed-top.affix .navbar-header,
+    .tama-div {
+        height: 140px !important;
+    }
+    .tam-rep-submenu {
+        height: 130% !important;
+    }
+}
+@media (min-width: 1341px) and (max-width: 1482px) {
     .tama-font-nav a {
         font-size: 1.3rem !important;
     }
@@ -27642,19 +27712,11 @@ footer hr {
     .tama-div {
         height: 140px !important;
     }
-}
-@media (min-width: 1341px) and (max-width: 1482px) {
-    .tama-font-nav a {
-        font-size: 1.5rem !important;
-    }
-    .header-3 .navbar-fixed-top.affix,
-    .header-3 .navbar-fixed-top.affix .navbar-nav>li,
-    .header-3 .navbar-fixed-top.affix .navbar-header,
-    .tama-div {
-        height: 140px !important;
-    }
     .search-box {
         width: 185px !important;
+    }
+    .tam-rep-submenu {
+        height: 130% !important;
     }
 }
 @media (min-width: 1483px) and (max-width: 1700px) {
@@ -27673,10 +27735,13 @@ footer hr {
     .search-box {
         width: 205px !important;
     }
+    .tam-rep-submenu {
+        height: 118% !important;
+    }
 }
 @media (min-width: 1701px) and (max-width: 1900px) {
     .tama-font-nav a {
-        font-size: 2rem !important;
+        font-size: 1.9rem !important;
     }
     .icon-tama-resp {
         font-size: 2.8rem !important;
@@ -27690,13 +27755,16 @@ footer hr {
     .search-box {
         width: 235px !important;
     }
+    .tam-rep-submenu {
+        height: 118% !important;
+    }
 }
 @media (min-width: 1901px) and (max-width: 2100px) {
     .tama-font-nav a {
-        font-size: 2.5rem !important;
+        font-size: 2.1rem !important;
     }
     .icon-tama-resp {
-        font-size: 3rem !important;
+        font-size: 2.9rem !important;
     }
     .header-3 .navbar-fixed-top.affix,
     .header-3 .navbar-fixed-top.affix .navbar-nav>li,
@@ -27707,10 +27775,13 @@ footer hr {
     .search-box {
         width: 285px !important;
     }
+    .tam-rep-submenu {
+        height: 125% !important;
+    }
 }
 @media (min-width: 2101px) and (max-width: 2400px) {
     .tama-font-nav a {
-        font-size: 2.8rem !important;
+        font-size: 2.5rem !important;
     }
     .icon-tama-resp {
         font-size: 3.2rem !important;
@@ -27724,10 +27795,13 @@ footer hr {
     .search-box {
         width: 315px !important;
     }
+    .tam-rep-submenu {
+        height: 125% !important;
+    }
 }
 @media (min-width: 2401px) {
     .tama-font-nav a {
-        font-size: 3.2rem !important;
+        font-size: 3rem !important;
     }
     .icon-tama-resp {
         font-size: 3.4rem !important;
@@ -27741,6 +27815,39 @@ footer hr {
     .search-box {
         width: 345px !important;
     }
+    .tam-rep-submenu {
+        height: 100% !important;
+    }
+}
+@media (min-width: 1483px) {
+    .tam-rep-submenu {
+        width: max-content !important;
+    }
+    .tam-rep-submenu li {
+        height: auto !important;
+    }
+}
+
+/* tamaño carrusel principal */
+@media (min-width: 1024px) {
+    .tama-carusel,
+    .tama-carusel div {height: 768px !important;}
+}
+@media (min-width: 1280px) {
+    .tama-carusel,
+    .tama-carusel div {height: 720px !important;}
+}
+@media (min-width: 1366px) {
+    .tama-carusel,
+    .tama-carusel div {height: 768px !important;}
+}
+@media (min-width: 1879px) {
+    .tama-carusel,
+    .tama-carusel div {height: 1024px !important;}
+}
+@media (min-width: 1920px) {
+    .tama-carusel,
+    .tama-carusel div {height: 1080px !important;}
 }
 
 /*-----------------------------------------------------------------------------

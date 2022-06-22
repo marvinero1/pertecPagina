@@ -46,9 +46,9 @@
 	@include('page.layouts.footer')
 
     <div>
-		<a href="#" class="btn_Face_float" target="_blank">
+		{{-- <a href="#" class="btn_Face_float" target="_blank">
 			<i class="fa fa-facebook btn_Inf_float_my-float"></i>
-		</a>
+		</a> --}}
 		<a href="https://www.google.com/maps/search/pertec+bolivia/@-17.0792554,-66.8232489,7.25z" class="btn_Map_float" target="_blank">
 			<i class="fa fa-map-marker btn_Inf_float_my-float"></i>
 		</a>

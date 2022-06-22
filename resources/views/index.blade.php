@@ -2,8 +2,9 @@
 
 @section('content')
 
+
 <section id="hero" class="hero hero-4">
-    <div class="rev_slider_wrapper ">
+    <div class="rev_slider_wrapper tama-carusel">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 @foreach($carusel as $carusels)
@@ -31,7 +32,7 @@
                         data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
                         {{ $carusels->titulo }}
                     </h1>
-                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
                         data-y="center" data-voffset="80" data-width="none" data-height="none"
                         data-transform_idle="o:1;"
                         data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
@@ -41,7 +42,7 @@
                         data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
                         data-lineheight="['50','26','25','25']" data-color="#fff" style="z-index: 999 !important;">
                         {{ $carusels->sub_titulo }}
-                    </div>
+                    </h1>
                 </li>
                 @endforeach
             </ul>
@@ -540,9 +541,9 @@
 
 <input type="checkbox" id="cerrar">
 
-<div class="modalPopUp">
+<div class="modalPopUp" style="padding-block-start: 28px;">
     <div class="contenido"><br>
-        <h2>Promociones</h2><br>
+        <h2>Promociones</h2>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
@@ -552,7 +553,7 @@
                         <div style="padding: 25px;">
                             <h3>{{ $modalPopups->descripcion }}</h3>
                         </div>
-                    @endforeach <br>
+                    @endforeach
                     <div style="padding: 10px;">
                         <a type="button" class="btn btn-lg btn-block btn-popUp" href="/prom_products">
                             <i class="fa fa-star"></i> Productos en Promoción
