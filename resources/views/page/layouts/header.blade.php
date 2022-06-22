@@ -72,10 +72,10 @@
                             <div class="search-box poss-seting-nav">
                                 <form class="search-form">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder=" &nbsp; Buscar">
-                                        <span class="input-group-addon bg-blue text-white" style="border-radius: 20px;">
+                                        <input type="text" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor">
+                                        <span type="button" class="input-group-addon bg-blue text-white" style="border-radius: 20px;">
                                             <i class="fa fa-search"></i></span>
-                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -123,11 +123,8 @@
                                         <input type="text" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor">
                                         <span type="button" class="input-group-addon bg-blue text-white" style="border-radius: 20px;">
                                             <i class="fa fa-search"></i></span>
-                                        </div>
+                                    </div>
                                 </form>
-
-
-
                             </div>
                         </div>
                         <div class="module module-cart pull-right" style="padding-top: 5px;">

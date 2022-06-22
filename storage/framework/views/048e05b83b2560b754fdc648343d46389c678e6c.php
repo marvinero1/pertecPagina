@@ -261,8 +261,6 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
                         </div>
-
-
                         <a class="left carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="prev">
                             <div class="controlCarrProd" style="left: 0%;">

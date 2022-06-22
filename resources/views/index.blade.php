@@ -259,8 +259,6 @@
                                 @endforeach
                             </div>
                         </div>
-
-
                         <a class="left carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="prev">
                             <div class="controlCarrProd" style="left: 0%;">
