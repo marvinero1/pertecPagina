@@ -11,6 +11,18 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <img src="/<?php echo e($carusels->imagen); ?>" alt="">
+                    <?php if(!is_null($carusels->imagen_icono)): ?>
+                        <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                            data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
+                            data-height="['150','70','70','100']" data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                            data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
+                            <img src="/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
+                        </div>
+                    <?php else: ?>
                     <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
                         data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
                         data-height="['150','70','70','100']" data-transform_idle="o:1;"
@@ -19,8 +31,9 @@
                         data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
                         data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
                         data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                        <img src="/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
                     </div>
+                    <?php endif; ?>
+                    
                     <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
                         data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
                         data-transform_idle="o:1;"
@@ -292,21 +305,19 @@
 
     <?php if($nombre_producto != "null"): ?>
         <div class="content section-content">
-            <div>
-                <div class="col-md-6">
-                    <h3>Productos Buscados</h3> 
-                </div><br>
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <form class="search-form">
-                            <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value="null">        
-                            <button type="submit" class="input-group-addon bg-blue text-white" style="border-radius: 20px;
-                                width: 170px !important"><i class="fa fa-close"></i> Limpiar
-                            </button>
-                        </form>
-                    </div><br><br>
-                </div>
-            </div>            
+            <div class="col-md-6">
+                <h3>Productos Buscados</h3> 
+            </div><br>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <form class="search-form">
+                        <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value="null">        
+                        <button type="submit" class="input-group-addon bg-blue text-white" style="border-radius: 20px;
+                            width: 170px !important"><i class="fa fa-close"></i> Limpiar
+                        </button>
+                    </form>
+                </div><br><br>
+            </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
                     <div class="item">
