@@ -27,13 +27,15 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
-        $nombre_tienda = $request->get('buscarpor');
-        $tienda = Tienda::where('nombre_tienda','like',"%$nombre_tienda%")->latest()->get();
+        $nombre_producto = $request->get('buscarpor');
+        $tienda = Tienda::latest()->get();
 
         $hash=new Hashids();
         $carusel = Carusel::all();
         $producto = Producto::inRandomOrder()->paginate('3');
         $producto2 = Producto::inRandomOrder()->paginate('3');
+        $productoBuscado = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->get();
+
 
         $oficinas = Tienda::where('tipo','oficina')->get();
         $tiendaLPZ = Tienda::where('ciudad','La Paz')->get();
@@ -41,9 +43,11 @@ class HomeController extends Controller
         $tiendaSTCZ = Tienda::where('ciudad','Santa Cruz')->get();
         $modalPopup = ModalPopup::all();
 
+        // print($productoBuscado);
+
         return view('index', ['hash' => $hash, 'carusel' => $carusel, 'producto' => $producto, 'producto2' => $producto2,
                     'tienda' => $tienda, 'tiendaLPZ'=>$tiendaLPZ, 'tiendaCBBA'=>$tiendaCBBA, 'tiendaSTCZ'=>$tiendaSTCZ,
-                    'oficinas'=>$oficinas,'modalPopup'=>$modalPopup]);
+                    'oficinas'=>$oficinas,'modalPopup'=>$modalPopup,'productoBuscado'=>$productoBuscado,'nombre_producto'=>$nombre_producto]);
     }
 
     public function historia(){

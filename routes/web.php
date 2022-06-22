@@ -16,7 +16,7 @@
  */
 
 Route::middleware(['auth'] )->group(function () {
-    Route::get('profileUser/{id}', 'Admin\UserController@profileUser')->name('users.showFront');
+    Route::get('profileUser', 'Admin\UserController@profileUser')->name('users.showFront');
     Route::get('invoices', 'Admin\FacturaController@getInvoices')->name('invoices');
     Route::get('mis_pedidos', 'Admin\PedidoController@getPedidos')->name('mis_pedidos');
     Route::put('changeMatrix/{id}', 'Admin\ProductoController@changeMatrix')->name('changeMatrix');

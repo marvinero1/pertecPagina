@@ -94,5 +94,8 @@
     th,td,tr,table{
         text-align: center !important;
     }
+    .btn-primary{
+        width: 170px !important;
+    }
 </style>
 @endsection

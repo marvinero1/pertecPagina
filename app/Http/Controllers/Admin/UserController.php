@@ -44,7 +44,8 @@ class UserController extends Controller
         return view('admin.users.index', compact('users','hash'));
     }
 
-    public function profileUser($id){
+    public function profileUser(){
+        $id = Auth::id();
         $user_id = User::findOrFail($id);
         return view('page.sections.usuario.profile', compact('user_id'));
     }

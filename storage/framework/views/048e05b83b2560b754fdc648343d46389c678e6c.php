@@ -1,6 +1,7 @@
 
 
 <?php $__env->startSection('content'); ?>
+
 <section id="hero" class="hero hero-4">
     <div class="rev_slider_wrapper ">
         <div id="slider1" class="rev_slider" data-version="5.0">
@@ -9,59 +10,29 @@
                 <li data-transition="fadetobottomfadefromtop" data-slotamount="default" data-easein="Power4.easeInOut"
                     data-easeout="Power4.easeInOut" data-masterspeed="4000">
                     <img src="/<?php echo e($carusels->imagen); ?>" alt="">
-                    <?php if(!is_null($carusels->imagen_icono)): ?>
-                        <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
-                            data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
-                            data-height="['150','70','70','100']" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
-                            <img src="/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
-                        </div> 
-
-                        <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
-                            data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                            data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                            data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
+                    <div class="tp-caption font-frank-demi" data-x="center" data-hoffset="0" data-y="center"
+                        data-voffset="-120" data-whitespace="nowrap" data-width="['150','70','70','100']"
+                        data-height="['150','70','70','100']" data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3000" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" style="z-index: 999 !important;">
+                        <img src="/<?php echo e($carusels->imagen_icono); ?>" alt="hook" />
+                    </div>
+                    <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                        data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
+                        data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
+                        data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
                         <?php echo e($carusels->titulo); ?>
 
-                        </h1>
-
-
-                        <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
-                            data-y="center" data-voffset="80" data-width="none" data-height="none"
-                            data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="4000" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" data-fontsize="['50','17','17','17']"
-                            data-lineheight="['50','26','25','25']" data-color="#fff" style="z-index: 999 !important;">
-                            <?php echo e($carusels->sub_titulo); ?>
-
-                    </div>
-                    <?php else: ?>
-                        <h1 class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
-                            data-y="center" data-voffset="0" data-whitespace="nowrap" data-width="none" data-height="none"
-                            data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="3500" data-splitin="none"
-                            data-splitout="none" data-responsive_offset="on" data-fontsize="['75','17','15','15']"
-                            data-lineheight="['100','45','25','25']" data-color="#ffc527" style="z-index: 999 !important;">
-                            <?php echo e($carusels->titulo); ?>
-
-                        </h1>
-
-                        <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
+                    </h1>
+                    <div class="tp-caption text-uppercase font-frank-demi" data-x="center" data-hoffset="0"
                         data-y="center" data-voffset="80" data-width="none" data-height="none"
                         data-transform_idle="o:1;"
                         data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
@@ -73,10 +44,6 @@
                         <?php echo e($carusels->sub_titulo); ?>
 
                     </div>
-                    <?php endif; ?>
-                  
-                    
-                    
                 </li>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
@@ -248,10 +215,10 @@
                         <div class="item active">
                             <div class="row">
                                 <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                <div class="col-xs-12 col-sm-6 col-md-4 product-item  clearfix">
                                     <div class="product-img">
-                                        <img src='/<?php echo e($productos->imagen); ?>' alt="product"
-                                            style="height:250px;">
+                                        <img src='/<?php echo e($productos->imagen); ?>' alt="product" class="car-prod-img"
+                                            style="height: auto; width: auto;">
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block a-card"
@@ -261,7 +228,7 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
+                                            <a class="tama-car-nom" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
                                         </h4>
                                     </div>
 
@@ -273,10 +240,10 @@
                         <div class="item">
                             <div class="row">
                                 <?php $__currentLoopData = $producto2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item  clearfix">
+                                <div class="col-xs-12 col-sm-6 col-md-4 product-item  clearfix">
                                     <div class="product-img">
-                                        <img src='/<?php echo e($productos->imagen); ?>' alt="product"
-                                            style="height:250px;">
+                                        <img src='/<?php echo e($productos->imagen); ?>' alt="product" class="car-prod-img"
+                                            style="height: auto; width: auto;">
                                         <div class="product-hover">
                                             <div class="product-cart">
                                                 <a class="btn btn-secondary btn-block a-card"
@@ -286,13 +253,14 @@
                                     </div>
                                     <div style="height: 50px;">
                                         <h4>
-                                            <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
+                                            <a class="tama-car-nom" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
                                         </h4>
                                     </div>
                                 </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
                         </div>
+
 
                         <a class="left carousel-control" href="#carousel-example-generic" role="button"
                             data-slide="prev">
@@ -321,7 +289,54 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><br>
+
+    <?php if($nombre_producto != "null"): ?>
+        <div class="content section-content">
+            <div>
+                <div class="col-md-6">
+                    <h3>Productos Buscados</h3> 
+                </div><br>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <form class="search-form">
+                            <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value="null">        
+                            <button type="submit" class="input-group-addon bg-blue text-white" style="border-radius: 20px;
+                                width: 170px !important"><i class="fa fa-close"></i> Limpiar
+                            </button>
+                        </form>
+                    </div><br><br>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 shop-content">
+                    <div class="item">
+                        <div class="row">
+                            <?php $__currentLoopData = $productoBuscado; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="col-xs-12 col-sm-6 col-md-4 product-item  clearfix">
+                                    <div class="product-img">
+                                        <img src='/<?php echo e($productos->imagen); ?>' alt="product" class="car-prod-img"
+                                            style="height: auto; width: auto;">
+                                        <div class="product-hover">
+                                            <div class="product-cart">
+                                                <a class="btn btn-secondary btn-block a-card"
+                                                    href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>">Detalles</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="height: 50px;">
+                                        <h4>
+                                            <a class="tama-car-nom" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 </section>
 
 <section id="sectionStores">
@@ -576,17 +591,17 @@
 
 <div class="modalPopUp">
     <div class="contenido"><br>
-        <h2>Promociones</h2>
+        <h2>Promociones</h2><br>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 product-item">
                 <div class="product-cart">
                     <?php $__currentLoopData = $modalPopup; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $modalPopups): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <img src="/<?php echo e($modalPopups->imagen); ?>" alt="<?php echo e($modalPopups->descripcion); ?>"
                         width="75%" style="display: block;margin: auto;">
-                        <div>
+                        <div style="padding: 25px;">
                             <h3><?php echo e($modalPopups->descripcion); ?></h3>
                         </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> <br>
                     <div style="padding: 10px;">
                         <a type="button" class="btn btn-lg btn-block btn-popUp" href="/prom_products">
                             <i class="fa fa-star"></i> Productos en Promoción
@@ -622,6 +637,10 @@
             display: none;
         }
     }
+
+
+
+
     .awithmodelh1{
         color: #000000;
         font-family: 'Franklin Gothic Demi', sans-serif;
@@ -690,7 +709,6 @@
         }
     }
     .modalPopUp {
-        padding-block-start: 90px;
         z-index: 999;
         width: 100%;
         height: 100%;
@@ -802,6 +820,23 @@
     }
     .cotizacion-div .widget-contact-info {
         position: absolute;top: 50%;left: 50%;height: 30%;width: 50%;margin: 0% 0 0px -8%;
+    }
+
+
+    .car-prod-img::after {
+        position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(254, 219, 0, 0.7);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+
     }
 </style>
 

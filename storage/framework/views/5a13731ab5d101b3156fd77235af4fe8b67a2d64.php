@@ -1,74 +1,77 @@
 <div class="container" style="padding: 5px;">
-    <table class="minimalistBlack alineacion">
-        <tbody>
-            <tr>
-                <td rowspan="3">
-                    <img src="https://www.pertec.com.bo/assets/img/logo.jpg" alt="Pertec S.R.L &copy;" width="100px">
-                </td>
-                <td rowspan="3" style="text-align: center;">
-                    <h6 class="font-frank-demi" style="font-size: 0.7rem; line-height: 0px; margin-bottom: 0px;">PERTEC
-                        S.R.L.</h6>
-                    <h6 class="font-frank-medium">CASA MATRIZ</h6>
-                    <P class="infoFactura">Gral. Achá N°330</P>
-                    <P class="infoFactura">Tels.: 4259660 - 4250800 - Fax: 4111282</P>
-                    <P class="infoFactura">Cochabamba-Bolivia</P>
-
-                    <h6 class="font-frank-medium color-black">Sucursal N°4</h6>
-                    <P class="infoFactura">C. INNOMINADA S/N ZONA AROCAGUA</P>
-                    <P class="infoFactura">Teléfono: 4716000 Fax:</P>
-                    <P class="infoFactura">Sacaba-Cochabamba</P>
-                </td>
-                <td rowspan="3" style="text-align: center;">
-                    <h6 class="font-frank-demi color-black" style="font-size: 1rem; line-height: 0px; margin: 0;">
-                        FACTURA
-                    </h6><br>
-                    <h6 class="font-frank-demi color-black" style="margin-top: 2px; font-size: 9px;">CON DERECHO A CREDITO FISCAL</h6>
-                </td>
-                <td style="text-align: right;"><b>NIT: </b></td>
-                <td><b>1023109029</b></td>
-            </tr>
-            <tr>
-                <td style="text-align: right;">
-                    <b style="top: -18px; position: relative;">Factura Nro: </b>
-                </td>
-                <td>
-                    <b style="top: -18px; position: relative;">00000</b>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align: right;">
-                    <b style="top: -34px; position: relative;">Cód Autorización: </b>
-                </td>
-                <td style="width: 117px;">
-                    <b style="top: -34px; position: relative;"><?php echo e($verfactura->nroautorizacion); ?></b>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><b>Lugar y Fecha : </b></td>
-                <td colspan="2">SACABA, <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> Hrs. <?php echo e($verfactura->horareg); ?></td>
-                <td style="text-align: right;"><b>Nit/Ci/Cex : </b></td>
-                <td><?php echo e($verfactura->nit); ?></td>
-            </tr>
-
-            <tr>
-                <td><b>Nom/Razon Social : </b></td>
-                <td colspan="2"><?php echo e($verfactura->nomcliente); ?></td>
-                <td style="text-align: right;"><b>Código Cliente : </b></td>
-                <td><?php echo e($verfactura->nit); ?></td>
-            </tr>
-        </tbody>
-    </table>
+    
 
     <table class="greyGridTable">
-        <thead>
+        <thead style="border-top: none;">
             <tr>
+                <th colspan="9">
+                    <table class="minimalistBlack alineacion">
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">
+                                    <img src="https://www.pertec.com.bo/assets/img/logo.jpg" alt="Pertec S.R.L &copy;" width="100px">
+                                </td>
+                                <td rowspan="3" style="text-align: center;">
+                                    <h6 class="font-frank-demi" style="font-size: 0.7rem; line-height: 0px; margin-bottom: 0px;">PERTEC
+                                        S.R.L.</h6>
+                                    <h6 class="font-frank-medium">CASA MATRIZ</h6>
+                                    <P class="infoFactura">Gral. Achá N°330</P>
+                                    <P class="infoFactura">Tels.: 4259660 - 4250800 - Fax: 4111282</P>
+                                    <P class="infoFactura">Cochabamba-Bolivia</P>
+                                    <h6 class="font-frank-medium color-black">Sucursal N°4</h6>
+                                    <P class="infoFactura">C. INNOMINADA S/N ZONA AROCAGUA</P>
+                                    <P class="infoFactura">Teléfono: 4716000 Fax:</P>
+                                    <P class="infoFactura">Sacaba-Cochabamba</P>
+                                </td>
+                                <td rowspan="3" style="text-align: center;">
+                                    <h6 class="font-frank-demi color-black" style="font-size: 1rem; line-height: 0px; margin: 0;">
+                                        FACTURA
+                                    </h6><br>
+                                    <h6 class="font-frank-demi color-black" style="margin-top: 2px; font-size: 9px;">CON DERECHO A CREDITO FISCAL</h6>
+                                </td>
+                                <td style="text-align: right;"><b>NIT: </b></td>
+                                <td><b>1023109029</b></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">
+                                    <b style="top: -18px; position: relative;">Factura Nro: </b>
+                                </td>
+                                <td>
+                                    <b style="top: -18px; position: relative;">00000</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">
+                                    <b style="top: -34px; position: relative;">Cód Autorización: </b>
+                                </td>
+                                <td style="width: 117px;">
+                                    <b style="top: -34px; position: relative;"><?php echo e($verfactura->cuf); ?></b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><b>Lugar y Fecha : </b></td>
+                                <td colspan="2">SACABA, <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> Hrs. <?php echo e($verfactura->horareg); ?></td>
+                                <td style="text-align: right;"><b>Nit/Ci/Cex : </b></td>
+                                <td><?php echo e($verfactura->nit); ?></td>
+                            </tr>
+                            <tr>
+                                <td><b>Nom/Razon Social : </b></td>
+                                <td colspan="2"><?php echo e($verfactura->nomcliente); ?></td>
+                                <td style="text-align: right;"><b>Código Cliente : </b></td>
+                                <td><?php echo e($verfactura->nit); ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </th>
+            </tr>
+            <tr style="border-top: 2px solid #000000;">
                 <th>#</th>
                 <th>CODIGO PRODUCTO</th>
                 <th colspan="2" style="width: 350px;">DESCRIPCION</th>
