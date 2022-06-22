@@ -26,25 +26,25 @@
 						</li>
                         <li class="has-dropdown tama-font-nav">
 							<a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link">Productos</a>
-							<ul class="dropdown-menu" style="border-radius: 10px;">
+							<ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px;">
 								<li>
-									<a href="/productos">Catálogo <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
+									<a href="/productos" class="op-prod-1">Catálogo <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
 								</li>
 								<li>
-									<a href="/prom_products">Promociones <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
+									<a href="/prom_products" class="op-prod-2">Promociones <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
 								</li>
 								<li>
-									<a href="/nov_products">Novedades <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
+									<a href="/nov_products" class="op-prod-3">Novedades <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
 								</li>
                                 <li>
-									<a href="/contactanos">Cotización <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
+									<a href="/contactanos" class="op-prod-4">Cotización <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
 								</li>
 							</ul>
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown tama-font-nav">
 							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
-                            <ul class="dropdown-menu" style="border-radius: 10px;">
+                            <ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px; height: auto !important;width: auto;">
 								<li>
 									<a href="/">Oficinas y tiendas</a>
 								</li>
@@ -52,7 +52,7 @@
 						</li>
                         <li class="has-dropdown tama-font-nav">
 							<a href="/consultasDigitales" target="_blank">Facturas</a>
-                            <ul class="dropdown-menu" style="border-radius: 10px;">
+                            <ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px; height: auto !important;width: auto;">
 								<li>
 									<a href="#">Imprime tu factura</a>
 								</li>
@@ -63,13 +63,13 @@
 						</li>
 					</ul>
                     <?php if(!auth()->guest()): ?>
-                        <div class="module module-search pull-left tama-div" style="margin-right: 5px; display: table;">
-                            <div class="search-icon" style="height: 100%;display: table-cell;vertical-align: middle;">
-                            <strong class="text-white" style="width: 20px;font-size: 1.8rem;">|
+                        <div class="module module-search pull-left tama-div" style="margin-right: 5px;">
+                            <div class="search-icon" style="height: 100%;">
+                                <strong class="text-white" style="width: 20px;font-size: 1.8rem;">|
                                 <i class="fa fa-search icon-tama-resp" style="font-size: 1.8rem;"></i></strong>
                             </div>
 
-                            <div class="search-box" >
+                            <div class="search-box poss-seting-nav">
                                 <form class="search-form">
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder=" &nbsp; Buscar">
@@ -80,11 +80,11 @@
                             </div>
                         </div>
 
-                        <div class="module module-search pull-left tama-div" style="padding-top: 5px; display: table;">
-                            <div class="search-icon user-icon-margin" style="height: 100%;display: table-cell;vertical-align: middle;">
+                        <div class="module module-search pull-left tama-div" style="padding-top: 5px;">
+                            <div class="search-icon user-icon-margin" style="height: 100%;">
                                 <i class="fa fa-user-circle icon-tama-resp" style="font-size: 1.8rem; padding-left: 0px !important;padding-right: 0px !important;"></i>
                             </div>
-                            <div class="search-box navbar-nav" style="height: auto; padding-top: 10px; padding-left: 20px; padding-right: 20px;">
+                            <div class="search-box navbar-nav poss-seting-nav" style="height: auto; padding-top: 10px; padding-left: 20px; padding-right: 20px;">
                                 <div class="cart-icon">
                                     <ul class="list-unstyled user-menu tama-font-nav">
                                         <?php if(Auth::user()->name == "Admin"): ?>
@@ -127,8 +127,8 @@
                                         </div>
                                 </form>
 
-                                
-                                
+
+
                             </div>
                         </div>
                         <div class="module module-cart pull-right" style="padding-top: 5px;">
@@ -310,6 +310,8 @@
     </div>
 </div>
 <style>
+
+
     .modal-dialog-login{
         margin-top: 90px;
         width: auto;

@@ -174,7 +174,7 @@ class FacturaController extends Controller{
         $cliente = $request->all();
         $nit = $cliente['nit'];
         
-        $vefactura = DB::table('vefactura')->where('id', $id)->where('nit', $nit)->paginate(10);
+        $vefactura = DB::table('vefactura')->where('nit', $nit)->paginate(10);
         return view('page.sections.facturas.listfacturas', ['vefactura'=>$vefactura]);
     }
 

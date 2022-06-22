@@ -1,7 +1,8 @@
 @extends('page.layouts.main')
 
 @section('content')
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/okNOVNew6865.jpg);">
+<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" 
+    style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
         <div class="row">

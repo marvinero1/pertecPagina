@@ -27,8 +27,6 @@ class LoginController extends Controller
      *
      * @var string
      */
-    
-
     protected $redirectTo = '/profileUser';
 
     /**
@@ -61,7 +59,7 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('/');
+        return redirect('/login');
     }
 
     /**

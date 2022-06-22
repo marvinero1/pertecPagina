@@ -45,9 +45,14 @@ class UserController extends Controller
     }
 
     public function profileUser(){
+        $counts = [
+            'facturas' => \DB::table('vefactura')->where('nit', Auth::user()->nit)->count(),
+            'pedidos' => \DB::table('veproforma')->where('nit', Auth::user()->nit)->count(),
+        ];
+
         $id = Auth::id();
         $user_id = User::findOrFail($id);
-        return view('page.sections.usuario.profile', compact('user_id'));
+        return view('page.sections.usuario.profile', ['counts' => $counts,'user_id'=>$user_id]);
     }
 
     public function getUsers(){

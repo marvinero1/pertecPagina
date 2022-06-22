@@ -1,7 +1,8 @@
 
 
 <?php $__env->startSection('content'); ?>
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/producBackground.jpg);">
+<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" 
+style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
         <div class="row">
@@ -42,7 +43,7 @@
                             </div>
                             <div class="widget-contact-info">
                                 <p class="text-capitalize">Visítanos</p>
-                                <p class="text-capitalize font-heading">Cbba. calle Innominada #4581 (Arocagua)</p>
+                                <p class="text-capitalize font-heading">Cbba. Calle Innominada #4581 (Arocagua)</p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -52,7 +53,7 @@
                             </div>
                             <div class="widget-contact-info">
                                 <p class="text-capitalize ">Escríbenos</p>
-                                <a class="font-heading" href="mailto:servicio.cliente@pertec.com.bo">servcliente@pertec.com.bo</a>
+                                <a class="font-heading" href="mailto:servicio.cliente@pertec.com.bo">servicio.cliente@pertec.com.bo</a>
                             </div>
                         </div>
                         <div class="clearfix"></div>
