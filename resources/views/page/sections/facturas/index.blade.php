@@ -2,13 +2,13 @@
 
 @section('content')
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
-    style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
+    style="background-color:#FBD800;">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-title title-1 text-center texto-borde">
-                    <div><h2> Mis Facturas </h2></div>
+                    <div><h2> Mis Facturas  <i class="fa fa-files-o" aria-hidden="true"></i></h2></div>
                     <ol class="breadcrumb" style="display: unset !important;">
                         <li><a href="/">Inicio</a></li>
                         <li class="active">Facturas</li>
@@ -37,14 +37,14 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" style=" margin: auto;display: block">
                     <div class="col-xs-12 col-sm-12 col-md-12" style="padding: 15px 20px 0px 40px;">
                         <form >
                             <div class="row" style="border: outset;padding: 25px;">
                                 <label style="font-size: 1.3rem;">Ingrese los datos requeridos para visualizar sus Facturas.</label><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<p style="font-size: 1.3rem;">Los campos (*) son obligatorios.</p>
                                 <div class="col-md-12 col-sm-12 form-group">
-                                    <input type="number" class="form-control" name="nit" placeholder="NIT/C.I" required style="font-size: 1.3rem;"
+                                    <input type="number" class="form-control" name="nit" placeholder="* NIT/C.I " required style="font-size: 1.3rem;"
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                     maxlength="13">
                                 </div><br>
@@ -73,7 +73,7 @@
                                             <input type="hidden" class="form-control font-frank-book"
                                                 placeholder="Ingrese su C.I o NIT" name="buscarpor" value=" "
                                                 style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
-                                            <button class="btn btn-danger btn-lg" type="submit">
+                                            <button class="btn btn-primary btn-lg" type="submit">
                                                 <i class="fa fa-times-circle"></i> Limpiar
                                             </button>
                                         </div>
@@ -100,29 +100,35 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>Codigo</th>
+                                            {{-- <th>Codigo</th> --}}
                                             <th>ID</th>
-                                            <th>Nombre Cliente</th>
-                                            <th>NIT / C.I</th>
+                                            <th>#ID</th>
+                                            <th>CUF</th>
                                             <th>Codigo Control</th>
+                                            <th>Fecha Reg</th>
+                                            <th>Peso Kg.</th>
+                                            <th>Total Bs.</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($vefactura as $vefacturas)
+                                        @foreach ($vefactura as $vefacturas)
                                         <tr>
-                                            <td class="row1" scope="row">{{ $vefacturas->codigo }}</td>
+                                            {{-- <td class="row1" scope="row">{{ $vefacturas->codigo }}</td> --}}
                                             <td scope="row">{{ $vefacturas->id }}</td>
-                                            <td scope="row">{{ $vefacturas->nomcliente }}</td>
-                                            <td scope="row">{{ $vefacturas->nit }}</td>
+                                            <td scope="row">{{ $vefacturas->numeroid }}</td>
+                                            <td scope="row">{{ $vefacturas->cuf }}</td>
                                             <td scope="row">{{ $vefacturas->codigocontrol }}</td>
+                                            <td scope="row">{{ date('d-m-y', strtotime($vefacturas->fechareg)) }}</td>
+                                            <td scope="row">{{ number_format($vefacturas->peso,2) }}</td>
+                                            <td scope="row">{{ $vefacturas->total }}</td>
+
                                             <td scope="row" style="text-align:center;">
                                                 <a href="{{ route('viewFactura', $hash->encodeHex($vefacturas->codigo)) }}" style="color: black">
                                                     <button class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i>
-                                                        Ver</button>
-                                                </a>
+                                                        Ver</button></a>
                                             </td>
-                                        </tr>
+                                        </tr> 
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -140,6 +146,9 @@
 <style>
     th,td,tr,table{
         text-align: center !important;
+    }
+    .btn-primary{
+        width: 170px !important;
     }
 </style>
 @endsection

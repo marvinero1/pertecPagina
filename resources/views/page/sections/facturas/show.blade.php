@@ -3,7 +3,7 @@
 @section('content')
 {{ Html::script(mix('assets/admin/js/admin.js')) }}
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
-    style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
+    style="background-color: #FBD800">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
 
@@ -11,7 +11,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-title title-1 text-center texto-borde">
                     <div>
-                        <h2>Mi Factura</h2>
+                        <h2>Mi Factura <i class="fa fa-files-o" aria-hidden="true"></i></h2>
                     </div>
                     <ol class="breadcrumb" style="display: unset !important;">
                         <li>
@@ -232,15 +232,26 @@
                 </div>
             </div><br><br>
             <div style="float: right;">
-                <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i
-                        class="fa fa-arrow-left"></i>
-                    &nbsp;Atras </button>
-                <a class="btn btn-danger btn-lg" type="button" href="/viewPDF/{{ $verfactura->codigo }}">
-                    Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
-                </a>
-                <a class="btn btn-success btn-lg" type="button" href="/pruebaRollo/{{ $verfactura->codigo }}">
-                    Impresion Rollo <i class="fa fa-print"></i>&nbsp;
-                </a>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button class="btn btn-primary btn-lg" type="button" onClick="history.go(-1);"><i
+                            class="fa fa-arrow-left"></i> &nbsp;Atras 
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-primary btn-lg" type="button" href="/viewPDF/{{ $verfactura->codigo }}">
+                            Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-primary btn-lg" type="button" href="/viewPDFRollo/{{ $verfactura->codigo }}">
+                            Descargar Rollo <i class="fa fa-file-pdf-o"></i>
+                        </a>
+                        {{-- <a class="btn btn-primary btn-lg" type="button" href="/pruebaRollo/{{ $verfactura->codigo }}">
+                            Impresion Rollo <i class="fa fa-print"></i>&nbsp;
+                        </a> --}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -249,46 +260,38 @@
     body {
         font-family: Tahoma, Verdana, Segoe, sans-serif !important;
     }
-
     .font-frank-demi {
         font-family: Tahoma, Verdana, Segoe, sans-serif !important;
     }
-
     .alineacion p {
         line-height: 7px !important;
         text-align: center;
     }
-
     .alineacion h6 {
         margin-bottom: 8px;
         line-height: 17px;
     }
-
     .infoFactura {
         font-size: 14px !important;
         color: #000000 !important;
         line-height: 16px !important;
         margin-bottom: 7px;
     }
-
     table.greyGridTable {
         border: 2px solid #FFFFFF;
         width: 100%;
         text-align: center;
         border-collapse: collapse;
     }
-
     table.greyGridTable td,
     table.greyGridTable th {
         border: 1px solid #FFFFFF;
         padding: 3px 4px;
     }
-
     table.greyGridTable tbody td {
         font-size: 15px;
         color: #000000;
     }
-
     table.greyGridTable thead {
         font-family: 'Franklin Gothic Demi', sans-serif;
         font-weight: 100;
@@ -296,7 +299,6 @@
         border-bottom: 2px solid #000000 !important;
         border-top: 2px solid #000000;
     }
-
     table.greyGridTable thead th {
         font-size: 15px;
         font-weight: bold;
@@ -304,7 +306,6 @@
         text-align: center;
         border-bottom: 2px solid #000000 !important;
     }
-
     table.greyGridTable tfoot {
         font-family: 'Franklin Gothic Demi', sans-serif;
         font-weight: 100;
@@ -314,15 +315,12 @@
         color: #000000;
         border-top: 2px solid #000000;
     }
-
     table.greyGridTable tfoot td {
         font-size: 14px;
     }
-
     .alingLeft {
         text-align: left;
     }
-
     .alingRight {
         text-align: right;
     }
@@ -342,10 +340,11 @@
 
     @media (max-width: 767px) {
         .col-sm-12 {
-    width: 100%;
-}
+            width: 100%;
+        }
     }
-
-
+    .btn-primary{
+        width: 170px !important;
+    }
 </style>
 @endsection

@@ -48,14 +48,14 @@
 								</li>
 							</ul>
 						</li>
-                        {{-- <li class="has-dropdown">
+                        <li class="has-dropdown">
 							<a href="/consultasDigitales" target="_blank">Facturas</a>
-                            <ul class="dropdown-menu" style="border-radius: 10px;">
+                            {{-- <ul class="dropdown-menu" style="border-radius: 10px;">
 								<li>
 									<a href="#">Imprime tu factura</a>
 								</li>
-							</ul> 
-						</li> --}}
+							</ul>  --}}
+						</li>
 						<li class="has-dropdown pull-left">
 							<a href="/contactanos">Contacto</a>
 						</li>
@@ -118,8 +118,8 @@
                             <div class="search-box">
                                 <form class="search-form">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder=" &nbsp; Buscar">
-                                        <span class="input-group-addon bg-blue text-white" style="border-radius: 20px;">
+                                        <input type="text" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor">
+                                        <span type="button" class="input-group-addon bg-blue text-white" style="border-radius: 20px;">
                                             <i class="fa fa-search"></i></span>
                                         </div>
                                 </form>

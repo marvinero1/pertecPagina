@@ -1,7 +1,7 @@
 @extends('page.layouts.main')
 
 @section('content')
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
+{{-- <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
     style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -21,10 +21,9 @@
             </div>
         </div>
     </div>
-</section>
-
-<section class="shotcode-1 about-home-2 text-center-xs text-center-sm"
-    style="background-color: white;">
+</section> --}}
+<br><br><br><br>
+<section class="shotcode-1 about-home-2 text-center-xs text-center-sm">
     <div class="content section-content">
         <div class="row">
 
@@ -260,13 +259,21 @@
                                     </tfoot>
                                 </table>
                             </div>
-                        </div>
+                        </div><br>
                         <div style="float: right;">
-                            <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i class="fa fa-arrow-left"></i>
-                                &nbsp;Atras </button>
-                            <a class="btn btn-danger btn-lg" type="button" href="/viewPDFRollo/{{ $verfactura->codigo }}">
-                                Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
-                            </a>
+                            <div class="row"><br>
+                                <div class="col-md-6">
+                                    <button class="btn btn-secondary btn-lg" type="button" onClick="history.go(-1);"><i class="fa fa-arrow-left"
+                                       ></i>
+                                        &nbsp;Atras 
+                                    </button>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="btn btn-secondary btn-lg" type="button" href="/viewPDFRollo/{{ $verfactura->codigo }}">
+                                        Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
+                                    </a>
+                                </div>
+                              </div>                            
                         </div>
                     </div>
                 </div>
@@ -277,6 +284,12 @@
 @endsection
 
 <style>
+    .header-3.style-2 .navbar-fixed-top.affix{
+        background-color: #093070c2;
+    }
+    .btn-primary{
+        width: 170px !important;
+    }
     p{
         font-size: 0.80rem !important;
     }
@@ -397,4 +410,7 @@
     b {
         font-size: 0.9rem;
     }
+    /* module module-search pull-left{
+        padding-top: 39px !important;
+    } */
 </style>

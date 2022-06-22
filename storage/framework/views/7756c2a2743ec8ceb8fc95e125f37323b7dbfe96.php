@@ -1,30 +1,9 @@
 
 
 <?php $__env->startSection('content'); ?>
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
-    style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
-    <div class="bgImgCoverPages"></div>
-    <div class="container" style="margin-top: -540px;">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-title title-1 text-center texto-borde">
-                    <div>
-                        <h2>Mi Factura</h2>
-                    </div>
-                    <ol class="breadcrumb" style="display: unset !important;">
-                        <li>
-                            <a href="/">Inicio</a>
-                        </li>
-                        <li class="active">Facturas</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="shotcode-1 about-home-2 text-center-xs text-center-sm"
-    style="background-color: white;">
+<br><br><br><br>
+<section class="shotcode-1 about-home-2 text-center-xs text-center-sm">
     <div class="content section-content">
         <div class="row">
 
@@ -261,13 +240,21 @@
                                     </tfoot>
                                 </table>
                             </div>
-                        </div>
+                        </div><br>
                         <div style="float: right;">
-                            <button class="btn btn-warning btn-lg" type="button" onClick="history.go(-1);"><i class="fa fa-arrow-left"></i>
-                                &nbsp;Atras </button>
-                            <a class="btn btn-danger btn-lg" type="button" href="/viewPDFRollo/<?php echo e($verfactura->codigo); ?>">
-                                Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
-                            </a>
+                            <div class="row"><br>
+                                <div class="col-md-6">
+                                    <button class="btn btn-secondary btn-lg" type="button" onClick="history.go(-1);"><i class="fa fa-arrow-left"
+                                       ></i>
+                                        &nbsp;Atras 
+                                    </button>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="btn btn-secondary btn-lg" type="button" href="/viewPDFRollo/<?php echo e($verfactura->codigo); ?>">
+                                        Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
+                                    </a>
+                                </div>
+                              </div>                            
                         </div>
                     </div>
                 </div>
@@ -278,6 +265,12 @@
 <?php $__env->stopSection(); ?>
 
 <style>
+    .header-3.style-2 .navbar-fixed-top.affix{
+        background-color: #093070c2;
+    }
+    .btn-primary{
+        width: 170px !important;
+    }
     p{
         font-size: 0.80rem !important;
     }
@@ -398,6 +391,9 @@
     b {
         font-size: 0.9rem;
     }
+    /* module module-search pull-left{
+        padding-top: 39px !important;
+    } */
 </style>
 
 <?php echo $__env->make('page.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/facturas/pruebaRollo.blade.php ENDPATH**/ ?>
