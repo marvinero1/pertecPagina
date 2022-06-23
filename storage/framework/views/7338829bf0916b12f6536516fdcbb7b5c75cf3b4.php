@@ -47,7 +47,7 @@
                                     <tbody>
                                         <thead>
                                             <tr>
-                                                <th>Codigo</th>
+                                                
                                                 <th>ID</th>
                                                 <th>#ID</th>
                                                 <th>CUF</th>
@@ -61,7 +61,7 @@
                                         <tbody>
                                             <?php $__currentLoopData = $vefactura; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <tr>
-                                                <td class="row1" scope="row"><?php echo e($vefacturas->codigo); ?></td>
+                                                
                                                 <td scope="row"><?php echo e($vefacturas->id); ?></td>
                                                 <td scope="row"><?php echo e($vefacturas->numeroid); ?></td>
                                                 <td scope="row"><?php echo e($vefacturas->cuf); ?></td>

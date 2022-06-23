@@ -46,7 +46,7 @@
                                     <tbody>
                                         <thead>
                                             <tr>
-                                                <th>Codigo</th>
+                                                {{-- <th>Codigo</th> --}}
                                                 <th>ID</th>
                                                 <th>#ID</th>
                                                 <th>CUF</th>
@@ -60,7 +60,7 @@
                                         <tbody>
                                             @foreach ($vefactura as $vefacturas)
                                             <tr>
-                                                <td class="row1" scope="row">{{ $vefacturas->codigo }}</td>
+                                                {{-- <td class="row1" scope="row">{{ $vefacturas->codigo }}</td> --}}
                                                 <td scope="row">{{ $vefacturas->id }}</td>
                                                 <td scope="row">{{ $vefacturas->numeroid }}</td>
                                                 <td scope="row">{{ $vefacturas->cuf }}</td>
