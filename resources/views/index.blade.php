@@ -602,8 +602,8 @@
                 <div class="product-cart">
                     @foreach ($modalPopup as $modalPopups)
                         <img src="/{{ $modalPopups->imagen }}" alt="{{ $modalPopups->descripcion }}"
-                        width="75%" style="display: block;margin: auto;">
-                        <div style="padding: 25px;">
+                        width="70%" style="display: block;margin: auto;">
+                        <div style="padding: 0 25px 0 25px;">
                             <h3>{{ $modalPopups->descripcion }}</h3>
                         </div>
                     @endforeach
@@ -643,6 +643,9 @@
         }
     }
 
+    @media (min-width: 992px)  and (max-width: 1400px){
+        .modalPopUp {padding-block-start: 40px !important;}
+    }
 
 
 
