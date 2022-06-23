@@ -9,7 +9,7 @@
                 @include('admin.sections.navigation')
                 @include('admin.sections.header')
             @show
-
+            
             @yield('left-sidebar')
 
             <div class="right_col" role="main" >
