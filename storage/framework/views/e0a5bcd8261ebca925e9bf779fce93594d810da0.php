@@ -8,8 +8,20 @@
         
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
+        <meta name="theme-color" content="#ffcb00">
+        <meta name="theme-color" content="#ffcb00">
+        <meta name="theme-color" content="#ffcb00">
+
+        <!-- Browser Color - Chrome, Firefox OS, Opera -->
+        <meta name="theme-color" content="#ffcb00"> 
+        <!-- Browser Color - Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#ffcb00"> 
+        <!-- Browser Color - iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#ffcb00">
+
         
         <title><?php echo e(config('app.name')); ?></title>
+        
         <script type='text/javascript'>
             document.oncontextmenu = function(){return false}
         </script>
