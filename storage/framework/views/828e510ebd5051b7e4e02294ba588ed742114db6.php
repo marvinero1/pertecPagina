@@ -84,6 +84,7 @@
                             <div class="search-icon user-icon-margin" style="height: 100%;">
                                 <i class="fa fa-user-circle icon-tama-resp" style="font-size: 1.8rem; padding-left: 0px !important;padding-right: 0px !important;"></i>
                             </div>
+
                             <div class="search-box navbar-nav poss-seting-nav" style="height: auto; padding-top: 10px; padding-left: 20px; padding-right: 20px;">
                                 <div class="cart-icon">
                                     <ul class="list-unstyled user-menu tama-font-nav">
@@ -112,13 +113,13 @@
                             </div>
                         </div>
                     <?php else: ?>
-                        <div class="module module-search pull-left" style="margin-right: 5px;">
-                            <div class="search-icon">
+                        <div class="module module-search pull-left tama-div" style="margin-right: 5px;">
+                            <div class="search-icon" style="height: 100%;">
                             <strong class="text-white" style="width: 20px;font-size: 1.8rem;">|
                                 <i class="fa fa-search" style="font-size: 1.8rem;"></i></strong>
                             </div>
 
-                            <div class="search-box">
+                            <div class="search-box poss-seting-nav">
                                 <form class="search-form">
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor">
@@ -128,9 +129,10 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="module module-cart pull-right" style="padding-top: 5px;">
-                            <div class="cart-icon">
-                                <i class="fa fa-user-circle" style="font-size: 1.8rem;" data-toggle="modal" data-target="#myModal"></i>
+
+                        <div class="module module-cart pull-right tama-div" style="padding-top: 5px;">
+                            <div class="cart-icon poss-seting-nav search-icon" style="height: 100%;">
+                                <i class="fa fa-user-circle icon-tama-resp" style="font-size: 1.8rem;" data-toggle="modal" data-target="#myModal"></i>
                         </div>
                     <?php endif; ?>
 				</div>
