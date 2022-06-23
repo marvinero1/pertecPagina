@@ -298,7 +298,7 @@
         </div>
     </div><br>
 
-    @if($nombre_producto != "null")
+    @if(!empty($nombre_producto))
         <div class="content section-content">
             <div class="col-md-6">
                 <h3>Productos Buscados</h3>
@@ -306,7 +306,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <form class="search-form">
-                        <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value="null">
+                        <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value=" ">
                         <button type="submit" class="input-group-addon bg-blue text-white" style="border-radius: 20px;
                             width: 170px !important"><i class="fa fa-close"></i> Limpiar
                         </button>
