@@ -18532,7 +18532,7 @@ footer {
 .spinner>div {
     width: 18px;
     height: 18px;
-    background-color: #fffe04;
+    background-color: #ffcb00;
     border-radius: 100%;
     -webkit-text-stroke: 2px black;
     display: inline-block;
@@ -27077,7 +27077,7 @@ footer hr {
     position: fixed;
     width: 96px;
     height: 38px;
-    bottom: 130px;
+    bottom: 40px;
     right: 40px;
     background-color: #25D366;
     color: #FFF;
@@ -27124,7 +27124,7 @@ footer hr {
     height: 45px;
     /* top: 287px;
     left: 20px; */
-    bottom: 180px;
+    bottom: 87px;
     right: 40px;
     background-color: #FBD800;
     color: #FFF;

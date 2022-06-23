@@ -1,3 +1,6 @@
 {
-    "vscode-pets.petType": "cat"
+    "vscode-pets.petType": "cat",
+    "backgroundCover.autoStatus": true,
+    "backgroundCover.imagePath": "c:\\Users\\Analista-2\\OneDrive\\Imágenes\\Saved Pictures\\336-3365596_starcraft-2-full-hd.jpg",
+    "backgroundCover.randomImageFolder": "c:\\Users\\Analista-2\\OneDrive\\Imágenes\\Saved Pictures"
 }
