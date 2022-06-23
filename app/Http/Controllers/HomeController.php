@@ -43,11 +43,11 @@ class HomeController extends Controller
         $tiendaSTCZ = Tienda::where('ciudad','Santa Cruz')->get();
         $modalPopup = ModalPopup::all();
 
-        print($nombre_producto);
-        
+        // print($nombre_producto);
+
         if ($nombre_producto != "") {
             $productoBuscado = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->get();
-            
+
         }
         return view('index', ['hash' => $hash, 'carusel' => $carusel, 'producto' => $producto, 'producto2' => $producto2,
                     'tienda' => $tienda, 'tiendaLPZ'=>$tiendaLPZ, 'tiendaCBBA'=>$tiendaCBBA, 'tiendaSTCZ'=>$tiendaSTCZ,

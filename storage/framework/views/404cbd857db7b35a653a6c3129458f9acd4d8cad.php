@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 <section id="hero" class="hero hero-4">
     <div class="rev_slider_wrapper tama-carusel">
@@ -298,7 +300,7 @@
         </div>
     </div><br>
 
-    <?php if($nombre_producto != "null"): ?>
+    <?php if(!empty($nombre_producto)): ?>
         <div class="content section-content">
             <div class="col-md-6">
                 <h3>Productos Buscados</h3>
@@ -306,7 +308,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <form class="search-form">
-                        <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value="null">
+                        <input type="hidden" class="form-control" placeholder=" &nbsp; Buscar" name="buscarpor" value=" ">
                         <button type="submit" class="input-group-addon bg-blue text-white" style="border-radius: 20px;
                             width: 170px !important"><i class="fa fa-close"></i> Limpiar
                         </button>
@@ -602,7 +604,7 @@
                 <div class="product-cart">
                     <?php $__currentLoopData = $modalPopup; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $modalPopups): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <img src="/<?php echo e($modalPopups->imagen); ?>" alt="<?php echo e($modalPopups->descripcion); ?>"
-                        width="70%" style="display: block;margin: auto;">
+                            width="70%" style="display: block;margin: auto;">
                         <div style="padding: 0 25px 0 25px;">
                             <h3><?php echo e($modalPopups->descripcion); ?></h3>
                         </div>
@@ -845,6 +847,9 @@
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 
+    }
+    @media (min-width: 992px)  and (max-width: 1400px){
+        .modalPopUp {padding-block-start: 40px !important;}
     }
 </style>
 

@@ -10,6 +10,17 @@
 	
 	<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
+    <meta name="theme-color" content="#ffcb00">
+    <meta name="theme-color" content="#ffcb00">
+    <meta name="theme-color" content="#ffcb00">
+
+    <!-- Browser Color - Chrome, Firefox OS, Opera -->
+    <meta name="theme-color" content="#ffcb00"> 
+    <!-- Browser Color - Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#ffcb00"> 
+    <!-- Browser Color - iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffcb00">
+
 	
 	<title><?php echo e(config('app.name')); ?></title>
 
@@ -57,6 +68,11 @@
         <i class="fa fa-whatsapp btn_Inf_float_my-float" style="position: relative; top: -5px;"></i>
         <label style="position: relative; top: -8px;">&nbsp;Ayuda</label>
     </a>
+    <style>
+        nav.navbar {
+            background-color: #ffcb00;
+        }
+    </style>
 
 	<script type='text/javascript'>
         document.oncontextmenu = function(){return false}

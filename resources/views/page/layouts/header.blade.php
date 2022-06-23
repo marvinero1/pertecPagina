@@ -52,11 +52,11 @@
 						</li>
                         <li class="has-dropdown tama-font-nav">
 							<a href="/consultasDigitales" target="_blank">Facturas</a>
-                            <ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px; height: auto !important;width: auto;">
+                            {{-- <ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px; height: auto !important;width: auto;">
 								<li>
 									<a href="#">Imprime tu factura</a>
 								</li>
-							</ul>
+							</ul> --}}
 						</li>
 						<li class="has-dropdown pull-left tama-font-nav">
 							<a href="/contactanos">Contacto</a>
