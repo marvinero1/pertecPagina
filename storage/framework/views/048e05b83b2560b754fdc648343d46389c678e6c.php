@@ -604,8 +604,8 @@
                 <div class="product-cart">
                     <?php $__currentLoopData = $modalPopup; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $modalPopups): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <img src="/<?php echo e($modalPopups->imagen); ?>" alt="<?php echo e($modalPopups->descripcion); ?>"
-                        width="75%" style="display: block;margin: auto;">
-                        <div style="padding: 25px;">
+                            width="70%" style="display: block;margin: auto;">
+                        <div style="padding: 0 25px 0 25px;">
                             <h3><?php echo e($modalPopups->descripcion); ?></h3>
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -645,6 +645,9 @@
         }
     }
 
+    @media (min-width: 992px)  and (max-width: 1400px){
+        .modalPopUp {padding-block-start: 40px !important;}
+    }
 
 
 
@@ -844,6 +847,9 @@
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 
+    }
+    @media (min-width: 992px)  and (max-width: 1400px){
+        .modalPopUp {padding-block-start: 40px !important;}
     }
 </style>
 
