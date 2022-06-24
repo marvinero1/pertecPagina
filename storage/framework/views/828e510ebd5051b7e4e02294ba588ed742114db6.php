@@ -52,11 +52,7 @@
 						</li>
                         <li class="has-dropdown tama-font-nav">
 							<a href="/consultasDigitales" target="_blank">Facturas</a>
-                            <ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px; height: auto !important;width: auto;">
-								<li>
-									<a href="#">Imprime tu factura</a>
-								</li>
-							</ul>
+                            
 						</li>
 						<li class="has-dropdown pull-left tama-font-nav">
 							<a href="/contactanos">Contacto</a>
@@ -65,7 +61,7 @@
                     <?php if(!auth()->guest()): ?>
                         <div class="module module-search pull-left tama-div" style="margin-right: 5px;">
                             <div class="search-icon" style="height: 100%;">
-                                <strong class="text-white" style="width: 20px;font-size: 1.8rem;">|
+                                <strong class="text-white icon-tama-resp" style="width: 20px;font-size: 1.8rem;">|
                                 <i class="fa fa-search icon-tama-resp" style="font-size: 1.8rem;"></i></strong>
                             </div>
 
@@ -115,8 +111,8 @@
                     <?php else: ?>
                         <div class="module module-search pull-left tama-div" style="margin-right: 5px;">
                             <div class="search-icon" style="height: 100%;">
-                            <strong class="text-white" style="width: 20px;font-size: 1.8rem;">|
-                                <i class="fa fa-search" style="font-size: 1.8rem;"></i></strong>
+                            <strong class="text-white icon-tama-resp" style="width: 20px;font-size: 1.8rem;">|
+                                <i class="fa fa-search icon-tama-resp" style="font-size: 1.8rem;"></i></strong>
                             </div>
 
                             <div class="search-box poss-seting-nav">
@@ -132,7 +128,7 @@
 
                         <div class="module module-cart pull-right tama-div" style="padding-top: 5px;">
                             <div class="cart-icon poss-seting-nav search-icon" style="height: 100%;">
-                                <i class="fa fa-user-circle icon-tama-resp" style="font-size: 1.8rem;" data-toggle="modal" data-target="#myModal"></i>
+                                <i class="fa fa-user-circle icon-tama-resp" style="font-size: 1.8rem; padding-left: 0px !important;padding-right: 0px !important;" data-toggle="modal" data-target="#myModal"></i>
                         </div>
                     <?php endif; ?>
 				</div>

@@ -31,7 +31,7 @@ class PedidoController extends Controller
         $proforma = DB::table('veproforma')->where('nit', $nit_user)->first();
         $cod_cliente = $proforma->codcliente;
 
-        $pedido = DB::table('vedespacho')->where('codcliente', $cod_cliente)->orderBy('frecibido','DESC')->paginate(10);
+        $pedido = DB::table('vedespacho')->where('codcliente', $cod_cliente)->orderBy('frecibido','DESC')->paginate(15);
         // dd($pedido);
         return view('page.sections.pedidos',compact('proforma','pedido','cod_cliente'));
     }
