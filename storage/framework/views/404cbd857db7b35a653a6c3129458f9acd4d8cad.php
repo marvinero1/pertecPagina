@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <section id="hero" class="hero hero-4">
     <div class="rev_slider_wrapper tama-carusel">
@@ -565,7 +563,6 @@
                         <a class="font-heading awithmodelh1 font-tam-respp">(Whatsapp)</a>
                         <a href="https://wa.me/+59172221032/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
                         class=" awithmodelh1 font-tam-respp" target="_blank">72221032 - </a>
-                        <strong>-</strong>
                         <a href="https://wa.me/+59172230024/?text=Hola%20Pertec%20Quisiera%20Cotizar%20Sus%20Productos"
                         class="awithmodelh1 font-tam-respp" target="_blank">72230024</a>
                     </div>
