@@ -101,7 +101,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('boucher', BoucherController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::resource('carusel', CaruselController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::resource('pop-up', ModalPopupController::class)->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
-
+    
 });
 
     // Secciones
@@ -125,6 +125,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('viewFactura/{id}', 'Admin\FacturaController@show')->name('viewFactura');
     Route::get('confirmation', 'HomeController@confirmation')->name('confirmacionEmail');
     // Route::get('sitemap','HomeController@sitemap')->name('sitemap');
+    Route::get('car_buy', 'Admin\CarritoShopController@index')->name('car_buy');
+    Route::get('car_buy_details', 'Admin\CarritoShopDetailController@index')->name('car_buy');
+   
+
 /**
 * Membership
 */

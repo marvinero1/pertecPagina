@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="row" style="height: 85px;">
-                    <div class="col-xs-12 col-sm-12 col-md-4 aling-left" style="float: right;">
+                    <div class="col-xs-12 col-sm-12 col-md-4 aling-left" style="float: left;">
                         <form style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                             <div class="form-group top_search">
                                 <div class="input-group" style="width: 355px;">

@@ -1,0 +1,1 @@
+aca el carrito<?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/carrito/index.blade.php ENDPATH**/ ?>
