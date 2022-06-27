@@ -36,20 +36,26 @@
                     </div>
                 </div>
                 <div class="row" style="height: 85px;">
-                    <div class="col-xs-12 col-sm-12 col-md-4 aling-rigth" style="display: flex;">
-                        <form
-                        style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
-                        <div class="form-group pull-right top_search">
-                            <div class="input-group" style="width: 332px;">
-                                <input class="typeahead form-control font-frank-book " placeholder="Nombre de Producto" name="buscarpor"
-                                    style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" style="border: 1px #093070 solid; font-size: 1.3rem;">
-                                        <i class="fa fa-search"></i> Buscar</button>
-                                </span>
+                    <div class="col-xs-12 col-sm-12 col-md-4 aling-left" style="float: right;">
+                        <form style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
+                            <div class="form-group top_search">
+                                <div class="input-group" style="width: 355px;">
+                                    <select id="single" class="js-states form-control font-frank-book" name="buscarpor"
+                                        style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
+                                        <option value="null">Todos los Productos</option>
+                                        @foreach ($producto as $productos)
+                                            <option value="{{ $productos->nombre_producto }}">{{ strtoupper($productos->nombre_producto) }}</option>
+                                        @endforeach
+                                    </select>
+                                    {{-- <input class="typeahead form-control font-frank-book " placeholder="Nombre de Producto" name="buscarpor"
+                                        style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;"> --}}
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit" style="border: 1px #093070 solid; font-size: 1.3rem;">
+                                            <i class="fa fa-search"></i> Buscar</button>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
                     </div>
                 </div>
 
@@ -73,39 +79,75 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row lightgallery1">
-                    @foreach ($producto as $bproducto)
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item item">
-                            @if($bproducto["promocion"]=="si")
-                            <div class="infProd" style="background-color: #FBD800;">
-                                EN OFERTA
-                            </div>
-                            @endif
-                            @if($bproducto["novedad"]=="si")
-                            <div class="infProd" style="background-color: #093070;">
-                                NUEVO
-                            </div>
-                            @endif
-                            <div class="product-img" >
-                                <img src="/{{ $bproducto->imagen }}" alt="product" style="height:250px;">
-                                <div class="product-hover">
-                                    <div class="product-cart">
-                                        <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}" class="btn btn-secondary btn-block a-card">Detalles</a>
+                @if($nombre_producto == "null")
+                    <div class="row lightgallery1">
+                        @foreach ($producto as $bproducto)
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item item">
+                                @if($bproducto["promocion"]=="si")
+                                <div class="infProd" style="background-color: #FBD800;">
+                                    EN OFERTA
+                                </div>
+                                @endif
+                                @if($bproducto["novedad"]=="si")
+                                <div class="infProd" style="background-color: #093070;">
+                                    NUEVO
+                                </div>
+                                @endif
+                                <div class="product-img" >
+                                    <img src="/{{ $bproducto->imagen }}" alt="product" style="height:250px;">
+                                    <div class="product-hover">
+                                        <div class="product-cart">
+                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}" class="btn btn-secondary btn-block a-card">Detalles</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <div style="height: 50px;">
+                                        <h4>
+                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">
+                                                {{ $bproducto["nombre_producto"] }}
+                                            </a>
+                                        </h4>
+                                </div>
                             </div>
-                            <div style="height: 50px;">
-                                    <h4>
-                                        <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">
-                                            {{ $bproducto["nombre_producto"] }}
-                                        </a>
-                                    </h4>
+                        @endforeach
+                    </div> 
+                @else
+                    <div class="row lightgallery1">
+                        @foreach ($producto_buscado as $bproducto)
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-item item">
+                                @if($bproducto["promocion"]=="si")
+                                <div class="infProd" style="background-color: #FBD800;">
+                                    EN OFERTA
+                                </div>
+                                @endif
+                                @if($bproducto["novedad"]=="si")
+                                <div class="infProd" style="background-color: #093070;">
+                                    NUEVO
+                                </div>
+                                @endif
+                                <div class="product-img" >
+                                    <img src="/{{ $bproducto->imagen }}" alt="product" style="height:250px;">
+                                    <div class="product-hover">
+                                        <div class="product-cart">
+                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}" class="btn btn-secondary btn-block a-card">Detalles</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="height: 50px;">
+                                        <h4>
+                                            <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($bproducto->id) ) }}">
+                                                {{ $bproducto["nombre_producto"] }}
+                                            </a>
+                                        </h4>
 
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>   
+                @endif
+                
+
+
             </div>
         </div>
 
@@ -123,17 +165,32 @@
 @include('page.sections.productos.modalConvrPernos')
 @include('page.sections.productos.modalConvrArandelas')
 @include('page.sections.productos.modalDetalles')
-
-
 <style>
     .lightgallery1 .product-item {
-    display: none;
+        display: none;
     }
     .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-}
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+    .select2-container .select2-selection--single{
+        height: 40px !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered{
+        color: #093070;
+        line-height: 34px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 26px;
+        position: absolute;
+        top: 5px;
+        right: 1px;
+        width: 20px;
+    }
+    .select2-container{
+        width: 380px !important;
+    }
 </style>
 <script>
     $(function() {
@@ -145,16 +202,6 @@
         console.log("No more divs"); // alert if there are none left
         }
     });
-    });
-</script>
-<script type="text/javascript">
-    var path = "{{ route('autocomplete') }}";
-    $('input.typeahead').typeahead({
-        source:  function (query, process) {
-        return $.get(path, { query: query }, function (data) {
-                return process(data);
-            });
-        }
     });
 </script>
 @endsection

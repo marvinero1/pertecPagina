@@ -35,16 +35,10 @@
 
 	{{ Html::style(mix('assets/page/css/app_page.css')) }}
 	{{ Html::script(mix('assets/page/js/app_page.js')) }}
-
-	<script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
-	<script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
-    
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </head>
 
 <body>
@@ -83,6 +77,14 @@
 
 	<script type='text/javascript'>
         document.oncontextmenu = function(){return false}
+        $("#single").select2({
+          placeholder: "Busque y Seleccione Productos",
+          allowClear: true
+      });
+      $("#multiple").select2({
+          placeholder: "Select a programming language",
+          allowClear: true
+      });
     </script>
 
 	<script type="text/javascript">
