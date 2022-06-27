@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
     style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
@@ -191,7 +189,7 @@
                         <div class="widget-content">
                             <div class="row">
                                 <?php $__currentLoopData = $producto_sugeridos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $producto_sugeridoss): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 product-item clearfix">
+                                <div class="col-xs-12 col-sm-6 col-md-3 product-item clearfix">
                                     <div class="product-img">
                                         <img src="/<?php echo e($producto_sugeridoss->imagen); ?>" style="height: 220px;"
                                             alt="product">
