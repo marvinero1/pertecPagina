@@ -66,12 +66,6 @@ class ProductoController extends Controller
         return view('admin.products.novedad', ['producto' => $producto,'hash'=>$hash]);
     }
 
-    public function getProducts(){
-        $producto = Producto::all();
-
-        return response()->json($producto, 200);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
