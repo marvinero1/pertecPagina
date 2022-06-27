@@ -193,7 +193,7 @@
                                 @foreach ( $producto_sugeridos as $producto_sugeridoss )
                                 <div class="col-xs-12 col-sm-6 col-md-3 product-item clearfix">
                                     <div class="product-img">
-                                        <img src="/{{ $producto_sugeridoss->imagen }}" style="height: 220px;"
+                                        <img src="/{{ $producto_sugeridoss->imagen }}" style="height: auto; width: auto; max-height: 220px;"
                                             alt="product">
                                         <div class="product-hover">
                                             <div class="product-cart">
