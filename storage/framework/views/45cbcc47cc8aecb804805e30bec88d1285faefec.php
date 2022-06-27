@@ -1,6 +1,8 @@
+
+
 <?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
-    style="background-image: url(../assets/images/page-title/producBackground.jpg);">
+    style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
         <div class="row">
@@ -215,24 +217,19 @@
             </div>
         </div>
 </section>
-
 <?php echo $__env->make('page.sections.productos.modalInfoProd', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-<!-- The Modal -->
-<div id="myModalImg" class="modal">
-    <button onclick="closeMod();" class="close">×</button>
-    <img class="modal-content zoom" id="img01">
-    <div id="caption"></div>
-</div>
-
-
+    <div id="myModalImg" class="modal">
+        <button onclick="closeMod();" class="close">×</button>
+        <img class="modal-content zoom" id="img01">
+        <div id="caption"></div>
+    </div>
 <style>
     #myImg {
         border-radius: 5px;
         cursor: pointer;
         transition: 0.3s;
     }
-
     #myImg:hover {
         opacity: 0.7;
     }
@@ -268,7 +265,6 @@
         width: 80%;
         max-width: 700px;
     }
-
     /* Caption of Modal Image */
     #caption {
         margin: auto;
@@ -280,7 +276,6 @@
         padding: 10px 0;
         height: 150px;
     }
-
     /* Add Animation */
     .modal-content,
     #caption {
@@ -289,7 +284,6 @@
         animation-name: zoom;
         animation-duration: 0.6s;
     }
-
     @-webkit-keyframes zoom {
         from {
             -webkit-transform: scale(0)
@@ -299,7 +293,6 @@
             -webkit-transform: scale(1)
         }
     }
-
     @keyframes  zoom {
         from {
             transform: scale(0)
@@ -309,7 +302,6 @@
             transform: scale(1)
         }
     }
-
     /* The Close Button */
     .close {
         position: absolute;
@@ -320,7 +312,6 @@
         font-weight: bold;
         transition: 0.3s;
     }
-
     .close:hover,
     .close:focus {
         color: #bbb;
@@ -347,8 +338,6 @@
         /* Safari 3-8 */
         transform: scale(1.5);
     }
-
-
     .boton-info {
         border-radius: 50%;
         background-color: #FBD800;
@@ -361,16 +350,12 @@
         top: -20px;
         right: 20px;
     }
-
     .boton-info:hover {
         background-color: #093070;
         color: #FBD800;
         border-color: #093070;
     }
-
 </style>
-
-
 
 <script>
     // Get the modal
@@ -386,14 +371,10 @@
         modalImg.alt = this.alt;
         captionText.innerHTML = this.alt;
     }
-
-
     function closeMod() {
         modal.style.display = "none";
     }
-
 </script>
-
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -408,7 +389,6 @@
             overlayAdapt: true // true if the overlay image has to adapt to the lens size (true/false)
         });
     });
-
 </script>
 <?php $__env->stopSection(); ?>
 

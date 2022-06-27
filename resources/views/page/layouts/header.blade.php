@@ -18,14 +18,18 @@
 				<div class="collapse navbar-collapse pull-right collapse" id="bs-example-navbar-collapse-1" style="padding-right: 0% !important">
 					<ul class="nav navbar-nav navbar-left">
 						<li class="has-dropdown active tama-font-nav">
-							<a href="/" >Inicio</a>
+                            <h1 style="display: contents;"><a class="text-white" href="/" >Inicio</a></h1>
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown tama-font-nav">
-							<a class="my-menu-link" name="sectionAboutUs">¿Quiénes Somos?</a>
+                            <h1 style="display: contents;">
+                                <a class="my-menu-link text-white" name="sectionAboutUs">¿Quiénes Somos?</a>
+                            </h1>
 						</li>
                         <li class="has-dropdown tama-font-nav">
-							<a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link">Productos</a>
+                            <h1 style="display: contents;">
+                                <a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link text-white">Productos</a>
+                            </h1>
 							<ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px;">
 								<li>
 									<a href="/productos" class="op-prod-1">Catálogo <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
@@ -43,7 +47,9 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown tama-font-nav">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link" name="sectionStores">Oficinas y Tiendas</a>
+                            <h1 style="display: contents;">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link text-white" name="sectionStores">Oficinas y Tiendas</a>
+                            </h1>
                             <ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px; height: auto !important;width: auto;">
 								<li>
 									<a href="/">Oficinas y tiendas</a>
@@ -51,7 +57,9 @@
 							</ul>
 						</li>
                         <li class="has-dropdown tama-font-nav">
-							<a href="/consultasDigitales" target="_blank">Facturas</a>
+                            <h1 style="display: contents;">
+                                <a href="/consultasDigitales" class="text-white" target="_blank">Facturas</a>
+                            </h1>
                             {{-- <ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px; height: auto !important;width: auto;">
 								<li>
 									<a href="#">Imprime tu factura</a>
@@ -59,7 +67,9 @@
 							</ul> --}}
 						</li>
 						<li class="has-dropdown pull-left tama-font-nav">
-							<a href="/contactanos">Contacto</a>
+                            <h1 style="display: contents;">
+                                <a href="/contactanos" class="text-white">Contacto</a>
+                            </h1>
 						</li>
 					</ul>
                     @if (!auth()->guest())
@@ -298,8 +308,6 @@
     </div>
 </div>
 <style>
-
-
     .modal-dialog-login{
         margin-top: 90px;
         width: auto;
