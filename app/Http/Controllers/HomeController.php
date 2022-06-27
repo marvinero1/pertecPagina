@@ -55,6 +55,10 @@ class HomeController extends Controller
                     'nombre_producto'=>$nombre_producto]);
     }
 
+    public function sitemap(){
+        return redirect('public/sitemap.xml');
+    }
+
     public function historia(){
         return view('page.sections.somos');
     }

@@ -41,7 +41,7 @@
                         style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                         <div class="form-group pull-right top_search">
                             <div class="input-group" style="width: 332px;">
-                                <input type="text" class="form-control font-frank-book" placeholder="Nombre de Producto" name="buscarpor"
+                                <input class="typeahead form-control font-frank-book " placeholder="Nombre de Producto" name="buscarpor"
                                     style="border: 1px #093070 solid; height: 40px; padding-left: 12px; font-size: 1.3rem; color: #5a5a5ab8;">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit" style="border: 1px #093070 solid; font-size: 1.3rem;">
@@ -146,6 +146,16 @@
         console.log("No more divs"); // alert if there are none left
         }
     });
+    });
+</script>
+<script type="text/javascript">
+    var path = "<?php echo e(route('autocomplete')); ?>";
+    $('input.typeahead').typeahead({
+        source:  function (query, process) {
+        return $.get(path, { query: query }, function (data) {
+                return process(data);
+            });
+        }
     });
 </script>
 <?php $__env->stopSection(); ?>

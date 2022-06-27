@@ -36,6 +36,7 @@
         "laraveles/spanish": "^1.5",
         "luecano/numero-a-letras": "^3.0",
         "simplesoftwareio/simple-qrcode": "^4.2",
+        "spatie/laravel-sitemap": "^6.2",
         "vinkla/hashids": "^10.0"
     },
     "require-dev": {

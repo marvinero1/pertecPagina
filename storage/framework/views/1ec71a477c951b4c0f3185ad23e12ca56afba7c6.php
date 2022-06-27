@@ -84,15 +84,9 @@
                 </div>
             </div>
         </div>
-
-
-
-         
-
+        
         <div class="col-md-6" id="bg-cover-login" style="height: 100%;">
-            
             <div class="bgImgCoverPages"></div>
-            
         </div>
     </div>
 </div>

@@ -10,10 +10,31 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 /**
  * Auth routes,FronEnt User logueado
  */
+// Route::get("generate-sitemap", function () {
+
+//     SitemapGenerator::create('http://labsystem.pertec.com.bo')->writeToFile(public_path('sitemap.xml'));
+//     dd("done");
+// });
+
+
+Route::controller(ProductoController::class)->group(function () {
+    Route::get('/search', 'productsFront')->name('search');
+    Route::get('/autocomplete', 'autocomplete')->name('autocomplete');
+});
+
+
+
+
+Route::get('/autocomplete', 'Admin\ProductoController@autocomplete')->name('autocomplete');
+
+Route::get('/sitemap', function () {
+    return redirect('/sitemap.xml');
+});
 
 Route::middleware(['auth'] )->group(function () {
     Route::get('profileUser', 'Admin\UserController@profileUser')->name('users.showFront');
@@ -60,7 +81,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Dashboard
     Route::get('/', 'DashboardController@index')->name('dashboard');
-
     //Users
     Route::get('users', 'UserController@index')->name('users')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('users/restore', 'UserController@restore')->name('users.restore')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
@@ -74,7 +94,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('permissions/{user}/repeat', 'PermissionController@repeat')->name('permissions.repeat')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('dashboard/log-chart', 'DashboardController@getLogChartData')->name('dashboard.log.chart')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('dashboard/registration-chart', 'DashboardController@getRegistrationChartData')->name('dashboard.registration.chart')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
-
     // Administrable
     Route::get('productosPromocion', 'ProductoController@productosPromocion')->name('productosPromocion')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
     Route::get('productosNovedad', 'ProductoController@productosNovedad')->name('productosNovedad')->middleware('protection:' . config('protection.membership.product_module_number') . ',protection.membership.failed');
@@ -113,7 +132,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('postDataPDF/{id}', 'Admin\FacturaController@postDataPDF')->name('postDataPDF');
     Route::get('viewFactura/{id}', 'Admin\FacturaController@show')->name('viewFactura');
     Route::get('confirmation', 'HomeController@confirmation')->name('confirmacionEmail');
-    
+    // Route::get('sitemap','HomeController@sitemap')->name('sitemap');
 /**
 * Membership
 */
