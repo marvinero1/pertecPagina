@@ -162,7 +162,7 @@ class ProductoController extends Controller
         $hash = new Hashids();
         $hash_id = $hash->decodeHex($id);
         $producto_Id = Producto::findOrFail($hash_id);
-        $producto_sugeridos = Producto::inRandomOrder()->paginate(6);
+        $producto_sugeridos = Producto::inRandomOrder()->paginate(4);
         return view('page.sections.productos.show', compact('producto_Id','producto_sugeridos','hash'));
     }
     /**
@@ -328,7 +328,7 @@ class ProductoController extends Controller
     }
 
     public function changeMatrix(Request $request, $id){
-        
+
         $producto = Producto::findOrFail($id);
         $mensaje = 'Matriz Creada Exitosamente!!!';
 
@@ -372,7 +372,7 @@ class ProductoController extends Controller
 
         Session::flash('message','Matriz Creada Exisitosamente!');
         return back()->withInput();
-      
+
     }
 
     /**

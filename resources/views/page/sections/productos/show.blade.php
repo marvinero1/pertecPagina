@@ -191,7 +191,7 @@
                         <div class="widget-content">
                             <div class="row">
                                 @foreach ( $producto_sugeridos as $producto_sugeridoss )
-                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 product-item clearfix">
+                                <div class="col-xs-12 col-sm-6 col-md-3 product-item clearfix">
                                     <div class="product-img">
                                         <img src="/{{ $producto_sugeridoss->imagen }}" style="height: 220px;"
                                             alt="product">
