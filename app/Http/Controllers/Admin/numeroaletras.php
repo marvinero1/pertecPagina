@@ -124,8 +124,7 @@ class modelonumero  {
 
          // ----------- esta línea la puedes cambiar de acuerdo a tus necesidades o a tu país -------
          if(trim($xaux) != "")
-         {
-            switch ($xz)
+         {  switch ($xz)
             {
                case 0:
                   if(trim(substr($XAUX, $xz * 6, 6)) == "1")
@@ -152,9 +151,9 @@ class modelonumero  {
                   {
                      $xcadena .= "$xdecimales/100".strtoupper($moneda).strtoupper($centimos);  // borrar en caso no se desee decimales /100
                   }
-                  break;
-            } // endswitch ($xz)
-         } // ENDIF (trim($xaux) != "")
+               break;
+            }
+         }
 
          $xcadena = str_replace("VEINTI ", "VEINTI", $xcadena); // quito el espacio para el VEINTI, para que quede: VEINTICUATRO, VEINTIUN, VEINTIDOS, etc
          $xcadena = str_replace("  ", " ", $xcadena); // quito espacios dobles
@@ -168,7 +167,6 @@ class modelonumero  {
       $xcadena = str_replace("UN MIL ", "MIL ", $xcadena); // quito el BUG de UN MIL
       return trim($xcadena);
    }
-
    // END FUNCTION
 
    public function subfijo($xx){ // esta función genera un subfijo para la cifra
@@ -176,16 +174,13 @@ class modelonumero  {
       $xstrlen = strlen($xx);
       if($xstrlen == 1 || $xstrlen == 2 || $xstrlen == 3)
          $xsub = "";
-      //
+      
       if($xstrlen == 4 || $xstrlen == 5 || $xstrlen == 6)
          $xsub = "MIL";
-      //
+      
       return $xsub;
    }
 }
-
-
-
 
 class numeroaletras{
 

@@ -7,8 +7,7 @@
     </div><br>
 
     @if (Session::has('danger'))
-    <div class="alert alert-danger">{{ Session::get('danger') }}
-    </div>
+        <div class="alert alert-danger">{{ Session::get('danger') }}</div>
     @endif
 
     <div class="row"><br>
@@ -18,6 +17,7 @@
                     style="display: contents !important;margin-top: 0em !important;margin-block-end: 0em !important">
                     <div class="form-group pull-right top_search">
                         <div class="input-group">
+                            <hr>
                             <input type="text" class="form-control" placeholder="Buscar por Nombre Producto" name="buscarpor"
                                 style="border: 1px #093070 solid;">
                             <span class="input-group-btn">
@@ -69,7 +69,7 @@
                                                 data-target="#myModal" title="Más información">
                                                 <span class="glyphicon glyphicon-eye-open"
                                                     aria-hidden="true"></span></button>
-                                        </a></p>
+                                    </a></p>
                                 </div>
                             </div>
                             <div class="caption">
@@ -83,7 +83,7 @@
                                 <div style="text-align: center;padding-block-start: 15px;">
                                     <p><button type="button" class="btn btn-danger btn-md" data-toggle="modal"
                                             data-target="#myModal{{$productos->id}}">
-                                            <i class="fa fa-check" aria-hidden="true"></i> Quitar Novedad</button>
+                                            <i class="fa fa-check" aria-hidden="true"></i> Quitar Promoción</button>
                                     </p>
                                 </div>
                             </div>
@@ -93,7 +93,6 @@
                     <div class="container">
                         <div class="modal fade" id="myModal{{$productos->id}}" role="dialog">
                             <div class="modal-dialog">
-                                <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
