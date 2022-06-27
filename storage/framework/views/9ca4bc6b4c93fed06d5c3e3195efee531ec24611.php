@@ -1,6 +1,11 @@
 
 
 <?php $__env->startSection('content'); ?>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Select2 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" 
     style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
     <div class="bgImgCoverPages"></div>
@@ -204,6 +209,14 @@
         }
     });
     });
+    $("#single").select2({
+          placeholder: "Busque y Seleccione el producto",
+          allowClear: true
+      });
+      $("#multiple").select2({
+          placeholder: "Select a programming language",
+          allowClear: true
+      });
 </script>
 <?php $__env->stopSection(); ?>
 

@@ -30,11 +30,8 @@ class ProductoController extends Controller
     public function productsFront(Request $request){
         $hash=new Hashids();
         $nombre_producto = $request->get('buscarpor');
-        // $producto = Producto::all();
         $producto_buscado = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->get();
         $producto = Producto::all();
-        // print($nombre_producto);
-        // echo json_encode($producto);
 
         // return view('page.sections.prueba', ['producto' => $producto, 'hash' => $hash]);
         return view('page.sections.productos.catalogo', ['producto' => $producto, 'hash' => $hash,

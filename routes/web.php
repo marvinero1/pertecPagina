@@ -22,14 +22,6 @@ use Spatie\Sitemap\SitemapGenerator;
 // });
 
 
-Route::controller(ProductoController::class)->group(function () {
-    Route::get('/search', 'productsFront')->name('search');
-    Route::get('/autocomplete', 'autocomplete')->name('autocomplete');
-});
-
-
-
-
 Route::get('/autocomplete', 'Admin\ProductoController@autocomplete')->name('autocomplete');
 
 Route::get('/sitemap', function () {
