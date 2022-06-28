@@ -9,6 +9,7 @@ use App\Models\Carusel;
 use App\Models\Producto;
 use App\Models\Tienda;
 use App\Models\ModalPopup;
+use SEO;
 
 class HomeController extends Controller
 {
@@ -27,28 +28,37 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
+
+        //SEO//
+            // SEO::setTitle('Pertec SRL');
+            SEO::setDescription('Maestros en Pernos');
+            SEO::opengraph()->setUrl('https://www.pertec.com.bo');
+            SEO::setCanonical('https://www.pertec.com.bo');
+            SEO::opengraph()->addProperty('pernos', 'tuercas','arandelas','brocas','tornillos','bolivia','tirafondo');
+            // SEO::copyright()("{{ config('app.name') }}");
+            // SEO::autor()("{{ config('app.name') }}");
+            // SEO::twitter()->setSite('@Nigmacode');
+        //SEO END//
+
         $productoBuscado= [];
         $nombre_producto = $request->get('buscarpor');
         $tienda = Tienda::latest()->get();
 
         $hash=new Hashids();
         $carusel = Carusel::all();
+        $modalPopup = ModalPopup::all();
         $producto = Producto::inRandomOrder()->paginate('3');
         $producto2 = Producto::inRandomOrder()->paginate('3');
-
 
         $oficinas = Tienda::where('tipo','oficina')->get();
         $tiendaLPZ = Tienda::where('ciudad','La Paz')->get();
         $tiendaCBBA = Tienda::where('ciudad','Cochabamba')->get();
         $tiendaSTCZ = Tienda::where('ciudad','Santa Cruz')->get();
-        $modalPopup = ModalPopup::all();
-
-        // print($nombre_producto);
-
+        
         if ($nombre_producto != "") {
             $productoBuscado = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->get();
-
         }
+
         return view('index', ['hash' => $hash, 'carusel' => $carusel, 'producto' => $producto, 'producto2' => $producto2,
                     'tienda' => $tienda, 'tiendaLPZ'=>$tiendaLPZ, 'tiendaCBBA'=>$tiendaCBBA, 'tiendaSTCZ'=>$tiendaSTCZ,
                     'oficinas'=>$oficinas,'modalPopup'=>$modalPopup,'productoBuscado'=>$productoBuscado,

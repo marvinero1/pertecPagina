@@ -7,7 +7,7 @@
                 <?php echo $__env->make('admin.sections.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <?php echo $__env->make('admin.sections.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php echo $__env->yieldSection(); ?>
-
+            
             <?php echo $__env->yieldContent('left-sidebar'); ?>
 
             <div class="right_col" role="main" >

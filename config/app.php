@@ -186,6 +186,7 @@ return [
         \App\Providers\ProtectionProvider::class,
         Laraveles\Spanish\SpanishServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
     ],
 
     /*
@@ -247,6 +248,7 @@ return [
         'Meta' => \App\Helpers\Meta\Facades\MetaFacade::class,
         'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
     ],
 
 ];

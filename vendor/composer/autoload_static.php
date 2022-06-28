@@ -224,6 +224,7 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         ),
         'A' => 
         array (
+            'Artesaos\\SEOTools\\' => 18,
             'Arcanedev\\Support\\' => 18,
             'Arcanedev\\LogViewer\\' => 20,
             'App\\' => 4,
@@ -721,6 +722,10 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         array (
             0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
         ),
+        'Artesaos\\SEOTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools',
+        ),
         'Arcanedev\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/arcanedev/support/src',
@@ -779,6 +784,8 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'App\\Helpers\\ToJs\\Facades\\ToJsFacade' => __DIR__ . '/../..' . '/app/Helpers/ToJs/Facades/ToJsFacade.php',
         'App\\Helpers\\ToJs\\ToJs' => __DIR__ . '/../..' . '/app/Helpers/ToJs/ToJs.php',
         'App\\Http\\Controllers\\Admin\\BoucherController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BoucherController.php',
+        'App\\Http\\Controllers\\Admin\\CarritoShopController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CarritoShopController.php',
+        'App\\Http\\Controllers\\Admin\\CarritoShopDetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CarritoShopDetailController.php',
         'App\\Http\\Controllers\\Admin\\CaruselController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CaruselController.php',
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
         'App\\Http\\Controllers\\Admin\\FacturaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FacturaController.php',
@@ -796,7 +803,6 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\SocialLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/SocialLoginController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
-        'App\\Http\\Controllers\\CarritoShopController' => __DIR__ . '/../..' . '/app/Http/Controllers/CarritoShopController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\MembershipController' => __DIR__ . '/../..' . '/app/Http/Controllers/MembershipController.php',
@@ -912,6 +918,27 @@ class ComposerStaticInit01d7c883fbe4f9ea8f3ce3fc4bc1280f
         'Arcanedev\\Support\\Routing\\RouteRegistrar' => __DIR__ . '/..' . '/arcanedev/support/src/Routing/RouteRegistrar.php',
         'Arcanedev\\Support\\Stub' => __DIR__ . '/..' . '/arcanedev/support/src/Stub.php',
         'Arcanedev\\Support\\Validation\\Rule' => __DIR__ . '/..' . '/arcanedev/support/src/Validation/Rule.php',
+        'Artesaos\\SEOTools\\Contracts\\JsonLd' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/JsonLd.php',
+        'Artesaos\\SEOTools\\Contracts\\JsonLdMulti' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/JsonLdMulti.php',
+        'Artesaos\\SEOTools\\Contracts\\MetaTags' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/MetaTags.php',
+        'Artesaos\\SEOTools\\Contracts\\OpenGraph' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/OpenGraph.php',
+        'Artesaos\\SEOTools\\Contracts\\SEOFriendly' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/SEOFriendly.php',
+        'Artesaos\\SEOTools\\Contracts\\SEOTools' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/SEOTools.php',
+        'Artesaos\\SEOTools\\Contracts\\TwitterCards' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/TwitterCards.php',
+        'Artesaos\\SEOTools\\Facades\\JsonLd' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/JsonLd.php',
+        'Artesaos\\SEOTools\\Facades\\JsonLdMulti' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/JsonLdMulti.php',
+        'Artesaos\\SEOTools\\Facades\\OpenGraph' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/OpenGraph.php',
+        'Artesaos\\SEOTools\\Facades\\SEOMeta' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/SEOMeta.php',
+        'Artesaos\\SEOTools\\Facades\\SEOTools' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/SEOTools.php',
+        'Artesaos\\SEOTools\\Facades\\TwitterCard' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/TwitterCard.php',
+        'Artesaos\\SEOTools\\JsonLd' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/JsonLd.php',
+        'Artesaos\\SEOTools\\JsonLdMulti' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/JsonLdMulti.php',
+        'Artesaos\\SEOTools\\OpenGraph' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/OpenGraph.php',
+        'Artesaos\\SEOTools\\Providers\\SEOToolsServiceProvider' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Providers/SEOToolsServiceProvider.php',
+        'Artesaos\\SEOTools\\SEOMeta' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/SEOMeta.php',
+        'Artesaos\\SEOTools\\SEOTools' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/SEOTools.php',
+        'Artesaos\\SEOTools\\Traits\\SEOTools' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Traits/SEOTools.php',
+        'Artesaos\\SEOTools\\TwitterCards' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/TwitterCards.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'BaconQrCode\\Common\\BitArray' => __DIR__ . '/..' . '/bacon/bacon-qr-code/src/Common/BitArray.php',
         'BaconQrCode\\Common\\BitMatrix' => __DIR__ . '/..' . '/bacon/bacon-qr-code/src/Common/BitMatrix.php',

@@ -51,10 +51,10 @@
                     <button class="boton-info" title="Ayuda" data-toggle="modal" data-target="#ModalInfoProd">?</button>
                 </div>
                 <div class="product-img product-feature-img mb-50" style="text-align: center;">
-                    <?php if(is_null($producto_Id['imagen_matriz'])): ?>
-                    <img src="../assets/images/matrizVacia.jpg" alt="matriz Vacia" />
+                    <?php if(!is_null($producto_Id->imagen_matriz)): ?>
+                        <img id="myImg" style="width: auto; max-width: 85%;" src=" /<?php echo e($producto_Id->imagen_matriz); ?>" alt="Matriz" />
                     <?php else: ?>
-                    <img id="myImg" style="width: auto; max-width: 85%;" src=" /<?php echo e($producto_Id->imagen_matriz); ?>" alt="Matriz" />
+                        <div>Matriz</div>
                     <?php endif; ?>
                 </div>
             </div>

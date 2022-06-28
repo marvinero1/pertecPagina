@@ -20,17 +20,39 @@
                     <ul class="details"></ul> 
                     <table class="table">
                         <tr><th>Caracteristicas</th><th style="text-align: center;">Detalle</th></tr>
-                        <tr><td>Denominación</td><td class="price">{{ $productos->denominacion }}</td></tr>
-                        <tr><td>Categoria</td><td class="price">{{ $productos->categoria }}</td></tr>
-                        <tr><td>Material</td><td class="price">{{ $productos->material }}</td></tr>
-                        <tr><td>Acabado</td><td class="price">{{ $productos->acabado }}</td></tr>
-                        <tr><td>Rosca</td><td class="price">{{ $productos->rosca }}</td></tr>
-                        <tr><td>Resistencia</td><td class="price">{{ $productos->resistencia }}</td></tr>
-                        <tr><td>Tratamiento</td><td class="price">{{ $productos->tratamiento }}</td></tr>
-                        <tr><td>Tipo</td><td class="price">{{ $productos->tipo }}</td></tr>
-                        <tr><td>SAE</td><td class="price">{{ $productos->sae }}</td></tr>
-                        <tr><td>ZB</td><td class="price">{{ $productos->zb }}</td></tr>
-                        <tr><td>ZAM</td><td class="price">{{ $productos->zam }}</td></tr>
+                        @if (!is_null($productos->denominacion))
+                            <tr><td>Denominación</td><td class="price">{{ $productos->denominacion }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->categoria))
+                            <tr><td>Categoria</td><td class="price">{{ $productos->categoria }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->material))
+                            <tr><td>Material</td><td class="price">{{ $productos->material }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->acabado))
+                            <tr><td>Acabado</td><td class="price">{{ $productos->acabado }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->rosca))
+                            <tr><td>Rosca</td><td class="price">{{ $productos->rosca }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->resistencia))
+                            <tr><td>Resistencia</td><td class="price">{{ $productos->resistencia }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->tratamiento))
+                            <tr><td>Tratamiento</td><td class="price">{{ $productos->tratamiento }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->tipo))
+                            <tr><td>Tipo</td><td class="price">{{ $productos->tipo }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->sae))
+                            <tr><td>SAE</td><td class="price">{{ $productos->sae }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->zb))
+                            <tr><td>ZB</td><td class="price">{{ $productos->zb }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->zam))
+                            <tr><td>ZAM</td><td class="price">{{ $productos->zam }}</td></tr>
+                        @endif
                     </table>
                 </div>
                 <div class="col-md-12">

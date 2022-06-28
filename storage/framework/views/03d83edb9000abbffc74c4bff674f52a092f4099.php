@@ -3,9 +3,7 @@
 <?php $__env->startSection('content'); ?>
 <div class="container"><br>
     <?php if(Session::has('novedad')): ?>
-    <div class="alert alert-success"><?php echo e(Session::get('novedad')); ?>
-
-    </div>
+        <div class="alert alert-success"><?php echo e(Session::get('novedad')); ?></div>
     <?php endif; ?>
     <div class="col">
         <div class="col-md-4" >
@@ -16,27 +14,46 @@
                     </div>                    
                     <div class="card-caption">
                         <span class="h2"><?php echo e($productos->nombre_producto); ?></span>
-                        
                     </div>
                 </div>
                 <div class="card-body">
-                    
-                    <ul class="details">
-                        
-                    </ul> 
+                    <ul class="details"></ul> 
                     <table class="table">
                         <tr><th>Caracteristicas</th><th style="text-align: center;">Detalle</th></tr>
-                        <tr><td>Denominación</td><td class="price"><?php echo e($productos->denominacion); ?></td></tr>
-                        <tr><td>Categoria</td><td class="price"><?php echo e($productos->categoria); ?></td></tr>
-                        <tr><td>Material</td><td class="price"><?php echo e($productos->material); ?></td></tr>
-                        <tr><td>Acabado</td><td class="price"><?php echo e($productos->acabado); ?></td></tr>
-                        <tr><td>Rosca</td><td class="price"><?php echo e($productos->rosca); ?></td></tr>
-                        <tr><td>Resistencia</td><td class="price"><?php echo e($productos->resistencia); ?></td></tr>
-                        <tr><td>Tratamiento</td><td class="price"><?php echo e($productos->tratamiento); ?></td></tr>
-                        <tr><td>Tipo</td><td class="price"><?php echo e($productos->tipo); ?></td></tr>
-                        <tr><td>SAE</td><td class="price"><?php echo e($productos->sae); ?></td></tr>
-                        <tr><td>ZB</td><td class="price"><?php echo e($productos->zb); ?></td></tr>
-                        <tr><td>ZAM</td><td class="price"><?php echo e($productos->zam); ?></td></tr>
+                        
+                        <?php if(!is_null($productos->denominacion)): ?>
+                            <tr><td>Denominación</td><td class="price"><?php echo e($productos->denominacion); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->categoria)): ?>
+                            <tr><td>Categoria</td><td class="price"><?php echo e($productos->categoria); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->material)): ?>
+                            <tr><td>Material</td><td class="price"><?php echo e($productos->material); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->acabado)): ?>
+                            <tr><td>Acabado</td><td class="price"><?php echo e($productos->acabado); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->rosca)): ?>
+                            <tr><td>Rosca</td><td class="price"><?php echo e($productos->rosca); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->resistencia)): ?>
+                            <tr><td>Resistencia</td><td class="price"><?php echo e($productos->resistencia); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->tratamiento)): ?>
+                            <tr><td>Tratamiento</td><td class="price"><?php echo e($productos->tratamiento); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->tipo)): ?>
+                            <tr><td>Tipo</td><td class="price"><?php echo e($productos->tipo); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->sae)): ?>
+                            <tr><td>SAE</td><td class="price"><?php echo e($productos->sae); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->zb)): ?>
+                            <tr><td>ZB</td><td class="price"><?php echo e($productos->zb); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->zam)): ?>
+                            <tr><td>ZAM</td><td class="price"><?php echo e($productos->zam); ?></td></tr>
+                        <?php endif; ?>
                     </table>
                 </div>
                 <div class="col-md-12">
@@ -61,7 +78,6 @@
                                 <i class="fa fa-th" aria-hidden="true"></i> Editar Matriz</button>
                             <div class="modal fade" id="myModalMatrizEdit<?php echo e($productos->id); ?>" role="dialog">
                                 <div class="modal-dialog">
-                                    <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -95,7 +111,6 @@
                             </div>
                         </div>
                             <img src="/<?php echo e($productos->imagen_matriz); ?>" class="img-responsive imgprod" alt="<?php echo e($productos->nombre_producto); ?>">
-                            
                         <?php else: ?>
                         <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal<?php echo e($productos->id); ?>">
                             <i class="fa fa-th" aria-hidden="true"></i> Agregar Matriz</button>
@@ -114,7 +129,6 @@
 
         <div class="modal fade" id="myModal<?php echo e($productos->id); ?>" role="dialog">
             <div class="modal-dialog">
-                <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -146,11 +160,9 @@
                 </div>
             </div>
         </div>
-
         
         <div class="modal fade" id="myModalNovedad<?php echo e($productos->id); ?>" role="dialog">
             <div class="modal-dialog">
-                <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
