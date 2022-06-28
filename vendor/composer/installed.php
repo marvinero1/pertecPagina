@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '6ac44a35454436ca7201b2aa3714a9e36a285c00',
+        'reference' => 'a47a0ec24fea3e1049a48485547230038ffa8104',
         'name' => 'labs64/pertec',
         'dev' => true,
     ),
@@ -35,6 +35,15 @@
             'install_path' => __DIR__ . '/../arcanedev/support',
             'aliases' => array(),
             'reference' => '046d87b2d638cd0687b4ba06991947df2422970d',
+            'dev_requirement' => false,
+        ),
+        'artesaos/seotools' => array(
+            'pretty_version' => 'v0.22.0',
+            'version' => '0.22.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../artesaos/seotools',
+            'aliases' => array(),
+            'reference' => '55746e0870d3bb6507479bd846d5528c46a7312e',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -559,7 +568,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '6ac44a35454436ca7201b2aa3714a9e36a285c00',
+            'reference' => 'a47a0ec24fea3e1049a48485547230038ffa8104',
             'dev_requirement' => false,
         ),
         'laravel/framework' => array(

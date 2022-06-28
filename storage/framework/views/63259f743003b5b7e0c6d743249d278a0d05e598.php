@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="<?php echo e(app()->getLocale()); ?>">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="wplly" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Maestros en Pernos &copy;">
-
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-
     <title><?php echo e(config('app.name')); ?></title>
+
+    <?php echo SEO::generate(); ?>
+
 
     <?php echo e(Html::style(mix('assets/page/css/app_page.css'))); ?>
 
     <?php echo e(Html::script(mix('assets/page/js/app_page.js'))); ?>
 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
     </script>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
     </script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">
-
     <script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
     <script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>    
 </head>
-
 <body>
     <div class="preloader">
         <div class="spinner">
@@ -43,11 +39,9 @@
             </div>
         </div>
     </div>
-
     <?php echo $__env->make('page.layouts.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->yieldContent('content'); ?>
     <?php echo $__env->make('page.layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
     <div>
         
         <a href="https://www.google.com/maps/search/pertec+bolivia/@-17.0792554,-66.8232489,7.25z" class="btn_Map_float"
@@ -65,13 +59,11 @@
             background-color: #ffcb00;
         }
     </style>
-
     <script type='text/javascript'>
         document.oncontextmenu = function () {
             return false
         }
     </script>
-
     <script type="text/javascript">
         jQuery(document).ready(function () {
             jQuery("#slider1").revolution({
@@ -125,5 +117,5 @@
         });
     </script>
 </body>
-
-</html><?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/layouts/main.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/layouts/main.blade.php ENDPATH**/ ?>

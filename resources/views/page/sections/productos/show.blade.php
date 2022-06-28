@@ -12,12 +12,8 @@
                         <h2 style="line-height: 70px; margin-top: -35px;">{{ $producto_Id->nombre_producto }}</h2>
                     </div>
                     <ol class="breadcrumb" style="display: unset !important;">
-                        <li>
-                            <a href="/">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="/productos">Productos</a>
-                        </li>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/productos">Productos</a></li>
                         <li class="active">Producto</li>
                     </ol>
                 </div>
@@ -51,10 +47,10 @@
                     <button class="boton-info" title="Ayuda" data-toggle="modal" data-target="#ModalInfoProd">?</button>
                 </div>
                 <div class="product-img product-feature-img mb-50" style="text-align: center;">
-                    @if(is_null($producto_Id['imagen_matriz']))
-                    <img src="../assets/images/matrizVacia.jpg" alt="matriz Vacia" />
+                    @if(!is_null($producto_Id->imagen_matriz))
+                        <img id="myImg" style="width: auto; max-width: 85%;" src=" /{{ $producto_Id->imagen_matriz }}" alt="Matriz" />
                     @else
-                    <img id="myImg" style="width: auto; max-width: 85%;" src=" /{{ $producto_Id->imagen_matriz }}" alt="Matriz" />
+                        <div>Matriz</div>
                     @endif
                 </div>
             </div>
@@ -191,24 +187,23 @@
                         <div class="widget-content">
                             <div class="row">
                                 @foreach ( $producto_sugeridos as $producto_sugeridoss )
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item clearfix">
-                                    <div class="product-img">
-                                        <img src="/{{ $producto_sugeridoss->imagen }}" style="height: auto; width: auto; max-height: 220px;"
-                                            alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a style="font-size: 1rem;" class="btn btn-secondary btn-block"
-                                                    href="{{ route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) ) }}">Detalles</a>
+                                    <div class="col-xs-12 col-sm-6 col-md-3 product-item clearfix">
+                                        <div class="product-img">
+                                            <img src="/{{ $producto_sugeridoss->imagen }}" style="height: auto; width: auto; max-height: 220px;"
+                                                alt="product">
+                                            <div class="product-hover">
+                                                <div class="product-cart">
+                                                    <a style="font-size: 1rem;" class="btn btn-secondary btn-block"
+                                                        href="{{ route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) ) }}">Detalles</a>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div style="height: 50px;">
+                                            <h4>
+                                                <a href="{{ route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) ) }}">{{ $producto_sugeridoss["nombre_producto"] }}</a>
+                                            </h4>
+                                        </div>
                                     </div>
-                                    <div style="height: 50px;">
-                                        <h4>
-                                            <a
-                                                href="{{ route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) ) }}">{{ $producto_sugeridoss["nombre_producto"] }}</a>
-                                        </h4>
-                                    </div>
-                                </div>
                                 @endforeach
                             </div>
                         </div>
@@ -218,7 +213,6 @@
         </div>
 </section>
 @include('page.sections.productos.modalInfoProd')
-
     <div id="myModalImg" class="modal">
         <button onclick="closeMod();" class="close">×</button>
         <img class="modal-content zoom" id="img01">
