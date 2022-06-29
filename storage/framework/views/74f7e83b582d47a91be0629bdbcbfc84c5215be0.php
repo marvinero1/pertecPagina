@@ -222,6 +222,81 @@
 
 
 
+
+<div id="sideNavigation" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <div class="cart-table table-responsive" style="background-color: aliceblue;">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="cart-product">
+                    <th class="cart-product-item">Código Producto</th>
+                    <th class="cart-product-item">Descripción</th>
+                    <th class="cart-product-item" style="line-height: 1 !important;">Unidad de Medida</th>
+                    <th class="cart-product-quantity">Cantidad</th>
+                    <th class="cart-product-total">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="cart-product">
+                    <td class="cart-product-quantity">
+                        <div>
+                            <h6>30NHMM15</h6>
+                        </div>
+                    </td>
+                    <td class="cart-product-item">
+                        <h6>BROCAS MM HSS 13</h6>
+                    </td>
+                    <td class="cart-product-quantity">
+                        <h6>PZ</h6>
+                    </td>
+                    <td class="cart-product-quantity">
+                        <h6>1</h6>
+                    </td>
+                    <td style="text-align: center">
+                        <input type="button" class="btn btn-danger" value="Eliminar">
+                    </td>
+                </tr>
+                <tr class="cart-product">
+                    <td class="cart-product-quantity">
+                        <h6>30NHMM15</h6>
+                    </td>
+                    <td class="cart-product-item">
+                        <h6>BROCAS MM HSS 13</h6>
+                    </td>
+                    <td class="cart-product-quantity">
+                        <h6>PZ</h6>
+                    </td>
+                    <td class="cart-product-quantity">
+                        <h6>2</h6>
+                    </td>
+                    <td style="text-align: center">
+                        <input type="button" class="btn btn-danger" value="Eliminar">
+                    </td>                                                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+  <section>
+    <a href="#" onclick="openNav()" class="btn btn-primary">Ejemplo pprueba</a>
+  </section>
+
+
+
+  <script>
+    function openNav() {
+        document.getElementById("sideNavigation").style.width = "375px";
+    }
+
+    function closeNav() {
+        document.getElementById("sideNavigation").style.width = "0";
+    }
+    </script>
+
+
+
 <style>
 
     .boton-info {
@@ -250,6 +325,62 @@
             padding-right: 30%;
         }
     }
+
+
+
+
+
+    .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #093070; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    z-index: 1030;
+}
+
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
+
+@media  screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+
 </style>
 
 

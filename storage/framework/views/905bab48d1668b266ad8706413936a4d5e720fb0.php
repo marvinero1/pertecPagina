@@ -5,7 +5,6 @@
 <?php $__env->startSection('content'); ?>
 <div class="content" style="height: 100%;">
     <div class="row" style="height: 100%; margin: 0;">
-        
         <div class="col-md-6 right" style="height: 100%;">
             <div style="height: 90%;">
                 <div class="login_wrapper" style="height: 100%; position: relative;">
@@ -52,6 +51,16 @@
 
                                     </div>
                                 <?php endif; ?>
+
+                                <?php echo htmlFormSnippet([
+                                    "theme" => "light",
+                                    "size" => "normal",
+                                    "tabindex" => "4",
+                                    "callback" => "callbackFunction",
+                                    "expired-callback" => "expiredCallbackFunction",
+                                    "error-callback" => "errorCallbackFunction",
+                                ]); ?>
+
 
                                 <div>
                                     <button class="btn btn-default submit" type="submit"><?php echo e(__('views.auth.login.action_0')); ?></button>
