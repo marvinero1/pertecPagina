@@ -201,7 +201,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button class="btn btn-primary" style="max-width: 200px; font-size: 1.3rem; height: 35px;">ACEPTAR</button>
+                                <button class="btn btn-primary" style="max-width: 200px; font-size: 1.3rem; height: 35px;">AÑADIR A CARRITO</button>
                             </div>
 
                         </div>
@@ -225,63 +225,56 @@
 
 <div id="sideNavigation" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-    <div class="cart-table table-responsive" style="background-color: aliceblue;">
-        <table class="table table-bordered">
-            <thead>
-                <tr class="cart-product">
-                    <th class="cart-product-item">Código Producto</th>
-                    <th class="cart-product-item">Descripción</th>
-                    <th class="cart-product-item" style="line-height: 1 !important;">Unidad de Medida</th>
-                    <th class="cart-product-quantity">Cantidad</th>
-                    <th class="cart-product-total">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="cart-product">
-                    <td class="cart-product-quantity">
-                        <div>
-                            <h6>30NHMM15</h6>
-                        </div>
-                    </td>
-                    <td class="cart-product-item">
-                        <h6>BROCAS MM HSS 13</h6>
-                    </td>
-                    <td class="cart-product-quantity">
-                        <h6>PZ</h6>
-                    </td>
-                    <td class="cart-product-quantity">
-                        <h6>1</h6>
-                    </td>
-                    <td style="text-align: center">
-                        <input type="button" class="btn btn-danger" value="Eliminar">
-                    </td>
-                </tr>
-                <tr class="cart-product">
-                    <td class="cart-product-quantity">
-                        <h6>30NHMM15</h6>
-                    </td>
-                    <td class="cart-product-item">
-                        <h6>BROCAS MM HSS 13</h6>
-                    </td>
-                    <td class="cart-product-quantity">
-                        <h6>PZ</h6>
-                    </td>
-                    <td class="cart-product-quantity">
-                        <h6>2</h6>
-                    </td>
-                    <td style="text-align: center">
-                        <input type="button" class="btn btn-danger" value="Eliminar">
-                    </td>                                                    </tr>
-            </tbody>
-        </table>
+    <div class="row title-carr">
+        <h5>Carrito de Cotización</h5>
     </div>
+
+    <div class="row cont-carr">
+        <div class="col-md-3" style="padding: 0px;">
+            <img src="/images/productos/10-084433-3.jpg" alt="perno con tuerca hexagonal grado 2 rosca ordinaria (piezas)" style="width: 85px;">
+        </div>
+        <div class="col-md-5">
+            <span>PERNO CON TUERCA HEXAGONAL GRADO 2 ROSCA ORDINARIA (PIEZAS)</span>
+        </div>
+        <div class="col-md-2">
+            <span>200 Pz.</span>
+        </div>
+        <div class="col-md-2">
+            <i class="fa fa-trash" style="font-size: 1.8rem;" title="Eliminar Item" aria-hidden="true"></i>
+            <i class="fa fa-eye" style="font-size: 1.8rem;" title="Ver Item" aria-hidden="true"></i>
+        </div>
+    </div>
+
+
+    <div class="row cont-carr">
+        <div class="col-md-3" style="padding: 0px;">
+            <img src="/images/productos/2-080153-10.jpg" alt="tuerca torque grado 5 unf zb" style="width: 85px;">
+        </div>
+        <div class="col-md-5">
+            <span>TUERCA TORQUE GRADO 5 UNF ZB</span>
+        </div>
+        <div class="col-md-2">
+            <span>50 Pz.</span>
+        </div>
+        <div class="col-md-2">
+            <i class="fa fa-trash" style="font-size: 1.8rem;" title="Eliminar Item" aria-hidden="true"></i>
+            <i class="fa fa-eye" style="font-size: 1.8rem;" title="Ver Item" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <br><br>
+    <div class="row" style="text-align: center;">
+        <button class="btn btn-primary" style="font-size: 1.3rem;">Ir a Cotización</button>
+    </div>
+
 </div>
 
 
-  <section>
-    <a href="#" onclick="openNav()" class="btn btn-primary">Ejemplo pprueba</a>
-  </section>
+
+    <a href="#" onclick="openNav()" class="btn btn-primary carr-despleg" title="Carrito Actual">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    </a>
+
 
 
 
@@ -328,7 +321,18 @@
 
 
 
+    .carr-despleg {
+        position: fixed;
+        top: 50%;
+        right: 0px;
+        width: 50px !important;
+        height: 50px;
+    }
 
+    .carr-despleg i {
+        font-size: 2rem;
+        margin-top: 20%;
+    }
 
     .sidenav {
     height: 100%; /* 100% Full-height */
@@ -380,7 +384,32 @@ body {
 }
 
 
+@media (max-width: 350px) {
+    .cont-carr {padding: 15px 5px 0px 65px !important;}
+}
+.cont-carr {
+    margin: 0;
+    padding: 15px 5px 0px 25px;
+    display: flex;
+    align-items: center;
+}
+.cont-carr div {
+    padding: 7px;
+    color: white;
+}
+.title-carr {
+    background-color: #ffcb00;
+    text-align: center;
+    margin: 0;
+    display: table;
+    width: 100%;
+    height: 60px;
+}
 
+.title-carr h5 {
+    display: table-cell;
+    vertical-align: middle;
+}
 </style>
 
 
