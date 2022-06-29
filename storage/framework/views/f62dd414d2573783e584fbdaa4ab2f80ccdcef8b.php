@@ -147,6 +147,7 @@
 	</nav>
 </header>
 
+
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog-login">
         <div class="modal-content">
@@ -181,14 +182,24 @@
                                     <?php echo e(session('status')); ?>
 
                                 </div>
-                            <?php endif; ?>
+                            <?php endif; ?> <br>
+                                <?php echo htmlFormSnippet([
+                                    "theme" => "light",
+                                    "size" => "normal",
+                                    "tabindex" => "4",
+                                    "callback" => "callbackFunction",
+                                    "expired-callback" => "expiredCallbackFunction",
+                                    "error-callback" => "errorCallbackFunction",
+                                ]); ?>
+
+                            <br>
 
                             <?php if(!$errors->isEmpty()): ?>
                                 <div class="alert alert-danger" role="alert">
                                     <?php echo $errors->first(); ?>
 
                                 </div>
-                            <?php endif; ?><br><br>
+                            <?php endif; ?><br>
 
                             <div style="text-align: center;">
                                 <button type="submit" class="btn btn-default btn-lg btn-block bg-blue color-white"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;

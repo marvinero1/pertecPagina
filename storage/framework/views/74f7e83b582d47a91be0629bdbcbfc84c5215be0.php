@@ -45,51 +45,98 @@
 
 
                     <div class="caption">
-                        <h3>CATEGORIA: </h3>
-                        <h5>PERNOS Y TUERCAS DE ACERO ALTA RESISTENCIA SAE</h5>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="details">
+                                <table class="table table-striped">
+                                    
+
+                                    <tbody>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>Denominación</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">PER HEX G2 C/TUE</h5>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>Categoría</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">PERNOS Y TUERCAS DE ACERO ALTA RESISTENCIA SAE</h5>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>Material</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">ACERO 1008/1020</h5>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>Acabado</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">PULIDO</h5>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>Rosca</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">UNC</h5>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>Resistencia</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">52/42 KG/MM2</h5>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>Tratamiento</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">S/N</h5>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>SAE</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">SI</h5>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>ZB</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">NO</h5>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-transform: uppercase;" class="table-prod-inf">
+                                            <td class="title-details">
+                                                <h4>ZAM</h4>
+                                            </td>
+                                            <td class="body-details">
+                                                <h5 class="font-frank-medium">NO</h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
 
 
-
-
-                        <ul style="text-transform: uppercase;" class="table-prod-inf list-unstyled">
-                            <li class="title-details">
-                                <span>Denominación</span>: <span class="font-frank-medium color-black">PER HEX G2 C/TUE</span>
-                            </li>
-                            <li class="title-details">
-                                <span>Material</span>: <span class="font-frank-medium color-black">ACERO 1008/1020</span>
-                            </li>
-                            <li class="title-details">
-                                <span>Acabado</span>: <span class="font-frank-medium color-black">PULIDO</span>
-                            </li>
-                            <li class="title-details">
-                                <span>Rosca</span>: <span class="font-frank-medium color-black">UNC</span>
-                            </li>
-                            <li class="title-details">
-                                <span>Resistencia</span>: <span class="font-frank-medium color-black">52/42 KG/MM2</span>
-                            </li>
-                            <li class="title-details">
-                                <span>Tratamiento</span>: <span class="font-frank-medium color-black">S/N</span>
-                            </li>
-                            <li class="title-details">
-                                <span>SAE</span>: <span class="font-frank-medium color-black">SI</span>
-                            </li>
-                            <li class="title-details">
-                                <span>ZB</span>: <span class="font-frank-medium color-black">NO</span>
-                            </li>
-                            <li class="title-details">
-                                <span>ZAM</span>: <span class="font-frank-medium color-black">NO</span>
-                            </li>
-                        </ul>
-
-
-
-
-
-                        
-
-
-
-
+                                </table>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -119,25 +166,43 @@
                         </div>
 
                         <div class="row">
-                            <h5 style="text-transform: uppercase;">Ingrese las medidas del producto que desee</h5>
-                            <div style="display: flex; justify-content: center;">
-                                <div class="col-xs-2 col-sm-2 col-md-2" style="width: 120px;">
-                                    <div class="form-group">
-                                        <input class="form-control" style="font-size: 1.3rem;" type="text" name="L" required>
+                            <div class="col-md-6">
+                                <div class="row padd-left">
+                                    <h6 style="text-transform: uppercase;">Ingrese las medidas del producto que desee</h6>
+                                    <div style="display: flex; justify-content: center;">
+                                        <div class="col-xs-2 col-sm-2 col-md-2" style="width: 120px;">
+                                            <div class="form-group">
+                                                <input class="form-control" style="font-size: 1.3rem;" type="text" name="L" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-1 col-sm-1 col-md-1" style="width: 26px; padding: 0;">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" value="X" style="background-color: white; text-align: center; font-size: 1.5rem; border-bottom: none; padding: 0;" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-2 col-sm-2 col-md-2" style="width: 120px;">
+                                            <div class="form-group">
+                                                <input class="form-control" style="font-size: 1.3rem;" type="text" name="D" required>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row padd-right">
+                                    <h6 style="text-transform: uppercase;">Ingrese Cantidad</h6>
+                                    <div style="display: flex; justify-content: center;">
+                                        <div class="col-xs-2 col-sm-2 col-md-2" style="width: 120px;">
+                                            <div class="form-group">
+                                                <input class="form-control" style="font-size: 1.3rem;" type="number" name="cantidad" required>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-1 col-sm-1 col-md-1" style="width: 26px; padding: 0;">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" value="X" style="background-color: white; text-align: center; font-size: 1.5rem; border-bottom: none; padding: 0;" readonly>
-                                    </div>
-                                </div>
-                                <div class="col-xs-2 col-sm-2 col-md-2" style="width: 120px;">
-                                    <div class="form-group">
-                                        <input class="form-control" style="font-size: 1.3rem;" type="text" name="D" required>
-                                    </div>
-                                </div>
-                            </div><br>
-                            <button class="btn btn-primary" style="max-width: 200px; font-size: 1.3rem; height: 35px;">ACEPTAR</button>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-primary" style="max-width: 200px; font-size: 1.3rem; height: 35px;">ACEPTAR</button>
+                            </div>
 
                         </div>
                     </div>
@@ -151,6 +216,8 @@
         </div>
         <hr class="mt-50 mb-30">
     </div>
+
+    <?php echo $__env->make('page.sections.carrito.modalInfoProd', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </section>
 
 
@@ -173,6 +240,15 @@
         background-color: #093070;
         color: #FBD800;
         border-color: #093070;
+    }
+
+    @media (min-width: 992px) {
+        .padd-left {
+            padding-left: 30%;
+        }
+        .padd-right {
+            padding-right: 30%;
+        }
     }
 </style>
 
