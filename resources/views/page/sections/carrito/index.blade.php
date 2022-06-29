@@ -1,14 +1,10 @@
 @extends('page.layouts.main')
 
 @section('content')
-
-
-
 <!-- Stepper CSS -->
 <link href="css/addons-pro/steppers.css" rel="stylesheet">
 <!-- Stepper CSS - minified-->
 <link href="css/addons-pro/steppers.min.css" rel="stylesheet">
-
 <!-- Stepper JavaScript -->
 <script type="text/javascript" src="js/addons-pro/steppers.js"></script>
 <!-- Stepper JavaScript - minified -->
@@ -35,10 +31,6 @@
         </div>
     </div>
 </section>
-
-
-
-
 
 <section class="signup-step-container">
     <div class="content">
@@ -232,18 +224,7 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-
-
-
-
 <style>
-
-
     .iconAcept {
         font-size: 10rem;
         color: green;
@@ -254,43 +235,30 @@
         animation-delay: 0.1s;
         animation-fill-mode: forwards;
     }
-
-
-
     @keyframes bubble2 {
         100% {
             color: blue;
         }
     }
-
-
-
     /*----------step-wizard------------*/
     .d-flex {
         display: flex;
     }
-
     .justify-content-center {
         justify-content: center;
     }
-
     /*---------signup-step-------------*/
-
     .signup-step-container {
         padding: 150px 0px 60px 0px;
     }
-
-
     .wizard .nav-tabs {
         position: relative;
         margin-bottom: 0;
         border-bottom-color: transparent;
     }
-
     .wizard>div.wizard-inner {
         position: relative;
     }
-
     .connecting-line {
         height: 2px;
         background: #e0e0e0;
@@ -302,7 +270,6 @@
         top: 50%;
         z-index: 1;
     }
-
     .wizard .nav-tabs>li.active>a,
     .wizard .nav-tabs>li.active>a:hover,
     .wizard .nav-tabs>li.active>a:focus {
@@ -311,7 +278,6 @@
         border: 0;
         border-bottom-color: transparent;
     }
-
     span.round-tab {
         width: 30px;
         height: 30px;
@@ -328,20 +294,14 @@
         font-weight: 500;
         border: 1px solid #ddd;
     }
-
-
-
     .wizard li.active span.round-tab {
         background: #093070;
         color: #fff;
         border-color: #093070;
     }
-
-
     .wizard .nav-tabs>li {
         width: 33%;
     }
-
     .wizard li:after {
         content: " ";
         position: absolute;
@@ -353,9 +313,6 @@
         border-bottom-color: red;
         transition: 0.1s ease-in-out;
     }
-
-
-
     .wizard .nav-tabs>li a {
         width: 30px;
         height: 30px;
@@ -366,7 +323,6 @@
         position: relative;
         top: 0;
     }
-
     .wizard .nav-tabs>li a i {
         position: absolute;
         top: -15px;
@@ -383,17 +339,13 @@
     .wizard .nav-tabs>li a:hover {
         background: transparent;
     }
-
     .wizard .tab-pane {
         position: relative;
         padding-top: 20px;
     }
-
-
     .wizard h3 {
         margin-top: 0;
     }
-
     .prev-step,
     .next-step {
         font-size: 1.2rem;
@@ -402,24 +354,20 @@
         border-radius: 4px;
         margin-top: 30px;
     }
-
     .next-step {
         background-color: #093070;
         color: #ffffff;
     }
-
     .step-head {
         font-size: 20px;
         text-align: center;
         font-weight: 500;
         margin-bottom: 20px;
     }
-
     .term-check {
         font-size: 14px;
         font-weight: 400;
     }
-
     .custom-file {
         position: relative;
         display: inline-block;
@@ -427,7 +375,6 @@
         height: 40px;
         margin-bottom: 0;
     }
-
     .custom-file-input {
         position: relative;
         z-index: 2;
@@ -436,7 +383,6 @@
         margin: 0;
         opacity: 0;
     }
-
     .custom-file-label {
         position: absolute;
         top: 0;
@@ -452,7 +398,6 @@
         border: 1px solid #ced4da;
         border-radius: .25rem;
     }
-
     .custom-file-label::after {
         position: absolute;
         top: 0;
@@ -469,13 +414,9 @@
         border-left: inherit;
         border-radius: 0 .25rem .25rem 0;
     }
-
-    .all-info-container {}
-
     .list-content {
         margin-bottom: 10px;
     }
-
     .list-content a {
         padding: 10px 15px;
         width: 100%;
@@ -486,11 +427,9 @@
         font-weight: 400;
         border-radius: 4px;
     }
-
     .list-content a[aria-expanded="true"] i {
         transform: rotate(180deg);
     }
-
     .list-content a i {
         text-align: right;
         position: absolute;
@@ -498,18 +437,14 @@
         right: 10px;
         transition: 0.5s;
     }
-
     .form-control[disabled],
     .form-control[readonly],
     fieldset[disabled] .form-control {
         background-color: #fdfdfd;
     }
-
     .list-box {
         padding: 10px;
     }
-
-
     /*-----------custom-checkbox-----------*/
     /*----------Custom-Checkbox---------*/
     input[type="checkbox"] {
@@ -517,14 +452,12 @@
         display: inline-block;
         margin-right: 5px;
     }
-
     input[type="checkbox"]::before,
     input[type="checkbox"]::after {
         position: absolute;
         content: "";
         display: inline-block;
     }
-
     input[type="checkbox"]::before {
         height: 16px;
         width: 16px;
@@ -534,89 +467,60 @@
         background-color: #fff;
         border-radius: 2px;
     }
-
     input[type="checkbox"]::after {
         height: 5px;
         width: 9px;
         left: 4px;
         top: 4px;
     }
-
     input[type="checkbox"]:checked::after {
         content: "";
         border-left: 1px solid #fff;
         border-bottom: 1px solid #fff;
         transform: rotate(-45deg);
     }
-
     input[type="checkbox"]:checked::before {
         background-color: #18ba60;
         border-color: #18ba60;
     }
-
-
-
-
-
-
     @media (max-width: 767px) {
         .sign-content h3 {
             font-size: 40px;
         }
-
         .wizard .nav-tabs>li a i {
             display: none;
         }
     }
-
 </style>
-
-
-
-
-
 <script>
     // ------------step-wizard-------------
     $(document).ready(function () {
         $('.nav-tabs > li a[title]').tooltip();
-
         //Wizard
         $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-
             var $target = $(e.target);
-
             if ($target.parent().hasClass('disabled')) {
                 return false;
             }
         });
 
         $(".next-step").click(function (e) {
-
             var $active = $('.wizard .nav-tabs li.active');
             $active.next().removeClass('disabled');
             nextTab($active);
 
         });
         $(".prev-step").click(function (e) {
-
             var $active = $('.wizard .nav-tabs li.active');
             prevTab($active);
-
         });
     });
 
     function nextTab(elem) {
         $(elem).next().find('a[data-toggle="tab"]').click();
     }
-
     function prevTab(elem) {
         $(elem).prev().find('a[data-toggle="tab"]').click();
     }
-
 </script>
-
-
-
-
-
 @endsection
