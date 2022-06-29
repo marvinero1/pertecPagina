@@ -187,6 +187,7 @@ return [
         Laraveles\Spanish\SpanishServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
     ],
 
     /*
@@ -249,6 +250,7 @@ return [
         'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
     ],
 
 ];

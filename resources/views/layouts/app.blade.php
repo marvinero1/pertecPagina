@@ -7,6 +7,7 @@
 
         {{--CSRF Token--}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        {!! htmlScriptTagJsApi(['lang' => 'es']) !!}
 
         <meta name="theme-color" content="#ffcb00">
         <meta name="theme-color" content="#ffcb00">
@@ -21,17 +22,13 @@
 
         {{--Title and Meta--}}
         <title>{{ config('app.name') }}</title>
-        
-        <script type='text/javascript'>
-            document.oncontextmenu = function(){return false}
-        </script>
+        <script type='text/javascript'>document.oncontextmenu = function(){return false}</script>
         {{--Common App Styles--}}
+
         {{ Html::style(mix('assets/app/css/app.css')) }} 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
         {{--Styles--}}
         @yield('styles')
-
         {{--Head--}}
         @yield('head')    
         <link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">

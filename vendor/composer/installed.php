@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a47a0ec24fea3e1049a48485547230038ffa8104',
+        'reference' => 'fe234589ea6e24d2837430b45bf6320532c92178',
         'name' => 'labs64/pertec',
         'dev' => true,
     ),
@@ -90,6 +90,15 @@
             'aliases' => array(),
             'reference' => '6b69015d83d3daf9004a71a89f26e27d27ef6a16',
             'dev_requirement' => true,
+        ),
+        'biscolab/laravel-recaptcha' => array(
+            'pretty_version' => 'v5.4.0',
+            'version' => '5.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../biscolab/laravel-recaptcha',
+            'aliases' => array(),
+            'reference' => '1bab726402d5376553a439b88a0faa07e84488fd',
+            'dev_requirement' => false,
         ),
         'brick/math' => array(
             'pretty_version' => '0.9.3',
@@ -568,7 +577,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a47a0ec24fea3e1049a48485547230038ffa8104',
+            'reference' => 'fe234589ea6e24d2837430b45bf6320532c92178',
             'dev_requirement' => false,
         ),
         'laravel/framework' => array(

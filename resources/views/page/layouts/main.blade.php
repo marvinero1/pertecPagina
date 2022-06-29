@@ -10,9 +10,21 @@
     <title>{{ config('app.name') }}</title>
 
     {!! SEO::generate() !!}
+    {!! htmlScriptTagJsApi(['lang' => 'es']) !!}
+    
+    <meta name="theme-color" content="#ffcb00">
+    <meta name="theme-color" content="#ffcb00">
+    <meta name="theme-color" content="#ffcb00">
 
     {{ Html::style(mix('assets/page/css/app_page.css')) }}
     {{ Html::script(mix('assets/page/js/app_page.js')) }}
+
+    <!-- Browser Color - Chrome, Firefox OS, Opera -->
+    <meta name="theme-color" content="#ffcb00"> 
+    <!-- Browser Color - Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#ffcb00"> 
+    <!-- Browser Color - iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffcb00">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://fonts.cdnfonts.com/css/franklin-gothic-demi-2" rel="stylesheet">

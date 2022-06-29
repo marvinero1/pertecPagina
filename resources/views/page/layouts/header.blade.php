@@ -150,6 +150,7 @@
 	</nav>
 </header>
 
+{{-- modal Login --}}
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog-login">
         <div class="modal-content">
@@ -181,13 +182,22 @@
                                 <div class="alert alert-success">
                                     {{ session('status') }}
                                 </div>
-                            @endif
+                            @endif <br>
+                                {!! htmlFormSnippet([
+                                    "theme" => "light",
+                                    "size" => "normal",
+                                    "tabindex" => "4",
+                                    "callback" => "callbackFunction",
+                                    "expired-callback" => "expiredCallbackFunction",
+                                    "error-callback" => "errorCallbackFunction",
+                                ]) !!}
+                            <br>
 
                             @if (!$errors->isEmpty())
                                 <div class="alert alert-danger" role="alert">
                                     {!! $errors->first() !!}
                                 </div>
-                            @endif<br><br>
+                            @endif<br>
 
                             <div style="text-align: center;">
                                 <button type="submit" class="btn btn-default btn-lg btn-block bg-blue color-white"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;

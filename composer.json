@@ -22,6 +22,7 @@
         "arcanedev/log-viewer": "^9.0",
         "artesaos/seotools": "^0.22.0",
         "barryvdh/laravel-dompdf": "^1.0",
+        "biscolab/laravel-recaptcha": "^5.4",
         "creativeorange/gravatar": "^1.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.2",
         "elgibor-solution/laravel-database-encryption": "^1.1",
