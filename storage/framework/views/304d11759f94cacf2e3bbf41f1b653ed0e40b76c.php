@@ -127,8 +127,7 @@
 
                                 </div>
                                 <ul class="list-inline pull-right">
-                                    <li><button type="button" class="default-btn next-step">Continue to next
-                                            step</button></li>
+                                    <li><button type="button" class="default-btn next-step">Siguiente</button></li>
                                 </ul>
                             </div>
 
@@ -200,8 +199,8 @@
 
 
                                 <ul class="list-inline pull-right">
-                                    <li><button type="button" class="default-btn prev-step">Atras</button></li>
-                                    <li><button type="button" class="default-btn next-step">Continuar</button></li>
+                                    <li><button type="button" class="default-btn prev-step">Atrás</button></li>
+                                    <li><button type="button" class="default-btn next-step">Siguiente</button></li>
                                 </ul>
                             </div>
 
@@ -216,8 +215,8 @@
                                 </div>
 
                                 <ul class="list-inline pull-right">
-                                    <li><button type="button" class="default-btn prev-step">Back</button></li>
-                                    <li><button type="button" class="default-btn next-step">Finish</button></li>
+                                    <li><button type="button" class="default-btn prev-step">Atrás</button></li>
+                                    <li><button type="button" class="default-btn next-step">Terminar</button></li>
                                 </ul>
                             </div>
 
@@ -395,7 +394,7 @@
 
     .prev-step,
     .next-step {
-        font-size: 13px;
+        font-size: 1.2rem;
         padding: 8px 24px;
         border: none;
         border-radius: 4px;
@@ -404,6 +403,7 @@
 
     .next-step {
         background-color: #093070;
+        color: #ffffff;
     }
 
     .step-head {

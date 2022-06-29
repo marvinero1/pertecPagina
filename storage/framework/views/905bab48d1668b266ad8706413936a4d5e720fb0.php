@@ -84,15 +84,9 @@
                 </div>
             </div>
         </div>
-
-
-
-         
-
+        
         <div class="col-md-6" id="bg-cover-login" style="height: 100%;">
-            
             <div class="bgImgCoverPages"></div>
-            
         </div>
     </div>
 </div>
@@ -102,7 +96,7 @@
         background: #093070 !important;
     }
     #bg-cover-login{
-        background: url(https://www.pertec.com.bo/assets/img/bg.jpg);
+        background: url(assets/images/bg.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
