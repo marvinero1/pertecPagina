@@ -50,6 +50,10 @@ class CarritoShopController extends Controller
         //
     }
 
+    public function CarBuyProductShow(CarritoShop $carritoShop){
+        return view('page.sections.carrito.show');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

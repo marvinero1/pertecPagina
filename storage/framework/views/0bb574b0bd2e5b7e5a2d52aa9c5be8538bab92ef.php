@@ -12,12 +12,8 @@
                         <h2 style="line-height: 70px; margin-top: -35px;"><?php echo e($producto_Id->nombre_producto); ?></h2>
                     </div>
                     <ol class="breadcrumb" style="display: unset !important;">
-                        <li>
-                            <a href="/">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="/productos">Productos</a>
-                        </li>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/productos">Productos</a></li>
                         <li class="active">Producto</li>
                     </ol>
                 </div>
@@ -191,24 +187,23 @@
                         <div class="widget-content">
                             <div class="row">
                                 <?php $__currentLoopData = $producto_sugeridos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $producto_sugeridoss): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="col-xs-12 col-sm-6 col-md-3 product-item clearfix">
-                                    <div class="product-img">
-                                        <img src="/<?php echo e($producto_sugeridoss->imagen); ?>" style="height: auto; width: auto; max-height: 220px;"
-                                            alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a style="font-size: 1rem;" class="btn btn-secondary btn-block"
-                                                    href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) )); ?>">Detalles</a>
+                                    <div class="col-xs-12 col-sm-6 col-md-3 product-item clearfix">
+                                        <div class="product-img">
+                                            <img src="/<?php echo e($producto_sugeridoss->imagen); ?>" style="height: auto; width: auto; max-height: 220px;"
+                                                alt="product">
+                                            <div class="product-hover">
+                                                <div class="product-cart">
+                                                    <a style="font-size: 1rem;" class="btn btn-secondary btn-block"
+                                                        href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) )); ?>">Detalles</a>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div style="height: 50px;">
+                                            <h4>
+                                                <a href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) )); ?>"><?php echo e($producto_sugeridoss["nombre_producto"]); ?></a>
+                                            </h4>
+                                        </div>
                                     </div>
-                                    <div style="height: 50px;">
-                                        <h4>
-                                            <a
-                                                href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($producto_sugeridoss->id) )); ?>"><?php echo e($producto_sugeridoss["nombre_producto"]); ?></a>
-                                        </h4>
-                                    </div>
-                                </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
                         </div>
@@ -218,7 +213,6 @@
         </div>
 </section>
 <?php echo $__env->make('page.sections.productos.modalInfoProd', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
     <div id="myModalImg" class="modal">
         <button onclick="closeMod();" class="close">×</button>
         <img class="modal-content zoom" id="img01">

@@ -126,7 +126,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('confirmation', 'HomeController@confirmation')->name('confirmacionEmail');
     // Route::get('sitemap','HomeController@sitemap')->name('sitemap');
     Route::get('car_buy', 'Admin\CarritoShopController@index')->name('car_buy');
-    Route::get('car_buy_details', 'Admin\CarritoShopDetailController@index')->name('car_buy');
+    Route::get('CarBuyProductShow', 'Admin\CarritoShopController@CarBuyProductShow')->name('car_buy');
 
 /**
 * Membership
