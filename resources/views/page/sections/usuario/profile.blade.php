@@ -15,45 +15,37 @@
                     @else
                     <h6 class="lead font-frank-demi" style="color: green">Usuario Verificado <i class="fa fa-check-circle-o" aria-hidden="true"></i></h6>
                     @endif
-                        <div class="row about-list">
-                            <div class="col-md-6">
-                                <div class="media">
-                                    <label>Código de Usuario</label>
-                                    <p>{{ $user_id->id }}</p>
-                                </div>
-                                <div class="media">
-                                    <label>Nombres</label>
-                                    <p>{{ $user_id->name }}</p>
-                                </div>
-                                <div class="media">
-                                    <label>Apellidos</label>
-                                    <p>{{ $user_id->apellido }}</p>
-                                </div>
-
+                    <div class="row about-list">
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label>Código de Usuario</label>
+                                <p>{{ $user_id->id }}</p>
                             </div>
-                            <div class="col-md-6">
-                                <div class="media">
-                                    <label>Ciudad</label>
-                                    <p>{{ $user_id->ciudad }}</p>
-                                </div>
-                                <div class="media">
-                                    <label>Celular</label>
-                                    <p>{{ $user_id->celular }}</p>
-                                </div>
-                                <div class="media">
-                                    <label>NIT/CI</label>
-                                    <p>{{ $user_id->nit }}</p>
-                                </div>
+                            <div class="media">
+                                <label>Nombres</label>
+                                <p>{{ $user_id->name }}</p>
+                            </div>
+                            <div class="media">
+                                <label>Apellidos</label>
+                                <p>{{ $user_id->apellido }}</p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label>Ciudad</label>
+                                <p>{{ $user_id->ciudad }}</p>
+                            </div>
+                            <div class="media">
+                                <label>Celular</label>
+                                <p>{{ $user_id->celular }}</p>
+                            </div>
+                            <div class="media">
+                                <label>NIT/CI</label>
+                                <p>{{ $user_id->nit }}</p>
                             </div>
                         </div>
-                    {{--<div class="row about-list">
-                            <div class="col-md-12">
-                                <div class="media">
-                                    <label>Correo</label>
-                                    <p>{{ $user_id->email }}</p>
-                                </div>
-                            </div>
-                        </div>--}}
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4" style="text-align: center; margin-left: -5%;">

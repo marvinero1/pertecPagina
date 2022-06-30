@@ -1,9 +1,3 @@
-{{-- aca el producto, con su imagen y su matriz.
-inputs de cantidad.
-inputs de medida para su pedido. --}}
-
-
-
 @extends('page.layouts.main')
 
 @section('content')
@@ -34,32 +28,17 @@ inputs de medida para su pedido. --}}
         {{-- <h1 style="text-align: center; text-transform: uppercase;"><b>{{ $producto_Id->nombre_producto }}</b></h1><br> --}}
         <h1 style="text-align: center; text-transform: uppercase;"><b>PERNO CON TUERCA HEXAGONAL GRADO 2 ROSCA ORDINARIA (PIEZAS)</b></h1><br>
         <div class="row">
-
-          {{-- carddddddddddddddddddddddddddddddddddd --}}
-
-
-
             <div class="col-xs-12 col-sm-12 col-md-4 sidebar sidebar-full">
                 <div class="thumbnail">
                     <div class="container-hover">
                         <div class="shop-content">
-                            {{-- @if($producto_Id->promocion=="si")
-                                <div class="infProd" style="background-color: #FBD800;">
-                                    EN OFERTA
-                                </div>
-                            @endif
-                            @if($producto_Id->novedad=="si")
-                                <div class="infProd" style="background-color: #093070;">
-                                    NUEVO
-                                </div>
-                            @endif --}}
+                            
                             <div class="product-img product-feature-img mb-50">
                                 {{-- <img src="/{{ $producto_Id->imagen }}" alt="{{ $producto_Id->nombre_producto }}" /> --}}
                                 <img src="/images/productos/10-084433-3.jpg" alt="perno con tuerca hexagonal grado 2 rosca ordinaria (piezas)">
                             </div>
                         </div>
                     </div>
-
 
                     <div class="caption">
                         <div class="tab-content">
