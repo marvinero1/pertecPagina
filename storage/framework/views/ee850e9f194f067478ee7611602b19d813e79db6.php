@@ -7,7 +7,6 @@
 style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
-
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-title title-1 text-center texto-borde">
@@ -80,8 +79,8 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
                                             <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">1023109029</h6>
                                             <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">
-                                                00000<?php echo e($verfactura->codigo); ?></h6>
-                                            <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">
+                                                000<?php echo e($verfactura->codigo); ?></h6>
+                                            <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left; word-wrap: break-word;">
                                                 <?php echo e($verfactura->cuf); ?></h6>
                                         </div>
                                     </div>
@@ -135,7 +134,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                         <table class="table greyGridTable">
                                             <thead>
                                                 <tr>
-                                                    <th>#</th>
+                                                    
                                                     <th>CODIGO PRODUCTO</th>
                                                     <th colspan="2" style="text-align: center;">DESCRIPCION</th>
                                                     <th>UNIDAD DE MEDIDA</th>
@@ -149,7 +148,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                             <tbody>
                                                 <?php $__currentLoopData = $vefacturaProducto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturaDetalles): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <tr>
-                                                    <td><?php echo e($vefacturaDetalles->codfactura); ?></td>
+                                                    
                                                     <td><?php echo e($vefacturaDetalles->coditem); ?></td>
                                                     <td class="alingLeft"><?php echo e($vefacturaDetalles->descripcion); ?></td>
                                                     <td class="alingLeft"><?php echo e($vefacturaDetalles->medida); ?></td>
@@ -208,7 +207,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                         ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS, EL USO ILÍCITO DE ESTA SERÁ
                                         SANCIONADO PENALMENTE DE ACUERDO A LEY.
                                     </h6>
-                                    <p class="infoFactura"><?php echo e($leyendaFactura->descripcionleyenda); ?></p>
+                                    <p class="infoFactura"><?php echo e($verfactura->leyenda); ?></p>
                                     <?php if($en_linea != 0 ): ?>
                                     <p class="infoFactura">
                                         Este documento es la Representación Gráfica de un Documento Fiscal Digital
@@ -223,7 +222,12 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                     </p><br>
                                     <?php endif; ?>
                                     <p class="infoFactura" style="text-align: right;">
-                                        <?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?></p>
+                                        <?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?></p><br>
+
+                                    <p class="infoFactura" style="text-align: right;">
+                                        La factura tambien se encuentra disponible en el siguiente link:
+                                        <a href="www.pertec.com.bo">www.pertec.com.bo</a>
+                                    </p>
                                 </div>
                                 <div class="col-md-4"><br>
                                     <?php echo QrCode::format('svg')->size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'); ?>
@@ -258,6 +262,9 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
     </div>
 </section>
 <style>
+    a{
+        color: #000000;
+    }
     body {
         font-family: Tahoma, Verdana, Segoe, sans-serif !important;
     }

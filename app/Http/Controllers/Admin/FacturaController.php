@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Hashids\Hashids;
+use Illuminate\Support\Str;
 use Session;
 use numeroaletras;
 use modelonumero;
@@ -21,7 +22,7 @@ class FacturaController extends Controller{
     public function index(Request $request){
         $hash=new Hashids();
         $nit = $request->get('nit');
-        $vefactura = empty($vefactura) ? DB::table('vefactura')->where('nit', $nit)->paginate(20): $vefactura;
+        $vefactura = empty($vefactura) ? DB::table('vefactura')->where('nit', $nit)->orderByDesc('fechareg', 'desc')->paginate(20): $vefactura;
 
         if($nit == "0"){
             Session::flash('warning','NIT o C.I No puede ser 0.');
@@ -31,7 +32,6 @@ class FacturaController extends Controller{
     }
 
     public function viewPDF($codfactura){
-
         $numeroaletras = new numeroaletras();
         $modelonumero = new modelonumero();
 
@@ -54,7 +54,6 @@ class FacturaController extends Controller{
         $verfactura = DB::table('vefactura')->where('codigo', $codfactura)->first();
         $vefacturaDetalle = DB::table('vefactura1')->where('codfactura', $codfactura)->get();
         $item = DB::table('initem')->get();
-        $leyendaFactura = DB::table('adsiat_leyenda_factura')->inRandomOrder()->first();
         $vefacturaProducto = DB::table('vefactura1')
         ->join('initem', function($join) use($codfactura){
             $join->on('vefactura1.coditem', '=', 'initem.codigo')
@@ -95,7 +94,7 @@ class FacturaController extends Controller{
 
         $pdf = \PDF::loadView('page.sections.facturas.pdf', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','en_linea','totalParse','descuento_round','total_menos_descuento_round'));
+        'total_literal','en_linea','totalParse','descuento_round','total_menos_descuento_round'));
 
         $pdf_download= $pdf->download('mi-factura-pertec-'.$verfactura->codigo.'.pdf');
 
@@ -168,6 +167,7 @@ class FacturaController extends Controller{
         $pdf_download= $pdf->download('mi-factura-pertec-'.$verfactura->codigo.'.pdf');
 
         return $pdf_download;
+
     }
 
     public function facturaVista(Request $request){
@@ -201,8 +201,6 @@ class FacturaController extends Controller{
         $verfactura = DB::table('vefactura')->where('codigo', $codfactura)->first();
         $vefacturaDetalle = DB::table('vefactura1')->where('codfactura', $codfactura)->get();
         $item = DB::table('initem')->get();
-
-        $leyendaFactura = DB::table('adsiat_leyenda_factura')->inRandomOrder()->first();
 
         $vefacturaProducto = DB::table('vefactura1')
         ->join('initem', function($join) use($codfactura){
@@ -244,7 +242,7 @@ class FacturaController extends Controller{
         
         return view('page.sections.facturas.pdf', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','descuento_round','total_menos_descuento_round'));
+        'total_literal','descuento_round','total_menos_descuento_round',));
 
     }
 
@@ -253,7 +251,6 @@ class FacturaController extends Controller{
         $total=0;
 
         $verfactura = DB::table('vefactura')->where('codigo', $codfactura)->first();
-        $leyendaFactura = DB::table('adsiat_leyenda_factura')->inRandomOrder()->first();
         $vefacturaProducto = DB::table('vefactura1')
         ->join('initem', function($join) use($codfactura){
             $join->on('vefactura1.coditem', '=', 'initem.codigo')
@@ -292,7 +289,7 @@ class FacturaController extends Controller{
 
         return view('page.sections.facturas.pruebaRollo', compact('verfactura','vefacturaProducto','cod_item',
         'cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','totalParse','en_linea','descuento_round','total_menos_descuento_round'));
+        'total_literal','totalParse','en_linea','descuento_round','total_menos_descuento_round'));
     }
 
     // funcion vista facturas con usuario logueado
@@ -332,7 +329,6 @@ class FacturaController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function show($codfactura){
-        
         $numeroaletras = new numeroaletras();
         $modelonumero = new modelonumero();
         $hash = new Hashids();
@@ -357,7 +353,6 @@ class FacturaController extends Controller{
         $verfactura = DB::table('vefactura')->where('codigo', $hash_id)->first();
         $vefacturaDetalle = DB::table('vefactura1')->where('codfactura', $hash_id)->get();
         $item = DB::table('initem')->get();
-        $leyendaFactura = DB::table('adsiat_leyenda_factura')->inRandomOrder()->first();
 
         $vefacturaProducto = DB::table('vefactura1')
         ->join('initem', function($join) use($hash_id){
@@ -372,7 +367,6 @@ class FacturaController extends Controller{
         // dd($verfactura);
 
         foreach($vefacturaProducto as $vefacturaProductos){
-            
             $cod_factura = $vefacturaProductos->codfactura;
             $cod_item = $vefacturaProductos->coditem;
             $precio_lista = $vefacturaProductos->preciolista;
@@ -392,8 +386,8 @@ class FacturaController extends Controller{
             $descuento = $cantidad_precio_decimal - $cantidad_precioneto_decimal;
 
             $total_menos_descuento = $total - $descuento; 
-            
         } 
+
         $descuento_round=round($descuento);
         $total_menos_descuento_round = round($total_menos_descuento,2);
 
@@ -401,7 +395,7 @@ class FacturaController extends Controller{
         
         return view('page.sections.facturas.show', compact('vefacturaDetalle','item','verfactura','vefacturaProducto','cod_factura',
         'cod_item','cantidad_precio_decimal','cantidad_precioneto_decimal','sub_total','total','descuento','total_menos_descuento',
-        'total_literal','leyendaFactura','en_linea','hash','totalParse','total_menos_descuento_round','descuento_round'));
+        'total_literal','en_linea','hash','totalParse','total_menos_descuento_round','descuento_round'));
     }
 
     /**

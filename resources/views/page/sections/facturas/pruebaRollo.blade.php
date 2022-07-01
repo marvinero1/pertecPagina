@@ -223,7 +223,7 @@
                                         <tr style="height: 5px;"></tr>
                                         <tr>
                                             <td>
-                                                <p style="text-align: center !important;">{{ $leyendaFactura->descripcionleyenda }}</p>
+                                                <p style="text-align: center !important;">{{ $verfactura->leyenda }}</p>
                                             </td>
                                         </tr>
                                         <tr style="height: 5px;"></tr>

@@ -47,19 +47,17 @@
             <table class="section1">
                 <tbody>
                     <tr>
-                        <td colspan="2">NIT
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
-                        <td colspan="2">{{ $verfactura->nit }}</td>
+                        <td colspan="3">NIT: </td>
+                        <td colspan="2"> {{ $verfactura->nit }}</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td colspan="2">FACTURA No. &nbsp;:</td>
-                        <td colspan="2">{{ $verfactura->codigo }}</td>
-                        <td></td>
+                        <td colspan="3">FAC. N°: &nbsp;&nbsp; </td>
+                        <td colspan="3"> {{ $verfactura->codigo }}</td>
                     </tr>
                     <tr>
-                        <td colspan="3">COD. AUTORIZACION: </td>
-                        <td colspan="3" style="width: 155px;">{{ $verfactura->cuf }}</td>
+                        <td colspan="3">COD. AUTORIZACION:&nbsp;&nbsp;</td>
+                        <td colspan="4" style="width:155px;word-wrap:break-word;">&nbsp;&nbsp;&nbsp; {{ $verfactura->cuf }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -175,7 +173,7 @@
                     <tr style="height: 5px;"></tr>
                     <tr>
                         <td>
-                            <p style="text-align: center !important;">{{ $leyendaFactura->descripcionleyenda }}</p>
+                            <p style="text-align: center !important;">{{ $verfactura->leyenda }}</p>
                         </td>
                     </tr>
                     <tr style="height: 5px;"></tr>
@@ -208,6 +206,10 @@
                     <tr style="font-size: 13px;">
                         <td>***PERNOS-TUERCAS-TORNILLOS***</td>
                     </tr>
+                    <p class="infoFactura" style="text-align: right;">
+                        La factura tambien se encuentra disponible en el siguiente link:
+                        <a href="www.pertec.com.bo">www.pertec.com.bo</a>
+                    </p>
                 </tfoot>
             </table>
         </div>
