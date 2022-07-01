@@ -1,12 +1,10 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-<!-- page content -->
 <div class="container">
     <div class="row">
         @if (Session::has('novedad'))
-        <div class="alert alert-success">{{ Session::get('novedad') }}
-        </div>
+        <div class="alert alert-success">{{ Session::get('novedad') }}</div>
         @endif
 
         <div class="title_left" style="text-align: center;">
@@ -14,8 +12,7 @@
         </div><br>
 
         @if (Session::has('danger'))
-        <div class="alert alert-danger">{{ Session::get('danger') }}
-        </div>
+        <div class="alert alert-danger">{{ Session::get('danger') }}</div>
         @endif
 
         <div class="row"><br>
@@ -76,7 +73,7 @@
                                                     data-target="#myModal" title="Más información">
                                                     <span class="glyphicon glyphicon-eye-open"
                                                         aria-hidden="true"></span></button>
-                                            </a></p>
+                                        </a></p>
                                     </div>
                                 </div>
                                 <div class="caption">
@@ -100,7 +97,6 @@
                         <div class="container">
                             <div class="modal fade" id="myModal{{$productos->id}}" role="dialog">
                                 <div class="modal-dialog">
-                                    <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -139,46 +135,38 @@
     </div>
     </div>
 </div>
-<!-- /page content -->
 <style>    
 th,td,h4,
     .modal-header {
         text-align: center;
     }
-
     .row1 {
         text-align: left;
     }
-
     img {
         max-width: 100%;
         max-height: 100%;
     }
-
     .cat {
         height: 250px;
         width: 95%;
         display: block;
         margin: auto;
     }
-
     /* cards */
     .thumbnail {
         height: 100% !important;
     }
-
     .img-responsive,
     .thumbnail .image {
         width: 100%;
         height: 100% !important;
     }
-
     .container-hover {
         padding: 0px;
         position: relative;
         background-color: #26B99A;
     }
-
     .image {
         opacity: 1;
         display: block;
@@ -187,7 +175,6 @@ th,td,h4,
         transition: .5s ease;
         backface-visibility: hidden;
     }
-
     .middle {
         transition: .5s ease;
         opacity: 0;
@@ -200,15 +187,12 @@ th,td,h4,
         -ms-transform: translate(-50%, -50%);
         text-align: center;
     }
-
     .container-hover:hover .image {
         opacity: 0.3;
     }
-
     .container-hover:hover .middle {
         opacity: 1;
     }
-
     .btn-borde {
         font-weight: bold;
         border: 2px solid #007bff;
@@ -231,11 +215,9 @@ th,td,h4,
         position: relative;
         left: 48%;
     }
-
     .modal-title {
         position: absolute;
     }
-
     .fade-scale {
         transform: scale(0);
         opacity: 0;
@@ -243,7 +225,6 @@ th,td,h4,
         -o-transition: all .25s linear;
         transition: all .25s linear;
     }
-
     .fade-scale.in {
         opacity: 1;
         transform: scale(1);
