@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
     style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
@@ -213,9 +211,9 @@
         </div>
 </section>
 <?php echo $__env->make('page.sections.productos.modalInfoProd', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <div id="myModalImg" class="modal">
+    <div id="myModalImg" class="modalImage-Inf">
         <button onclick="closeMod();" class="close">×</button>
-        <img class="modal-content zoom" id="img01">
+        <img class="modal-content-1 zoom" id="img01">
         <div id="caption"></div>
     </div>
 <style>
@@ -229,7 +227,7 @@
     }
 
     /* The Modal (background) */
-    .modal {
+    .modalImage-Inf {
         display: none;
         /* Hidden by default */
         position: fixed;
@@ -253,7 +251,7 @@
     }
 
     /* Modal Content (image) */
-    .modal-content {
+    .modal-content-1 {
         margin: auto;
         display: block;
         width: 80%;
@@ -271,7 +269,7 @@
         height: 150px;
     }
     /* Add Animation */
-    .modal-content,
+    .modal-content-1,
     #caption {
         -webkit-animation-name: zoom;
         -webkit-animation-duration: 0.6s;
@@ -315,7 +313,7 @@
 
     /* 100% Image Width on Smaller Screens */
     @media  only screen and (max-width: 700px) {
-        .modal-content {
+        .modal-content-1 {
             width: 100%;
         }
 

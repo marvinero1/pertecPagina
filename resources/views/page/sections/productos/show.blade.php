@@ -213,9 +213,9 @@
         </div>
 </section>
 @include('page.sections.productos.modalInfoProd')
-    <div id="myModalImg" class="modal">
+    <div id="myModalImg" class="modalImage-Inf">
         <button onclick="closeMod();" class="close">×</button>
-        <img class="modal-content zoom" id="img01">
+        <img class="modal-content-1 zoom" id="img01">
         <div id="caption"></div>
     </div>
 <style>
@@ -229,7 +229,7 @@
     }
 
     /* The Modal (background) */
-    .modal {
+    .modalImage-Inf {
         display: none;
         /* Hidden by default */
         position: fixed;
@@ -253,7 +253,7 @@
     }
 
     /* Modal Content (image) */
-    .modal-content {
+    .modal-content-1 {
         margin: auto;
         display: block;
         width: 80%;
@@ -271,7 +271,7 @@
         height: 150px;
     }
     /* Add Animation */
-    .modal-content,
+    .modal-content-1,
     #caption {
         -webkit-animation-name: zoom;
         -webkit-animation-duration: 0.6s;
@@ -315,7 +315,7 @@
 
     /* 100% Image Width on Smaller Screens */
     @media only screen and (max-width: 700px) {
-        .modal-content {
+        .modal-content-1 {
             width: 100%;
         }
 

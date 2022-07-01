@@ -1,6 +1,6 @@
-<div class="modal fade-scale" id="ModalInfoProd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modalInfProd fade-scale" id="ModalInfoProd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
-		<div class="modal-content">
+		<div class="modal-content-2">
 			<div class="modal-header">
 				<h4 class="modal-title" style="text-align: center;">Información</h4>
 				<button type="button" class="close button-modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -17,7 +17,7 @@
 
 <div id="myModalImg2" class="modal">
     <button onclick="closeMod();" class="close">×</button>
-    <img class="modal-content" id="img02">
+    <img class="modal-content-2" id="img02">
     <div id="caption2"></div>
 </div>
 
@@ -32,7 +32,7 @@
         padding-top: 10px !important;
     }
     /* The Modal (background) */
-    .modal {
+    .modalInfProd {
         display: none;
         /* Hidden by default */
         position: fixed;
@@ -56,7 +56,7 @@
     }
 
     /* Modal Content (image) */
-    .modal-content {
+    .modal-content-2 {
         margin: auto;
         display: block;
         width: 130% !important;
@@ -74,7 +74,7 @@
         height: 150px;
     }
     /* Add Animation */
-    .modal-content,
+    .modal-content-2,
     #caption {
         -webkit-animation-name: zoom;
         -webkit-animation-duration: 0.6s;
@@ -118,7 +118,7 @@
     }
     /* 100% Image Width on Smaller Screens */
     @media  only screen and (max-width: 700px) {
-        .modal-content {
+        .modal-content-2 {
             width: 100%;
         }
         .zoom:hover {
