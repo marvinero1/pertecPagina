@@ -37,8 +37,7 @@ class Meta
         return $this->propertyFactory->set($name, $content, $attributes);
     }
 
-    public function render($keys = [])
-    {
+    public function render($keys = []){
         $keys = is_string($keys) ? explode(',', str_replace(['(', ')', '[', ']'], '', $keys)) : $keys;
 
         $keys = collect($keys);

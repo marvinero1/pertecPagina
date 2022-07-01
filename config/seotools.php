@@ -18,7 +18,7 @@ return [
             'robots'       => false, // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
         ],
         /*
-         * Webmaster tags are always added.
+        * Webmaster tags are always added.
          */
         'webmaster_tags' => [
             'google'    => null,
@@ -33,7 +33,7 @@ return [
     ],
     'opengraph' => [
         /*
-         * The default configurations to be used by the opengraph generator.
+            * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
             'title'       => 'Over 9000 Thousand!', // set false to total remove
@@ -46,8 +46,8 @@ return [
     ],
     'twitter' => [
         /*
-         * The default values to be used by the twitter cards generator.
-         */
+            * The default values to be used by the twitter cards generator.
+        */
         'defaults' => [
             //'card'        => 'summary',
             //'site'        => '@LuizVinicius73',

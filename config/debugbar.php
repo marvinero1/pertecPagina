@@ -166,5 +166,4 @@ return [
      |
      */
     'route_prefix' => '_debugbar',
-
 ];
