@@ -1,6 +1,6 @@
 <div class="modalInfProd fade-scale" id="ModalInfoProd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
-		<div class="modal-content-2">
+		<div class="modal-content modal-content-2">
 			<div class="modal-header">
 				<h4 class="modal-title" style="text-align: center;">Información</h4>
 				<button type="button" class="close button-modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -53,7 +53,7 @@
         /* Enable scroll if needed */
         background-color: rgb(0, 0, 0);
         /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(9, 48, 106, 0.6);
         /* Black w/ opacity */
     }
 
