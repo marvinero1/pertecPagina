@@ -3,7 +3,7 @@
         <tbody>
             <tr>
                 <td rowspan="3">
-                    <img src="http://labsystem.pertec.com.bo/assets/images/icon.png" alt="Pertec S.R.L &copy;" width="100px">
+                    <img src="http://labsystem.pertec.com.bo/assets/images/icon.png" alt="Pertec S.R.L &copy;" width="120px">
                 </td>
                 <td rowspan="3" style="text-align: center;">
                     <h6 class="font-frank-demi" style="font-size: 0.7rem; line-height: 0px; margin-bottom: 0px;">PERTEC

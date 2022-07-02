@@ -132,7 +132,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                         <table class="table greyGridTable">
                                             <thead>
                                                 <tr>
-                                                    {{-- <th>#</th> --}}
+                                                    <th></th>
                                                     <th>CODIGO PRODUCTO</th>
                                                     <th colspan="2" style="text-align: center;">DESCRIPCION</th>
                                                     <th>UNIDAD DE MEDIDA</th>
@@ -146,7 +146,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                             <tbody>
                                                 @foreach ($vefacturaProducto as $vefacturaDetalles)
                                                 <tr>
-                                                    {{-- <td>{{ $vefacturaDetalles->codfactura }}</td> --}}
+                                                    <td></td>
                                                     <td>{{ $vefacturaDetalles->coditem }}</td>
                                                     <td class="alingLeft">{{ $vefacturaDetalles->descripcion }}</td>
                                                     <td class="alingLeft">{{ $vefacturaDetalles->medida }}</td>
@@ -205,25 +205,25 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                     </h6>
                                     <p class="infoFactura">{{ $verfactura->leyenda }}</p>
                                     @if($en_linea != 0 )
-                                    <p class="infoFactura">
-                                        Este documento es la Representación Gráfica de un Documento Fiscal Digital
-                                        emitido en una
-                                        modalidad de facturación local
-                                    </p><br>
+                                        <p class="infoFactura">
+                                            Este documento es la Representación Gráfica de un Documento Fiscal Digital
+                                            emitido en una
+                                            modalidad de facturación local
+                                        </p><br>
                                     @else
-                                    <p class="infoFactura">
-                                        Este documento es la Representación Gráfica de un Documento Fiscal Digital
-                                        emitido en una
-                                        modalidad de facturación en línea
-                                    </p><br>
+                                        <p class="infoFactura">
+                                            Este documento es la Representación Gráfica de un Documento Fiscal Digital
+                                            emitido en una
+                                            modalidad de facturación en línea
+                                        </p><br>
                                     @endif
-                                    <p class="infoFactura" style="text-align: right;">
-                                        {{ $verfactura->id }}-{{ $verfactura->numeroid }}</p><br>
-
+                                    
                                     <p class="infoFactura" style="text-align: right;">
                                         La factura tambien se encuentra disponible en el siguiente link:
                                         <a href="www.pertec.com.bo">www.pertec.com.bo</a>
-                                    </p>
+                                    </p><br>
+                                    <p class="infoFactura" style="text-align: right;">
+                                        {{ $verfactura->id }}-{{ $verfactura->numeroid }}</p><br>
                                 </div>
                                 <div class="col-md-4"><br>
                                     {!!

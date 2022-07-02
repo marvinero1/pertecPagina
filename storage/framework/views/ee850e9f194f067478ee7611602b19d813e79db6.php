@@ -134,7 +134,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                         <table class="table greyGridTable">
                                             <thead>
                                                 <tr>
-                                                    
+                                                    <th></th>
                                                     <th>CODIGO PRODUCTO</th>
                                                     <th colspan="2" style="text-align: center;">DESCRIPCION</th>
                                                     <th>UNIDAD DE MEDIDA</th>
@@ -148,7 +148,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                             <tbody>
                                                 <?php $__currentLoopData = $vefacturaProducto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturaDetalles): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <tr>
-                                                    
+                                                    <td></td>
                                                     <td><?php echo e($vefacturaDetalles->coditem); ?></td>
                                                     <td class="alingLeft"><?php echo e($vefacturaDetalles->descripcion); ?></td>
                                                     <td class="alingLeft"><?php echo e($vefacturaDetalles->medida); ?></td>
@@ -209,25 +209,25 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                     </h6>
                                     <p class="infoFactura"><?php echo e($verfactura->leyenda); ?></p>
                                     <?php if($en_linea != 0 ): ?>
-                                    <p class="infoFactura">
-                                        Este documento es la Representación Gráfica de un Documento Fiscal Digital
-                                        emitido en una
-                                        modalidad de facturación local
-                                    </p><br>
+                                        <p class="infoFactura">
+                                            Este documento es la Representación Gráfica de un Documento Fiscal Digital
+                                            emitido en una
+                                            modalidad de facturación local
+                                        </p><br>
                                     <?php else: ?>
-                                    <p class="infoFactura">
-                                        Este documento es la Representación Gráfica de un Documento Fiscal Digital
-                                        emitido en una
-                                        modalidad de facturación en línea
-                                    </p><br>
+                                        <p class="infoFactura">
+                                            Este documento es la Representación Gráfica de un Documento Fiscal Digital
+                                            emitido en una
+                                            modalidad de facturación en línea
+                                        </p><br>
                                     <?php endif; ?>
-                                    <p class="infoFactura" style="text-align: right;">
-                                        <?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?></p><br>
-
+                                    
                                     <p class="infoFactura" style="text-align: right;">
                                         La factura tambien se encuentra disponible en el siguiente link:
                                         <a href="www.pertec.com.bo">www.pertec.com.bo</a>
-                                    </p>
+                                    </p><br>
+                                    <p class="infoFactura" style="text-align: right;">
+                                        <?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?></p><br>
                                 </div>
                                 <div class="col-md-4"><br>
                                     <?php echo QrCode::format('svg')->size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'); ?>
