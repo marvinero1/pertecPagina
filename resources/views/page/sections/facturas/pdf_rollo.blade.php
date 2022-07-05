@@ -112,7 +112,7 @@
                 @foreach ($vefacturaProducto as $vefacturaDetalles)
                     <tr style="height: 3px;"></tr>
                     <tr style="font-size: 12px;">
-                        <td colspan="2">{{ $vefacturaDetalles->codfactura }} {{ $vefacturaDetalles->coditem }}</td>
+                        <td colspan="2">{{ $vefacturaDetalles->coditem }}</td>
                         <td>{{ $vefacturaDetalles->descripcion }}</td>
                         <td ></td>
                         <td>{{ $vefacturaDetalles->medida }}</td>
