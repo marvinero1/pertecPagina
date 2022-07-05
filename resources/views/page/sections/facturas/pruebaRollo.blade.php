@@ -265,7 +265,7 @@
                                 <div class="col-md-6">
                                     <button class="btn btn-secondary btn-lg" type="button" onClick="history.go(-1);"><i class="fa fa-arrow-left"
                                        ></i>
-                                        &nbsp;Atras 
+                                        &nbsp;Atras
                                     </button>
                                 </div>
                                 <div class="col-md-6">
@@ -273,7 +273,7 @@
                                         Descargar PDF &nbsp;<i class="fa fa-file-pdf-o"></i>
                                     </a>
                                 </div>
-                              </div>                            
+                              </div>
                         </div>
                     </div>
                 </div>

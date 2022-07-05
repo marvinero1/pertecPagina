@@ -1,12 +1,12 @@
-<div style="padding: 25px;">
-    <div style="width: 8cm; height: auto; padding: 19px">
+<div class="row">
+    <div style="width: 8cm; height: auto;">
         <table class="minimalistBlack">
             <thead>
                 <tr>
                     <th>
-                        <p style="margin-bottom: 0px;text-align: center;line-height:0px !important;">FACTURA</p>
+                        <p style="margin-bottom: 0px;text-align: center;line-height:0px !important; font-size: 1rem !important;">FACTURA</p>
                         <p style="margin-top: 0px;text-align: center;">CON DERECHO A CREDITO FISCAL</p>
-                        <p class="text-center" style="line-height:10px !important;">PERTEC S.R.L.</p>
+                        <p class="text-center" style="line-height:10px !important; font-size: 1.1rem !important;">PERTEC S.R.L.</p>
                     </th>
                 </tr>
             </thead>
@@ -46,19 +46,17 @@
         <table class="section1">
             <tbody>
                 <tr>
-                    <td colspan="2">NIT
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
-                    <td colspan="2"><?php echo e($verfactura->nit); ?></td>
+                    <td colspan="3">NIT: </td>
+                    <td colspan="2"> <?php echo e($verfactura->nit); ?></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td colspan="2">FACTURA No. &nbsp;:</td>
-                    <td colspan="2"><?php echo e($verfactura->codigo); ?></td>
-                    <td></td>
+                    <td colspan="3">FAC. N°: &nbsp;&nbsp; </td>
+                    <td colspan="3"> <?php echo e($verfactura->codigo); ?></td>
                 </tr>
                 <tr>
-                    <td colspan="3">COD. AUTORIZACION: </td>
-                    <td colspan="3"><?php echo e($verfactura->nroautorizacion); ?></td>
+                    <td colspan="3" style="padding-right: 5px; width: 155px !important;">COD. AUTORIZACION:&nbsp;&nbsp;</td>
+                    <td colspan="4" style="width:155px;word-wrap:break-word;">&nbsp;&nbsp;&nbsp; <?php echo e($verfactura->cuf); ?></td>
                 </tr>
             </tbody>
         </table>
@@ -66,7 +64,7 @@
         <table class="section1">
             <tbody>
                 <tr>
-                    <td colspan="3">LUGAR Y FECHA EMISION :</td>
+                    <td colspan="3">LUGAR Y FECHA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
                     <td colspan="3">Sacaba <?php echo e(date('d-m-y', strtotime($verfactura->fecha))); ?> HRS: <?php echo e($verfactura->horareg); ?></td>
                 </tr>
                 <tr>
@@ -113,18 +111,18 @@
             <tbody>
                 <?php $__currentLoopData = $vefacturaProducto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturaDetalles): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr style="height: 3px;"></tr>
-                    <tr style="font-size: 13px;">
+                    <tr style="font-size: 12px;">
                         <td colspan="2"><?php echo e($vefacturaDetalles->codfactura); ?> <?php echo e($vefacturaDetalles->coditem); ?></td>
                         <td><?php echo e($vefacturaDetalles->descripcion); ?></td>
                         <td ></td>
                         <td><?php echo e($vefacturaDetalles->medida); ?></td>
                     </tr>
-                    <tr style="font-size: 13px;">
+                    <tr style="font-size: 12px;">
                         <td style="width: 25%"><?php echo e($vefacturaDetalles->udm); ?></td>
                         <td style="width: 25%"><?php echo e($vefacturaDetalles->cantidad); ?></td>
-                        <td style="width: 25%"><?php echo e(round($vefacturaDetalles->preciolista, 2)); ?></td>
-                        <td style="width: 25%"><?php echo e($cantidad_precio_decimal - $cantidad_precioneto_decimal); ?></td>
-                        <td style="width: 25%"><?php echo e(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2)); ?></td>
+                        <td style="width: 25%"><?php echo e(number_format(round($vefacturaDetalles->preciolista, 2) ,2,'.',',')); ?></td>
+                        <td style="width: 25%"><?php echo e(number_format($cantidad_precio_decimal - $cantidad_precioneto_decimal,2,'.',',')); ?></td>
+                        <td style="width: 25%"><?php echo e(number_format(round($vefacturaDetalles->cantidad,2) * round($vefacturaDetalles->preciolista,2),2,'.',',')); ?></td>
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
@@ -134,26 +132,27 @@
             <thead>
                 <tr style="height: 3px;"></tr>
                 <tr>
-                    <th>SubTotal(BS) :</th>
-                    <th style="text-align: right;padding-right: 18px;"><?php echo e($totalParse); ?></th>
+                    <th style="text-align: left;">SubTotal(BS) :</th>
+                    <th style="text-align: right;padding-right: 18px;"><?php echo e(number_format($totalParse,2,'.',',')); ?></th>
                 </tr>
                 <tr>
-                    <th>Descuentos(BS) :</th>
-                    <th style="text-align: right;padding-right: 18px;"><?php echo e(round($descuento, 2)); ?></th>
+                    <th style="text-align: left;">Descuentos(BS) :</th>
+                    <th style="text-align: right;padding-right: 18px;"><?php echo e(number_format($descuento_round,2,'.',',')); ?></th>
                 </tr>
                 <tr>
-                    <th>Total(BS) :</th>
-                    <th style="text-align: right;padding-right: 18px;"><?php echo e(round($total_menos_descuento, 2)); ?></th>
+                    <th style="text-align: left;">Total(BS) :</th>
+                    <th style="text-align: right;padding-right: 18px;"><?php echo e(number_format($total_menos_descuento_round,2,'.',',')); ?></th>
                 </tr>
                 <tr>
-                    <th colspan="2">Importe Base Credito Fiscal (BS) : <?php echo e(round($total_menos_descuento, 2)); ?></th>
+                    <th style="text-align: left;">Importe Base Credito Fiscal (BS) : </th>
+                    
                 </tr>
                 <tr>
                     <th style="border-bottom: solid 1px;"></th>
-                    <th style="text-align: right;padding-right: 18px;"><?php echo e(round($total_menos_descuento, 2)); ?></th>
+                    <th style="text-align: right;padding-right: 18px;"><?php echo e(number_format($total_menos_descuento_round,2,'.',',')); ?></th>
                 </tr>
                 <tr style="height: 25px;">
-                    <th colspan="2">Son: <?php echo e($total_literal,2); ?></th>
+                    <th colspan="2" style="text-align: left;">Son: <?php echo e($total_literal,2); ?></th>
                 </tr>
             </thead>
         </table>
@@ -162,18 +161,18 @@
             <thead>
                 <tr>
                     <th>
-                        <p>ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS,</p>
-                        <P>EL USO ILÍCITO DE ESTA SERÁ SANCIONADO</P>
-                        <P>PENALMENTE DE ACUERDO A LEY.</P>
+                        <p><b style="font-size: 10px !important;">ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS,</b></p>
+                        <P><b style="font-size: 10px !important;">EL USO ILÍCITO DE ESTA SERÁ SANCIONADO</b></P>
+                        <P><b style="font-size: 10px !important;">PENALMENTE DE ACUERDO A LEY.</b></P>
                     </th>
                 </tr>
             </thead>
-    
+
             <tbody>
                 <tr style="height: 5px;"></tr>
                 <tr>
                     <td>
-                        <p style="text-align: center !important;"><?php echo e($leyendaFactura->descripcionleyenda); ?></p>
+                        <p style="text-align: center !important;"><?php echo e($verfactura->leyenda); ?></p>
                     </td>
                 </tr>
                 <tr style="height: 5px;"></tr>
@@ -194,23 +193,33 @@
                 </tr>
                 <tr>
                     <td>
-                        <img src="data:image/png;base64, <?php echo e(base64_encode(QrCode::size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'))); ?> ">
+                        <img src="data:image/png;base64, <?php echo e(base64_encode(QrCode::size(90)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2'))); ?> ">
                     </td>
                 </tr>
             </tbody>
-    
+
             <tfoot>
                 <tr style="padding-top: 5px;font-size: 13px;">
                     <td><?php echo e($verfactura->id); ?>-<?php echo e($verfactura->numeroid); ?> Vendedor: 34103 YUCRA ALEXANDER</td>
                 </tr>
                 <tr style="font-size: 13px;">
-                    <td>***PERNOS-TUERCAS-TORNILLOS***</td>
+                    <td>&nbsp;***PERNOS-TUERCAS-TORNILLOS***</td>
                 </tr>
+                <p class="infoFactura" style="text-align: center;">
+                    La factura tambien se encuentra disponible en el siguiente link:
+                    <a href="www.pertec.com.bo">www.pertec.com.bo</a>
+                </p>
             </tfoot>
         </table>
     </div>
-</div>
+</div><br>
 <style>
+    .header-3.style-2 .navbar-fixed-top.affix{
+        background-color: #093070c2;
+    }
+    .btn-primary{
+        width: 170px !important;
+    }
     p{
         font-size: 0.80rem !important;
     }
@@ -226,13 +235,16 @@
     }
     table.minimalistBlack tbody td {
         font-size: 13px;
+        color: #000000;
     }
-
+    table.minimalistBlack p {
+        color: #000000;
+    }
     table.minimalistBlack thead {}
     table.minimalistBlack thead th {
         font-size: 15px;
         font-weight: bold;
-        color: #000000;
+        color: #000000 !important;
         text-align: center;
     }
     table.minimalistBlack tfoot td {
@@ -250,6 +262,7 @@
     }
     table.section1 tbody td {
         font-size: 11px;
+        color: #000000;
     }
     table.section1 tfoot td {
         font-size: 14px;
@@ -268,6 +281,10 @@
         font-size: 12px;
         font-weight: bold;
         letter-spacing: -0.08em;
+        color: #000000;
+    }
+    table.section2 tbody td {
+        color: #000000;
     }
     table.section3 {
         font-family: Tahoma, Geneva, sans-serif;
@@ -283,10 +300,16 @@
         font-size: 12px;
         font-weight: bold;
         letter-spacing: -0.08em;
+        color: #000000;
     }
     table.section4 {
         width: 8cm;
         text-align: center;
+    }
+    table.section4 p {
+        text-align: center;
+        line-height: 15px;
+        color: #000000;
     }
     table.section4 td,
     table.section4 th {
@@ -302,14 +325,23 @@
     }
     table.section4 tfoot {
         font-weight: bold;
+        color: #000000;
     }
     table.section4 p {
         margin: 0 0 0 0;
     }
     hr{
         color: #000;
-        height: 0px;
-        border:1px dashed;
+        height: 0px !important;
+        border:1px dashed !important;
         margin-bottom: 0px !important;
+        width: inherit;
     }
-</style><?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/pdf_rollo.blade.php ENDPATH**/ ?>
+    b {
+        font-size: 0.9rem;
+    }
+    /* module module-search pull-left{
+        padding-top: 39px !important;
+    } */
+</style>
+<?php /**PATH C:\laragon\www\repoCompletoPertec\pertecPagina\resources\views/page/sections/facturas/pdf_rollo.blade.php ENDPATH**/ ?>

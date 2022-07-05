@@ -4,9 +4,9 @@
             <thead>
                 <tr>
                     <th>
-                        <p style="margin-bottom: 0px;text-align: center;line-height:0px !important; font-size: 1.3rem !important;">FACTURA</p>
+                        <p style="margin-bottom: 0px;text-align: center;line-height:0px !important; font-size: 1rem !important;">FACTURA</p>
                         <p style="margin-top: 0px;text-align: center;">CON DERECHO A CREDITO FISCAL</p>
-                        <p class="text-center" style="line-height:10px !important; font-size: 1.3rem !important;">PERTEC S.R.L.</p>
+                        <p class="text-center" style="line-height:10px !important; font-size: 1.1rem !important;">PERTEC S.R.L.</p>
                     </th>
                 </tr>
             </thead>
@@ -55,7 +55,7 @@
                     <td colspan="3"> {{ $verfactura->codigo }}</td>
                 </tr>
                 <tr>
-                    <td colspan="3" style="padding-right: 5px;">COD. AUTORIZACION:&nbsp;&nbsp;</td>
+                    <td colspan="3" style="padding-right: 5px; width: 155px !important;">COD. AUTORIZACION:&nbsp;&nbsp;</td>
                     <td colspan="4" style="width:155px;word-wrap:break-word;">&nbsp;&nbsp;&nbsp; {{ $verfactura->cuf }}</td>
                 </tr>
             </tbody>
@@ -132,19 +132,19 @@
             <thead>
                 <tr style="height: 3px;"></tr>
                 <tr>
-                    <th>SubTotal(BS) :</th>
+                    <th style="text-align: left;">SubTotal(BS) :</th>
                     <th style="text-align: right;padding-right: 18px;">{{ number_format($totalParse,2,'.',',') }}</th>
                 </tr>
                 <tr>
-                    <th>Descuentos(BS) :</th>
+                    <th style="text-align: left;">Descuentos(BS) :</th>
                     <th style="text-align: right;padding-right: 18px;">{{ number_format($descuento_round,2,'.',',') }}</th>
                 </tr>
                 <tr>
-                    <th>Total(BS) :</th>
+                    <th style="text-align: left;">Total(BS) :</th>
                     <th style="text-align: right;padding-right: 18px;">{{ number_format($total_menos_descuento_round,2,'.',',') }}</th>
                 </tr>
                 <tr>
-                    <th >Importe Base Credito Fiscal (BS) : </th>
+                    <th style="text-align: left;">Importe Base Credito Fiscal (BS) : </th>
                     {{-- <th style="text-align: right;padding-right: 18px;">{{ round($total_menos_descuento, 2) }}</th> --}}
                 </tr>
                 <tr>
@@ -152,7 +152,7 @@
                     <th style="text-align: right;padding-right: 18px;">{{ number_format($total_menos_descuento_round,2,'.',',') }}</th>
                 </tr>
                 <tr style="height: 25px;">
-                    <th colspan="2">Son: {{ $total_literal,2 }}</th>
+                    <th colspan="2" style="text-align: left;">Son: {{ $total_literal,2 }}</th>
                 </tr>
             </thead>
         </table>
@@ -161,9 +161,9 @@
             <thead>
                 <tr>
                     <th>
-                        <p><b>ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS,</b></p>
-                        <P><b>EL USO ILÍCITO DE ESTA SERÁ SANCIONADO</b></P>
-                        <P><b>PENALMENTE DE ACUERDO A LEY.</b></P>
+                        <p><b style="font-size: 10px !important;">ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS,</b></p>
+                        <P><b style="font-size: 10px !important;">EL USO ILÍCITO DE ESTA SERÁ SANCIONADO</b></P>
+                        <P><b style="font-size: 10px !important;">PENALMENTE DE ACUERDO A LEY.</b></P>
                     </th>
                 </tr>
             </thead>
@@ -193,7 +193,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <img src="data:image/png;base64, {{ base64_encode(QrCode::size(140)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2')) }} ">
+                        <img src="data:image/png;base64, {{ base64_encode(QrCode::size(90)->generate('https://pilotosiat.impuestos.gob.bo/consulta/QR?nit='.$verfactura->nit.'&cuf='.$verfactura->nroautorizacion.'&numero='.$verfactura->nrofactura.'&t=2')) }} ">
                     </td>
                 </tr>
             </tbody>
@@ -203,16 +203,16 @@
                     <td>{{ $verfactura->id }}-{{ $verfactura->numeroid }} Vendedor: 34103 YUCRA ALEXANDER</td>
                 </tr>
                 <tr style="font-size: 13px;">
-                    <td>***PERNOS-TUERCAS-TORNILLOS***</td>
+                    <td>&nbsp;***PERNOS-TUERCAS-TORNILLOS***</td>
                 </tr>
-                <p class="infoFactura" style="text-align: right;">
+                <p class="infoFactura" style="text-align: center;">
                     La factura tambien se encuentra disponible en el siguiente link:
                     <a href="www.pertec.com.bo">www.pertec.com.bo</a>
                 </p>
             </tfoot>
         </table>
     </div>
-</div><br>  
+</div><br>
 <style>
     .header-3.style-2 .navbar-fixed-top.affix{
         background-color: #093070c2;
