@@ -50,11 +50,11 @@ class HomeController extends Controller
         $producto = Producto::inRandomOrder()->paginate('3');
         $producto2 = Producto::inRandomOrder()->paginate('3');
 
-        $oficinas = Tienda::where('tipo','oficina')->get();
+        $oficinas = Tienda::where('tipo','Oficina')->get();
         $tiendaLPZ = Tienda::where('ciudad','La Paz')->get();
         $tiendaCBBA = Tienda::where('ciudad','Cochabamba')->get();
         $tiendaSTCZ = Tienda::where('ciudad','Santa Cruz')->get();
-        
+
         if ($nombre_producto != "") {
             $productoBuscado = Producto::where('nombre_producto','like',"%$nombre_producto%")->latest()->get();
         }

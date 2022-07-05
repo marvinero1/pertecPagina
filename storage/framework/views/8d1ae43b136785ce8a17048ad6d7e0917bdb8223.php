@@ -1,7 +1,8 @@
 
 
 <?php $__env->startSection('content'); ?>
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/backgroundProd.jpg);">
+<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
+    style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
         <div class="row">
@@ -47,7 +48,7 @@
                                     <tbody>
                                         <thead>
                                             <tr>
-                                                <th>Codigo</th>
+                                                
                                                 <th>ID</th>
                                                 <th>#ID</th>
                                                 <th>CUF</th>
@@ -61,7 +62,7 @@
                                         <tbody>
                                             <?php $__currentLoopData = $vefactura; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <tr>
-                                                <td class="row1" scope="row"><?php echo e($vefacturas->codigo); ?></td>
+                                                
                                                 <td scope="row"><?php echo e($vefacturas->id); ?></td>
                                                 <td scope="row"><?php echo e($vefacturas->numeroid); ?></td>
                                                 <td scope="row"><?php echo e($vefacturas->cuf); ?></td>

@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/tiendas.jpg);">
     <div class="bgImgCoverPages"></div>
@@ -7,17 +5,14 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-title title-1 text-center">
-                    <div class="title-bg">
+                    <div >
                         <h2>Tienda <?php echo e($tienda->nombre_tienda); ?></h2>
                     </div>
                     <ol class="breadcrumb" style="display: unset !important;">
                         <li>
                             <a href="/">Inicio</a>
                         </li>
-                        <li>
-                            <a href="/">Oficinas y Tiendas</a>
-                        </li>
-                        <li class="active">Tiendas</li>
+                        <li class="active">Tiendas y Oficinas</li>
                     </ol>
                 </div>
             </div>
