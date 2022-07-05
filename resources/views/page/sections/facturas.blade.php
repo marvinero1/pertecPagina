@@ -64,7 +64,7 @@
                                                 {{-- <td class="row1" scope="row">{{ $vefacturas->codigo }}</td> --}}
                                                 <td scope="row">{{ $vefacturas->id }}</td>
                                                 <td scope="row">{{ $vefacturas->numeroid }}</td>
-                                                <td scope="row">{{ $vefacturas->cuf }}</td>
+                                                <td scope="row">{{\Illuminate\Support\Str::limit($vefacturas->cuf, 10,'...') }}</td>
                                                 <td scope="row">{{ $vefacturas->codigocontrol }}</td>
                                                 <td scope="row">{{ date('d-m-y', strtotime($vefacturas->fechareg)) }}</td>
                                                 <td scope="row">{{ number_format($vefacturas->peso,2) }}</td>

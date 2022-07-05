@@ -65,7 +65,7 @@
                                                 
                                                 <td scope="row"><?php echo e($vefacturas->id); ?></td>
                                                 <td scope="row"><?php echo e($vefacturas->numeroid); ?></td>
-                                                <td scope="row"><?php echo e($vefacturas->cuf); ?></td>
+                                                <td scope="row"><?php echo e(\Illuminate\Support\Str::limit($vefacturas->cuf, 10,'...')); ?></td>
                                                 <td scope="row"><?php echo e($vefacturas->codigocontrol); ?></td>
                                                 <td scope="row"><?php echo e(date('d-m-y', strtotime($vefacturas->fechareg))); ?></td>
                                                 <td scope="row"><?php echo e(number_format($vefacturas->peso,2)); ?></td>

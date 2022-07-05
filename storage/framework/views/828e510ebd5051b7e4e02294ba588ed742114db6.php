@@ -183,15 +183,7 @@
 
                                 </div>
                             <?php endif; ?> <br>
-                                <?php echo htmlFormSnippet([
-                                    "theme" => "light",
-                                    "size" => "normal",
-                                    "tabindex" => "4",
-                                    "callback" => "callbackFunction",
-                                    "expired-callback" => "expiredCallbackFunction",
-                                    "error-callback" => "errorCallbackFunction",
-                                ]); ?>
-
+                                
                             <br>
 
                             <?php if(!$errors->isEmpty()): ?>
