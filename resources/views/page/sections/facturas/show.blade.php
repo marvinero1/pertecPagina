@@ -6,7 +6,6 @@
 style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
-
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-title title-1 text-center texto-borde">
@@ -48,13 +47,11 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                     <img src="../assets/images/icon.png" alt="Pertec S.R.L &copy;" width="150px">
                                 </div>
                                 <div class="col-md-3 col-sm-12 alineacion">
-                                    <h6 class="font-frank-demi color-black" style="font-size: 1.4rem;">PERTEC S.R.L.
-                                    </h6>
+                                    <h6 class="font-frank-demi color-black" style="font-size: 1.4rem;">PERTEC S.R.L.</h6>
                                     <h6 class="font-frank-medium color-black">CASA MATRIZ</h6>
-                                    <P class="infoFactura">Gral. Achá N°330</P>
+                                    <p class="infoFactura">Gral. Achá N°330</P>
                                     <P class="infoFactura">Tels.: 4259660 - 4250800 - Fax: 4111282</P>
                                     <P class="infoFactura">Cochabamba-Bolivia</P>
-
                                     <h6 class="font-frank-medium color-black">Sucursal N°4</h6>
                                     <P class="infoFactura">C. INNOMINADA S/N ZONA AROCAGUA</P>
                                     <P class="infoFactura">Teléfono: 4716000</P>
@@ -79,8 +76,8 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
                                             <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">1023109029</h6>
                                             <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">
-                                                00000{{ $verfactura->codigo }}</h6>
-                                            <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left;">
+                                                000{{ $verfactura->codigo }}</h6>
+                                            <h6 class="font-frank-demi color-black" style="margin-bottom: 5px; text-align: left; word-wrap: break-word;">
                                                 {{ $verfactura->cuf }}</h6>
                                         </div>
                                     </div>
@@ -133,7 +130,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                         <table class="table greyGridTable">
                                             <thead>
                                                 <tr>
-                                                    <th>#</th>
+                                                    <th></th>
                                                     <th>CODIGO PRODUCTO</th>
                                                     <th colspan="2" style="text-align: center;">DESCRIPCION</th>
                                                     <th>UNIDAD DE MEDIDA</th>
@@ -147,7 +144,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                             <tbody>
                                                 @foreach ($vefacturaProducto as $vefacturaDetalles)
                                                 <tr>
-                                                    <td>{{ $vefacturaDetalles->codfactura }}</td>
+                                                    <td></td>
                                                     <td>{{ $vefacturaDetalles->coditem }}</td>
                                                     <td class="alingLeft">{{ $vefacturaDetalles->descripcion }}</td>
                                                     <td class="alingLeft">{{ $vefacturaDetalles->medida }}</td>
@@ -204,22 +201,27 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                         ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS, EL USO ILÍCITO DE ESTA SERÁ
                                         SANCIONADO PENALMENTE DE ACUERDO A LEY.
                                     </h6>
-                                    <p class="infoFactura">{{ $leyendaFactura->descripcionleyenda }}</p>
+                                    <p class="infoFactura">{{ $verfactura->leyenda }}</p>
                                     @if($en_linea != 0 )
-                                    <p class="infoFactura">
-                                        Este documento es la Representación Gráfica de un Documento Fiscal Digital
-                                        emitido en una
-                                        modalidad de facturación local
-                                    </p><br>
+                                        <p class="infoFactura">
+                                            Este documento es la Representación Gráfica de un Documento Fiscal Digital
+                                            emitido en una
+                                            modalidad de facturación local
+                                        </p><br>
                                     @else
-                                    <p class="infoFactura">
-                                        Este documento es la Representación Gráfica de un Documento Fiscal Digital
-                                        emitido en una
-                                        modalidad de facturación en línea
-                                    </p><br>
+                                        <p class="infoFactura">
+                                            Este documento es la Representación Gráfica de un Documento Fiscal Digital
+                                            emitido en una
+                                            modalidad de facturación en línea
+                                        </p><br>
                                     @endif
+                                    
                                     <p class="infoFactura" style="text-align: right;">
-                                        {{ $verfactura->id }}-{{ $verfactura->numeroid }}</p>
+                                        La factura tambien se encuentra disponible en el siguiente link:
+                                        <a href="www.pertec.com.bo">www.pertec.com.bo</a>
+                                    </p><br>
+                                    <p class="infoFactura" style="text-align: right;">
+                                        {{ $verfactura->id }}-{{ $verfactura->numeroid }}</p><br>
                                 </div>
                                 <div class="col-md-4"><br>
                                     {!!
@@ -257,6 +259,9 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
     </div>
 </section>
 <style>
+    a{
+        color: #000000;
+    }
     body {
         font-family: Tahoma, Verdana, Segoe, sans-serif !important;
     }

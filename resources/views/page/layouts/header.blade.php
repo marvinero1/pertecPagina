@@ -183,14 +183,14 @@
                                     {{ session('status') }}
                                 </div>
                             @endif <br>
-                                {!! htmlFormSnippet([
+                                {{-- {!! htmlFormSnippet([
                                     "theme" => "light",
                                     "size" => "normal",
                                     "tabindex" => "4",
                                     "callback" => "callbackFunction",
                                     "expired-callback" => "expiredCallbackFunction",
                                     "error-callback" => "errorCallbackFunction",
-                                ]) !!}
+                                ]) !!} --}}
                             <br>
 
                             @if (!$errors->isEmpty())

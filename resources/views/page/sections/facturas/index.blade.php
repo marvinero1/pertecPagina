@@ -100,7 +100,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            {{-- <th>Codigo</th> --}}
+                                            <th>Cliente</th>
                                             <th>ID</th>
                                             <th>#ID</th>
                                             <th>CUF</th>
@@ -114,10 +114,10 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                     <tbody>
                                         @foreach ($vefactura as $vefacturas)
                                         <tr>
-                                            {{-- <td class="row1" scope="row">{{ $vefacturas->codigo }}</td> --}}
+                                            <td class="row1" scope="row">{{ $vefacturas->nomcliente }}</td>
                                             <td scope="row">{{ $vefacturas->id }}</td>
                                             <td scope="row">{{ $vefacturas->numeroid }}</td>
-                                            <td scope="row">{{ $vefacturas->cuf }}</td>
+                                            <td scope="row">{{ \Illuminate\Support\Str::limit($vefacturas->cuf, 10,'...') }}</td>
                                             <td scope="row">{{ $vefacturas->codigocontrol }}</td>
                                             <td scope="row">{{ date('d-m-y', strtotime($vefacturas->fechareg)) }}</td>
                                             <td scope="row">{{ number_format($vefacturas->peso,2) }}</td>

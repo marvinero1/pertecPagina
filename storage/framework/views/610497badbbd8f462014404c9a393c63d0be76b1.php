@@ -96,7 +96,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            
+                                            <th>Cliente</th>
                                             <th>ID</th>
                                             <th>#ID</th>
                                             <th>CUF</th>
@@ -110,10 +110,10 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                     <tbody>
                                         <?php $__currentLoopData = $vefactura; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vefacturas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                            
+                                            <td class="row1" scope="row"><?php echo e($vefacturas->nomcliente); ?></td>
                                             <td scope="row"><?php echo e($vefacturas->id); ?></td>
                                             <td scope="row"><?php echo e($vefacturas->numeroid); ?></td>
-                                            <td scope="row"><?php echo e($vefacturas->cuf); ?></td>
+                                            <td scope="row"><?php echo e(\Illuminate\Support\Str::limit($vefacturas->cuf, 10,'...')); ?></td>
                                             <td scope="row"><?php echo e($vefacturas->codigocontrol); ?></td>
                                             <td scope="row"><?php echo e(date('d-m-y', strtotime($vefacturas->fechareg))); ?></td>
                                             <td scope="row"><?php echo e(number_format($vefacturas->peso,2)); ?></td>
