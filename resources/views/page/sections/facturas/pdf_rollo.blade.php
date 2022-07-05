@@ -144,7 +144,7 @@
                     <th style="text-align: right;padding-right: 18px;">{{ number_format($total_menos_descuento_round,2,'.',',') }}</th>
                 </tr>
                 <tr>
-                    <th style="text-align: left;">Importe Base Credito Fiscal (BS) : </th>
+                    <th style="text-align: left;">Importe Base Credito Fiscal (BS) :</th>
                     {{-- <th style="text-align: right;padding-right: 18px;">{{ round($total_menos_descuento, 2) }}</th> --}}
                 </tr>
                 <tr>
@@ -170,11 +170,7 @@
 
             <tbody>
                 <tr style="height: 5px;"></tr>
-                <tr>
-                    <td>
-                        <p style="text-align: center !important;">{{ $verfactura->leyenda }}</p>
-                    </td>
-                </tr>
+                <tr><td><p style="text-align: center !important;">{{ $verfactura->leyenda }}</p></td></tr>
                 <tr style="height: 5px;"></tr>
                 <tr>
                     <td>
