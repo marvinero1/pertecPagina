@@ -53,14 +53,14 @@ class TiendaController extends Controller{
      */
     public function store(Request $request){
         $mensaje = "Tienda Guardada Correctamente";
-
         $requestData = $request->all();
-
+        
         $validator = Validator::make($requestData, [
             'nombre_tienda' => 'required|max:191',
             'telefono' => 'required|max:191',
             'celular' => 'required|max:191',
             'imagen' => 'required',
+            'imagen_portada' => 'nullable|max:191',
             'whatsapp' => 'nullable',
             'direccion' => 'nullable',
             'ciudad' => 'nullable',
@@ -91,6 +91,25 @@ class TiendaController extends Controller{
                 $img = $path.'/'.$fileName;
                 if($image->save($img)){
                     $requestData['imagen'] = $img;
+                    $mensaje = "Tienda Registrado correctamente";
+                }else{
+                    $mensaje = "Error al guardar la imagen";
+                }
+
+            }if($request->imagen_portada){
+                $data = $request->imagen_portada;
+                $file = file_get_contents($request->imagen_portada);
+                $info = $data->getClientOriginalExtension();
+                $extension = explode('images/tiendas/portadas', mime_content_type('images/tiendas/portadas'))[0];
+                $image = Image::make($file);
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
+                $path  = 'images/tiendas/portadas';
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                }
+                $img = $path.'/'.$fileName;
+                if($image->save($img)){
+                    $requestData['imagen_portada'] = $img;
                     $mensaje = "Tienda Registrado correctamente";
                 }else{
                     $mensaje = "Error al guardar la imagen";
@@ -138,7 +157,6 @@ class TiendaController extends Controller{
         // $hash_id = $hash->decodeHex($id);
 
         // $tienda = Tienda::findOrFail($hash_id);
-
         return view('page.sections.tiendas.oficina', compact('oficina'));
     }
 
