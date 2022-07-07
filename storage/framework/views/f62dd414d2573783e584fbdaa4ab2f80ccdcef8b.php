@@ -27,9 +27,7 @@
                             </h1>
 						</li>
                         <li class="has-dropdown tama-font-nav">
-                            <h1 style="display: contents;">
-                                <a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link text-white">Productos</a>
-                            </h1>
+                            <a href="#" data-toggle="dropdown" name="sectionProducts" class="dropdown-toggle my-menu-link text-white"><h1 class="style-h1-menu">Productos</h1></a>
 							<ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px;">
 								<li>
 									<a href="/productos" class="op-prod-1">Catálogo <i class="fa fa-angle-right icon-margin" style="float: right;" aria-hidden="true"></i></a>
@@ -47,12 +45,10 @@
 						</li>
 						<!-- li end -->
 						<li class="has-dropdown tama-font-nav">
-                            <h1 style="display: contents;">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link text-white" name="sectionStores">Oficinas y Tiendas</a>
-                            </h1>
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle my-menu-link text-white" name="sectionStores"><h1 class="style-h1-menu">Oficinas y Tiendas</h1></a>
                             <ul class="dropdown-menu tam-rep-submenu" style="border-radius: 10px; height: auto !important;width: auto;">
 								<li>
-									<a href="/">Oficinas y tiendas</a>
+									<a href="/#ofice-store">Oficinas y tiendas</a>
 								</li>
 							</ul>
 						</li>
@@ -369,6 +365,13 @@
         background-color: #093070;
         color: #fff;
         border: 1px solid #ffc527;
+    }
+    .style-h1-menu {
+        font-size: 1.2rem;
+        font-family: 'Franklin Gothic Demi',sans-serif;
+        color: white;
+        margin: 0;
+        line-height: 65px !important;
     }
 </style>
 

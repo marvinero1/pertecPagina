@@ -235,7 +235,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="height: 50px;">
+                                    <div style="height: 70px;">
                                         <h4>
                                             <a class="tama-car-nom" href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
                                         </h4>
@@ -260,7 +260,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="height: 50px;">
+                                    <div style="height: 70px;">
                                         <h4>
                                             <a class="tama-car-nom" href="{{ route('producto.showFrontEnd', $hash->encodeHex($productos->id)) }}">{{ $productos->nombre_producto }}</a>
                                         </h4>
@@ -296,7 +296,7 @@
                 </div>
             </div>
         </div>
-    </div><br>
+    </div><br id="ofice-store">
 
     @if(!empty($nombre_producto))
         <div class="content section-content">
