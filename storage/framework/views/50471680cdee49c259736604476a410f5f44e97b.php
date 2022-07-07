@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <!-- Select2 -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
@@ -7,7 +5,7 @@
 <!-- Select2 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" 
+<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
     style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -116,7 +114,7 @@
                                 </div>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </div> 
+                    </div>
                 <?php else: ?>
                     <div class="row lightgallery1">
                         <?php $__currentLoopData = $producto_buscado; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bproducto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -150,9 +148,9 @@
                                 </div>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </div>   
+                    </div>
                 <?php endif; ?>
-                
+
 
 
             </div>
@@ -195,9 +193,33 @@
         right: 1px;
         width: 20px;
     }
-    .select2-container{
-        width: 380px !important;
+    @media (min-width:505px) {
+        .select2-container {
+            width: 380px !important;
+        }
     }
+    @media (min-width:420px) and (max-width:504px) {
+        .select2-container {
+            width: 300px !important;
+        }
+    }
+    @media (min-width:350px) and (max-width:419px) {
+        .select2-container {
+            width: 220px !important;
+        }
+        .input-group-btn {
+            padding-right: 35px;
+        }
+    }
+    @media (max-width:349px) {
+        .select2-container {
+            width: 180px !important;
+        }
+        .input-group-btn {
+            padding-right: 75px;
+        }
+    }
+
 </style>
 <script>
     $(function() {
