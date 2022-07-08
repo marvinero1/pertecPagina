@@ -73,6 +73,7 @@
                                 <th>Teléfono</th>
                                 <th>Celular</th>
                                 <th>Imagen</th>
+                                <th>Imagen Portada</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -86,6 +87,14 @@
                                 <td scope="row" id='listimages'> <img src="/<?php echo e($tiends->imagen); ?>" class="img-responsive imgprod" id='listimages'
                                     alt="<?php echo e($tiends->nombre_tienda); ?>" style="display: block;margin: auto;">
                                 </td>
+                                <?php if(!is_null($tiends->imagen_portada)): ?>
+                                    <td scope="row" id='listimages'> <img src="/<?php echo e($tiends->imagen_portada); ?>" class="img-responsive imgprod" id='listimages'
+                                        alt="<?php echo e($tiends->nombre_tienda); ?>" style="display: block;margin: auto;">
+                                    </td>
+                                <?php else: ?>
+                                <td></td>
+                                <?php endif; ?>
+                                
 
                                 <td scope="row" style="text-align:center;">
                                     <a href="<?php echo e(route('admin.tienda.show', $hash->encodeHex($tiends->id) )); ?>" style="color: black">

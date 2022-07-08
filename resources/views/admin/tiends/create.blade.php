@@ -106,18 +106,18 @@
                     </label>
                     <p><strong>Sugerencia:</strong> Para una mejor visualizacion se recomienda
                         resolucion a partir de<strong> 1280 x720 pixels</strong></p>
-                    <input id="file-upload" type="file" name="imagen" required>
+                    <input id="file-upload" type="file" name="imagen">
                 </div>
     
                 <div class="col-md-6 col-sm-6 form-group">
                     <label><strong>Imagen Portada *</strong></label>
-                    <label for="file-upload" class="custom-file-upload" style="text-align: center;">
+                    <label for="file-upload-portada" class="custom-file-upload" style="text-align: center;">
                         <i class="fa fa-cloud-upload" aria-hidden="true"></i>&nbsp;
                         <strong>Imagen Tienda Portada</strong>
                     </label>
                     <p><strong>Sugerencia:</strong> Para una mejor visualizacion se recomienda
                         resolucion a partir de<strong> 1600 x 720 pixels</strong></p>
-                    <input id="file-upload" type="file" name="imagen_portada" required>
+                    <input id="file-upload-portada" type="file" name="imagen_portada">
                 </div>
             </div>
         </div><br>

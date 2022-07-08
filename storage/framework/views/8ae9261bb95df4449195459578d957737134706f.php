@@ -1,29 +1,51 @@
 
 
 <?php $__env->startSection('content'); ?>
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/tiendas.jpg);">
+<?php if(!is_null($tienda->imagen_portada)): ?>
+<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(/<?php echo e($tienda->imagen_portada); ?>);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-title title-1 text-center">
-                    <div class="title-bg">
+                    <div >
                         <h2>Tienda <?php echo e($tienda->nombre_tienda); ?></h2>
                     </div>
                     <ol class="breadcrumb" style="display: unset !important;">
                         <li>
                             <a href="/">Inicio</a>
                         </li>
-                        <li>
-                            <a href="/">Oficinas y Tiendas</a>
-                        </li>
-                        <li class="active">Tiendas</li>
+                        <li class="active">Tiendas y Oficinas</li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<?php else: ?>
+<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
+    style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
+    <div class="bgImgCoverPages"></div>
+    <div class="container" style="margin-top: -540px;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-title title-1 text-center">
+                    <div >
+                        <h2>Tienda <?php echo e($tienda->nombre_tienda); ?></h2>
+                    </div>
+                    <ol class="breadcrumb" style="display: unset !important;">
+                        <li>
+                            <a href="/">Inicio</a>
+                        </li>
+                        <li class="active">Tiendas y Oficinas</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 
 <section class="shop">
     <div class="content section-content">

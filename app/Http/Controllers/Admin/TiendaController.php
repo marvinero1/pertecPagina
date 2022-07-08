@@ -59,11 +59,12 @@ class TiendaController extends Controller{
             'nombre_tienda' => 'required|max:191',
             'telefono' => 'required|max:191',
             'celular' => 'required|max:191',
-            'imagen' => 'required',
-            'imagen_portada' => 'nullable|max:191',
+            'imagen' => 'required|mimes:jpeg,png,tif|max:100000',
+            'imagen_portada' => 'nullable|mimes:jpeg,png,tif|max:100000',
             'whatsapp' => 'nullable',
             'direccion' => 'nullable',
             'ciudad' => 'nullable',
+            'tipo' => 'nullable',
             'correo_electronico' => 'nullable',
             'encargado' => 'nullable',
             'latitud' => 'nullable',
@@ -71,7 +72,6 @@ class TiendaController extends Controller{
         ]);
 
         DB::beginTransaction();
-
         if ($validator->fails()) {
             return redirect('admin/tiends/create')
                         ->withErrors($validator)
@@ -184,14 +184,16 @@ class TiendaController extends Controller{
     public function update(Request $request, $id){
         $tienda = Tienda::find($id);
         $requestData = $request->all();
-
+        
         $validator = Validator::make($requestData, [
             'nombre_tienda' => 'required|max:191',
             'telefono' => 'required|max:191',
             'celular' => 'required|max:191',
-            'imagen' => 'nullable|mimes:jpeg,png,tif|max:10000',
+            'imagen' => 'nullable|mimes:jpeg,png,tif|max:100000',
+            'imagen_portada' => 'nullable|mimes:jpeg,png,tif|max:100000',
             'whatsapp' => 'nullable',
             'direccion' => 'nullable',
+            'tipo' => 'nullable',
             'ciudad' => 'nullable',
             'correo_electronico' => 'nullable',
             'encargado' => 'nullable',
@@ -228,6 +230,24 @@ class TiendaController extends Controller{
                     if ($archivo_antiguo != '' && !File::delete($archivo_antiguo)) {
                         $mensaje = "Tienda Actualizado. error al eliminar la imagen";
                     }
+                }else{
+                    $mensaje = "Error al guardar la imagen";
+                }
+            }if($request->imagen_portada){
+                $data = $request->imagen_portada;
+                $file = file_get_contents($request->imagen_portada);
+                $info = $data->getClientOriginalExtension();
+                $extension = explode('images/tiendas/portadas', mime_content_type('images/tiendas/portadas'))[0];
+                $image = Image::make($file);
+                $fileName = rand(0,10)."-".date('his')."-".rand(0,10).".".$info;
+                $path  = 'images/tiendas/portadas';
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                }
+                $img = $path.'/'.$fileName;
+                if($image->save($img)){
+                    $requestData['imagen_portada'] = $img;
+                    $mensaje = "Tienda Registrado correctamente";
                 }else{
                     $mensaje = "Error al guardar la imagen";
                 }

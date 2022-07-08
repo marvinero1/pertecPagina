@@ -53,8 +53,14 @@
                             </div>
                         </div>
                     </div>
-                    <div id="map"></div>
+                    <div id="map"></div><br><br>
                     
+                    <div>
+                        <img src="/{{ $tienda->imagen_portada }}" class="img-responsive imgprod card-img-top" alt="{{ $tienda->nombre_tienda }}"
+                            width="45%">
+                    </div>
+
+
                    {{-- <button type="btn btn-primary" onclick="getLatLong()"> Ver Lat y Long</button> --}}
                 </div>
                 <div class="card-body">

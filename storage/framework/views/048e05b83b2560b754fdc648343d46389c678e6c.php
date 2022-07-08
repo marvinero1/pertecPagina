@@ -237,7 +237,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="height: 50px;">
+                                    <div style="height: 70px;">
                                         <h4>
                                             <a class="tama-car-nom" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
                                         </h4>
@@ -262,7 +262,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="height: 50px;">
+                                    <div style="height: 70px;">
                                         <h4>
                                             <a class="tama-car-nom" href="<?php echo e(route('producto.showFrontEnd', $hash->encodeHex($productos->id))); ?>"><?php echo e($productos->nombre_producto); ?></a>
                                         </h4>
@@ -298,7 +298,7 @@
                 </div>
             </div>
         </div>
-    </div><br>
+    </div><br id="ofice-store">
 
     <?php if(!empty($nombre_producto)): ?>
         <div class="content section-content">

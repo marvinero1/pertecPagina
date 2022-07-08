@@ -73,6 +73,7 @@
                                 <th>Teléfono</th>
                                 <th>Celular</th>
                                 <th>Imagen</th>
+                                <th>Imagen Portada</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -86,6 +87,14 @@
                                 <td scope="row" id='listimages'> <img src="/{{ $tiends->imagen }}" class="img-responsive imgprod" id='listimages'
                                     alt="{{ $tiends->nombre_tienda }}" style="display: block;margin: auto;">
                                 </td>
+                                @if (!is_null($tiends->imagen_portada))
+                                    <td scope="row" id='listimages'> <img src="/{{ $tiends->imagen_portada }}" class="img-responsive imgprod" id='listimages'
+                                        alt="{{ $tiends->nombre_tienda }}" style="display: block;margin: auto;">
+                                    </td>
+                                @else
+                                <td></td>
+                                @endif
+                                
 
                                 <td scope="row" style="text-align:center;">
                                     <a href="{{ route('admin.tienda.show', $hash->encodeHex($tiends->id) ) }}" style="color: black">

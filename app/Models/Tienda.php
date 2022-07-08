@@ -32,5 +32,7 @@ class Tienda extends Model
                         'correo_electronico',
                         'encargado',
                         'imagen',
+                        'imagen_portada',
+                        'tipo',
                     ];
 }
