@@ -27291,6 +27291,9 @@ footer hr {
     .op-prod-2 {width: 85%;}
     .op-prod-3 {width: 69%;}
     .op-prod-4 {width: 69%;}
+    .tam-rep-submenu {
+        width: max-content !important;
+    }
 }
 
 @media(min-width: 992px) and (max-width: 1038px) {
@@ -27850,9 +27853,7 @@ footer hr {
     }
 }
 @media (min-width: 1483px) {
-    .tam-rep-submenu {
-        width: max-content !important;
-    }
+
     .tam-rep-submenu li {
         height: auto !important;
     }
