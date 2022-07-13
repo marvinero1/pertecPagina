@@ -82,8 +82,7 @@ trait AuthenticatesUsers
      * @param  \Illuminate\Http\Request  $request
      * @return bool
      */
-    protected function attemptLogin(Request $request)
-    {
+    protected function attemptLogin(Request $request){
         return $this->guard()->attempt(
             $this->credentials($request), $request->filled('remember')
         );
@@ -122,15 +121,15 @@ trait AuthenticatesUsers
     }
 
     /**
+     * 
      * The user has been authenticated.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  mixed  $user
      * @return mixed
      */
-    protected function authenticated(Request $request, $user)
-    {
-        //
+    protected function authenticated(Request $request, $user){
+        
     }
 
     /**
@@ -164,15 +163,14 @@ trait AuthenticatesUsers
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
-    public function logout(Request $request)
-    {
+    public function logout(Request $request){
         $this->guard()->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        if ($response = $this->loggedOut($request)) {
+        if ($response = $this->loggedOut($request)){
             return $response;
         }
 

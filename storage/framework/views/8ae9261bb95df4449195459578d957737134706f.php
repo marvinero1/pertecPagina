@@ -146,13 +146,12 @@
     window.initMap = initMap;
 </script>
 <style>
-    #map {
-            height: 400px;
-            / The height is 400 pixels /
-            width: 100%;
-            / The width is the width of the web page /
-            }
+    #map{
+        height: 400px;
+        / The height is 400 pixels /
+        width: 100%;
+        / The width is the width of the web page /
+    }
 </style>
 <?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('page.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pertecPagina\resources\views/page/sections/tiendas/tienda_oficinas.blade.php ENDPATH**/ ?>

@@ -39,6 +39,28 @@
                     <label for="categoria">Categoria</label>
                     <select id="categoria" name="categoria" class="form-control" required>
                         <option>Elige</option>
+                        <option value="GRADO 2 PERNO HEX, CARR & TUE SAE">GRADO 2 PERNO HEX, CARR & TUE SAE, MEDIA Y BAJA RESISTENCIA.</option>
+                        <option value="GRADO 5 Y GRADO 8 PERNO & TUE HEX SAE">GRADO 5 Y GRADO 8 PERNO & TUE HEX SAE, ALTA RESISTENCIA.</option>
+                        <option value="Arandelas Planas">CLASE 8.8, CLASE 10,9, CLASE 8, CLASE 10 PERNO & TUERCA HEX, ALTA RESISTENCIA.</option>
+                        <option value="VARILLAS ROSCADAS SAE & MM">VARILLAS ROSCADAS SAE & MM.</option>
+                        <option value="TIRAFONDO Y TORNILLOS METAL, MADERA & DRYWALL">TIRAFONDO Y TORNILLOS METAL, MADERA & DRYWALL.</option>
+                        <option value="ARANDELAS PLANAS Y DE PRESIÓN SAE & MM">ARANDELAS PLANAS Y DE PRESIÓN SAE & MM.</option>
+                        <option value="PERNO & TUERCA MÁQUINA SAE & MM">PERNO & TUERCA MÁQUINA SAE & MM.</option>
+                        <option value="PRODUCTOS TECHO & REMACHES DE ALUMINIO">PRODUCTOS TECHO & REMACHES DE ALUMINIO.</option>
+                        <option value="PRODUCTO ESTRUCTURAL">PRODUCTO ESTRUCTURAL.</option>
+                        <option value="PRODUCTOS VARIOS">PRODUCTOS VARIOS.</option>
+                        <option value="TUERCA ESPECIAL SAE & MM">TUERCA ESPECIAL SAE & MM.</option>
+                        <option value="ALLEN">ALLEN.</option>
+                        <option value="PRODUCTO INOXIDABLE SAE & MM">PRODUCTO INOXIDABLE SAE & MM.</option>
+                        <option value="PRODUCTOS AUTOMOTRICES & AGRÍCOLAS SAE & MM">PRODUCTOS AUTOMOTRICES & AGRÍCOLAS SAE & MM.</option>
+                        <option value="PRODUCTO AGRÍCOLA SAE & MM">PRODUCTO AGRÍCOLA SAE & MM.</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 col-sm-12 form-group">
+                    <label for="categoria">Sub-Categoria</label>
+                    <select id="sub_categoria" name="sub_categoria" class="form-control" required>
+                        <option>Elige</option>
                         <option value="Accesorios Sujeción Techos">Accesorios Sujeción Techos.</option>
                         <option value="Agricultura">Agricultura.</option>
                         <option value="Arandelas Planas">Arandelas Planas.</option>
@@ -72,8 +94,10 @@
                         <option value="no">NO</option>
                     </select>
                 </div>
+            </div>
 
-                <div class="col-md-4 col-sm-12  form-group">
+            <div class="col-md-12 col-sm-12" style="padding-block-end: 7px;">
+                <div class="col-md-12 col-sm-12  form-group">
                     <label><strong>Imagen</strong></label>
                     <label for="file-upload" class="custom-file-upload" style="text-align: center;">
                         <i class="fa fa-cloud-upload" aria-hidden="true"></i>&nbsp;

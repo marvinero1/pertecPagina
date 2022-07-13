@@ -37,7 +37,8 @@
     <script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
     <script type="text/javascript" src="../assets/page/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>    
 </head>
-<body>
+<body ondragstart="alert('No se puede 😌');return false" oncontextmenu="alert('No se puede seleccionar 😌');return false"
+onselectstart="return false">
     <div class="preloader">
         <div class="spinner">
             <div class="bounce1">
