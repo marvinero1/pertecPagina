@@ -11,7 +11,7 @@
                 <div class="card-img"><br>
                     <div class="cat">
                         <img src="/{{ $productos->imagen }}" class="img-responsive imgprod" alt="{{ $productos->nombre_producto }}">
-                    </div>                    
+                    </div> <br>                   
                     <div class="card-caption">
                         <span class="h2">{{ $productos->nombre_producto }}</span>
                     </div>
@@ -23,8 +23,14 @@
                         @if (!is_null($productos->denominacion))
                             <tr><td>Denominación</td><td class="price">{{ $productos->denominacion }}</td></tr>
                         @endif
+                        @if (!is_null($productos->linea))
+                            <tr><td>Linea</td><td class="price">{{ $productos->linea }}</td></tr>
+                        @endif
                         @if (!is_null($productos->categoria))
                             <tr><td>Categoria</td><td class="price">{{ $productos->categoria }}</td></tr>
+                        @endif
+                        @if (!is_null($productos->sub_categoria))
+                            <tr><td>Sub Categoria</td><td class="price">{{ $productos->sub_categoria }}</td></tr>
                         @endif
                         @if (!is_null($productos->material))
                             <tr><td>Material</td><td class="price">{{ $productos->material }}</td></tr>

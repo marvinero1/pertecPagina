@@ -11,7 +11,7 @@
                 <div class="card-img"><br>
                     <div class="cat">
                         <img src="/<?php echo e($productos->imagen); ?>" class="img-responsive imgprod" alt="<?php echo e($productos->nombre_producto); ?>">
-                    </div>                    
+                    </div> <br>                   
                     <div class="card-caption">
                         <span class="h2"><?php echo e($productos->nombre_producto); ?></span>
                     </div>
@@ -20,12 +20,17 @@
                     <ul class="details"></ul> 
                     <table class="table">
                         <tr><th>Caracteristicas</th><th style="text-align: center;">Detalle</th></tr>
-                        
                         <?php if(!is_null($productos->denominacion)): ?>
                             <tr><td>Denominación</td><td class="price"><?php echo e($productos->denominacion); ?></td></tr>
                         <?php endif; ?>
+                        <?php if(!is_null($productos->linea)): ?>
+                            <tr><td>Linea</td><td class="price"><?php echo e($productos->linea); ?></td></tr>
+                        <?php endif; ?>
                         <?php if(!is_null($productos->categoria)): ?>
                             <tr><td>Categoria</td><td class="price"><?php echo e($productos->categoria); ?></td></tr>
+                        <?php endif; ?>
+                        <?php if(!is_null($productos->sub_categoria)): ?>
+                            <tr><td>Sub Categoria</td><td class="price"><?php echo e($productos->sub_categoria); ?></td></tr>
                         <?php endif; ?>
                         <?php if(!is_null($productos->material)): ?>
                             <tr><td>Material</td><td class="price"><?php echo e($productos->material); ?></td></tr>

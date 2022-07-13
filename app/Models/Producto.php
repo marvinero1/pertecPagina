@@ -24,6 +24,7 @@ class Producto extends Model
                         'denominacion',
                         'categoria',
                         'sub_categoria',
+                        'linea',
                         'inox',
                         'tipo',
                         'imagen',

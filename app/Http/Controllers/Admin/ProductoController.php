@@ -92,6 +92,7 @@ class ProductoController extends Controller
             'denominacion' => 'required|max:191',
             'categoria' => 'required|max:191',
             'sub_categoria' => 'required|max:191',
+            'linea' => 'required|max:191',    
             'inox' => 'required|max:191',
             'imagen' => 'required|mimes:jpeg,png,tif|max:10500',
             'imagen_matriz' => 'nullable',
@@ -195,6 +196,7 @@ class ProductoController extends Controller
         $validator = Validator::make($requestData, [
             'nombre_producto' => 'required|max:191',
             'denominacion' => 'required|max:191',
+            'linea' => 'required|max:191',
             'categoria' => 'required|max:191',
             'sub_categoria' => 'required|max:191',
             'inox' => 'required|max:191',
