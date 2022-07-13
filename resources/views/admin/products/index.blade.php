@@ -78,7 +78,9 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Denominación</th>
+                                <th>Linea</th>
                                 <th>Categoria</th>
+                                <th>Sub-Categoria</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -88,7 +90,10 @@
                             <tr>
                                 <td class="row1" scope="row">{{ $productos->nombre_producto }}</td>
                                 <td scope="row">{{ $productos->denominacion }}</td>
+                                <td scope="row">{{ $productos->linea }}</td>
                                 <td scope="row">{{ $productos->categoria }}</td>
+                                <td scope="row">{{ $productos->sub_categoria }}</td>
+
                                 <td scope="row" style="text-align:center;">
                                     <a href="{{ route('admin.producto.show', $hash->encodeHex($productos->id) ) }}" style="color: black">
                                         <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
