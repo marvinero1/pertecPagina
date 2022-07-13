@@ -27862,7 +27862,7 @@ footer hr {
 /* tamaño carrusel principal */
 @media (min-width: 1024px) {
     .tama-carusel,
-    .tama-carusel div {height: 768px !important;}
+    .tama-carusel div {height: 700px !important;}
 }
 @media (min-width: 1280px) {
     .tama-carusel,
@@ -27870,15 +27870,15 @@ footer hr {
 }
 @media (min-width: 1366px) {
     .tama-carusel,
-    .tama-carusel div {height: 768px !important;}
+    .tama-carusel div {height: 745px !important;}
 }
 @media (min-width: 1879px) {
     .tama-carusel,
-    .tama-carusel div {height: 1024px !important;}
+    .tama-carusel div {height: 1020px !important;}
 }
 @media (min-width: 1920px) {
     .tama-carusel,
-    .tama-carusel div {height: 1080px !important;}
+    .tama-carusel div {height: 1040px !important;}
 }
 
 /*-----------------------------------------------------------------------------

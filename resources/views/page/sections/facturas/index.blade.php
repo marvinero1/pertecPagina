@@ -1,7 +1,7 @@
 @extends('page.layouts.main')
 
 @section('content')
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
+{{-- <section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
 style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
@@ -17,9 +17,9 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
-<section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm"
+<section id="sectionAboutUs" class="shotcode-1 about-home-2 text-center-xs text-center-sm section"
     style="background-color: white;">
     <div class="content section-content">
         <div class="row">
@@ -128,7 +128,7 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
                                                     <button class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i>
                                                         Ver</button></a>
                                             </td>
-                                        </tr> 
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -144,6 +144,22 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
     </div>
 </section>
 <style>
+    .m-0px{
+        text-shadow: 0 0.2px 0 rgb(9 45 116) !important;
+    }
+    .header-3.style-2 .navbar-fixed-top.affix{
+        background-color: #093070c2;
+    }
+    .section {
+        padding-top: 12%;
+        position: relative;
+    }
+
+    .gray-bg, br {
+        background-color: #f5f5f5;
+    }
+
+    
     th,td,tr,table{
         text-align: center !important;
     }
