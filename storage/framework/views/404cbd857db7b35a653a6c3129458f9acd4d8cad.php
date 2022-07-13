@@ -568,7 +568,8 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right">
+                <div class="col-xs-12 col-sm-12 col-md-4 widget widget-contact-right" style="padding-left: 20px;
+                padding-right: 20px !important;">
                     <div class="widget-contact-icon pull-left">
                         <i class="fa fa-envelope-o" aria-hidden="true" style="margin-top: -15px;color:black;"></i>
                     </div>

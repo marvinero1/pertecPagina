@@ -1,29 +1,9 @@
 @extends('page.layouts.main')
 
 @section('content')
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" 
-style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
-    <div class="bgImgCoverPages"></div>
-    <div class="container" style="margin-top: -540px;">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-title title-1 text-center texto-borde">
-                    <div>
-                        <h2>Contáctanos</h2>
-                    </div>
-                    <ol class="breadcrumb" style="display: unset !important;">
-                        <li>
-                            <a href="/">Inicio</a>
-                        </li>
-                        <li class="active">Contáctos</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section id="contact" class="contact">
+
+<section id="contac" class="contact section">
     <div class="content section-content">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -162,6 +142,22 @@ style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59
     window.initMap = initMap;
 </script>
 <style>
+    .m-0px{
+        text-shadow: 0 0.2px 0 rgb(9 45 116) !important;
+    }
+    .header-3.style-2 .navbar-fixed-top.affix{
+        background-color: #093070c2;
+    }
+    .section {
+        padding-top: 12%;
+        position: relative;
+    }
+
+    .gray-bg, br {
+        background-color: #f5f5f5;
+    }
+
+
     #map {
         height: 440px;
         /* / The height is 400 pixels / width: 100%; */

@@ -1,5 +1,6 @@
 <?php $__env->startSection('content'); ?>
-<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(../assets/images/page-title/tiendas.jpg);">
+<?php if(!is_null($tienda->imagen_portada)): ?>
+<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover" style="background-image: url(/<?php echo e($tienda->imagen_portada); ?>);">
     <div class="bgImgCoverPages"></div>
     <div class="container" style="margin-top: -540px;">
         <div class="row">
@@ -19,6 +20,30 @@
         </div>
     </div>
 </section>
+<?php else: ?>
+<section class="bg-overlay bg-overlay-gradient pb-0 bgPageCover"
+    style="background: linear-gradient(177deg, rgba(252,218,1,1) 0%, rgba(130,131,59,1) 50%, rgba(9,45,116,1) 100%);">
+    <div class="bgImgCoverPages"></div>
+    <div class="container" style="margin-top: -540px;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-title title-1 text-center">
+                    <div >
+                        <h2>Tienda <?php echo e($tienda->nombre_tienda); ?></h2>
+                    </div>
+                    <ol class="breadcrumb" style="display: unset !important;">
+                        <li>
+                            <a href="/">Inicio</a>
+                        </li>
+                        <li class="active">Tiendas y Oficinas</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 
 <section class="shop">
     <div class="content section-content">
@@ -41,16 +66,11 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-7 sidebar sidebar-full">
-                <div class="row">
-                    <div class="product-img product-feature-img mb-50">
-                        <div id="map"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="mt-50 mb-30">
-        <div class="row">
+
+
+
+
+
             <div class="col-xs-12 col-sm-12 col-md-7 shop-content">
                 <div class="product-content">
                     <div class="product-tabs mb-50">
@@ -88,6 +108,17 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+        <hr class="mt-50 mb-30">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 sidebar sidebar-full">
+                <div class="row">
+                    <div class="product-img product-feature-img mb-50">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -119,12 +150,12 @@
     window.initMap = initMap;
 </script>
 <style>
-    #map {
-            height: 400px;
-            / The height is 400 pixels /
-            width: 100%;
-            / The width is the width of the web page /
-            }
+    #map{
+        height: 400px;
+        / The height is 400 pixels /
+        width: 100%;
+        / The width is the width of the web page /
+    }
 </style>
 <?php $__env->stopSection(); ?>
 

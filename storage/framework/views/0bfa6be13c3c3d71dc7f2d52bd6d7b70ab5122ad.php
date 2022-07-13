@@ -13,7 +13,7 @@
 					</div>
 					<div class="widget-about-info ini-footer">
 						<h4 class="text-capitalize text-white p-subtitle">PERTEC S.R.L.</h4>
-						<p class="mb-0 text-white p-texto resp-size-p">
+						<p class="mb-0 text-white p-texto resp-size-p aling-left-p">
 						Somos una empresa dedicada a la venta de elementos de sujeción aportando al crecimiento de nuestro país desde 1985.</p>
 					</div>
 				</div>
@@ -100,8 +100,11 @@
 
     <style>
         @media (min-width: 992px) {
-            .ini-footer h4, .ini-footer p {
+            .ini-footer h4 {
                 text-align: justify !important;padding: 0px 125px 0px 99px;
+            }
+            .aling-left-p {
+                text-align: left !important; padding: 0px 125px 0px 99px;
             }
         }
         @media (max-width: 991px) {

@@ -68,16 +68,11 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-7 sidebar sidebar-full">
-                <div class="row">
-                    <div class="product-img product-feature-img mb-50">
-                        <div id="map"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="mt-50 mb-30">
-        <div class="row">
+
+
+
+
+
             <div class="col-xs-12 col-sm-12 col-md-7 shop-content">
                 <div class="product-content">
                     <div class="product-tabs mb-50">
@@ -112,6 +107,17 @@
                                 </table>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr class="mt-50 mb-30">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 sidebar sidebar-full">
+                <div class="row">
+                    <div class="product-img product-feature-img mb-50">
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
