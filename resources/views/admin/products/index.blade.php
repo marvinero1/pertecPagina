@@ -1,7 +1,6 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-<!-- page content -->
 <div class="container">
     <div class="row">
         <div class="title_left" style="text-align: center;">
@@ -9,7 +8,7 @@
         </div><br>
 
         @if (Session::has('message'))
-        <div class="alert alert-info">{{ Session::get('message') }}</div>
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
 
         @if (Session::has('danger'))
@@ -87,70 +86,69 @@
 
                         <tbody>
                             @foreach($producto as $productos)
-                            <tr>
-                                <td class="row1" scope="row">{{ $productos->nombre_producto }}</td>
-                                <td scope="row">{{ $productos->denominacion }}</td>
-                                <td scope="row">{{ $productos->linea }}</td>
-                                <td scope="row">{{ $productos->categoria }}</td>
-                                <td scope="row">{{ $productos->sub_categoria }}</td>
+                                <tr>
+                                    <td class="row1" scope="row">{{ $productos->nombre_producto }}</td>
+                                    <td scope="row">{{ $productos->denominacion }}</td>
+                                    <td scope="row">{{ $productos->linea }}</td>
+                                    <td scope="row">{{ $productos->categoria }}</td>
+                                    <td scope="row">{{ $productos->sub_categoria }}</td>
 
-                                <td scope="row" style="text-align:center;">
-                                    <a href="{{ route('admin.producto.show', $hash->encodeHex($productos->id) ) }}" style="color: black">
-                                        <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            Ver</button></a>
-                                    <a href="{{ route('admin.producto.edit', $hash->encodeHex($productos->id) ) }}" style="color: black">
-                                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
-                                            Editar</button></a>
-                                    @if($productos->promocion !='si')
-                                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal"
-                                        data-target="#myModal{{$productos->id}}">
-                                        <i class="fa fa-star" aria-hidden="true"></i> Promoción</button>
-                                    @endif
-                                    <form action="{{ route('admin.producto.destroy',$productos->id ) }}" method="POST"
-                                        accept-charset="UTF-8" style="display:inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Image"
-                                            onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
-                                                class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
-                                    </form>
-                                </td>
-                                
-                                <div class="modal fade" id="myModal{{$productos->id}}" role="dialog">
-                                    <div class="modal-dialog">
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close"
-                                                    data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Producto a Promoción</h4>
-                                                <h5><strong>{{ strtoupper($productos->nombre_producto) }}</strong></h5>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form
-                                                    action="{{route( 'admin.productos.productoPromocion', $productos->id )}}"
-                                                    method="POST" style="margin-block-end:-1em !important;">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('PUT') }}
-                                                    <input type="hidden" name="promocion" value="si">
-                                                    <h4>Agregar a Lista de Promoción </h4>
-                                                    <div class="form-group">
-                                                        <label for="exampleFormControlTextarea1">Descripción Promoción</label>
-                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="descripcion_promocion"></textarea>
-                                                    </div>
-                                                    <div class="row" style="display: block;">
-                                                        <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-primary"
-                                                                style="width: 100% !important; "><i class="fa fa-star"></i>
-                                                                &nbsp; Añadir Promoción</button>
+                                    <td scope="row" style="text-align:center;">
+                                        <a href="{{ route('admin.producto.show', $hash->encodeHex($productos->id) ) }}" style="color: black">
+                                            <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                Ver</button></a>
+                                        <a href="{{ route('admin.producto.edit', $hash->encodeHex($productos->id) ) }}" style="color: black">
+                                            <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                                Editar</button></a>
+                                        @if($productos->promocion !='si')
+                                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal{{$productos->id}}">
+                                            <i class="fa fa-star" aria-hidden="true"></i> Promoción</button>
+                                        @endif
+                                        <form action="{{ route('admin.producto.destroy',$productos->id ) }}" method="POST"
+                                            accept-charset="UTF-8" style="display:inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Image"
+                                                onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
+                                                    class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
+                                        </form>
+                                    </td>
+                                    
+                                    <div class="modal fade" id="myModal{{$productos->id}}" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Producto a Promoción</h4>
+                                                    <h5><strong>{{ strtoupper($productos->nombre_producto) }}</strong></h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form
+                                                        action="{{route( 'admin.productos.productoPromocion', $productos->id )}}"
+                                                        method="POST" style="margin-block-end:-1em !important;">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('PUT') }}
+                                                        <input type="hidden" name="promocion" value="si">
+                                                        <h4>Agregar a Lista de Promoción </h4>
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlTextarea1">Descripción Promoción</label>
+                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="descripcion_promocion"></textarea>
                                                         </div>
-                                                    </div>
-                                                </form>
+                                                        <div class="row" style="display: block;">
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-primary"
+                                                                    style="width: 100% !important; "><i class="fa fa-star"></i>
+                                                                    &nbsp; Añadir Promoción</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </tr>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -162,7 +160,6 @@
         </div>
     </div>
 </div>
-<!-- /page content -->
 <style>
     th,td,h4,.modal-header {
         text-align: center;

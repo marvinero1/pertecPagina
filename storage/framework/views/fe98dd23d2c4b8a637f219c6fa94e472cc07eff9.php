@@ -1,7 +1,6 @@
 
 
 <?php $__env->startSection('content'); ?>
-<!-- page content -->
 <div class="container">
     <div class="row">
         <div class="title_left" style="text-align: center;">
@@ -9,7 +8,7 @@
         </div><br>
 
         <?php if(Session::has('message')): ?>
-        <div class="alert alert-info"><?php echo e(Session::get('message')); ?></div>
+            <div class="alert alert-info"><?php echo e(Session::get('message')); ?></div>
         <?php endif; ?>
 
         <?php if(Session::has('danger')): ?>
@@ -87,72 +86,72 @@
 
                         <tbody>
                             <?php $__currentLoopData = $producto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <tr>
-                                <td class="row1" scope="row"><?php echo e($productos->nombre_producto); ?></td>
-                                <td scope="row"><?php echo e($productos->denominacion); ?></td>
-                                <td scope="row"><?php echo e($productos->linea); ?></td>
-                                <td scope="row"><?php echo e($productos->categoria); ?></td>
-                                <td scope="row"><?php echo e($productos->sub_categoria); ?></td>
+                                <tr>
+                                    <td class="row1" scope="row"><?php echo e($productos->nombre_producto); ?></td>
+                                    <td scope="row"><?php echo e($productos->denominacion); ?></td>
+                                    <td scope="row"><?php echo e($productos->linea); ?></td>
+                                    <td scope="row"><?php echo e($productos->categoria); ?></td>
+                                    <td scope="row"><?php echo e($productos->sub_categoria); ?></td>
 
-                                <td scope="row" style="text-align:center;">
-                                    <a href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id) )); ?>" style="color: black">
-                                        <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            Ver</button></a>
-                                    <a href="<?php echo e(route('admin.producto.edit', $hash->encodeHex($productos->id) )); ?>" style="color: black">
-                                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
-                                            Editar</button></a>
-                                    <?php if($productos->promocion !='si'): ?>
-                                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal"
-                                        data-target="#myModal<?php echo e($productos->id); ?>">
-                                        <i class="fa fa-star" aria-hidden="true"></i> Promoción</button>
-                                    <?php endif; ?>
-                                    <form action="<?php echo e(route('admin.producto.destroy',$productos->id )); ?>" method="POST"
-                                        accept-charset="UTF-8" style="display:inline">
-                                        <?php echo csrf_field(); ?>
-                                        <?php echo method_field('DELETE'); ?>
-                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Image"
-                                            onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
-                                                class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
-                                    </form>
-                                </td>
-                                
-                                <div class="modal fade" id="myModal<?php echo e($productos->id); ?>" role="dialog">
-                                    <div class="modal-dialog">
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close"
-                                                    data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Producto a Promoción</h4>
-                                                <h5><strong><?php echo e(strtoupper($productos->nombre_producto)); ?></strong></h5>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form
-                                                    action="<?php echo e(route( 'admin.productos.productoPromocion', $productos->id )); ?>"
-                                                    method="POST" style="margin-block-end:-1em !important;">
-                                                    <?php echo e(csrf_field()); ?>
+                                    <td scope="row" style="text-align:center;">
+                                        <a href="<?php echo e(route('admin.producto.show', $hash->encodeHex($productos->id) )); ?>" style="color: black">
+                                            <button class="btn btn-gray"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                Ver</button></a>
+                                        <a href="<?php echo e(route('admin.producto.edit', $hash->encodeHex($productos->id) )); ?>" style="color: black">
+                                            <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                                Editar</button></a>
+                                        <?php if($productos->promocion !='si'): ?>
+                                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#myModal<?php echo e($productos->id); ?>">
+                                            <i class="fa fa-star" aria-hidden="true"></i> Promoción</button>
+                                        <?php endif; ?>
+                                        <form action="<?php echo e(route('admin.producto.destroy',$productos->id )); ?>" method="POST"
+                                            accept-charset="UTF-8" style="display:inline">
+                                            <?php echo csrf_field(); ?>
+                                            <?php echo method_field('DELETE'); ?>
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Image"
+                                                onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i
+                                                    class="fa fas fa-trash" aria-hidden="true"></i> Eliminar</button>
+                                        </form>
+                                    </td>
+                                    
+                                    <div class="modal fade" id="myModal<?php echo e($productos->id); ?>" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Producto a Promoción</h4>
+                                                    <h5><strong><?php echo e(strtoupper($productos->nombre_producto)); ?></strong></h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form
+                                                        action="<?php echo e(route( 'admin.productos.productoPromocion', $productos->id )); ?>"
+                                                        method="POST" style="margin-block-end:-1em !important;">
+                                                        <?php echo e(csrf_field()); ?>
 
-                                                    <?php echo e(method_field('PUT')); ?>
+                                                        <?php echo e(method_field('PUT')); ?>
 
-                                                    <input type="hidden" name="promocion" value="si">
-                                                    <h4>Agregar a Lista de Promoción </h4>
-                                                    <div class="form-group">
-                                                        <label for="exampleFormControlTextarea1">Descripción Promoción</label>
-                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="descripcion_promocion"></textarea>
-                                                    </div>
-                                                    <div class="row" style="display: block;">
-                                                        <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-primary"
-                                                                style="width: 100% !important; "><i class="fa fa-star"></i>
-                                                                &nbsp; Añadir Promoción</button>
+                                                        <input type="hidden" name="promocion" value="si">
+                                                        <h4>Agregar a Lista de Promoción </h4>
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlTextarea1">Descripción Promoción</label>
+                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="descripcion_promocion"></textarea>
                                                         </div>
-                                                    </div>
-                                                </form>
+                                                        <div class="row" style="display: block;">
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-primary"
+                                                                    style="width: 100% !important; "><i class="fa fa-star"></i>
+                                                                    &nbsp; Añadir Promoción</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </tr>
+                                </tr>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </tbody>
                     </table>
@@ -165,7 +164,6 @@
         </div>
     </div>
 </div>
-<!-- /page content -->
 <style>
     th,td,h4,.modal-header {
         text-align: center;
