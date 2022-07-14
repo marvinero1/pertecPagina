@@ -23,18 +23,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-7 sidebar sidebar-full">
-                <div style="float: right;">
-                    <button class="boton-info" title="Ayuda" data-toggle="modal" data-target="#ModalInfoProd">?</button>
-                </div>
-                <div class="product-img product-feature-img mb-50" style="text-align: center;">
-                    @if(!is_null($producto_Id->imagen_matriz))
-                        <img id="myImg" style="width: auto; max-width: 85%;" src=" /{{ $producto_Id->imagen_matriz }}" alt="Matriz" />
-                    @else
-                        <div>Matriz</div>
-                    @endif
-                </div>
-            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-7 product-content">
                 <div class="product-tabs mb-50">
                     <ul class="nav nav-tabs" role="tablist">
@@ -46,7 +35,7 @@
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="details">
                             <table class="table table-striped">
-                                <tbody>
+                                <tbody class="margin-table-content">
                                     @if (!is_null($producto_Id->denominacion))
                                     <tr style="text-transform: uppercase;" class="table-prod-inf">
                                         <td class="title-details">
@@ -153,6 +142,19 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 sidebar sidebar-full">
+                <div style="float: right;">
+                    <button class="boton-info" title="Ayuda" data-toggle="modal" data-target="#ModalInfoProd">?</button>
+                </div>
+                <div class="product-img product-feature-img mb-50" style="text-align: center;">
+                    @if(!is_null($producto_Id->imagen_matriz))
+                        <img id="myImg" style="width: auto; max-width: 85%;" src=" /{{ $producto_Id->imagen_matriz }}" alt="Matriz" />
+                    @else
+                        <div>Matriz</div>
+                    @endif
+                </div>
+            </div>
         </div>
         <hr class="mt-50 mb-30">
     </div>
@@ -201,6 +203,10 @@
     </div>
 <style>
 
+    .margin-table-content tr td h5,
+    .margin-table-content tr td h4 {
+        margin: 0px;
+    }
 .m-0px{
         text-shadow: 0 0.2px 0 rgb(9 45 116) !important;
     }

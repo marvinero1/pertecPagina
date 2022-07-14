@@ -64,6 +64,31 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 product-item aling-rigth">
+                        <div class="product-cart">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 285px !important;" href="#" data-toggle="modal" data-target="#ModalPernos">
+                                Línea General</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 product-item aling-left">
+                        <div class="product-cart">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 285px !important;" href="#" data-toggle="modal" data-target="#ModalAutos">
+                                Línea Automotríz y Agrícola </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 product-item">
+                        <div class="product-cart">
+                            <a class="btn btn-secondary btn-block btn-gereric" style="width: 255px !important;" href="#" data-toggle="modal" data-target="#ModalArand">
+                                Atrás</a>
+                        </div>
+                    </div>
+                </div>
+
                 @if($nombre_producto == "null")
                     <div class="row lightgallery1">
                         @foreach ($producto as $bproducto)
