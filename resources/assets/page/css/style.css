@@ -10670,7 +10670,8 @@ footer hr {
 }
 @media (min-width: 1366px) {
     .tama-carusel,
-    .tama-carusel div {height: 745px !important;}
+    .tama-carusel div {height: 670px !important;}
+    /* google chrome */
 }
 @media (min-width: 1879px) {
     .tama-carusel,
@@ -10678,5 +10679,6 @@ footer hr {
 }
 @media (min-width: 1920px) {
     .tama-carusel,
-    .tama-carusel div {height: 1040px !important;}
+    .tama-carusel div {height: 930px !important;}
+    /* google chrome */
 }
